@@ -12,7 +12,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/09/01/Python-Note/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="#目录[TOC] 第一章 Python的安装、IPython的使用 Python的安装参见https://stringpiggy.hpd.io/mac-osx-python3-dual-install/ ，或者《Python编程：从入门到实战》一书中也有详细的记载。 利用IPython可以代替传统python开发的文本编辑器，灵活的改变所写代码，快捷的生成结果代码。IPython Notebook">
-<meta property="og:updated_time" content="2017-09-09T05:38:55.000Z">
+<meta property="og:updated_time" content="2017-09-09T05:41:28.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python笔记">
 <meta name="twitter:description" content="#目录[TOC] 第一章 Python的安装、IPython的使用 Python的安装参见https://stringpiggy.hpd.io/mac-osx-python3-dual-install/ ，或者《Python编程：从入门到实战》一书中也有详细的记载。 利用IPython可以代替传统python开发的文本编辑器，灵活的改变所写代码，快捷的生成结果代码。IPython Notebook">
@@ -55,7 +55,7 @@
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Zoeken"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -106,6 +106,7 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ipython notebook</div></pre></td></tr></table></figure>
 <p>之后有可能会弹出这个错误(你如果选择了用Anaconda的方式来安装也会碰到这个错误)：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ValueError, <span class="string">'unknown locale: %s'</span> % localename</div></pre></td></tr></table></figure>
+<a id="more"></a>
 <p>在<a href="http://stackoverflow.com/questions/19961239/pelican-3-3-pelican-quickstart-error-valueerror-unknown-locale-utf-8" target="_blank" rel="external">StackOverflow上已经有人提出了解决方案</a>，在命令行里找到.bash_profile 然后添加下面两行代码：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">export LC_ALL=en_US.UTF<span class="number">-8</span></div><div class="line">export LANG=en_US.UTF<span class="number">-8</span></div></pre></td></tr></table></figure>
 <p>然后别忘了重新载入.bash_profile让新添加的代码生效（注意两个点之间的空格）：</p>
@@ -399,7 +400,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/09/01/Python-Note/" data-id="cj7cvrwl40000ew4a53ts4orp" class="article-share-link">Delen</a>
+      <a data-url="http://yoursite.com/2017/09/01/Python-Note/" data-id="cj7cvuvyy0000g24a1dhs3rgb" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Python/">Python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/iPython/">iPython</a></li></ul>
@@ -417,7 +418,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Categorieën</h3>
+    <h3 class="widget-title">Categories</h3>
     <div class="widget">
       <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Python/">Python</a></li></ul>
     </div>
@@ -427,7 +428,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Labels</h3>
+    <h3 class="widget-title">Tags</h3>
     <div class="widget">
       <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Python/">Python</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/iPython/">iPython</a></li></ul>
     </div>
@@ -446,7 +447,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archieven</h3>
+    <h3 class="widget-title">Archives</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/09/">September 2017</a></li></ul>
     </div>
@@ -456,7 +457,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recente berichten</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
         
