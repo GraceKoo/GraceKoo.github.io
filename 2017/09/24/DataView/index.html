@@ -6,14 +6,47 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Grace Koo&#39;s Blog</title>
+  <title>数据可视化基础 | Grace Koo&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Grace Koo&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="数据可视化 [TOC] 一.生成数据1.1 安装matplotlib1$ pip3 install --user matplotlib 1.1.1 测试matplotlib12$ python3&amp;gt;&amp;gt; import matplotlib 如果没有出现任何错误消息，就说明你系统安装了matplotlib。 1.1.2 matplotlib画廊要查看使用matplotlib可制作的各种图表，">
+<meta name="keywords" content="Python,iPython,Pygal,Matplotlib">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据可视化基础">
+<meta property="og:url" content="http://yoursite.com/2017/09/24/DataView/index.html">
 <meta property="og:site_name" content="Grace Koo&#39;s Blog">
+<meta property="og:description" content="数据可视化 [TOC] 一.生成数据1.1 安装matplotlib1$ pip3 install --user matplotlib 1.1.1 测试matplotlib12$ python3&amp;gt;&amp;gt; import matplotlib 如果没有出现任何错误消息，就说明你系统安装了matplotlib。 1.1.2 matplotlib画廊要查看使用matplotlib可制作的各种图表，">
+<meta property="og:image" content="http://yoursite.com/Users/gracekoo/Study/Language/Python/IPython/屏幕快照%202017-09-19%20下午2.15.10.png">
+<meta property="og:image" content="http://yoursite.com/Users/gracekoo/Study/Language/Python/IPython/屏幕快照%202017-09-19%20下午3.16.14.png">
+<meta property="og:image" content="http://yoursite.com/Users/gracekoo/Study/Language/Python/IPython/屏幕快照%202017-09-19%20下午3.30.45.png">
+<meta property="og:image" content="http://yoursite.com/Users/gracekoo/Study/Language/Python/IPython/屏幕快照%202017-09-19%20下午3.56.57.png">
+<meta property="og:image" content="http://yoursite.com/Users/gracekoo/Study/Language/Python/IPython/屏幕快照%202017-09-19%20下午4.05.05.png">
+<meta property="og:image" content="http://yoursite.com/Users/gracekoo/Study/Language/Python/IPython/屏幕快照%202017-09-19%20下午4.17.41.png">
+<meta property="og:image" content="http://yoursite.com/Users/gracekoo/Study/Language/Python/IPython/屏幕快照%202017-09-19%20下午4.38.12.png">
+<meta property="og:image" content="http://yoursite.com/Users/gracekoo/Study/Language/Python/IPython/屏幕快照%202017-09-19%20下午4.58.54.png">
+<meta property="og:image" content="http://yoursite.com/Users/gracekoo/Documents/屏幕快照%202017-09-21%20上午10.29.43.png">
+<meta property="og:image" content="http://yoursite.com/Users/gracekoo/Documents/屏幕快照%202017-09-21%20上午11.14.58.png">
+<meta property="og:image" content="http://yoursite.com/Users/gracekoo/Study/Language/Python/IPython/屏幕快照%202017-09-21%20下午12.33.14.png">
+<meta property="og:image" content="http://yoursite.com/Users/gracekoo/Study/Language/Python/IPython/屏幕快照%202017-09-21%20下午1.00.20%201.png">
+<meta property="og:image" content="http://yoursite.com/Users/gracekoo/Study/Language/Python/IPython/屏幕快照%202017-09-21%20下午2.24.19.png">
+<meta property="og:image" content="http://yoursite.com/Users/gracekoo/Study/Language/Python/IPython/屏幕快照%202017-09-21%20下午3.06.28.png">
+<meta property="og:image" content="http://yoursite.com/Users/gracekoo/Study/Language/Python/IPython/屏幕快照%202017-09-23%20下午12.06.32.png">
+<meta property="og:image" content="http://yoursite.com/Users/gracekoo/Study/Language/Python/IPython/屏幕快照%202017-09-23%20下午2.02.28.png">
+<meta property="og:image" content="http://yoursite.com/Users/gracekoo/Study/Language/Python/IPython/屏幕快照%202017-09-23%20下午2.28.54.png">
+<meta property="og:image" content="http://yoursite.com/Users/gracekoo/Study/Language/Python/IPython/屏幕快照%202017-09-23%20下午2.39.56.png">
+<meta property="og:image" content="http://yoursite.com/Users/gracekoo/Study/Language/Python/IPython/屏幕快照%202017-09-23%20下午3.04.05.png">
+<meta property="og:image" content="http://yoursite.com/Users/gracekoo/Study/Language/Python/IPython/屏幕快照%202017-09-23%20下午4.41.59.png">
+<meta property="og:image" content="http://yoursite.com/Users/gracekoo/Study/Language/Python/IPython/屏幕快照%202017-09-23%20下午4.52.41.png">
+<meta property="og:image" content="http://yoursite.com/Users/gracekoo/Study/Language/Python/IPython/屏幕快照%202017-09-23%20下午5.09.55.png">
+<meta property="og:image" content="http://yoursite.com/Users/gracekoo/Study/Language/Python/IPython/屏幕快照%202017-09-23%20下午5.31.20.png">
+<meta property="og:image" content="http://yoursite.com/Users/gracekoo/Study/Language/Python/IPython/屏幕快照%202017-09-24%20下午2.19.13.png">
+<meta property="og:image" content="http://yoursite.com/Users/gracekoo/Study/Language/Python/IPython/屏幕快照%202017-09-24%20下午2.32.56.png">
+<meta property="og:image" content="http://yoursite.com/Users/gracekoo/Study/Language/Python/IPython/屏幕快照%202017-09-24%20下午3.06.59.png">
+<meta property="og:image" content="http://yoursite.com/Users/gracekoo/Study/Language/Python/IPython/屏幕快照%202017-09-24%20下午3.23.21.png">
+<meta property="og:updated_time" content="2017-09-24T12:48:40.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Grace Koo&#39;s Blog">
+<meta name="twitter:title" content="数据可视化基础">
+<meta name="twitter:description" content="数据可视化 [TOC] 一.生成数据1.1 安装matplotlib1$ pip3 install --user matplotlib 1.1.1 测试matplotlib12$ python3&amp;gt;&amp;gt; import matplotlib 如果没有出现任何错误消息，就说明你系统安装了matplotlib。 1.1.2 matplotlib画廊要查看使用matplotlib可制作的各种图表，">
+<meta name="twitter:image" content="http://yoursite.com/Users/gracekoo/Study/Language/Python/IPython/屏幕快照%202017-09-19%20下午2.15.10.png">
   
     <link rel="alternative" href="/atom.xml" title="Grace Koo&#39;s Blog" type="application/atom+xml">
   
@@ -149,16 +182,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-DataView" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-DataView" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/24/DataView/">数据可视化基础</a>
+    <h1 class="article-title" itemprop="name">
+      数据可视化基础
     </h1>
   
 
@@ -377,11 +408,117 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">--snip--</div><div class="line">dates,highs,lows = [],[],[]</div><div class="line">    <span class="keyword">for</span> row <span class="keyword">in</span> reader:</div><div class="line">        <span class="keyword">try</span>:</div><div class="line">            current_date = datetime.strptime(row[<span class="number">0</span>],<span class="string">"%Y-%m-%d"</span>)</div><div class="line">            high = int(row[<span class="number">1</span>])</div><div class="line">            low = int(row[<span class="number">3</span>])</div><div class="line">        <span class="keyword">except</span> ValueError:</div><div class="line">            print(current_date,<span class="string">'missing data'</span>)</div><div class="line">        <span class="keyword">else</span>:</div><div class="line">            dates.append(current_date)</div><div class="line">            highs.append(high)</div><div class="line">            lows.append(low)</div><div class="line">--snip--</div></pre></td></tr></table></figure>
 <p><img src="/Users/gracekoo/Study/Language/Python/IPython/屏幕快照 2017-09-23 下午3.04.05.png" alt="屏幕快照 2017-09-23 下午3.04.05"></p>
 <p>可以看到，有一个数据没有读到。其他正常显示。</p>
-        
-          <a class="article-more-a" href="/2017/09/24/DataView/#more">more >></a>
-        
+<a id="more"></a>
+<h2 id="2-2-制作世界人口地图：JSON格式"><a href="#2-2-制作世界人口地图：JSON格式" class="headerlink" title="2.2 制作世界人口地图：JSON格式"></a>2.2 制作世界人口地图：JSON格式</h2><p>Pygal提供了一个适合初学者使用的地图创建工具，使用它对人口数据进行可视化，以探索全球人口的分布情况。</p>
+<p>文件population_data.json中包含全球大部分国家1960～2010的人口数据。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">[</div><div class="line">  &#123;</div><div class="line">    <span class="string">"Country Name"</span>: <span class="string">"Arab World"</span>,</div><div class="line">    <span class="string">"Country Code"</span>: <span class="string">"ARB"</span>,</div><div class="line">    <span class="string">"Year"</span>: <span class="string">"1960"</span>,</div><div class="line">    <span class="string">"Value"</span>: <span class="string">"96388069"</span></div><div class="line">  &#125;,</div><div class="line">  &#123;</div><div class="line">    <span class="string">"Country Name"</span>: <span class="string">"Arab World"</span>,</div><div class="line">    <span class="string">"Country Code"</span>: <span class="string">"ARB"</span>,</div><div class="line">    <span class="string">"Year"</span>: <span class="string">"1961"</span>,</div><div class="line">    <span class="string">"Value"</span>: <span class="string">"98882541.4"</span></div><div class="line">  &#125;,</div><div class="line">......</div></pre></td></tr></table></figure>
+<p>这个文件实际上就是一个很长的Python列表，其中每个元素都是一个包含4个键的字典。国家名、国别码、年份、以及人口数量。</p>
+<p>我们只关心人口数量。因此先将这些信息打印出来。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> json</div><div class="line"></div><div class="line"><span class="comment">#将数据加载到一个列表中</span></div><div class="line">file_name = <span class="string">'population_data.json'</span></div><div class="line"><span class="keyword">with</span> open(file_name) <span class="keyword">as</span> f:</div><div class="line">    pop_data = json.load(f)</div><div class="line"></div><div class="line"><span class="comment">#打印每个国家2010年的人口数量</span></div><div class="line"><span class="keyword">for</span> pop_dict <span class="keyword">in</span> pop_data:</div><div class="line">    <span class="keyword">if</span> pop_dict[<span class="string">'Year'</span>] == <span class="string">'2010'</span>:</div><div class="line">        country_name = pop_dict[<span class="string">'Country Name'</span>]</div><div class="line">        population = pop_dict[<span class="string">'Value'</span>]</div><div class="line">        print(country_name + <span class="string">":"</span> + population)</div><div class="line"></div><div class="line">Arab World:<span class="number">357868000</span></div><div class="line">Caribbean small states:<span class="number">6880000</span></div><div class="line">East Asia &amp; Pacific (all income levels):<span class="number">2201536674</span></div><div class="line">East Asia &amp; Pacific (developing only):<span class="number">1961558757</span></div><div class="line">Euro area:<span class="number">331766000</span></div><div class="line">......</div></pre></td></tr></table></figure>
+<p>首先导入了json模块，以便正确的加载文件中的数据。然后将数据存储在pop_data中。函数pop_data 将数据转换为Python能够处理的格式，这里是一个列表。</p>
+<p>可以看到，捕捉的数据中，并非每个都是国家名，现在将数据转换为Pygal能够处理的格式。</p>
+<p>注意：将str转换为int时，若使用str(),如果数字（人口数量）为小数，则会发生错误，<strong>因为Python不能将包含小数点的字符串（如：“10.984958”）转化为整数。</strong></p>
+<p><strong>应该先将其字符串转换为浮点数float()，再将浮点数转化为整数int()。</strong>Python会自动抛弃小数部分。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">population = int(float(pop_dict[<span class="string">'Value'</span>]))</div><div class="line">print(country_name + <span class="string">":"</span> + str(population))</div></pre></td></tr></table></figure>
+<h3 id="2-2-1-获取两个字母的国别码"><a href="#2-2-1-获取两个字母的国别码" class="headerlink" title="2.2.1 获取两个字母的国别码"></a>2.2.1 获取两个字母的国别码</h3><p>population_data.json中包含的是三个字母的国别码，但Pygal使用两个字母的国别码。我们需要根据国家名获取两个字母的国别码。Pygal使用的国别码存储在模块i8n中。字典COUNTRIES包含的键和值分别是两个字母的国别码和国家名。要查看，可导入。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> pygal.i18n <span class="keyword">import</span> COUNTRIES</div><div class="line"></div><div class="line"><span class="keyword">for</span>  country_code <span class="keyword">in</span> sorted(COUNTRIES.keys()):</div><div class="line">    print(country_code,COUNTRIES[country_code])</div><div class="line"></div><div class="line">ad Andorra</div><div class="line">ae United Arab Emirates</div><div class="line">af Afghanistan</div><div class="line">al Albania</div><div class="line">......</div></pre></td></tr></table></figure>
+<p>为获取国别码，编写一个函数，它在COUNTRIES中查找并返回国别码。（country_codes.py）</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> pygal.i18n <span class="keyword">import</span> COUNTRIES</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_country_code</span><span class="params">(country_name)</span>:</span></div><div class="line">    <span class="string">"""根据指定的国家，返回Pygal使用的两个字母的国别码"""</span></div><div class="line">    <span class="keyword">for</span> code,name <span class="keyword">in</span> COUNTRIES.items():</div><div class="line">        <span class="keyword">if</span> name == country_name:</div><div class="line">            <span class="keyword">return</span> code</div><div class="line">        <span class="keyword">return</span> <span class="keyword">None</span></div></pre></td></tr></table></figure>
+<p>在之前的代码中导入。(world_population.py)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> json</div><div class="line"></div><div class="line"><span class="keyword">from</span> country_codes <span class="keyword">import</span> get_country_code</div><div class="line"></div><div class="line"><span class="comment">#将数据加载到一个列表中</span></div><div class="line">file_name = <span class="string">'population_data.json'</span></div><div class="line"><span class="keyword">with</span> open(file_name) <span class="keyword">as</span> f:</div><div class="line">    pop_data = json.load(f)</div><div class="line"></div><div class="line"><span class="comment">#打印每个国家2010年的人口数量</span></div><div class="line"><span class="keyword">for</span> pop_dict <span class="keyword">in</span> pop_data:</div><div class="line">    <span class="keyword">if</span> pop_dict[<span class="string">'Year'</span>] == <span class="string">'2010'</span>:</div><div class="line">        country_name = pop_dict[<span class="string">'Country Name'</span>]</div><div class="line">        population = pop_dict[<span class="string">'Value'</span>]</div><div class="line">        code = get_country_code(country_name)</div><div class="line">        <span class="keyword">if</span> code:</div><div class="line">          print(code + <span class="string">":"</span> + str(population))</div><div class="line">        <span class="keyword">else</span>:</div><div class="line">          print(<span class="string">'ERROR -'</span> + country_name)</div><div class="line"></div><div class="line">......</div><div class="line">ERROR -Algeria</div><div class="line">ERROR -American Samoa</div><div class="line">ad:<span class="number">84864</span></div><div class="line">......</div></pre></td></tr></table></figure>
+<h3 id="2-2-2-制作世界地图"><a href="#2-2-2-制作世界地图" class="headerlink" title="2.2.2 制作世界地图"></a>2.2.2 制作世界地图</h3><p>有了国别码后，制作世界地图易如反掌。Pygal提供了图表类型WorldMap，可帮助你制作呈现世界各国数据的世界地图。为了呈现，我们来创建一个突出北美、中美和南美的简单地图。</p>
+<p>我们创建了一个Worldmap实例，并设置了该地图的title属性。</p>
+<p>使用add方法，它接受一个标签和一个列表，后者包含我们要突出的国家的<strong>国别码</strong>。每次调用add都将为指定的国家选择一种新颜色，并在左边显示该颜色和指定的标签。我们要以同一种颜色显示整个北美地区。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> pygal</div><div class="line"></div><div class="line">wm = pygal.Worldmap()</div><div class="line">wm.title = <span class="string">'North,Central,and South America'</span></div><div class="line"></div><div class="line">wm.add(<span class="string">'North America'</span>,[<span class="string">'ca'</span>,<span class="string">'mx'</span>,<span class="string">'us'</span>])</div><div class="line">wm.add(<span class="string">'Central America'</span>,[<span class="string">'bz'</span>,<span class="string">'cr'</span>,<span class="string">'gt'</span>,<span class="string">'hn'</span>,<span class="string">'ni'</span>,<span class="string">'pa'</span>,<span class="string">'sv'</span>])</div><div class="line">wm.add(<span class="string">'South America'</span>,[<span class="string">'ar'</span>,<span class="string">'bo'</span>,<span class="string">'br'</span>,<span class="string">'cl'</span>,<span class="string">'co'</span>,<span class="string">'ec'</span>,<span class="string">'gf'</span>,</div><div class="line">                       <span class="string">'gy'</span>,<span class="string">'pe'</span>,<span class="string">'sr'</span>,<span class="string">'uy'</span>,<span class="string">'ve'</span>])</div><div class="line"></div><div class="line">wm.render_to_file(<span class="string">'americas.svg'</span>)</div></pre></td></tr></table></figure>
+<p><img src="/Users/gracekoo/Study/Language/Python/IPython/屏幕快照 2017-09-23 下午4.41.59.png" alt="屏幕快照 2017-09-23 下午4.41.59"></p>
+<h3 id="2-2-3-在世界地图上呈现数字数据"><a href="#2-2-3-在世界地图上呈现数字数据" class="headerlink" title="2.2.3 在世界地图上呈现数字数据"></a>2.2.3 在世界地图上呈现数字数据</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> pygal</div><div class="line"></div><div class="line">wm = pygal.Worldmap()</div><div class="line">wm.title = <span class="string">'Population of Countries in North America'</span></div><div class="line">wm.add(<span class="string">'North America'</span>,&#123;<span class="string">'ca'</span>:<span class="number">34126000</span>,<span class="string">'us'</span>:<span class="number">30934900</span>,<span class="string">'mx'</span>:<span class="number">113423000</span>&#125;)</div><div class="line"></div><div class="line">wm.render_to_file(<span class="string">'na_populations.svg'</span>)</div></pre></td></tr></table></figure>
+<p><img src="/Users/gracekoo/Study/Language/Python/IPython/屏幕快照 2017-09-23 下午4.52.41.png" alt="屏幕快照 2017-09-23 下午4.52.41"></p>
+<p>这次的add方法，第二个参数传递的是一个字典而不是列表。这个字典将两个字母的Pygal国别码作为键，将人口数量作为值。Pygal根据这些数字自动给不同国家着以深浅不一的颜色（人口最少的国家颜色最浅，反之最深）</p>
+<h3 id="2-2-4-绘制完整的世界人口地图"><a href="#2-2-4-绘制完整的世界人口地图" class="headerlink" title="2.2.4 绘制完整的世界人口地图"></a>2.2.4 绘制完整的世界人口地图</h3><p>在之前的world_population.py中添加如下代码：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> json</div><div class="line"></div><div class="line"><span class="keyword">import</span> pygal</div><div class="line"></div><div class="line"><span class="comment">#将数据加载到一个列表中</span></div><div class="line">file_name = <span class="string">'population_data.json'</span></div><div class="line"><span class="keyword">with</span> open(file_name) <span class="keyword">as</span> f:</div><div class="line">    pop_data = json.load(f)</div><div class="line"></div><div class="line"><span class="comment">#创建一个包含人口数量的字典</span></div><div class="line">cc_populations = &#123;&#125;</div><div class="line"></div><div class="line"><span class="comment">#每个国家2010年的人口数量</span></div><div class="line"><span class="keyword">for</span> pop_dict <span class="keyword">in</span> pop_data:</div><div class="line">    <span class="keyword">if</span> pop_dict[<span class="string">'Year'</span>] == <span class="string">'2010'</span>:</div><div class="line">        country_name = pop_dict[<span class="string">'Country Name'</span>]</div><div class="line">        population = int(float(pop_dict[<span class="string">'Value'</span>]))</div><div class="line">        code = get_country_code(country_name)</div><div class="line">        <span class="keyword">if</span> code:</div><div class="line">            cc_populations[code] = population</div><div class="line"></div><div class="line">wm = pygal.Worldmap()</div><div class="line">wm.title = <span class="string">'World Population in 2010,by Country'</span></div><div class="line">wm.add(<span class="string">'2010'</span>,cc_populations)</div><div class="line"></div><div class="line">wm.render_to_file(<span class="string">'world_population.svg'</span>)</div></pre></td></tr></table></figure>
+<p><img src="/Users/gracekoo/Study/Language/Python/IPython/屏幕快照 2017-09-23 下午5.09.55.png" alt="屏幕快照 2017-09-23 下午5.09.55"></p>
+<p>我们将根据人口数量将国家分组，再分别给每个组着色。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">--snip--</div><div class="line"><span class="keyword">from</span> pygal.style <span class="keyword">import</span> LightColorizedStyle <span class="keyword">as</span> LCS, RotateStyle <span class="keyword">as</span> RS</div><div class="line">--snip--</div><div class="line"></div><div class="line"><span class="keyword">if</span> code:</div><div class="line">  cc_populations[code] = population</div><div class="line"></div><div class="line"><span class="comment"># Group the countries into 3 population levels.</span></div><div class="line">cc_pops_1, cc_pops_2, cc_pops_3 = &#123;&#125;, &#123;&#125;, &#123;&#125;</div><div class="line"><span class="keyword">for</span> cc, pop <span class="keyword">in</span> cc_populations.items():</div><div class="line">    <span class="keyword">if</span> pop &lt; <span class="number">10000000</span>:</div><div class="line">        cc_pops_1[cc] = pop</div><div class="line">    <span class="keyword">elif</span> pop &lt; <span class="number">1000000000</span>:</div><div class="line">        cc_pops_2[cc] = pop</div><div class="line">    <span class="keyword">else</span>:</div><div class="line">        cc_pops_3[cc] = pop</div><div class="line"></div><div class="line"><span class="comment"># See how many countries are in each level.        </span></div><div class="line">print(len(cc_pops_1), len(cc_pops_2), len(cc_pops_3))</div><div class="line"></div><div class="line">wm_style = RS(<span class="string">'#336699'</span>, base_style=LCS)</div><div class="line">wm = pygal.Worldmap(style=wm_style)</div><div class="line">wm.title = <span class="string">'World Population in 2010, by Country'</span></div><div class="line">wm.add(<span class="string">'0-10m'</span>, cc_pops_1)</div><div class="line">wm.add(<span class="string">'10m-1bn'</span>, cc_pops_2)</div><div class="line">wm.add(<span class="string">'&gt;1bn'</span>, cc_pops_3)</div><div class="line">    </div><div class="line">wm.render_to_file(<span class="string">'world_population.svg'</span>)</div><div class="line"></div><div class="line"><span class="number">85</span> <span class="number">69</span> <span class="number">2</span></div></pre></td></tr></table></figure>
+<p><img src="/Users/gracekoo/Study/Language/Python/IPython/屏幕快照 2017-09-23 下午5.31.20.png" alt="屏幕快照 2017-09-23 下午5.31.20"></p>
+<h3 id="2-2-5-用Pygal设置世界地图样式"><a href="#2-2-5-用Pygal设置世界地图样式" class="headerlink" title="2.2.5 用Pygal设置世界地图样式"></a>2.2.5 用Pygal设置世界地图样式</h3><p>我们让Pygal使用设置指令来调整颜色。让三个分组的颜色差别更大。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">--snip--</div><div class="line"></div><div class="line"><span class="keyword">from</span> pygal.style <span class="keyword">import</span> RotateStyle</div><div class="line"></div><div class="line">--snip--</div><div class="line">wm_style = RotateStyle(<span class="string">'#336699'</span>)</div><div class="line">wm = pygal.Worldmap(style=wm_style)</div><div class="line"></div><div class="line">--snip--</div></pre></td></tr></table></figure>
+<p>Pygal样式存储在模块style中，我们从中导入了RotateStyle样式。创建这个类的实例时，需要提供一个参数：16进制的RGB颜色；Pygal将根据指定的颜色为每组选择颜色。前两个字符表示红色分量，然后是绿色，蓝色。取值00～FF。建议搜索hex color chooser（16进制颜色选择器）</p>
+<h3 id="2-2-6-加亮颜色主题"><a href="#2-2-6-加亮颜色主题" class="headerlink" title="2.2.6 加亮颜色主题"></a>2.2.6 加亮颜色主题</h3><p>我们使用LightColorizedStyle加亮了地图。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> pygal.style <span class="keyword">import</span> LightColorizedStyle</div></pre></td></tr></table></figure>
+<p>但是使用这个类时，你不能直接控制使用的颜色，Pygal将选择默认的基色。要设置颜色，可使用RotateStyle，并将LightColorizedStyle作为基本样式。为此</p>
+ <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">from</span> pygal.style <span class="keyword">import</span> LightColorizedStyle <span class="keyword">as</span> LCS,RotateStyle <span class="keyword">as</span> RS</div></pre></td></tr></table></figure>
+<p>再使用RotateStyle创建一种样式</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">wm_style = RS(<span class="string">'#336699'</span>, base_style=LCS)</div></pre></td></tr></table></figure>
+<p>这设置了较亮的主题，通过实参传递的颜色给各个国家着色。</p>
+<h1 id="三-使用API"><a href="#三-使用API" class="headerlink" title="三.使用API"></a>三.使用API</h1><p>编写一个独立的程序，并对其获取的数据进行可视化。这个程序将使用<strong>Web应用编程接口（API）</strong>自动请求网站的特定信息而不是整个网页，再对这些信息进行可视化。由于这样编写的程序始终使用最新的数据来生成可视化，因此即便数据瞬息万变，它呈现的信息也都是最新的。</p>
+<p>我们将使用GitHub的API来请求有关该网站中Python项目的信息，然后使用Pygal生成交互式可视化，以呈现这些项目的受欢迎程度。这个程序将自动下载GitHub上星级最高的Python项目的信息，并对这些项目进行可视化。</p>
+<h2 id="3-1-使用Web-API"><a href="#3-1-使用Web-API" class="headerlink" title="3.1 使用Web API"></a>3.1 使用Web API</h2><p>GitHub的API让你能够通过API调用来请求各种信息。要知道API调用是什么样的，输入以下网址：</p>
+<p><a href="https://api.github.com/search/repositories?q=language:python&amp;sort=stars" target="_blank" rel="external">https://api.github.com/search/repositories?q=language:python&amp;sort=stars</a></p>
+<p>这个调用返回GitHub当前托管了多少个Python项目，还有有关最受欢迎的Python仓库的信息。仔细研究这个调用，第一部分（<a href="https://api.github.com/）将请求发送到GitHub网站中响应API调用的部分；接下来一部分（search/repositories）让API搜索GitHub上的所有仓库。" target="_blank" rel="external">https://api.github.com/）将请求发送到GitHub网站中响应API调用的部分；接下来一部分（search/repositories）让API搜索GitHub上的所有仓库。</a></p>
+<p>repositories后面的问号指出我们要传递一个实参。q表示查询，而等号能让我们开始指定的查询。通过使用language：python，我们指出只想获取主要语言为python仓库的信息，最后一部分查询&amp;sort=stars指定项目将按其获得的星级进行排序。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="string">"total_count"</span>: <span class="number">1968718</span>,</div><div class="line">  <span class="string">"incomplete_results"</span>: false,</div><div class="line">  <span class="string">"items"</span>: [</div><div class="line">    &#123;</div><div class="line">      <span class="string">"id"</span>: <span class="number">21289110</span>,</div><div class="line">      <span class="string">"name"</span>: <span class="string">"awesome-python"</span>,</div><div class="line">      <span class="string">"full_name"</span>: <span class="string">"vinta/awesome-python"</span>,</div><div class="line">      <span class="string">"owner"</span>: &#123;</div></pre></td></tr></table></figure>
+<p>上面显示了响应的前几行。从中可知，GitHub总共有1968718个python项目。”incomplete_results”的值为false，据此我们知道请求是成功的（它并非不完整的）。倘若GitHub无法全面处理该API，它返回的这个值将为true。接下来的列表中显示了返回的“items”，其中包含GitHub上最受欢迎的Python项目的详细信息。</p>
+<h3 id="3-1-1-安装requests"><a href="#3-1-1-安装requests" class="headerlink" title="3.1.1 安装requests"></a>3.1.1 安装requests</h3><p>requests包让python程序能够轻松地向网站请求信息以及检查返回的响应，要安装requests，执行类似于下面的命令：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ pip3 install --user requests</div></pre></td></tr></table></figure>
+<h3 id="3-1-2-处理API响应"><a href="#3-1-2-处理API响应" class="headerlink" title="3.1.2 处理API响应"></a>3.1.2 处理API响应</h3><p>下面的程序，它执行API调用并处理结果，找出GitHub上星级最高的Python项目。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> requests</div><div class="line"></div><div class="line"><span class="comment">#执行API调用并存储响应</span></div><div class="line">url = <span class="string">'https://api.github.com/search/repositories?q=language:python&amp;sort=stars'</span></div><div class="line">r = requests.get(url)</div><div class="line">print(<span class="string">"Status code:"</span>,r.status_code)</div><div class="line"></div><div class="line"><span class="comment">#将API响应存储在一个变量中</span></div><div class="line">response_dict = r.json()</div><div class="line"></div><div class="line"><span class="comment">#处理结果</span></div><div class="line">print(response_dict.keys()) </div><div class="line"></div><div class="line">Status code: <span class="number">200</span></div><div class="line">dict_keys([<span class="string">'total_count'</span>, <span class="string">'incomplete_results'</span>, <span class="string">'items'</span>])</div></pre></td></tr></table></figure>
+<p>1.我们导入模块request。</p>
+<p>2.使用requests来执行调用url。调用get()并将url传递给它，再将<strong>响应对象</strong>存储在变量r中。</p>
+<p>3.响应对象包含了一个名为status_code的属性，它让我们知道请求是否成功了。（状态码200表示成功了）</p>
+<p>4.这个API返回一个json格式的信息，因此使用方法json()将这些信息转换为一个Python字典存储在response_dict</p>
+<p>5.打印response_dict中的键。</p>
+<p>###3.1.3 处理响应字典</p>
+<p>将API调用返回的信息存储到字典中后，就可以处理这个字典中的数据了。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> requests</div><div class="line"></div><div class="line"><span class="comment">#执行API调用并存储响应</span></div><div class="line">url = <span class="string">"https://api.github.com/search/repositories?q=language:python&amp;sort=stars"</span></div><div class="line">r = requests.get(url)</div><div class="line">print(<span class="string">"status code"</span>,r.status_code)</div><div class="line"></div><div class="line"><span class="comment">#将API响应存储在一个变量中</span></div><div class="line">response_dict = r.json()</div><div class="line">print(<span class="string">"Total repositories returned:"</span>,response_dict[<span class="string">'total_count'</span>])</div><div class="line"></div><div class="line"><span class="comment">#搜索有关仓库的信息</span></div><div class="line">repo_dict = response_dict[<span class="string">'items'</span>]</div><div class="line">print(<span class="string">"Repositories returned:"</span>,len(repo_dict))</div><div class="line"></div><div class="line"><span class="comment">#研究第一个仓库</span></div><div class="line">repo_dict = repo_dict[<span class="number">0</span>]</div><div class="line">print(<span class="string">"\nKeys:"</span>,len(repo_dict))</div><div class="line"><span class="keyword">for</span> key <span class="keyword">in</span> sorted(repo_dict.keys()):</div><div class="line">    print(key)</div><div class="line">    </div><div class="line">status code <span class="number">200</span></div><div class="line">Total repositories returned: <span class="number">1970122</span></div><div class="line">Repositories returned: <span class="number">30</span></div><div class="line"></div><div class="line">Keys: <span class="number">70</span></div><div class="line">archive_url</div><div class="line">.......</div></pre></td></tr></table></figure>
+<p>与item相关联的值是一个列表，其中包含很多字典，而每个字典都包含有关一个Python仓库的信息。</p>
+<p>我们将这个字典列表存储在repo_dicts中。</p>
+<p>repo_dict[0]提取第一个字典，并将其存储在repo_dict中。</p>
+<p>接下来打印第一个仓库的字典中很多键相关的值。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">--snip--</div><div class="line"><span class="comment">#研究第一个仓库</span></div><div class="line">repo_dict = repo_dict[<span class="number">0</span>]</div><div class="line"></div><div class="line">print(<span class="string">"\nSelected information about first repository"</span>)</div><div class="line">print(<span class="string">"Name:"</span>,repo_dict[<span class="string">'name'</span>])</div><div class="line">print(<span class="string">"Stars:"</span>,repo_dict[<span class="string">'stargazers_count'</span>])</div><div class="line"></div><div class="line">Selected information about first repository</div><div class="line">Name: awesome-python</div><div class="line">Stars: <span class="number">38871</span></div></pre></td></tr></table></figure>
+<h3 id="3-1-4-概述最受欢迎的仓库"><a href="#3-1-4-概述最受欢迎的仓库" class="headerlink" title="3.1.4 概述最受欢迎的仓库"></a>3.1.4 概述最受欢迎的仓库</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">--snip--</div><div class="line"></div><div class="line"><span class="comment">#搜索有关仓库的信息</span></div><div class="line">repo_dict = response_dict[<span class="string">'items'</span>]</div><div class="line">print(<span class="string">"Repositories returned:"</span>,len(repo_dict))</div><div class="line"></div><div class="line">print(<span class="string">"\nSelected information about first repository"</span>)</div><div class="line"><span class="keyword">for</span> repo_dict <span class="keyword">in</span> repo_dicts:</div><div class="line">    print(<span class="string">"Name:"</span>,repo_dict[<span class="string">'name'</span>])</div><div class="line">    print(<span class="string">"Stars:"</span>,repo_dict[<span class="string">'stargazers_count'</span>])</div><div class="line">    print(<span class="string">"Repository:"</span>,repo_dict[<span class="string">'html_url'</span>])</div><div class="line">    print(<span class="string">"Description:"</span>,repo_dict[<span class="string">'description'</span>])</div></pre></td></tr></table></figure>
+<h3 id="3-1-5-监视API的速率限制"><a href="#3-1-5-监视API的速率限制" class="headerlink" title="3.1.5 监视API的速率限制"></a>3.1.5 监视API的速率限制</h3><p>大多数API都存在速率限制，即你在特定时间内可执行的请求数存在限制。要获悉你是否接近GiHub的限制，请输入<a href="https://api.github.com/rate_limit" target="_blank" rel="external">https://api.github.com/rate_limit</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="string">"resources"</span>: &#123;</div><div class="line">    <span class="string">"core"</span>: &#123;</div><div class="line">      <span class="string">"limit"</span>: <span class="number">60</span>,</div><div class="line">      <span class="string">"remaining"</span>: <span class="number">60</span>,</div><div class="line">      <span class="string">"reset"</span>: <span class="number">1506236519</span></div><div class="line">    &#125;,</div><div class="line">    <span class="string">"search"</span>: &#123;</div><div class="line">      <span class="string">"limit"</span>: <span class="number">10</span>,</div><div class="line">      <span class="string">"remaining"</span>: <span class="number">10</span>,</div><div class="line">      <span class="string">"reset"</span>: <span class="number">1506232979</span></div><div class="line">    &#125;,</div></pre></td></tr></table></figure>
+<p>search中，limit代表每分钟10个请求，而在当前这一分钟，我们还可以执行10个请求。若到达配置，你必须等待配额重置。</p>
+<h2 id="3-2-使用Pygal可视化仓库"><a href="#3-2-使用Pygal可视化仓库" class="headerlink" title="3.2 使用Pygal可视化仓库"></a>3.2 使用Pygal可视化仓库</h2><p>现在进行可视化，呈现GitHub上Python项目最受欢迎程度。条形的高低代表获得了多少颗星。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> requests </div><div class="line"><span class="keyword">import</span> pygal</div><div class="line"><span class="keyword">from</span> pygal.style <span class="keyword">import</span> LightColorizedStyle <span class="keyword">as</span> LCS,LightenStyle <span class="keyword">as</span> LS</div><div class="line"></div><div class="line"><span class="comment">#执行API调用并存储响应</span></div><div class="line">url = <span class="string">"https://api.github.com/search/repositories?q=language:python&amp;sort=stars"</span></div><div class="line">r = requests.get(url)</div><div class="line">print(<span class="string">"status code"</span>,r.status_code)</div><div class="line"></div><div class="line"><span class="comment">#将API响应存储在一个变量中</span></div><div class="line">response_dict = r.json()</div><div class="line">print(<span class="string">"Total repositories returned:"</span>,response_dict[<span class="string">'total_count'</span>])</div><div class="line"></div><div class="line"><span class="comment">#搜索有关仓库的信息</span></div><div class="line">repo_dicts = response_dict[<span class="string">'items'</span>]</div><div class="line"></div><div class="line">names,stars = [],[]</div><div class="line"><span class="keyword">for</span> repo_dict <span class="keyword">in</span> repo_dicts:</div><div class="line">    names.append(repo_dict[<span class="string">'name'</span>])</div><div class="line">    stars.append(repo_dict[<span class="string">'stargazers_count'</span>])</div><div class="line">    </div><div class="line"><span class="comment">#可视化</span></div><div class="line">my_style = LS(<span class="string">'#333366'</span>,base_style=LCS)</div><div class="line">chart = pygal.Bar(style=my_style,x_label_rotation=<span class="number">45</span>,show_legend=<span class="keyword">False</span>)</div><div class="line">chart.title = <span class="string">"Most-Starred Python Projects on GitHub"</span></div><div class="line">chart.x_labels = names</div><div class="line"></div><div class="line">chart.add(<span class="string">''</span>,stars)</div><div class="line">chart.render_to_file(<span class="string">'python_repos.svg'</span>)</div></pre></td></tr></table></figure>
+<p><img src="/Users/gracekoo/Study/Language/Python/IPython/屏幕快照 2017-09-24 下午2.19.13.png" alt="屏幕快照 2017-09-24 下午2.19.13"></p>
+<p>x_label_rotation=45让标签绕x轴旋转45度，并隐藏了图例show_legend=False</p>
+<h3 id="3-2-1-改进Pygal图表"><a href="#3-2-1-改进Pygal图表" class="headerlink" title="3.2.1 改进Pygal图表"></a>3.2.1 改进Pygal图表</h3><p>下面来改进这个图表的样式，创建一个配置对象，在其中包含要传递给Bar()的所有配置。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">--snip--</div><div class="line"><span class="comment">#可视化</span></div><div class="line">my_style = LS(<span class="string">'#333366'</span>,base_style=LCS)</div><div class="line">my_config = pygal.Config()</div><div class="line">my_config.x_label_rotation = <span class="number">45</span></div><div class="line">my_config.show_legend = <span class="keyword">False</span></div><div class="line">my_config.title_font_size = <span class="number">14</span></div><div class="line">my_config.major_label_font_size = <span class="number">18</span></div><div class="line">my_config.truncate_label = <span class="number">15</span></div><div class="line">my_config.show_y_guides = <span class="keyword">False</span></div><div class="line">my_config.width = <span class="number">1000</span></div><div class="line"></div><div class="line">chart = pygal.Bar(my_config,style=my_style)</div><div class="line">chart.title = <span class="string">"Most-Starred Python Projects on GitHub"</span></div><div class="line">chart.x_labels = names</div><div class="line"></div><div class="line">chart.add(<span class="string">''</span>,stars)</div><div class="line">chart.render_to_file(<span class="string">'python_repos.svg'</span>)</div></pre></td></tr></table></figure>
+<p><img src="/Users/gracekoo/Study/Language/Python/IPython/屏幕快照 2017-09-24 下午2.32.56.png" alt="屏幕快照 2017-09-24 下午2.32.56"></p>
+<p>我们创建了一个Pygal类Config的实例，并将其命名为my_config，通过修改my_config，可定制图表的外观。truncate_label将较长的项目名缩短为15个字符。show_y_guides为False将隐藏图表中的水平线。width为自定义宽度，让图表更充分地利用浏览器中的可用空间。</p>
+<h3 id="3-2-2-添加自定义工具提示"><a href="#3-2-2-添加自定义工具提示" class="headerlink" title="3.2.2 添加自定义工具提示"></a>3.2.2 添加自定义工具提示</h3><p>在Pygal中，将鼠标指向条形将显示它表示的信息，这通常称为<strong>工具提示</strong>。在这个示例中，当前显示的是项目获得了多少个星。我们向add()传递字典列表，而不是值列表。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> pygal</div><div class="line"><span class="keyword">from</span> pygal.style <span class="keyword">import</span> LightColorizedStyle <span class="keyword">as</span> LCS,LightenStyle <span class="keyword">as</span> LS</div><div class="line"></div><div class="line">my_style = LS(<span class="string">'#333366'</span>,base_style=LCS)</div><div class="line">chart = pygal.Bar(style=my_style,x_label_rotation=<span class="number">45</span>,show_legend=<span class="keyword">False</span>)</div><div class="line"></div><div class="line">chart.title = <span class="string">'Python Project'</span></div><div class="line">chart.x_labels = [<span class="string">'httpie'</span>,<span class="string">'django'</span>,<span class="string">'flask'</span>]</div><div class="line"></div><div class="line">plot_dicts = [</div><div class="line">    &#123;<span class="string">'value'</span>:<span class="number">16101</span>,<span class="string">'label'</span>:<span class="string">'Description of httpie.'</span>&#125;,</div><div class="line">    &#123;<span class="string">'value'</span>:<span class="number">15028</span>,<span class="string">'label'</span>:<span class="string">'Description of django.'</span>&#125;,</div><div class="line">    &#123;<span class="string">'value'</span>:<span class="number">14798</span>,<span class="string">'label'</span>:<span class="string">'Description of flask'</span>&#125;</div><div class="line">]</div><div class="line"></div><div class="line">chart.add(<span class="string">''</span>,plot_dicts)</div><div class="line">chart.render_to_file(<span class="string">'bar_description.svg'</span>)</div></pre></td></tr></table></figure>
+<p><img src="/Users/gracekoo/Study/Language/Python/IPython/屏幕快照 2017-09-24 下午3.06.59.png" alt="屏幕快照 2017-09-24 下午3.06.59"></p>
+<p>每个字典都包含两个键：“value”和“label”。Pygal根据与键“value”相关联的数字来确定条形的高度，并使用“label”相关联的字符串给条形创建工具。</p>
+<h3 id="3-2-3-根据数据绘图"><a href="#3-2-3-根据数据绘图" class="headerlink" title="3.2.3 根据数据绘图"></a>3.2.3 根据数据绘图</h3><p>为根据数据绘图，我们将自动生成plot_dicts，其中包含API调用的30个项目的信息。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">--snip--</div><div class="line"><span class="comment">#搜索有关仓库的信息</span></div><div class="line">repo_dicts = response_dict[<span class="string">'items'</span>]</div><div class="line"></div><div class="line">names,plot_dicts = [],[]</div><div class="line"><span class="keyword">for</span> repo_dict <span class="keyword">in</span> repo_dicts:</div><div class="line">  names.append(repo_dict[<span class="string">'name'</span>])</div><div class="line">  </div><div class="line">  plot_dict = &#123;</div><div class="line">      <span class="string">'value'</span>:repo_dict[<span class="string">'stargazers_count'</span>],</div><div class="line">      <span class="string">'label'</span>:repo_dict[<span class="string">'description'</span>],</div><div class="line">  &#125;</div><div class="line">  plot_dicts.append(plot_dict)</div><div class="line"></div><div class="line">--snip--</div><div class="line"></div><div class="line">chart.add(<span class="string">''</span>,plot_dicts)</div><div class="line"></div><div class="line">--snip--</div></pre></td></tr></table></figure>
+<p><img src="/Users/gracekoo/Study/Language/Python/IPython/屏幕快照 2017-09-24 下午3.23.21.png" alt="屏幕快照 2017-09-24 下午3.23.21"></p>
+<h3 id="3-2-4-在图表中添加可单击的链接"><a href="#3-2-4-在图表中添加可单击的链接" class="headerlink" title="3.2.4 在图表中添加可单击的链接"></a>3.2.4 在图表中添加可单击的链接</h3><p>Pygal允许你将图表中的每个条形用作网站的相应链接。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">--snip--</div><div class="line"> </div><div class="line"> plot_dict = &#123;</div><div class="line">     <span class="string">'value'</span>:repo_dict[<span class="string">'stargazers_count'</span>],</div><div class="line">     <span class="string">'label'</span>:repo_dict[<span class="string">'description'</span>],</div><div class="line">     <span class="string">'xlink'</span>:repo_dict[<span class="string">'html_url'</span>],</div><div class="line"> &#125;</div><div class="line"> </div><div class="line"> --snip--</div></pre></td></tr></table></figure>
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -428,16 +565,75 @@
 
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/09/24/DataView/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/09/24/DataView/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2017/09/18/MachineLearning-Note/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Machine Learning基础</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -457,280 +653,14 @@
 
 
 
-
   
-    <article id="post-MachineLearning-Note" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/18/MachineLearning-Note/">Machine Learning基础</a>
-    </h1>
   
 
-        
-        <a href="/2017/09/18/MachineLearning-Note/" class="archive-article-date">
-  	<time datetime="2017-09-18T03:08:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>#Machine In Action</p>
-<p>[TOC]</p>
-<h1 id="About-Machine-Learning"><a href="#About-Machine-Learning" class="headerlink" title="About Machine Learning"></a>About Machine Learning</h1><p>机器学习可以揭示数据背后的真实含义。</p>
-<p><strong>监督学习</strong>需要用户知道目标值，简单的说就是知道数据在找什么。而<strong>无监督学习</strong>则无需用户知道搜寻的目标，只需要从算法程序中得到这些数据的共同特征。</p>
-<p>保证算法应用的正确性：</p>
-<ol>
-<li>确保算法应用可以正确处理简单的数据。</li>
-<li>将现实世界中得到的数据格式化为算法可以处理的格式。</li>
-<li>将步骤2得到的数据输入到步骤1的算法中，检验算法的运行结果。</li>
-</ol>
-<p>千万不要忽略前两个步骤而直接跳到步骤3来检验算法处理真实数据的效果。任何复杂系统都是由基础工程构成的，尤其是算法出现问题时，增量地搭建系统可以确保我们及时找到问题出现的位置和原因。</p>
-<p>后续根据监督学习和无监督学习进行分类讨论。</p>
-<p>在监督学习中，我们只需要给定输入样本，机器就可以从中推演出指定目标变量的可能结果。监督学习相对比较简单，机器只需从输入数据中预测合适的模型，并从中计算出目标变量的结果。</p>
-<p>监督学习一般使用两种类型的目标变量：标称型和数值型。<strong>标称型</strong>目标变量的结果只在有限目标集中取值，如真与假，动物分类集合；<strong>数值型</strong>目标变量则可以从无限的数值集合中取值，一般用于回归分析。</p>
-<h1 id="Key-Terminology"><a href="#Key-Terminology" class="headerlink" title="Key Terminology"></a>Key Terminology</h1><p>我们使用机器学习的某个算法进行分类结果，首先要做的是<strong>算法训练</strong>，即学习如何<strong>分类</strong>。通常我们为算法输入大量的已分类数据作为算法的<strong>训练集</strong>。训练集是用于训练机器学习算法的数据样本集合。<strong>目标变量</strong>是机器学习算法的预测结果。</p>
-<p>在分类算法中目标变量的类型通常是标称型的，而在回归算法中通常是连续型的。</p>
-<p>训练样本集必须确定知道目标变量的值，以便机器学习算法可以发现特征和目标变量之间的关系。</p>
-<p>当机器学习程序开始运行时，使用训练样本集作为算法的输入，<strong>训练完成</strong>后输入<strong>测试样本</strong>，由程序决定样本属于哪个类别。</p>
-<h1 id="Primary-Mission"><a href="#Primary-Mission" class="headerlink" title="Primary Mission"></a>Primary Mission</h1><p>监督学习中的任务：</p>
-<p>1.将实例数据划分到合适的<strong>分类</strong>中。</p>
-<p>2.<strong>回归</strong>，主要用于预测数值型数据。</p>
-<p>无监督学习中的任务：</p>
-<p>数据没有类别信息，也不会给定目标值。</p>
-<p>1.在无监督学习中，将数据集合分成由类似的对象组成的多个类的过程被称为<strong>聚类</strong>。</p>
-<p>2.将寻找描述数据统计值的过程称之为<strong>密度估计</strong>。</p>
-<h1 id="Overview-of-Algorithm"><a href="#Overview-of-Algorithm" class="headerlink" title="Overview of Algorithm"></a>Overview of Algorithm</h1><table>
-<thead>
-<tr>
-<th style="text-align:center">监督学习的用途</th>
-<th style="text-align:center"></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">K-近邻算法</td>
-<td style="text-align:center">线性回归</td>
-</tr>
-<tr>
-<td style="text-align:center">朴素贝叶斯算法</td>
-<td style="text-align:center">局部加权线性回归</td>
-</tr>
-<tr>
-<td style="text-align:center">支持向量机</td>
-<td style="text-align:center">Ridge回归</td>
-</tr>
-<tr>
-<td style="text-align:center">决策树</td>
-<td style="text-align:center">Lasso最小回归系数估计</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">无监督学习的用途</th>
-<th style="text-align:center"></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">K-均值</td>
-<td style="text-align:center">最大期望算法</td>
-</tr>
-<tr>
-<td style="text-align:center">DBSCAN</td>
-<td style="text-align:center">Parzen窗设计</td>
-</tr>
-</tbody>
-</table>
-        
-          <a class="article-more-a" href="/2017/09/18/MachineLearning-Note/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Machine Learning</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Machine-Learning//" class="article-tag-list-link color2">Machine Learning</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/09/18/MachineLearning-Note/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Python-Note" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/09/01/Python-Note/">Python笔记</a>
-    </h1>
   
 
-        
-        <a href="/2017/09/01/Python-Note/" class="archive-article-date">
-  	<time datetime="2017-08-31T23:45:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><p>[TOC]</p>
-<h1 id="第一章-Python的安装、IPython的使用"><a href="#第一章-Python的安装、IPython的使用" class="headerlink" title="第一章 Python的安装、IPython的使用"></a>第一章 Python的安装、IPython的使用</h1><ul>
-<li>Python的安装参见<a href="https://stringpiggy.hpd.io/mac-osx-python3-dual-install/" target="_blank" rel="external">https://stringpiggy.hpd.io/mac-osx-python3-dual-install/</a> ，或者《Python编程：从入门到实战》一书中也有详细的记载。</li>
-<li>利用IPython可以代替传统python开发的文本编辑器，灵活的改变所写代码，快捷的生成结果代码。IPython Notebook目前已经成为用Python做教学、计算、科研的一个重要工具，很多示例都是用.ipynb文件。</li>
-</ul>
-<p>​        安装Ipython有两种方式，第一种是通过pip安装。第二种是安装Anaconda从而获得iPython （这个选择比较适合新手，推荐<a href="http://jupyter.readthedocs.io/en/latest/install.html#new-to-python-and-jupyter" target="_blank" rel="external">官网教程</a>一键搞定），下面主要介绍使用pip命令来安装。</p>
-<ol>
-<li>iPython是由<a href="http://ipython.org/ipython-doc/stable/install/install.html" target="_blank" rel="external">很多模块</a>组成的, 为了不漏装任何组件，我用了这个命令来安装所有组件：</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ sudo pip install ipython[all]</div></pre></td></tr></table></figure>
-<ol>
-<li>安装成功后通过这命令来运行Notebook</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ipython notebook</div></pre></td></tr></table></figure>
-<p>之后有可能会弹出这个错误(你如果选择了用Anaconda的方式来安装也会碰到这个错误)：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ValueError, <span class="string">'unknown locale: %s'</span> % localename</div></pre></td></tr></table></figure>
-<p>在<a href="http://stackoverflow.com/questions/19961239/pelican-3-3-pelican-quickstart-error-valueerror-unknown-locale-utf-8" target="_blank" rel="external">StackOverflow上已经有人提出了解决方案</a>，在命令行里找到.bash_profile 然后添加下面两行代码：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">export LC_ALL=en_US.UTF<span class="number">-8</span></div><div class="line">export LANG=en_US.UTF<span class="number">-8</span></div></pre></td></tr></table></figure>
-<p>然后别忘了重新载入.bash_profile让新添加的代码生效（注意两个点之间的空格）：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ . .bash_profile</div></pre></td></tr></table></figure>
-<p>之后再运行命令”ipython notebook “就可以在浏览器里看到iPython Notebook的界面了。</p>
-<p>iPython Notebook的工作原理是在本地启动一个服务器，你通过localhost:8888/tree 这个地址就可以连接到这个服务器上与之通信。从而实现在浏览器里写代码，传给本地服务器执行，然后本地服务器传回结果并在网页上呈现这个循环。</p>
-<p>每次使用完Notebook，只关闭网页本身是不够的。<strong>需要在你启动Notebook的那个Terminal里输 Ctrl + c 然后确认，才能把服务器关闭。</strong>官网具体链接为：<a href="http://IPython.org/install.html" target="_blank" rel="external">http://IPython.org/install.html</a></p>
-        
-          <a class="article-more-a" href="/2017/09/01/Python-Note/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">iPython</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Python//" class="article-tag-list-link color2">Python</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/09/01/Python-Note/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
+
   
 
 
@@ -753,8 +683,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
