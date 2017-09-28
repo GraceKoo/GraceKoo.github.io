@@ -6,17 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Grace Koo&#39;s Blog</title>
+  <title>Numpy基础 | Grace Koo&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="Numpy [TOC] Numpy是Python中用于科学计算的核心库。它提供了高性能的多维数组对象，以及相关工具 数组Arraysnumpy数组是一个由不同数值组成的网格。网格中的数据都是同一种数据类型，可以通过非负整型数的元组来访问。 我们可以从列表创建数组，然后利用方括号访问其中的元素。 1234567891011import numpy as npa = np.array([1,2,3])">
+<meta name="keywords" content="Machine Learning,Python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Grace Koo&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/2017/09/26/Numpy/index.html">
+<meta property="og:title" content="Numpy基础">
+<meta property="og:url" content="http://yoursite.com/2017/09/28/Numpy-note/index.html">
 <meta property="og:site_name" content="Grace Koo&#39;s Blog">
 <meta property="og:description" content="Numpy [TOC] Numpy是Python中用于科学计算的核心库。它提供了高性能的多维数组对象，以及相关工具 数组Arraysnumpy数组是一个由不同数值组成的网格。网格中的数据都是同一种数据类型，可以通过非负整型数的元组来访问。 我们可以从列表创建数组，然后利用方括号访问其中的元素。 1234567891011import numpy as npa = np.array([1,2,3])">
-<meta property="og:updated_time" content="2017-09-28T03:01:01.000Z">
+<meta property="og:updated_time" content="2017-09-28T03:10:26.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Grace Koo&#39;s Blog">
+<meta name="twitter:title" content="Numpy基础">
 <meta name="twitter:description" content="Numpy [TOC] Numpy是Python中用于科学计算的核心库。它提供了高性能的多维数组对象，以及相关工具 数组Arraysnumpy数组是一个由不同数值组成的网格。网格中的数据都是同一种数据类型，可以通过非负整型数的元组来访问。 我们可以从列表创建数组，然后利用方括号访问其中的元素。 1234567891011import numpy as npa = np.array([1,2,3])">
   
     <link rel="alternative" href="/atom.xml" title="Grace Koo&#39;s Blog" type="application/atom+xml">
@@ -153,8 +154,23 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Numpy" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Numpy-note" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Numpy基础
+    </h1>
+  
+
+        
+        <a href="/2017/09/28/Numpy-note/" class="archive-article-date">
+  	<time datetime="2017-09-28T03:09:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-28</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
@@ -175,6 +191,7 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">np.shape(<span class="number">3</span>)</div><div class="line"></div><div class="line">()</div></pre></td></tr></table></figure>
 <h1 id="其他创建数组的方法"><a href="#其他创建数组的方法" class="headerlink" title="其他创建数组的方法"></a>其他创建数组的方法</h1><p>Numpy还提供了很多其他创建数组的方法：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line"></div><div class="line">a = np.zeros((<span class="number">2</span>,<span class="number">3</span>))        <span class="comment">#创建一个2✖️3全0数组</span></div><div class="line">print(a)</div><div class="line">print(<span class="string">"\n"</span>)</div><div class="line"></div><div class="line">b = np.ones((<span class="number">1</span>,<span class="number">2</span>))         <span class="comment">#创建一个1✖️2全1数组</span></div><div class="line">print(b)</div><div class="line">print(<span class="string">"\n"</span>)</div><div class="line"></div><div class="line">c = np.full((<span class="number">4</span>,<span class="number">2</span>),<span class="number">7</span>)       <span class="comment">#创建一个4✖️2的全7数组</span></div><div class="line">print(c)</div><div class="line">print(<span class="string">"\n"</span>)</div><div class="line"></div><div class="line">d = np.eye(<span class="number">2</span>)              <span class="comment">#创建一个二维单位矩阵</span></div><div class="line">print(d)</div><div class="line">print(<span class="string">"\n"</span>)</div><div class="line"></div><div class="line">e = np.random.random((<span class="number">2</span>,<span class="number">2</span>))<span class="comment">#创建一个2✖️2由随机数字组成的数组</span></div><div class="line">print(e)</div><div class="line"></div><div class="line">[[ <span class="number">0.</span>  <span class="number">0.</span>  <span class="number">0.</span>]</div><div class="line"> [ <span class="number">0.</span>  <span class="number">0.</span>  <span class="number">0.</span>]]</div><div class="line"></div><div class="line"></div><div class="line">[[ <span class="number">1.</span>  <span class="number">1.</span>]]</div><div class="line"></div><div class="line"></div><div class="line">[[<span class="number">7</span> <span class="number">7</span>]</div><div class="line"> [<span class="number">7</span> <span class="number">7</span>]</div><div class="line"> [<span class="number">7</span> <span class="number">7</span>]</div><div class="line"> [<span class="number">7</span> <span class="number">7</span>]]</div><div class="line"></div><div class="line"></div><div class="line">[[ <span class="number">1.</span>  <span class="number">0.</span>]</div><div class="line"> [ <span class="number">0.</span>  <span class="number">1.</span>]]</div><div class="line"></div><div class="line"></div><div class="line">[[ <span class="number">0.82662589</span>  <span class="number">0.93604335</span>]</div><div class="line"> [ <span class="number">0.20764393</span>  <span class="number">0.53211415</span>]]</div></pre></td></tr></table></figure>
+<a id="more"></a>
 <h1 id="访问数组"><a href="#访问数组" class="headerlink" title="访问数组"></a>访问数组</h1><h2 id="切片"><a href="#切片" class="headerlink" title="切片"></a>切片</h2><p>切片：和Python列表类似，numpy数组可以使用切片语法。因为数组是多维的，所以必须为每个维度指定好切片。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</div><div class="line"></div><div class="line"><span class="comment">#创建一个3✖️4的数组</span></div><div class="line">a = np.array([[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>],[<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>],[<span class="number">9</span>,<span class="number">10</span>,<span class="number">11</span>,<span class="number">12</span>]])</div><div class="line">print(a)</div><div class="line">print(<span class="string">"\n"</span>)</div><div class="line"></div><div class="line"><span class="comment">#利用切片来截取前两行，第1到2列。注意这里“：2”是第0，1行，不包含第二行，与range()相同</span></div><div class="line">b = a[:<span class="number">2</span>,<span class="number">1</span>:<span class="number">3</span>]</div><div class="line">print(b)</div><div class="line">print(<span class="string">"\n"</span>)</div><div class="line"></div><div class="line"><span class="comment">#切片是原数组的一部分，所以改变切片，原数组也会改变</span></div><div class="line">print(a[<span class="number">0</span>,<span class="number">1</span>])</div><div class="line">b[<span class="number">0</span>,<span class="number">0</span>] = <span class="number">77</span></div><div class="line">print(a)</div><div class="line"></div><div class="line"></div><div class="line">[[ <span class="number">1</span>  <span class="number">2</span>  <span class="number">3</span>  <span class="number">4</span>]</div><div class="line"> [ <span class="number">5</span>  <span class="number">6</span>  <span class="number">7</span>  <span class="number">8</span>]</div><div class="line"> [ <span class="number">9</span> <span class="number">10</span> <span class="number">11</span> <span class="number">12</span>]]</div><div class="line"></div><div class="line"></div><div class="line">[[<span class="number">2</span> <span class="number">3</span>]</div><div class="line"> [<span class="number">6</span> <span class="number">7</span>]]</div><div class="line"></div><div class="line"></div><div class="line"><span class="number">2</span></div><div class="line">[[ <span class="number">1</span> <span class="number">77</span>  <span class="number">3</span>  <span class="number">4</span>]</div><div class="line"> [ <span class="number">5</span>  <span class="number">6</span>  <span class="number">7</span>  <span class="number">8</span>]</div><div class="line"> [ <span class="number">9</span> <span class="number">10</span> <span class="number">11</span> <span class="number">12</span>]]</div></pre></td></tr></table></figure>
 <p>你可以<strong>同时使用整型和切片语法来访问数组</strong>。但是，这样<strong>会产生一个比原数组低阶的新数组。</strong></p>
@@ -245,7 +262,33 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Machine Learning</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Machine-Learning//" class="article-tag-list-link color2">Machine Learning</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
 
@@ -295,7 +338,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/09/26/Numpy/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/09/28/Numpy-note/" alt="微信分享二维码">
     </div>
 </div>
 
