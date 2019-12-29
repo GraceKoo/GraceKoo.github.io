@@ -5,112 +5,112 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link rel="dns-prefetch" href="http://yoursite.com">
+  <link rel="dns-prefetch" href="https://unknown.yuzhouwan.com">
   <title>CNN | Grace Koo&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="目录 [TOC] 一、Convolutional Neural Networks1.1 Edge Detection卷积运算是卷积神经网络最基本的组成成分，使用边缘检测作为入门样例。下面介绍卷积计算是如何实现的。 使用一个3✖️3的过滤器(核)与原始矩阵进行元素相乘，再相加，最后和的结果为卷积运算后的第一个元素值，然后依次计算，下面例子中，做一次卷积运算后结果为一个4✖️4的矩阵。 这种卷积运算可">
 <meta name="keywords" content="CNN">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CNN">
-<meta property="og:url" content="http://yoursite.com/2018/03/18/Convolutional-Neural-Network/index.html">
+<meta property="og:url" content="https://unknown.yuzhouwan.com/2018/03/19/Convolutional-Neural-Network/index.html">
 <meta property="og:site_name" content="Grace Koo&#39;s Blog">
 <meta property="og:description" content="目录 [TOC] 一、Convolutional Neural Networks1.1 Edge Detection卷积运算是卷积神经网络最基本的组成成分，使用边缘检测作为入门样例。下面介绍卷积计算是如何实现的。 使用一个3✖️3的过滤器(核)与原始矩阵进行元素相乘，再相加，最后和的结果为卷积运算后的第一个元素值，然后依次计算，下面例子中，做一次卷积运算后结果为一个4✖️4的矩阵。 这种卷积运算可">
-<meta property="og:locale" content="default">
-<meta property="og:image" content="http://yoursite.com/2018/03/18/images/picturesof-4/屏幕快照%202018-02-09%20下午12.25.09.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/18/images/picturesof-4/屏幕快照%202018-02-09%20下午12.38.47.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/18/images/picturesof-4/屏幕快照%202018-02-09%20下午1.05.04.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/18/images/picturesof-4/屏幕快照%202018-03-01%20上午9.41.33.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/18/images/picturesof-4/屏幕快照%202018-03-01%20上午9.56.15.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/18/images/picturesof-4/屏幕快照%202018-03-01%20上午10.19.16.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/18/images/picturesof-4/屏幕快照%202018-03-01%20上午11.25.36.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/18/images/picturesof-4/屏幕快照%202018-03-01%20上午11.59.32.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/18/images/picturesof-4/屏幕快照%202018-03-01%20下午1.59.37.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/18/images/picturesof-4/屏幕快照%202018-03-01%20下午2.30.40.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/18/images/picturesof-4/屏幕快照%202018-03-01%20下午3.38.38.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/18/images/picturesof-4/屏幕快照%202018-03-01%20下午4.16.42.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/18/images/picturesof-4/屏幕快照%202018-03-01%20下午4.50.51.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/18/images/picturesof-4/屏幕快照%202018-03-01%20下午5.06.05.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/18/images/picturesof-4/屏幕快照%202018-03-01%20下午6.00.49.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/18/images/picturesof-4/屏幕快照%202018-03-01%20下午6.02.50.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/18/images/picturesof-4/屏幕快照%202018-03-01%20下午6.18.08.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/18/images/picturesof-4/屏幕快照%202018-03-01%20下午6.25.52.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/18/images/picturesof-4/屏幕快照%202018-03-02%20上午10.58.49.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/18/images/picturesof-4/屏幕快照%202018-03-02%20上午11.17.15.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/18/images/picturesof-4/屏幕快照%202018-03-02%20下午12.04.13.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/18/images/picturesof-4/屏幕快照%202018-03-02%20下午12.11.50.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/18/images/picturesof-4/屏幕快照%202018-03-07%20上午10.41.57.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/18/images/picturesof-4/屏幕快照%202018-03-07%20上午10.56.07.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/18/images/picturesof-4/屏幕快照%202018-03-07%20上午11.02.34.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/18/images/picturesof-4/屏幕快照%202018-03-07%20上午11.09.52.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/18/images/picturesof-4/屏幕快照%202018-03-07%20下午4.25.01.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/18/images/picturesof-4/屏幕快照%202018-03-07%20下午4.45.08.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/18/images/picturesof-4/屏幕快照%202018-03-07%20下午4.59.04.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/18/images/picturesof-4/屏幕快照%202018-03-07%20下午6.31.41.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/18/images/picturesof-4/屏幕快照%202018-03-07%20下午6.58.29.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/18/images/picturesof-4/屏幕快照%202018-03-07%20下午7.42.53.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/18/images/picturesof-4/屏幕快照%202018-03-07%20下午8.06.29.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/18/images/picturesof-4/屏幕快照%202018-03-07%20下午8.06.09.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/18/images/picturesof-4/屏幕快照%202018-03-07%20下午8.36.19.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/18/images/picturesof-4/屏幕快照%202018-03-09%20上午9.35.21.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/18/images/picturesof-4/屏幕快照%202018-03-09%20上午9.40.53.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/18/images/picturesof-4/屏幕快照%202018-03-09%20上午9.59.35.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/18/images/picturesof-4/屏幕快照%202018-03-09%20上午10.02.14.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/18/images/picturesof-4/屏幕快照%202018-03-12%20上午10.06.06.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/18/images/picturesof-4/屏幕快照%202018-03-12%20上午10.22.13.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/18/images/picturesof-4/屏幕快照%202018-03-12%20上午10.40.46.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/18/images/picturesof-4/屏幕快照%202018-03-12%20上午11.16.05.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/18/images/picturesof-4/屏幕快照%202018-03-12%20下午1.52.28.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/18/images/picturesof-4/屏幕快照%202018-03-12%20下午2.27.45.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/18/images/picturesof-4/屏幕快照%202018-03-12%20下午2.34.49.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/18/images/picturesof-4/屏幕快照%202018-03-12%20下午3.11.02.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/18/images/picturesof-4/屏幕快照%202018-03-12%20下午3.50.54.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/18/images/picturesof-4/屏幕快照%202018-03-12%20下午4.05.23.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/18/images/picturesof-4/屏幕快照%202018-03-12%20下午4.19.47.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/18/images/picturesof-4/屏幕快照%202018-03-12%20下午4.32.57.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/18/images/picturesof-4/屏幕快照%202018-03-12%20下午4.40.30.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/18/images/picturesof-4/屏幕快照%202018-03-12%20下午4.53.00.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/18/images/picturesof-4/屏幕快照%202018-03-12%20下午4.57.19.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/18/images/picturesof-4/屏幕快照%202018-03-12%20下午5.03.57.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/18/images/picturesof-4/屏幕快照%202018-03-12%20下午5.05.25.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/18/images/picturesof-4/屏幕快照%202018-03-12%20下午5.08.12.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/18/images/picturesof-4/屏幕快照%202018-03-12%20下午5.24.12.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/18/images/picturesof-4/屏幕快照%202018-03-12%20下午5.29.09.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/18/images/picturesof-4/屏幕快照%202018-03-13%20上午9.52.04.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/18/images/picturesof-4/屏幕快照%202018-03-13%20上午9.55.50.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/18/images/picturesof-4/屏幕快照%202018-03-13%20上午11.44.02.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/18/images/picturesof-4/屏幕快照%202018-03-13%20下午3.11.41.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/18/images/picturesof-4/屏幕快照%202018-03-14%20上午10.09.35.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/18/images/picturesof-4/屏幕快照%202018-03-13%20下午3.19.48.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/18/images/picturesof-4/屏幕快照%202018-03-13%20下午3.48.26.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/18/images/picturesof-4/屏幕快照%202018-03-13%20下午4.10.16.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/18/images/picturesof-4/屏幕快照%202018-03-13%20下午4.10.36.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/18/images/picturesof-4/屏幕快照%202018-03-13%20下午4.58.36.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/18/images/picturesof-4/屏幕快照%202018-03-13%20下午5.10.42.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/18/images/picturesof-4/屏幕快照%202018-03-13%20下午5.28.22.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/18/images/picturesof-4/屏幕快照%202018-03-13%20下午5.33.05.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/18/images/picturesof-4/屏幕快照%202018-03-13%20下午5.50.23.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/18/images/picturesof-4/屏幕快照%202018-03-13%20下午5.51.03.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/18/images/picturesof-4/屏幕快照%202018-03-14%20上午11.12.29.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/18/images/picturesof-4/屏幕快照%202018-03-13%20下午7.02.31.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/18/images/picturesof-4/屏幕快照%202018-03-13%20下午7.09.06.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/18/images/picturesof-4/屏幕快照%202018-03-13%20下午7.13.39.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/18/images/picturesof-4/屏幕快照%202018-03-13%20下午7.22.05.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/18/images/picturesof-4/屏幕快照%202018-03-13%20下午7.22.37.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/18/images/picturesof-4/屏幕快照%202018-03-13%20下午7.32.08.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/18/images/picturesof-4/屏幕快照%202018-03-13%20下午7.43.28.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/18/images/picturesof-4/屏幕快照%202018-03-13%20下午7.45.28.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/18/images/picturesof-4/屏幕快照%202018-03-13%20下午8.00.14.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/18/images/picturesof-4/屏幕快照%202018-03-13%20下午8.03.07.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/18/images/picturesof-4/屏幕快照%202018-03-14%20上午9.16.13.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/18/images/picturesof-4/屏幕快照%202018-03-14%20上午9.20.42.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/18/images/picturesof-4/屏幕快照%202018-03-14%20上午9.40.49.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/18/images/picturesof-4/屏幕快照%202018-03-13%20下午8.28.53.png">
-<meta property="og:image" content="http://yoursite.com/2018/03/18/images/picturesof-4/屏幕快照%202018-03-13%20下午8.29.33.png">
+<meta property="og:locale" content="Zh">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-02-09%20下午12.25.09.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-02-09%20下午12.38.47.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-02-09%20下午1.05.04.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-01%20上午9.41.33.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-01%20上午9.56.15.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-01%20上午10.19.16.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-01%20上午11.25.36.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-01%20上午11.59.32.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-01%20下午1.59.37.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-01%20下午2.30.40.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-01%20下午3.38.38.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-01%20下午4.16.42.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-01%20下午4.50.51.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-01%20下午5.06.05.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-01%20下午6.00.49.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-01%20下午6.02.50.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-01%20下午6.18.08.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-01%20下午6.25.52.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-02%20上午10.58.49.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-02%20上午11.17.15.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-02%20下午12.04.13.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-02%20下午12.11.50.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-07%20上午10.41.57.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-07%20上午10.56.07.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-07%20上午11.02.34.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-07%20上午11.09.52.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-07%20下午4.25.01.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-07%20下午4.45.08.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-07%20下午4.59.04.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-07%20下午6.31.41.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-07%20下午6.58.29.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-07%20下午7.42.53.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-07%20下午8.06.29.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-07%20下午8.06.09.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-07%20下午8.36.19.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-09%20上午9.35.21.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-09%20上午9.40.53.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-09%20上午9.59.35.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-09%20上午10.02.14.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-12%20上午10.06.06.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-12%20上午10.22.13.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-12%20上午10.40.46.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-12%20上午11.16.05.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-12%20下午1.52.28.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-12%20下午2.27.45.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-12%20下午2.34.49.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-12%20下午3.11.02.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-12%20下午3.50.54.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-12%20下午4.05.23.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-12%20下午4.19.47.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-12%20下午4.32.57.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-12%20下午4.40.30.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-12%20下午4.53.00.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-12%20下午4.57.19.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-12%20下午5.03.57.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-12%20下午5.05.25.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-12%20下午5.08.12.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-12%20下午5.24.12.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-12%20下午5.29.09.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-13%20上午9.52.04.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-13%20上午9.55.50.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-13%20上午11.44.02.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-13%20下午3.11.41.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-14%20上午10.09.35.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-13%20下午3.19.48.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-13%20下午3.48.26.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-13%20下午4.10.16.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-13%20下午4.10.36.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-13%20下午4.58.36.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-13%20下午5.10.42.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-13%20下午5.28.22.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-13%20下午5.33.05.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-13%20下午5.50.23.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-13%20下午5.51.03.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-14%20上午11.12.29.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-13%20下午7.02.31.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-13%20下午7.09.06.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-13%20下午7.13.39.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-13%20下午7.22.05.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-13%20下午7.22.37.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-13%20下午7.32.08.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-13%20下午7.43.28.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-13%20下午7.45.28.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-13%20下午8.00.14.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-13%20下午8.03.07.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-14%20上午9.16.13.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-14%20上午9.20.42.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-14%20上午9.40.49.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-13%20下午8.28.53.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-13%20下午8.29.33.png">
 <meta property="og:updated_time" content="2018-03-18T13:06:50.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CNN">
 <meta name="twitter:description" content="目录 [TOC] 一、Convolutional Neural Networks1.1 Edge Detection卷积运算是卷积神经网络最基本的组成成分，使用边缘检测作为入门样例。下面介绍卷积计算是如何实现的。 使用一个3✖️3的过滤器(核)与原始矩阵进行元素相乘，再相加，最后和的结果为卷积运算后的第一个元素值，然后依次计算，下面例子中，做一次卷积运算后结果为一个4✖️4的矩阵。 这种卷积运算可">
-<meta name="twitter:image" content="http://yoursite.com/2018/03/18/images/picturesof-4/屏幕快照%202018-02-09%20下午12.25.09.png">
+<meta name="twitter:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-02-09%20下午12.25.09.png">
   
     <link rel="alternative" href="/atom.xml" title="Grace Koo&#39;s Blog" type="application/atom+xml">
   
@@ -139,11 +139,13 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="" class="js-avatar">
+			<img src="/images/me.jpg" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">Grace Koo</a></h1>
 		</hgroup>
+		
+		<p class="header-subtitle">LaLaLa~~~</p>
 		
 
 		<nav class="header-menu">
@@ -197,11 +199,13 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="" class="js-avatar">
+				<img src="/images/me.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">Grace Koo</h1>
 			</hgroup>
+			
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>LaLaLa~~~<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -258,8 +262,8 @@
   
 
         
-        <a href="/2018/03/18/Convolutional-Neural-Network/" class="archive-article-date">
-  	<time datetime="2018-03-18T12:50:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-18</time>
+        <a href="/2018/03/19/Convolutional-Neural-Network/" class="archive-article-date">
+  	<time datetime="2018-03-18T20:50:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-18</time>
 </a>
         
       </header>
@@ -554,7 +558,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/03/18/Convolutional-Neural-Network/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://unknown.yuzhouwan.com/2018/03/19/Convolutional-Neural-Network/" alt="微信分享二维码">
     </div>
 </div>
 
