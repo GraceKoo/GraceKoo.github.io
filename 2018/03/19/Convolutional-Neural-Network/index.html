@@ -8,109 +8,109 @@
   <link rel="dns-prefetch" href="https://unknown.yuzhouwan.com">
   <title>CNN | Grace Koo&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="目录 [TOC] 一、Convolutional Neural Networks1.1 Edge Detection卷积运算是卷积神经网络最基本的组成成分，使用边缘检测作为入门样例。下面介绍卷积计算是如何实现的。 使用一个3✖️3的过滤器(核)与原始矩阵进行元素相乘，再相加，最后和的结果为卷积运算后的第一个元素值，然后依次计算，下面例子中，做一次卷积运算后结果为一个4✖️4的矩阵。 这种卷积运算可">
+  <meta name="description" content="一、Convolutional Neural Networks1.1 Edge Detection卷积运算是卷积神经网络最基本的组成成分，使用边缘检测作为入门样例。下面介绍卷积计算是如何实现的。 使用一个3✖️3的过滤器(核)与原始矩阵进行元素相乘，再相加，最后和的结果为卷积运算后的第一个元素值，然后依次计算，下面例子中，做一次卷积运算后结果为一个4✖️4的矩阵。 这种卷积运算可以理解成为，垂直边">
 <meta name="keywords" content="CNN">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CNN">
 <meta property="og:url" content="https://unknown.yuzhouwan.com/2018/03/19/Convolutional-Neural-Network/index.html">
 <meta property="og:site_name" content="Grace Koo&#39;s Blog">
-<meta property="og:description" content="目录 [TOC] 一、Convolutional Neural Networks1.1 Edge Detection卷积运算是卷积神经网络最基本的组成成分，使用边缘检测作为入门样例。下面介绍卷积计算是如何实现的。 使用一个3✖️3的过滤器(核)与原始矩阵进行元素相乘，再相加，最后和的结果为卷积运算后的第一个元素值，然后依次计算，下面例子中，做一次卷积运算后结果为一个4✖️4的矩阵。 这种卷积运算可">
+<meta property="og:description" content="一、Convolutional Neural Networks1.1 Edge Detection卷积运算是卷积神经网络最基本的组成成分，使用边缘检测作为入门样例。下面介绍卷积计算是如何实现的。 使用一个3✖️3的过滤器(核)与原始矩阵进行元素相乘，再相加，最后和的结果为卷积运算后的第一个元素值，然后依次计算，下面例子中，做一次卷积运算后结果为一个4✖️4的矩阵。 这种卷积运算可以理解成为，垂直边">
 <meta property="og:locale" content="Zh">
-<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-02-09%20下午12.25.09.png">
-<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-02-09%20下午12.38.47.png">
-<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-02-09%20下午1.05.04.png">
-<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-01%20上午9.41.33.png">
-<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-01%20上午9.56.15.png">
-<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-01%20上午10.19.16.png">
-<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-01%20上午11.25.36.png">
-<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-01%20上午11.59.32.png">
-<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-01%20下午1.59.37.png">
-<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-01%20下午2.30.40.png">
-<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-01%20下午3.38.38.png">
-<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-01%20下午4.16.42.png">
-<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-01%20下午4.50.51.png">
-<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-01%20下午5.06.05.png">
-<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-01%20下午6.00.49.png">
-<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-01%20下午6.02.50.png">
-<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-01%20下午6.18.08.png">
-<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-01%20下午6.25.52.png">
-<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-02%20上午10.58.49.png">
-<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-02%20上午11.17.15.png">
-<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-02%20下午12.04.13.png">
-<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-02%20下午12.11.50.png">
-<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-07%20上午10.41.57.png">
-<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-07%20上午10.56.07.png">
-<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-07%20上午11.02.34.png">
-<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-07%20上午11.09.52.png">
-<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-07%20下午4.25.01.png">
-<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-07%20下午4.45.08.png">
-<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-07%20下午4.59.04.png">
-<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-07%20下午6.31.41.png">
-<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-07%20下午6.58.29.png">
-<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-07%20下午7.42.53.png">
-<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-07%20下午8.06.29.png">
-<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-07%20下午8.06.09.png">
-<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-07%20下午8.36.19.png">
-<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-09%20上午9.35.21.png">
-<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-09%20上午9.40.53.png">
-<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-09%20上午9.59.35.png">
-<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-09%20上午10.02.14.png">
-<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-12%20上午10.06.06.png">
-<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-12%20上午10.22.13.png">
-<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-12%20上午10.40.46.png">
-<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-12%20上午11.16.05.png">
-<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-12%20下午1.52.28.png">
-<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-12%20下午2.27.45.png">
-<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-12%20下午2.34.49.png">
-<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-12%20下午3.11.02.png">
-<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-12%20下午3.50.54.png">
-<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-12%20下午4.05.23.png">
-<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-12%20下午4.19.47.png">
-<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-12%20下午4.32.57.png">
-<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-12%20下午4.40.30.png">
-<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-12%20下午4.53.00.png">
-<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-12%20下午4.57.19.png">
-<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-12%20下午5.03.57.png">
-<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-12%20下午5.05.25.png">
-<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-12%20下午5.08.12.png">
-<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-12%20下午5.24.12.png">
-<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-12%20下午5.29.09.png">
-<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-13%20上午9.52.04.png">
-<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-13%20上午9.55.50.png">
-<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-13%20上午11.44.02.png">
-<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-13%20下午3.11.41.png">
-<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-14%20上午10.09.35.png">
-<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-13%20下午3.19.48.png">
-<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-13%20下午3.48.26.png">
-<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-13%20下午4.10.16.png">
-<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-13%20下午4.10.36.png">
-<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-13%20下午4.58.36.png">
-<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-13%20下午5.10.42.png">
-<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-13%20下午5.28.22.png">
-<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-13%20下午5.33.05.png">
-<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-13%20下午5.50.23.png">
-<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-13%20下午5.51.03.png">
-<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-14%20上午11.12.29.png">
-<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-13%20下午7.02.31.png">
-<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-13%20下午7.09.06.png">
-<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-13%20下午7.13.39.png">
-<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-13%20下午7.22.05.png">
-<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-13%20下午7.22.37.png">
-<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-13%20下午7.32.08.png">
-<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-13%20下午7.43.28.png">
-<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-13%20下午7.45.28.png">
-<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-13%20下午8.00.14.png">
-<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-13%20下午8.03.07.png">
-<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-14%20上午9.16.13.png">
-<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-14%20上午9.20.42.png">
-<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-14%20上午9.40.49.png">
-<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-13%20下午8.28.53.png">
-<meta property="og:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-03-13%20下午8.29.33.png">
-<meta property="og:updated_time" content="2018-03-18T13:06:50.000Z">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/picturesof-4/CNN_1.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/picturesof-4/CNN_2.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/picturesof-4/CNN_3.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/picturesof-4/CNN_4.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/picturesof-4/CNN_5.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/picturesof-4/CNN_6.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/picturesof-4/CNN_7.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/picturesof-4/CNN_8.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/picturesof-4/CNN_9.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/picturesof-4/CNN_10.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/picturesof-4/CNN_11.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/picturesof-4/CNN_12.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/picturesof-4/CNN_13.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/picturesof-4/CNN_14.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/picturesof-4/CNN_15.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/picturesof-4/CNN_16.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/picturesof-4/CNN_17.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/picturesof-4/CNN_18.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/picturesof-4/CNN_19.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/picturesof-4/CNN_20.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/picturesof-4/CNN_21.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/picturesof-4/CNN_22.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/picturesof-4/CNN_23.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/picturesof-4/CNN_24.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/picturesof-4/CNN_25.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/picturesof-4/CNN_26.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/picturesof-4/CNN_27.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/picturesof-4/CNN_28.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/picturesof-4/CNN_29.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/picturesof-4/CNN_30.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/picturesof-4/CNN_31.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/picturesof-4/CNN_32.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/picturesof-4/CNN_33.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/picturesof-4/CNN_34.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/picturesof-4/CNN_35.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/picturesof-4/CNN_36.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/picturesof-4/CNN_37.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/picturesof-4/CNN_38.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/picturesof-4/CNN_39.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/picturesof-4/CNN_40.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/picturesof-4/CNN_41.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/picturesof-4/CNN_42.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/picturesof-4/CNN_43.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/picturesof-4/CNN_44.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/picturesof-4/CNN_45.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/picturesof-4/CNN_46.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/picturesof-4/CNN_47.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/picturesof-4/CNN_48.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/picturesof-4/CNN_49.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/picturesof-4/CNN_50.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/picturesof-4/CNN_51.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/picturesof-4/CNN_52.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/picturesof-4/CNN_53.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/picturesof-4/CNN_54.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/picturesof-4/CNN_55.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/picturesof-4/CNN_56.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/picturesof-4/CNN_57.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/picturesof-4/CNN_58.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/picturesof-4/CNN_59.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/picturesof-4/CNN_60.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/picturesof-4/CNN_61.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/picturesof-4/CNN_62.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/picturesof-4/CNN_63.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/picturesof-4/CNN_64.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/picturesof-4/CNN_65.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/picturesof-4/CNN_66.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/picturesof-4/CNN_67.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/picturesof-4/CNN_68.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/picturesof-4/CNN_69.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/picturesof-4/CNN_70.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/picturesof-4/CNN_71.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/picturesof-4/CNN_72.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/picturesof-4/CNN_73.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/picturesof-4/CNN_74.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/picturesof-4/CNN_75.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/picturesof-4/CNN_76.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/picturesof-4/CNN_77.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/picturesof-4/CNN_78.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/picturesof-4/CNN_79.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/picturesof-4/CNN_80.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/picturesof-4/CNN_81.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/picturesof-4/CNN_82.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/picturesof-4/CNN_83.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/picturesof-4/CNN_84.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/picturesof-4/CNN_85.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/picturesof-4/CNN_86.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/picturesof-4/CNN_87.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/picturesof-4/CNN_88.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/picturesof-4/CNN_89.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/picturesof-4/CNN_90.png">
+<meta property="og:updated_time" content="2020-01-05T16:47:46.821Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CNN">
-<meta name="twitter:description" content="目录 [TOC] 一、Convolutional Neural Networks1.1 Edge Detection卷积运算是卷积神经网络最基本的组成成分，使用边缘检测作为入门样例。下面介绍卷积计算是如何实现的。 使用一个3✖️3的过滤器(核)与原始矩阵进行元素相乘，再相加，最后和的结果为卷积运算后的第一个元素值，然后依次计算，下面例子中，做一次卷积运算后结果为一个4✖️4的矩阵。 这种卷积运算可">
-<meta name="twitter:image" content="https://unknown.yuzhouwan.com/2018/03/19/images/picturesof-4/屏幕快照%202018-02-09%20下午12.25.09.png">
+<meta name="twitter:description" content="一、Convolutional Neural Networks1.1 Edge Detection卷积运算是卷积神经网络最基本的组成成分，使用边缘检测作为入门样例。下面介绍卷积计算是如何实现的。 使用一个3✖️3的过滤器(核)与原始矩阵进行元素相乘，再相加，最后和的结果为卷积运算后的第一个元素值，然后依次计算，下面例子中，做一次卷积运算后结果为一个4✖️4的矩阵。 这种卷积运算可以理解成为，垂直边">
+<meta name="twitter:image" content="https://unknown.yuzhouwan.com/images/picturesof-4/CNN_1.png">
   
     <link rel="alternative" href="/atom.xml" title="Grace Koo&#39;s Blog" type="application/atom+xml">
   
@@ -270,193 +270,191 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>目录</p>
-<p>[TOC]</p>
-<h1 id="一、Convolutional-Neural-Networks"><a href="#一、Convolutional-Neural-Networks" class="headerlink" title="一、Convolutional Neural Networks"></a>一、Convolutional Neural Networks</h1><h2 id="1-1-Edge-Detection"><a href="#1-1-Edge-Detection" class="headerlink" title="1.1 Edge Detection"></a>1.1 Edge Detection</h2><p>卷积运算是卷积神经网络最基本的组成成分，使用边缘检测作为入门样例。下面介绍卷积计算是如何实现的。</p>
+        <h1 id="一、Convolutional-Neural-Networks"><a href="#一、Convolutional-Neural-Networks" class="headerlink" title="一、Convolutional Neural Networks"></a>一、Convolutional Neural Networks</h1><h2 id="1-1-Edge-Detection"><a href="#1-1-Edge-Detection" class="headerlink" title="1.1 Edge Detection"></a>1.1 Edge Detection</h2><p>卷积运算是卷积神经网络最基本的组成成分，使用边缘检测作为入门样例。下面介绍卷积计算是如何实现的。</p>
 <p>使用一个3✖️3的<strong>过滤器(核)</strong>与原始矩阵进行元素相乘，再相加，最后和的结果为<strong>卷积运算</strong>后的第一个元素值，然后依次计算，下面例子中，做一次卷积运算后结果为一个4✖️4的矩阵。</p>
 <p>这种卷积运算可以理解成为，<strong>垂直边缘检测器。</strong></p>
-<p><img src="../images/picturesof-4/屏幕快照 2018-02-09 下午12.25.09.png" alt="屏幕快照 2018-02-09 下午12.25.09"></p>
+<p><img src="/images/picturesof-4/CNN_1.png" alt="屏幕快照 2018-02-09 下午12.25.09"></p>
 <p>在不同的编程环境中可以使用不同的函数来实现卷积运算。</p>
-<p><img src="../images/picturesof-4/屏幕快照 2018-02-09 下午12.38.47.png" alt="屏幕快照 2018-02-09 下午12.38.47"></p>
+<p><img src="/images/picturesof-4/CNN_2.png" alt="屏幕快照 2018-02-09 下午12.38.47"></p>
 <p>那么为什么这个可以用作垂直检测呢？来看下面的例子。</p>
+<a id="more"></a>
 <p>这是一个简单的6✖️6的图像，图像左边一半是10，右边一半是0，如果你把它看成一个图像，那么是左白右灰的，10代表比较亮的颜色，0代表比较黑的颜色。图片里，有一个特别明显的垂直边缘在图像中间，这条直线是从黑到白的过度线。<strong>所以当你使用一个3✖️3的过滤器进行卷积运算的时候，这个过滤器可视化成下面这个样子</strong>，在左边有明亮的像素，然后有一个过滤段0在中间，右边是黑色的。使用过滤器进行卷积元算，得到的是右边的矩阵，可视化样子如下，在中间有段亮一点的区域，对应检查到这个6✖️6的图像中间的垂直边缘，这里的维数似乎有点不正确，检测到的边缘太粗了，因为这个例子中的图片太小了，如果你用一个1000✖️1000的图像，而不是6✖️6的图像，你会发现，它可以很好的检测出图像中的垂直边缘。在这个例子中，在输出图像中间区域的亮出，表示在图像中间，有一个特别明显的垂直边缘。</p>
 <p>从垂直边缘检测中可以得到的启发是，因为我们使用的是3✖️3的矩阵，所以垂直边缘是一个3✖️3的区域，左边是明亮的像素，中间的的并不需要考虑，右边是深色像素。在这个6✖️6图像中，明亮的像素在左边，深色的像素在右边，这样的话就会被视为一个垂直边缘。卷积运算提供了一个方便的方法，来发现图像中的垂直边缘。</p>
-<p><img src="../images/picturesof-4/屏幕快照 2018-02-09 下午1.05.04.png" alt="屏幕快照 2018-02-09 下午1.05.04"></p>
-<a id="more"></a>
+<p><img src="/images/picturesof-4/CNN_3.png" alt="屏幕快照 2018-02-09 下午1.05.04"></p>
 <h2 id="1-2-More-Edge-Detection"><a href="#1-2-More-Edge-Detection" class="headerlink" title="1.2 More Edge Detection"></a>1.2 More Edge Detection</h2><p>使用相同的过滤器过滤两个颜色刚好相反的图片，可以看到，第一个是30，第二个是-30，<strong>其中正数(30)代表第一幅图是由亮向暗过度，负数(-30)代表第二张图片是由暗向亮过度。</strong></p>
-<p><img src="../images/picturesof-4/屏幕快照 2018-03-01 上午9.41.33.png" alt="屏幕快照 2018-03-01 上午9.41.33"></p>
+<p><img src="/images/picturesof-4/CNN_4.png" alt="屏幕快照 2018-03-01 上午9.41.33"></p>
 <p>有垂直过滤器，就会有水平过滤器。下面举一个更为复杂的例子，在下图的这个图片矩阵中，我们使用水平过滤器进行边缘检测，得到的卷积结果如右下方所示，<strong>用绿色方框圈出的”+30”，代表原始图片中用绿色圈出的3✖️3矩阵的卷积结果，可以看到，这块矩阵的水平边缘确实是由亮到暗过度的，所以卷积结果为正。</strong></p>
-<p><img src="../images/picturesof-4/屏幕快照 2018-03-01 上午9.56.15.png" alt="屏幕快照 2018-03-01 上午9.56.15"></p>
+<p><img src="/images/picturesof-4/CNN_5.png" alt="屏幕快照 2018-03-01 上午9.56.15"></p>
 <p>事实上，对于这个3✖️3的滤波器来说，我们只使用了其中一种数字组合，但在历史上的计算机视觉的文献中，曾经公平的争论过，怎样的数字组合才是最好的，所以你还可以使用如下图所示的过滤器，<strong>如Sobel过滤器</strong>，它的优点在于，增加了中间一行元素的权重，也就是处在图像中央的像素点，这使得结果的健壮性更高一些。<strong>Scharr过滤器。</strong></p>
 <p>实际上是，当你在做复杂图像的边缘检测时，并不一定要使用刚刚我们提到的9个数字，但是你可以从中学习，把<strong>这矩阵中的9个数字当成9个参数，并且在之后可以使用反向传播算法，学习这9个参数。</strong>得到的结果与原始图片进行卷积，将会得到一个出色的边缘检测结果。</p>
 <p>相比这种单纯的垂直边缘与水平边缘检测，它可以检测出45度、70度、73度，甚至是任何角度的边缘。</p>
-<p><img src="../images/picturesof-4/屏幕快照 2018-03-01 上午10.19.16.png" alt="屏幕快照 2018-03-01 上午10.19.16"></p>
+<p><img src="/images/picturesof-4/CNN_6.png" alt="屏幕快照 2018-03-01 上午10.19.16"></p>
 <h2 id="1-3-Padding"><a href="#1-3-Padding" class="headerlink" title="1.3 Padding"></a>1.3 Padding</h2><p>为了构建深度神经网络，你需要学会使用的一个基本的卷积操作就是Padding。Padding出现的原因是，当你在做卷积操作的时候，像素矩阵中，中间的矩阵是被卷积计算多次的，也就是多次使用到了这个矩阵的信息，而边缘的像素矩阵，则会被使用较少次，比如说对角的矩阵，则只是被卷积了一次。这样则会导致会忽略边缘矩阵的信息。<strong>采取的措施是使用“填充(Padding)”方法，进行像素填充。使得边缘像素矩阵信息可以被卷积多次。</strong>填充之后的矩阵再进行卷积操作后，就会得到一个和原始矩阵一样大的矩阵，而不是缩小。</p>
 <p>习惯上，你可以使用”0”去填充。</p>
-<p><img src="../images/picturesof-4/屏幕快照 2018-03-01 上午11.25.36.png" alt="屏幕快照 2018-03-01 上午11.25.36"></p>
+<p><img src="/images/picturesof-4/CNN_7.png" alt="屏幕快照 2018-03-01 上午11.25.36"></p>
 <p>至于选择填充多少像素，通常有两个选择，<strong>分别叫做Valid卷积和Same卷积。</strong>Valid卷积：意味着不填充，所以得到的输出矩阵会比原始矩阵小。要想和原始矩阵得到的一样大，则使用Same卷积，你可以使用下面的计算公式来计算需要Pad多少个像素。<strong>n是原始图片的维数，f是过滤器的维数，最后得到的输出矩阵大小为n-f+1维。（f通常是奇数，如果为偶数，则会导致左右填充不均匀的情况）</strong></p>
-<p><img src="../images/picturesof-4/屏幕快照 2018-03-01 上午11.59.32.png" alt="屏幕快照 2018-03-01 上午11.59.32"></p>
+<p><img src="/images/picturesof-4/CNN_8.png" alt="屏幕快照 2018-03-01 上午11.59.32"></p>
 <h2 id="1-4-Strided-Convolutions-卷积步长"><a href="#1-4-Strided-Convolutions-卷积步长" class="headerlink" title="1.4 Strided Convolutions 卷积步长"></a>1.4 Strided Convolutions 卷积步长</h2><p>卷积中的步幅是另一个构建卷积神经网络的基本操作。每次卷积移动步长个单位，而不是我们之前提到的1个步长。这时候，计算输出函数的维数公式变成了如下情况。</p>
 <p>如果求得的商不是一个整数怎么办？这里采用向下取整。</p>
-<p><img src="../images/picturesof-4/屏幕快照 2018-03-01 下午1.59.37.png" alt="屏幕快照 2018-03-01 下午1.59.37"></p>
+<p><img src="/images/picturesof-4/CNN_9.png" alt="屏幕快照 2018-03-01 下午1.59.37"></p>
 <h2 id="1-5-Convolutions-Over-Volume"><a href="#1-5-Convolutions-Over-Volume" class="headerlink" title="1.5 Convolutions Over Volume"></a>1.5 Convolutions Over Volume</h2><p>之前讨论的卷积操作是在二维图像上进行的，现在讨论如何在三维立体(RGB)上做卷积操作。注意，图像的通道数和过滤器的通道数需一致。</p>
 <p>和一维图形中类似，使用三层过滤器依次与相对应层级中的元素相乘，每层得到9个数字，3层就是27个数字，将这27个数字相加后，就可以得到输出矩阵中的每个元素值。</p>
-<p><img src="../images/picturesof-4/屏幕快照 2018-03-01 下午2.30.40.png" alt="屏幕快照 2018-03-01 下午2.30.40"></p>
+<p><img src="/images/picturesof-4/CNN_10.png" alt="屏幕快照 2018-03-01 下午2.30.40"></p>
 <h2 id="1-5-One-Layer-of-a-Convolutional-Network-单层卷积网络"><a href="#1-5-One-Layer-of-a-Convolutional-Network-单层卷积网络" class="headerlink" title="1.5 One Layer of a Convolutional Network 单层卷积网络"></a>1.5 One Layer of a Convolutional Network 单层卷积网络</h2><p>下图演示了利用两个过滤器将6✖️6✖️3的矩阵转化为4✖️4✖️2的矩阵的过程，这个4✖️4✖️2的矩阵就是卷积中的一层结果。利用n个过滤器来提取特征，如垂直边缘，水平边缘或者其他特征。</p>
-<p><img src="../images/picturesof-4/屏幕快照 2018-03-01 下午3.38.38.png" alt="屏幕快照 2018-03-01 下午3.38.38"></p>
+<p><img src="/images/picturesof-4/CNN_11.png" alt="屏幕快照 2018-03-01 下午3.38.38"></p>
 <p>对于一些标识及每层的数量，总结如下：</p>
-<p><img src="../images/picturesof-4/屏幕快照 2018-03-01 下午4.16.42.png" alt="屏幕快照 2018-03-01 下午4.16.42"></p>
+<p><img src="/images/picturesof-4/CNN_12.png" alt="屏幕快照 2018-03-01 下午4.16.42"></p>
 <h2 id="1-6-Simple-Convolutional-Network-Example"><a href="#1-6-Simple-Convolutional-Network-Example" class="headerlink" title="1.6 Simple Convolutional Network Example"></a>1.6 Simple Convolutional Network Example</h2><p>下图是模拟一个卷积神经网络的计算过程。最后我们得到一个7✖️7✖️40的矩阵，也就是1960个元素值，将这1960个元素展开，使用逻辑回归或者SoftMax，进行图片的分类判断。</p>
 <p>可以看到，高度和宽度会在某一时间段内保持一致，然后随着网络深度的加深而逐渐减少，而信道数量在增加。</p>
-<p><img src="../images/picturesof-4/屏幕快照 2018-03-01 下午4.50.51.png" alt="屏幕快照 2018-03-01 下午4.50.51"></p>
+<p><img src="/images/picturesof-4/CNN_13.png" alt="屏幕快照 2018-03-01 下午4.50.51"></p>
 <p>典型的神经网络通常由三层组成，第一个是卷积层(convolution Layer)，第二个是池化层(Pooling Layer)，最后一个是全连接层(Fully Connect Layer)。虽然仅用卷积层也有可能构建出很好的神经网络，但大部分神经网络架构师依然会添加池化层和全连接层。</p>
-<p><img src="../images/picturesof-4/屏幕快照 2018-03-01 下午5.06.05.png" alt="屏幕快照 2018-03-01 下午5.06.05"></p>
+<p><img src="/images/picturesof-4/CNN_14.png" alt="屏幕快照 2018-03-01 下午5.06.05"></p>
 <h2 id="1-7-Pooling-Layers"><a href="#1-7-Pooling-Layers" class="headerlink" title="1.7 Pooling Layers"></a>1.7 Pooling Layers</h2><p>除了卷积层，卷积网络也经常使用池化层，来缩减模型的大小，提高计算速度，同时提高所提取特征的健壮性。</p>
 <p>所谓<strong>最大池化层</strong>，即将原始矩阵分成四个区域，输出的每个元素都是其对应颜色区域中的最大元素值。</p>
 <p>最大化操作的功能就是只要在任何一个象限内提取到某个特征，他都会保留在最大池化的输出里。最大化运算的实际作用就是，如果在过滤器中提取到某个特征，那么保留其最大值。必须承认，人们使用最大池化的主要原因是，此法在很多实验中，效果都很好。<strong>其中有一个有意思的特点就是，它有一组超级参数，但是并没有参数需要学习，一旦确定了f和s，它就是一个固定运算。</strong></p>
-<p><img src="../images/picturesof-4/屏幕快照 2018-03-01 下午6.00.49.png" alt="屏幕快照 2018-03-01 下午6.00.49"></p>
+<p><img src="/images/picturesof-4/CNN_15.png" alt="屏幕快照 2018-03-01 下午6.00.49"></p>
 <p>下图是最大池化的演示。</p>
-<p><img src="../images/picturesof-4/屏幕快照 2018-03-01 下午6.02.50.png" alt="屏幕快照 2018-03-01 下午6.02.50"></p>
+<p><img src="/images/picturesof-4/CNN_16.png" alt="屏幕快照 2018-03-01 下午6.02.50"></p>
 <p>另外还有一种类型的池化，—<strong>平均池化</strong>，它不太常用。这种运算顾名思义，选取的不是每个过滤器的最大值，而是平均值。当建立一个深度很深的神经网络时，你可以利用平均池化来分解规模为7✖️7✖️1000的网络的表示层。但是在神经网络中，最大池化比平均池化用的更多。</p>
-<p><img src="../images/picturesof-4/屏幕快照 2018-03-01 下午6.18.08.png" alt="屏幕快照 2018-03-01 下午6.18.08"></p>
+<p><img src="/images/picturesof-4/CNN_17.png" alt="屏幕快照 2018-03-01 下午6.18.08"></p>
 <p>总结一下，池化的超级参数包括过滤器大小f和步长s。常用的参数值为f=2，s=2，或者f=3，s=3。你也可以根据自己的意愿来决定是否使用padding，<strong>但是在最大池化操作中，很少使用padding。</strong></p>
 <p><strong>最大池化只是计算神经网络某一层的静态属性，它的超参是不需要学习的。</strong></p>
-<p><img src="../images/picturesof-4/屏幕快照 2018-03-01 下午6.25.52.png" alt="屏幕快照 2018-03-01 下午6.25.52"></p>
+<p><img src="/images/picturesof-4/CNN_18.png" alt="屏幕快照 2018-03-01 下午6.25.52"></p>
 <h2 id="1-8-CNN-Example"><a href="#1-8-CNN-Example" class="headerlink" title="1.8 CNN Example"></a>1.8 CNN Example</h2><p> 我们将卷积层和池化层有时会合并起来看作神经网络中的某一层，因为池化层是不需要权重的，它只有超参数。通过卷积和池化，我们得到一个5✖️5✖️16(=400)的矩阵，现在将POOL2平整化为一个大小为400的一维向量。然后利用这400个单元构建下一层，下一层含有120个单元，<strong>这就是我们第一个全连接层，这400个单元与120个单元紧密相连。它很像一个单神经网络层，这是一个标准的神经网络。</strong>它在120✖️400的维度上具有一个权重矩阵W，这就是全连接层。</p>
 <p>然后我们对这120个单元再添加一个全连接层，这层更小，假设有84个单元。最后，用这84个单元填充一个SoftMax单元，如果你想识别0～9的数字，那么这个SoftMax输出层则会有10个输出。</p>
 <p>在对于超级参数的选择问题上，建议不要自己凭空设定，而是查看文献中别人采取了哪些超级参数，选一个在别人任务重，效果很好的架构。</p>
-<p><img src="../images/picturesof-4/屏幕快照 2018-03-02 上午10.58.49.png" alt="屏幕快照 2018-03-02 上午10.58.49"></p>
+<p><img src="/images/picturesof-4/CNN_19.png" alt="屏幕快照 2018-03-02 上午10.58.49"></p>
 <p>还有一种在CNN中，另一种常见的模式是，一个或者多个卷积层后跟随一个池化层，然后是几个全连接层，最后是SoftMax层。从下面的表格中可以看出，第一，池化层和最大池化层没有参数。第二，卷积层的参数相对来说比较少。其实许多参数都存在于CNN中的全连接层。观察可发现，随着神经网络的加深，激活值会逐渐变小，如果激活值下降过快，也会影响网络性能。</p>
 <p><strong>（parameters208来源：第一个卷积层中，过滤器维度为5✖️5，每个过滤器有1个bias，一共有8个过滤器，即5✖️5 + 1 ✖️ 8 = 208，所以第一层的weights是208）</strong></p>
-<p><img src="../images/picturesof-4/屏幕快照 2018-03-02 上午11.17.15.png" alt="屏幕快照 2018-03-02 上午11.17.15"></p>
+<p><img src="/images/picturesof-4/CNN_20.png" alt="屏幕快照 2018-03-02 上午11.17.15"></p>
 <h2 id="1-9-Why-Convolutions"><a href="#1-9-Why-Convolutions" class="headerlink" title="1.9 Why Convolutions?"></a>1.9 Why Convolutions?</h2><p>与传统的神经网络相比，CNN的主要两个优势在于：<strong>参数共享、稀疏连接</strong></p>
 <p>参数共享：通过观察发现，特征检测如垂直边缘检测如果适用于图片的某个区域，那么它可能适用于图片的其他区域。<strong>也就是说，如果你用一个3✖️3的过滤器检测垂直边缘，那么图片的左上角区域以及旁边的各个区域都可以使用这个3✖️3的过滤器。每个特征检测器及输出都可以在输入图片的的不同区域中使用相同的参数。以便提取垂直边缘或者其他特征。</strong>它不仅适用于边缘特征这样的低阶特征，同样适用于高阶特征，例如提取脸上的眼睛，猫或者其他特征对象。</p>
 <p>神经网络可以通过这两种机制减少参数，以便于我们用更小的训练集来训练它， 从而预防过度拟合。</p>
-<p><img src="../images/picturesof-4/屏幕快照 2018-03-02 下午12.04.13.png" alt="屏幕快照 2018-03-02 下午12.04.13"></p>
+<p><img src="/images/picturesof-4/CNN_21.png" alt="屏幕快照 2018-03-02 下午12.04.13"></p>
 <p>计算损失，使用优化算法来优化权重。</p>
-<p><img src="../images/picturesof-4/屏幕快照 2018-03-02 下午12.11.50.png" alt="屏幕快照 2018-03-02 下午12.11.50"></p>
+<p><img src="/images/picturesof-4/CNN_22.png" alt="屏幕快照 2018-03-02 下午12.11.50"></p>
 <h1 id="二、Case-studies"><a href="#二、Case-studies" class="headerlink" title="二、Case studies"></a>二、Case studies</h1><h2 id="2-1-Classic-Networks-经典网络"><a href="#2-1-Classic-Networks-经典网络" class="headerlink" title="2.1 Classic Networks 经典网络"></a>2.1 Classic Networks 经典网络</h2><p>下面是一些经典的网络。</p>
-<p><img src="../images/picturesof-4/屏幕快照 2018-03-07 上午10.41.57.png" alt="屏幕快照 2018-03-07 上午10.41.57"></p>
-<p><img src="../images/picturesof-4/屏幕快照 2018-03-07 上午10.56.07.png" alt="屏幕快照 2018-03-07 上午10.56.07"></p>
-<p><img src="../images/picturesof-4/屏幕快照 2018-03-07 上午11.02.34.png" alt="屏幕快照 2018-03-07 上午11.02.34"></p>
-<p><img src="../images/picturesof-4/屏幕快照 2018-03-07 上午11.09.52.png" alt="屏幕快照 2018-03-07 上午11.09.52"></p>
+<p><img src="/images/picturesof-4/CNN_23.png" alt="屏幕快照 2018-03-07 上午10.41.57"></p>
+<p><img src="/images/picturesof-4/CNN_24.png" alt="屏幕快照 2018-03-07 上午10.56.07"></p>
+<p><img src="/images/picturesof-4/CNN_25.png" alt="屏幕快照 2018-03-07 上午11.02.34"></p>
+<p><img src="/images/picturesof-4/CNN_26.png" alt="屏幕快照 2018-03-07 上午11.09.52"></p>
 <h2 id="2-2-ResNets-残差网络"><a href="#2-2-ResNets-残差网络" class="headerlink" title="2.2 ResNets 残差网络"></a>2.2 ResNets 残差网络</h2><p>非常非常深的网络是很难被训练的，因为存在<strong>梯度消失</strong>和<strong>梯度爆炸</strong>的问题。下面要提到的是<strong>跳远连接</strong>(Skip Connection)，它可以从某一网络层获取激活，然后迅速反应给另外一层，甚至是神经网络的更深层。我们可以利用Skip Connection构建能够训练深度网络的ResNets，有时深度能够超过100层。</p>
 <p><strong>ResNets是由残差块构建的。</strong>下面解释什么是残差块(Residual Block)。</p>
 <p>在一般的神经网络系统中，激活层a[l]通常经过线性化处理，非线性化处理，再线性化处理，再非线性化，最后得到输出层a[l+2]。这被称作“主路径”(Main Path)</p>
-<p><img src="../images/picturesof-4/屏幕快照 2018-03-07 下午4.25.01.png" alt="屏幕快照 2018-03-07 下午4.25.01"></p>
+<p><img src="/images/picturesof-4/CNN_27.png" alt="屏幕快照 2018-03-07 下午4.25.01"></p>
 <p><strong>在ResNets中，有一点变化，我们将a[l]直接向后拷贝到神经网络的深层。</strong>在Relu非线性激活前加上a[l]，这是一条捷径(Shortcut)。也就是a[l]不再沿着主路径进行传递。这样一来a[l+2]变成了如下所示的样子，也就是加上的这个a[l]产生了一个残差块。所以a[l]插入的时机是在线性激活之后，Relu激活之前。</p>
-<p><img src="../images/picturesof-4/屏幕快照 2018-03-07 下午4.45.08.png" alt="屏幕快照 2018-03-07 下午4.45.08"></p>
+<p><img src="/images/picturesof-4/CNN_28.png" alt="屏幕快照 2018-03-07 下午4.45.08"></p>
 <p>除了<strong>捷径(ShortCut)</strong>，你可能还会听到另一个术语<strong>跳远连接(Skip Connection)</strong>，就是指a[l]跳过一层甚至是好几层，从而将消息传递到神经网络的更深层。</p>
 <p>使用残差块能够训练更深的神经网络，所以构建一个ResNet网络就是通过将很多这样的残差块堆砌在一起，形成一个深度神经网络。</p>
 <p>将一个普通的神经网络(PlainNetWork)编程一个残差网络(ResNets)的方法就是添加很多残差块，如下图所示。有5个残差块。如果我们使用标准优化算法训练一个普通网络，比如梯度下降或者其他热门的优化算法，如果没有多余的残差，没有这些捷径或者跳远连接，你会发现，随着网络深度的加深，训练错误会先减少，然后增多，而理论上，应该是随着网络深度的加深，错误应该越少越好。<strong>但事实上，对于一个普通网络来说，深度越深意味着用优化算法越难训练，训练错误就会越来越多，但是有了ResNet就不一样了。</strong>即使网络再深，训练的表现却不错，比如说错误会减少，甚至在100层，1000层的网络中也不例外。这种方式确实能有效的解决梯度消失和梯度爆炸的问题。让我们在训练更深的网络的同时，又能保证好的性能。</p>
-<p><img src="../images/picturesof-4/屏幕快照 2018-03-07 下午4.59.04.png" alt="屏幕快照 2018-03-07 下午4.59.04"></p>
-<p><img src="../images/picturesof-4/屏幕快照 2018-03-07 下午6.31.41.png" alt="屏幕快照 2018-03-07 下午6.31.41"></p>
+<p><img src="/images/picturesof-4/CNN_29.png" alt="屏幕快照 2018-03-07 下午4.59.04"></p>
+<p><img src="/images/picturesof-4/CNN_30.png" alt="屏幕快照 2018-03-07 下午6.31.41"></p>
 <h2 id="2-2-3-1x1-Convolutions-1✖️1卷积"><a href="#2-2-3-1x1-Convolutions-1✖️1卷积" class="headerlink" title="2.2.3 1x1 Convolutions 1✖️1卷积"></a>2.2.3 1x1 Convolutions 1✖️1卷积</h2><p>使用1✖️1卷积可以根据自己的意愿来压缩或者保持、甚至增加输入层中信道的数量。</p>
-<p><img src="../images/picturesof-4/屏幕快照 2018-03-07 下午6.58.29.png" alt="屏幕快照 2018-03-07 下午6.58.29"></p>
+<p><img src="/images/picturesof-4/CNN_31.png" alt="屏幕快照 2018-03-07 下午6.58.29"></p>
 <p>上图中输入层中是28✖️28✖️192的维度，如果我们想要达到降维的效果，可以利用32个1✖️1的filter，因为过滤器的信道数量必须和输出层中的信道数量保持一致，所以每个filter中都有192个信道，每个过滤器进行一次卷积操作，再相加，最后生成一个28✖️28✖️32的输出层，达到了降维的效果。同样，想要达到增加或者保持维度的效果，使用1✖️1的卷积也是可以的。</p>
 <p>下面介绍1✖️1卷积是如何运用到Inception网络中的。</p>
 <h2 id="2-2-4-Inception-Network-Motivation-Inception网络"><a href="#2-2-4-Inception-Network-Motivation-Inception网络" class="headerlink" title="2.2.4 Inception Network Motivation Inception网络"></a>2.2.4 Inception Network Motivation Inception网络</h2><p>在做卷积网络时，你需要<strong>为过滤器的大小做决定，而Inception网络的作用就是它会自动为你做抉择</strong>，虽然网络架构因此会变得更加复杂，但网络表现却非常好。</p>
 <p><strong>Inception网络不需要人为决定使用哪个过滤器，</strong>或是否需要池化，而是由网络自行确定这些参数，你可以给网络添加这些参数的所有可能值，然后把这些输出连接起来，让网络自己学习它需要什么样的参数，采用哪些过滤器组合。</p>
 <p>如下图所示，输入层是一个28✖️28✖️192的矩阵，首先使用一个1✖️1的filter，输出一个28✖️28✖️64的矩阵，得到下图中的绿色块结果，以此类推，将filter的结果全部拼凑在一起，形成一个28✖️28✖️256的输出。</p>
-<p><img src="../images/picturesof-4/屏幕快照 2018-03-07 下午7.42.53.png" alt="屏幕快照 2018-03-07 下午7.42.53"></p>
+<p><img src="/images/picturesof-4/CNN_32.png" alt="屏幕快照 2018-03-07 下午7.42.53"></p>
 <p><strong>使用1✖️1卷积可以减少运算复杂度。</strong></p>
 <p>如下，不使用1✖️1卷积计算次数为1.2亿次。</p>
-<p><img src="../images/picturesof-4/屏幕快照 2018-03-07 下午8.06.29.png" alt="屏幕快照 2018-03-07 下午8.06.29"></p>
-<p>使用1✖️1卷积，计算次数相较减少了10倍的计算量。<img src="../images/picturesof-4/屏幕快照 2018-03-07 下午8.06.09.png" alt="屏幕快照 2018-03-07 下午8.06.09"></p>
+<p><img src="/images/picturesof-4/CNN_33.png" alt="屏幕快照 2018-03-07 下午8.06.29"></p>
+<p>使用1✖️1卷积，计算次数相较减少了10倍的计算量。<img src="/images/picturesof-4/CNN_34.png" alt="屏幕快照 2018-03-07 下午8.06.09"></p>
 <p>将以上综合起来，构建自己的Inception网络。</p>
-<p><img src="../images/picturesof-4/屏幕快照 2018-03-07 下午8.36.19.png" alt="屏幕快照 2018-03-07 下午8.36.19"></p>
-<h1 id="三、Detection-algorithms"><a href="#三、Detection-algorithms" class="headerlink" title="三、Detection algorithms"></a>三、Detection algorithms</h1><h2 id="3-1-Object-Localization-对象定位"><a href="#3-1-Object-Localization-对象定位" class="headerlink" title="3.1 Object Localization 对象定位"></a>3.1 Object Localization 对象定位</h2><p><img src="../images/picturesof-4/屏幕快照 2018-03-09 上午9.35.21.png" alt="屏幕快照 2018-03-09 上午9.35.21"></p>
-<p>首先先谈目标分类和目标定位问题。对于图片中可能的输出进行一个分类，这是分类问题，那么如何对图片中的目标物体进行定位呢？对于这个问题，<strong>我们将神经网络的输出增加一个目标标签y，用来表示目标物体的位置信息。</strong>如下所示，bx表示目标物体的中心的横坐标，by表示目标物体中心的纵坐标，bh表示目标物体的高度，bw表示物体的宽度。当然，这四个数据你在训练集中就应该构建好。<img src="../images/picturesof-4/屏幕快照 2018-03-09 上午9.40.53.png" alt="屏幕快照 2018-03-09 上午9.40.53"></p>
+<p><img src="/images/picturesof-4/CNN_35.png" alt="屏幕快照 2018-03-07 下午8.36.19"></p>
+<h1 id="三、Detection-algorithms"><a href="#三、Detection-algorithms" class="headerlink" title="三、Detection algorithms"></a>三、Detection algorithms</h1><h2 id="3-1-Object-Localization-对象定位"><a href="#3-1-Object-Localization-对象定位" class="headerlink" title="3.1 Object Localization 对象定位"></a>3.1 Object Localization 对象定位</h2><p><img src="/images/picturesof-4/CNN_36.png" alt="屏幕快照 2018-03-09 上午9.35.21"></p>
+<p>首先先谈目标分类和目标定位问题。对于图片中可能的输出进行一个分类，这是分类问题，那么如何对图片中的目标物体进行定位呢？对于这个问题，<strong>我们将神经网络的输出增加一个目标标签y，用来表示目标物体的位置信息。</strong>如下所示，bx表示目标物体的中心的横坐标，by表示目标物体中心的纵坐标，bh表示目标物体的高度，bw表示物体的宽度。当然，这四个数据你在训练集中就应该构建好。<img src="/images/picturesof-4/CNN_37.png" alt="屏幕快照 2018-03-09 上午9.40.53"></p>
 <p>那么如何表示<strong>输出呢？它是一个向量</strong>，第一个组件Pc表示是否含有对象，所以如果对象属于前3类，Pc值应该为1，<strong>也可以将Pc理解成被检测对象属于某一分类的概率。</strong>如果检测到了对象，就应该将它的位置信息也一并输出，也就是bx,by,bh,bw，还应该同时输出c1,c2,c3用来表示对象属于哪个类别。</p>
-<p><img src="../images/picturesof-4/屏幕快照 2018-03-09 上午9.59.35.png" alt="屏幕快照 2018-03-09 上午9.59.35"></p>
+<p><img src="/images/picturesof-4/CNN_38.png" alt="屏幕快照 2018-03-09 上午9.59.35"></p>
 <p>下面来讨论损失函数的定义。两种情况，如果检测到了物体，也就是Pc==1，那么将剩下元素做差平方相加，计算损失，如果没有检测到也就是Pc==0，那么我们只用检测第一个元素值，也就是Pc值即可。</p>
-<p><img src="../images/picturesof-4/屏幕快照 2018-03-09 上午10.02.14.png" alt="屏幕快照 2018-03-09 上午10.02.14"></p>
+<p><img src="/images/picturesof-4/CNN_39.png" alt="屏幕快照 2018-03-09 上午10.02.14"></p>
 <h2 id="3-2-Convolutional-Implementation-of-Sliding-Windows-卷积的滑动窗口实现"><a href="#3-2-Convolutional-Implementation-of-Sliding-Windows-卷积的滑动窗口实现" class="headerlink" title="3.2 Convolutional Implementation of Sliding Windows 卷积的滑动窗口实现"></a>3.2 Convolutional Implementation of Sliding Windows 卷积的滑动窗口实现</h2><p>如何通过卷积网络进行对象检测 —— 采用<strong>基于滑动窗口</strong>的目标检测算法。</p>
-<p><img src="../images/picturesof-4/屏幕快照 2018-03-12 上午10.06.06.png" alt="屏幕快照 2018-03-12 上午10.06.06"></p>
+<p><img src="/images/picturesof-4/CNN_40.png" alt="屏幕快照 2018-03-12 上午10.06.06"></p>
 <p>滑动窗口的过程在于，首先选取一个合适的窗口大小，将依据这个窗口对要预测的图片进行剪裁，将结果输入CNN，由CNN来预测窗口里是否含有目标物体。然后窗口向一个方向移动相应的步幅，由CNN再进行预测。</p>
-<p><img src="../images/picturesof-4/屏幕快照 2018-03-12 上午10.22.13.png" alt="屏幕快照 2018-03-12 上午10.22.13"></p>
+<p><img src="/images/picturesof-4/CNN_41.png" alt="屏幕快照 2018-03-12 上午10.22.13"></p>
 <p>滑动窗口算法带来的问题是，<strong>计算成本</strong>。如果你的窗口面积过小，那么将要多次对CNN进行输入操作，计算成本高。但是如果你将窗口调整的过大，则会带来粗粒度影响性能的问题。</p>
 <p>幸运的是，上述过程所造成的计算成本问题已经得到了良好的解决。</p>
 <p>为了构建滑动窗口的卷积运用，首先要知道如何把<strong>神经网络的全连接层转化为卷积层</strong>。我们<strong>使用一定大小的过滤器</strong>来将输出结果与传统意义上的全连接层输出结果保持一致。</p>
-<p><img src="../images/picturesof-4/屏幕快照 2018-03-12 上午10.40.46.png" alt="屏幕快照 2018-03-12 上午10.40.46"></p>
+<p><img src="/images/picturesof-4/CNN_42.png" alt="屏幕快照 2018-03-12 上午10.40.46"></p>
 <p>其次要解决的是，<strong>如何通过卷积来实现滑动窗口对象检测算法</strong>。可以看到，如果我们的输入图片从训练的14✖️14变成了16✖️16，我们在过滤器不变的情况下，对于最后这个4✖️4的输出矩阵可以理解为，左上角对应图片左上角的输出结果，右上角对应原始图片右上角的输出结果。以此类推。<strong>所以该卷积操作的原理是，我们不需要将输入图片分成四个子集，分别执行前向传播，而是把它们作为一张图片输入给卷积网络进行计算，一次得到所有的预测值。</strong>其中的公有区域可以共享很多计算。</p>
-<p><img src="../images/picturesof-4/屏幕快照 2018-03-12 上午11.16.05.png" alt="屏幕快照 2018-03-12 上午11.16.05"></p>
+<p><img src="/images/picturesof-4/CNN_43.png" alt="屏幕快照 2018-03-12 上午11.16.05"></p>
 <p>改进的方法大大提高了运算成本，但是也有一个缺点，就是<strong>边界框的位置不够准确</strong>。下面介绍如何解决这个问题。</p>
 <h2 id="3-3-Bounding-Box-Predictions-预测边界-—-YOLO算法"><a href="#3-3-Bounding-Box-Predictions-预测边界-—-YOLO算法" class="headerlink" title="3.3 Bounding Box Predictions 预测边界 — YOLO算法"></a>3.3 Bounding Box Predictions 预测边界 — YOLO算法</h2><p>This algorithm “only looks once” at the image in the sense that it requires only one forward propagation pass through the network to make predictions. After non-max suppression, it then outputs recognized objects together with the bounding boxes.</p>
 <p>如下图所示，当你在使用窗口检测目标物体时，如果窗口在移动过程中不能完全覆盖目标物体，那么怎样才能确定精准的边界框呢？</p>
-<p><img src="../images/picturesof-4/屏幕快照 2018-03-12 下午1.52.28.png" alt="屏幕快照 2018-03-12 下午1.52.28"></p>
+<p><img src="/images/picturesof-4/CNN_44.png" alt="屏幕快照 2018-03-12 下午1.52.28"></p>
 <p><strong>其中一个能得到更精准边界框的算法是，YOLO算法。</strong>YOLO的意思是“你只看一次”。是这么做的，比如你输入的图像是100✖️100的，然后在图像上放一个网格，将图像分类和定位算法分别应用到每个网格上，也就是有多个输出向量y，y的定义和之前一样。假如一个物体同时出现在了两个网格上，<strong>那么取物体的中心点，中心点在哪个网格上，那么物体就属于哪个网格。</strong></p>
-<p><img src="../images/picturesof-4/屏幕快照 2018-03-12 下午2.27.45.png" alt="屏幕快照 2018-03-12 下午2.27.45"></p>
+<p><img src="/images/picturesof-4/CNN_45.png" alt="屏幕快照 2018-03-12 下午2.27.45"></p>
 <p>再次说明一下，这个方法只对一个网格中出现一个物体的情况有效。对于出现多个物体的情况，稍后做详细的讨论。</p>
-<p><img src="../images/picturesof-4/屏幕快照 2018-03-12 下午2.34.49.png" alt="屏幕快照 2018-03-12 下午2.34.49"></p>
+<p><img src="/images/picturesof-4/CNN_46.png" alt="屏幕快照 2018-03-12 下午2.34.49"></p>
 <h2 id="3-4-Intersection-Over-Union-交并比函数"><a href="#3-4-Intersection-Over-Union-交并比函数" class="headerlink" title="3.4 Intersection Over Union 交并比函数"></a>3.4 Intersection Over Union 交并比函数</h2><p><strong>交并比函数可以用来评价对象检测算法。</strong>如果你希望定位到的对象是红色部分，但是你的算法却给出的是紫色部分，那么这个结果是好是坏呢？交并比的意思就是，<strong>计算两个边框交集和并集的比值(lOU)来检测结果的好坏。</strong>一般情况下，我们将lOU的阈值定义为0.5，并认为大于0.5就是一个可以接受的结果，当然你也可以定义更高。</p>
-<p><img src="../images/picturesof-4/屏幕快照 2018-03-12 下午3.11.02.png" alt="屏幕快照 2018-03-12 下午3.11.02"></p>
+<p><img src="/images/picturesof-4/CNN_47.png" alt="屏幕快照 2018-03-12 下午3.11.02"></p>
 <h2 id="3-5-Non-max-Suppression-非极大值抑制—检测YOLO算法"><a href="#3-5-Non-max-Suppression-非极大值抑制—检测YOLO算法" class="headerlink" title="3.5 Non-max Suppression 非极大值抑制—检测YOLO算法"></a>3.5 Non-max Suppression 非极大值抑制—检测YOLO算法</h2><p>到目前为止对象检测算法中的问题是，算法可能对同一个对象做出多次检测，所以算法不是对某一个对象检测出一次，而是检测出多次，<strong>非极大抑制这个方法可以确保你的算法对某个对象只检测出一次。</strong></p>
 <p>假设下图是你需要进行检测的图片，将它用19✖️19的网格覆盖，每个车只有一个中点，也就是对于一辆覆盖到多个网格中的车来说，应该只有一个网格，也就是中点所在的网格的预测结果是1。</p>
 <p>因为你要在所有网络上都跑一遍图像检测和定位算法，那么覆盖到车子的格子中输出y的PC的值都会是1，而不是所有格子中，只有两个格子会报告检测出了对象。所以最后可能会对一个对象做出多次检测。所以非最大抑制做的就是清理这些检测结果。所以每辆车只检测一次，而不是多次。当你检测出了多次时，<strong>选出输出概率最大的检测结果，对lOU值很高的其他边框进行抑制，这就是非最大值抑制的含义。</strong></p>
-<p><img src="../images/picturesof-4/屏幕快照 2018-03-12 下午3.50.54.png" alt="屏幕快照 2018-03-12 下午3.50.54"></p>
+<p><img src="/images/picturesof-4/CNN_48.png" alt="屏幕快照 2018-03-12 下午3.50.54"></p>
 <p>下面是Non-max Suppression算法的具体过程。</p>
-<p><img src="../images/picturesof-4/屏幕快照 2018-03-12 下午4.05.23.png" alt="屏幕快照 2018-03-12 下午4.05.23"></p>
+<p><img src="/images/picturesof-4/CNN_49.png" alt="屏幕快照 2018-03-12 下午4.05.23"></p>
 <h2 id="3-6-Anchor-Boxes"><a href="#3-6-Anchor-Boxes" class="headerlink" title="3.6 Anchor Boxes"></a>3.6 Anchor Boxes</h2><p><strong>如果你需要让一个格子能够检测出多个对象，那么就需要用到Anchor Boxes。</strong>如下图所示，如果你要检测的对象是人和车辆，这张图中这两者有同样一个中点，如果我们使用传统的y向量输出，会发现这两者的概率是一样的，那么我们必须从这两者中选择出一个作为结果，这是不合理的。Anchor Boxes的思路是这样的，预先定义两个不同形状的Anchor Boxes，把预测结果和这两个Anchor Boxes关联起来。</p>
-<p><img src="../images/picturesof-4/屏幕快照 2018-03-12 下午4.19.47.png" alt="屏幕快照 2018-03-12 下午4.19.47"></p>
+<p><img src="/images/picturesof-4/CNN_50.png" alt="屏幕快照 2018-03-12 下午4.19.47"></p>
 <p>总结一下，用Anchor Boxes之前，你做的是，对于训练图像中的每个对象，都根据那个对象中点的位置，将对象分配到某个格子中，然后输出一个3✖️3✖️8的向量，3✖️3是因为你用到9个网格，8是每个网格中的y输出(PC,bx,by,bw,bh,c1,c2,c3)。现在用到Anchor Boxes这个概念，现在每个对象都和之前一样分配到某个格子中（中点所在），但是它还分配到一个和对象形状交并比最高的Anchor Box中。所以现在的输出变成了3✖️3✖️16。</p>
-<p><img src="../images/picturesof-4/屏幕快照 2018-03-12 下午4.32.57.png" alt="屏幕快照 2018-03-12 下午4.32.57"></p>
+<p><img src="/images/picturesof-4/CNN_51.png" alt="屏幕快照 2018-03-12 下午4.32.57"></p>
 <p>下面举一个具体的例子。</p>
-<p><img src="../images/picturesof-4/屏幕快照 2018-03-12 下午4.40.30.png" alt="屏幕快照 2018-03-12 下午4.40.30"></p>
+<p><img src="/images/picturesof-4/CNN_52.png" alt="屏幕快照 2018-03-12 下午4.40.30"></p>
 <h2 id="3-7-YOLO-Algorithm"><a href="#3-7-YOLO-Algorithm" class="headerlink" title="3.7 YOLO Algorithm"></a>3.7 YOLO Algorithm</h2><p>我们将之前提到的所有组件组合在一起，<strong>构成YOLO对象检测算法</strong>。</p>
 <p>y向量由Anchor Boxes组成，Anchor Boxes就可以看成y向量，下图中我们用到了两个Anchor Boxes，当我们进行检测是，假若检测到了物体，将边框画出后，与两个Anchor Boxes进行对比，发现与第二个Anchor Boxe的IOU值最高，那么车子就和向量的下半部分有关系。因为你将图片分成了9个网格，每个网格的维度是16，所以最后的输出是3✖️3✖️16。</p>
-<p><img src="../images/picturesof-4/屏幕快照 2018-03-12 下午4.53.00.png" alt="屏幕快照 2018-03-12 下午4.53.00"></p>
-<p><img src="../images/picturesof-4/屏幕快照 2018-03-12 下午4.57.19.png" alt="屏幕快照 2018-03-12 下午4.57.19"></p>
-<p>最后你要跑一下非最大值抑制，这就是运行非最大值抑制的过程。如果你使用两个Anchor Boxes，那么对于9个格子中的任意一个都会有两个预测的边界框，其中一个的概率PC很低。<img src="../images/picturesof-4/屏幕快照 2018-03-12 下午5.03.57.png" alt="屏幕快照 2018-03-12 下午5.03.57"></p>
+<p><img src="/images/picturesof-4/CNN_53.png" alt="屏幕快照 2018-03-12 下午4.53.00"></p>
+<p><img src="/images/picturesof-4/CNN_54.png" alt="屏幕快照 2018-03-12 下午4.57.19"></p>
+<p>最后你要跑一下非最大值抑制，这就是运行非最大值抑制的过程。如果你使用两个Anchor Boxes，那么对于9个格子中的任意一个都会有两个预测的边界框，其中一个的概率PC很低。<img src="/images/picturesof-4/CNN_55.png" alt="屏幕快照 2018-03-12 下午5.03.57"></p>
 <p>接着你抛弃PC值很低的边界，连神经网络都说，这里可能什么都没有。</p>
-<p><img src="../images/picturesof-4/屏幕快照 2018-03-12 下午5.05.25.png" alt="屏幕快照 2018-03-12 下午5.05.25"></p>
+<p><img src="/images/picturesof-4/CNN_56.png" alt="屏幕快照 2018-03-12 下午5.05.25"></p>
 <p>最后，如果你有三个对象检测类别，对于每个类别，单独运行非最大抑制，处理预测结果是那个类别的边界框。</p>
-<p><img src="../images/picturesof-4/屏幕快照 2018-03-12 下午5.08.12.png" alt="屏幕快照 2018-03-12 下午5.08.12"></p>
-<h2 id="3-8-Region-Proposals-—-RPN网络"><a href="#3-8-Region-Proposals-—-RPN网络" class="headerlink" title="3.8 Region Proposals — RPN网络"></a>3.8 Region Proposals — RPN网络</h2><p>带区域的CNN —  这个算法尝试选出一些区域，在这些区域上运行CNN是有意义的。选出候选区域的方法是运行图像分割算法，先找出可能的多个色块，然后在各个色块上放置边界框。然后在边界框上跑CNN分类算法。这样需要处理的位置可能少得多。<img src="../images/picturesof-4/屏幕快照 2018-03-12 下午5.24.12.png" alt="屏幕快照 2018-03-12 下午5.24.12"></p>
-<p><img src="../images/picturesof-4/屏幕快照 2018-03-12 下午5.29.09.png" alt="屏幕快照 2018-03-12 下午5.29.09"></p>
+<p><img src="/images/picturesof-4/CNN_57.png" alt="屏幕快照 2018-03-12 下午5.08.12"></p>
+<h2 id="3-8-Region-Proposals-—-RPN网络"><a href="#3-8-Region-Proposals-—-RPN网络" class="headerlink" title="3.8 Region Proposals — RPN网络"></a>3.8 Region Proposals — RPN网络</h2><p>带区域的CNN —  这个算法尝试选出一些区域，在这些区域上运行CNN是有意义的。选出候选区域的方法是运行图像分割算法，先找出可能的多个色块，然后在各个色块上放置边界框。然后在边界框上跑CNN分类算法。这样需要处理的位置可能少得多。<img src="/images/picturesof-4/CNN_58.png" alt="屏幕快照 2018-03-12 下午5.24.12"></p>
+<p><img src="/images/picturesof-4/CNN_59.png" alt="屏幕快照 2018-03-12 下午5.29.09"></p>
 <p><strong>Summary:</strong></p>
-<p><img src="../images/picturesof-4/屏幕快照 2018-03-13 上午9.52.04.png" alt="屏幕快照 2018-03-13 上午9.52.04"></p>
-<p><img src="../images/picturesof-4/屏幕快照 2018-03-13 上午9.55.50.png" alt="屏幕快照 2018-03-13 上午9.55.50"></p>
-<p><img src="../images/picturesof-4/屏幕快照 2018-03-13 上午11.44.02.png" alt="屏幕快照 2018-03-13 上午11.44.02"></p>
-<h1 id="四、Face-Recognition"><a href="#四、Face-Recognition" class="headerlink" title="四、Face Recognition"></a>四、Face Recognition</h1><h2 id="4-0-Face-verification"><a href="#4-0-Face-verification" class="headerlink" title="4.0 Face verification"></a>4.0 Face verification</h2><p><img src="../images/picturesof-4/屏幕快照 2018-03-13 下午3.11.41.png" alt="屏幕快照 2018-03-13 下午3.11.41"></p>
-<p><img src="../images/picturesof-4/屏幕快照 2018-03-14 上午10.09.35.png" alt="屏幕快照 2018-03-14 上午10.09.35"></p>
+<p><img src="/images/picturesof-4/CNN_60.png" alt="屏幕快照 2018-03-13 上午9.52.04"></p>
+<p><img src="/images/picturesof-4/CNN_61.png" alt="屏幕快照 2018-03-13 上午9.55.50"></p>
+<p><img src="/images/picturesof-4/CNN_62.png" alt="屏幕快照 2018-03-13 上午11.44.02"></p>
+<h1 id="四、Face-Recognition"><a href="#四、Face-Recognition" class="headerlink" title="四、Face Recognition"></a>四、Face Recognition</h1><h2 id="4-0-Face-verification"><a href="#4-0-Face-verification" class="headerlink" title="4.0 Face verification"></a>4.0 Face verification</h2><p><img src="/images/picturesof-4/CNN_63.png" alt="屏幕快照 2018-03-13 下午3.11.41"></p>
+<p><img src="/images/picturesof-4/CNN_64.png" alt="屏幕快照 2018-03-14 上午10.09.35"></p>
 <h2 id="4-1-One-Shot-Learning-一次学习"><a href="#4-1-One-Shot-Learning-一次学习" class="headerlink" title="4.1 One Shot Learning 一次学习"></a>4.1 One Shot Learning 一次学习</h2><p>人脸识别所面临的一个挑战，就是你需要解决“一次学习”问题，即只需要单单一张图片，或者单单一个人脸样例，就能识别出一个人。现在的问题是，你的训练集中通常只有指定一个人的一张照片，如果公司新来一个人，难道要放进庞大的CNN体系中重新学习吗？</p>
-<p><img src="../images/picturesof-4/屏幕快照 2018-03-13 下午3.19.48.png" alt="屏幕快照 2018-03-13 下午3.19.48"></p>
+<p><img src="/images/picturesof-4/CNN_65.png" alt="屏幕快照 2018-03-13 下午3.19.48"></p>
 <p>所以要让神经网络做到一次学习，应该是学习<strong>“Similarity”函数</strong>。具体的说，你是希望<strong>神经网络能够学习这个用d表示的函数。它以两张照片作为输入，然后输出这两张照片的差异值。</strong></p>
-<p><img src="../images/picturesof-4/屏幕快照 2018-03-13 下午3.48.26.png" alt="屏幕快照 2018-03-13 下午3.48.26"></p>
+<p><img src="/images/picturesof-4/CNN_66.png" alt="屏幕快照 2018-03-13 下午3.48.26"></p>
 <h2 id="4-2-Siamese-Network-Siamese-网络"><a href="#4-2-Siamese-Network-Siamese-网络" class="headerlink" title="4.2 Siamese Network Siamese 网络"></a>4.2 Siamese Network Siamese 网络</h2><p><strong>实现上述d函数的一个方式就是Siamese 网络。</strong>也就是训练一组参数，使得如果输入的不是一个人的话，它的输出f(x1)会跟其他人的输出结果f(x2)产生差距，这个差距可以用诸如曼哈顿距离来衡量，如果两个输入的输出结果很相近，那么可以认为是同一个人。</p>
-<p><img src="../images/picturesof-4/屏幕快照 2018-03-13 下午4.10.16.png" alt="屏幕快照 2018-03-13 下午4.10.16"></p>
-<p><img src="../images/picturesof-4/屏幕快照 2018-03-13 下午4.10.36.png" alt="屏幕快照 2018-03-13 下午4.10.36"></p>
+<p><img src="/images/picturesof-4/CNN_67.png" alt="屏幕快照 2018-03-13 下午4.10.16"></p>
+<p><img src="/images/picturesof-4/CNN_68.png" alt="屏幕快照 2018-03-13 下午4.10.36"></p>
 <h2 id="4-3-Triplet-Loss-—-三元组损失函数"><a href="#4-3-Triplet-Loss-—-三元组损失函数" class="headerlink" title="4.3 Triplet Loss — 三元组损失函数"></a>4.3 Triplet Loss — 三元组损失函数</h2><p>想要通过学习神经网络的参数来得到优质的人脸图片编码，方式之一就是使用<strong>三元组损失函数</strong>然后使用梯度下降。</p>
 <p><strong>我们希望，相同人的图片的距离可以远远小于不相同的距离。</strong>为了防止无意义的0输出，使用一个间隔参数a。</p>
-<p><img src="../images/picturesof-4/屏幕快照 2018-03-13 下午4.58.36.png" alt="屏幕快照 2018-03-13 下午4.58.36"></p>
-<p>三元组损失函数的定义基于三张图片，样本图片A(Anchor)，相同人样本P(Positive)，不同人样本N(Negative)。<img src="../images/picturesof-4/屏幕快照 2018-03-13 下午5.10.42.png" alt="屏幕快照 2018-03-13 下午5.10.42"></p>
-<p>在选择训练集的时候，要尽量避免使用随机的配对方式，因为随机的图片很容易满足损失函数的要求，为了达到更好的效果，<strong>建议使用比较难训练的样本</strong>，“比较难训练”是指A与N的距离，与A与P的距离非常相近。<img src="../images/picturesof-4/屏幕快照 2018-03-13 下午5.28.22.png" alt="屏幕快照 2018-03-13 下午5.28.22"></p>
-<p><img src="../images/picturesof-4/屏幕快照 2018-03-13 下午5.33.05.png" alt="屏幕快照 2018-03-13 下午5.33.05"></p>
+<p><img src="/images/picturesof-4/CNN_69.png" alt="屏幕快照 2018-03-13 下午4.58.36"></p>
+<p>三元组损失函数的定义基于三张图片，样本图片A(Anchor)，相同人样本P(Positive)，不同人样本N(Negative)。<img src="/images/picturesof-4/CNN_70.png" alt="屏幕快照 2018-03-13 下午5.10.42"></p>
+<p>在选择训练集的时候，要尽量避免使用随机的配对方式，因为随机的图片很容易满足损失函数的要求，为了达到更好的效果，<strong>建议使用比较难训练的样本</strong>，“比较难训练”是指A与N的距离，与A与P的距离非常相近。<img src="/images/picturesof-4/CNN_71.png" alt="屏幕快照 2018-03-13 下午5.28.22"></p>
+<p><img src="/images/picturesof-4/CNN_72.png" alt="屏幕快照 2018-03-13 下午5.33.05"></p>
 <h2 id="4-4-Face-Verification-and-Binary-Classification"><a href="#4-4-Face-Verification-and-Binary-Classification" class="headerlink" title="4.4 Face Verification and Binary Classification"></a>4.4 Face Verification and Binary Classification</h2><p>如何将人脸识别问题化作一个二分类问题？</p>
-<p><img src="../images/picturesof-4/屏幕快照 2018-03-13 下午5.50.23.png" alt="屏幕快照 2018-03-13 下午5.50.23"></p>
-<p><img src="../images/picturesof-4/屏幕快照 2018-03-13 下午5.51.03.png" alt="屏幕快照 2018-03-13 下午5.51.03"></p>
-<p><img src="../images/picturesof-4/屏幕快照 2018-03-14 上午11.12.29.png" alt="屏幕快照 2018-03-14 上午11.12.29"></p>
-<h1 id="五、Neural-Style-Transfer-神经风格迁移"><a href="#五、Neural-Style-Transfer-神经风格迁移" class="headerlink" title="五、Neural Style Transfer 神经风格迁移"></a>五、Neural Style Transfer 神经风格迁移</h1><p><img src="../images/picturesof-4/屏幕快照 2018-03-13 下午7.02.31.png" alt="屏幕快照 2018-03-13 下午7.02.31"></p>
-<h2 id="5-1-What-are-deep-ConvNets-learning"><a href="#5-1-What-are-deep-ConvNets-learning" class="headerlink" title="5.1 What are deep ConvNets learning?"></a>5.1 What are deep ConvNets learning?</h2><p><img src="../images/picturesof-4/屏幕快照 2018-03-13 下午7.09.06.png" alt="屏幕快照 2018-03-13 下午7.09.06"></p>
-<p><img src="../images/picturesof-4/屏幕快照 2018-03-13 下午7.13.39.png" alt="屏幕快照 2018-03-13 下午7.13.39"></p>
+<p><img src="/images/picturesof-4/CNN_73.png" alt="屏幕快照 2018-03-13 下午5.50.23"></p>
+<p><img src="/images/picturesof-4/CNN_74.png" alt="屏幕快照 2018-03-13 下午5.51.03"></p>
+<p><img src="/images/picturesof-4/CNN_75.png" alt="屏幕快照 2018-03-14 上午11.12.29"></p>
+<h1 id="五、Neural-Style-Transfer-神经风格迁移"><a href="#五、Neural-Style-Transfer-神经风格迁移" class="headerlink" title="五、Neural Style Transfer 神经风格迁移"></a>五、Neural Style Transfer 神经风格迁移</h1><p><img src="/images/picturesof-4/CNN_76.png" alt="屏幕快照 2018-03-13 下午7.02.31"></p>
+<h2 id="5-1-What-are-deep-ConvNets-learning"><a href="#5-1-What-are-deep-ConvNets-learning" class="headerlink" title="5.1 What are deep ConvNets learning?"></a>5.1 What are deep ConvNets learning?</h2><p><img src="/images/picturesof-4/CNN_77.png" alt="屏幕快照 2018-03-13 下午7.09.06"></p>
+<p><img src="/images/picturesof-4/CNN_78.png" alt="屏幕快照 2018-03-13 下午7.13.39"></p>
 <h2 id="5-2-Cost-Function"><a href="#5-2-Cost-Function" class="headerlink" title="5.2 Cost Function"></a>5.2 Cost Function</h2><p>我们<strong>将损失函数定义为“内容损失➕风格损失”</strong>，内容损失是指生成的图片和原图内容的相似性，风格损失是指生成图片和原图风格的相似性。</p>
-<p><img src="../images/picturesof-4/屏幕快照 2018-03-13 下午7.22.05.png" alt="屏幕快照 2018-03-13 下午7.22.05"></p>
-<p><img src="../images/picturesof-4/屏幕快照 2018-03-13 下午7.22.37.png" alt="屏幕快照 2018-03-13 下午7.22.37"></p>
+<p><img src="/images/picturesof-4/CNN_79.png" alt="屏幕快照 2018-03-13 下午7.22.05"></p>
+<p><img src="/images/picturesof-4/CNN_80.png" alt="屏幕快照 2018-03-13 下午7.22.37"></p>
 <h2 id="5-3-Content-Cost-Function-内容损失函数"><a href="#5-3-Content-Cost-Function-内容损失函数" class="headerlink" title="5.3 Content Cost Function 内容损失函数"></a>5.3 Content Cost Function 内容损失函数</h2><p>内容损失函数定义为某一隐藏层中与既定（如VGG网络）隐藏层激活后的值的相似程度。</p>
-<p><img src="../images/picturesof-4/屏幕快照 2018-03-13 下午7.32.08.png" alt="屏幕快照 2018-03-13 下午7.32.08"></p>
+<p><img src="/images/picturesof-4/CNN_81.png" alt="屏幕快照 2018-03-13 下午7.32.08"></p>
 <h2 id="5-4-Style-Cost-Function-风格损失函数"><a href="#5-4-Style-Cost-Function-风格损失函数" class="headerlink" title="5.4 Style Cost Function 风格损失函数"></a>5.4 Style Cost Function 风格损失函数</h2><p>风格损失函数定义为某一隐藏层中，通道之间的相关程度。</p>
-<p><img src="../images/picturesof-4/屏幕快照 2018-03-13 下午7.43.28.png" alt="屏幕快照 2018-03-13 下午7.43.28"></p>
+<p><img src="/images/picturesof-4/CNN_82.png" alt="屏幕快照 2018-03-13 下午7.43.28"></p>
 <p>这个相关程度可以理解为，比如风格图片是灰色的地方同时又出现了垂直线条。那么输入图片中，某一隐藏层，观察到了灰色和出现了垂直线条的几率，定义为通道之间的相关程度。</p>
-<p><img src="../images/picturesof-4/屏幕快照 2018-03-13 下午7.45.28.png" alt="屏幕快照 2018-03-13 下午7.45.28"></p>
-<p>损失函数定义如下：为输入图片与原图片，某一隐藏层，某一通道中激活值的相关性，使用绝对平方值来计算，还乘以了一个归一化常数。<img src="../images/picturesof-4/屏幕快照 2018-03-13 下午8.00.14.png" alt="屏幕快照 2018-03-13 下午8.00.14"></p>
+<p><img src="/images/picturesof-4/CNN_83.png" alt="屏幕快照 2018-03-13 下午7.45.28"></p>
+<p>损失函数定义如下：为输入图片与原图片，某一隐藏层，某一通道中激活值的相关性，使用绝对平方值来计算，还乘以了一个归一化常数。<img src="/images/picturesof-4/CNN_84.png" alt="屏幕快照 2018-03-13 下午8.00.14"></p>
 <p>“内容损失➕风格损失  =  损失函数”</p>
-<p><img src="../images/picturesof-4/屏幕快照 2018-03-13 下午8.03.07.png" alt="屏幕快照 2018-03-13 下午8.03.07"></p>
-<p><img src="../images/picturesof-4/屏幕快照 2018-03-14 上午9.16.13.png" alt="屏幕快照 2018-03-14 上午9.16.13"></p>
-<p><img src="../images/picturesof-4/屏幕快照 2018-03-14 上午9.20.42.png" alt="屏幕快照 2018-03-14 上午9.20.42"></p>
-<p><img src="../images/picturesof-4/屏幕快照 2018-03-14 上午9.40.49.png" alt="屏幕快照 2018-03-14 上午9.40.49"></p>
-<h2 id="5-5-1D-and-3D-Generalizations-一维到三维推广"><a href="#5-5-1D-and-3D-Generalizations-一维到三维推广" class="headerlink" title="5.5 1D and 3D Generalizations 一维到三维推广"></a>5.5 1D and 3D Generalizations 一维到三维推广</h2><p>许多图片不仅限于二维，有可能是1维或者3维。那么如何进行处理呢？我们一样可以使用卷积操作。<img src="../images/picturesof-4/屏幕快照 2018-03-13 下午8.28.53.png" alt="屏幕快照 2018-03-13 下午8.28.53"></p>
-<p><img src="../images/picturesof-4/屏幕快照 2018-03-13 下午8.29.33.png" alt="屏幕快照 2018-03-13 下午8.29.33"></p>
+<p><img src="/images/picturesof-4/CNN_85.png" alt="屏幕快照 2018-03-13 下午8.03.07"></p>
+<p><img src="/images/picturesof-4/CNN_86.png" alt="屏幕快照 2018-03-14 上午9.16.13"></p>
+<p><img src="/images/picturesof-4/CNN_87.png" alt="屏幕快照 2018-03-14 上午9.20.42"></p>
+<p><img src="/images/picturesof-4/CNN_88.png" alt="屏幕快照 2018-03-14 上午9.40.49"></p>
+<h2 id="5-5-1D-and-3D-Generalizations-一维到三维推广"><a href="#5-5-1D-and-3D-Generalizations-一维到三维推广" class="headerlink" title="5.5 1D and 3D Generalizations 一维到三维推广"></a>5.5 1D and 3D Generalizations 一维到三维推广</h2><p>许多图片不仅限于二维，有可能是1维或者3维。那么如何进行处理呢？我们一样可以使用卷积操作。<img src="/images/picturesof-4/CNN_89.png" alt="屏幕快照 2018-03-13 下午8.28.53"></p>
+<p><img src="/images/picturesof-4/CNN_90.png" alt="屏幕快照 2018-03-13 下午8.29.33"></p>
 
       
 
@@ -617,7 +615,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2019 Grace Koo
+    		&copy; 2020 Grace Koo
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -700,10 +698,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CNN</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
@@ -717,6 +711,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Matplotlib</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CNN</a>
               </li>
              
               <li class="article-tag-list-item">
