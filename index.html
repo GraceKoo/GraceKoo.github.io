@@ -159,6 +159,118 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Git" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/01/07/Git/">Git配置</a>
+    </h1>
+  
+
+        
+        <a href="/2020/01/07/Git/" class="archive-article-date">
+  	<time datetime="2020-01-06T23:55:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="config文件"><a href="#config文件" class="headerlink" title="config文件"></a>config文件</h2><ul>
+<li><p>/etc/gitconfig文件：系统中对所有的用户都普遍适用的配置。若使用git config —system选项，读写就是这个文件</p>
+</li>
+<li><p>～/.gitconfig文件：用户目录下的配置文件，只适用于该用户。若使用config —global选项，读写就是这个文件</p>
+</li>
+<li><p>当前Git仓库的git文件（.git/config），这里配置只对当前项目有效，每个配置级别都会覆盖上层的配置，所以.git/config会覆盖/etc/gitconfig里的文件</p>
+<p>在Windows系统上，Git会找主目录下的.gitconfig文件，主目录即$HOME变量指定的目录，一般在C:\Documents and Settings\$USER中</p>
+<p>此外，Git还会尝试找寻/etc/gitconfig文件，只不过看当初Git装在什么目录，就以此作为根目录来定位</p>
+</li>
+</ul>
+<h2 id="配置用户信息"><a href="#配置用户信息" class="headerlink" title="配置用户信息"></a>配置用户信息</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --<span class="keyword">global</span> user.name <span class="string">"loen"</span></span><br><span class="line">$ git config --<span class="keyword">global</span> user.email loen@qq.com</span><br></pre></td></tr></table></figure>
+<p>利用gloabal选项，更改用户主目录下的config文件，以后所有项目都会默认使用这里配置的用户信息</p>
+<p>如果要在某个特定项目里使用其他名字或者邮件，只要去掉–global选项重新配置即可，新的设定保存在当前目录的.git/config 文件里</p>
+<h2 id="查看配置信息"><a href="#查看配置信息" class="headerlink" title="查看配置信息"></a>查看配置信息</h2> <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git config --list</span><br></pre></td></tr></table></figure>
+<p>有时候会看到重复的变量名，那就说明它们来自不同的配置文件( 比如/etc/gitconfig和~./gitconfig)，不过Git实际采用的是最后一个</p>
+<p>也可以在/etc/gitconfig和~./gitconfig里看到</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vim ~/.gitconfig</span><br></pre></td></tr></table></figure>
+<h2 id="忽略特殊文件-gitignore"><a href="#忽略特殊文件-gitignore" class="headerlink" title="忽略特殊文件.gitignore"></a>忽略特殊文件.gitignore</h2><p>有时必须把某些文件放入Git工作目录中，但是又不能将其提交，如存储了数据库密码的配置文件。</p>
+<p>只需在Git工作区的根目录下创建一个名为.gitignore的文件，写入过滤规则就可以了</p>
+<p>.gitignore不需要从头写，所有配置文件可以直接在线浏览<a href="https://github.com/github/.gitignore" target="_blank" rel="noopener">https://github.com/github/.gitignore</a></p>
+<p>忽略文件的原则是：</p>
+<p>1.忽略系统自动生成的文件</p>
+<p>2.忽略编译生成的中间文件</p>
+<p>3.忽略用户带有敏感信息的配置文件</p>
+<h1 id="Git工作流程"><a href="#Git工作流程" class="headerlink" title="Git工作流程"></a>Git工作流程</h1><p>Git（Global Information Tracker）是一个开源的分布式版本控制系统，是Linus Torvalds为了帮助管理Linux内核开发而开发的一个开放源代码的软件。</p>
+<p>Git一般的工作流程如下：</p>
+        
+          <a class="article-more-a" href="/2020/01/07/Git/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Git//" class="article-tag-list-link color4">Git</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/01/07/Git/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Convolutional-Neural-Network" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -302,11 +414,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Machine Learning</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Machine Learning</a>
         		</li>
       		
 		</ul>
@@ -577,11 +689,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Machine Learning</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Machine Learning</a>
         		</li>
       		
 		</ul>
@@ -841,10 +953,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Machine Learning</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Python</a>
               </li>
              
@@ -858,6 +966,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Matplotlib</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Machine Learning</a>
               </li>
             
             <div class="clearfix"></div>
