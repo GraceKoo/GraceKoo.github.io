@@ -221,10 +221,16 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2020-01-12 23:05:00 / Modified: 15:58:04" itemprop="dateCreated datePublished" datetime="2020-01-12T23:05:00Z">2020-01-12</time>
+              <time title="Created: 2020-01-12 23:05:00" itemprop="dateCreated datePublished" datetime="2020-01-12T23:05:00Z">2020-01-12</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-01-28 03:20:24" itemprop="dateModified" datetime="2020-01-28T03:20:24Z">2020-01-28</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
@@ -248,15 +254,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="一、栈"><a href="#一、栈" class="headerlink" title="一、栈"></a>一、栈</h1><p><img data-src="/images/algorithm/%E6%A0%88.png" alt="栈"></p>
-<h2 id="1-1-括号匹配问题"><a href="#1-1-括号匹配问题" class="headerlink" title="1.1  括号匹配问题"></a>1.1  括号匹配问题</h2><p><img data-src="/images/algorithm/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D.png" alt="括号匹配"></p>
+          <h1 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h1><p><img data-src="/images/algorithm/%E6%A0%88.png" alt="栈"></p>
+<h2 id="括号匹配问题"><a href="#括号匹配问题" class="headerlink" title="括号匹配问题"></a>括号匹配问题</h2><p><img data-src="/images/algorithm/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D.png" alt="括号匹配"></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">LEFT = &#123;<span class="string">'('</span>,<span class="string">'['</span>,<span class="string">'&#123;'</span>&#125;</span><br><span class="line">RIGHT = &#123;<span class="string">')'</span>,<span class="string">']'</span>,<span class="string">'&#125;'</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">match</span><span class="params">(expr)</span>:</span></span><br><span class="line">    stack = []</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> c <span class="keyword">in</span> expr:</span><br><span class="line">        <span class="keyword">if</span> c <span class="keyword">in</span> LEFT:</span><br><span class="line">            stack.append(c)</span><br><span class="line">        <span class="keyword">elif</span> c <span class="keyword">in</span> RIGHT:</span><br><span class="line">            <span class="comment">#为空</span></span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> stack:</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> <span class="number">1</span> &lt;= ord(c) - ord(stack[<span class="number">-1</span>]) &lt;= <span class="number">2</span>:</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">            stack.pop()</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">not</span> stack</span><br><span class="line"></span><br><span class="line">print(match(<span class="string">'&#123;&#123;[]&#125;&#125;'</span>))</span><br><span class="line"></span><br><span class="line">TRUE</span><br></pre></td></tr></table></figure>
 
 
 
 
 
-<h2 id="1-2-迷宫问题"><a href="#1-2-迷宫问题" class="headerlink" title="1.2  迷宫问题"></a>1.2  迷宫问题</h2><p><img data-src="/images/algorithm/%E8%BF%B7%E5%AE%AB%E9%97%AE%E9%A2%98.png" alt="宫问"></p>
+<h2 id="迷宫问题"><a href="#迷宫问题" class="headerlink" title="迷宫问题"></a>迷宫问题</h2><p><img data-src="/images/algorithm/%E8%BF%B7%E5%AE%AB%E9%97%AE%E9%A2%98.png" alt="宫问"></p>
 <p>最后栈为空说明已经无路可走，如果栈不为空说明找到了一条路径。</p>
           <!--noindex-->
             <div class="post-button">
