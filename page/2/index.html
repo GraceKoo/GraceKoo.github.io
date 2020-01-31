@@ -214,117 +214,6 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="Zh">
-    <link itemprop="mainEntityOfPage" href="https://unknown.yuzhouwan.com/2020/01/07/Git/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Grace Koo">
-      <meta itemprop="description" content="正在深入学习各种CV知识">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Grace Koo's Blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/01/07/Git/" class="post-title-link" itemprop="url">Git</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-01-06 23:55:00" itemprop="dateCreated datePublished" datetime="2020-01-06T23:55:00Z">2020-01-06</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-01-31 14:35:01" itemprop="dateModified" datetime="2020-01-31T14:35:01Z">2020-01-31</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Tool/" itemprop="url" rel="index">
-                    <span itemprop="name">Tool</span>
-                  </a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="Git配置"><a href="#Git配置" class="headerlink" title="Git配置"></a>Git配置</h1><h2 id="config文件"><a href="#config文件" class="headerlink" title="config文件"></a>config文件</h2><ul>
-<li><p>/etc/gitconfig文件：系统中对所有的用户都普遍适用的配置。若使用git config —system选项，读写就是这个文件</p>
-</li>
-<li><p>～/.gitconfig文件：用户目录下的配置文件，只适用于该用户。若使用config —global选项，读写就是这个文件</p>
-</li>
-<li><p>当前Git仓库的git文件（.git/config），这里配置只对当前项目有效，每个配置级别都会覆盖上层的配置，所以.git/config会覆盖/etc/gitconfig里的文件</p>
-<p>在Windows系统上，Git会找主目录下的.gitconfig文件，主目录即$HOME变量指定的目录，一般在C:\Documents and Settings$USER中</p>
-<p>此外，Git还会尝试找寻/etc/gitconfig文件，只不过看当初Git装在什么目录，就以此作为根目录来定位</p>
-</li>
-</ul>
-<h2 id="配置用户信息"><a href="#配置用户信息" class="headerlink" title="配置用户信息"></a>配置用户信息</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --<span class="keyword">global</span> user.name <span class="string">"loen"</span></span><br><span class="line">$ git config --<span class="keyword">global</span> user.email loen@qq.com</span><br></pre></td></tr></table></figure>
-
-<p>利用gloabal选项，更改用户主目录下的config文件，以后所有项目都会默认使用这里配置的用户信息</p>
-<p>如果要在某个特定项目里使用其他名字或者邮件，只要去掉–global选项重新配置即可，新的设定保存在当前目录的.git/config 文件里</p>
-<h2 id="查看配置信息"><a href="#查看配置信息" class="headerlink" title="查看配置信息"></a>查看配置信息</h2> <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git config --list</span><br></pre></td></tr></table></figure>
-
-<p>有时候会看到重复的变量名，那就说明它们来自不同的配置文件( 比如/etc/gitconfig和~./gitconfig)，不过Git实际采用的是最后一个</p>
-<p>也可以在/etc/gitconfig和~./gitconfig里看到</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vim ~/.gitconfig</span><br></pre></td></tr></table></figure>
-
-<h2 id="忽略特殊文件-gitignore"><a href="#忽略特殊文件-gitignore" class="headerlink" title="忽略特殊文件.gitignore"></a>忽略特殊文件.gitignore</h2><p>有时必须把某些文件放入Git工作目录中，但是又不能将其提交，如存储了数据库密码的配置文件。</p>
-<p>只需在Git工作区的根目录下创建一个名为.gitignore的文件，写入过滤规则就可以了</p>
-<p>.gitignore不需要从头写，所有配置文件可以直接在线浏览<a href="https://github.com/github/.gitignore" target="_blank" rel="noopener">https://github.com/github/.gitignore</a></p>
-<p>忽略文件的原则是：</p>
-<p>1.忽略系统自动生成的文件</p>
-<p>2.忽略编译生成的中间文件</p>
-<p>3.忽略用户带有敏感信息的配置文件</p>
-<h1 id="Git工作流程"><a href="#Git工作流程" class="headerlink" title="Git工作流程"></a>Git工作流程</h1><p>Git（Global Information Tracker）是一个开源的分布式版本控制系统，是Linus Torvalds为了帮助管理Linux内核开发而开发的一个开放源代码的软件。</p>
-<p>Git一般的工作流程如下：</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/01/07/Git/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="Zh">
     <link itemprop="mainEntityOfPage" href="https://unknown.yuzhouwan.com/2018/03/19/Convolutional-Neural-Network/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -634,7 +523,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-01-31 16:35:03" itemprop="dateModified" datetime="2020-01-31T16:35:03Z">2020-01-31</time>
+                <time title="Modified: 2020-01-31 16:42:41" itemprop="dateModified" datetime="2020-01-31T16:42:41Z">2020-01-31</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -744,11 +633,120 @@
   
   
 
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="Zh">
+    <link itemprop="mainEntityOfPage" href="https://unknown.yuzhouwan.com/2017/09/01/Python-Base/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Grace Koo">
+      <meta itemprop="description" content="正在深入学习各种CV知识">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Grace Koo's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2017/09/01/Python-Base/" class="post-title-link" itemprop="url">Python基础</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2017-09-01 07:45:01" itemprop="dateCreated datePublished" datetime="2017-09-01T07:45:01Z">2017-09-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-01-31 16:28:52" itemprop="dateModified" datetime="2020-01-31T16:28:52Z">2020-01-31</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Language/" itemprop="url" rel="index">
+                    <span itemprop="name">Language</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Python的安装、IPython的使用"><a href="#Python的安装、IPython的使用" class="headerlink" title="Python的安装、IPython的使用"></a>Python的安装、IPython的使用</h1><ul>
+<li>Python的安装参见<a href="https://stringpiggy.hpd.io/mac-osx-python3-dual-install/" target="_blank" rel="noopener">https://stringpiggy.hpd.io/mac-osx-python3-dual-install/</a> ，或者《Python编程：从入门到实战》一书中也有详细的记载。</li>
+<li>利用IPython可以代替传统python开发的文本编辑器，灵活的改变所写代码，快捷的生成结果代码。IPython Notebook目前已经成为用Python做教学、计算、科研的一个重要工具，很多示例都是用.ipynb文件。</li>
+</ul>
+<p>​        安装Ipython有两种方式，第一种是通过pip安装。第二种是安装Anaconda从而获得iPython （这个选择比较适合新手，推荐<a href="http://jupyter.readthedocs.io/en/latest/install.html#new-to-python-and-jupyter" target="_blank" rel="noopener">官网教程</a>一键搞定），下面主要介绍使用pip命令来安装。</p>
+<ol>
+<li>iPython是由<a href="http://ipython.org/ipython-doc/stable/install/install.html" target="_blank" rel="noopener">很多模块</a>组成的, 为了不漏装任何组件，我用了这个命令来安装所有组件：</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo pip install ipython[all]</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>安装成功后通过这命令来运行Notebook</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ipython notebook</span><br></pre></td></tr></table></figure>
+
+<p>之后有可能会弹出这个错误(你如果选择了用Anaconda的方式来安装也会碰到这个错误)：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ValueError, <span class="string">'unknown locale: %s'</span> % localename</span><br></pre></td></tr></table></figure>
+
+<p>在<a href="http://stackoverflow.com/questions/19961239/pelican-3-3-pelican-quickstart-error-valueerror-unknown-locale-utf-8" target="_blank" rel="noopener">StackOverflow上已经有人提出了解决方案</a>，在命令行里找到.bash_profile 然后添加下面两行代码：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export LC_ALL=en_US.UTF<span class="number">-8</span></span><br><span class="line">export LANG=en_US.UTF<span class="number">-8</span></span><br></pre></td></tr></table></figure>
+
+<p>然后别忘了重新载入.bash_profile让新添加的代码生效（注意两个点之间的空格）：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ . .bash_profile</span><br></pre></td></tr></table></figure>
+
+<p>之后再运行命令”ipython notebook “就可以在浏览器里看到iPython Notebook的界面了。</p>
+<p>iPython Notebook的工作原理是在本地启动一个服务器，你通过localhost:8888/tree 这个地址就可以连接到这个服务器上与之通信。从而实现在浏览器里写代码，传给本地服务器执行，然后本地服务器传回结果并在网页上呈现这个循环。</p>
+<p>每次使用完Notebook，只关闭网页本身是不够的。<strong>需要在你启动Notebook的那个Terminal里输 Ctrl + c 然后确认，才能把服务器关闭。</strong>官网具体链接为：<a href="http://IPython.org/install.html" target="_blank" rel="noopener">http://IPython.org/install.html</a></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2017/09/01/Python-Base/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
   </div>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
   </nav>
 
 
@@ -814,7 +812,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-count">10</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -827,7 +825,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-count">12</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
