@@ -209,185 +209,6 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="Zh">
-    <link itemprop="mainEntityOfPage" href="https://unknown.yuzhouwan.com/2020/01/13/LeetCode_&_Algorithm-note/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Grace Koo">
-      <meta itemprop="description" content="正在深入学习各种CV知识">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Grace Koo's Blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/01/13/LeetCode_&_Algorithm-note/" class="post-title-link" itemprop="url">Algorithm_&_Leetcode</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-01-12 23:05:00" itemprop="dateCreated datePublished" datetime="2020-01-12T23:05:00Z">2020-01-12</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-01-28 03:20:24" itemprop="dateModified" datetime="2020-01-28T03:20:24Z">2020-01-28</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Algorithm/" itemprop="url" rel="index">
-                    <span itemprop="name">Algorithm</span>
-                  </a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h1><p><img data-src="/images/algorithm/%E6%A0%88.png" alt="栈"></p>
-<h2 id="括号匹配问题"><a href="#括号匹配问题" class="headerlink" title="括号匹配问题"></a>括号匹配问题</h2><p><img data-src="/images/algorithm/%E6%8B%AC%E5%8F%B7%E5%8C%B9%E9%85%8D.png" alt="括号匹配"></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">LEFT = &#123;<span class="string">'('</span>,<span class="string">'['</span>,<span class="string">'&#123;'</span>&#125;</span><br><span class="line">RIGHT = &#123;<span class="string">')'</span>,<span class="string">']'</span>,<span class="string">'&#125;'</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">match</span><span class="params">(expr)</span>:</span></span><br><span class="line">    stack = []</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> c <span class="keyword">in</span> expr:</span><br><span class="line">        <span class="keyword">if</span> c <span class="keyword">in</span> LEFT:</span><br><span class="line">            stack.append(c)</span><br><span class="line">        <span class="keyword">elif</span> c <span class="keyword">in</span> RIGHT:</span><br><span class="line">            <span class="comment">#为空</span></span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> stack:</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> <span class="number">1</span> &lt;= ord(c) - ord(stack[<span class="number">-1</span>]) &lt;= <span class="number">2</span>:</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">            stack.pop()</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">not</span> stack</span><br><span class="line"></span><br><span class="line">print(match(<span class="string">'&#123;&#123;[]&#125;&#125;'</span>))</span><br><span class="line"></span><br><span class="line">TRUE</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h2 id="迷宫问题"><a href="#迷宫问题" class="headerlink" title="迷宫问题"></a>迷宫问题</h2><p><img data-src="/images/algorithm/%E8%BF%B7%E5%AE%AB%E9%97%AE%E9%A2%98.png" alt="宫问"></p>
-<p>最后栈为空说明已经无路可走，如果栈不为空说明找到了一条路径。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/01/13/LeetCode_&_Algorithm-note/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="Zh">
-    <link itemprop="mainEntityOfPage" href="https://unknown.yuzhouwan.com/2020/01/07/OpenCV%E5%9F%BA%E7%A1%80/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Grace Koo">
-      <meta itemprop="description" content="正在深入学习各种CV知识">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Grace Koo's Blog">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2020/01/07/OpenCV%E5%9F%BA%E7%A1%80/" class="post-title-link" itemprop="url">OpenCV-Base</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-01-07 00:06:00" itemprop="dateCreated datePublished" datetime="2020-01-07T00:06:00Z">2020-01-07</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-01-29 09:36:38" itemprop="dateModified" datetime="2020-01-29T09:36:38Z">2020-01-29</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/CV/" itemprop="url" rel="index">
-                    <span itemprop="name">CV</span>
-                  </a>
-                </span>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="OpenCV的安装"><a href="#OpenCV的安装" class="headerlink" title="OpenCV的安装"></a>OpenCV的安装</h1><p>国内一些pip的镜像源：</p>
-<p>阿里云 <a href="https://mirrors.aliyun.com/pypi/simple/" target="_blank" rel="noopener">https://mirrors.aliyun.com/pypi/simple/</a><br>中国科技大学 <a href="https://pypi.mirrors.ustc.edu.cn/simple/" target="_blank" rel="noopener">https://pypi.mirrors.ustc.edu.cn/simple/</a><br>豆瓣(douban) <a href="http://pypi.douban.com/simple/" target="_blank" rel="noopener">http://pypi.douban.com/simple/</a><br>清华大学 <a href="https://pypi.tuna.tsinghua.edu.cn/simple/" target="_blank" rel="noopener">https://pypi.tuna.tsinghua.edu.cn/simple/</a><br>中国科学技术大学 <a href="http://pypi.mirrors.ustc.edu.cn/simple/" target="_blank" rel="noopener">http://pypi.mirrors.ustc.edu.cn/simple/</a></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(base)$ conda create -n py365 python=<span class="number">3.6</span><span class="number">.5</span>   <span class="comment"># anaconda中创建python版本为3.7.3的虚拟环境</span></span><br><span class="line">(base)$ conda activate py365                 <span class="comment"># 激活该环境</span></span><br><span class="line">pip install opencv-python==<span class="number">3.4</span><span class="number">.1</span><span class="number">.15</span> -i http://pypi.douban.com/simple --trusted-host pypi.douban.com                              <span class="comment"># 安装opencv-python 3.4.1.15，同时还会加载相应的依赖库</span></span><br></pre></td></tr></table></figure>
-
-<p>内容完善中……</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/01/07/OpenCV%E5%9F%BA%E7%A1%80/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="Zh">
     <link itemprop="mainEntityOfPage" href="https://unknown.yuzhouwan.com/2020/01/07/Typora%20For%20Markdown%20%E8%AF%AD%E6%B3%95/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -419,7 +240,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-01-17 15:15:42" itemprop="dateModified" datetime="2020-01-17T15:15:42Z">2020-01-17</time>
+                <time title="Modified: 2020-01-31 14:39:12" itemprop="dateModified" datetime="2020-01-31T14:39:12Z">2020-01-31</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -427,8 +248,8 @@
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/markdown/" itemprop="url" rel="index">
-                    <span itemprop="name">markdown</span>
+                  <a href="/categories/Tool/" itemprop="url" rel="index">
+                    <span itemprop="name">Tool</span>
                   </a>
                 </span>
             </span>
@@ -506,18 +327,24 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2020-01-06 23:55:00 / Modified: 15:58:18" itemprop="dateCreated datePublished" datetime="2020-01-06T23:55:00Z">2020-01-06</time>
+              <time title="Created: 2020-01-06 23:55:00" itemprop="dateCreated datePublished" datetime="2020-01-06T23:55:00Z">2020-01-06</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-01-31 14:35:01" itemprop="dateModified" datetime="2020-01-31T14:35:01Z">2020-01-31</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-folder-o"></i>
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Git/" itemprop="url" rel="index">
-                    <span itemprop="name">Git</span>
+                  <a href="/categories/Tool/" itemprop="url" rel="index">
+                    <span itemprop="name">Tool</span>
                   </a>
                 </span>
             </span>
@@ -619,7 +446,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-01-28 03:42:54" itemprop="dateModified" datetime="2020-01-28T03:42:54Z">2020-01-28</time>
+                <time title="Modified: 2020-01-31 14:35:24" itemprop="dateModified" datetime="2020-01-31T14:35:24Z">2020-01-31</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -627,8 +454,8 @@
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/CNN/" itemprop="url" rel="index">
-                    <span itemprop="name">CNN</span>
+                  <a href="/categories/CV/" itemprop="url" rel="index">
+                    <span itemprop="name">CV</span>
                   </a>
                 </span>
             </span>
@@ -655,6 +482,194 @@
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2018/03/19/Convolutional-Neural-Network/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="Zh">
+    <link itemprop="mainEntityOfPage" href="https://unknown.yuzhouwan.com/2017/09/28/Numpy-note/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Grace Koo">
+      <meta itemprop="description" content="正在深入学习各种CV知识">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Grace Koo's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2017/09/28/Numpy-note/" class="post-title-link" itemprop="url">Numpy基础</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2017-09-28 11:09:26" itemprop="dateCreated datePublished" datetime="2017-09-28T11:09:26Z">2017-09-28</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-01-31 14:38:27" itemprop="dateModified" datetime="2020-01-31T14:38:27Z">2020-01-31</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/DataView/" itemprop="url" rel="index">
+                    <span itemprop="name">DataView</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>Numpy是Python中用于科学计算的核心库。它提供了高性能的多维数组对象，以及相关工具</p>
+<h1 id="绘制雪花"><a href="#绘制雪花" class="headerlink" title="绘制雪花"></a>绘制雪花</h1><p>转自博客上看到的一位大牛的程序，利用Numpy + matplotlib 绘制雪花，效果如下：</p>
+<p><img data-src="/images/snow.jpg" alt="snow"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">plt.rcParams[<span class="string">'font.sans-serif'</span>] = [<span class="string">'FangSong'</span>]  <span class="comment"># 指定默认字体</span></span><br><span class="line">plt.rcParams[<span class="string">'axes.unicode_minus'</span>] = <span class="literal">False</span>  <span class="comment"># 解决中文显示为方块的问题</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">rotate</span><span class="params">(p, d)</span>:</span></span><br><span class="line">    <span class="string">"""返回点p绕原点逆时针旋转d度的坐标"""</span></span><br><span class="line"></span><br><span class="line">    a = np.radians(d)</span><br><span class="line">    m = np.array([[np.cos(a), np.sin(a)], [-np.sin(a), np.cos(a)]])</span><br><span class="line">    <span class="keyword">return</span> np.dot(p, m)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">koch_curve</span><span class="params">(p, q)</span>:</span></span><br><span class="line">    <span class="string">"""将线段pq生成科赫曲线，返回uvw三个点"""</span></span><br><span class="line"></span><br><span class="line">    p, q = np.array(p), np.array(q)</span><br><span class="line">    u = p + (q - p) / <span class="number">3</span>  <span class="comment"># 三等分点u的坐标</span></span><br><span class="line">    v = q - (q - p) / <span class="number">3</span>  <span class="comment"># 三等分点V的坐标</span></span><br><span class="line">    w = rotate(v - u, <span class="number">60</span>) + u  <span class="comment"># 线段uv绕u点逆时针旋转60°得到点w的坐标</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> u.tolist(), v.tolist(), w.tolist()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">snow</span><span class="params">(triangle, k)</span>:</span></span><br><span class="line">    <span class="string">"""给定三角形，生成封闭的科赫雪花"""</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(k):</span><br><span class="line">        result = list()</span><br><span class="line">        t_len = len(triangle)</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(t_len):</span><br><span class="line">            p = triangle[j]</span><br><span class="line">            q = triangle[(j + <span class="number">1</span>) % t_len]</span><br><span class="line">            u, v, w = koch_curve(p, q)</span><br><span class="line">            result.extend([p, u, w, v])</span><br><span class="line">        triangle = result.copy()</span><br><span class="line"></span><br><span class="line">    triangle.append(triangle[<span class="number">0</span>])</span><br><span class="line">    <span class="keyword">return</span> triangle</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">plot_snow</span><span class="params">(snow_list)</span>:</span></span><br><span class="line">    <span class="string">"""绘制雪花"""</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> triangle, k <span class="keyword">in</span> snow_list:</span><br><span class="line">        data = np.array(snow(triangle, k))</span><br><span class="line">        x, y = np.split(data, <span class="number">2</span>, axis=<span class="number">1</span>)</span><br><span class="line">        plt.plot(x, y)</span><br><span class="line"></span><br><span class="line">    plt.axis(<span class="string">'equal'</span>)</span><br><span class="line">    plt.show()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">snow_list = [</span><br><span class="line">    ([(<span class="number">0</span>, <span class="number">0</span>), (<span class="number">0.5</span>, <span class="number">0.8660254</span>), (<span class="number">1</span>, <span class="number">0</span>)], <span class="number">5</span>),</span><br><span class="line">    ([(<span class="number">1.1</span>, <span class="number">0.4</span>), (<span class="number">1.35</span>, <span class="number">0.8330127</span>), (<span class="number">1.6</span>, <span class="number">0.4</span>)], <span class="number">4</span>),</span><br><span class="line">    ([(<span class="number">1.1</span>, <span class="number">-0.1</span>), (<span class="number">1.25</span>, <span class="number">0.15980761</span>), (<span class="number">1.4</span>, <span class="number">-0.1</span>)], <span class="number">3</span>)</span><br><span class="line">]</span><br><span class="line">plot_snow(snow_list)</span><br></pre></td></tr></table></figure>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2017/09/28/Numpy-note/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="Zh">
+    <link itemprop="mainEntityOfPage" href="https://unknown.yuzhouwan.com/2017/09/25/DataView/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Grace Koo">
+      <meta itemprop="description" content="正在深入学习各种CV知识">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Grace Koo's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2017/09/25/DataView/" class="post-title-link" itemprop="url">数据可视化基础</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2017-09-24 20:50:00" itemprop="dateCreated datePublished" datetime="2017-09-24T20:50:00Z">2017-09-24</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-01-31 14:37:03" itemprop="dateModified" datetime="2020-01-31T14:37:03Z">2020-01-31</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/DataView/" itemprop="url" rel="index">
+                    <span itemprop="name">DataView</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="生成数据"><a href="#生成数据" class="headerlink" title="生成数据"></a>生成数据</h1><h2 id="安装matplotlib"><a href="#安装matplotlib" class="headerlink" title="安装matplotlib"></a>安装matplotlib</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pip3 install --user matplotlib</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="测试matplotlib"><a href="#测试matplotlib" class="headerlink" title="测试matplotlib"></a>测试matplotlib</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ python3</span><br><span class="line">&gt;&gt; <span class="keyword">import</span> matplotlib</span><br></pre></td></tr></table></figure>
+
+<p>如果没有出现任何错误消息，就说明你系统安装了matplotlib。</p>
+<h3 id="matplotlib画廊"><a href="#matplotlib画廊" class="headerlink" title="matplotlib画廊"></a>matplotlib画廊</h3><p>要查看使用matplotlib可制作的各种图表，请访问<a href="http://matplotlib.org/的示例画廊。单击画廊中的图表，就可查看用于生成图表的代码。" target="_blank" rel="noopener">http://matplotlib.org/的示例画廊。单击画廊中的图表，就可查看用于生成图表的代码。</a></p>
+<h2 id="绘制简单的折线图plot"><a href="#绘制简单的折线图plot" class="headerlink" title="绘制简单的折线图plot()"></a>绘制简单的折线图plot()</h2><p>我们将使用平方数序列1、4、9、16和25来绘制这个图标。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">squares = [<span class="number">1</span>,<span class="number">4</span>,<span class="number">9</span>,<span class="number">16</span>,<span class="number">25</span>]</span><br><span class="line">plt.plot(squares)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<p><img data-src="/images/Python-base/DataView_1.png" alt="2017-09-19.2.15.10"></p>
+<p>首先，导入了模块pyplot，并给它指定了别名plt。模块pyplot包含很多用于生成图标的函数。</p>
+<p>我们创建了一个列表，在其中存储了前述平方数，再将这个列表传递给函数plot()。</p>
+<p>plt.show()打开matplotlib查看器，并显示绘制的图形。</p>
+<h3 id="修改标签文字和线条粗细"><a href="#修改标签文字和线条粗细" class="headerlink" title="修改标签文字和线条粗细"></a>修改标签文字和线条粗细</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">squares = [<span class="number">1</span>,<span class="number">4</span>,<span class="number">9</span>,<span class="number">16</span>,<span class="number">25</span>]</span><br><span class="line">plt.plot(squares,linewidth=<span class="number">5</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#设置图表标题，并给坐标轴加上标签</span></span><br><span class="line">plt.title(<span class="string">"Square Numbers"</span>,fontsize=<span class="number">24</span>)</span><br><span class="line">plt.xlabel(<span class="string">"Value"</span>,fontsize=<span class="number">14</span>)</span><br><span class="line">plt.ylabel(<span class="string">"Square of Value"</span>,fontsize=<span class="number">14</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#设置刻度标记的大小</span></span><br><span class="line">plt.tick_params(axis=<span class="string">'both'</span>,labelsize=<span class="number">14</span>)</span><br><span class="line"></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<p>tick_params()设置刻度的样式，其中指定的实参将影响x轴和y轴上的刻度（axis=’both’），并将刻度标记的字号设置为14。</p>
+<p><img data-src="/images/Python-base/DataView_2.png" alt="017-09-19.3.16.14"></p>
+<h3 id="校正图形"><a href="#校正图形" class="headerlink" title="校正图形"></a>校正图形</h3><p>我们发现没有正确的绘制数据：折线图的终点指出4.0的平方为25！下面来修复这个问题。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2017/09/25/DataView/#more" rel="contents">
                 Read more &raquo;
               </a>
             </div>
@@ -744,18 +759,18 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-count">7</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
-        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">categories</span>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
