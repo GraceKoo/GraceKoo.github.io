@@ -214,6 +214,151 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="Zh">
+    <link itemprop="mainEntityOfPage" href="https://unknown.yuzhouwan.com/2017/09/18/MachineLearning-Note/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Grace Koo">
+      <meta itemprop="description" content="正在深入学习各种CV知识">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Grace Koo's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2017/09/18/MachineLearning-Note/" class="post-title-link" itemprop="url">Machine Learning基础</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2017-09-18 11:08:26" itemprop="dateCreated datePublished" datetime="2017-09-18T11:08:26Z">2017-09-18</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-01-31 16:42:41" itemprop="dateModified" datetime="2020-01-31T16:42:41Z">2020-01-31</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Machine-Learning/" itemprop="url" rel="index">
+                    <span itemprop="name">Machine Learning</span>
+                  </a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="About-Machine-Learning"><a href="#About-Machine-Learning" class="headerlink" title="About Machine Learning"></a>About Machine Learning</h1><p>机器学习可以揭示数据背后的真实含义。</p>
+<p><strong>监督学习</strong>需要用户知道目标值，简单的说就是知道数据在找什么。而<strong>无监督学习</strong>则无需用户知道搜寻的目标，只需要从算法程序中得到这些数据的共同特征。</p>
+<p>保证算法应用的正确性：</p>
+<ol>
+<li>确保算法应用可以正确处理简单的数据。</li>
+<li>将现实世界中得到的数据格式化为算法可以处理的格式。</li>
+<li>将步骤2得到的数据输入到步骤1的算法中，检验算法的运行结果。</li>
+</ol>
+<p>千万不要忽略前两个步骤而直接跳到步骤3来检验算法处理真实数据的效果。任何复杂系统都是由基础工程构成的，尤其是算法出现问题时，增量地搭建系统可以确保我们及时找到问题出现的位置和原因。</p>
+<p>后续根据监督学习和无监督学习进行分类讨论。</p>
+<p>在监督学习中，我们只需要给定输入样本，机器就可以从中推演出指定目标变量的可能结果。监督学习相对比较简单，机器只需从输入数据中预测合适的模型，并从中计算出目标变量的结果。</p>
+<p>监督学习一般使用两种类型的目标变量：标称型和数值型。<strong>标称型</strong>目标变量的结果只在有限目标集中取值，如真与假，动物分类集合；<strong>数值型</strong>目标变量则可以从无限的数值集合中取值，一般用于回归分析。</p>
+<h1 id="Key-Terminology"><a href="#Key-Terminology" class="headerlink" title="Key Terminology"></a>Key Terminology</h1><p>我们使用机器学习的某个算法进行分类结果，首先要做的是<strong>算法训练</strong>，即学习如何<strong>分类</strong>。通常我们为算法输入大量的已分类数据作为算法的<strong>训练集</strong>。训练集是用于训练机器学习算法的数据样本集合。<strong>目标变量</strong>是机器学习算法的预测结果。</p>
+<p>在分类算法中目标变量的类型通常是标称型的，而在回归算法中通常是连续型的。</p>
+<p>训练样本集必须确定知道目标变量的值，以便机器学习算法可以发现特征和目标变量之间的关系。</p>
+<p>当机器学习程序开始运行时，使用训练样本集作为算法的输入，<strong>训练完成</strong>后输入<strong>测试样本</strong>，由程序决定样本属于哪个类别。</p>
+<h1 id="Primary-Mission"><a href="#Primary-Mission" class="headerlink" title="Primary Mission"></a>Primary Mission</h1><p>监督学习中的任务：</p>
+<p>1.将实例数据划分到合适的<strong>分类</strong>中。</p>
+<p>2.<strong>回归</strong>，主要用于预测数值型数据。</p>
+<p>无监督学习中的任务：</p>
+<p>数据没有类别信息，也不会给定目标值。</p>
+<p>1.在无监督学习中，将数据集合分成由类似的对象组成的多个类的过程被称为<strong>聚类</strong>。</p>
+<p>2.将寻找描述数据统计值的过程称之为<strong>密度估计</strong>。</p>
+<h1 id="Overview-of-Algorithm"><a href="#Overview-of-Algorithm" class="headerlink" title="Overview of Algorithm"></a>Overview of Algorithm</h1><table>
+<thead>
+<tr>
+<th align="center">监督学习的用途</th>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">K-近邻算法</td>
+<td align="center">线性回归</td>
+</tr>
+<tr>
+<td align="center">朴素贝叶斯算法</td>
+<td align="center">局部加权线性回归</td>
+</tr>
+<tr>
+<td align="center">支持向量机</td>
+<td align="center">Ridge回归</td>
+</tr>
+<tr>
+<td align="center">决策树</td>
+<td align="center">Lasso最小回归系数估计</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th align="center">无监督学习的用途</th>
+<th align="center"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">K-均值</td>
+<td align="center">最大期望算法</td>
+</tr>
+<tr>
+<td align="center">DBSCAN</td>
+<td align="center">Parzen窗设计</td>
+</tr>
+</tbody></table>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2017/09/18/MachineLearning-Note/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="Zh">
     <link itemprop="mainEntityOfPage" href="https://unknown.yuzhouwan.com/2017/09/01/Python-Base/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -389,7 +534,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-count">12</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -402,7 +547,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-count">14</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
