@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="Zh">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/me.jpg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/me.jpg">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/me.jpg">
+  <link rel="mask-icon" href="/images/me.jpg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('https://unknown.yuzhouwan.com').hostname,
+    root: '/',
+    scheme: 'Muse',
+    version: '7.6.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: true,
+    mediumzoom: false,
+    lazyload: true,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="OpenCV的安装国内一些pip的镜像源： 阿里云 https:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;pypi&#x2F;simple&#x2F;中国科技大学 https:&#x2F;&#x2F;pypi.mirrors.ustc.edu.cn&#x2F;simple&#x2F;豆瓣(douban) http:&#x2F;&#x2F;pypi.douban.com&#x2F;simple&#x2F;清华大学 https:&#x2F;&#x2F;pypi.tuna.tsinghua.edu.cn&#x2F;simple&#x2F;中">
+<meta property="og:type" content="article">
+<meta property="og:title" content="OpenCV-Base">
+<meta property="og:url" content="https://unknown.yuzhouwan.com/undefined/16645/index.html">
+<meta property="og:site_name" content="Grace Koo&#39;s Blog">
+<meta property="og:description" content="OpenCV的安装国内一些pip的镜像源： 阿里云 https:&#x2F;&#x2F;mirrors.aliyun.com&#x2F;pypi&#x2F;simple&#x2F;中国科技大学 https:&#x2F;&#x2F;pypi.mirrors.ustc.edu.cn&#x2F;simple&#x2F;豆瓣(douban) http:&#x2F;&#x2F;pypi.douban.com&#x2F;simple&#x2F;清华大学 https:&#x2F;&#x2F;pypi.tuna.tsinghua.edu.cn&#x2F;simple&#x2F;中">
+<meta property="og:locale" content="Zh">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/opencv/Pyramid_1.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/opencv/Pyramid_2.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/opencv/Pyramid_3.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/opencv/Pyramid_4.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/opencv/contours3.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/opencv/sift_3.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/opencv/sift_2.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/opencv/sift_4.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/opencv/sift_5.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/opencv/sift_6.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/opencv/sift_7.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/opencv/sift_8.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/opencv/sift_9.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/opencv/sift_10.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/opencv/sift_11.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/opencv/sift_12.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/opencv/sift_14.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/opencv/sift_15.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/opencv/sift_17.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/opencv/bg_2.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/opencv/bg_3.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/opencv/bg_4.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/opencv/bg_5.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/opencv/lk_2.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/opencv/lk_1.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/opencv/lk_3.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/opencv/lk_4.png">
+<meta property="article:published_time" content="2020-01-07T00:06:00.000Z">
+<meta property="article:modified_time" content="2020-02-01T04:14:30.940Z">
+<meta property="article:author" content="Grace Koo">
+<meta property="article:tag" content="Python">
+<meta property="article:tag" content="OpenCV">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://unknown.yuzhouwan.com/images/opencv/Pyramid_1.png">
+
+<link rel="canonical" href="https://unknown.yuzhouwan.com/undefined/16645/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>OpenCV-Base | Grace Koo's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Grace Koo's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">LaLaLa~~~</p>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-mr.sweet">
+
+    <a href="/sweet/" rel="section"><i class="fa fa-fw fa-paw"></i>Mr.Sweet</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="none"
+           placeholder="Searching..." spellcheck="false"
+           type="text" id="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="Zh">
+    <link itemprop="mainEntityOfPage" href="https://unknown.yuzhouwan.com/undefined/16645/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Grace Koo">
+      <meta itemprop="description" content="正在深入学习各种CV知识">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Grace Koo's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          OpenCV-Base
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-01-07 00:06:00" itemprop="dateCreated datePublished" datetime="2020-01-07T00:06:00Z">2020-01-07</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-02-01 04:14:30" itemprop="dateModified" datetime="2020-02-01T04:14:30Z">2020-02-01</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/CV/" itemprop="url" rel="index">
+                    <span itemprop="name">CV</span>
+                  </a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="OpenCV的安装"><a href="#OpenCV的安装" class="headerlink" title="OpenCV的安装"></a>OpenCV的安装</h1><p>国内一些pip的镜像源：</p>
+<p>阿里云 <a href="https://mirrors.aliyun.com/pypi/simple/" target="_blank" rel="noopener">https://mirrors.aliyun.com/pypi/simple/</a><br>中国科技大学 <a href="https://pypi.mirrors.ustc.edu.cn/simple/" target="_blank" rel="noopener">https://pypi.mirrors.ustc.edu.cn/simple/</a><br>豆瓣(douban) <a href="http://pypi.douban.com/simple/" target="_blank" rel="noopener">http://pypi.douban.com/simple/</a><br>清华大学 <a href="https://pypi.tuna.tsinghua.edu.cn/simple/" target="_blank" rel="noopener">https://pypi.tuna.tsinghua.edu.cn/simple/</a><br>中国科学技术大学 <a href="http://pypi.mirrors.ustc.edu.cn/simple/" target="_blank" rel="noopener">http://pypi.mirrors.ustc.edu.cn/simple/</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(base)$ conda create -n py365 python=<span class="number">3.6</span><span class="number">.5</span>   <span class="comment"># anaconda中创建python版本为3.7.3的虚拟环境</span></span><br><span class="line">(base)$ conda activate py365                 <span class="comment"># 激活该环境</span></span><br><span class="line">pip install opencv-python==<span class="number">3.4</span><span class="number">.1</span><span class="number">.15</span> -i http://pypi.douban.com/simple --trusted-host pypi.douban.com                              <span class="comment"># 安装opencv-python 3.4.1.15，同时还会加载相应的依赖库</span></span><br></pre></td></tr></table></figure>
+
+<p>内容完善中……</p>
+<a id="more"></a>
+
+<h1 id="图像基本操作"><a href="#图像基本操作" class="headerlink" title="图像基本操作"></a>图像基本操作</h1><h1 id="图像阈值"><a href="#图像阈值" class="headerlink" title="图像阈值"></a>图像阈值</h1><h2 id="简单阈值"><a href="#简单阈值" class="headerlink" title="简单阈值"></a>简单阈值</h2><h2 id="自适应阈值"><a href="#自适应阈值" class="headerlink" title="自适应阈值"></a>自适应阈值</h2><h2 id="Otsu‘s-二值化"><a href="#Otsu‘s-二值化" class="headerlink" title="Otsu‘s 二值化"></a>Otsu‘s 二值化</h2><h1 id="平滑处理"><a href="#平滑处理" class="headerlink" title="平滑处理"></a>平滑处理</h1><h2 id="平均"><a href="#平均" class="headerlink" title="平均"></a>平均</h2><h2 id="高斯模糊"><a href="#高斯模糊" class="headerlink" title="高斯模糊"></a>高斯模糊</h2><h2 id="中值模糊"><a href="#中值模糊" class="headerlink" title="中值模糊"></a>中值模糊</h2><h2 id="双边滤波"><a href="#双边滤波" class="headerlink" title="双边滤波"></a>双边滤波</h2><h1 id="形态学处理"><a href="#形态学处理" class="headerlink" title="形态学处理"></a>形态学处理</h1><h2 id="腐蚀"><a href="#腐蚀" class="headerlink" title="腐蚀"></a>腐蚀</h2><h2 id="膨胀"><a href="#膨胀" class="headerlink" title="膨胀"></a>膨胀</h2><h2 id="开运算"><a href="#开运算" class="headerlink" title="开运算"></a>开运算</h2><h2 id="闭运算"><a href="#闭运算" class="headerlink" title="闭运算"></a>闭运算</h2><h2 id="梯度"><a href="#梯度" class="headerlink" title="梯度"></a>梯度</h2><h2 id="礼帽"><a href="#礼帽" class="headerlink" title="礼帽"></a>礼帽</h2><h2 id="黑帽"><a href="#黑帽" class="headerlink" title="黑帽"></a>黑帽</h2><h1 id="梯度处理"><a href="#梯度处理" class="headerlink" title="梯度处理"></a>梯度处理</h1><h2 id="Sobel算子和Scharr算子"><a href="#Sobel算子和Scharr算子" class="headerlink" title="Sobel算子和Scharr算子"></a>Sobel算子和Scharr算子</h2><h2 id="laplacian算子"><a href="#laplacian算子" class="headerlink" title="laplacian算子"></a>laplacian算子</h2><h1 id="边缘检测"><a href="#边缘检测" class="headerlink" title="边缘检测"></a>边缘检测</h1><h1 id="Hough变换"><a href="#Hough变换" class="headerlink" title="Hough变换"></a>Hough变换</h1><h2 id="直线变换"><a href="#直线变换" class="headerlink" title="直线变换"></a>直线变换</h2><h2 id="圆形变换"><a href="#圆形变换" class="headerlink" title="圆形变换"></a>圆形变换</h2><h1 id="图像金字塔"><a href="#图像金字塔" class="headerlink" title="图像金字塔"></a>图像金字塔</h1><h2 id="高斯金字塔"><a href="#高斯金字塔" class="headerlink" title="高斯金字塔"></a>高斯金字塔</h2><p><img data-src="/images/opencv/Pyramid_1.png" alt="Pyramid_1"></p>
+<p><strong>高斯金字塔：向下采样法（缩小）</strong></p>
+<p><img data-src="/images/opencv/Pyramid_2.png" alt="Pyramid_2"></p>
+<p>实例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">img = cv2.imread(<span class="string">"A.png"</span>)</span><br><span class="line">down = cv2.pyrDown(img)</span><br><span class="line">cv2.imshow(<span class="string">"down"</span>,down)</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>高斯金字塔：向上采样法（放大）</strong></p>
+<p><img data-src="/images/opencv/Pyramid_3.png" alt="Pyramid_3"></p>
+<p>实例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">img = cv2.imread(<span class="string">"A.png"</span>)</span><br><span class="line">up = cv2.pyrUp(img)</span><br><span class="line">cv2.imshow(<span class="string">"up"</span>,up)</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="拉普拉斯金字塔"><a href="#拉普拉斯金字塔" class="headerlink" title="拉普拉斯金字塔"></a>拉普拉斯金字塔</h2><p><img data-src="/images/opencv/Pyramid_4.png" alt="Pyramid_4"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">down=cv2.pyrDown(img)</span><br><span class="line">down_up=cv2.pyrUp(down)</span><br><span class="line">l_img=img-down_up</span><br><span class="line">cv2.imshow(l_img,<span class="string">'l_1'</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="轮廓检测"><a href="#轮廓检测" class="headerlink" title="轮廓检测"></a>轮廓检测</h1><p><strong>cv2.findContours(img,mode,method)</strong></p>
+<p>mode:轮廓检索模式</p>
+<ul>
+<li>RETR_EXTERNAL ：只检索最外面的轮廓；</li>
+<li>RETR_LIST：检索所有的轮廓，并将其保存到一条链表当中；</li>
+<li>RETR_CCOMP：检索所有的轮廓，并将他们组织为两层：顶层是各部分的外部边界，第二层是空洞的边界;</li>
+<li>RETR_TREE：检索所有的轮廓，并重构嵌套轮廓的整个层次;</li>
+</ul>
+<p>method:轮廓逼近方法</p>
+<ul>
+<li>CHAIN_APPROX_NONE：以Freeman链码的方式输出轮廓，所有其他方法输出多边形（顶点的序列）。</li>
+<li>CHAIN_APPROX_SIMPLE:压缩水平的、垂直的和斜的部分，也就是，函数只保留他们的终点部分。</li>
+</ul>
+<p>为了得到更高的准确率，使用二值图像。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">img = cv2.imread(<span class="string">'contours.png'</span>)</span><br><span class="line">gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)</span><br><span class="line">ret, thresh = cv2.threshold(gray, <span class="number">127</span>, <span class="number">255</span>, cv2.THRESH_BINARY)</span><br><span class="line">cv2.imshow(thresh,<span class="string">'thresh'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># binary 输出的二值图；contours 边缘；hierarchy 层次结构</span></span><br><span class="line">binary, contours, hierarchy = cv2.findContours(thresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_NONE)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘制轮廓：参数分别为，轮廓，轮廓索引（-1表示所有轮廓），颜色，线条厚度</span></span><br><span class="line">draw_img = img.copy()</span><br><span class="line">res = cv2.drawContours(draw_img, contours, <span class="number">-1</span>, (<span class="number">0</span>, <span class="number">0</span>, <span class="number">255</span>), <span class="number">2</span>)</span><br><span class="line">cv_show(res,<span class="string">'res'</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="轮廓特征"><a href="#轮廓特征" class="headerlink" title="轮廓特征"></a>轮廓特征</h2><h3 id="炬"><a href="#炬" class="headerlink" title="炬"></a>炬</h3><h3 id="面积"><a href="#面积" class="headerlink" title="面积"></a>面积</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cnt = contours[<span class="number">0</span>]</span><br><span class="line"><span class="comment">#面积</span></span><br><span class="line">cv2.contourArea(cnt)</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="周长"><a href="#周长" class="headerlink" title="周长"></a>周长</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cnt = contours[<span class="number">0</span>]</span><br><span class="line">cv2.arcLength(cnt,<span class="literal">True</span>) <span class="comment"># True表示闭合</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="轮廓近似"><a href="#轮廓近似" class="headerlink" title="轮廓近似"></a>轮廓近似</h3><p><img data-src="/images/opencv/contours3.png" alt="contours3"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 找轮廓</span></span><br><span class="line">img = cv2.imread(<span class="string">'contours2.png'</span>)</span><br><span class="line"></span><br><span class="line">gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)</span><br><span class="line">ret, thresh = cv2.threshold(gray, <span class="number">127</span>, <span class="number">255</span>, cv2.THRESH_BINARY)</span><br><span class="line">binary, contours, hierarchy = cv2.findContours(thresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_NONE)</span><br><span class="line">cnt = contours[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">draw_img = img.copy()</span><br><span class="line">res = cv2.drawContours(draw_img, [cnt], <span class="number">-1</span>, (<span class="number">0</span>, <span class="number">0</span>, <span class="number">255</span>), <span class="number">2</span>)</span><br><span class="line">cv_show(res,<span class="string">'res'</span>)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">epsilon = <span class="number">0.15</span>*cv2.arcLength(cnt,<span class="literal">True</span>)  <span class="comment"># epsilon一般按照周长的百分比进行设置，越小，轮廓近似值越大</span></span><br><span class="line">approx = cv2.approxPolyDP(cnt,epsilon,<span class="literal">True</span>) </span><br><span class="line"></span><br><span class="line">draw_img = img.copy()</span><br><span class="line">res = cv2.drawContours(draw_img, [approx], <span class="number">-1</span>, (<span class="number">0</span>, <span class="number">0</span>, <span class="number">255</span>), <span class="number">2</span>)</span><br><span class="line">cv_show(res,<span class="string">'res'</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="边界矩形"><a href="#边界矩形" class="headerlink" title="边界矩形"></a>边界矩形</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">img = cv2.imread(<span class="string">'contours.png'</span>)</span><br><span class="line"></span><br><span class="line">gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)</span><br><span class="line">ret, thresh = cv2.threshold(gray, <span class="number">127</span>, <span class="number">255</span>, cv2.THRESH_BINARY)</span><br><span class="line">binary, contours, hierarchy = cv2.findContours(thresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_NONE)</span><br><span class="line">cnt = contours[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">x,y,w,h = cv2.boundingRect(cnt)</span><br><span class="line">img = cv2.rectangle(img,(x,y),(x+w,y+h),(<span class="number">0</span>,<span class="number">255</span>,<span class="number">0</span>),<span class="number">2</span>)</span><br><span class="line">cv_show(img,<span class="string">'img'</span>)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">area = cv2.contourArea(cnt)</span><br><span class="line">x, y, w, h = cv2.boundingRect(cnt)</span><br><span class="line">rect_area = w * h</span><br><span class="line">extent = float(area) / rect_area</span><br><span class="line"><span class="keyword">print</span> (<span class="string">'轮廓面积与边界矩形比'</span>,extent)</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="最小外接圆"><a href="#最小外接圆" class="headerlink" title="最小外接圆"></a>最小外接圆</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">(x,y),radius = cv2.minEnclosingCircle(cnt) </span><br><span class="line">center = (int(x),int(y)) </span><br><span class="line">radius = int(radius) </span><br><span class="line">img = cv2.circle(img,center,radius,(<span class="number">0</span>,<span class="number">255</span>,<span class="number">0</span>),<span class="number">2</span>)</span><br><span class="line">cv_show(img,<span class="string">'img'</span>)</span><br></pre></td></tr></table></figure>
+
+
+
+<p>##轮廓的性质</p>
+<h3 id="Solidty"><a href="#Solidty" class="headerlink" title="Solidty"></a>Solidty</h3><h3 id="Equivalent-Diameter"><a href="#Equivalent-Diameter" class="headerlink" title="Equivalent Diameter"></a>Equivalent Diameter</h3><h3 id="方向"><a href="#方向" class="headerlink" title="方向"></a>方向</h3><h3 id="掩模和像素点"><a href="#掩模和像素点" class="headerlink" title="掩模和像素点"></a>掩模和像素点</h3><h3 id="平均颜色和平均灰度"><a href="#平均颜色和平均灰度" class="headerlink" title="平均颜色和平均灰度"></a>平均颜色和平均灰度</h3><h3 id="极点"><a href="#极点" class="headerlink" title="极点"></a>极点</h3><h1 id="模版匹配"><a href="#模版匹配" class="headerlink" title="模版匹配"></a>模版匹配</h1><p>模版匹配和卷积原理很像，模版在原图上从原点开始滑动，计算模版与（图像被模版覆盖的地方）的差别程度，这个差别程度的计算方法在opencv里有6种。然后将每次计算的结果放入一个矩阵里，作为结果输出。假如原图形是A✖️B大小，而模版是a✖️b的大小，则输出结果的矩阵是（A-a+1）✖️（B-b+1）的大小。</p>
+<ul>
+<li><p>TM_SQDIFF：计算平方差，计算出来的值越小，越相关</p>
+</li>
+<li><p>TM_CCORR：计算相关性，计算出来的值越大，越相关</p>
+</li>
+<li><p>TM_CCOEFF：计算相关系数，计算出来的值越大，越相关</p>
+</li>
+<li><p>TM_SQDIFF_NORMED：计算归一化平方差，计算出来的值越接近0，越相关</p>
+</li>
+<li><p>TM_CCORR_NORMED：计算归一化相关性，计算出来的值越接近1，越相关</p>
+</li>
+<li><p>TM_CCOEFF_NORMED：计算归一化相关系数，计算出来的值越接近1，越相关</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">img = cv2.imread(<span class="string">"lena.jpg"</span>,<span class="number">0</span>)</span><br><span class="line">h,w = img.shape[:<span class="number">2</span>][::<span class="number">-1</span>]</span><br><span class="line">template = cv2.imread(<span class="string">"face"</span>,<span class="number">0</span>)</span><br><span class="line">methods = [<span class="string">'cv2.TM_CCOEFF'</span>,<span class="string">'cv2.TM_CCORR_NORME'</span>,<span class="string">'cv2.TM_CCORR'</span>,<span class="string">'cv2.TM_CCORR_NORMED'</span>,<span class="string">'cv2.TM_SQDIFF'</span>,<span class="string">'cv2.TM_SQDIFF_NORMED'</span>]</span><br><span class="line">res = cv2.matchTemplate(img,template,<span class="number">1</span>) <span class="comment"># 模版匹配</span></span><br><span class="line">min_val,max_val,min_loc,max_loc = cv2.minMacLoc(res) <span class="comment"># 返回最小最大值的坐标和位置</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> meth <span class="keyword">in</span> methods:</span><br><span class="line">  img2 = img.copy()</span><br><span class="line">  </span><br><span class="line">  <span class="comment"># 匹配方法的真值</span></span><br><span class="line">  method = eval(meth)</span><br><span class="line">  res = cv2.matchTemplate(img,template,<span class="number">1</span>) <span class="comment"># 模版匹配</span></span><br><span class="line">  min_val,max_val,min_loc,max_loc = cv2.minMacLoc(res) <span class="comment"># 返回最小最大值的坐标和位置</span></span><br><span class="line">  </span><br><span class="line">  <span class="comment"># 如果是平方差匹配TM_SQDIFF或者归一化平方差匹配TM_SQDIFF_NORMED，取最小值</span></span><br><span class="line">  <span class="keyword">if</span> method <span class="keyword">in</span> [cv2.TM_SQDIFF,cv2.TM_SQDIFF_NORMED]:</span><br><span class="line">    top_left = min_loc</span><br><span class="line">  <span class="keyword">else</span>:</span><br><span class="line">    top_left = max_loc</span><br><span class="line">  bottom_right = (top_left[<span class="number">0</span>]+w,top_left[<span class="number">1</span>]+h)</span><br><span class="line">  </span><br><span class="line">  cv2.rectangle(img2,top_left,bottom_right,<span class="number">255</span>,<span class="number">2</span>)</span><br><span class="line">  </span><br><span class="line">  plt.subplot(<span class="number">121</span>),plt.imshow(res,cmap=<span class="string">'gray'</span>)</span><br><span class="line">  plt.sticks([]),plt.yticks([])</span><br><span class="line">  plt.subplot(<span class="number">122</span>),plt.imshow(img2,cmap=<span class="string">'gray'</span>)</span><br><span class="line">  plt.sticks([]),plt.yticks([])</span><br><span class="line">  plt.subtitle(meth)</span><br><span class="line">  plt.show()</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 匹配多个对象</span></span><br><span class="line">img = cv2.imread(<span class="string">"lena.jpg"</span>,<span class="number">0</span>)</span><br><span class="line">h,w = img.shape[:<span class="number">2</span>][::<span class="number">-1</span>]</span><br><span class="line">template = cv2.imread(<span class="string">"face"</span>,<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">res = cv2.matchTemplate(img,template,cv2.TM_CCORR_NORME) <span class="comment"># 模版匹配</span></span><br><span class="line">threshold = <span class="number">0.8</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取匹配程度大于0.8的坐标</span></span><br><span class="line">loc = np.where(res &gt;= threshold)</span><br><span class="line"><span class="keyword">for</span> pt <span class="keyword">in</span> zip(*loc[::<span class="number">-1</span>]): <span class="comment">#*号表示可选参数</span></span><br><span class="line">  bottom_right = (pt[<span class="number">0</span>] + w, pt[<span class="number">1</span>] + h)</span><br><span class="line">  cv2.rectangle(img,pt,bottom_right,(<span class="number">0</span>,<span class="number">0</span>,<span class="number">255</span>),<span class="number">2</span>)</span><br><span class="line">  </span><br><span class="line">cv2.imshow(<span class="string">"img"</span>,img)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+
+<h1 id="直方图"><a href="#直方图" class="headerlink" title="直方图"></a>直方图</h1><p>统计图中的像素点分布。</p>
+<h2 id="直方图的计算、绘制与分析"><a href="#直方图的计算、绘制与分析" class="headerlink" title="直方图的计算、绘制与分析"></a>直方图的计算、绘制与分析</h2><p>cv2.calcHist(images, channels,mask,histSize,range)</p>
+<ul>
+<li>images:原图像格式为uint8或float32，当传入函数时应用中括号，例如[img]</li>
+<li>channels:同样用中括号，如果图像时灰度图，它的值是[0]，如果是彩色图像，那传入的参数可以是【0】【1】【2】</li>
+<li>mask:掩模图像，统计整幅图像就将它设为None，但是如果只想统计一部分，就制作一个掩模。</li>
+<li>histSize:BIN的数目，也用中括号</li>
+<li>ranges:像素值范围，为[0,256]</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">img = cv2.imread(<span class="string">"cat.png"</span>,<span class="number">0</span>)</span><br><span class="line">hist = cv2.calcHist([img],[<span class="number">0</span>],<span class="literal">None</span>,[<span class="number">256</span>],[<span class="number">0</span>,<span class="number">256</span>])</span><br><span class="line">plt.hist(img.ravel(),<span class="number">256</span>))</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="mask操作"><a href="#mask操作" class="headerlink" title="mask操作"></a>mask操作</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 创建mask</span></span><br><span class="line">mask = np.zeros(img.shape[:<span class="number">2</span>],np.uint8)</span><br><span class="line">mask[<span class="number">100</span>:<span class="number">300</span>,<span class="number">100</span>:<span class="number">400</span>] = <span class="number">255</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 操作mask</span></span><br><span class="line">mask_img = cv2.bitwise_and(img,img,mask=mask) <span class="comment">#与操作</span></span><br><span class="line">cv2.imshow(<span class="string">"img"</span>,img)</span><br><span class="line"></span><br><span class="line">hist_full = cv2.calHist([img],[<span class="number">0</span>],<span class="literal">None</span>,[<span class="number">256</span>],[<span class="number">0</span>,<span class="number">256</span>])</span><br><span class="line">hist_mask = cv2.calHist([img],[<span class="number">0</span>],mask,[<span class="number">256</span>],[<span class="number">0</span>,<span class="number">256</span>])</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="直方图均衡化"><a href="#直方图均衡化" class="headerlink" title="直方图均衡化"></a>直方图均衡化</h2><p>均衡后，色彩和亮度能够稍微的提升。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">equ = cv2.equalizeHist(img)</span><br><span class="line">plt.hist(equ,ravel(<span class="number">0</span>,<span class="number">256</span>))</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>自适应直方图均衡化</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">clahe = cv2.createCLAHE(clipLimit=<span class="number">2.0</span>,tilerGridSize(<span class="number">8</span>,<span class="number">8</span>))</span><br><span class="line">res_clahe = clahe.apple(img)</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="傅立叶变换"><a href="#傅立叶变换" class="headerlink" title="傅立叶变换"></a>傅立叶变换</h1><p>中心思想：<strong>任何函数都能通过傅立叶堆叠出来。</strong></p>
+<p>以时间为参照就是时域分析。</p>
+<p><strong>傅立叶变换的作用：</strong></p>
+<ul>
+<li>高频：变化剧烈的灰度分量，例如边界</li>
+<li>低频：变化缓慢的灰度分量，例如一片大海</li>
+</ul>
+<p>可以找到图像中的高频与低频部分。</p>
+<p><strong>滤波：</strong></p>
+<ul>
+<li>低通滤波器：只保留低频，会使图像模糊</li>
+<li>高通滤波器：只保留高频，会使图像细节增强</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="keyword">from</span> matplotlib <span class="keyword">import</span> pyplot <span class="keyword">as</span> plt</span><br><span class="line">img = cv2.imread(<span class="string">"lena.jpg"</span>,<span class="number">0</span>)</span><br><span class="line">img_float32 = np.float32(img)</span><br><span class="line"></span><br><span class="line">dft = cv2.dft(img_float32,flags = cv2.DFT_COMPLEX_OUTPUT)</span><br><span class="line">dft_shift = np.fft.fftshift(dft) <span class="comment">#将低频值转换到中间的位置</span></span><br><span class="line"><span class="comment"># 得到灰度图能够表示的形式</span></span><br><span class="line">magnitude_spectrum = <span class="number">20</span>*np.log(cv2.magnitude(dft_shift[:,:,<span class="number">0</span>],dft_shift[:,:,<span class="number">1</span>]))</span><br><span class="line"></span><br><span class="line">plt.subplot((<span class="number">121</span>),plt.imshow(img,cmap=<span class="string">'gray'</span>)</span><br><span class="line">plt.title(<span class="string">"Input image"</span>),plt.xticks([]),plt.yticks([])</span><br><span class="line">plt.subplot(<span class="number">122</span>),plt.imshow(magnitude_spectrum,cmap=<span class="string">'gray'</span>)</span><br><span class="line">plt.title(<span class="string">'magnitude_spectrum'</span>),plt.xticks([]),plt.yticks([])</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<h1 id="图像特征"><a href="#图像特征" class="headerlink" title="图像特征"></a>图像特征</h1><h2 id="Harris角点检测"><a href="#Harris角点检测" class="headerlink" title="Harris角点检测"></a>Harris角点检测</h2><p>边界：一个特征值大，一个特征值小，自相关函数值在某一方向上大，在其他方向上小。</p>
+<p>平面：两个特征值都小，且近似相等，自相关函数数值在各个方向上都小。</p>
+<p>角点：两个特征值都大，且近似相等，自相关函数在所有方向都增大。</p>
+<h3 id="cv2-cornerHarris"><a href="#cv2-cornerHarris" class="headerlink" title="cv2.cornerHarris()"></a>cv2.cornerHarris()</h3><ul>
+<li>img： 数据类型为 ﬂoat32 的入图像</li>
+<li>blockSize： 角点检测中指定区域的大小</li>
+<li>ksize： Sobel求导中使用的窗口大小</li>
+<li>k： 取值参数为 [0,04,0.06]</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">dst = cv2.cornerHarris(gray, <span class="number">2</span>, <span class="number">3</span>, <span class="number">0.04</span>)</span><br><span class="line"><span class="keyword">print</span> (<span class="string">'dst.shape:'</span>,dst.shape)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">img[dst&gt;<span class="number">0.01</span>*dst.max()]=[<span class="number">0</span>,<span class="number">0</span>,<span class="number">255</span>] <span class="comment">#大于最大值的0.01倍，就认为是一个角点</span></span><br><span class="line">cv2.imshow(<span class="string">'dst'</span>,img) </span><br><span class="line">cv2.waitKey(<span class="number">0</span>) </span><br><span class="line">cv2.destroyAllWindows()</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="Sift特征"><a href="#Sift特征" class="headerlink" title="Sift特征"></a>Sift特征</h2><p>Scale Invariant Feature Transform</p>
+<h3 id="图像尺度空间"><a href="#图像尺度空间" class="headerlink" title="图像尺度空间"></a>图像尺度空间</h3><p>在一定的范围内，无论物体是大还是小，人眼都可以分辨出来，然而计算机要有相同的能力却很难，所以要让机器能够对物体在不同尺度下有一个统一的认知，就需要考虑图像在不同的尺度下都存在的特点。</p>
+<p>尺度空间的获取通常使用高斯模糊来实现。</p>
+<p><img data-src="/images/opencv/sift_3.png" alt="sift_3"></p>
+<p><img data-src="/images/opencv/sift_2.png" alt="sift_2"></p>
+<p>不同σ的高斯函数决定了对图像的平滑程度，越大的σ值对应的图像越模糊。</p>
+<h3 id="多分辨率金字塔"><a href="#多分辨率金字塔" class="headerlink" title="多分辨率金字塔"></a>多分辨率金字塔</h3><p><img data-src="/images/opencv/sift_4.png" alt="sift_4"></p>
+<h3 id="高斯差分金字塔（DOG）"><a href="#高斯差分金字塔（DOG）" class="headerlink" title="高斯差分金字塔（DOG）"></a>高斯差分金字塔（DOG）</h3><p><img data-src="/images/opencv/sift_5.png" alt="sift_5"></p>
+<p><img data-src="/images/opencv/sift_6.png" alt="sift_6"></p>
+<h3 id="DoG空间极值检测"><a href="#DoG空间极值检测" class="headerlink" title="DoG空间极值检测"></a>DoG空间极值检测</h3><p>为了寻找尺度空间的极值点，每个像素点要和其图像域（同一尺度空间）和尺度域（相邻的尺度空间）的所有相邻点进行比较，当其大于（或者小于）所有相邻点时，该点就是极值点。如下图所示，中间的检测点要和其所在图像的3×3邻域8个像素点，以及其相邻的上下两层的3×3领域18个像素点，共26个像素点进行比较。</p>
+<p><img data-src="/images/opencv/sift_7.png" alt="sift_7"></p>
+<h3 id="关键点的精确定位"><a href="#关键点的精确定位" class="headerlink" title="关键点的精确定位"></a>关键点的精确定位</h3><p>这些候选关键点是DOG空间的局部极值点，而且这些极值点均为离散的点，精确定位极值点的一种方法是，对尺度空间DoG函数进行曲线拟合，计算其极值点，从而实现关键点的精确定位。</p>
+<p><img data-src="/images/opencv/sift_8.png" alt="sift_8"></p>
+<p><img data-src="/images/opencv/sift_9.png" alt="sift_9"></p>
+<h3 id="消除边界响应"><a href="#消除边界响应" class="headerlink" title="消除边界响应"></a>消除边界响应</h3><p><img data-src="/images/opencv/sift_10.png" alt="sift_10"></p>
+<h3 id="特征点的主方向"><a href="#特征点的主方向" class="headerlink" title="特征点的主方向"></a>特征点的主方向</h3><p><img data-src="/images/opencv/sift_11.png" alt="sift_11"></p>
+<p>每个特征点可以得到三个信息(x,y,σ,θ)，即位置、尺度和方向。具有多个方向的关键点可以被复制成多份，然后将方向值分别赋给复制后的特征点，一个特征点就产生了多个坐标、尺度相等，但是方向不同的特征点。</p>
+<h3 id="生成特征描述"><a href="#生成特征描述" class="headerlink" title="生成特征描述"></a>生成特征描述</h3><p>在完成关键点的梯度计算后，使用直方图统计邻域内像素的梯度和方向。</p>
+<p><img data-src="/images/opencv/sift_12.png" alt="sift_12"></p>
+<p>为了保证特征矢量的旋转不变性，要以特征点为中心，在附近邻域内将坐标轴旋转θ角度，即将坐标轴旋转为特征点的主方向。</p>
+<p><img data-src="/images/opencv/sift_14.png" alt="sift_14"></p>
+<p>旋转之后的主方向为中心取8x8的窗口，求每个像素的梯度幅值和方向，箭头方向代表梯度方向，长度代表梯度幅值，然后利用高斯窗口对其进行加权运算，最后在每个4x4的小块上绘制8个方向的梯度直方图，计算每个梯度方向的累加值，即可形成一个种子点，即每个特征的由4个种子点组成，每个种子点有8个方向的向量信息。</p>
+<p><img data-src="/images/opencv/sift_15.png" alt="sift_15"></p>
+<p>论文中建议对每个关键点使用4x4共16个种子点来描述，这样一个关键点就会产生128维的SIFT特征向量。</p>
+<p><img data-src="/images/opencv/sift_17.png" alt="sift_17"></p>
+<h3 id="OpenCV-SIFT函数"><a href="#OpenCV-SIFT函数" class="headerlink" title="OpenCV SIFT函数"></a>OpenCV SIFT函数</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">img = cv2.imread(<span class="string">'test_1.jpg'</span>)</span><br><span class="line">gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)</span><br><span class="line"></span><br><span class="line">sift = cv2.xfeatures2d.SIFT_create()</span><br><span class="line">kp = sift.detect(gray, <span class="literal">None</span>) <span class="comment"># kp：关键点</span></span><br><span class="line"></span><br><span class="line">img = cv2.drawKeypoints(gray, kp, img)</span><br><span class="line"></span><br><span class="line">cv2.imshow(<span class="string">'drawKeypoints'</span>, img)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">cv2.destroyAllWindows()</span><br></pre></td></tr></table></figure>
+
+<p>计算特征</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kp, des = sift.compute(gray, kp)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">print</span> (np.array(kp).shape)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">des.shape</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">des[<span class="number">0</span>]</span><br></pre></td></tr></table></figure>
+
+<h1 id="背景建模"><a href="#背景建模" class="headerlink" title="背景建模"></a>背景建模</h1><h2 id="帧差法"><a href="#帧差法" class="headerlink" title="帧差法"></a><strong>帧差法</strong></h2><p>由于场景中的目标在运动，目标的影像在不同图像帧中的位置不同。该类算法对时间上连续的两帧图像进行差分运算，不同帧对应的像素点相减，判断灰度差的绝对值，当绝对值超过一定阈值时，即可判断为运动目标，从而实现目标的检测功能。</p>
+<p><img data-src="/images/opencv/bg_2.png" alt="bg_2"></p>
+<p>帧差法非常简单，但是会引入噪音和空洞问题。</p>
+<h2 id="混合高斯模型"><a href="#混合高斯模型" class="headerlink" title="混合高斯模型"></a>混合高斯模型</h2><p>（视频变化趋势应该是符合高斯分布的）</p>
+<p>在进行前景检测前，先对背景进行训练，对图像中每个背景采用一个混合高斯模型进行模拟，每个背景的混合高斯的个数可以自适应。然后在测试阶段，对新来的像素进行GMM匹配，如果该像素值能够匹配其中一个高斯，则认为是背景，否则认为是前景。由于整个过程GMM模型在不断更新学习中，所以对动态背景有一定的鲁棒性。最后通过对一个有树枝摇摆的动态背景进行前景检测，取得了较好的效果。</p>
+<p>在视频中对于像素点的变化情况应当是符合高斯分布。</p>
+<p><img data-src="/images/opencv/bg_3.png" alt="bg_3"></p>
+<p>背景的实际分布应当是多个高斯分布混合在一起，每个高斯模型也可以带有权重。</p>
+<p><img data-src="/images/opencv/bg_4.png" alt="bg_4"></p>
+<p><strong>混合高斯模型学习方法</strong></p>
+<ul>
+<li>1.首先初始化每个高斯模型矩阵参数。</li>
+<li>2.取视频中T帧数据图像用来训练高斯混合模型。来了第一个像素之后用它来当做第一个高斯分布。</li>
+<li>3.当后面来的像素值时，与前面已有的高斯的均值比较，如果该像素点的值与其模型均值差在3倍的方差内，则属于该分布，并对其进行参数更新。</li>
+<li>4.如果下一次来的像素不满足当前高斯分布，用它来创建一个新的高斯分布。</li>
+</ul>
+<p><strong>混合高斯模型测试方法</strong></p>
+<p>在测试阶段，对新来像素点的值与混合高斯模型中的每一个均值进行比较，如果其差值在2倍的方差之间的话，则认为是背景，否则认为是前景。将前景赋值为255，背景赋值为0。这样就形成了一副前景二值图。</p>
+<p><img data-src="/images/opencv/bg_5.png" alt="bg_5"></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"></span><br><span class="line"><span class="comment">#经典的测试视频</span></span><br><span class="line">cap = cv2.VideoCapture(<span class="string">'test.avi'</span>)</span><br><span class="line"><span class="comment">#形态学操作需要使用</span></span><br><span class="line">kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE,(<span class="number">3</span>,<span class="number">3</span>))</span><br><span class="line"><span class="comment">#创建混合高斯模型用于背景建模</span></span><br><span class="line">fgbg = cv2.createBackgroundSubtractorMOG2()</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span>(<span class="literal">True</span>):</span><br><span class="line">    ret, frame = cap.read()</span><br><span class="line">    fgmask = fgbg.apply(frame)</span><br><span class="line">    <span class="comment">#形态学开运算去噪点</span></span><br><span class="line">    fgmask = cv2.morphologyEx(fgmask, cv2.MORPH_OPEN, kernel)</span><br><span class="line">    <span class="comment">#寻找视频中的轮廓</span></span><br><span class="line">    im, contours, hierarchy = cv2.findContours(fgmask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> c <span class="keyword">in</span> contours:</span><br><span class="line">        <span class="comment">#计算各轮廓的周长</span></span><br><span class="line">        perimeter = cv2.arcLength(c,<span class="literal">True</span>)</span><br><span class="line">        <span class="keyword">if</span> perimeter &gt; <span class="number">188</span>:</span><br><span class="line">            <span class="comment">#找到一个直矩形（不会旋转）</span></span><br><span class="line">            x,y,w,h = cv2.boundingRect(c)</span><br><span class="line">            <span class="comment">#画出这个矩形</span></span><br><span class="line">            cv2.rectangle(frame,(x,y),(x+w,y+h),(<span class="number">0</span>,<span class="number">255</span>,<span class="number">0</span>),<span class="number">2</span>)    </span><br><span class="line"></span><br><span class="line">    cv2.imshow(<span class="string">'frame'</span>,frame)</span><br><span class="line">    cv2.imshow(<span class="string">'fgmask'</span>, fgmask)</span><br><span class="line">    k = cv2.waitKey(<span class="number">150</span>) &amp; <span class="number">0xff</span></span><br><span class="line">    <span class="keyword">if</span> k == <span class="number">27</span>:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line">cap.release()</span><br><span class="line">cv2.destroyAllWindows()</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="光流估计"><a href="#光流估计" class="headerlink" title="光流估计"></a>光流估计</h1><p>光流是空间运动物体在观测成像平面上的<strong>像素运动的“瞬时速度”，</strong>根据各个像素点的速度矢量特征，可以<strong>对图像进行动态分析，例如目标跟踪。</strong></p>
+<ul>
+<li>亮度恒定：同一点随着时间的变化，其亮度不会发生改变。</li>
+<li>小运动：随着时间的变化不会引起位置的剧烈变化，只有小运动情况下才能用前后帧之间单位位置变化引起的灰度变化去近似灰度对位置的偏导数。</li>
+<li>空间一致：一个场景上邻近的点投影到图像上也是邻近点，且邻近点速度一致。因为光流法基本方程约束只有一个，而要求x，y方向的速度，有两个未知变量。所以需要连立n多个方程求解。</li>
+</ul>
+<p><img data-src="/images/opencv/lk_2.png" alt="lk_2"></p>
+<p><img data-src="/images/opencv/lk_1.png" alt="lk_1"></p>
+<h2 id="Lucas-Kanade-算法"><a href="#Lucas-Kanade-算法" class="headerlink" title="Lucas-Kanade 算法"></a>Lucas-Kanade 算法</h2><p><img data-src="/images/opencv/lk_3.png" alt="lk_3"></p>
+<p>如何求解方程组呢？看起来一个像素点根本不够，在物体移动过程中还有哪些特性呢？</p>
+<p><img data-src="/images/opencv/lk_4.png" alt="lk_4"></p>
+<p><strong>cv2.calcOpticalFlowPyrLK():</strong></p>
+<p>参数：</p>
+<ul>
+<li>prevImage 前一帧图像</li>
+<li>nextImage 当前帧图像</li>
+<li>prevPts 待跟踪的特征点向量</li>
+<li>winSize 搜索窗口的大小</li>
+<li>maxLevel 最大的金字塔层数</li>
+</ul>
+<p>返回：</p>
+<ul>
+<li>nextPts 输出跟踪特征点向量</li>
+<li>status 特征点是否找到，找到的状态为1，未找到的状态为0</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"></span><br><span class="line">cap = cv2.VideoCapture(<span class="string">'test.avi'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 角点检测所需参数</span></span><br><span class="line">feature_params = dict( maxCorners = <span class="number">100</span>,</span><br><span class="line">                       qualityLevel = <span class="number">0.3</span>,</span><br><span class="line">                       minDistance = <span class="number">7</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># lucas kanade参数</span></span><br><span class="line">lk_params = dict( winSize  = (<span class="number">15</span>,<span class="number">15</span>),</span><br><span class="line">                  maxLevel = <span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 随机颜色条</span></span><br><span class="line">color = np.random.randint(<span class="number">0</span>,<span class="number">255</span>,(<span class="number">100</span>,<span class="number">3</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 拿到第一帧图像</span></span><br><span class="line">ret, old_frame = cap.read()</span><br><span class="line">old_gray = cv2.cvtColor(old_frame, cv2.COLOR_BGR2GRAY)</span><br><span class="line"><span class="comment"># 返回所有检测特征点，需要输入图像，角点最大数量（效率），品质因子（特征值越大的越好，来筛选）</span></span><br><span class="line"><span class="comment"># 距离相当于这区间有比这个角点强的，就不要这个弱的了</span></span><br><span class="line">p0 = cv2.goodFeaturesToTrack(old_gray, mask = <span class="literal">None</span>, **feature_params)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建一个mask</span></span><br><span class="line">mask = np.zeros_like(old_frame)</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span>(<span class="literal">True</span>):</span><br><span class="line">    ret,frame = cap.read()</span><br><span class="line">    frame_gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 需要传入前一帧和当前图像以及前一帧检测到的角点</span></span><br><span class="line">    p1, st, err = cv2.calcOpticalFlowPyrLK(old_gray, frame_gray, p0, <span class="literal">None</span>, **lk_params)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># st=1表示</span></span><br><span class="line">    good_new = p1[st==<span class="number">1</span>]</span><br><span class="line">    good_old = p0[st==<span class="number">1</span>]</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 绘制轨迹</span></span><br><span class="line">    <span class="keyword">for</span> i,(new,old) <span class="keyword">in</span> enumerate(zip(good_new,good_old)):</span><br><span class="line">        a,b = new.ravel()</span><br><span class="line">        c,d = old.ravel()</span><br><span class="line">        mask = cv2.line(mask, (a,b),(c,d), color[i].tolist(), <span class="number">2</span>)</span><br><span class="line">        frame = cv2.circle(frame,(a,b),<span class="number">5</span>,color[i].tolist(),<span class="number">-1</span>)</span><br><span class="line">    img = cv2.add(frame,mask)</span><br><span class="line"></span><br><span class="line">    cv2.imshow(<span class="string">'frame'</span>,img)</span><br><span class="line">    k = cv2.waitKey(<span class="number">150</span>) &amp; <span class="number">0xff</span></span><br><span class="line">    <span class="keyword">if</span> k == <span class="number">27</span>:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 更新</span></span><br><span class="line">    old_gray = frame_gray.copy()</span><br><span class="line">    p0 = good_new.reshape(<span class="number">-1</span>,<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line">cv2.destroyAllWindows()</span><br><span class="line">cap.release()</span><br></pre></td></tr></table></figure>
+
+<h1 id="DNN模块"><a href="#DNN模块" class="headerlink" title="DNN模块"></a>DNN模块</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">blob_from_images.py</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 导入工具包</span></span><br><span class="line"><span class="keyword">import</span> utils_paths</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"></span><br><span class="line"><span class="comment"># 标签文件处理</span></span><br><span class="line">rows = open(<span class="string">"synset_words.txt"</span>).read().strip().split(<span class="string">"\n"</span>)</span><br><span class="line">classes = [r[r.find(<span class="string">" "</span>) + <span class="number">1</span>:].split(<span class="string">","</span>)[<span class="number">0</span>] <span class="keyword">for</span> r <span class="keyword">in</span> rows]</span><br><span class="line"></span><br><span class="line"><span class="comment"># Caffe所需配置文件</span></span><br><span class="line">net = cv2.dnn.readNetFromCaffe(<span class="string">"bvlc_googlenet.prototxt"</span>,</span><br><span class="line">	<span class="string">"bvlc_googlenet.caffemodel"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 图像路径</span></span><br><span class="line">imagePaths = sorted(list(utils_paths.list_images(<span class="string">"images/"</span>)))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 图像数据预处理</span></span><br><span class="line">image = cv2.imread(imagePaths[<span class="number">0</span>])</span><br><span class="line">resized = cv2.resize(image, (<span class="number">224</span>, <span class="number">224</span>))</span><br><span class="line"><span class="comment"># image scalefactor size mean swapRB </span></span><br><span class="line">blob = cv2.dnn.blobFromImage(resized, <span class="number">1</span>, (<span class="number">224</span>, <span class="number">224</span>), (<span class="number">104</span>, <span class="number">117</span>, <span class="number">123</span>))</span><br><span class="line">print(<span class="string">"First Blob: &#123;&#125;"</span>.format(blob.shape))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 得到预测结果</span></span><br><span class="line">net.setInput(blob)</span><br><span class="line">preds = net.forward()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 排序，取分类可能性最大的</span></span><br><span class="line">idx = np.argsort(preds[<span class="number">0</span>])[::<span class="number">-1</span>][<span class="number">0</span>]</span><br><span class="line">text = <span class="string">"Label: &#123;&#125;, &#123;:.2f&#125;%"</span>.format(classes[idx],</span><br><span class="line">	preds[<span class="number">0</span>][idx] * <span class="number">100</span>)</span><br><span class="line">cv2.putText(image, text, (<span class="number">5</span>, <span class="number">25</span>),  cv2.FONT_HERSHEY_SIMPLEX,</span><br><span class="line">	<span class="number">0.7</span>, (<span class="number">0</span>, <span class="number">0</span>, <span class="number">255</span>), <span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示</span></span><br><span class="line">cv2.imshow(<span class="string">"Image"</span>, image)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Batch数据制作</span></span><br><span class="line">images = []</span><br><span class="line"></span><br><span class="line"><span class="comment"># 方法一样，数据是一个batch</span></span><br><span class="line"><span class="keyword">for</span> p <span class="keyword">in</span> imagePaths[<span class="number">1</span>:]:</span><br><span class="line">	image = cv2.imread(p)</span><br><span class="line">	image = cv2.resize(image, (<span class="number">224</span>, <span class="number">224</span>))</span><br><span class="line">	images.append(image)</span><br><span class="line"></span><br><span class="line"><span class="comment"># blobFromImages函数，注意有s</span></span><br><span class="line">blob = cv2.dnn.blobFromImages(images, <span class="number">1</span>, (<span class="number">224</span>, <span class="number">224</span>), (<span class="number">104</span>, <span class="number">117</span>, <span class="number">123</span>))</span><br><span class="line">print(<span class="string">"Second Blob: &#123;&#125;"</span>.format(blob.shape))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取预测结果</span></span><br><span class="line">net.setInput(blob)</span><br><span class="line">preds = net.forward()</span><br><span class="line"><span class="keyword">for</span> (i, p) <span class="keyword">in</span> enumerate(imagePaths[<span class="number">1</span>:]):</span><br><span class="line">	image = cv2.imread(p)</span><br><span class="line">	idx = np.argsort(preds[i])[::<span class="number">-1</span>][<span class="number">0</span>]</span><br><span class="line">	text = <span class="string">"Label: &#123;&#125;, &#123;:.2f&#125;%"</span>.format(classes[idx],</span><br><span class="line">		preds[i][idx] * <span class="number">100</span>)</span><br><span class="line">	cv2.putText(image, text, (<span class="number">5</span>, <span class="number">25</span>),  cv2.FONT_HERSHEY_SIMPLEX,</span><br><span class="line">		<span class="number">0.7</span>, (<span class="number">0</span>, <span class="number">0</span>, <span class="number">255</span>), <span class="number">2</span>)</span><br><span class="line">	cv2.imshow(<span class="string">"Image"</span>, image)</span><br><span class="line">	cv2.waitKey(<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
+
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>Grace Koo
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="https://unknown.yuzhouwan.com/undefined/16645/" title="OpenCV-Base">https://unknown.yuzhouwan.com/undefined/16645/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-ND</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Python/" rel="tag"># Python</a>
+              <a href="/tags/OpenCV/" rel="tag"># OpenCV</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/undefined/20260/" rel="prev" title="Mardown">
+      <i class="fa fa-chevron-left"></i> Mardown
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/undefined/57792/" rel="next" title="DataStructure & Algorithm">
+      DataStructure & Algorithm <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#OpenCV的安装"><span class="nav-number">1.</span> <span class="nav-text">OpenCV的安装</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#图像基本操作"><span class="nav-number">2.</span> <span class="nav-text">图像基本操作</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#图像阈值"><span class="nav-number">3.</span> <span class="nav-text">图像阈值</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#简单阈值"><span class="nav-number">3.1.</span> <span class="nav-text">简单阈值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自适应阈值"><span class="nav-number">3.2.</span> <span class="nav-text">自适应阈值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Otsu‘s-二值化"><span class="nav-number">3.3.</span> <span class="nav-text">Otsu‘s 二值化</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#平滑处理"><span class="nav-number">4.</span> <span class="nav-text">平滑处理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#平均"><span class="nav-number">4.1.</span> <span class="nav-text">平均</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#高斯模糊"><span class="nav-number">4.2.</span> <span class="nav-text">高斯模糊</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#中值模糊"><span class="nav-number">4.3.</span> <span class="nav-text">中值模糊</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#双边滤波"><span class="nav-number">4.4.</span> <span class="nav-text">双边滤波</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#形态学处理"><span class="nav-number">5.</span> <span class="nav-text">形态学处理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#腐蚀"><span class="nav-number">5.1.</span> <span class="nav-text">腐蚀</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#膨胀"><span class="nav-number">5.2.</span> <span class="nav-text">膨胀</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开运算"><span class="nav-number">5.3.</span> <span class="nav-text">开运算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#闭运算"><span class="nav-number">5.4.</span> <span class="nav-text">闭运算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#梯度"><span class="nav-number">5.5.</span> <span class="nav-text">梯度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#礼帽"><span class="nav-number">5.6.</span> <span class="nav-text">礼帽</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#黑帽"><span class="nav-number">5.7.</span> <span class="nav-text">黑帽</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#梯度处理"><span class="nav-number">6.</span> <span class="nav-text">梯度处理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Sobel算子和Scharr算子"><span class="nav-number">6.1.</span> <span class="nav-text">Sobel算子和Scharr算子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#laplacian算子"><span class="nav-number">6.2.</span> <span class="nav-text">laplacian算子</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#边缘检测"><span class="nav-number">7.</span> <span class="nav-text">边缘检测</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hough变换"><span class="nav-number">8.</span> <span class="nav-text">Hough变换</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#直线变换"><span class="nav-number">8.1.</span> <span class="nav-text">直线变换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#圆形变换"><span class="nav-number">8.2.</span> <span class="nav-text">圆形变换</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#图像金字塔"><span class="nav-number">9.</span> <span class="nav-text">图像金字塔</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#高斯金字塔"><span class="nav-number">9.1.</span> <span class="nav-text">高斯金字塔</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#拉普拉斯金字塔"><span class="nav-number">9.2.</span> <span class="nav-text">拉普拉斯金字塔</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#轮廓检测"><span class="nav-number">10.</span> <span class="nav-text">轮廓检测</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#轮廓特征"><span class="nav-number">10.1.</span> <span class="nav-text">轮廓特征</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#炬"><span class="nav-number">10.1.1.</span> <span class="nav-text">炬</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#面积"><span class="nav-number">10.1.2.</span> <span class="nav-text">面积</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#周长"><span class="nav-number">10.1.3.</span> <span class="nav-text">周长</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#轮廓近似"><span class="nav-number">10.1.4.</span> <span class="nav-text">轮廓近似</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#边界矩形"><span class="nav-number">10.1.5.</span> <span class="nav-text">边界矩形</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最小外接圆"><span class="nav-number">10.1.6.</span> <span class="nav-text">最小外接圆</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Solidty"><span class="nav-number">10.1.7.</span> <span class="nav-text">Solidty</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Equivalent-Diameter"><span class="nav-number">10.1.8.</span> <span class="nav-text">Equivalent Diameter</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方向"><span class="nav-number">10.1.9.</span> <span class="nav-text">方向</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#掩模和像素点"><span class="nav-number">10.1.10.</span> <span class="nav-text">掩模和像素点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#平均颜色和平均灰度"><span class="nav-number">10.1.11.</span> <span class="nav-text">平均颜色和平均灰度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#极点"><span class="nav-number">10.1.12.</span> <span class="nav-text">极点</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#模版匹配"><span class="nav-number">11.</span> <span class="nav-text">模版匹配</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#直方图"><span class="nav-number">12.</span> <span class="nav-text">直方图</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#直方图的计算、绘制与分析"><span class="nav-number">12.1.</span> <span class="nav-text">直方图的计算、绘制与分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#mask操作"><span class="nav-number">12.2.</span> <span class="nav-text">mask操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#直方图均衡化"><span class="nav-number">12.3.</span> <span class="nav-text">直方图均衡化</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#傅立叶变换"><span class="nav-number">13.</span> <span class="nav-text">傅立叶变换</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#图像特征"><span class="nav-number">14.</span> <span class="nav-text">图像特征</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Harris角点检测"><span class="nav-number">14.1.</span> <span class="nav-text">Harris角点检测</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#cv2-cornerHarris"><span class="nav-number">14.1.1.</span> <span class="nav-text">cv2.cornerHarris()</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sift特征"><span class="nav-number">14.2.</span> <span class="nav-text">Sift特征</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#图像尺度空间"><span class="nav-number">14.2.1.</span> <span class="nav-text">图像尺度空间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多分辨率金字塔"><span class="nav-number">14.2.2.</span> <span class="nav-text">多分辨率金字塔</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#高斯差分金字塔（DOG）"><span class="nav-number">14.2.3.</span> <span class="nav-text">高斯差分金字塔（DOG）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DoG空间极值检测"><span class="nav-number">14.2.4.</span> <span class="nav-text">DoG空间极值检测</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关键点的精确定位"><span class="nav-number">14.2.5.</span> <span class="nav-text">关键点的精确定位</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#消除边界响应"><span class="nav-number">14.2.6.</span> <span class="nav-text">消除边界响应</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#特征点的主方向"><span class="nav-number">14.2.7.</span> <span class="nav-text">特征点的主方向</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生成特征描述"><span class="nav-number">14.2.8.</span> <span class="nav-text">生成特征描述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#OpenCV-SIFT函数"><span class="nav-number">14.2.9.</span> <span class="nav-text">OpenCV SIFT函数</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#背景建模"><span class="nav-number">15.</span> <span class="nav-text">背景建模</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#帧差法"><span class="nav-number">15.1.</span> <span class="nav-text">帧差法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#混合高斯模型"><span class="nav-number">15.2.</span> <span class="nav-text">混合高斯模型</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#光流估计"><span class="nav-number">16.</span> <span class="nav-text">光流估计</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Lucas-Kanade-算法"><span class="nav-number">16.1.</span> <span class="nav-text">Lucas-Kanade 算法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#DNN模块"><span class="nav-number">17.</span> <span class="nav-text">DNN模块</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Grace Koo</p>
+  <div class="site-description" itemprop="description">正在深入学习各种CV知识</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">14</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/GraceKoo" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;GraceKoo" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-nd.svg" alt="Creative Commons"></a>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title">
+      <i class="fa fa-fw fa-link"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://yuzhouwan.com/" title="https:&#x2F;&#x2F;yuzhouwan.com" rel="noopener" target="_blank">宇宙湾</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 2017 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">unknown.yuzhouwan.com</span>
+</div>
+  <div class="theme-info">Theme – <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.6.0
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+</body>
+</html>
