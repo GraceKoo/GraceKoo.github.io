@@ -55,7 +55,7 @@
 <meta property="og:description" content="*args 和 \kwargs *args 是用来发送一个非键值对的可变数量的参数列表给一个函 数 kwargs 允许你将不定长度的键值对, 作为参数传递给一个函数。 如果你想要在一个函 数里处理带名字的参数, 你应该使用kwargs。  1234def test_args_kwargs(arg1, arg2, arg3):    print(&quot;arg1:&quot;, arg1)    print(&quot;ar">
 <meta property="og:locale" content="Zh">
 <meta property="article:published_time" content="2020-01-31T23:00:01.000Z">
-<meta property="article:modified_time" content="2020-02-12T16:18:34.314Z">
+<meta property="article:modified_time" content="2020-02-15T14:20:45.496Z">
 <meta property="article:author" content="Grace Koo">
 <meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary">
@@ -247,7 +247,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-02-12 16:18:34" itemprop="dateModified" datetime="2020-02-12T16:18:34Z">2020-02-12</time>
+                <time title="Modified: 2020-02-15 14:20:45" itemprop="dateModified" datetime="2020-02-15T14:20:45Z">2020-02-15</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -291,7 +291,67 @@
 
 
 
-<h1 id="Debugging"><a href="#Debugging" class="headerlink" title="Debugging"></a>Debugging</h1><h1 id="官方资源地址"><a href="#官方资源地址" class="headerlink" title="官方资源地址"></a>官方资源地址</h1><p><a href="https://docs.python.org/2/library/pdb.html" target="_blank" rel="noopener">https://docs.python.org/2/library/pdb.html</a> </p>
+<h1 id="Debugging模式"><a href="#Debugging模式" class="headerlink" title="Debugging模式"></a>Debugging模式</h1><p>python提供的pdb功能可以在命令行模式下或者函数内部设置断点进行调试。</p>
+<p>常见命令列表如下：</p>
+<ul>
+<li>c: 继续执行</li>
+<li>w: 显示当前正在执行的代码行的上下文信息</li>
+<li>a: 打印当前函数的参数列表</li>
+<li>s: 执行当前代码行，并停在第一个能停的地方(相当于单步进入)</li>
+<li>n: 继续执行到当前函数的下一行，或者当前行直接返回(单步跳过)</li>
+</ul>
+<ul>
+<li>命令行模式</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ python -m pdb my_script.py</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>函数内部执行</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pdb</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">make_bread</span><span class="params">()</span>:</span> pdb.set_trace()</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"This is pdb mode"</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="生成器"><a href="#生成器" class="headerlink" title="生成器"></a>生成器</h1><p>生成器也是一种迭代器，但<strong>只使用一次迭代</strong>。这是因为它们并没有把所有的值存在 内存中，而是在运行时生成值。你通过遍历来使用它们，要么用一个“for”循环，要么将它 们传递给任意可以进行迭代的函数和结构。大多数时候生成器是以函数来实现的。然而， 它们并不返回一个值，而是<strong>yield</strong>(暂且译作“生出”)一个值。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">generator_function</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">3</span>):</span><br><span class="line">        <span class="keyword">yield</span> i</span><br><span class="line"><span class="keyword">for</span> item <span class="keyword">in</span> generator_function():</span><br><span class="line">print(item)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Output: 0 </span></span><br><span class="line"><span class="comment">#1</span></span><br><span class="line"><span class="comment">#2</span></span><br><span class="line"><span class="comment">#3</span></span><br></pre></td></tr></table></figure>
+
+<p>应用场景：不同一时间将所有计算出来的大量结果集分配到内存当中，特别是结果集里还包含循环。用这种方式，不必担心会大量使用资源。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 斐波那契数列的迭代器：会大量使用内存资源（在在计算很大的输入参数时）</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fibon</span><span class="params">(n)</span>:</span> a=b=<span class="number">1</span></span><br><span class="line">	result = []</span><br><span class="line">	<span class="keyword">for</span> i <span class="keyword">in</span> range(n):</span><br><span class="line">		result.append(a)</span><br><span class="line">		a, b = b, a + b </span><br><span class="line">  <span class="keyword">return</span> result</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 斐波那契数列的生成器：不会大量使用内存资源</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">fibon</span><span class="params">(n)</span>:</span></span><br><span class="line">	a=b=<span class="number">1</span></span><br><span class="line">	<span class="keyword">for</span> i <span class="keyword">in</span> range(n):</span><br><span class="line">		<span class="keyword">yield</span> a</span><br><span class="line">		a, b = b, a + b</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> fibon(<span class="number">1000000</span>):</span><br><span class="line">    print(x)</span><br></pre></td></tr></table></figure>
+
+<h2 id="内置函数：next"><a href="#内置函数：next" class="headerlink" title="内置函数：next()"></a>内置函数：next()</h2><p>Python内置函数:next()。允许我们获取一个序列的下一个元素。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">generator_function</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">3</span>):</span><br><span class="line">				<span class="keyword">yield</span> i</span><br><span class="line">gen = generator_function() </span><br><span class="line">print(next(gen))</span><br><span class="line"><span class="comment"># Output: 0 </span></span><br><span class="line">print(next(gen))</span><br><span class="line"><span class="comment"># Output: 1</span></span><br><span class="line">print(next(gen))</span><br><span class="line"><span class="comment"># Output: 2</span></span><br><span class="line">print(next(gen))</span><br><span class="line"><span class="comment"># Output: Traceback (most recent call last):</span></span><br><span class="line"><span class="comment">#            File "&lt;stdin&gt;", line 1, in &lt;module&gt;</span></span><br><span class="line"><span class="comment">#         StopIteration</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="内置函数：iter"><a href="#内置函数：iter" class="headerlink" title="内置函数：iter()"></a>内置函数：iter()</h2><p>一个可迭代对象并不是一个迭代器，如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">my_string = <span class="string">"Yasoob"</span></span><br><span class="line">next(my_string)</span><br><span class="line"><span class="comment"># Output: Traceback (most recent call last): </span></span><br><span class="line"><span class="comment"># File "&lt;stdin&gt;", line 1, in &lt;module&gt;</span></span><br><span class="line"><span class="comment"># TypeError: str object is not an iterator</span></span><br></pre></td></tr></table></figure>
+
+<p>iter。它将根据一个可迭代对象返回一个迭代器对象。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">my_string = <span class="string">"Yasoob"</span> </span><br><span class="line">my_iter = iter(my_string) </span><br><span class="line">next(my_iter)</span><br><span class="line"><span class="comment"># Output: 'Y'</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="Map、Filter、Reduce"><a href="#Map、Filter、Reduce" class="headerlink" title="Map、Filter、Reduce"></a>Map、Filter、Reduce</h1><h2 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h2><p>Map()会将一个函数映射到一个输入列表的所有元素上。</p>
+<blockquote>
+<p>map(function_to_apply, list_of_inputs)​</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">items = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line">squared = list(map(<span class="keyword">lambda</span> x: x**<span class="number">2</span>, items))</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">multiply</span><span class="params">(x)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> (x*x)</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">add</span><span class="params">(x)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> (x+x)</span><br><span class="line">funcs = [multiply, add] <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">3</span>):</span><br><span class="line">value = map(<span class="keyword">lambda</span> x: x(i), funcs)</span><br><span class="line">print(list(value))</span><br><span class="line"></span><br><span class="line"><span class="comment"># Output:</span></span><br><span class="line"><span class="comment"># [0, 0]</span></span><br><span class="line"><span class="comment"># [1, 2]</span></span><br><span class="line"><span class="comment"># [4, 4]</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Filter"><a href="#Filter" class="headerlink" title="Filter"></a>Filter</h2><p>filter()过滤列表中的元素，并且返回一个由所有符合要求的元素所构成的列表，符合要求即函数映射到该元素时返回值为True。filter()是一个内置函数，类似于for循环，但是执行会更快。</p>
+<blockquote>
+<p>filter(function_to_apply, list_of_inputs)</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">number_list = range(<span class="number">-5</span>, <span class="number">5</span>)</span><br><span class="line">less_than_zero = filter(<span class="keyword">lambda</span> x: x &lt; <span class="number">0</span>, number_list)</span><br><span class="line">print(list(less_than_zero))</span><br><span class="line"></span><br><span class="line"><span class="comment"># Output: [-5, -4, -3, -2, -1]</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="Reduce"><a href="#Reduce" class="headerlink" title="Reduce"></a>Reduce</h2><p>Reduce()用于对一个列表进行一些计算并返回结果。</p>
+<blockquote>
+<p>reduce(function_to_apply, list_of_inputs)</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> functools <span class="keyword">import</span> reduce</span><br><span class="line">product = reduce((<span class="keyword">lambda</span> x, y: x * y), [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>] )</span><br><span class="line"></span><br><span class="line"><span class="comment"># 24</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="官方资源地址"><a href="#官方资源地址" class="headerlink" title="官方资源地址"></a>官方资源地址</h1><p><a href="https://docs.python.org/2/library/pdb.html" target="_blank" rel="noopener">https://docs.python.org/2/library/pdb.html</a> </p>
 <p><a href="https://docs.python.org/3/library/pdb.html" target="_blank" rel="noopener">https://docs.python.org/3/library/pdb.html</a></p>
 <h1 id="参考书籍"><a href="#参考书籍" class="headerlink" title="参考书籍"></a>参考书籍</h1><ul>
 <li>《Intermediate Python》</li>
@@ -399,7 +459,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#args-和-kwargs"><span class="nav-number">1.</span> <span class="nav-text">*args 和 \kwargs</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Debugging"><span class="nav-number">2.</span> <span class="nav-text">Debugging</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#官方资源地址"><span class="nav-number">3.</span> <span class="nav-text">官方资源地址</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考书籍"><span class="nav-number">4.</span> <span class="nav-text">参考书籍</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#args-和-kwargs"><span class="nav-number">1.</span> <span class="nav-text">*args 和 \kwargs</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Debugging模式"><span class="nav-number">2.</span> <span class="nav-text">Debugging模式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#生成器"><span class="nav-number">3.</span> <span class="nav-text">生成器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#内置函数：next"><span class="nav-number">3.1.</span> <span class="nav-text">内置函数：next()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内置函数：iter"><span class="nav-number">3.2.</span> <span class="nav-text">内置函数：iter()</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Map、Filter、Reduce"><span class="nav-number">4.</span> <span class="nav-text">Map、Filter、Reduce</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Map"><span class="nav-number">4.1.</span> <span class="nav-text">Map</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Filter"><span class="nav-number">4.2.</span> <span class="nav-text">Filter</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reduce"><span class="nav-number">4.3.</span> <span class="nav-text">Reduce</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#官方资源地址"><span class="nav-number">5.</span> <span class="nav-text">官方资源地址</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考书籍"><span class="nav-number">6.</span> <span class="nav-text">参考书籍</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
