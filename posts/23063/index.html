@@ -55,7 +55,7 @@
 <meta property="og:description" content="*args 和 **Kwargs *args 是用来发送一个非键值对的可变数量的参数列表给一个函 数 kwargs 允许你将不定长度的键值对, 作为参数传递给一个函数。 如果你想要在一个函 数里处理带名字的参数, 你应该使用kwargs。  1234def test_args_kwargs(arg1, arg2, arg3):    print(&quot;arg1:&quot;, arg1)    print(&quot;a">
 <meta property="og:locale" content="Zh">
 <meta property="article:published_time" content="2020-01-31T23:00:01.000Z">
-<meta property="article:modified_time" content="2020-02-15T14:37:56.811Z">
+<meta property="article:modified_time" content="2020-02-16T15:58:39.732Z">
 <meta property="article:author" content="Grace Koo">
 <meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary">
@@ -247,7 +247,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-02-15 14:37:56" itemprop="dateModified" datetime="2020-02-15T14:37:56Z">2020-02-15</time>
+                <time title="Modified: 2020-02-16 15:58:39" itemprop="dateModified" datetime="2020-02-16T15:58:39Z">2020-02-16</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -312,7 +312,7 @@
 
 
 
-<h1 id="生成器"><a href="#生成器" class="headerlink" title="生成器"></a>生成器</h1><p>生成器也是一种迭代器，但<strong>只使用一次迭代</strong>。这是因为它们并没有把所有的值存在 内存中，而是在运行时生成值。你通过遍历来使用它们，要么用一个“for”循环，要么将它 们传递给任意可以进行迭代的函数和结构。大多数时候生成器是以函数来实现的。然而， 它们并不返回一个值，而是<strong>yield</strong>(暂且译作“生出”)一个值。</p>
+<h1 id="生成器：Generator"><a href="#生成器：Generator" class="headerlink" title="生成器：Generator"></a>生成器：Generator</h1><p>生成器也是一种迭代器，但<strong>只使用一次迭代</strong>。这是因为它们并没有把所有的值存在 内存中，而是在运行时生成值。你通过遍历来使用它们，要么用一个“for”循环，要么将它 们传递给任意可以进行迭代的函数和结构。大多数时候生成器是以函数来实现的。然而， 它们并不返回一个值，而是<strong>yield</strong>(暂且译作“生出”)一个值。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">generator_function</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">3</span>):</span><br><span class="line">        <span class="keyword">yield</span> i</span><br><span class="line"><span class="keyword">for</span> item <span class="keyword">in</span> generator_function():</span><br><span class="line">print(item)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Output: 0 </span></span><br><span class="line"><span class="comment">#1</span></span><br><span class="line"><span class="comment">#2</span></span><br><span class="line"><span class="comment">#3</span></span><br></pre></td></tr></table></figure>
 
 <p>应用场景：不同一时间将所有计算出来的大量结果集分配到内存当中，特别是结果集里还包含循环。用这种方式，不必担心会大量使用资源。</p>
@@ -329,6 +329,11 @@
 <p>iter。它将根据一个可迭代对象返回一个迭代器对象。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">my_string = <span class="string">"Yasoob"</span> </span><br><span class="line">my_iter = iter(my_string) </span><br><span class="line">next(my_iter)</span><br><span class="line"><span class="comment"># Output: 'Y'</span></span><br></pre></td></tr></table></figure>
 
+
+
+<h1 id="装饰器：Decorator"><a href="#装饰器：Decorator" class="headerlink" title="装饰器：Decorator"></a>装饰器：Decorator</h1><ul>
+<li>作用：他们是修改其他函数的功能的函 数。他们有助于让我们的代码更简短，也更Pythonic。</li>
+</ul>
 <h1 id="Map、Filter、Reduce"><a href="#Map、Filter、Reduce" class="headerlink" title="Map、Filter、Reduce"></a>Map、Filter、Reduce</h1><h2 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h2><p>Map()会将一个函数映射到一个输入列表的所有元素上。</p>
 <blockquote>
 <p>map(function_to_apply, list_of_inputs)​</p>
@@ -350,6 +355,20 @@
 <p>reduce(function_to_apply, list_of_inputs)</p>
 </blockquote>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> functools <span class="keyword">import</span> reduce</span><br><span class="line">product = reduce((<span class="keyword">lambda</span> x, y: x * y), [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>] )</span><br><span class="line"></span><br><span class="line"><span class="comment"># 24</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="三元运算符"><a href="#三元运算符" class="headerlink" title="三元运算符"></a>三元运算符</h1><p>如果条件为真，返回真 否则返回假</p>
+<blockquote>
+<p>condition_is_true if condition else condition_is_false</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">is_fat = <span class="literal">True</span></span><br><span class="line">state = <span class="string">"fat"</span> <span class="keyword">if</span> is_fat <span class="keyword">else</span> <span class="string">"not fat"</span></span><br></pre></td></tr></table></figure>
+
+<p>另一个晦涩一点的用法比较少见，它使用了元组:</p>
+<blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(if_test_is_false, if_test_is_true)[test]</span><br></pre></td></tr></table></figure>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">fat = <span class="literal">True</span></span><br><span class="line">fitness = (<span class="string">"skinny"</span>, <span class="string">"fat"</span>)[fat] print(<span class="string">"Ali is "</span>, fitness)</span><br><span class="line"><span class="comment">#输出: Ali is fat</span></span><br></pre></td></tr></table></figure>
+
+
 
 <h1 id="官方资源地址"><a href="#官方资源地址" class="headerlink" title="官方资源地址"></a>官方资源地址</h1><p><a href="https://docs.python.org/2/library/pdb.html" target="_blank" rel="noopener">https://docs.python.org/2/library/pdb.html</a> </p>
 <p><a href="https://docs.python.org/3/library/pdb.html" target="_blank" rel="noopener">https://docs.python.org/3/library/pdb.html</a></p>
@@ -459,7 +478,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#args-和-Kwargs"><span class="nav-number">1.</span> <span class="nav-text">*args 和 **Kwargs</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Debugging模式"><span class="nav-number">2.</span> <span class="nav-text">Debugging模式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#生成器"><span class="nav-number">3.</span> <span class="nav-text">生成器</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#内置函数：next"><span class="nav-number">3.1.</span> <span class="nav-text">内置函数：next()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内置函数：iter"><span class="nav-number">3.2.</span> <span class="nav-text">内置函数：iter()</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Map、Filter、Reduce"><span class="nav-number">4.</span> <span class="nav-text">Map、Filter、Reduce</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Map"><span class="nav-number">4.1.</span> <span class="nav-text">Map</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Filter"><span class="nav-number">4.2.</span> <span class="nav-text">Filter</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reduce"><span class="nav-number">4.3.</span> <span class="nav-text">Reduce</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#官方资源地址"><span class="nav-number">5.</span> <span class="nav-text">官方资源地址</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考书籍"><span class="nav-number">6.</span> <span class="nav-text">参考书籍</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#args-和-Kwargs"><span class="nav-number">1.</span> <span class="nav-text">*args 和 **Kwargs</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Debugging模式"><span class="nav-number">2.</span> <span class="nav-text">Debugging模式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#生成器：Generator"><span class="nav-number">3.</span> <span class="nav-text">生成器：Generator</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#内置函数：next"><span class="nav-number">3.1.</span> <span class="nav-text">内置函数：next()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内置函数：iter"><span class="nav-number">3.2.</span> <span class="nav-text">内置函数：iter()</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#装饰器：Decorator"><span class="nav-number">4.</span> <span class="nav-text">装饰器：Decorator</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Map、Filter、Reduce"><span class="nav-number">5.</span> <span class="nav-text">Map、Filter、Reduce</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Map"><span class="nav-number">5.1.</span> <span class="nav-text">Map</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Filter"><span class="nav-number">5.2.</span> <span class="nav-text">Filter</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reduce"><span class="nav-number">5.3.</span> <span class="nav-text">Reduce</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三元运算符"><span class="nav-number">6.</span> <span class="nav-text">三元运算符</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#官方资源地址"><span class="nav-number">7.</span> <span class="nav-text">官方资源地址</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考书籍"><span class="nav-number">8.</span> <span class="nav-text">参考书籍</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
