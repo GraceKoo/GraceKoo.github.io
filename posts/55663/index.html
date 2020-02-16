@@ -56,7 +56,7 @@
 <meta property="og:locale" content="Zh">
 <meta property="og:image" content="https://unknown.yuzhouwan.com/images/algorithm/leetcode-39.png">
 <meta property="article:published_time" content="2020-02-05T12:00:00.000Z">
-<meta property="article:modified_time" content="2020-02-16T07:34:19.297Z">
+<meta property="article:modified_time" content="2020-02-16T07:38:01.305Z">
 <meta property="article:author" content="Grace Koo">
 <meta property="article:tag" content="Algorithm">
 <meta property="article:tag" content="LeetCode">
@@ -250,7 +250,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-02-16 07:34:19" itemprop="dateModified" datetime="2020-02-16T07:34:19Z">2020-02-16</time>
+                <time title="Modified: 2020-02-16 07:38:01" itemprop="dateModified" datetime="2020-02-16T07:38:01Z">2020-02-16</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -550,23 +550,23 @@
 
 <h2 id="wildcard-matching"><a href="#wildcard-matching" class="headerlink" title="wildcard-matching"></a>wildcard-matching</h2><p>解题思路：</p>
 <ul>
-<li><p>状态 $dp[i][j]$ : 表示 s 的前 i 个字符和 p 的前 j 个字符是否匹配 (true 的话表示匹配)</p>
+<li><p>状态  dp[i][j]  : 表示 s 的前 i 个字符和 p 的前 j 个字符是否匹配 (true 的话表示匹配)</p>
 </li>
 <li><p>状态转移方程：</p>
 <ul>
-<li><p>当 s[i] == p[j]，或者 p[j] == ? 那么 $dp[i][j] = dp[i - 1][j - 1]$;</p>
+<li><p>当 s[i] == p[j]，或者 p[j] == ? 那么  dp[i][j] = dp[i - 1][j - 1] ;</p>
 </li>
-<li><p>当 $p[j] == *$ 且 $dp[i][j] = dp[i][j - 1]  ||  dp[i - 1][j]$    </p>
+<li><p>当  p[j] == *  且  dp[i][j] = dp[i][j - 1]  ||  dp[i - 1][j]     </p>
 </li>
 </ul>
 </li>
 <li><p>初始化：</p>
 <ul>
-<li><p>$dp[0][0]$ 表示什么都没有，其值为 true</p>
+<li><p>dp[0][0]  表示什么都没有，其值为 true</p>
 </li>
-<li><p>第一行 $dp[0][j]$，换句话说，s 为空，与 p 匹配，所以只要 p 开始为 * 才为 true</p>
+<li><p>第一行  dp[0][j] ，换句话说，s 为空，与 p 匹配，所以只要 p 开始为 * 才为 true</p>
 </li>
-<li><p>第一列$dp[i][0]$，当然全部为 false</p>
+<li><p>第一列 dp[i][0] ，当然全部为 false</p>
 </li>
 </ul>
 </li>
