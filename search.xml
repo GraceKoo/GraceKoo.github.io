@@ -81,6 +81,10 @@
 <td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#rotate-image">rotate-image</a></td>
 </tr>
 <tr>
+<td style="text-align:left"></td>
+<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#spiral-matrix">spiral-matrix</a></td>
+</tr>
+<tr>
 <td style="text-align:left">Regular Expression</td>
 <td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#string-to-integer-atoi">string-to-integer-atoi</a></td>
 </tr>
@@ -415,6 +419,8 @@
 <li>解法2:动态规划</li>
 </ul>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">maxSubArray_DP</span><span class="params">(self, nums: List[int])</span> -&gt; int:</span></span><br><span class="line">    len_nums = len(nums)</span><br><span class="line">    max_sum = nums[<span class="number">0</span>]</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, len_nums):</span><br><span class="line">        <span class="keyword">if</span> nums[i<span class="number">-1</span>] &gt; <span class="number">0</span>:</span><br><span class="line">            nums[i] += nums[i<span class="number">-1</span>]</span><br><span class="line">        max_sum = max(max_sum, nums[i])</span><br><span class="line">    <span class="keyword">return</span> max_sum</span><br></pre></td></tr></table></figure>
+<h2 id="spiral-matrix"><a href="#spiral-matrix" class="headerlink" title="spiral-matrix"></a>spiral-matrix</h2><p><img data-src="/images/algorithm/leetcode-54.png" alt="leetcode-54"></p>
+<p>解题思路来源于leetcode官网：按层模拟（注：<a href="https://leetcode-cn.com/problems/spiral-matrix/solution/luo-xuan-ju-zhen-by-leetcode/" target="_blank" rel="noopener">参考链接</a>）</p>
 ]]></content>
       <categories>
         <category>Algorithm</category>
