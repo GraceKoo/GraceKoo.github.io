@@ -2072,7 +2072,9 @@
   <entry>
     <title>Machine Learning基础</title>
     <url>/posts/59544/</url>
-    <content><![CDATA[<h1 id="About-Machine-Learning"><a href="#About-Machine-Learning" class="headerlink" title="About Machine Learning"></a>About Machine Learning</h1><p>机器学习可以揭示数据背后的真实含义。</p>
+    <content><![CDATA[<p><img data-src="/images/MachineLearning/MLMindNode.png" alt="MLMindNode"></p>
+<a id="more"></a>
+<h1 id="About-Machine-Learning"><a href="#About-Machine-Learning" class="headerlink" title="About Machine Learning"></a>About Machine Learning</h1><p>机器学习可以揭示数据背后的真实含义。</p>
 <p><strong>监督学习</strong>需要用户知道目标值，简单的说就是知道数据在找什么。而<strong>无监督学习</strong>则无需用户知道搜寻的目标，只需要从算法程序中得到这些数据的共同特征。</p>
 <p>保证算法应用的正确性：</p>
 <ol>
@@ -2143,7 +2145,6 @@
 </tbody>
 </table>
 </div>
-<a id="more"></a>
 <h1 id="How-to-choose"><a href="#How-to-choose" class="headerlink" title="How to choose"></a>How to choose</h1><p>首先考虑使用机器学习算法的目的。如果想要预测目标变量的值，则可以选择监督学习算法，否则选择无监督学习算法。</p>
 <p>如果确定选择监督学习算法后，需要进一步确定目标变量类型。</p>
 <ul>
