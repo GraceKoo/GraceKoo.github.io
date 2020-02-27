@@ -824,6 +824,41 @@
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> contextlib <span class="keyword">import</span> contextmanager</span><br><span class="line"><span class="meta">@contextmanager</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">open_file</span><span class="params">(name)</span>:</span></span><br><span class="line">	f = open(name, <span class="string">'w'</span>) </span><br><span class="line">  <span class="keyword">yield</span> f</span><br><span class="line">	f.close()</span><br></pre></td></tr></table></figure>
 <p>等价于：</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">with</span> open_file(<span class="string">'some_file'</span>) <span class="keyword">as</span> f: </span><br><span class="line">  f.write(<span class="string">'hola!'</span>)</span><br></pre></td></tr></table></figure>
+<h1 id="Pythonic的代码"><a href="#Pythonic的代码" class="headerlink" title="Pythonic的代码"></a>Pythonic的代码</h1><h2 id="print-字符串格式化"><a href="#print-字符串格式化" class="headerlink" title="print 字符串格式化"></a>print 字符串格式化</h2><p>非常Pythonic的代码应该是这样：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">print(<span class="string">'Hello %(name)s!'</span>%&#123;<span class="string">'name'</span>:<span class="string">'Tom'</span>&#125;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">print(<span class="string">'&#123;greet&#125; from &#123;language&#125;.'</span>.format(greet = <span class="string">'Hello world'</span>,language = <span class="string">'Python'</span>))</span><br></pre></td></tr></table></figure>
+<h2 id="风格检查工具"><a href="#风格检查工具" class="headerlink" title="风格检查工具"></a>风格检查工具</h2><p>风格检查工具提出了保持代码一致性细节的要求。包括代码布局、注释、命名规范等方面的要求。这种工具有PEP8、Pychecker、Pylint等。如PEP8的安装与使用如下：</p>
+<ul>
+<li>安装：使用conda或者pip进行安装</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">$ conda install -c anaconda pycodestyle</span><br></pre></td></tr></table></figure>
+<p>or</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">$ pip install -U pycodestyle</span><br></pre></td></tr></table></figure>
+<ul>
+<li>简单的检测代码</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">$ pycodestyle --first test.py</span><br></pre></td></tr></table></figure>
+<ul>
+<li>还可以使用—show-source参数让PEP8显示每一个错误和警告对应的代码</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">$ pycodestyle --show-source --show-pep8 test.py</span><br></pre></td></tr></table></figure>
+<h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><ol>
+<li>函数注释：给外部可访问的函数与方法添加文档注释。注释要清楚的描述方法的功能，并对参数、返回值以及可能发生的异常进行说明。</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">FuncName</span><span class="params">(parameter1,parameter2)</span>:</span></span><br><span class="line">  <span class="string">"""Describe what this Function does:</span></span><br><span class="line"><span class="string">     # such as "Find wheter the special string is in the queue or not"</span></span><br><span class="line"><span class="string">     Args:</span></span><br><span class="line"><span class="string">     	parameter1:parameter type,what is the parameter used for.</span></span><br><span class="line"><span class="string">     	parameter2:parameter type,what is the parameter used for.</span></span><br><span class="line"><span class="string">      return type, return value.</span></span><br><span class="line"><span class="string">  """</span></span><br><span class="line">  function body</span><br><span class="line">  ...</span><br><span class="line">  ...</span><br></pre></td></tr></table></figure>
+<ol>
+<li>推荐在文件头中包含copyright申明、模块描述等，如有必要可以加入作者信息及变更记录。</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">Licensed Materials - Property of CorpA</span></span><br><span class="line"><span class="string">(C) Copyright A Corp.1999,2011 All Right Reserved</span></span><br><span class="line"><span class="string">CopyRight statement and purpose...</span></span><br><span class="line"><span class="string">-------------------------------------------------------------</span></span><br><span class="line"><span class="string"># @Time: 2020/2/27 12:08 </span></span><br><span class="line"><span class="string"># @Author: GraceKoo</span></span><br><span class="line"><span class="string"># @File: 55_jump-game.py</span></span><br><span class="line"><span class="string"># @Desc:https://leetcode-cn.com/problems/jump-game/</span></span><br><span class="line"><span class="string">-------------------------------------------------------------</span></span><br><span class="line"><span class="string">"""</span></span><br></pre></td></tr></table></figure>
+<h2 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h2><p>Python的内建命名空间是支持一小部分常量的，如True、Flase、None等。只是Python没有提供常量的直接方式而已。</p>
+<ul>
+<li>常量名所有字母应大写，用下划线连接各个单词，如：MAX_OVERFLOW</li>
+<li>将常量集中到一个文件</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">_const</span>:</span></span><br><span class="line">  <span class="class"><span class="keyword">class</span> <span class="title">ConstError</span><span class="params">(TypeError)</span>:</span><span class="keyword">pass</span></span><br><span class="line">  <span class="class"><span class="keyword">class</span> <span class="title">ConstCaseError</span><span class="params">(constError)</span>:</span><span class="keyword">pass</span></span><br><span class="line">  </span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">_setattr_</span><span class="params">(self, name, value)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> self.__dict__.has_key(name):</span><br><span class="line">      <span class="keyword">raise</span> self.ConstError, <span class="string">"can not change const"</span> %name</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> name.isupper():</span><br><span class="line">      <span class="keyword">raise</span> self.ConstCaseError,\</span><br><span class="line">      		  <span class="string">'const name "%s" is not all uppercase'</span> %name</span><br><span class="line">    self.__dict__[name] = value</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line">sys.modules[__name__]=_const()</span><br></pre></td></tr></table></figure>
+<p>设置常量<br><figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> const</span><br><span class="line">const.COMPANY = <span class="string">"IBM"</span></span><br></pre></td></tr></table></figure></p>
+<p>使用常量</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> constant <span class="keyword">import</span> const</span><br><span class="line">print(const.COMPANY)</span><br></pre></td></tr></table></figure>
 <h1 id="官方资源地址"><a href="#官方资源地址" class="headerlink" title="官方资源地址"></a>官方资源地址</h1><p><a href="https://docs.python.org/2/library/pdb.html" target="_blank" rel="noopener">https://docs.python.org/2/library/pdb.html</a> </p>
 <p><a href="https://docs.python.org/3/library/pdb.html" target="_blank" rel="noopener">https://docs.python.org/3/library/pdb.html</a></p>
 <h1 id="参考书籍"><a href="#参考书籍" class="headerlink" title="参考书籍"></a>参考书籍</h1><ul>
