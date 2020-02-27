@@ -1166,16 +1166,16 @@
 <li><p>输入<code>~~~</code>或者```然后回车，可以输入代码块，并且可以选择代码的语言。例如：</p>
 </li>
 <li><p>~~~</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> Class HelloWorld&#123;</span><br><span class="line">  System.out.println(<span class="string">"Hello World!"</span>);</span><br><span class="line">&#125;</span><br><span class="line">​</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">将会产生</span><br><span class="line"></span><br><span class="line">~~~java</span><br><span class="line">public Class HelloWorld&#123;</span><br><span class="line">  System.out.println(&quot;Hello World!&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> Class HelloWorld&#123;</span><br><span class="line">System.out.println(<span class="string">"Hello World!"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">将会产生</span><br><span class="line"></span><br><span class="line">~~~java</span><br><span class="line">public Class HelloWorld&#123;</span><br><span class="line">System.out.println(&quot;Hello World!&quot;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
 <h3 id="强调"><a href="#强调" class="headerlink" title="强调"></a>强调</h3><p>使用两个*号或者两个_包裹的内容将会被强调。例如</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">**使用两个*号强调内容**</span><br><span class="line">__使用两个下划线强调内容__</span><br></pre></td></tr></table></figure>
 <p>将会输出</p>
 <p><strong>使用两个*号强调内容</strong><br><strong>使用两个下划线强调内容</strong><br>Typroa 推荐使用两个*号。</p>
-<h3 id="斜体"><a href="#斜体" class="headerlink" title="斜体"></a>斜体</h3><p>在标准的Markdown语法中，*和_包裹的内容会是斜体显示，但是GFM下划线一般用来分隔人名和代码变量名，因此我们推荐是用星号来包裹斜体内容。如果要显示星号，则使用转义：</p>
+<h3 id="斜体"><a href="#斜体" class="headerlink" title="斜体"></a>斜体</h3><p>  在标准的Markdown语法中，*和_包裹的内容会是斜体显示，但是GFM下划线一般用来分隔人名和代码变量名，因此我们推荐是用星号来包裹斜体内容。如果要显示星号，则使用转义：</p>
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">\*</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
 <h3 id="插入URL连接"><a href="#插入URL连接" class="headerlink" title="插入URL连接"></a>插入URL连接</h3><p>使用尖括号包裹的url将产生一个连接，例如：<code>&lt;www.baidu.com&gt;</code>将产生连接:<www.baidu.com>.</p>
 <p>如果是标准的url，则会自动产生连接，例如:www.google.com</p>
 <h3 id="目录列表Table-of-Contents（TOC）"><a href="#目录列表Table-of-Contents（TOC）" class="headerlink" title="目录列表Table of Contents（TOC）"></a>目录列表Table of Contents（TOC）</h3><p>输入[toc]然后回车，将会产生一个目录，这个目录抽取了文章的所有标题，自动更新内容。</p>
