@@ -613,7 +613,11 @@
 <p>[165]：限定规定数字</p>
 </blockquote>
 <p>例：匹配130/131/132/156/158/159/145/177开头的11位数字</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">^((<span class="number">13</span>[<span class="number">0</span><span class="number">-2</span>])|(<span class="number">15</span>[<span class="number">689</span>])|<span class="number">145</span>|<span class="number">177</span>)\d&#123;<span class="number">8</span>&#125;$</span><br></pre></td></tr></table></figure>]]></content>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">^((<span class="number">13</span>[<span class="number">0</span><span class="number">-2</span>])|(<span class="number">15</span>[<span class="number">689</span>])|<span class="number">145</span>|<span class="number">177</span>)\d&#123;<span class="number">8</span>&#125;$</span><br></pre></td></tr></table></figure>
+<h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><ul>
+<li><a href="https://juejin.im/post/5b96a8e2e51d450e6a2de115" target="_blank" rel="noopener">掘金博文</a></li>
+</ul>
+]]></content>
       <categories>
         <category>Tools</category>
       </categories>
