@@ -21,20 +21,20 @@
     var CONFIG = {"hostname":"unknown.yuzhouwan.com","root":"/","scheme":"Muse","version":"7.7.1","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="White Balance概念相机的白平衡控制，是为了让实际环境中白色的物体在你拍摄的画面中也呈现出“真正”的白色。不同性质的光源会在画面中产生不同的色彩倾向，比如说，蜡烛的光线会使画面偏橘黄色，而黄昏过后的光线则会为景物披上一层蓝色的冷调。而我们的视觉系统会自动对不同的光线作出补偿，所以无论在暖调还是冷调的光线环境下，我们看一张白纸永远还是白色的。但相机则不然，它只会直接记录呈现在它面前的色彩，">
+  <meta name="description" content="基本语法元字符    元字符 说明     . 匹配除换行符以外的任意字符   \w 匹配字母、数字、下划线、汉字   \s 匹配任意的空白符   \d 匹配数字   \b 匹配单词的开始或结束   ^ 匹配字符串的开始   $ 匹配字符串的结束     例：匹配有abc开头的字符串 1\babc或^abc">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Image-Algorithm-Summarize">
-<meta property="og:url" content="https://unknown.yuzhouwan.com/posts/58748/index.html">
+<meta property="og:title" content="Regex">
+<meta property="og:url" content="https://unknown.yuzhouwan.com/posts/25256/index.html">
 <meta property="og:site_name" content="Grace Koo&#39;s Blog">
-<meta property="og:description" content="White Balance概念相机的白平衡控制，是为了让实际环境中白色的物体在你拍摄的画面中也呈现出“真正”的白色。不同性质的光源会在画面中产生不同的色彩倾向，比如说，蜡烛的光线会使画面偏橘黄色，而黄昏过后的光线则会为景物披上一层蓝色的冷调。而我们的视觉系统会自动对不同的光线作出补偿，所以无论在暖调还是冷调的光线环境下，我们看一张白纸永远还是白色的。但相机则不然，它只会直接记录呈现在它面前的色彩，">
+<meta property="og:description" content="基本语法元字符    元字符 说明     . 匹配除换行符以外的任意字符   \w 匹配字母、数字、下划线、汉字   \s 匹配任意的空白符   \d 匹配数字   \b 匹配单词的开始或结束   ^ 匹配字符串的开始   $ 匹配字符串的结束     例：匹配有abc开头的字符串 1\babc或^abc">
 <meta property="og:locale" content="Zh">
-<meta property="article:published_time" content="2020-02-01T12:06:00.000Z">
-<meta property="article:modified_time" content="2020-02-08T15:08:59.263Z">
+<meta property="article:published_time" content="2020-02-06T23:55:00.000Z">
+<meta property="article:modified_time" content="2020-03-01T13:08:05.475Z">
 <meta property="article:author" content="Grace Koo">
-<meta property="article:tag" content="ImageAlgorithm">
+<meta property="article:tag" content="Regex">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://unknown.yuzhouwan.com/posts/58748/">
+<link rel="canonical" href="https://unknown.yuzhouwan.com/posts/25256/">
 
 
 <script id="page-configurations">
@@ -46,7 +46,7 @@
   };
 </script>
 
-  <title>Image-Algorithm-Summarize | Grace Koo's Blog</title>
+  <title>Regex | Grace Koo's Blog</title>
   
 
 
@@ -197,7 +197,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="Zh">
-    <link itemprop="mainEntityOfPage" href="https://unknown.yuzhouwan.com/posts/58748/">
+    <link itemprop="mainEntityOfPage" href="https://unknown.yuzhouwan.com/posts/25256/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -210,7 +210,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Image-Algorithm-Summarize
+          Regex
         </h1>
 
         <div class="post-meta">
@@ -220,14 +220,14 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2020-02-01 12:06:00" itemprop="dateCreated datePublished" datetime="2020-02-01T12:06:00Z">2020-02-01</time>
+              <time title="Created: 2020-02-06 23:55:00" itemprop="dateCreated datePublished" datetime="2020-02-06T23:55:00Z">2020-02-06</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-02-08 15:08:59" itemprop="dateModified" datetime="2020-02-08T15:08:59Z">2020-02-08</time>
+                <time title="Modified: 2020-03-01 13:08:05" itemprop="dateModified" datetime="2020-03-01T13:08:05Z">2020-03-01</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -235,7 +235,7 @@
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/CV/" itemprop="url" rel="index"><span itemprop="name">CV</span></a>
+                  <a href="/categories/Tool/" itemprop="url" rel="index"><span itemprop="name">Tool</span></a>
                 </span>
             </span>
 
@@ -257,22 +257,104 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="White-Balance"><a href="#White-Balance" class="headerlink" title="White Balance"></a>White Balance</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>相机的白平衡控制，是为了让实际环境中白色的物体在你拍摄的画面中也呈现出“真正”的白色。不同性质的光源会在画面中产生不同的色彩倾向，比如说，蜡烛的光线会使画面偏橘黄色，而黄昏过后的光线则会为景物披上一层蓝色的冷调。而我们的视觉系统会自动对不同的光线作出补偿，所以无论在暖调还是冷调的光线环境下，我们看一张白纸永远还是白色的。但相机则不然，它只会直接记录呈现在它面前的色彩，这就会导致画面色彩偏暖或偏冷。</p>
-<h2 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h2><a id="more"></a>
-<h1 id="IR-Cut"><a href="#IR-Cut" class="headerlink" title="IR-Cut"></a>IR-Cut</h1><h2 id="概念-1"><a href="#概念-1" class="headerlink" title="概念"></a>概念</h2><p>自然界存在着各种波长的光线，通过折射人眼能看到不同颜色的光线，这就是光线的波长不同所导致的。其实还有许多光线是人眼看不到的，人眼识别光线的波长范围在320nm-760nm之间， 超过760nm的光线人眼就无法见到，比如红外光等。<br>随着科学的进步，人类发明了摄像机，理论上讲摄像机可以看到绝大部分波长的光线，但在摄像机的使用过程中就出现了一个问题，由于各种光线的参杂，摄像机看到的物体反映在监视器上与人眼直接看到的就变样了。如人眼看到绿色，通过摄像机则变成蓝色，产生彩色失真。过去，为解决色彩失真问题，一般在CCD前贴有一低通滤片，该滤片阻碍了红外光的进出，故白天彩色不失真，但夜间却没有了夜视功能。<br>IR CUT是一种机械装置，内有两个窗口，一为低通滤片一为透明玻璃，可依需要左右移动，从而白天彩色不失真，且夜间仍有夜视功能。简单的说，通过IR CUT，白天只允许760nm或780nm以下波长的光线进入，避免了白天的彩色失真。晚上只允许760nm或780nm以上波长的红外光线进入，避免760nm或780nm以下波长的可见光对红外光的干扰，于是在白天与夜晚都能取得最佳视觉效果。随着技术的进步，IR CUT结合低通滤片与<a href="https://www.baidu.com/s?wd=高通&amp;tn=SE_PcZhidaonwhc_ngpagmjz&amp;rsv_dl=gh_pc_zhidao" target="_blank" rel="noopener">高通</a>滤片在改进<a href="https://www.baidu.com/s?wd=夜视摄像机&amp;tn=SE_PcZhidaonwhc_ngpagmjz&amp;rsv_dl=gh_pc_zhidao" target="_blank" rel="noopener">夜视摄像机</a>的性能上发挥越来越重要的作用．低通滤片：以镀膜方式使光线中波长在760nm或780nm以下的光线通过，超过760nm或780nm波长的光线阻止通过。<a href="https://www.baidu.com/s?wd=高通&amp;tn=SE_PcZhidaonwhc_ngpagmjz&amp;rsv_dl=gh_pc_zhidao" target="_blank" rel="noopener">高通</a>滤片：以镀膜方式使光线中波长在760nm或780nm以下的光线阻止通过，只准超过760nm或780nm以上波长的光线通过。<br>根据上述分析，应用低通滤片技术，摄像机能够模拟人的眼睛，只接收同样范围波长的光线，这样就解决了摄像机的色彩失真问题。而通过<a href="https://www.baidu.com/s?wd=高通&amp;tn=SE_PcZhidaonwhc_ngpagmjz&amp;rsv_dl=gh_pc_zhidao" target="_blank" rel="noopener">高通</a>滤片技术的应用，解决了在夜间杂光干扰红外光问题。LED红外技术的出现，大大拓宽了监控领域的时空范畴，<a href="https://www.baidu.com/s?wd=红外摄像机&amp;tn=SE_PcZhidaonwhc_ngpagmjz&amp;rsv_dl=gh_pc_zhidao" target="_blank" rel="noopener">红外摄像机</a>得到了广泛的应用。但同时，我们也发现市场上流行的传统LED<a href="https://www.baidu.com/s?wd=红外摄像机&amp;tn=SE_PcZhidaonwhc_ngpagmjz&amp;rsv_dl=gh_pc_zhidao" target="_blank" rel="noopener">红外摄像机</a>存在着许多致命的缺陷：如散热问题、寿命问题、手电筒效应问题，夜晚可见光干扰的问题等。LED Array 技术解决了寿命问题，新一代的LED Array技术基本解决了“手电筒”效应，而IR CUT技术完美地解决了杂光干扰。</p>
-<h2 id="代码实现-1"><a href="#代码实现-1" class="headerlink" title="代码实现"></a>代码实现</h2><h1 id="Bad-Pixel"><a href="#Bad-Pixel" class="headerlink" title="Bad Pixel"></a>Bad Pixel</h1><h2 id="概念-2"><a href="#概念-2" class="headerlink" title="概念"></a>概念</h2><p>图像坏点(Bad pixel) : 图像传感器上光线采集点(像素点)所形成的阵列存在工艺上的缺陷，或光信号进行转化为电信号的过程中出现错误，从而会造成图像上像素信息错误，导致图像中的像素值不准确，这些有缺陷的像素即为图像坏点。</p>
-<h2 id="代码实现-2"><a href="#代码实现-2" class="headerlink" title="代码实现"></a>代码实现</h2><h1 id="Shading"><a href="#Shading" class="headerlink" title="Shading"></a>Shading</h1><h2 id="概念-3"><a href="#概念-3" class="headerlink" title="概念"></a>概念</h2><p>暗角一词属于摄影术语。对着亮度均匀景物，画面四角有变暗的现象，叫做“失光”，俗称“暗角”。</p>
-<p>产生暗角的原因主要有：</p>
-<p>1.边角的成像光线与<a href="https://baike.baidu.com/item/镜头光轴/10196349" target="_blank" rel="noopener">镜头光轴</a>有较大的夹角，是造成边角失光的主要原因。沿着<a href="https://baike.baidu.com/item/视场/8231871" target="_blank" rel="noopener">视场</a>边缘的光线的前进方向看<a href="https://baike.baidu.com/item/光圈/94964" target="_blank" rel="noopener">光圈</a>，由于光线与光圈所在的平面有夹角，看到的光圈是椭圆的，所以通光面积减小。镜头光心到胶片的边缘距离较大，同样的光圈直径到达底片的光线夹角较小，亮度必然减小。同理，同样的光线偏角，对于边角光线位移较大，等价于照在较大的面积上。而面积是与位移的平方成正比的，所以综合上述原因，边缘亮度与光线和光轴夹角的COS值的4次方成正比。换句话说，<a href="https://baike.baidu.com/item/广角镜头/278835" target="_blank" rel="noopener">广角镜头</a>边缘亮度随着视角变大急剧下降。</p>
-<p>2.<a href="https://baike.baidu.com/item/长焦镜头/879928" target="_blank" rel="noopener">长焦镜头</a>尤其是<a href="https://baike.baidu.com/item/变焦/9696019" target="_blank" rel="noopener">变焦</a>长焦镜头镜片很多，偏离<a href="https://baike.baidu.com/item/光圈/94964" target="_blank" rel="noopener">光圈</a>比较远的镜片为了能让边角光线通过，这些镜片必须很大。为了降低成本，缩小了这些镜片直径，造成边角成像光线不能完全通过，降低了边角的亮度。</p>
-<p>3.边角的<a href="https://baike.baidu.com/item/像差/448364" target="_blank" rel="noopener">像差</a>较大。为了提高像质，某些镜片的边缘或专门设置的光阑有意挡住部分影响成像质量的边缘光线，造成边角失光。</p>
-<p><a href="https://baike.baidu.com/item/鱼眼镜头/343506" target="_blank" rel="noopener">鱼眼镜头</a>虽然视角极大，但是由于边缘<a href="https://baike.baidu.com/item/放大倍率/10294653" target="_blank" rel="noopener">放大倍率</a>很小，所以几乎没有边角失光。</p>
-<p>高档<a href="https://baike.baidu.com/item/变焦镜头/2971419" target="_blank" rel="noopener">变焦镜头</a>已经花了大的成本，可以加大某些镜片、完美地校正像差，高档长焦镜头包括变焦镜头边缘失光很小。</p>
-<p>还有：<a href="https://baike.baidu.com/item/广角镜头/278835" target="_blank" rel="noopener">广角镜头</a>如果使用了过多的<a href="https://baike.baidu.com/item/滤色镜/205532" target="_blank" rel="noopener">滤色镜</a>，等价于增长了镜筒，可能造成边角暗角甚至黑角！</p>
-<p>暗角在任何一只镜头上都存在，在MTF<a href="https://baike.baidu.com/item/透光率/1192539" target="_blank" rel="noopener">透光率</a>图上可以知道，从中心到边缘会损失不少，尤其在<a href="https://baike.baidu.com/item/大光圈/8567887" target="_blank" rel="noopener">大光圈</a>。在冲扩<a href="https://baike.baidu.com/item/负片/3897269" target="_blank" rel="noopener">负片</a>是问题不大，因为放大头也存在这个问题，会抵消掉一部分影响，当然，如果镜头太滥，失光极其明显，那就能在照片上看出来了。</p>
-<p>对于<a href="https://baike.baidu.com/item/反转片/3897682" target="_blank" rel="noopener">反转片</a>，问题就严重一些，就需要仔细研究研究了，一般的现象是：广角比长焦明显一些，反正怎么样全看你的使用情况，缩小一下<a href="https://baike.baidu.com/item/光圈/94964" target="_blank" rel="noopener">光圈</a>就是了。 </p>
-<p>— from baike.baidu.com</p>
-<h2 id="代码实现-3"><a href="#代码实现-3" class="headerlink" title="代码实现"></a>代码实现</h2>
+        <h1 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h1><h2 id="元字符"><a href="#元字符" class="headerlink" title="元字符"></a>元字符</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">元字符</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">.</td>
+<td style="text-align:center">匹配除换行符以外的任意字符</td>
+</tr>
+<tr>
+<td style="text-align:center">\w</td>
+<td style="text-align:center">匹配字母、数字、下划线、汉字</td>
+</tr>
+<tr>
+<td style="text-align:center">\s</td>
+<td style="text-align:center">匹配任意的空白符</td>
+</tr>
+<tr>
+<td style="text-align:center">\d</td>
+<td style="text-align:center">匹配数字</td>
+</tr>
+<tr>
+<td style="text-align:center">\b</td>
+<td style="text-align:center">匹配单词的开始或结束</td>
+</tr>
+<tr>
+<td style="text-align:center">^</td>
+<td style="text-align:center">匹配字符串的开始</td>
+</tr>
+<tr>
+<td style="text-align:center">$</td>
+<td style="text-align:center">匹配字符串的结束</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>例：匹配有abc开头的字符串</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\babc或^abc</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<h2 id="重复限定符"><a href="#重复限定符" class="headerlink" title="重复限定符"></a>重复限定符</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">语法</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">*</td>
+<td style="text-align:center">重复零次或更多次</td>
+</tr>
+<tr>
+<td style="text-align:center">+</td>
+<td style="text-align:center">重复一次或者更多次</td>
+</tr>
+<tr>
+<td style="text-align:center">？</td>
+<td style="text-align:center">重复零次或一次</td>
+</tr>
+<tr>
+<td style="text-align:center">{n}</td>
+<td style="text-align:center">重复n次</td>
+</tr>
+<tr>
+<td style="text-align:center">{n,}</td>
+<td style="text-align:center">重复n次或更多次</td>
+</tr>
+<tr>
+<td style="text-align:center">{n,m}</td>
+<td style="text-align:center">重复n次到m次</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>限定符作用于与它<strong>左边</strong>最近的一个字符。</p>
+<p>例：匹配以a开头，0个或者多个以b结尾的字符串</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">^ab*$</span><br></pre></td></tr></table></figure>
+<h2 id="分组"><a href="#分组" class="headerlink" title="分组"></a>分组</h2><p>以”()“作为分组。</p>
+<p>例：匹配以ab开头，0个或者多个以b结尾的字符串</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">^(ab)*$</span><br></pre></td></tr></table></figure>
+<p>注：如需匹配小括号，只要加转义字符串即可。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">^(\(ab\))*$</span><br></pre></td></tr></table></figure>
+<h2 id="条件或"><a href="#条件或" class="headerlink" title="条件或"></a>条件或</h2><p>利用“｜”来表达条件或。</p>
+<p>例：匹配130/131/181/177等开头的11位手机号。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">^(<span class="number">130</span>|<span class="number">131</span>|<span class="number">181</span>|<span class="number">177</span>)\d&#123;<span class="number">8</span>&#125;$</span><br></pre></td></tr></table></figure>
+<h2 id="区间"><a href="#区间" class="headerlink" title="区间"></a>区间</h2><p>利用“[]”来表达区间条件。</p>
+<blockquote>
+<p>[0-9]：限定0到9</p>
+<p>[A-Z]：限定A到Z</p>
+<p>[165]：限定规定数字</p>
+</blockquote>
+<p>例：匹配130/131/132/156/158/159/145/177开头的11位数字</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">^((<span class="number">13</span>[<span class="number">0</span><span class="number">-2</span>])|(<span class="number">15</span>[<span class="number">689</span>])|<span class="number">145</span>|<span class="number">177</span>)\d&#123;<span class="number">8</span>&#125;$</span><br></pre></td></tr></table></figure>
     </div>
 
     
@@ -287,7 +369,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>Post link: </strong>
-    <a href="https://unknown.yuzhouwan.com/posts/58748/" title="Image-Algorithm-Summarize">https://unknown.yuzhouwan.com/posts/58748/</a>
+    <a href="https://unknown.yuzhouwan.com/posts/25256/" title="Regex">https://unknown.yuzhouwan.com/posts/25256/</a>
   </li>
   <li class="post-copyright-license">
     <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-ND</a> unless stating additionally.
@@ -298,7 +380,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/ImageAlgorithm/" rel="tag"># ImageAlgorithm</a>
+              <a href="/tags/Regex/" rel="tag"># Regex</a>
           </div>
 
         
@@ -307,13 +389,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/posts/29871/" rel="prev" title="TensorFlow框架">
-      <i class="fa fa-chevron-left"></i> TensorFlow框架
+    <a href="/posts/55663/" rel="prev" title="LeetCode_&_Algorithm">
+      <i class="fa fa-chevron-left"></i> LeetCode_&_Algorithm
     </a></div>
-      <div class="post-nav-item">
-    <a href="/posts/55663/" rel="next" title="LeetCode_&_Algorithm">
-      LeetCode_&_Algorithm <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -373,7 +452,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#White-Balance"><span class="nav-number">1.</span> <span class="nav-text">White Balance</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#概念"><span class="nav-number">1.1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码实现"><span class="nav-number">1.2.</span> <span class="nav-text">代码实现</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#IR-Cut"><span class="nav-number">2.</span> <span class="nav-text">IR-Cut</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#概念-1"><span class="nav-number">2.1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码实现-1"><span class="nav-number">2.2.</span> <span class="nav-text">代码实现</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Bad-Pixel"><span class="nav-number">3.</span> <span class="nav-text">Bad Pixel</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#概念-2"><span class="nav-number">3.1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码实现-2"><span class="nav-number">3.2.</span> <span class="nav-text">代码实现</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Shading"><span class="nav-number">4.</span> <span class="nav-text">Shading</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#概念-3"><span class="nav-number">4.1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码实现-3"><span class="nav-number">4.2.</span> <span class="nav-text">代码实现</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#基本语法"><span class="nav-number">1.</span> <span class="nav-text">基本语法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#元字符"><span class="nav-number">1.1.</span> <span class="nav-text">元字符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#重复限定符"><span class="nav-number">1.2.</span> <span class="nav-text">重复限定符</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分组"><span class="nav-number">1.3.</span> <span class="nav-text">分组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#条件或"><span class="nav-number">1.4.</span> <span class="nav-text">条件或</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#区间"><span class="nav-number">1.5.</span> <span class="nav-text">区间</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
