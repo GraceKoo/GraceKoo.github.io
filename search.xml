@@ -984,17 +984,6 @@
       </tags>
   </entry>
   <entry>
-    <title>RegularExpression</title>
-    <url>/posts/25246/</url>
-    <content><![CDATA[]]></content>
-      <categories>
-        <category>Tool</category>
-      </categories>
-      <tags>
-        <tag>RegularExpression</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>OpenCV-Base</title>
     <url>/posts/16645/</url>
     <content><![CDATA[<h1 id="OpenCV的安装"><a href="#OpenCV的安装" class="headerlink" title="OpenCV的安装"></a>OpenCV的安装</h1><p>国内一些pip的镜像源：</p>
