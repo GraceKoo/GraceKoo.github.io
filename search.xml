@@ -615,7 +615,7 @@
 <p>例：匹配130/131/132/156/158/159/145/177开头的11位数字</p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">^((<span class="number">13</span>[<span class="number">0</span><span class="number">-2</span>])|(<span class="number">15</span>[<span class="number">689</span>])|<span class="number">145</span>|<span class="number">177</span>)\d&#123;<span class="number">8</span>&#125;$</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
-        <category>Tool</category>
+        <category>Tools</category>
       </categories>
       <tags>
         <tag>Regex</tag>
@@ -1406,7 +1406,7 @@
 <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">pie</span><br><span class="line">    title Pie Chart</span><br><span class="line">    &quot;Dogs&quot; : 386</span><br><span class="line">    &quot;Cats&quot; : 85</span><br><span class="line">    &quot;Rats&quot; : 150</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
-        <category>Tool</category>
+        <category>Tools</category>
       </categories>
       <tags>
         <tag>markdown</tag>
@@ -1609,7 +1609,7 @@
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">$ git push origin :refs/tags/v0<span class="number">.9</span> To https://github.com/liming/gitlearn.git</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
-        <category>Tool</category>
+        <category>Tools</category>
       </categories>
       <tags>
         <tag>Git</tag>
@@ -1620,7 +1620,7 @@
     <url>/posts/26313/</url>
     <content><![CDATA[<h1 id="MacBook"><a href="#MacBook" class="headerlink" title="MacBook"></a>MacBook</h1><h1 id="PyCharm"><a href="#PyCharm" class="headerlink" title="PyCharm"></a>PyCharm</h1><h1 id="VIM"><a href="#VIM" class="headerlink" title="VIM"></a>VIM</h1>]]></content>
       <categories>
-        <category>Tool</category>
+        <category>Tools</category>
       </categories>
       <tags>
         <tag>Shortcut Key</tag>
