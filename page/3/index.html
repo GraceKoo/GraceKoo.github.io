@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="Zh">
 <head>
-  <meta charset="UTF-8">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 4.2.0">
@@ -18,7 +18,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"unknown.yuzhouwan.com","root":"/","scheme":"Muse","version":"7.7.1","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"unknown.yuzhouwan.com","root":"/","scheme":"Muse","version":"0.0.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="正在深入学习各种CV知识">
@@ -38,8 +38,8 @@
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome: true,
-    isPost: false
+    isHome : true,
+    isPost : false
   };
 </script>
 
@@ -74,10 +74,11 @@
   </style>
 </noscript>
 
+<link rel="alternate" href="/atom.xml" title="Grace Koo's Blog" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
     <div class="headband"></div>
 
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -237,7 +238,21 @@
                 </span>
             </span>
 
-          
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>11k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>10 mins.</span>
+            </span>
 
         </div>
       </header>
@@ -251,9 +266,9 @@
           <h1 id="Convolutional-Neural-Networks"><a href="#Convolutional-Neural-Networks" class="headerlink" title="Convolutional Neural Networks"></a>Convolutional Neural Networks</h1><h2 id="Edge-Detection"><a href="#Edge-Detection" class="headerlink" title="Edge Detection"></a>Edge Detection</h2><p>卷积运算是卷积神经网络最基本的组成成分，使用边缘检测作为入门样例。下面介绍卷积计算是如何实现的。</p>
 <p>使用一个3✖️3的<strong>过滤器(核)</strong>与原始矩阵进行元素相乘，再相加，最后和的结果为<strong>卷积运算</strong>后的第一个元素值，然后依次计算，下面例子中，做一次卷积运算后结果为一个4✖️4的矩阵。</p>
 <p>这种卷积运算可以理解成为，<strong>垂直边缘检测器。</strong></p>
-<p><img data-src="/images/picturesof-4/CNN_1.png" alt="屏幕快照 2018-02-09 下午12.25.09"></p>
+<p><img src="/images/picturesof-4/CNN_1.png" alt="屏幕快照 2018-02-09 下午12.25.09"></p>
 <p>在不同的编程环境中可以使用不同的函数来实现卷积运算。</p>
-<p><img data-src="/images/picturesof-4/CNN_2.png" alt="屏幕快照 2018-02-09 下午12.38.47"></p>
+<p><img src="/images/picturesof-4/CNN_2.png" alt="屏幕快照 2018-02-09 下午12.38.47"></p>
 <p>那么为什么这个可以用作垂直检测呢？来看下面的例子。</p>
           <!--noindex-->
             <div class="post-button">
@@ -324,7 +339,21 @@
                 </span>
             </span>
 
-          
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>7.1k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>6 mins.</span>
+            </span>
 
         </div>
       </header>
@@ -337,8 +366,8 @@
       
           <p>Numpy是Python中用于科学计算的核心库。它提供了高性能的多维数组对象，以及相关工具</p>
 <h1 id="绘制雪花"><a href="#绘制雪花" class="headerlink" title="绘制雪花"></a>绘制雪花</h1><p>转自博客上看到的一位大牛的程序，利用Numpy + matplotlib 绘制雪花，效果如下：</p>
-<p><img data-src="/images/snow.jpg" alt="snow"></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">plt.rcParams[<span class="string">'font.sans-serif'</span>] = [<span class="string">'FangSong'</span>]  <span class="comment"># 指定默认字体</span></span><br><span class="line">plt.rcParams[<span class="string">'axes.unicode_minus'</span>] = <span class="literal">False</span>  <span class="comment"># 解决中文显示为方块的问题</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">rotate</span><span class="params">(p, d)</span>:</span></span><br><span class="line">    <span class="string">"""返回点p绕原点逆时针旋转d度的坐标"""</span></span><br><span class="line"></span><br><span class="line">    a = np.radians(d)</span><br><span class="line">    m = np.array([[np.cos(a), np.sin(a)], [-np.sin(a), np.cos(a)]])</span><br><span class="line">    <span class="keyword">return</span> np.dot(p, m)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">koch_curve</span><span class="params">(p, q)</span>:</span></span><br><span class="line">    <span class="string">"""将线段pq生成科赫曲线，返回uvw三个点"""</span></span><br><span class="line"></span><br><span class="line">    p, q = np.array(p), np.array(q)</span><br><span class="line">    u = p + (q - p) / <span class="number">3</span>  <span class="comment"># 三等分点u的坐标</span></span><br><span class="line">    v = q - (q - p) / <span class="number">3</span>  <span class="comment"># 三等分点V的坐标</span></span><br><span class="line">    w = rotate(v - u, <span class="number">60</span>) + u  <span class="comment"># 线段uv绕u点逆时针旋转60°得到点w的坐标</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> u.tolist(), v.tolist(), w.tolist()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">snow</span><span class="params">(triangle, k)</span>:</span></span><br><span class="line">    <span class="string">"""给定三角形，生成封闭的科赫雪花"""</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(k):</span><br><span class="line">        result = list()</span><br><span class="line">        t_len = len(triangle)</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(t_len):</span><br><span class="line">            p = triangle[j]</span><br><span class="line">            q = triangle[(j + <span class="number">1</span>) % t_len]</span><br><span class="line">            u, v, w = koch_curve(p, q)</span><br><span class="line">            result.extend([p, u, w, v])</span><br><span class="line">        triangle = result.copy()</span><br><span class="line"></span><br><span class="line">    triangle.append(triangle[<span class="number">0</span>])</span><br><span class="line">    <span class="keyword">return</span> triangle</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">plot_snow</span><span class="params">(snow_list)</span>:</span></span><br><span class="line">    <span class="string">"""绘制雪花"""</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> triangle, k <span class="keyword">in</span> snow_list:</span><br><span class="line">        data = np.array(snow(triangle, k))</span><br><span class="line">        x, y = np.split(data, <span class="number">2</span>, axis=<span class="number">1</span>)</span><br><span class="line">        plt.plot(x, y)</span><br><span class="line"></span><br><span class="line">    plt.axis(<span class="string">'equal'</span>)</span><br><span class="line">    plt.show()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">snow_list = [</span><br><span class="line">    ([(<span class="number">0</span>, <span class="number">0</span>), (<span class="number">0.5</span>, <span class="number">0.8660254</span>), (<span class="number">1</span>, <span class="number">0</span>)], <span class="number">5</span>),</span><br><span class="line">    ([(<span class="number">1.1</span>, <span class="number">0.4</span>), (<span class="number">1.35</span>, <span class="number">0.8330127</span>), (<span class="number">1.6</span>, <span class="number">0.4</span>)], <span class="number">4</span>),</span><br><span class="line">    ([(<span class="number">1.1</span>, <span class="number">-0.1</span>), (<span class="number">1.25</span>, <span class="number">0.15980761</span>), (<span class="number">1.4</span>, <span class="number">-0.1</span>)], <span class="number">3</span>)</span><br><span class="line">]</span><br><span class="line">plot_snow(snow_list)</span><br></pre></td></tr></table></figure>
+<p><img src="/images/snow.jpg" alt="snow"></p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">plt.rcParams[<span class="string">'font.sans-serif'</span>] = [<span class="string">'FangSong'</span>]  <span class="comment"># 指定默认字体</span></span><br><span class="line">plt.rcParams[<span class="string">'axes.unicode_minus'</span>] = <span class="literal">False</span>  <span class="comment"># 解决中文显示为方块的问题</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">rotate</span><span class="params">(p, d)</span>:</span></span><br><span class="line">    <span class="string">"""返回点p绕原点逆时针旋转d度的坐标"""</span></span><br><span class="line"></span><br><span class="line">    a = np.radians(d)</span><br><span class="line">    m = np.array([[np.cos(a), np.sin(a)], [-np.sin(a), np.cos(a)]])</span><br><span class="line">    <span class="keyword">return</span> np.dot(p, m)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">koch_curve</span><span class="params">(p, q)</span>:</span></span><br><span class="line">    <span class="string">"""将线段pq生成科赫曲线，返回uvw三个点"""</span></span><br><span class="line"></span><br><span class="line">    p, q = np.array(p), np.array(q)</span><br><span class="line">    u = p + (q - p) / <span class="number">3</span>  <span class="comment"># 三等分点u的坐标</span></span><br><span class="line">    v = q - (q - p) / <span class="number">3</span>  <span class="comment"># 三等分点V的坐标</span></span><br><span class="line">    w = rotate(v - u, <span class="number">60</span>) + u  <span class="comment"># 线段uv绕u点逆时针旋转60°得到点w的坐标</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> u.tolist(), v.tolist(), w.tolist()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">snow</span><span class="params">(triangle, k)</span>:</span></span><br><span class="line">    <span class="string">"""给定三角形，生成封闭的科赫雪花"""</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(k):</span><br><span class="line">        result = list()</span><br><span class="line">        t_len = len(triangle)</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(t_len):</span><br><span class="line">            p = triangle[j]</span><br><span class="line">            q = triangle[(j + <span class="number">1</span>) % t_len]</span><br><span class="line">            u, v, w = koch_curve(p, q)</span><br><span class="line">            result.extend([p, u, w, v])</span><br><span class="line">        triangle = result.copy()</span><br><span class="line"></span><br><span class="line">    triangle.append(triangle[<span class="number">0</span>])</span><br><span class="line">    <span class="keyword">return</span> triangle</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">plot_snow</span><span class="params">(snow_list)</span>:</span></span><br><span class="line">    <span class="string">"""绘制雪花"""</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> triangle, k <span class="keyword">in</span> snow_list:</span><br><span class="line">        data = np.array(snow(triangle, k))</span><br><span class="line">        x, y = np.split(data, <span class="number">2</span>, axis=<span class="number">1</span>)</span><br><span class="line">        plt.plot(x, y)</span><br><span class="line"></span><br><span class="line">    plt.axis(<span class="string">'equal'</span>)</span><br><span class="line">    plt.show()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">snow_list = [</span><br><span class="line">    ([(<span class="number">0</span>, <span class="number">0</span>), (<span class="number">0.5</span>, <span class="number">0.8660254</span>), (<span class="number">1</span>, <span class="number">0</span>)], <span class="number">5</span>),</span><br><span class="line">    ([(<span class="number">1.1</span>, <span class="number">0.4</span>), (<span class="number">1.35</span>, <span class="number">0.8330127</span>), (<span class="number">1.6</span>, <span class="number">0.4</span>)], <span class="number">4</span>),</span><br><span class="line">    ([(<span class="number">1.1</span>, <span class="number">-0.1</span>), (<span class="number">1.25</span>, <span class="number">0.15980761</span>), (<span class="number">1.4</span>, <span class="number">-0.1</span>)], <span class="number">3</span>)</span><br><span class="line">]</span><br><span class="line">plot_snow(snow_list)</span><br></pre></td></tr></tbody></table></figure>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/21763/#more" rel="contents">
@@ -408,7 +437,21 @@
                 </span>
             </span>
 
-          
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>25k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>23 mins.</span>
+            </span>
 
         </div>
       </header>
@@ -419,19 +462,19 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="生成数据"><a href="#生成数据" class="headerlink" title="生成数据"></a>生成数据</h1><h2 id="安装matplotlib"><a href="#安装matplotlib" class="headerlink" title="安装matplotlib"></a>安装matplotlib</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pip3 install --user matplotlib</span><br></pre></td></tr></table></figure>
-<h3 id="测试matplotlib"><a href="#测试matplotlib" class="headerlink" title="测试matplotlib"></a>测试matplotlib</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ python3</span><br><span class="line">&gt;&gt; <span class="keyword">import</span> matplotlib</span><br></pre></td></tr></table></figure>
+          <h1 id="生成数据"><a href="#生成数据" class="headerlink" title="生成数据"></a>生成数据</h1><h2 id="安装matplotlib"><a href="#安装matplotlib" class="headerlink" title="安装matplotlib"></a>安装matplotlib</h2><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ pip3 install --user matplotlib</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="测试matplotlib"><a href="#测试matplotlib" class="headerlink" title="测试matplotlib"></a>测试matplotlib</h3><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ python3</span><br><span class="line">&gt;&gt; <span class="keyword">import</span> matplotlib</span><br></pre></td></tr></tbody></table></figure>
 <p>如果没有出现任何错误消息，就说明你系统安装了matplotlib。</p>
 <h3 id="matplotlib画廊"><a href="#matplotlib画廊" class="headerlink" title="matplotlib画廊"></a>matplotlib画廊</h3><p>要查看使用matplotlib可制作的各种图表，请访问<a href="http://matplotlib.org/的示例画廊。单击画廊中的图表，就可查看用于生成图表的代码。" target="_blank" rel="noopener">http://matplotlib.org/的示例画廊。单击画廊中的图表，就可查看用于生成图表的代码。</a></p>
 <h2 id="绘制简单的折线图plot"><a href="#绘制简单的折线图plot" class="headerlink" title="绘制简单的折线图plot()"></a>绘制简单的折线图plot()</h2><p>我们将使用平方数序列1、4、9、16和25来绘制这个图标。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">squares = [<span class="number">1</span>,<span class="number">4</span>,<span class="number">9</span>,<span class="number">16</span>,<span class="number">25</span>]</span><br><span class="line">plt.plot(squares)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-<p><img data-src="/images/Python-base/DataView_1.png" alt="2017-09-19.2.15.10"></p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">squares = [<span class="number">1</span>,<span class="number">4</span>,<span class="number">9</span>,<span class="number">16</span>,<span class="number">25</span>]</span><br><span class="line">plt.plot(squares)</span><br><span class="line">plt.show()</span><br></pre></td></tr></tbody></table></figure>
+<p><img src="/images/Python-base/DataView_1.png" alt="2017-09-19.2.15.10"></p>
 <p>首先，导入了模块pyplot，并给它指定了别名plt。模块pyplot包含很多用于生成图标的函数。</p>
 <p>我们创建了一个列表，在其中存储了前述平方数，再将这个列表传递给函数plot()。</p>
 <p>plt.show()打开matplotlib查看器，并显示绘制的图形。</p>
-<h3 id="修改标签文字和线条粗细"><a href="#修改标签文字和线条粗细" class="headerlink" title="修改标签文字和线条粗细"></a>修改标签文字和线条粗细</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">squares = [<span class="number">1</span>,<span class="number">4</span>,<span class="number">9</span>,<span class="number">16</span>,<span class="number">25</span>]</span><br><span class="line">plt.plot(squares,linewidth=<span class="number">5</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#设置图表标题，并给坐标轴加上标签</span></span><br><span class="line">plt.title(<span class="string">"Square Numbers"</span>,fontsize=<span class="number">24</span>)</span><br><span class="line">plt.xlabel(<span class="string">"Value"</span>,fontsize=<span class="number">14</span>)</span><br><span class="line">plt.ylabel(<span class="string">"Square of Value"</span>,fontsize=<span class="number">14</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#设置刻度标记的大小</span></span><br><span class="line">plt.tick_params(axis=<span class="string">'both'</span>,labelsize=<span class="number">14</span>)</span><br><span class="line"></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<h3 id="修改标签文字和线条粗细"><a href="#修改标签文字和线条粗细" class="headerlink" title="修改标签文字和线条粗细"></a>修改标签文字和线条粗细</h3><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">squares = [<span class="number">1</span>,<span class="number">4</span>,<span class="number">9</span>,<span class="number">16</span>,<span class="number">25</span>]</span><br><span class="line">plt.plot(squares,linewidth=<span class="number">5</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#设置图表标题，并给坐标轴加上标签</span></span><br><span class="line">plt.title(<span class="string">"Square Numbers"</span>,fontsize=<span class="number">24</span>)</span><br><span class="line">plt.xlabel(<span class="string">"Value"</span>,fontsize=<span class="number">14</span>)</span><br><span class="line">plt.ylabel(<span class="string">"Square of Value"</span>,fontsize=<span class="number">14</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#设置刻度标记的大小</span></span><br><span class="line">plt.tick_params(axis=<span class="string">'both'</span>,labelsize=<span class="number">14</span>)</span><br><span class="line"></span><br><span class="line">plt.show()</span><br></pre></td></tr></tbody></table></figure>
 <p>tick_params()设置刻度的样式，其中指定的实参将影响x轴和y轴上的刻度（axis=’both’），并将刻度标记的字号设置为14。</p>
-<p><img data-src="/images/Python-base/DataView_2.png" alt="017-09-19.3.16.14"></p>
+<p><img src="/images/Python-base/DataView_2.png" alt="017-09-19.3.16.14"></p>
 <h3 id="校正图形"><a href="#校正图形" class="headerlink" title="校正图形"></a>校正图形</h3><p>我们发现没有正确的绘制数据：折线图的终点指出4.0的平方为25！下面来修复这个问题。</p>
           <!--noindex-->
             <div class="post-button">
@@ -502,7 +545,21 @@
                 </span>
             </span>
 
-          
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>1.7k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>2 mins.</span>
+            </span>
 
         </div>
       </header>
@@ -513,7 +570,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p><img data-src="/images/MachineLearning/MLMindNode.png" alt="MLMindNode"></p>
+          <p><img src="/images/MachineLearning/MLMindNode.png" alt="MLMindNode"></p>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/59544/#more" rel="contents">
@@ -583,7 +640,21 @@
                 </span>
             </span>
 
-          
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>33k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>30 mins.</span>
+            </span>
 
         </div>
       </header>
@@ -602,17 +673,17 @@
 <ol>
 <li>iPython是由<a href="http://ipython.org/ipython-doc/stable/install/install.html" target="_blank" rel="noopener">很多模块</a>组成的, 为了不漏装任何组件，我用了这个命令来安装所有组件：</li>
 </ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo pip install ipython[all]</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo pip install ipython[all]</span><br></pre></td></tr></tbody></table></figure>
 <ol>
 <li>安装成功后通过这命令来运行Notebook</li>
 </ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ipython notebook</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ipython notebook</span><br></pre></td></tr></tbody></table></figure>
 <p>之后有可能会弹出这个错误(你如果选择了用Anaconda的方式来安装也会碰到这个错误)：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ValueError, <span class="string">'unknown locale: %s'</span> % localename</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ValueError, <span class="string">'unknown locale: %s'</span> % localename</span><br></pre></td></tr></tbody></table></figure>
 <p>在<a href="http://stackoverflow.com/questions/19961239/pelican-3-3-pelican-quickstart-error-valueerror-unknown-locale-utf-8" target="_blank" rel="noopener">StackOverflow上已经有人提出了解决方案</a>，在命令行里找到.bash_profile 然后添加下面两行代码：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export LC_ALL=en_US.UTF<span class="number">-8</span></span><br><span class="line">export LANG=en_US.UTF<span class="number">-8</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export LC_ALL=en_US.UTF<span class="number">-8</span></span><br><span class="line">export LANG=en_US.UTF<span class="number">-8</span></span><br></pre></td></tr></tbody></table></figure>
 <p>然后别忘了重新载入.bash_profile让新添加的代码生效（注意两个点之间的空格）：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ . .bash_profile</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ . .bash_profile</span><br></pre></td></tr></tbody></table></figure>
 <p>之后再运行命令”ipython notebook “就可以在浏览器里看到iPython Notebook的界面了。</p>
 <p>iPython Notebook的工作原理是在本地启动一个服务器，你通过localhost:8888/tree 这个地址就可以连接到这个服务器上与之通信。从而实现在浏览器里写代码，传给本地服务器执行，然后本地服务器传回结果并在网页上呈现这个循环。</p>
 <p>每次使用完Notebook，只关闭网页本身是不够的。<strong>需要在你启动Notebook的那个Terminal里输 Ctrl + c 然后确认，才能把服务器关闭。</strong>官网具体链接为：<a href="http://IPython.org/install.html" target="_blank" rel="noopener">http://IPython.org/install.html</a></p>
@@ -770,8 +841,18 @@
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">unknown.yuzhouwan.com</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="Symbols count total">182k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">2:45</span>
 </div>
-  <div class="theme-info">Theme – <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.7.1
+  <div class="theme-info">Theme – <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v0.0.0
   </div>
 
         
@@ -858,7 +939,7 @@ if (document.querySelectorAll('pre.mermaid').length) {
     });
   }, window.mermaid);
 }
-</script>
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
 
   

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="Zh">
 <head>
-  <meta charset="UTF-8">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 4.2.0">
@@ -18,7 +18,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"unknown.yuzhouwan.com","root":"/","scheme":"Muse","version":"7.7.1","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"unknown.yuzhouwan.com","root":"/","scheme":"Muse","version":"0.0.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="正在深入学习各种CV知识">
@@ -38,8 +38,8 @@
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome: true,
-    isPost: false
+    isHome : true,
+    isPost : false
   };
 </script>
 
@@ -74,10 +74,11 @@
   </style>
 </noscript>
 
+<link rel="alternate" href="/atom.xml" title="Grace Koo's Blog" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
-  <div class="container use-motion">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
     <div class="headband"></div>
 
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -237,7 +238,21 @@
                 </span>
             </span>
 
-          
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>10k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>9 mins.</span>
+            </span>
 
         </div>
       </header>
@@ -248,10 +263,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h1><p><img data-src="/images/algorithm/栈.png" alt="栈"></p>
-<h2 id="括号匹配问题"><a href="#括号匹配问题" class="headerlink" title="括号匹配问题"></a>括号匹配问题</h2><p><img data-src="/images/algorithm/括号匹配.png" alt="括号匹配"></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">LEFT = &#123;<span class="string">'('</span>,<span class="string">'['</span>,<span class="string">'&#123;'</span>&#125;</span><br><span class="line">RIGHT = &#123;<span class="string">')'</span>,<span class="string">']'</span>,<span class="string">'&#125;'</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">match</span><span class="params">(expr)</span>:</span></span><br><span class="line">    stack = []</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> c <span class="keyword">in</span> expr:</span><br><span class="line">        <span class="keyword">if</span> c <span class="keyword">in</span> LEFT:</span><br><span class="line">            stack.append(c)</span><br><span class="line">        <span class="keyword">elif</span> c <span class="keyword">in</span> RIGHT:</span><br><span class="line">            <span class="comment">#为空</span></span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> stack:</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> <span class="number">1</span> &lt;= ord(c) - ord(stack[<span class="number">-1</span>]) &lt;= <span class="number">2</span>:</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">            stack.pop()</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">not</span> stack</span><br><span class="line"></span><br><span class="line">print(match(<span class="string">'&#123;&#123;[]&#125;&#125;'</span>))</span><br><span class="line"></span><br><span class="line">TRUE</span><br></pre></td></tr></table></figure>
-<h2 id="迷宫问题"><a href="#迷宫问题" class="headerlink" title="迷宫问题"></a>迷宫问题</h2><p><img data-src="/images/algorithm/迷宫问题.png" alt="宫问"></p>
+          <h1 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h1><p><img src="/images/algorithm/栈.png" alt="栈"></p>
+<h2 id="括号匹配问题"><a href="#括号匹配问题" class="headerlink" title="括号匹配问题"></a>括号匹配问题</h2><p><img src="/images/algorithm/括号匹配.png" alt="括号匹配"></p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">LEFT = {<span class="string">'('</span>,<span class="string">'['</span>,<span class="string">'{'</span>}</span><br><span class="line">RIGHT = {<span class="string">')'</span>,<span class="string">']'</span>,<span class="string">'}'</span>}</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">match</span><span class="params">(expr)</span>:</span></span><br><span class="line">    stack = []</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span> c <span class="keyword">in</span> expr:</span><br><span class="line">        <span class="keyword">if</span> c <span class="keyword">in</span> LEFT:</span><br><span class="line">            stack.append(c)</span><br><span class="line">        <span class="keyword">elif</span> c <span class="keyword">in</span> RIGHT:</span><br><span class="line">            <span class="comment">#为空</span></span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> stack:</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> <span class="number">1</span> &lt;= ord(c) - ord(stack[<span class="number">-1</span>]) &lt;= <span class="number">2</span>:</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">            stack.pop()</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">not</span> stack</span><br><span class="line"></span><br><span class="line">print(match(<span class="string">'{{[]}}'</span>))</span><br><span class="line"></span><br><span class="line">TRUE</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="迷宫问题"><a href="#迷宫问题" class="headerlink" title="迷宫问题"></a>迷宫问题</h2><p><img src="/images/algorithm/迷宫问题.png" alt="宫问"></p>
 <p>最后栈为空说明已经无路可走，如果栈不为空说明找到了一条路径。</p>
           <!--noindex-->
             <div class="post-button">
@@ -322,7 +337,21 @@
                 </span>
             </span>
 
-          
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>13k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>12 mins.</span>
+            </span>
 
         </div>
       </header>
@@ -335,7 +364,7 @@
       
           <h1 id="OpenCV的安装"><a href="#OpenCV的安装" class="headerlink" title="OpenCV的安装"></a>OpenCV的安装</h1><p>国内一些pip的镜像源：</p>
 <p>阿里云 <a href="https://mirrors.aliyun.com/pypi/simple/" target="_blank" rel="noopener">https://mirrors.aliyun.com/pypi/simple/</a><br>中国科技大学 <a href="https://pypi.mirrors.ustc.edu.cn/simple/" target="_blank" rel="noopener">https://pypi.mirrors.ustc.edu.cn/simple/</a><br>豆瓣(douban) <a href="http://pypi.douban.com/simple/" target="_blank" rel="noopener">http://pypi.douban.com/simple/</a><br>清华大学 <a href="https://pypi.tuna.tsinghua.edu.cn/simple/" target="_blank" rel="noopener">https://pypi.tuna.tsinghua.edu.cn/simple/</a><br>中国科学技术大学 <a href="http://pypi.mirrors.ustc.edu.cn/simple/" target="_blank" rel="noopener">http://pypi.mirrors.ustc.edu.cn/simple/</a></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(base)$ conda create -n py365 python=<span class="number">3.6</span><span class="number">.5</span>   <span class="comment"># anaconda中创建python版本为3.7.3的虚拟环境</span></span><br><span class="line">(base)$ conda activate py365                 <span class="comment"># 激活该环境</span></span><br><span class="line">pip install opencv-python==<span class="number">3.4</span><span class="number">.1</span><span class="number">.15</span> -i http://pypi.douban.com/simple --trusted-host pypi.douban.com                              <span class="comment"># 安装opencv-python 3.4.1.15，同时还会加载相应的依赖库</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(base)$ conda create -n py365 python=<span class="number">3.6</span><span class="number">.5</span>   <span class="comment"># anaconda中创建python版本为3.7.3的虚拟环境</span></span><br><span class="line">(base)$ conda activate py365                 <span class="comment"># 激活该环境</span></span><br><span class="line">pip install opencv-python==<span class="number">3.4</span><span class="number">.1</span><span class="number">.15</span> -i http://pypi.douban.com/simple --trusted-host pypi.douban.com                              <span class="comment"># 安装opencv-python 3.4.1.15，同时还会加载相应的依赖库</span></span><br></pre></td></tr></tbody></table></figure>
 <p>内容完善中……</p>
           <!--noindex-->
             <div class="post-button">
@@ -406,7 +435,21 @@
                 </span>
             </span>
 
-          
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>5.5k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>5 mins.</span>
+            </span>
 
         </div>
       </header>
@@ -421,13 +464,13 @@
 <p>$\lim_{x \to \infty} \exp(-x)=0$</p>
 <h2 id="下标"><a href="#下标" class="headerlink" title="下标"></a>下标</h2><p>下标使用<code>~</code>包裹，例如：<code>H~2~O</code>将产生H~2~O, 即水的分子式。</p>
 <h2 id="上标"><a href="#上标" class="headerlink" title="上标"></a>上标</h2><p>上标使用<code>^</code>包裹，例如：<code>y^2^=4</code>将产生表达式y^2^ = 4</p>
-<h2 id="插入表情-happy"><a href="#插入表情-happy" class="headerlink" title="插入表情:happy:"></a>插入表情:happy:</h2><p>使用<code>:happy:</code>输入表情:happy:,使用<code>:sad:</code>输入表情:sad:,使用<code>:cry:</code>输入表情:cry:等。以此类推！</p>
+<h2 id="插入表情-happy"><a href="#插入表情-happy" class="headerlink" title="插入表情:happy:"></a>插入表情:happy:</h2><p>使用<code>:happy:</code>输入表情:happy:,使用<code>:sad:</code>输入表情:sad:,使用<code>:cry:</code>输入表情<span class="github-emoji" style="color: transparent;background:no-repeat url(https://github.githubassets.com/images/icons/emoji/unicode/1f622.png?v8) center/contain" data-src="https://github.githubassets.com/images/icons/emoji/unicode/1f622.png?v8">😢</span>等。以此类推！</p>
 <h2 id="下划线"><a href="#下划线" class="headerlink" title="下划线"></a>下划线</h2><p>用HTML的语法<code>&lt;u&gt;Underline&lt;/u&gt;</code>将产生下划线<u>Underline</u>.</p>
 <h2 id="删除线"><a href="#删除线" class="headerlink" title="删除线"></a>删除线</h2><p>GFM添加了删除文本的语法，这是标准的Markdown语法木有的。使用<code>~~</code>包裹的文本将会具有删除的样式，例如<code>~删除文本~</code>将产生<del>删除文本</del>的样式。</p>
 <h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><ul>
 <li>使用`包裹的内容将会以代码样式显示，例如</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">使用&#96;printf()&#96;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">使用`printf()`</span><br></pre></td></tr></tbody></table></figure>
 <p>则会产生<code>printf()</code>样式。</p>
           <!--noindex-->
             <div class="post-button">
@@ -498,7 +541,21 @@
                 </span>
             </span>
 
-          
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>5.7k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>5 mins.</span>
+            </span>
 
         </div>
       </header>
@@ -519,13 +576,13 @@
 <p>此外，Git还会尝试找寻/etc/gitconfig文件，只不过看当初Git装在什么目录，就以此作为根目录来定位</p>
 </li>
 </ul>
-<h2 id="配置用户信息"><a href="#配置用户信息" class="headerlink" title="配置用户信息"></a>配置用户信息</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --<span class="keyword">global</span> user.name <span class="string">"loen"</span></span><br><span class="line">$ git config --<span class="keyword">global</span> user.email loen@qq.com</span><br></pre></td></tr></table></figure>
+<h2 id="配置用户信息"><a href="#配置用户信息" class="headerlink" title="配置用户信息"></a>配置用户信息</h2><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --<span class="keyword">global</span> user.name <span class="string">"loen"</span></span><br><span class="line">$ git config --<span class="keyword">global</span> user.email loen@qq.com</span><br></pre></td></tr></tbody></table></figure>
 <p>利用gloabal选项，更改用户主目录下的config文件，以后所有项目都会默认使用这里配置的用户信息</p>
 <p>如果要在某个特定项目里使用其他名字或者邮件，只要去掉—global选项重新配置即可，新的设定保存在当前目录的.git/config 文件里</p>
-<h2 id="查看配置信息"><a href="#查看配置信息" class="headerlink" title="查看配置信息"></a>查看配置信息</h2> <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git config --list</span><br></pre></td></tr></table></figure>
+<h2 id="查看配置信息"><a href="#查看配置信息" class="headerlink" title="查看配置信息"></a>查看配置信息</h2> <figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git config --list</span><br></pre></td></tr></tbody></table></figure>
 <p>有时候会看到重复的变量名，那就说明它们来自不同的配置文件( 比如/etc/gitconfig和~./gitconfig)，不过Git实际采用的是最后一个</p>
 <p>也可以在/etc/gitconfig和~./gitconfig里看到</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vim ~/.gitconfig</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vim ~/.gitconfig</span><br></pre></td></tr></tbody></table></figure>
 <h2 id="忽略特殊文件-gitignore"><a href="#忽略特殊文件-gitignore" class="headerlink" title="忽略特殊文件.gitignore"></a>忽略特殊文件.gitignore</h2><p>有时必须把某些文件放入Git工作目录中，但是又不能将其提交，如存储了数据库密码的配置文件。</p>
 <p>只需在Git工作区的根目录下创建一个名为.gitignore的文件，写入过滤规则就可以了</p>
 <p>.gitignore不需要从头写，所有配置文件可以直接在线浏览<a href="https://github.com/github/.gitignore" target="_blank" rel="noopener">https://github.com/github/.gitignore</a></p>
@@ -604,7 +661,21 @@
                 </span>
             </span>
 
-          
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>416</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>1 mins.</span>
+            </span>
 
         </div>
       </header>
@@ -615,7 +686,25 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="MacBook"><a href="#MacBook" class="headerlink" title="MacBook"></a>MacBook</h1><h1 id="PyCharm"><a href="#PyCharm" class="headerlink" title="PyCharm"></a>PyCharm</h1><h1 id="VIM"><a href="#VIM" class="headerlink" title="VIM"></a>VIM</h1>
+          <h1 id="MacBook"><a href="#MacBook" class="headerlink" title="MacBook"></a>MacBook</h1><h1 id="PyCharm"><a href="#PyCharm" class="headerlink" title="PyCharm"></a>PyCharm</h1><h1 id="VIM"><a href="#VIM" class="headerlink" title="VIM"></a>VIM</h1><script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
       
     </div>
 
@@ -762,8 +851,18 @@
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">unknown.yuzhouwan.com</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="Symbols count total">182k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">2:45</span>
 </div>
-  <div class="theme-info">Theme – <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.7.1
+  <div class="theme-info">Theme – <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v0.0.0
   </div>
 
         
@@ -861,9 +960,13 @@ if (document.querySelectorAll('pre.mermaid').length) {
 <script>
   if (typeof MathJax === 'undefined') {
     window.MathJax = {
-        loader: {
-          load: ['[tex]/mhchem']
-        },
+      loader: {
+          load: ['[tex]/mhchem'],
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
       tex: {
         inlineMath: {'[+]': [['$', '$']]},
           packages: {'[+]': ['mhchem']},
@@ -904,7 +1007,7 @@ if (document.querySelectorAll('pre.mermaid').length) {
     MathJax.texReset();
     MathJax.typeset();
   }
-</script>
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
     
 
