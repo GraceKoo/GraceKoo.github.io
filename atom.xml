@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://unknown.yuzhouwan.com/"/>
-  <updated>2020-03-18T15:26:32.049Z</updated>
+  <updated>2020-03-17T12:51:34.081Z</updated>
   <id>https://unknown.yuzhouwan.com/</id>
   
   <author>
@@ -15,40 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>确认信息确认结果备注是否美国出口管制物料物料ECCN号（若00类需要提供许可或豁免证明）是否需要归还（如需归还，请写明归还日期）</title>
-    <link href="https://unknown.yuzhouwan.com/posts/57247/"/>
-    <id>https://unknown.yuzhouwan.com/posts/57247/</id>
-    <published>2020-03-18T12:24:33.622Z</published>
-    <updated>2020-03-18T15:26:32.049Z</updated>
-    
-    <content type="html"><![CDATA[<div class="table-container"><table><thead><tr><th>确认信息</th><th>确认结果</th><th>备注</th></tr></thead><tbody><tr><td>是否美国出口管制物料</td><td></td><td></td></tr><tr><td>物料ECCN号（若00类需要提供许可或豁免证明）</td><td></td><td></td></tr><tr><td>是否需要归还（如需归还，请写明归还日期）</td><td></td></tr></tbody></table></div><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;div class=&quot;table-container&quot;&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;确认信息&lt;/th&gt;
-&lt;th&gt;确认结果&lt;/th&gt;
-&lt;th&gt;备注&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;是否美国出口管制物料&lt;/td&gt;
-&lt;
-      
-    
-    </summary>
-    
-    
-    
-  </entry>
   
   <entry>
     <title>LeetCode_&amp;_Algorithm</title>
