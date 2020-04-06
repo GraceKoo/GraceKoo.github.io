@@ -27,8 +27,9 @@
 <meta property="og:site_name" content="Grace Koo&#39;s Blog">
 <meta property="og:locale" content="Zh">
 <meta property="og:image" content="https://unknown.yuzhouwan.com/images/MachineLearning/MLMindNode.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/Python-base/DataView_Sigmoid.png">
 <meta property="article:published_time" content="2017-09-18T11:08:26.000Z">
-<meta property="article:modified_time" content="2020-02-27T16:32:42.223Z">
+<meta property="article:modified_time" content="2020-04-06T12:59:15.636Z">
 <meta property="article:author" content="Grace Koo">
 <meta property="article:tag" content="Python">
 <meta property="article:tag" content="Machine Learning">
@@ -234,7 +235,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-02-27 16:32:42" itemprop="dateModified" datetime="2020-02-27T16:32:42Z">2020-02-27</time>
+                <time title="Modified: 2020-04-06 12:59:15" itemprop="dateModified" datetime="2020-04-06T12:59:15Z">2020-04-06</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -259,14 +260,14 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>1.7k</span>
+              <span>1.5k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="fa fa-clock-o"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>2 mins.</span>
+              <span>1 mins.</span>
             </span>
 
         </div>
@@ -280,7 +281,7 @@
       
         <p><img data-src="/images/MachineLearning/MLMindNode.png" alt="MLMindNode"></p>
 <a id="more"></a>
-<h1 id="About-Machine-Learning"><a href="#About-Machine-Learning" class="headerlink" title="About Machine Learning"></a>About Machine Learning</h1><p>机器学习可以揭示数据背后的真实含义。</p>
+<h1 id="Introduction-of-Machine-Learning"><a href="#Introduction-of-Machine-Learning" class="headerlink" title="Introduction of Machine Learning"></a>Introduction of Machine Learning</h1><p>机器学习可以揭示数据背后的真实含义。</p>
 <p><strong>监督学习</strong>需要用户知道目标值，简单的说就是知道数据在找什么。而<strong>无监督学习</strong>则无需用户知道搜寻的目标，只需要从算法程序中得到这些数据的共同特征。</p>
 <p>保证算法应用的正确性：</p>
 <ol>
@@ -292,18 +293,18 @@
 <p>后续根据监督学习和无监督学习进行分类讨论。</p>
 <p>在监督学习中，我们只需要给定输入样本，机器就可以从中推演出指定目标变量的可能结果。监督学习相对比较简单，机器只需从输入数据中预测合适的模型，并从中计算出目标变量的结果。</p>
 <p>监督学习一般使用两种类型的目标变量：标称型和数值型。<strong>标称型</strong>目标变量的结果只在有限目标集中取值，如真与假，动物分类集合；<strong>数值型</strong>目标变量则可以从无限的数值集合中取值，一般用于回归分析。</p>
-<h1 id="Key-Terminology"><a href="#Key-Terminology" class="headerlink" title="Key Terminology"></a>Key Terminology</h1><p>我们使用机器学习的某个算法进行分类结果，首先要做的是<strong>算法训练</strong>，即学习如何<strong>分类</strong>。通常我们为算法输入大量的已分类数据作为算法的<strong>训练集</strong>。训练集是用于训练机器学习算法的数据样本集合。<strong>目标变量</strong>是机器学习算法的预测结果。</p>
+<h2 id="Key-Terminology"><a href="#Key-Terminology" class="headerlink" title="Key Terminology"></a>Key Terminology</h2><p>我们使用机器学习的某个算法进行分类结果，首先要做的是<strong>算法训练</strong>，即学习如何<strong>分类</strong>。通常我们为算法输入大量的已分类数据作为算法的<strong>训练集</strong>。训练集是用于训练机器学习算法的数据样本集合。<strong>目标变量</strong>是机器学习算法的预测结果。</p>
 <p>在分类算法中目标变量的类型通常是标称型的，而在回归算法中通常是连续型的。</p>
 <p>训练样本集必须确定知道目标变量的值，以便机器学习算法可以发现特征和目标变量之间的关系。</p>
 <p>当机器学习程序开始运行时，使用训练样本集作为算法的输入，<strong>训练完成</strong>后输入<strong>测试样本</strong>，由程序决定样本属于哪个类别。</p>
-<h1 id="Primary-Mission"><a href="#Primary-Mission" class="headerlink" title="Primary Mission"></a>Primary Mission</h1><p>监督学习中的任务：</p>
+<h2 id="Primary-Mission"><a href="#Primary-Mission" class="headerlink" title="Primary Mission"></a>Primary Mission</h2><p>监督学习中的任务：</p>
 <p>1.将实例数据划分到合适的<strong>分类</strong>中。</p>
 <p>2.<strong>回归</strong>，主要用于预测数值型数据。</p>
 <p>无监督学习中的任务：</p>
 <p>数据没有类别信息，也不会给定目标值。</p>
 <p>1.在无监督学习中，将数据集合分成由类似的对象组成的多个类的过程被称为<strong>聚类</strong>。</p>
 <p>2.将寻找描述数据统计值的过程称之为<strong>密度估计</strong>。</p>
-<h1 id="Overview-of-Algorithm"><a href="#Overview-of-Algorithm" class="headerlink" title="Overview of Algorithm"></a>Overview of Algorithm</h1><div class="table-container">
+<h2 id="Overview-of-Algorithm"><a href="#Overview-of-Algorithm" class="headerlink" title="Overview of Algorithm"></a>Overview of Algorithm</h2><div class="table-container">
 <table>
 <thead>
 <tr>
@@ -351,7 +352,7 @@
 </tbody>
 </table>
 </div>
-<h1 id="How-to-choose"><a href="#How-to-choose" class="headerlink" title="How to choose"></a>How to choose</h1><p>首先考虑使用机器学习算法的目的。如果想要预测目标变量的值，则可以选择监督学习算法，否则选择无监督学习算法。</p>
+<h2 id="How-to-choose"><a href="#How-to-choose" class="headerlink" title="How to choose"></a>How to choose</h2><p>首先考虑使用机器学习算法的目的。如果想要预测目标变量的值，则可以选择监督学习算法，否则选择无监督学习算法。</p>
 <p>如果确定选择监督学习算法后，需要进一步确定目标变量类型。</p>
 <ul>
 <li>如果目标变量是离散型，如是／否，1/2/3，红／黄／黑等，则可以选择<strong>分类算法</strong>。</li>
@@ -362,7 +363,7 @@
 <li>需要将数据划分为离散的组。如果这是唯一的需求，则使用<strong>聚类算法</strong>。</li>
 <li>需要估计数据与每个分组的相似程度，需要使用<strong>密度估计算法。</strong></li>
 </ul>
-<h1 id="Steps-in-Machine-Learning"><a href="#Steps-in-Machine-Learning" class="headerlink" title="Steps in Machine Learning"></a>Steps in Machine Learning</h1><ol>
+<h2 id="Steps-in-Machine-Learning"><a href="#Steps-in-Machine-Learning" class="headerlink" title="Steps in Machine Learning"></a>Steps in Machine Learning</h2><ol>
 <li>收集数据</li>
 <li>准备输入数据</li>
 <li>分析输入数据。确保数据集中没有垃圾数据。</li>
@@ -370,7 +371,10 @@
 <li>测试算法。</li>
 <li>使用算法。将机器学习算法转化为应用程序，执行实际任务。</li>
 </ol>
-<script>
+<h1 id="优化算法"><a href="#优化算法" class="headerlink" title="优化算法"></a>优化算法</h1><h2 id="损失函数"><a href="#损失函数" class="headerlink" title="损失函数"></a>损失函数</h2><h2 id="正则化"><a href="#正则化" class="headerlink" title="正则化"></a>正则化</h2><h2 id="EM算法"><a href="#EM算法" class="headerlink" title="EM算法"></a>EM算法</h2><h2 id="梯度下降"><a href="#梯度下降" class="headerlink" title="梯度下降"></a>梯度下降</h2><h2 id="随机梯度下降"><a href="#随机梯度下降" class="headerlink" title="随机梯度下降"></a>随机梯度下降</h2><h2 id="反向传播"><a href="#反向传播" class="headerlink" title="反向传播"></a>反向传播</h2><h2 id="梯度验证"><a href="#梯度验证" class="headerlink" title="梯度验证"></a>梯度验证</h2><h2 id="Momentum"><a href="#Momentum" class="headerlink" title="Momentum"></a>Momentum</h2><h2 id="AdaGrad"><a href="#AdaGrad" class="headerlink" title="AdaGrad"></a>AdaGrad</h2><h2 id="Adam"><a href="#Adam" class="headerlink" title="Adam"></a>Adam</h2><h1 id="模型评估"><a href="#模型评估" class="headerlink" title="模型评估"></a>模型评估</h1><h2 id="评价指标"><a href="#评价指标" class="headerlink" title="评价指标"></a>评价指标</h2><h2 id="A-B测试"><a href="#A-B测试" class="headerlink" title="A/B测试"></a>A/B测试</h2><h2 id="过拟合于欠拟合"><a href="#过拟合于欠拟合" class="headerlink" title="过拟合于欠拟合"></a>过拟合于欠拟合</h2><h2 id="超参数选择"><a href="#超参数选择" class="headerlink" title="超参数选择"></a>超参数选择</h2><h1 id="DeepLearning-Model"><a href="#DeepLearning-Model" class="headerlink" title="DeepLearning Model"></a>DeepLearning Model</h1><h2 id="CNN"><a href="#CNN" class="headerlink" title="CNN"></a>CNN</h2><p>移步☞博文：<a href="https://unknown.yuzhouwan.com/posts/16452/">CNN</a></p>
+<h2 id="RNN"><a href="#RNN" class="headerlink" title="RNN"></a>RNN</h2><h2 id="GAN"><a href="#GAN" class="headerlink" title="GAN"></a>GAN</h2><h2 id="AutoML"><a href="#AutoML" class="headerlink" title="AutoML"></a>AutoML</h2><h2 id="深度学习优化技巧"><a href="#深度学习优化技巧" class="headerlink" title="深度学习优化技巧"></a>深度学习优化技巧</h2><h3 id="批量归一化BN"><a href="#批量归一化BN" class="headerlink" title="批量归一化BN"></a>批量归一化BN</h3><h3 id="Dropout"><a href="#Dropout" class="headerlink" title="Dropout"></a>Dropout</h3><h3 id="激活函数"><a href="#激活函数" class="headerlink" title="激活函数"></a>激活函数</h3><h4 id="Sigmoid"><a href="#Sigmoid" class="headerlink" title="Sigmoid"></a>Sigmoid</h4><p>二分类逻辑回归模型</p>
+<script type="math/tex; mode=display">f(x)=\frac{1}{1+e^{-W^TX}}</script><p><img data-src="/images/Python-base/DataView_Sigmoid.png" alt="DataView_Sigmoid"></p>
+<h4 id="Softmax"><a href="#Softmax" class="headerlink" title="Softmax"></a>Softmax</h4><h4 id="Tanh"><a href="#Tanh" class="headerlink" title="Tanh"></a>Tanh</h4><h4 id="ReLU"><a href="#ReLU" class="headerlink" title="ReLU"></a>ReLU</h4><script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -490,7 +494,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#About-Machine-Learning"><span class="nav-number">1.</span> <span class="nav-text">About Machine Learning</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Key-Terminology"><span class="nav-number">2.</span> <span class="nav-text">Key Terminology</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Primary-Mission"><span class="nav-number">3.</span> <span class="nav-text">Primary Mission</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Overview-of-Algorithm"><span class="nav-number">4.</span> <span class="nav-text">Overview of Algorithm</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#How-to-choose"><span class="nav-number">5.</span> <span class="nav-text">How to choose</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Steps-in-Machine-Learning"><span class="nav-number">6.</span> <span class="nav-text">Steps in Machine Learning</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Introduction-of-Machine-Learning"><span class="nav-number">1.</span> <span class="nav-text">Introduction of Machine Learning</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Key-Terminology"><span class="nav-number">1.1.</span> <span class="nav-text">Key Terminology</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Primary-Mission"><span class="nav-number">1.2.</span> <span class="nav-text">Primary Mission</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Overview-of-Algorithm"><span class="nav-number">1.3.</span> <span class="nav-text">Overview of Algorithm</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#How-to-choose"><span class="nav-number">1.4.</span> <span class="nav-text">How to choose</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Steps-in-Machine-Learning"><span class="nav-number">1.5.</span> <span class="nav-text">Steps in Machine Learning</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#优化算法"><span class="nav-number">2.</span> <span class="nav-text">优化算法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#损失函数"><span class="nav-number">2.1.</span> <span class="nav-text">损失函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正则化"><span class="nav-number">2.2.</span> <span class="nav-text">正则化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#EM算法"><span class="nav-number">2.3.</span> <span class="nav-text">EM算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#梯度下降"><span class="nav-number">2.4.</span> <span class="nav-text">梯度下降</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#随机梯度下降"><span class="nav-number">2.5.</span> <span class="nav-text">随机梯度下降</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#反向传播"><span class="nav-number">2.6.</span> <span class="nav-text">反向传播</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#梯度验证"><span class="nav-number">2.7.</span> <span class="nav-text">梯度验证</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Momentum"><span class="nav-number">2.8.</span> <span class="nav-text">Momentum</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AdaGrad"><span class="nav-number">2.9.</span> <span class="nav-text">AdaGrad</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Adam"><span class="nav-number">2.10.</span> <span class="nav-text">Adam</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#模型评估"><span class="nav-number">3.</span> <span class="nav-text">模型评估</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#评价指标"><span class="nav-number">3.1.</span> <span class="nav-text">评价指标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#A-B测试"><span class="nav-number">3.2.</span> <span class="nav-text">A&#x2F;B测试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#过拟合于欠拟合"><span class="nav-number">3.3.</span> <span class="nav-text">过拟合于欠拟合</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#超参数选择"><span class="nav-number">3.4.</span> <span class="nav-text">超参数选择</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#DeepLearning-Model"><span class="nav-number">4.</span> <span class="nav-text">DeepLearning Model</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#CNN"><span class="nav-number">4.1.</span> <span class="nav-text">CNN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RNN"><span class="nav-number">4.2.</span> <span class="nav-text">RNN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GAN"><span class="nav-number">4.3.</span> <span class="nav-text">GAN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AutoML"><span class="nav-number">4.4.</span> <span class="nav-text">AutoML</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#深度学习优化技巧"><span class="nav-number">4.5.</span> <span class="nav-text">深度学习优化技巧</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#批量归一化BN"><span class="nav-number">4.5.1.</span> <span class="nav-text">批量归一化BN</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Dropout"><span class="nav-number">4.5.2.</span> <span class="nav-text">Dropout</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#激活函数"><span class="nav-number">4.5.3.</span> <span class="nav-text">激活函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Sigmoid"><span class="nav-number">4.5.3.1.</span> <span class="nav-text">Sigmoid</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Softmax"><span class="nav-number">4.5.3.2.</span> <span class="nav-text">Softmax</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Tanh"><span class="nav-number">4.5.3.3.</span> <span class="nav-text">Tanh</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ReLU"><span class="nav-number">4.5.3.4.</span> <span class="nav-text">ReLU</span></a></li></ol></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -511,7 +515,7 @@
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -570,12 +574,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="Symbols count total">206k</span>
+    <span title="Symbols count total">202k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">3:07</span>
+    <span title="Reading time total">3:04</span>
 </div>
 
         <meta name="referrer" content="always">
