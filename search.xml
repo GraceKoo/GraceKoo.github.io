@@ -1107,7 +1107,15 @@ id7((6)) --&gt; id2((1))</pre>
 <li>导出到SavedModel</li>
 <li>使用TesorFlow Serve、TensorFlow Lite、TensorFlow.js部署模型</li>
 </ul>
-<h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><script>
+<h1 id="TensorFlow-Keras"><a href="#TensorFlow-Keras" class="headerlink" title="TensorFlow-Keras"></a>TensorFlow-Keras</h1><h2 id="tf-keras和keras的区别"><a href="#tf-keras和keras的区别" class="headerlink" title="tf.keras和keras的区别"></a>tf.keras和keras的区别</h2><ul>
+<li>tf.keras全面支持eager mode</li>
+<li>tf.keras支持基于tf.data的模型训练</li>
+<li>tf.keras支持TPU训练</li>
+<li>tf.keras支持tf.distribution中的分布式策略</li>
+<li>tf.keras可以与TensorFlow中的estimator集成</li>
+<li>tf.keras可以保存为SavedModel</li>
+</ul>
+<h2 id="搭建分类模型"><a href="#搭建分类模型" class="headerlink" title="搭建分类模型"></a>搭建分类模型</h2><h2 id="Keras回调函数"><a href="#Keras回调函数" class="headerlink" title="Keras回调函数"></a>Keras回调函数</h2><h2 id="搭建回归模型"><a href="#搭建回归模型" class="headerlink" title="搭建回归模型"></a>搭建回归模型</h2><h2 id="搭建深度神经网络"><a href="#搭建深度神经网络" class="headerlink" title="搭建深度神经网络"></a>搭建深度神经网络</h2><h2 id="实现wide-amp-deep模型"><a href="#实现wide-amp-deep模型" class="headerlink" title="实现wide&amp;deep模型"></a>实现wide&amp;deep模型</h2><h2 id="Keras与scikit-learn实现超参数搜索"><a href="#Keras与scikit-learn实现超参数搜索" class="headerlink" title="Keras与scikit-learn实现超参数搜索"></a>Keras与scikit-learn实现超参数搜索</h2><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -3007,14 +3015,20 @@ cond(no)-&gt;op</textarea><textarea id="flowchart-0-options" style="display: non
 <li>测试算法。</li>
 <li>使用算法。将机器学习算法转化为应用程序，执行实际任务。</li>
 </ol>
-<h1 id="优化算法"><a href="#优化算法" class="headerlink" title="优化算法"></a>优化算法</h1><h2 id="损失函数"><a href="#损失函数" class="headerlink" title="损失函数"></a>损失函数</h2><ol>
+<h1 id="优化算法"><a href="#优化算法" class="headerlink" title="优化算法"></a>优化算法</h1><h2 id="损失函数"><a href="#损失函数" class="headerlink" title="损失函数"></a>损失函数</h2><h3 id="分类问题"><a href="#分类问题" class="headerlink" title="分类问题"></a>分类问题</h3><ol>
 <li>平方差损失函数</li>
 </ol>
 <script type="math/tex; mode=display">\frac{1}{n}\sum\frac{1}{2}(y - Model(x))^2</script><ol>
 <li>交叉熵损失</li>
 </ol>
 <p>多用于多分类</p>
-<script type="math/tex; mode=display">\frac{1}{n}\sum yln(Model(x))</script><h2 id="正则化"><a href="#正则化" class="headerlink" title="正则化"></a>正则化</h2><h2 id="EM算法"><a href="#EM算法" class="headerlink" title="EM算法"></a>EM算法</h2><h2 id="梯度下降"><a href="#梯度下降" class="headerlink" title="梯度下降"></a>梯度下降</h2><h2 id="随机梯度下降"><a href="#随机梯度下降" class="headerlink" title="随机梯度下降"></a>随机梯度下降</h2><h2 id="反向传播"><a href="#反向传播" class="headerlink" title="反向传播"></a>反向传播</h2><h2 id="梯度验证"><a href="#梯度验证" class="headerlink" title="梯度验证"></a>梯度验证</h2><h2 id="Momentum"><a href="#Momentum" class="headerlink" title="Momentum"></a>Momentum</h2><h2 id="AdaGrad"><a href="#AdaGrad" class="headerlink" title="AdaGrad"></a>AdaGrad</h2><h2 id="Adam"><a href="#Adam" class="headerlink" title="Adam"></a>Adam</h2><h1 id="模型评估"><a href="#模型评估" class="headerlink" title="模型评估"></a>模型评估</h1><h2 id="评价指标"><a href="#评价指标" class="headerlink" title="评价指标"></a>评价指标</h2><h2 id="A-B测试"><a href="#A-B测试" class="headerlink" title="A/B测试"></a>A/B测试</h2><h2 id="过拟合于欠拟合"><a href="#过拟合于欠拟合" class="headerlink" title="过拟合于欠拟合"></a>过拟合于欠拟合</h2><h2 id="超参数选择"><a href="#超参数选择" class="headerlink" title="超参数选择"></a>超参数选择</h2><h1 id="DeepLearning-Model"><a href="#DeepLearning-Model" class="headerlink" title="DeepLearning Model"></a>DeepLearning Model</h1><h2 id="CNN"><a href="#CNN" class="headerlink" title="CNN"></a>CNN</h2><p>移步☞博文：<a href="https://unknown.yuzhouwan.com/posts/16452/">CNN</a></p>
+<script type="math/tex; mode=display">\frac{1}{n}\sum yln(Model(x))</script><h3 id="回归问题"><a href="#回归问题" class="headerlink" title="回归问题"></a>回归问题</h3><ol>
+<li>平方差损失函数</li>
+</ol>
+<script type="math/tex; mode=display">\frac{1}{n}\sum\frac{1}{2}(y - Model(x))^2</script><ol>
+<li>绝对值损失</li>
+</ol>
+<script type="math/tex; mode=display">\frac{1}{n}\sum|y - Model(x)|</script><h2 id="正则化"><a href="#正则化" class="headerlink" title="正则化"></a>正则化</h2><h2 id="EM算法"><a href="#EM算法" class="headerlink" title="EM算法"></a>EM算法</h2><h2 id="梯度下降"><a href="#梯度下降" class="headerlink" title="梯度下降"></a>梯度下降</h2><h2 id="随机梯度下降"><a href="#随机梯度下降" class="headerlink" title="随机梯度下降"></a>随机梯度下降</h2><h2 id="反向传播"><a href="#反向传播" class="headerlink" title="反向传播"></a>反向传播</h2><h2 id="梯度验证"><a href="#梯度验证" class="headerlink" title="梯度验证"></a>梯度验证</h2><h2 id="Momentum"><a href="#Momentum" class="headerlink" title="Momentum"></a>Momentum</h2><h2 id="AdaGrad"><a href="#AdaGrad" class="headerlink" title="AdaGrad"></a>AdaGrad</h2><h2 id="Adam"><a href="#Adam" class="headerlink" title="Adam"></a>Adam</h2><h1 id="模型评估"><a href="#模型评估" class="headerlink" title="模型评估"></a>模型评估</h1><h2 id="评价指标"><a href="#评价指标" class="headerlink" title="评价指标"></a>评价指标</h2><h2 id="A-B测试"><a href="#A-B测试" class="headerlink" title="A/B测试"></a>A/B测试</h2><h2 id="过拟合于欠拟合"><a href="#过拟合于欠拟合" class="headerlink" title="过拟合于欠拟合"></a>过拟合于欠拟合</h2><h2 id="超参数选择"><a href="#超参数选择" class="headerlink" title="超参数选择"></a>超参数选择</h2><h1 id="DeepLearning-Model"><a href="#DeepLearning-Model" class="headerlink" title="DeepLearning Model"></a>DeepLearning Model</h1><h2 id="CNN"><a href="#CNN" class="headerlink" title="CNN"></a>CNN</h2><p>移步☞博文：<a href="https://unknown.yuzhouwan.com/posts/16452/">CNN</a></p>
 <h2 id="RNN"><a href="#RNN" class="headerlink" title="RNN"></a>RNN</h2><h2 id="GAN"><a href="#GAN" class="headerlink" title="GAN"></a>GAN</h2><h2 id="AutoML"><a href="#AutoML" class="headerlink" title="AutoML"></a>AutoML</h2><h2 id="深度学习优化技巧"><a href="#深度学习优化技巧" class="headerlink" title="深度学习优化技巧"></a>深度学习优化技巧</h2><h3 id="批量归一化BN"><a href="#批量归一化BN" class="headerlink" title="批量归一化BN"></a>批量归一化BN</h3><h3 id="Dropout"><a href="#Dropout" class="headerlink" title="Dropout"></a>Dropout</h3><h3 id="激活函数"><a href="#激活函数" class="headerlink" title="激活函数"></a>激活函数</h3><h4 id="Sigmoid"><a href="#Sigmoid" class="headerlink" title="Sigmoid"></a>Sigmoid</h4><p>二分类逻辑回归模型</p>
 <script type="math/tex; mode=display">f(x)=\frac{1}{1+e^{-W^TX}}</script><p><img data-src="/images/Python-base/DataView_Sigmoid.png" alt="DataView_Sigmoid"></p>
 <h4 id="Softmax"><a href="#Softmax" class="headerlink" title="Softmax"></a>Softmax</h4><p>多分类逻辑回归模型</p>
