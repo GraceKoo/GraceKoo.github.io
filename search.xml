@@ -1099,7 +1099,7 @@ id7((6)) --&gt; id2((1))</pre>
       </tags>
   </entry>
   <entry>
-    <title>神经网络</title>
+    <title>TensorFlow2.0 In Action</title>
     <url>/posts/29871/</url>
     <content><![CDATA[<h1 id="TensorFlow2-0简化的模型开发流程"><a href="#TensorFlow2-0简化的模型开发流程" class="headerlink" title="TensorFlow2.0简化的模型开发流程"></a>TensorFlow2.0简化的模型开发流程</h1><ul>
 <li>使用tf.data加载数据</li>
