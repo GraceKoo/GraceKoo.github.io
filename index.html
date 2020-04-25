@@ -889,7 +889,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-04-23 15:21:12" itemprop="dateModified" datetime="2020-04-23T15:21:12Z">2020-04-23</time>
+                <time title="Modified: 2020-04-25 15:00:02" itemprop="dateModified" datetime="2020-04-25T15:00:02Z">2020-04-25</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -907,14 +907,14 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>848</span>
+              <span>2k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="fa fa-clock-o"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>1 mins.</span>
+              <span>2 mins.</span>
             </span>
 
         </div>
@@ -942,7 +942,11 @@
 <li>tf.keras可以与TensorFlow中的estimator集成</li>
 <li>tf.keras可以保存为SavedModel</li>
 </ul>
-<h2 id="搭建分类模型"><a href="#搭建分类模型" class="headerlink" title="搭建分类模型"></a>搭建分类模型</h2><h2 id="Keras回调函数"><a href="#Keras回调函数" class="headerlink" title="Keras回调函数"></a>Keras回调函数</h2><h2 id="搭建回归模型"><a href="#搭建回归模型" class="headerlink" title="搭建回归模型"></a>搭建回归模型</h2><h2 id="搭建深度神经网络"><a href="#搭建深度神经网络" class="headerlink" title="搭建深度神经网络"></a>搭建深度神经网络</h2><h2 id="实现wide-amp-deep模型"><a href="#实现wide-amp-deep模型" class="headerlink" title="实现wide&amp;deep模型"></a>实现wide&amp;deep模型</h2><h2 id="Keras与scikit-learn实现超参数搜索"><a href="#Keras与scikit-learn实现超参数搜索" class="headerlink" title="Keras与scikit-learn实现超参数搜索"></a>Keras与scikit-learn实现超参数搜索</h2><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><script>
+<h2 id="搭建分类模型"><a href="#搭建分类模型" class="headerlink" title="搭建分类模型"></a>搭建分类模型</h2><h3 id="数据读取与展示"><a href="#数据读取与展示" class="headerlink" title="数据读取与展示"></a>数据读取与展示</h3><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"><span class="keyword">from</span> tensorflow <span class="keyword">import</span> keras</span><br><span class="line"></span><br><span class="line">fashion_mnist = keras.datasets.fashion_mnist</span><br><span class="line">(x_train_all, y_train_all), (x_test, y_test) = fashion_mnist.load_data()</span><br><span class="line">x_valid, x_train = x_train_all[:<span class="number">5000</span>], x_train_all[<span class="number">5000</span>:] <span class="comment">#将数据集的前5000张作为训练集，后面的作为验证集</span></span><br><span class="line">y_valid, y_train = y_train_all[:<span class="number">5000</span>], y_train_all[<span class="number">5000</span>:]</span><br><span class="line"></span><br><span class="line">print(x_valid.shape, y_valid.shape)</span><br><span class="line">print(x_train.shape, y_train.shape)</span><br><span class="line">print(x_test.shape, y_test.shape)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">(<span class="number">5000</span>, <span class="number">28</span>, <span class="number">28</span>) (<span class="number">5000</span>,)</span><br><span class="line">(<span class="number">55000</span>, <span class="number">28</span>, <span class="number">28</span>) (<span class="number">55000</span>,)</span><br><span class="line">(<span class="number">10000</span>, <span class="number">28</span>, <span class="number">28</span>) (<span class="number">10000</span>,)</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 展示一张图片</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">show_single_image</span><span class="params">(img_arr)</span>:</span></span><br><span class="line">    plt.imshow(img_arr, cmap=<span class="string">"binary"</span>)</span><br><span class="line">    plt.show()</span><br><span class="line">show_single_image(x_train_all[<span class="number">0</span>]) <span class="comment"># 查看训练集中的第一张图片</span></span><br></pre></td></tr></tbody></table></figure>
+<p><img data-src="/images/tensorflow/show_image.png" alt="show_image"><br></p><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 展示多张图片</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">show_imgs</span><span class="params">(n_rows, n_cols, x_data, y_data, class_names)</span>:</span></span><br><span class="line">    <span class="keyword">assert</span> len(x_data) == len(y_data)</span><br><span class="line">    <span class="keyword">assert</span> n_rows * n_cols &lt; len(x_data) <span class="comment"># 查看图片的数量不能大于原本的样本数</span></span><br><span class="line">    plt.figure(figsize = (n_cols * <span class="number">1.4</span>, n_rows * <span class="number">1.6</span>))</span><br><span class="line">    <span class="keyword">for</span> row <span class="keyword">in</span> range(n_rows):</span><br><span class="line">        <span class="keyword">for</span> col <span class="keyword">in</span> range(n_cols):</span><br><span class="line">            index = n_cols * row + col</span><br><span class="line">            plt.subplot(n_rows, n_cols, index+<span class="number">1</span>)</span><br><span class="line">            plt.imshow(x_data[index], cmap=<span class="string">"binary"</span>,</span><br><span class="line">                      interpolation = <span class="string">'nearest'</span>)</span><br><span class="line">            plt.axis(<span class="string">'off'</span>)</span><br><span class="line">            plt.title(class_names[y_data[index]])</span><br><span class="line">    plt.show()</span><br><span class="line">    </span><br><span class="line">class_names = [<span class="string">'T-shirt'</span>, <span class="string">'Trouser'</span>, <span class="string">'Pullover'</span>, <span class="string">'Dress'</span>,</span><br><span class="line">              <span class="string">'Coat'</span>, <span class="string">'Sandal'</span>, <span class="string">'Shirt'</span>,<span class="string">'Sneaker'</span>,</span><br><span class="line">              <span class="string">'Bag'</span>, <span class="string">'Ankle boot'</span>]</span><br><span class="line">show_imgs(<span class="number">3</span>, <span class="number">5</span>, x_train, y_train, class_names)</span><br></pre></td></tr></tbody></table></figure><p></p>
+<p><img data-src="/images/tensorflow/show_images.png" alt="show_images"></p>
+<h2 id="Keras回调函数"><a href="#Keras回调函数" class="headerlink" title="Keras回调函数"></a>Keras回调函数</h2><h2 id="搭建回归模型"><a href="#搭建回归模型" class="headerlink" title="搭建回归模型"></a>搭建回归模型</h2><h2 id="搭建深度神经网络"><a href="#搭建深度神经网络" class="headerlink" title="搭建深度神经网络"></a>搭建深度神经网络</h2><h2 id="实现wide-amp-deep模型"><a href="#实现wide-amp-deep模型" class="headerlink" title="实现wide&amp;deep模型"></a>实现wide&amp;deep模型</h2><h2 id="Keras与scikit-learn实现超参数搜索"><a href="#Keras与scikit-learn实现超参数搜索" class="headerlink" title="Keras与scikit-learn实现超参数搜索"></a>Keras与scikit-learn实现超参数搜索</h2><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1><script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -1212,12 +1216,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="Symbols count total">220k</span>
+    <span title="Symbols count total">221k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">3:20</span>
+    <span title="Reading time total">3:21</span>
 </div>
 
         <meta name="referrer" content="always">
