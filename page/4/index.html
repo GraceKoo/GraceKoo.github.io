@@ -24,26 +24,26 @@
   <meta name="description" content="正在深入学习各种CV知识">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Grace Koo&#39;s Blog">
-<meta property="og:url" content="https://unknown.yuzhouwan.com/tags/Neural-Network/index.html">
+<meta property="og:url" content="https://unknown.yuzhouwan.com/page/4/index.html">
 <meta property="og:site_name" content="Grace Koo&#39;s Blog">
 <meta property="og:description" content="正在深入学习各种CV知识">
 <meta property="og:locale" content="Zh">
 <meta property="article:author" content="Grace Koo">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://unknown.yuzhouwan.com/tags/Neural-Network/">
+<link rel="canonical" href="https://unknown.yuzhouwan.com/page/4/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : false,
+    isHome : true,
     isPost : false
   };
 </script>
 
-  <title>Tag: Neural Network | Grace Koo's Blog</title>
+  <title>Grace Koo's Blog</title>
   
 
 
@@ -195,49 +195,129 @@
           <div class="content">
             
 
+  <div class="posts-expand">
+        
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <h1 class="collection-header">Neural Network
-          <small>Tag</small>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="Zh">
+    <link itemprop="mainEntityOfPage" href="https://unknown.yuzhouwan.com/posts/14702/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Grace Koo">
+      <meta itemprop="description" content="正在深入学习各种CV知识">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Grace Koo's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/14702/" class="post-title-link" itemprop="url">Python基础</a>
         </h1>
-      </div>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2017-09-01 07:45:01" itemprop="dateCreated datePublished" datetime="2017-09-01T07:45:01Z">2017-09-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-02-08 15:08:59" itemprop="dateModified" datetime="2020-02-08T15:08:59Z">2020-02-08</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Language/" itemprop="url" rel="index"><span itemprop="name">Language</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>33k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>30 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <h1 class="collection-header">2020</h1>
+          <h1 id="Python的安装、IPython的使用"><a href="#Python的安装、IPython的使用" class="headerlink" title="Python的安装、IPython的使用"></a>Python的安装、IPython的使用</h1><ul>
+<li>Python的安装参见<a href="https://stringpiggy.hpd.io/mac-osx-python3-dual-install/" target="_blank" rel="noopener">https://stringpiggy.hpd.io/mac-osx-python3-dual-install/</a> ，或者《Python编程：从入门到实战》一书中也有详细的记载。</li>
+<li>利用IPython可以代替传统python开发的文本编辑器，灵活的改变所写代码，快捷的生成结果代码。IPython Notebook目前已经成为用Python做教学、计算、科研的一个重要工具，很多示例都是用.ipynb文件。</li>
+</ul>
+<p>​        安装Ipython有两种方式，第一种是通过pip安装。第二种是安装Anaconda从而获得iPython （这个选择比较适合新手，推荐<a href="http://jupyter.readthedocs.io/en/latest/install.html#new-to-python-and-jupyter" target="_blank" rel="noopener">官网教程</a>一键搞定），下面主要介绍使用pip命令来安装。</p>
+<ol>
+<li>iPython是由<a href="http://ipython.org/ipython-doc/stable/install/install.html" target="_blank" rel="noopener">很多模块</a>组成的, 为了不漏装任何组件，我用了这个命令来安装所有组件：</li>
+</ol>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo pip install ipython[all]</span><br></pre></td></tr></tbody></table></figure>
+<ol>
+<li>安装成功后通过这命令来运行Notebook</li>
+</ol>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ipython notebook</span><br></pre></td></tr></tbody></table></figure>
+<p>之后有可能会弹出这个错误(你如果选择了用Anaconda的方式来安装也会碰到这个错误)：</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ValueError, <span class="string">'unknown locale: %s'</span> % localename</span><br></pre></td></tr></tbody></table></figure>
+<p>在<a href="http://stackoverflow.com/questions/19961239/pelican-3-3-pelican-quickstart-error-valueerror-unknown-locale-utf-8" target="_blank" rel="noopener">StackOverflow上已经有人提出了解决方案</a>，在命令行里找到.bash_profile 然后添加下面两行代码：</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export LC_ALL=en_US.UTF<span class="number">-8</span></span><br><span class="line">export LANG=en_US.UTF<span class="number">-8</span></span><br></pre></td></tr></tbody></table></figure>
+<p>然后别忘了重新载入.bash_profile让新添加的代码生效（注意两个点之间的空格）：</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ . .bash_profile</span><br></pre></td></tr></tbody></table></figure>
+<p>之后再运行命令”ipython notebook “就可以在浏览器里看到iPython Notebook的界面了。</p>
+<p>iPython Notebook的工作原理是在本地启动一个服务器，你通过localhost:8888/tree 这个地址就可以连接到这个服务器上与之通信。从而实现在浏览器里写代码，传给本地服务器执行，然后本地服务器传回结果并在网页上呈现这个循环。</p>
+<p>每次使用完Notebook，只关闭网页本身是不够的。<strong>需要在你启动Notebook的那个Terminal里输 Ctrl + c 然后确认，才能把服务器关闭。</strong>官网具体链接为：<a href="http://IPython.org/install.html" target="_blank" rel="noopener">http://IPython.org/install.html</a></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/posts/14702/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2020-02-01T00:06:06Z"
-              content="2020-02-01">
-          02-01
-        </time>
-      </div>
-
-      <h2 class="post-title">
-          <a class="post-title-link" href="/posts/29871/" itemprop="url">
-            <span itemprop="name">TensorFlow2.0 In Action</span>
-          </a>
-      </h2>
-
-    </header>
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
   </article>
+  
+  
+  
 
-    </div>
   </div>
-  
-  
-  
 
   
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span>
+  </nav>
 
 
 
