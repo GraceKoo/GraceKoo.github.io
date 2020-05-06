@@ -1320,6 +1320,7 @@ id7((6)) --&gt; id2((1))</pre>
 <li>导出到SavedModel</li>
 <li>使用TesorFlow Serve、TensorFlow Lite、TensorFlow.js部署模型</li>
 </ul>
+<a id="more"></a>
 <h1 id="TensorFlow-Keras"><a href="#TensorFlow-Keras" class="headerlink" title="TensorFlow-Keras"></a>TensorFlow-Keras</h1><h2 id="tf-keras和keras的区别"><a href="#tf-keras和keras的区别" class="headerlink" title="tf.keras和keras的区别"></a>tf.keras和keras的区别</h2><ul>
 <li>tf.keras全面支持eager mode</li>
 <li>tf.keras支持基于tf.data的模型训练</li>
