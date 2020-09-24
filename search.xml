@@ -564,19 +564,135 @@
 </tr>
 <tr>
 <td>35</td>
-<td style="text-align:left"></td>
+<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_35">数组中的逆序对</a></td>
 </tr>
 <tr>
 <td>36</td>
-<td style="text-align:left">两个链表的第一个公共结点</td>
+<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_36">两个链表的第一个公共结点</a></td>
+</tr>
+<tr>
+<td>37</td>
+<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_37">数字在排序数组中出现的次数</a></td>
+</tr>
+<tr>
+<td>38</td>
+<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_38">二叉树的深度</a></td>
+</tr>
+<tr>
+<td>39</td>
+<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_39">平衡二叉树</a></td>
+</tr>
+<tr>
+<td>40</td>
+<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_40">数组中只出现一次的数字</a></td>
+</tr>
+<tr>
+<td>41</td>
+<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_41">和为S的连续正数序列</a></td>
+</tr>
+<tr>
+<td>42</td>
+<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_42">和为S的两个数字</a></td>
+</tr>
+<tr>
+<td>43</td>
+<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_43">左旋转字符串</a></td>
+</tr>
+<tr>
+<td>44</td>
+<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_44">翻转单词顺序列</a></td>
+</tr>
+<tr>
+<td>45</td>
+<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_45">扑克牌顺子</a></td>
+</tr>
+<tr>
+<td>46</td>
+<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_46">圆圈中最后剩下的元素</a></td>
+</tr>
+<tr>
+<td>47</td>
+<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_47">求1+2+….+n</a></td>
+</tr>
+<tr>
+<td>48</td>
+<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_48">不用加减乘除做加法</a></td>
+</tr>
+<tr>
+<td>49</td>
+<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_49">把字符串转换成整数</a></td>
 </tr>
 <tr>
 <td>50</td>
 <td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_50">数组中重复的数字</a></td>
 </tr>
 <tr>
+<td>51</td>
+<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_51">构建乘积数组</a></td>
+</tr>
+<tr>
+<td>52</td>
+<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_52">正则表达式匹配</a></td>
+</tr>
+<tr>
+<td>53</td>
+<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_53">表示数值的字符串</a></td>
+</tr>
+<tr>
+<td>54</td>
+<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_54">字符流中第一个不重复的字符</a></td>
+</tr>
+<tr>
+<td>55</td>
+<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_55">链表中环的入口结点</a></td>
+</tr>
+<tr>
+<td>56</td>
+<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_56">删除链表中重复的结点</a></td>
+</tr>
+<tr>
 <td>57</td>
 <td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_57">二叉树的下一个结点</a></td>
+</tr>
+<tr>
+<td>58</td>
+<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_58">对称的二叉树</a></td>
+</tr>
+<tr>
+<td>59</td>
+<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_59">按之字形顺序打印二叉树</a></td>
+</tr>
+<tr>
+<td>60</td>
+<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_60">把二叉树打印成多行</a></td>
+</tr>
+<tr>
+<td>61</td>
+<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_61">序列化二叉树</a></td>
+</tr>
+<tr>
+<td>62</td>
+<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_62">二叉搜索树的第K个结点</a></td>
+</tr>
+<tr>
+<td>63</td>
+<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_63">数据流中的中位数</a></td>
+</tr>
+<tr>
+<td>64</td>
+<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_64">滑动窗口的最大值</a></td>
+</tr>
+<tr>
+<td>65</td>
+<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_65">矩阵中的路径</a></td>
+</tr>
+<tr>
+<td>66</td>
+<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_66">机器人的运动范围</a></td>
+</tr>
+<tr>
+<td>67</td>
+<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_67">剪绳子</a></td>
 </tr>
 </tbody>
 </table>
