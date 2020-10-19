@@ -1001,14 +1001,13 @@ id7((6)) --&gt; id2((1))</pre>
 <p><code>((\d)+(\.))</code></p>
 </blockquote>
 <ul>
-<li><p>再看<strong>后半部分</strong>：</p>
-<p>e或E后面可以跟+-号，且后面必须跟数字。整个指数部分可以出现0-1次。</p>
-</li>
+<li>再看<strong>后半部分</strong>：</li>
 </ul>
+<p>e或E后面可以跟+-号，且后面必须跟数字。整个指数部分可以出现0-1次。</p>
 <blockquote>
 <p><code>([eE][+-]{0,1}(\d)+){0,1}</code></p>
 </blockquote>
-<p>​    整个字符串结束前可以跟0或多个空格</p>
+<p>整个字符串结束前可以跟0或多个空格</p>
 <blockquote>
 <p><code>\s*$</code></p>
 </blockquote>
