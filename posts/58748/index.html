@@ -21,15 +21,15 @@
     var CONFIG = {"hostname":"unknown.yuzhouwan.com","root":"/","scheme":"Muse","version":"0.0.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":false,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="White Balance概念相机的白平衡控制，是为了让实际环境中白色的物体在你拍摄的画面中也呈现出“真正”的白色。不同性质的光源会在画面中产生不同的色彩倾向，比如说，蜡烛的光线会使画面偏橘黄色，而黄昏过后的光线则会为景物披上一层蓝色的冷调。而我们的视觉系统会自动对不同的光线作出补偿，所以无论在暖调还是冷调的光线环境下，我们看一张白纸永远还是白色的。但相机则不然，它只会直接记录呈现在它面前的色彩，">
+  <meta name="description" content="YUV、RGB、HSVYUV：亮度信息 即灰度值。UV：色彩信息 定义了颜色的两个方面-色调与饱和度，分别用Cr和CB来表示。其中，Cr反映了RGB输入信号红色部分与RGB信号亮度值之间的差异。而CB反映的是RGB输入信号蓝色部分与RGB信号亮度值之同的差异。通过运算，YUV三分量可以还原出R（红），G（绿），B（蓝）。 HSV: 色调（H），饱和度（S），明度（V） 相互转换 ARGB -&amp;gt">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Image-Algorithm-Summarize">
 <meta property="og:url" content="https://unknown.yuzhouwan.com/posts/58748/index.html">
 <meta property="og:site_name" content="Grace Koo&#39;s Blog">
-<meta property="og:description" content="White Balance概念相机的白平衡控制，是为了让实际环境中白色的物体在你拍摄的画面中也呈现出“真正”的白色。不同性质的光源会在画面中产生不同的色彩倾向，比如说，蜡烛的光线会使画面偏橘黄色，而黄昏过后的光线则会为景物披上一层蓝色的冷调。而我们的视觉系统会自动对不同的光线作出补偿，所以无论在暖调还是冷调的光线环境下，我们看一张白纸永远还是白色的。但相机则不然，它只会直接记录呈现在它面前的色彩，">
+<meta property="og:description" content="YUV、RGB、HSVYUV：亮度信息 即灰度值。UV：色彩信息 定义了颜色的两个方面-色调与饱和度，分别用Cr和CB来表示。其中，Cr反映了RGB输入信号红色部分与RGB信号亮度值之间的差异。而CB反映的是RGB输入信号蓝色部分与RGB信号亮度值之同的差异。通过运算，YUV三分量可以还原出R（红），G（绿），B（蓝）。 HSV: 色调（H），饱和度（S），明度（V） 相互转换 ARGB -&amp;gt">
 <meta property="og:locale" content="Zh">
 <meta property="article:published_time" content="2020-02-01T12:06:00.000Z">
-<meta property="article:modified_time" content="2020-05-25T12:00:50.675Z">
+<meta property="article:modified_time" content="2020-11-03T07:58:07.100Z">
 <meta property="article:author" content="Grace Koo">
 <meta property="article:tag" content="ImageAlgorithm">
 <meta name="twitter:card" content="summary">
@@ -233,7 +233,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-05-25 12:00:50" itemprop="dateModified" datetime="2020-05-25T12:00:50Z">2020-05-25</time>
+                <time title="Modified: 2020-11-03 07:58:07" itemprop="dateModified" datetime="2020-11-03T07:58:07Z">2020-11-03</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -258,14 +258,14 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>2.6k</span>
+              <span>4.5k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="fa fa-clock-o"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>2 mins.</span>
+              <span>4 mins.</span>
             </span>
 
         </div>
@@ -277,7 +277,16 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="White-Balance"><a href="#White-Balance" class="headerlink" title="White Balance"></a>White Balance</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>相机的白平衡控制，是为了让实际环境中白色的物体在你拍摄的画面中也呈现出“真正”的白色。不同性质的光源会在画面中产生不同的色彩倾向，比如说，蜡烛的光线会使画面偏橘黄色，而黄昏过后的光线则会为景物披上一层蓝色的冷调。而我们的视觉系统会自动对不同的光线作出补偿，所以无论在暖调还是冷调的光线环境下，我们看一张白纸永远还是白色的。但相机则不然，它只会直接记录呈现在它面前的色彩，这就会导致画面色彩偏暖或偏冷。</p>
+        <h1 id="YUV、RGB、HSV"><a href="#YUV、RGB、HSV" class="headerlink" title="YUV、RGB、HSV"></a>YUV、RGB、HSV</h1><p>YUV：亮度信息 即灰度值。UV：色彩信息 定义了颜色的两个方面-色调与饱和度，分别用Cr和CB来表示。其中，Cr反映了RGB输入信号红色部分与RGB信号亮度值之间的差异。而CB反映的是RGB输入信号蓝色部分与RGB信号亮度值之同的差异。通过运算，YUV三分量可以还原出R（红），G（绿），B（蓝）。</p>
+<p>HSV: 色调（H），饱和度（S），明度（V）</p>
+<p>相互转换</p>
+<h2 id="ARGB-gt-RGB"><a href="#ARGB-gt-RGB" class="headerlink" title="ARGB -> RGB"></a>ARGB -&gt; RGB</h2><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//unsigned char *data 存的是ARGB的裸数据；</span><br><span class="line"> </span><br><span class="line">cv::Mat argbImg;</span><br><span class="line">cv::Mat rgbImg(cy, cx,CV_8UC3);</span><br><span class="line">yuvImg.create(cy, cx, CV_8UC4);</span><br><span class="line">memcpy(argbImg.data, data, len);</span><br><span class="line">cv::cvtColor(argbImg, rgbImg, CV_RGBA2RGB);</span><br><span class="line">flip(rgbImg, rgbImg, <span class="number">0</span>);    //垂直翻转</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="YUV-gt-RGB"><a href="#YUV-gt-RGB" class="headerlink" title="YUV -> RGB"></a>YUV -&gt; RGB</h2><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//unsigned char *data 存的是YUYV的裸数据；</span><br><span class="line"> </span><br><span class="line">cv::Mat yuvImg;</span><br><span class="line">cv::Mat rgbImg(cy, cx,CV_8UC3);</span><br><span class="line">yuvImg.create(cy , cx, CV_8UC2);</span><br><span class="line">memcpy(yuvImg.data, data, len);</span><br><span class="line">cv::cvtColor(yuvImg, rgbImg, CV_YUV2BGR_YUYV);</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="I420-gt-RGB"><a href="#I420-gt-RGB" class="headerlink" title="I420 -> RGB"></a>I420 -&gt; RGB</h2><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//unsigned char *data 存的是I420的裸数据；</span><br><span class="line"> </span><br><span class="line">cv::Mat yuvImg;</span><br><span class="line">cv::Mat rgbImg(cy, cx,CV_8UC3);</span><br><span class="line">yuvImg.create(cy * <span class="number">3</span>/<span class="number">2</span>, cx, CV_8UC1);</span><br><span class="line">memcpy(yuvImg.data, data, len);</span><br><span class="line">cv::cvtColor(yuvImg, rgbImg, CV_YUV2BGR_I420);</span><br></pre></td></tr></tbody></table></figure>
+<p>OpenCV提供的转换函数实现YUV到RGB的转换：</p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">bool YV12ToBGR24_OpenCV(unsigned char* pYUV,unsigned char* pBGR24,int width,int height) </span><br><span class="line">{ </span><br><span class="line"><span class="keyword">if</span> (width &lt; <span class="number">1</span> || height &lt; <span class="number">1</span> || pYUV == NULL || pBGR24 == NULL) </span><br><span class="line"><span class="keyword">return</span> false; </span><br><span class="line">Mat dst(height,width,CV_8UC3,pBGR24); </span><br><span class="line">Mat src(height + height/<span class="number">2</span>,width,CV_8UC1,pYUV); </span><br><span class="line">cvtColor(src,dst,CV_YUV2BGR_YV12); </span><br><span class="line"><span class="keyword">return</span> true; </span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="RGB-gt-HSV"><a href="#RGB-gt-HSV" class="headerlink" title="RGB -> HSV"></a>RGB -&gt; HSV</h2><figure class="highlight c++"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"># -*- coding:utf<span class="number">-8</span> -*-</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"></span><br><span class="line"><span class="string">""</span><span class="string">"</span></span><br><span class="line"><span class="string">功能：读取一张图片，显示出来，并转化为HSV色彩空间</span></span><br><span class="line"><span class="string">"</span><span class="string">""</span></span><br><span class="line">image = cv2.imread('images/my_wife2.jpg') # 根据路径读取一张图片</span><br><span class="line">cv2.imshow(<span class="string">"BGR"</span>, <span class="built_in">image</span>) # 显示图片</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 转化图片到HSV色彩空间</span><br><span class="line">dst = cv2.cvtColor(<span class="built_in">image</span>, cv2.COLOR_BGR2HSV)</span><br><span class="line">cv2.imshow(<span class="string">"HSV"</span>, dst) # 显示图片</span><br><span class="line">cv2.waitKey(<span class="number">0</span>) # 等待键盘触发事件，释放窗口</span><br></pre></td></tr></tbody></table></figure>
+<h1 id="White-Balance"><a href="#White-Balance" class="headerlink" title="White Balance"></a>White Balance</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>相机的白平衡控制，是为了让实际环境中白色的物体在你拍摄的画面中也呈现出“真正”的白色。不同性质的光源会在画面中产生不同的色彩倾向，比如说，蜡烛的光线会使画面偏橘黄色，而黄昏过后的光线则会为景物披上一层蓝色的冷调。而我们的视觉系统会自动对不同的光线作出补偿，所以无论在暖调还是冷调的光线环境下，我们看一张白纸永远还是白色的。但相机则不然，它只会直接记录呈现在它面前的色彩，这就会导致画面色彩偏暖或偏冷。</p>
 <h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><p>开暖光灯：YUV -&gt; RGB -&gt; SV ，全图SV值S需在0～0.1之间，V需在90～255之间。</p>
 <a id="more"></a>
 <h1 id="IR-Cut"><a href="#IR-Cut" class="headerlink" title="IR-Cut"></a>IR-Cut</h1><h2 id="概念-1"><a href="#概念-1" class="headerlink" title="概念"></a>概念</h2><p>自然界存在着各种波长的光线，通过折射人眼能看到不同颜色的光线，这就是光线的波长不同所导致的。其实还有许多光线是人眼看不到的，人眼识别光线的波长范围在320nm-760nm之间， 超过760nm的光线人眼就无法见到，比如红外光等。<br>随着科学的进步，人类发明了摄像机，理论上讲摄像机可以看到绝大部分波长的光线，但在摄像机的使用过程中就出现了一个问题，由于各种光线的参杂，摄像机看到的物体反映在监视器上与人眼直接看到的就变样了。如人眼看到绿色，通过摄像机则变成蓝色，产生彩色失真。过去，为解决色彩失真问题，一般在CCD前贴有一低通滤片，该滤片阻碍了红外光的进出，故白天彩色不失真，但夜间却没有了夜视功能。<br>IR CUT是一种机械装置，内有两个窗口，一为低通滤片一为透明玻璃，可依需要左右移动，从而白天彩色不失真，且夜间仍有夜视功能。简单的说，通过IR CUT，白天只允许760nm或780nm以下波长的光线进入，避免了白天的彩色失真。晚上只允许760nm或780nm以上波长的红外光线进入，避免760nm或780nm以下波长的可见光对红外光的干扰，于是在白天与夜晚都能取得最佳视觉效果。随着技术的进步，IR CUT结合低通滤片与<a href="https://www.baidu.com/s?wd=高通&amp;tn=SE_PcZhidaonwhc_ngpagmjz&amp;rsv_dl=gh_pc_zhidao" target="_blank" rel="noopener">高通</a>滤片在改进<a href="https://www.baidu.com/s?wd=夜视摄像机&amp;tn=SE_PcZhidaonwhc_ngpagmjz&amp;rsv_dl=gh_pc_zhidao" target="_blank" rel="noopener">夜视摄像机</a>的性能上发挥越来越重要的作用．低通滤片：以镀膜方式使光线中波长在760nm或780nm以下的光线通过，超过760nm或780nm波长的光线阻止通过。<a href="https://www.baidu.com/s?wd=高通&amp;tn=SE_PcZhidaonwhc_ngpagmjz&amp;rsv_dl=gh_pc_zhidao" target="_blank" rel="noopener">高通</a>滤片：以镀膜方式使光线中波长在760nm或780nm以下的光线阻止通过，只准超过760nm或780nm以上波长的光线通过。<br>根据上述分析，应用低通滤片技术，摄像机能够模拟人的眼睛，只接收同样范围波长的光线，这样就解决了摄像机的色彩失真问题。而通过<a href="https://www.baidu.com/s?wd=高通&amp;tn=SE_PcZhidaonwhc_ngpagmjz&amp;rsv_dl=gh_pc_zhidao" target="_blank" rel="noopener">高通</a>滤片技术的应用，解决了在夜间杂光干扰红外光问题。LED红外技术的出现，大大拓宽了监控领域的时空范畴，<a href="https://www.baidu.com/s?wd=红外摄像机&amp;tn=SE_PcZhidaonwhc_ngpagmjz&amp;rsv_dl=gh_pc_zhidao" target="_blank" rel="noopener">红外摄像机</a>得到了广泛的应用。但同时，我们也发现市场上流行的传统LED<a href="https://www.baidu.com/s?wd=红外摄像机&amp;tn=SE_PcZhidaonwhc_ngpagmjz&amp;rsv_dl=gh_pc_zhidao" target="_blank" rel="noopener">红外摄像机</a>存在着许多致命的缺陷：如散热问题、寿命问题、手电筒效应问题，夜晚可见光干扰的问题等。LED Array 技术解决了寿命问题，新一代的LED Array技术基本解决了“手电筒”效应，而IR CUT技术完美地解决了杂光干扰。</p>
@@ -298,6 +307,21 @@
 <h2 id="实现-3"><a href="#实现-3" class="headerlink" title="实现"></a>实现</h2><p>开冷光灯：分为亮度暗角和色彩暗角。</p>
 <p>亮度暗角：取四个角（10 * 10像素），四个角亮度与中间块做比值，需在0.3～1之间。</p>
 <p>色彩暗角：图像被分成20 * 20块，算每块的R/G、B/G，分别除以中心的R/G，四个角比值都应在0.8～1.2之间。</p>
+<h1 id="清晰度测试"><a href="#清晰度测试" class="headerlink" title="清晰度测试"></a>清晰度测试</h1><p>清晰度：影像细部影纹及边界的清晰程度，摄像机一般使用分解力来衡量它分解被摄景物细节的能力，单位有TVLine、4K分辨率、8K分辨率</p>
+<p>衡量分解力的三个标准：</p>
+<ol>
+<li><p>TVLine检测（锲形线测试），用于主观测试，ISO 12233 chart读出的线对数</p>
+</li>
+<li><p>MTF检测（频率线测试），调制传递函数，调制度随空间频率变化的函数，镜头的MTF曲线表明镜头的能力。</p>
+<p>MTF计算线对间最亮和最暗线对的对比度</p>
+<p>MTF = （最大亮度 - 最小亮度） / （最大亮度 + 最小亮度）</p>
+<p>测不用频率下的MTF值，通过将这些值和空间频率进行一一对照。</p>
+</li>
+<li><p>SFR检测（spatial frequency response）用于测量随着空间频率的线条增加对单一影像所造成的影响。SFR是MTF的另一种测试方法。SFR最终是希望得到MTF曲线。</p>
+<p>SFR不需拍不同空间频率下的线对。只需一个黑白刀口（斜边），即可换算约略相等于所有空间频率下的MTF。</p>
+<p>斜边 -&gt; 超采样 -&gt; 得到黑白变换的直线（ESF） -&gt; 求导  -&gt; 直线变换率 -&gt; FFT变换  -&gt; 各个频率下的MTF值</p>
+</li>
+</ol>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -417,7 +441,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#White-Balance"><span class="nav-number">1.</span> <span class="nav-text">White Balance</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#概念"><span class="nav-number">1.1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现"><span class="nav-number">1.2.</span> <span class="nav-text">实现</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#IR-Cut"><span class="nav-number">2.</span> <span class="nav-text">IR-Cut</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#概念-1"><span class="nav-number">2.1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现-1"><span class="nav-number">2.2.</span> <span class="nav-text">实现</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Bad-Pixel"><span class="nav-number">3.</span> <span class="nav-text">Bad Pixel</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#概念-2"><span class="nav-number">3.1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现-2"><span class="nav-number">3.2.</span> <span class="nav-text">实现</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Shading"><span class="nav-number">4.</span> <span class="nav-text">Shading</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#概念-3"><span class="nav-number">4.1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现-3"><span class="nav-number">4.2.</span> <span class="nav-text">实现</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#YUV、RGB、HSV"><span class="nav-number">1.</span> <span class="nav-text">YUV、RGB、HSV</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ARGB-gt-RGB"><span class="nav-number">1.1.</span> <span class="nav-text">ARGB -&gt; RGB</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#YUV-gt-RGB"><span class="nav-number">1.2.</span> <span class="nav-text">YUV -&gt; RGB</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#I420-gt-RGB"><span class="nav-number">1.3.</span> <span class="nav-text">I420 -&gt; RGB</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RGB-gt-HSV"><span class="nav-number">1.4.</span> <span class="nav-text">RGB -&gt; HSV</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#White-Balance"><span class="nav-number">2.</span> <span class="nav-text">White Balance</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#概念"><span class="nav-number">2.1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现"><span class="nav-number">2.2.</span> <span class="nav-text">实现</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#IR-Cut"><span class="nav-number">3.</span> <span class="nav-text">IR-Cut</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#概念-1"><span class="nav-number">3.1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现-1"><span class="nav-number">3.2.</span> <span class="nav-text">实现</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Bad-Pixel"><span class="nav-number">4.</span> <span class="nav-text">Bad Pixel</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#概念-2"><span class="nav-number">4.1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现-2"><span class="nav-number">4.2.</span> <span class="nav-text">实现</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Shading"><span class="nav-number">5.</span> <span class="nav-text">Shading</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#概念-3"><span class="nav-number">5.1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实现-3"><span class="nav-number">5.2.</span> <span class="nav-text">实现</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#清晰度测试"><span class="nav-number">6.</span> <span class="nav-text">清晰度测试</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -497,12 +521,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="Symbols count total">302k</span>
+    <span title="Symbols count total">308k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">4:34</span>
+    <span title="Reading time total">4:40</span>
 </div>
 
         <meta name="referrer" content="always">
