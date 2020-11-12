@@ -276,17 +276,17 @@
 <ol>
 <li>iPython是由<a href="http://ipython.org/ipython-doc/stable/install/install.html" target="_blank" rel="noopener">很多模块</a>组成的, 为了不漏装任何组件，我用了这个命令来安装所有组件：</li>
 </ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo pip install ipython[all]</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo pip install ipython[all]</span><br></pre></td></tr></tbody></table></figure>
 <ol>
 <li>安装成功后通过这命令来运行Notebook</li>
 </ol>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ipython notebook</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ipython notebook</span><br></pre></td></tr></tbody></table></figure>
 <p>之后有可能会弹出这个错误(你如果选择了用Anaconda的方式来安装也会碰到这个错误)：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ValueError, <span class="string">'unknown locale: %s'</span> % localename</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ValueError, <span class="string">'unknown locale: %s'</span> % localename</span><br></pre></td></tr></tbody></table></figure>
 <p>在<a href="http://stackoverflow.com/questions/19961239/pelican-3-3-pelican-quickstart-error-valueerror-unknown-locale-utf-8" target="_blank" rel="noopener">StackOverflow上已经有人提出了解决方案</a>，在命令行里找到.bash_profile 然后添加下面两行代码：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export LC_ALL=en_US.UTF<span class="number">-8</span></span><br><span class="line">export LANG=en_US.UTF<span class="number">-8</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export LC_ALL=en_US.UTF<span class="number">-8</span></span><br><span class="line">export LANG=en_US.UTF<span class="number">-8</span></span><br></pre></td></tr></tbody></table></figure>
 <p>然后别忘了重新载入.bash_profile让新添加的代码生效（注意两个点之间的空格）：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ . .bash_profile</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ . .bash_profile</span><br></pre></td></tr></tbody></table></figure>
 <p>之后再运行命令”ipython notebook “就可以在浏览器里看到iPython Notebook的界面了。</p>
 <p>iPython Notebook的工作原理是在本地启动一个服务器，你通过localhost:8888/tree 这个地址就可以连接到这个服务器上与之通信。从而实现在浏览器里写代码，传给本地服务器执行，然后本地服务器传回结果并在网页上呈现这个循环。</p>
 <p>每次使用完Notebook，只关闭网页本身是不够的。<strong>需要在你启动Notebook的那个Terminal里输 Ctrl + c 然后确认，才能把服务器关闭。</strong>官网具体链接为：<a href="http://IPython.org/install.html" target="_blank" rel="noopener">http://IPython.org/install.html</a></p>

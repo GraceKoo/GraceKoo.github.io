@@ -287,32 +287,32 @@
 <h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><ul>
 <li>使用`包裹的内容将会以代码样式显示，例如</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">使用&#96;printf()&#96;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">使用`printf()`</span><br></pre></td></tr></tbody></table></figure>
 <p>则会产生<code>printf()</code>样式。</p>
 <a id="more"></a>
 <ul>
 <li>输入<code>``或者</code>然后回车，可以输入代码块，并且可以选择代码的语言。例如：</li>
 </ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> Class HelloWorld&#123;</span><br><span class="line">System.out.println(<span class="string">"Hello World!"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> Class HelloWorld{</span><br><span class="line">System.out.println(<span class="string">"Hello World!"</span>);</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 <p>将会产生</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> Class HelloWorld&#123;</span><br><span class="line">System.out.println(<span class="string">"Hello World!"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> Class HelloWorld{</span><br><span class="line">System.out.println(<span class="string">"Hello World!"</span>);</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
 <h2 id="强调"><a href="#强调" class="headerlink" title="强调"></a>强调</h2><p>使用两个<code>*</code>号或者两个<code>_</code>包裹的内容将会被强调。例如</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">**使用两个*号强调内容**</span><br><span class="line">__使用两个下划线强调内容__</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">**使用两个*号强调内容**</span><br><span class="line">__使用两个下划线强调内容__</span><br></pre></td></tr></tbody></table></figure>
 <p>将会输出</p>
 <p><strong>使用两个*号强调内容</strong><br><strong>使用两个下划线强调内容</strong><br>Typroa 推荐使用两个*号。</p>
 <h2 id="斜体"><a href="#斜体" class="headerlink" title="斜体"></a>斜体</h2><p>  在标准的Markdown语法中，*和_包裹的内容会是斜体显示，但是GFM下划线一般用来分隔人名和代码变量名，因此我们推荐是用星号来包裹斜体内容。如果要显示星号，则使用转义：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\*</span><br></pre></td></tr></table></figure>
-<h2 id="插入URL连接"><a href="#插入URL连接" class="headerlink" title="插入URL连接"></a>插入URL连接</h2><p>使用尖括号包裹的url将产生一个连接，例如：<code>&lt;www.baidu.com&gt;</code>将产生连接:<www.baidu.com>.</p>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\*</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="插入URL连接"><a href="#插入URL连接" class="headerlink" title="插入URL连接"></a>插入URL连接</h2><p>使用尖括号包裹的url将产生一个连接，例如：<code>&lt;www.baidu.com&gt;</code>将产生连接:<www.baidu.com>.</www.baidu.com></p>
 <p>如果是标准的url，则会自动产生连接，例如:www.google.com</p>
 <h2 id="目录列表Table-of-Contents（TOC）"><a href="#目录列表Table-of-Contents（TOC）" class="headerlink" title="目录列表Table of Contents（TOC）"></a>目录列表Table of Contents（TOC）</h2><p>输入[toc]然后回车，将会产生一个目录，这个目录抽取了文章的所有标题，自动更新内容。</p>
 <h2 id="水平分割线"><a href="#水平分割线" class="headerlink" title="水平分割线"></a>水平分割线</h2><p>使用<code>***</code>或者<code>---</code>，然后回车，来产生水平分割线。</p>
 <hr>
 <h2 id="标注"><a href="#标注" class="headerlink" title="标注"></a>标注</h2><p>我们可以对某一个词语进行标注。例如</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">某些人用过了才知道[^注释]</span><br><span class="line">[^注释]:Somebody that I used to know.</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">某些人用过了才知道[^注释]</span><br><span class="line">[^注释]:Somebody that I used to know.</span><br></pre></td></tr></tbody></table></figure>
 <p>将产生：</p>
 <p>某些人用过了才知道<sup><a href="#fn_注释" id="reffn_注释">注释</a></sup><br><sup><a href="#fn_注释" id="reffn_注释">注释</a></sup>: Somebody that I used to know.</p>
 <p>把鼠标放在<code>注释</code>上，将会有提示内容。</p>
-<h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">|姓名|性别|毕业学校|工资|</span><br><span class="line">|:---|:---:|:---:|---:|</span><br><span class="line">|杨洋|男|重庆交通大学|3200|</span><br><span class="line">|峰哥|男|贵州大学|5000|</span><br><span class="line">|小阳|女|北京大学|2000|</span><br></pre></td></tr></table></figure>
+<h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">|姓名|性别|毕业学校|工资|</span><br><span class="line">|:---|:---:|:---:|---:|</span><br><span class="line">|杨洋|男|重庆交通大学|3200|</span><br><span class="line">|峰哥|男|贵州大学|5000|</span><br><span class="line">|小阳|女|北京大学|2000|</span><br></pre></td></tr></tbody></table></figure>
 <p>将产生:</p>
 <div class="table-container">
 <table>
@@ -348,10 +348,10 @@
 </div>
 <p>其中代码的第二行指定对齐的方式，第一个是左对齐，第二个和第三个是居中，最后一个是右对齐。</p>
 <h2 id="数学表达式块"><a href="#数学表达式块" class="headerlink" title="数学表达式块"></a>数学表达式块</h2><p>输入两个美元符号，然后回车，就可以输入数学表达式块了。例如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\mathbf&#123;V&#125;_1 \times \mathbf&#123;V&#125;_2 &#x3D;  \begin&#123;vmatrix&#125; \mathbf&#123;i&#125; &amp; \mathbf&#123;j&#125; &amp; \mathbf&#123;k&#125; \\\frac&#123;\partial X&#125;&#123;\partial u&#125; &amp;  \frac&#123;\partial Y&#125;&#123;\partial u&#125; &amp; 0 \\\frac&#123;\partial X&#125;&#123;\partial v&#125; &amp;  \frac&#123;\partial Y&#125;&#123;\partial v&#125; &amp; 0 \\\end&#123;vmatrix&#125;$$</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$$\mathbf{V}_1 \times \mathbf{V}_2 =  \begin{vmatrix} \mathbf{i} &amp; \mathbf{j} &amp; \mathbf{k} \\\frac{\partial X}{\partial u} &amp;  \frac{\partial Y}{\partial u} &amp; 0 \\\frac{\partial X}{\partial v} &amp;  \frac{\partial Y}{\partial v} &amp; 0 \\\end{vmatrix}$$</span><br></pre></td></tr></tbody></table></figure>
 <p>将会产生:</p>
 <script type="math/tex; mode=display">\mathbf{V}_1 \times \mathbf{V}_2 =  \begin{vmatrix} \mathbf{i} & \mathbf{j} & \mathbf{k} \\\frac{\partial X}{\partial u} &  \frac{\partial Y}{\partial u} & 0 \\\frac{\partial X}{\partial v} &  \frac{\partial Y}{\partial v} & 0 \\\end{vmatrix}</script><h2 id="任务列表"><a href="#任务列表" class="headerlink" title="任务列表"></a>任务列表</h2><p>使用如下的代码创建任务列表，在[]中输入x表示完成，也可以通过点击选择完成或者没完成。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">- [ ] 吃饭</span><br><span class="line">- [ ] 逛街</span><br><span class="line">- [ ] 看电影</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">- [ ] 吃饭</span><br><span class="line">- [ ] 逛街</span><br><span class="line">- [ ] 看电影</span><br></pre></td></tr></tbody></table></figure>
 <ul>
 <li><p>[x] 吃饭</p>
 </li>
@@ -363,14 +363,14 @@
 </li>
 </ul>
 <h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><p>输入+, -, *,创建无序的列表，使用任意数字开头，创建有序列表，例如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">**无序的列表**</span><br><span class="line">* tfboys</span><br><span class="line">* 杨洋</span><br><span class="line">* Mr.Smith</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">**无序的列表**</span><br><span class="line">* tfboys</span><br><span class="line">* 杨洋</span><br><span class="line">* Mr.Smith</span><br></pre></td></tr></tbody></table></figure>
 <p><strong>无序的列表</strong></p>
 <ul>
 <li>tfboys</li>
 <li>杨洋</li>
 <li>Mr.Smith</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">**有序的列表**</span><br><span class="line">1. 苹果</span><br><span class="line">6. 香蕉</span><br><span class="line">10. 我都不喜欢</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">**有序的列表**</span><br><span class="line">1. 苹果</span><br><span class="line">6. 香蕉</span><br><span class="line">10. 我都不喜欢</span><br></pre></td></tr></tbody></table></figure>
 <p><strong>有序的列表</strong></p>
 <ol>
 <li>苹果</li>
@@ -378,7 +378,7 @@
 <li>我都不喜欢</li>
 </ol>
 <h2 id="块引用"><a href="#块引用" class="headerlink" title="块引用"></a>块引用</h2><p>使用&gt;来插入块引用。例如：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;这是一个块引用！</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&gt;这是一个块引用！</span><br></pre></td></tr></tbody></table></figure>
 <p>将产生：</p>
 <blockquote>
 <p>这是一个块引用！</p>
@@ -387,18 +387,18 @@
 <h1 id="Markdown插件"><a href="#Markdown插件" class="headerlink" title="Markdown插件"></a>Markdown插件</h1><h2 id="画图"><a href="#画图" class="headerlink" title="画图"></a>画图</h2><h3 id="Sequence-Diagrams"><a href="#Sequence-Diagrams" class="headerlink" title="Sequence Diagrams"></a>Sequence Diagrams</h3><ul>
 <li><a href="https://bramp.github.io/js-sequence-diagrams/" target="_blank" rel="noopener">官网链接</a></li>
 </ul>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Andrew-&gt;China: Says Hello</span><br><span class="line">Note right of China: China thinks\nabout it</span><br><span class="line">China--&gt;Andrew: How are you?</span><br><span class="line">Andrew-&gt;&gt;China: I am good thanks!</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Andrew-&gt;China: Says Hello</span><br><span class="line">Note right of China: China thinks\nabout it</span><br><span class="line">China--&gt;Andrew: How are you?</span><br><span class="line">Andrew-&gt;&gt;China: I am good thanks!</span><br></pre></td></tr></table></figure>
+<figure class="highlight markdown"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Andrew-&gt;China: Says Hello</span><br><span class="line">Note right of China: China thinks\nabout it</span><br><span class="line">China--&gt;Andrew: How are you?</span><br><span class="line">Andrew-&gt;&gt;China: I am good thanks!</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Andrew-&gt;China: Says Hello</span><br><span class="line">Note right of China: China thinks\nabout it</span><br><span class="line">China--&gt;Andrew: How are you?</span><br><span class="line">Andrew-&gt;&gt;China: I am good thanks!</span><br></pre></td></tr></tbody></table></figure>
 <h3 id="Flowcharts"><a href="#Flowcharts" class="headerlink" title="Flowcharts"></a>Flowcharts</h3><ul>
 <li><a href="http://flowchart.js.org/" target="_blank" rel="noopener">官网链接</a></li>
 </ul>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">st=&gt;start: Start</span><br><span class="line">op=&gt;operation: Your Operation</span><br><span class="line">cond=&gt;condition: Yes or No?</span><br><span class="line">e=&gt;end</span><br><span class="line"></span><br><span class="line">st-&gt;op-&gt;cond</span><br><span class="line">cond(yes)-&gt;e</span><br><span class="line">cond(no)-&gt;op</span><br></pre></td></tr></table></figure>
+<figure class="highlight markdown"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">st=&gt;start: Start</span><br><span class="line">op=&gt;operation: Your Operation</span><br><span class="line">cond=&gt;condition: Yes or No?</span><br><span class="line">e=&gt;end</span><br><span class="line"></span><br><span class="line">st-&gt;op-&gt;cond</span><br><span class="line">cond(yes)-&gt;e</span><br><span class="line">cond(no)-&gt;op</span><br></pre></td></tr></tbody></table></figure>
 <div id="flowchart-0" class="flow-chart"></div>
 
 <h3 id="Mermaid"><a href="#Mermaid" class="headerlink" title="Mermaid"></a>Mermaid</h3><ul>
 <li><a href="https://knsv.github.io/mermaid/#/" target="_blank" rel="noopener">官网链接</a>：支持时序图、流程图、甘特图、 类图、 状态图、派图</li>
 </ul>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">%% Example with selection of syntaxes</span><br><span class="line">gantt</span><br><span class="line">dateFormat  YYYY-MM-DD</span><br><span class="line">title Adding GANTT diagram functionality to mermaid</span><br><span class="line"></span><br><span class="line">section A section</span><br><span class="line">Completed task            :done,    des1, 2014-01-06,2014-01-08</span><br><span class="line">Active task               :active,  des2, 2014-01-09, 3d</span><br><span class="line">Future task               :         des3, after des2, 5d</span><br><span class="line">Future task2               :         des4, after des3, 5d</span><br><span class="line"></span><br><span class="line">section Critical tasks</span><br><span class="line">Completed task in the critical line :crit, done, 2014-01-06,24h</span><br><span class="line">Implement parser and jison          :crit, done, after des1, 2d</span><br><span class="line">Create tests for parser             :crit, active, 3d</span><br><span class="line">Future task in critical line        :crit, 5d</span><br><span class="line">Create tests for renderer           :2d</span><br><span class="line">Add to mermaid                      :1d</span><br><span class="line"></span><br><span class="line">section Documentation</span><br><span class="line">Describe gantt syntax               :active, a1, after des1, 3d</span><br><span class="line">Add gantt diagram to demo page      :after a1  , 20h</span><br><span class="line">Add another diagram to demo page    :doc1, after a1  , 48h</span><br><span class="line"></span><br><span class="line">section Last section</span><br><span class="line">Describe gantt syntax               :after doc1, 3d</span><br><span class="line">Add gantt diagram to demo page      : 20h</span><br><span class="line">Add another diagram to demo page    : 48h</span><br></pre></td></tr></table></figure>
+<figure class="highlight markdown"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">%% Example with selection of syntaxes</span><br><span class="line">gantt</span><br><span class="line">dateFormat  YYYY-MM-DD</span><br><span class="line">title Adding GANTT diagram functionality to mermaid</span><br><span class="line"></span><br><span class="line">section A section</span><br><span class="line">Completed task            :done,    des1, 2014-01-06,2014-01-08</span><br><span class="line">Active task               :active,  des2, 2014-01-09, 3d</span><br><span class="line">Future task               :         des3, after des2, 5d</span><br><span class="line">Future task2               :         des4, after des3, 5d</span><br><span class="line"></span><br><span class="line">section Critical tasks</span><br><span class="line">Completed task in the critical line :crit, done, 2014-01-06,24h</span><br><span class="line">Implement parser and jison          :crit, done, after des1, 2d</span><br><span class="line">Create tests for parser             :crit, active, 3d</span><br><span class="line">Future task in critical line        :crit, 5d</span><br><span class="line">Create tests for renderer           :2d</span><br><span class="line">Add to mermaid                      :1d</span><br><span class="line"></span><br><span class="line">section Documentation</span><br><span class="line">Describe gantt syntax               :active, a1, after des1, 3d</span><br><span class="line">Add gantt diagram to demo page      :after a1  , 20h</span><br><span class="line">Add another diagram to demo page    :doc1, after a1  , 48h</span><br><span class="line"></span><br><span class="line">section Last section</span><br><span class="line">Describe gantt syntax               :after doc1, 3d</span><br><span class="line">Add gantt diagram to demo page      : 20h</span><br><span class="line">Add another diagram to demo page    : 48h</span><br></pre></td></tr></tbody></table></figure>
 <pre class="mermaid">%% Example with selection of syntaxes
 gantt
 dateFormat  YYYY-MM-DD
@@ -428,11 +428,11 @@ Describe gantt syntax               :after doc1, 3d
 Add gantt diagram to demo page      : 20h
 Add another diagram to demo page    : 48h</pre>
 
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">classDiagram</span><br><span class="line">Animal <span class="xml"><span class="tag">&lt;<span class="name">|--</span> <span class="attr">Duck</span></span></span></span><br><span class="line"><span class="xml">Animal <span class="tag">&lt;<span class="name">|--</span> <span class="attr">Fish</span></span></span></span><br><span class="line"><span class="xml">Animal <span class="tag">&lt;<span class="name">|--</span> <span class="attr">Zebra</span></span></span></span><br><span class="line"><span class="xml">Animal : +int age</span></span><br><span class="line"><span class="xml">Animal : +String gender</span></span><br><span class="line"><span class="xml">Animal: +isMammal()</span></span><br><span class="line"><span class="xml">Animal: +mate()</span></span><br><span class="line"><span class="xml">class Duck&#123;</span></span><br><span class="line"><span class="xml">+String beakColor</span></span><br><span class="line"><span class="xml">+swim()</span></span><br><span class="line"><span class="xml">+quack()</span></span><br><span class="line"><span class="xml">&#125;</span></span><br><span class="line"><span class="xml">class Fish&#123;</span></span><br><span class="line"><span class="xml">-int sizeInFeet</span></span><br><span class="line"><span class="xml">-canEat()</span></span><br><span class="line"><span class="xml">&#125;</span></span><br><span class="line"><span class="xml">class Zebra&#123;</span></span><br><span class="line"><span class="xml">+bool is_wild</span></span><br><span class="line"><span class="xml">+run()</span></span><br><span class="line"><span class="xml">&#125;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight markdown"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">classDiagram</span><br><span class="line">Animal <span class="xml"><span class="tag">&lt;<span class="name">|--</span> <span class="attr">Duck</span></span></span></span><br><span class="line"><span class="xml">Animal <span class="tag">&lt;<span class="name">|--</span> <span class="attr">Fish</span></span></span></span><br><span class="line"><span class="xml">Animal <span class="tag">&lt;<span class="name">|--</span> <span class="attr">Zebra</span></span></span></span><br><span class="line"><span class="xml">Animal : +int age</span></span><br><span class="line"><span class="xml">Animal : +String gender</span></span><br><span class="line"><span class="xml">Animal: +isMammal()</span></span><br><span class="line"><span class="xml">Animal: +mate()</span></span><br><span class="line"><span class="xml">class Duck{</span></span><br><span class="line"><span class="xml">+String beakColor</span></span><br><span class="line"><span class="xml">+swim()</span></span><br><span class="line"><span class="xml">+quack()</span></span><br><span class="line"><span class="xml">}</span></span><br><span class="line"><span class="xml">class Fish{</span></span><br><span class="line"><span class="xml">-int sizeInFeet</span></span><br><span class="line"><span class="xml">-canEat()</span></span><br><span class="line"><span class="xml">}</span></span><br><span class="line"><span class="xml">class Zebra{</span></span><br><span class="line"><span class="xml">+bool is_wild</span></span><br><span class="line"><span class="xml">+run()</span></span><br><span class="line"><span class="xml">}</span></span><br></pre></td></tr></tbody></table></figure>
 <pre class="mermaid">classDiagram
-      Animal <|-- Duck
-      Animal <|-- Fish
-      Animal <|-- Zebra
+      Animal &lt;|-- Duck
+      Animal &lt;|-- Fish
+      Animal &lt;|-- Zebra
       Animal : +int age
       Animal : +String gender
       Animal: +isMammal()
@@ -451,22 +451,40 @@ Add another diagram to demo page    : 48h</pre>
           +run()
       }</pre>
 
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">pie</span><br><span class="line"><span class="code">    title Pie Chart</span></span><br><span class="line"><span class="code">    "Dogs" : 386</span></span><br><span class="line"><span class="code">    "Cats" : 85</span></span><br><span class="line"><span class="code">    "Rats" : 150</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight markdown"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">pie</span><br><span class="line"><span class="code">    title Pie Chart</span></span><br><span class="line"><span class="code">    "Dogs" : 386</span></span><br><span class="line"><span class="code">    "Cats" : 85</span></span><br><span class="line"><span class="code">    "Rats" : 150</span></span><br></pre></td></tr></tbody></table></figure>
 <pre class="mermaid">pie
     title Pie Chart
     "Dogs" : 386
     "Cats" : 85
     "Rats" : 150</pre>
 
-<p><script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.6.5/flowchart.min.js"></script><textarea id="flowchart-0-code" style="display: none">st=>start: Start
-op=>operation: Your Operation
-cond=>condition: Yes or No?
-e=>end
+<p><script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.6.5/flowchart.min.js"></script><textarea id="flowchart-0-code" style="display: none">st=&gt;start: Start
+op=&gt;operation: Your Operation
+cond=&gt;condition: Yes or No?
+e=&gt;end
 
-st->op->cond
-cond(yes)->e
-cond(no)->op</textarea><textarea id="flowchart-0-options" style="display: none">{"scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12}</textarea><script>  var code = document.getElementById("flowchart-0-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("flowchart-0-options").value));  var diagram = flowchart.parse(code);  diagram.drawSVG("flowchart-0", options);</script></p>
-
+st-&gt;op-&gt;cond
+cond(yes)-&gt;e
+cond(no)-&gt;op</textarea><textarea id="flowchart-0-options" style="display: none">{"scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12}</textarea><script>  var code = document.getElementById("flowchart-0-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("flowchart-0-options").value));  var diagram = flowchart.parse(code);  diagram.drawSVG("flowchart-0", options);</script></p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
     </div>
 
     
