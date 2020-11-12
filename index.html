@@ -249,7 +249,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>163k</span>
+              <span>162k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -403,7 +403,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>911</span>
+              <span>532</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -463,7 +463,7 @@
 </table>
 </div>
 <p>例：匹配有abc开头的字符串</p>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\babc或^abc</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\babc或^abc</span><br></pre></td></tr></table></figure>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/posts/25256/#more" rel="contents">
@@ -539,7 +539,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>4.5k</span>
+              <span>4.1k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -561,12 +561,12 @@
           <h1 id="YUV、RGB、HSV"><a href="#YUV、RGB、HSV" class="headerlink" title="YUV、RGB、HSV"></a>YUV、RGB、HSV</h1><p>YUV：亮度信息 即灰度值。UV：色彩信息 定义了颜色的两个方面-色调与饱和度，分别用Cr和CB来表示。其中，Cr反映了RGB输入信号红色部分与RGB信号亮度值之间的差异。而CB反映的是RGB输入信号蓝色部分与RGB信号亮度值之同的差异。通过运算，YUV三分量可以还原出R（红），G（绿），B（蓝）。</p>
 <p>HSV: 色调（H），饱和度（S），明度（V）</p>
 <p>相互转换</p>
-<h2 id="ARGB-gt-RGB"><a href="#ARGB-gt-RGB" class="headerlink" title="ARGB -> RGB"></a>ARGB -&gt; RGB</h2><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//unsigned char *data 存的是ARGB的裸数据；</span><br><span class="line"> </span><br><span class="line">cv::Mat argbImg;</span><br><span class="line">cv::Mat rgbImg(cy, cx,CV_8UC3);</span><br><span class="line">yuvImg.create(cy, cx, CV_8UC4);</span><br><span class="line">memcpy(argbImg.data, data, len);</span><br><span class="line">cv::cvtColor(argbImg, rgbImg, CV_RGBA2RGB);</span><br><span class="line">flip(rgbImg, rgbImg, <span class="number">0</span>);    //垂直翻转</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="YUV-gt-RGB"><a href="#YUV-gt-RGB" class="headerlink" title="YUV -> RGB"></a>YUV -&gt; RGB</h2><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//unsigned char *data 存的是YUYV的裸数据；</span><br><span class="line"> </span><br><span class="line">cv::Mat yuvImg;</span><br><span class="line">cv::Mat rgbImg(cy, cx,CV_8UC3);</span><br><span class="line">yuvImg.create(cy , cx, CV_8UC2);</span><br><span class="line">memcpy(yuvImg.data, data, len);</span><br><span class="line">cv::cvtColor(yuvImg, rgbImg, CV_YUV2BGR_YUYV);</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="I420-gt-RGB"><a href="#I420-gt-RGB" class="headerlink" title="I420 -> RGB"></a>I420 -&gt; RGB</h2><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//unsigned char *data 存的是I420的裸数据；</span><br><span class="line"> </span><br><span class="line">cv::Mat yuvImg;</span><br><span class="line">cv::Mat rgbImg(cy, cx,CV_8UC3);</span><br><span class="line">yuvImg.create(cy * <span class="number">3</span>/<span class="number">2</span>, cx, CV_8UC1);</span><br><span class="line">memcpy(yuvImg.data, data, len);</span><br><span class="line">cv::cvtColor(yuvImg, rgbImg, CV_YUV2BGR_I420);</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="ARGB-gt-RGB"><a href="#ARGB-gt-RGB" class="headerlink" title="ARGB -&gt; RGB"></a>ARGB -&gt; RGB</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//unsigned char *data 存的是ARGB的裸数据；</span><br><span class="line"> </span><br><span class="line">cv::Mat argbImg;</span><br><span class="line">cv::Mat rgbImg(cy, cx,CV_8UC3);</span><br><span class="line">yuvImg.create(cy, cx, CV_8UC4);</span><br><span class="line">memcpy(argbImg.data, data, len);</span><br><span class="line">cv::cvtColor(argbImg, rgbImg, CV_RGBA2RGB);</span><br><span class="line">flip(rgbImg, rgbImg, <span class="number">0</span>);    //垂直翻转</span><br></pre></td></tr></table></figure>
+<h2 id="YUV-gt-RGB"><a href="#YUV-gt-RGB" class="headerlink" title="YUV -&gt; RGB"></a>YUV -&gt; RGB</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//unsigned char *data 存的是YUYV的裸数据；</span><br><span class="line"> </span><br><span class="line">cv::Mat yuvImg;</span><br><span class="line">cv::Mat rgbImg(cy, cx,CV_8UC3);</span><br><span class="line">yuvImg.create(cy , cx, CV_8UC2);</span><br><span class="line">memcpy(yuvImg.data, data, len);</span><br><span class="line">cv::cvtColor(yuvImg, rgbImg, CV_YUV2BGR_YUYV);</span><br></pre></td></tr></table></figure>
+<h2 id="I420-gt-RGB"><a href="#I420-gt-RGB" class="headerlink" title="I420 -&gt; RGB"></a>I420 -&gt; RGB</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//unsigned char *data 存的是I420的裸数据；</span><br><span class="line"> </span><br><span class="line">cv::Mat yuvImg;</span><br><span class="line">cv::Mat rgbImg(cy, cx,CV_8UC3);</span><br><span class="line">yuvImg.create(cy * <span class="number">3</span>/<span class="number">2</span>, cx, CV_8UC1);</span><br><span class="line">memcpy(yuvImg.data, data, len);</span><br><span class="line">cv::cvtColor(yuvImg, rgbImg, CV_YUV2BGR_I420);</span><br></pre></td></tr></table></figure>
 <p>OpenCV提供的转换函数实现YUV到RGB的转换：</p>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">bool YV12ToBGR24_OpenCV(unsigned char* pYUV,unsigned char* pBGR24,int width,int height) </span><br><span class="line">{ </span><br><span class="line"><span class="keyword">if</span> (width &lt; <span class="number">1</span> || height &lt; <span class="number">1</span> || pYUV == NULL || pBGR24 == NULL) </span><br><span class="line"><span class="keyword">return</span> false; </span><br><span class="line">Mat dst(height,width,CV_8UC3,pBGR24); </span><br><span class="line">Mat src(height + height/<span class="number">2</span>,width,CV_8UC1,pYUV); </span><br><span class="line">cvtColor(src,dst,CV_YUV2BGR_YV12); </span><br><span class="line"><span class="keyword">return</span> true; </span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="RGB-gt-HSV"><a href="#RGB-gt-HSV" class="headerlink" title="RGB -> HSV"></a>RGB -&gt; HSV</h2><figure class="highlight c++"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"># -*- coding:utf<span class="number">-8</span> -*-</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"></span><br><span class="line"><span class="string">""</span><span class="string">"</span></span><br><span class="line"><span class="string">功能：读取一张图片，显示出来，并转化为HSV色彩空间</span></span><br><span class="line"><span class="string">"</span><span class="string">""</span></span><br><span class="line">image = cv2.imread('images/my_wife2.jpg') # 根据路径读取一张图片</span><br><span class="line">cv2.imshow(<span class="string">"BGR"</span>, <span class="built_in">image</span>) # 显示图片</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 转化图片到HSV色彩空间</span><br><span class="line">dst = cv2.cvtColor(<span class="built_in">image</span>, cv2.COLOR_BGR2HSV)</span><br><span class="line">cv2.imshow(<span class="string">"HSV"</span>, dst) # 显示图片</span><br><span class="line">cv2.waitKey(<span class="number">0</span>) # 等待键盘触发事件，释放窗口</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">bool YV12ToBGR24_OpenCV(unsigned char* pYUV,unsigned char* pBGR24,int width,int height) </span><br><span class="line">&#123; </span><br><span class="line"><span class="keyword">if</span> (width &lt; <span class="number">1</span> || height &lt; <span class="number">1</span> || pYUV == NULL || pBGR24 == NULL) </span><br><span class="line"><span class="keyword">return</span> false; </span><br><span class="line">Mat dst(height,width,CV_8UC3,pBGR24); </span><br><span class="line">Mat src(height + height/<span class="number">2</span>,width,CV_8UC1,pYUV); </span><br><span class="line">cvtColor(src,dst,CV_YUV2BGR_YV12); </span><br><span class="line"><span class="keyword">return</span> true; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="RGB-gt-HSV"><a href="#RGB-gt-HSV" class="headerlink" title="RGB -&gt; HSV"></a>RGB -&gt; HSV</h2><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"># -*- coding:utf<span class="number">-8</span> -*-</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"></span><br><span class="line"><span class="string">""</span><span class="string">"</span></span><br><span class="line"><span class="string">功能：读取一张图片，显示出来，并转化为HSV色彩空间</span></span><br><span class="line"><span class="string">"</span><span class="string">""</span></span><br><span class="line">image = cv2.imread('images/my_wife2.jpg') # 根据路径读取一张图片</span><br><span class="line">cv2.imshow(<span class="string">"BGR"</span>, <span class="built_in">image</span>) # 显示图片</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 转化图片到HSV色彩空间</span><br><span class="line">dst = cv2.cvtColor(<span class="built_in">image</span>, cv2.COLOR_BGR2HSV)</span><br><span class="line">cv2.imshow(<span class="string">"HSV"</span>, dst) # 显示图片</span><br><span class="line">cv2.waitKey(<span class="number">0</span>) # 等待键盘触发事件，释放窗口</span><br></pre></td></tr></table></figure>
 <h1 id="White-Balance"><a href="#White-Balance" class="headerlink" title="White Balance"></a>White Balance</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>相机的白平衡控制，是为了让实际环境中白色的物体在你拍摄的画面中也呈现出“真正”的白色。不同性质的光源会在画面中产生不同的色彩倾向，比如说，蜡烛的光线会使画面偏橘黄色，而黄昏过后的光线则会为景物披上一层蓝色的冷调。而我们的视觉系统会自动对不同的光线作出补偿，所以无论在暖调还是冷调的光线环境下，我们看一张白纸永远还是白色的。但相机则不然，它只会直接记录呈现在它面前的色彩，这就会导致画面色彩偏暖或偏冷。</p>
 <h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><p>开暖光灯：YUV -&gt; RGB -&gt; SV ，全图SV值S需在0～0.1之间，V需在90～255之间。</p>
           <!--noindex-->
@@ -644,7 +644,7 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>555</span>
+              <span>156</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -739,14 +739,14 @@
                 <i class="fa fa-file-word-o"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>5k</span>
+              <span>4.6k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="fa fa-clock-o"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>5 mins.</span>
+              <span>4 mins.</span>
             </span>
 
         </div>
@@ -924,12 +924,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
-    <span title="Symbols count total">309k</span>
+    <span title="Symbols count total">304k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">4:41</span>
+    <span title="Reading time total">4:37</span>
 </div>
 
         <meta name="referrer" content="always">
