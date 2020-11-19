@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="Zh">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/me.jpg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/me.jpg">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/me.jpg">
+  <link rel="mask-icon" href="/images/me.jpg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"unknown.yuzhouwan.com","root":"/","scheme":"Muse","version":"0.0.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":false,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="软件测试理论软件测试的生命周期软件测试生命周期是指从项目计划建立到BUG提交的整个测试过程，包括：  软件项目测试计划 测试需求分析 测试用例设计 测试用例执行 BUG提交  软件的三个要素是什么程序+数据+文档 软件的产品质量参考质量模型部分 软件测试的目的 验证软件是否满足软件开发合同或者项目开发计划，软件需求规格说明书，软件产品说明等规定的软件质量要求 通过测试，发现软件中迄今为止尚未发现的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="软件测试基础">
+<meta property="og:url" content="https://unknown.yuzhouwan.com/posts/22398/index.html">
+<meta property="og:site_name" content="Grace Koo&#39;s Blog">
+<meta property="og:description" content="软件测试理论软件测试的生命周期软件测试生命周期是指从项目计划建立到BUG提交的整个测试过程，包括：  软件项目测试计划 测试需求分析 测试用例设计 测试用例执行 BUG提交  软件的三个要素是什么程序+数据+文档 软件的产品质量参考质量模型部分 软件测试的目的 验证软件是否满足软件开发合同或者项目开发计划，软件需求规格说明书，软件产品说明等规定的软件质量要求 通过测试，发现软件中迄今为止尚未发现的">
+<meta property="og:locale" content="Zh">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/data/Screen%20Shot%202020-11-10%20at%2011.44.26.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/data/Screen%20Shot%202020-11-10%20at%2011.54.54.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/data/Screen%20Shot%202020-11-10%20at%2013.09.44.png">
+<meta property="article:published_time" content="2020-01-28T23:55:00.000Z">
+<meta property="article:modified_time" content="2020-11-19T05:20:22.117Z">
+<meta property="article:author" content="Grace Koo">
+<meta property="article:tag" content="Software Test Basic">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://unknown.yuzhouwan.com/images/data/Screen%20Shot%202020-11-10%20at%2011.44.26.png">
+
+<link rel="canonical" href="https://unknown.yuzhouwan.com/posts/22398/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true
+  };
+</script>
+
+  <title>软件测试基础 | Grace Koo's Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="Grace Koo's Blog" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Grace Koo's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+        <p class="site-subtitle">LaLaLa~~~</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-books">
+
+    <a href="/books/" rel="section"><i class="fa fa-fw fa-book"></i>Books</a>
+
+  </li>
+        <li class="menu-item menu-item-mr.sweet">
+
+    <a href="/sweet/" rel="section"><i class="fa fa-fw fa-paw"></i>Mr.Sweet</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocorrect="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result"></div>
+
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="Zh">
+    <link itemprop="mainEntityOfPage" href="https://unknown.yuzhouwan.com/posts/22398/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Grace Koo">
+      <meta itemprop="description" content="正在深入学习各种CV知识">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Grace Koo's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          软件测试基础
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-01-28 23:55:00" itemprop="dateCreated datePublished" datetime="2020-01-28T23:55:00Z">2020-01-28</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-11-19 05:20:22" itemprop="dateModified" datetime="2020-11-19T05:20:22Z">2020-11-19</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Computer-Basic/" itemprop="url" rel="index"><span itemprop="name">Computer Basic</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>5.8k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>5 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="软件测试理论"><a href="#软件测试理论" class="headerlink" title="软件测试理论"></a>软件测试理论</h1><h2 id="软件测试的生命周期"><a href="#软件测试的生命周期" class="headerlink" title="软件测试的生命周期"></a>软件测试的生命周期</h2><p>软件测试生命周期是指从项目计划建立到BUG提交的整个测试过程，包括：</p>
+<ol>
+<li>软件项目测试计划</li>
+<li>测试需求分析</li>
+<li>测试用例设计</li>
+<li>测试用例执行</li>
+<li>BUG提交</li>
+</ol>
+<h2 id="软件的三个要素是什么"><a href="#软件的三个要素是什么" class="headerlink" title="软件的三个要素是什么"></a>软件的三个要素是什么</h2><p>程序+数据+文档</p>
+<h2 id="软件的产品质量"><a href="#软件的产品质量" class="headerlink" title="软件的产品质量"></a>软件的产品质量</h2><p>参考质量模型部分</p>
+<h2 id="软件测试的目的"><a href="#软件测试的目的" class="headerlink" title="软件测试的目的"></a>软件测试的目的</h2><ol>
+<li>验证软件是否满足软件开发合同或者项目<strong>开发计划，软件需求规格说明书，软件产品说明</strong>等规定的软件质量要求</li>
+<li>通过测试，发现软件中迄今为止尚未发现的缺陷</li>
+<li>为软件产品的质量测量和评价提供依据</li>
+</ol>
+<h2 id="软件测试过程中的四个基本活动"><a href="#软件测试过程中的四个基本活动" class="headerlink" title="软件测试过程中的四个基本活动"></a>软件测试过程中的四个基本活动</h2><ol>
+<li><strong>测试策划</strong>：进行测试的需求分析和测试计划的编写</li>
+<li><strong>测试设计</strong>：依据测试需求，分析并选用已有的测试用例或者设计新的测试用例，进行用例评审</li>
+<li><strong>测试执行</strong>：执行测试用例，获取测试结果，分析并判定测试结果</li>
+<li><strong>测试总结</strong>：整理和分析测试数据，描述测试状态，最后完成软件测试报告并通过测试评审</li>
+</ol>
+<h2 id="测试用例设计的基本原则"><a href="#测试用例设计的基本原则" class="headerlink" title="测试用例设计的基本原则"></a>测试用例设计的基本原则</h2><p>case的设计应该符合以下几点：</p>
+<ol>
+<li>一个case一个功能点：每个case都要有个测点，找准一个测点即可，不能同时覆盖很多功能点</li>
+<li>case的执行粒度：粒度越小越好</li>
+<li>步骤清晰：一个case多个步骤，指明怎么去操作</li>
+<li>总体设计：先正常，后异常，这样可以确保正常情况下功能能够走通</li>
+</ol>
+<h1 id="软件按照生命周期可以分为哪些测试"><a href="#软件按照生命周期可以分为哪些测试" class="headerlink" title="软件按照生命周期可以分为哪些测试"></a>软件按照生命周期可以分为哪些测试</h1><ol>
+<li><strong>单元测试</strong>：基于软件设计文档</li>
+<li><strong>集成测试</strong>：基于软件结构设计文档</li>
+<li>配置项测试：基于需求规格说明书、接口需求规格说明</li>
+<li>系统测试：用于用户需求</li>
+<li>验收测试：软件研制合同</li>
+<li><strong>回归测试</strong>：可以分布在上述每个测试类别中，贯穿整个软件生命周期，所以单独分类描述</li>
+</ol>
+<p><strong>一般单元测试采用白盒测试，配置项或者系统测试采用黑盒测试。</strong></p>
+<h1 id="黑盒测试"><a href="#黑盒测试" class="headerlink" title="黑盒测试"></a>黑盒测试</h1><p><strong>黑盒测试：功能测试</strong>，数据驱动测试或者基于规格说明书的测试。这种测试<strong>不必了解程序的内部逻辑结构</strong>，而是<strong>根据需求说明书中的功能来设计测试用例。</strong>具体方法分为：等价类划分法、边界值分析法、判定表法、因果图法、错误推测法</p>
+<h3 id="等价类划分"><a href="#等价类划分" class="headerlink" title="等价类划分"></a>等价类划分</h3><ol>
+<li>定义：等价类划分是在分析需求规格说明的基础上，把<strong>程序的输入域划分成若干个部分，然后在每部分选取代表性的数据形成测试用例</strong></li>
+<li>等价类划分法的步骤如下：<ol>
+<li><strong>划分有效等价类</strong>：对规格说明是有意义的、合理的输入数据所构成的集合。利用有效等价类可以检验程序是否满足规格说明所规定的<strong>功能和性能</strong>。</li>
+<li><strong>划分无效等价类</strong>：不合理的输入数据所构成的集合。使用无效等价类可以<strong>测试程序/系统的容错性</strong>—对异常输入情况的处理。</li>
+</ol>
+</li>
+</ol>
+<h3 id="边界值分析法"><a href="#边界值分析法" class="headerlink" title="边界值分析法"></a>边界值分析法</h3><ol>
+<li>定义：边界值分析法是针对边界值进行测试的，使用等于、大于或者小于边界值的数据对程序进行测试的方法</li>
+<li>边界值分析法的步骤：<ol>
+<li>通过分析规格说明书找出所有可能的边界条件</li>
+<li>对每个边界条件给出满足和不满足的输入数据</li>
+<li>设计相应的测试用例</li>
+</ol>
+</li>
+</ol>
+<h2 id="因果图法"><a href="#因果图法" class="headerlink" title="因果图法"></a>因果图法</h2><h1 id="白盒测试"><a href="#白盒测试" class="headerlink" title="白盒测试"></a>白盒测试</h1><p><strong>白盒测试：又称为结构测试</strong>、逻辑驱动测试或者基于程序的测试。这种测试应该了解软件程序的内部构造，并且根据程序的内部结构来设计测试用例。<strong>白盒测试是基于覆盖的测试，尽可能覆盖程序的结构特征和逻辑路径。</strong>其具体方法有逻辑覆盖、循环覆盖、基本路径覆盖。逻辑覆盖又可分为语句覆盖、判定覆盖、条件覆盖、判定/条件覆盖、条件组合覆盖。</p>
+<h2 id="逻辑覆盖"><a href="#逻辑覆盖" class="headerlink" title="逻辑覆盖"></a>逻辑覆盖</h2><h2 id="循环覆盖"><a href="#循环覆盖" class="headerlink" title="循环覆盖"></a>循环覆盖</h2><h2 id="基本路径覆盖"><a href="#基本路径覆盖" class="headerlink" title="基本路径覆盖"></a>基本路径覆盖</h2><h1 id="静态测试、动态测试"><a href="#静态测试、动态测试" class="headerlink" title="静态测试、动态测试"></a>静态测试、动态测试</h1><ol>
+<li>静态测试：又称为静态分析结束，其基本特征是不执行被测软件，根据检查列表，<strong>对需求分析说明书、软件设计说明书以及源程序做结构检查、流程图分析等找出软件错误</strong>。静态测试一般采用人工分析（针对文档），也可以用静态分析测试工具来进行（代码扫描）。</li>
+<li>动态测试：其基本特征是执行被测试程序。通过执行结果，分析软件可能出现的错误 ，一般由人工设计程序测试用例，也可以由测试工具做检查和分析。</li>
+</ol>
+<h1 id="软件质量模型"><a href="#软件质量模型" class="headerlink" title="软件质量模型"></a>软件质量模型</h1><h2 id="软件质量"><a href="#软件质量" class="headerlink" title="软件质量"></a>软件质量</h2><p>ANSI/IEEE 定义软件质量为：“与软件产品满足规定的和隐含的需求的能力有关的特征或特性的全体”。</p>
+<h2 id="ISO-IEC-9126质量模型"><a href="#ISO-IEC-9126质量模型" class="headerlink" title="ISO/IEC 9126质量模型"></a>ISO/IEC 9126质量模型</h2><p>测试是对软件质量的度量，那么如何度量，从哪些角度度量。</p>
+<p>我们需要一套标准，或者说模型来作参考，赋予不同指标不同的权重，通过计算软件质量的得分，便可以评判出质量的好坏。</p>
+<p>ISO/IEC 9126在1991年12月发布，将软件质量归为6大特性和27个子特性。</p>
+<p><img data-src="/images/data/Screen Shot 2020-11-10 at 11.44.26.png" alt="Screen Shot 2020-11-10 at 11.44.26"></p>
+<p>功能性：软件产品提供满足明确和隐含需求功能的能力</p>
+<ul>
+<li>适合性：为规定任务提供一组合适功能的功能，即做了该做的事</li>
+<li>准确性：得到正确或相符的预期结果的能力</li>
+<li>互操作性：与其他系统软件交互的能力</li>
+<li>保密安全性：防止对程序及数据的非授权的故意或意外访问的能力</li>
+</ul>
+<p>可靠性：软件产品维护规定的性能级别的能力</p>
+<ul>
+<li>成熟性：避免软件内部的错误扩散而导致系统失效的能力</li>
+<li>容错性：防止外部接口错误扩散而导致系统失效的能力</li>
+<li>易恢复性：系统失效后，重新恢复原有的功能和性能的能力</li>
+</ul>
+<p>易用性：软件产品被理解、学习、使用及吸引用户的能力</p>
+<ul>
+<li>易理解性：交互性要清晰、准确和易懂</li>
+<li>易学性：用户学习软件所花努力的属性</li>
+<li>易操作性：用户操作和控制软件的能力</li>
+<li>吸引性：吸引用户的能力</li>
+</ul>
+<p><strong>性能效率</strong>：相对于所用资源的数量，软件产品可提供适当性能的能力</p>
+<ul>
+<li><strong>时间特性</strong>：软件执行功能时的响应、处理时间和吞吐率</li>
+<li><strong>资源特性</strong>：软件执行功能时所使用的资源数量和类型</li>
+</ul>
+<p>维护性：软件产品可以被修改的能力，修改可能包括修改、改进或者适应环境、需求和功能规约的变化</p>
+<ul>
+<li>易分析性：诊断缺陷或失效原因所需努力的属性</li>
+<li>易改变性：进行修改、排除错误或适应环境变化的能力</li>
+<li>稳定性：避免软件修改而造成意外结果的能力</li>
+<li>易测试性：提供辅助性手段帮助测试人员实现其测试意图</li>
+</ul>
+<p>可移植性：软件产品从一个环境迁移到另一个环境的能力</p>
+<ul>
+<li>适应性：无需相应变动就能适应不同环境的能力</li>
+<li>易安装性：尽可能少的提供选择，方便用户直接安装</li>
+<li>共存性：与其他公共软件共存</li>
+<li>易替换性：同等环境下，替换其他同类产品的能力</li>
+</ul>
+<h2 id="GB-T-25000质量模型"><a href="#GB-T-25000质量模型" class="headerlink" title="GB/T 25000质量模型"></a>GB/T 25000质量模型</h2><p>于2016年发布，(新增兼容性和信息安全)，大方向没有改变，新增的2大特性（信息安全性、兼容性）也是从原有的功能性和可移植性中分裂出来。</p>
+<p><img data-src="/images/data/Screen Shot 2020-11-10 at 11.54.54.png" alt="Screen Shot 2020-11-10 at 11.54.54"></p>
+<p>信息安全性，产品或系统保护信息和数据的程序，以使用户、其他产品或系统具有与其授权和授权级别一致的数据访问度</p>
+<ul>
+<li>保密性，产品或系统确保数据只有在被授权时才能被访问的程度</li>
+<li>完整性，系统、产品或组件防止未授权访问、篡改计算机程序或数据的程度</li>
+<li>抗抵赖性，活动或事件发生后可以被证实且不可被否认的程度</li>
+<li>可核查性，实体的活动可以被唯一地追溯到该实体的程度</li>
+<li>真实性，对象或资源的身份标识能够被证实符合其声明的程度</li>
+</ul>
+<p><a href="https://juejin.im/post/6844903878354272269" target="_blank" rel="noopener">从纺锤模型到金字塔模型</a></p>
+<h1 id="软件开发中之敏捷开发：DevOps"><a href="#软件开发中之敏捷开发：DevOps" class="headerlink" title="软件开发中之敏捷开发：DevOps"></a>软件开发中之敏捷开发：DevOps</h1><p>DevOps是一套实践方法论和文化，提倡打破原有组织和限制，职能团队开始拥抱和接受<strong>DevOps所倡导的高度协同，研发、测试、运维及交付一体化的思维</strong>。随着DevOps和敏捷热度的不断提升，无论是互联网企业还是传统软件企业都开始拥抱<strong>敏捷</strong>，实践DevOps。<strong>持续集成CI（Continuous integration）、持续交付CD（Continuous delivery ）</strong>作为DevOps的最佳实践，越来越受到重视。</p>
+<h1 id="软件开发中之微服务架构"><a href="#软件开发中之微服务架构" class="headerlink" title="软件开发中之微服务架构"></a>软件开发中之微服务架构</h1><p>微服务架构源起于DevOps意识形态和实践中，是一种软件架构风格。微服务架构带来了一系列好处，例如<strong>可部署性、可靠性、可用性</strong>等等。虽然原则上可以使用任何架构来实践DevOps，但微服务架构<strong>正在成为构建持续部署 (CD)</strong>系统的标准<strong>架构风格</strong>。由于<strong>每项服务的规模都很小</strong>，它允许通过<strong>连续重构来实现单个服务</strong>的体系结构，因此<strong>减少了对大型项目前期设计的需求，允许尽早发布软件并且持续交付</strong>。微服务和DevOps是天然的共同体，结合起来共同实现软件开发行业的变革。</p>
+<h1 id="分层理论：金字塔模型"><a href="#分层理论：金字塔模型" class="headerlink" title="分层理论：金字塔模型"></a>分层理论：金字塔模型</h1><p>随着敏捷和微服务架构的引入，<strong>CI/CD成为构建和部署的标准</strong>。传统的手工测试方式在人员和效率上都存在严重不足，因此自动化测试已经成为现代软件研发过程中一个关键组成部分。<strong>自动化测试是打通持续集成和持续交付的核心</strong>，没有有效的自动化测试保证，持续集成和持续交付就仅仅是一个没有灵魂的躯壳。</p>
+<p>Martin Fowler描述<strong>测试金字塔</strong>分为单元、服务和UI三个层级。</p>
+<p><strong>1)单元测试</strong></p>
+<p>单元测试是针对<strong>代码单元（通常是类/方法）</strong>的测试，单元测试的价值在于能提供最快的反馈，在开发过程中就可以对逻辑单元进行验证。好的单元测试可以帮助改善既有设计，在团队掌握 TDD的前提下，单元测试能辅助重构，帮助提升代码整洁度。</p>
+<p><strong>2)接口（服务/API）测试</strong></p>
+<p><strong>接口测试是针对业务接口进行的测试</strong>，主要测试内部接口功能实现是否完整。比如内部逻辑是否正常、异常处理是否正确。接口测试的主要价值在于接口定义相对稳定，不像界面或底层代码会经常发生变化，所以接口测试比较容易编写，用例的维护成本也相对较低。在接口层面准备测试的性价比相对较高。</p>
+<p><strong>3)集成（UI）测试</strong></p>
+<p><strong>集成测试从用户的角度验证产品功能的正确性，测的是端到端的流程</strong>，并且加入用户场景和数据，验证整个过程是否健康流畅。集成测试的业务价值最高，它验证的是一个完整的流程，但因为需要验证完整流程，在环境部署、准备用例及实施等方面成本较高，实施起来并不容易。</p>
+<h1 id="自动化测试"><a href="#自动化测试" class="headerlink" title="自动化测试"></a>自动化测试</h1><h2 id="自动化测试分层及占比"><a href="#自动化测试分层及占比" class="headerlink" title="自动化测试分层及占比"></a>自动化测试分层及占比</h2><p>先来看一般的功能测试如何进行：设计并编写用例文档，描述测试步骤和预期结果；测试人员根据测试用例描述按步骤操作，然后判断实际结果与预期是否一致。如果一致，测试通过；如果不符，测试失败。</p>
+<p><strong>自动化测试要做的事情与功能测试是一致的。分层理论和自动化测试方法结合，出现了三个层面的自动化：单元测试自动化、接口测试自动化和UI测试自动化。</strong>当然，不同层面的自动化关注点是不一样的。所以，从测试的行为本质上来看，功能测试与单元自动化测试、接口自动化测试和UI自动化测试并没有区别。唯一的区别是，一个由人来执行，一个由代码或工具执行。</p>
+<ul>
+<li>单元自动化测试</li>
+</ul>
+<p>单元测试关注的是代码的实现与逻辑。单元测试是最基本的测试，也是测试中的最小单元，它的对象是函数对象，也可以包含输入输出，针对的是函数功能或者函数内部的代码逻辑，并不包含业务逻辑。</p>
+<p>该类测试一般由研发人员完成，需要借助单元测试框架，如java的Junit、TestNG，python的<strong>unittest</strong>等。</p>
+<ul>
+<li>接口自动化测试</li>
+</ul>
+<p>接口自动化测试，主要验证<strong>模块间的调用返回以及不同系统、服务间的数据交换</strong>。</p>
+<p>根据接口文档是RESTful还是RPC，最终断言返回的结果是否等于预期结果。如果相等，测试通过；如果不相等，测试失败。</p>
+<p>常见的接口测试工具有<strong>postman、jmeter、loadrunner</strong>等。</p>
+<ul>
+<li>集成自动化测试</li>
+</ul>
+<p>UI层是用户使用产品的入口，所有功能通过这一层提供给用户。</p>
+<p>当UI自动化登录成功后，就去获取这个数据进行断言，断言如果相等，测试通过；如果不相等，测试失败。</p>
+<p>所以，UI自动化的关注点用户操作形为，以及UI上各种组件是否可用。常见的测试工具有<strong>UFT、Robot Framework、Selenium、Appium</strong>等。</p>
+<p>按照测试金字塔模型以及投入/产出比，我们得知越向下回报率越高，<strong>所以应该使用大量的单元测试和全面的接口测试来覆盖产品提供的基本逻辑和功能，使用少量的集成（UI）测试来进行前端界面的功能验证。</strong></p>
+<p>都说业内最佳实践看Google，Google的自动化分层投入占比是：<strong>单元测试（Unit）：占比70%；接口测试（Service）：占比20%；集成测试（UI）：占比10%.</strong></p>
+<h2 id="自动化最佳实践：纺锤模型"><a href="#自动化最佳实践：纺锤模型" class="headerlink" title="自动化最佳实践：纺锤模型"></a>自动化最佳实践：纺锤模型</h2><p><strong>对现阶段公司大部分团队来说，更符合实际测试模式是纺锤模型</strong>。新项目中，可能由于时限原因或者开发人员习惯问题，一开始并没有把单元测试准备得很完善；而某些遗留老项目，可能原本就没有多少单元测试。</p>
+<p>在上述情况下，一般的做法是先将重心放在中间层的测试上，原因有以下两点：</p>
+<ul>
+<li>第一，中间层<strong>投入产出比较高</strong>，可以实现较高的自动化率；</li>
+<li>第二，可以帮助加强<strong>开发跟测试人员之间的协作</strong>，提高测试质量。这一层需要开发跟测试人员共同定义，因为开发知道内部实现的细节，测试掌握业务场景。</li>
+</ul>
+<p>当项目进行一段时间以后，各层测试占比有必要向理想型的金字塔型过渡，这时需要关注以下三个方面：</p>
+<ul>
+<li>开发与测试互相传递能力；</li>
+<li>全员关注产品设计跟代码的质量；</li>
+<li>让用例逐步下沉，最后逐步过渡到理想型。</li>
+</ul>
+<p><img data-src="/images/data/Screen Shot 2020-11-10 at 13.09.44.png" alt="Screen Shot 2020-11-10 at 13.09.44"></p>
+<h2 id="Python自动化测试框架"><a href="#Python自动化测试框架" class="headerlink" title="Python自动化测试框架"></a>Python自动化测试框架</h2><ol>
+<li><p>python+selenium+unittest+htmltestrunner</p>
+</li>
+<li><p>python+selenium+pytest+allure</p>
+</li>
+<li><p>robotframework+Selenium2Library</p>
+</li>
+</ol>
+<p>介绍第二种：</p>
+<p>pytest是一个非常成熟的Python测试框架</p>
+<ol>
+<li>能够支持简单的单元测试和复杂的功能测试，还可以用来做selenium/appnium等自动化测试，接口自动化测试（pytest+request）</li>
+<li>pytest具有很多第三方插件，并且可以自定义扩展，常用的插件有：<ol>
+<li>pytest-selenium（集成selenium）</li>
+<li>pytest-html（完美html测试报告生成）</li>
+<li>pytest-rerunfailures（失败case重复执行）</li>
+<li>pytest-xdist（多CPU分发）</li>
+</ol>
+</li>
+</ol>
+<p><a href="https://www.cnblogs.com/mytianying/p/12466302.html" target="_blank" rel="noopener">https://www.cnblogs.com/mytianying/p/12466302.html</a></p>
+<p><strong>在selenium自动化测试中，你一般完成什么类型的测试？自动化覆盖率？</strong></p>
+<p>主要是冒烟测试和回归测试。回归测试主要写一些功能稳定的场景，通过自动化手段去实现，节约测试时间。因为自动化测试用例也是在不断的更新和迭代，没有刻意去统计，大概在30%-40%左右！</p>
+<p><strong>什么是PO模式，为什么要使用它</strong></p>
+<p>PO是Page Object 模式的简称，它是一种设计思想，意思是，把一个页面，当做一个对象，页面的元素和元素之间操作方法就是页面对象的属性和行为，PO模式一般使用三层架构，分别为：基础封装层BasePage，PO页面对象层，TestCase测试用例层。</p>
+<h1 id="算法测试"><a href="#算法测试" class="headerlink" title="算法测试"></a>算法测试</h1><h2 id="模型评估"><a href="#模型评估" class="headerlink" title="模型评估"></a>模型评估</h2><h2 id="算法鲁棒性"><a href="#算法鲁棒性" class="headerlink" title="算法鲁棒性"></a>算法鲁棒性</h2><h2 id="模型安全"><a href="#模型安全" class="headerlink" title="模型安全"></a>模型安全</h2><h2 id="响应速度"><a href="#响应速度" class="headerlink" title="响应速度"></a>响应速度</h2><h1 id="测试质量评估"><a href="#测试质量评估" class="headerlink" title="测试质量评估"></a>测试质量评估</h1><p>关于度量，不要用单一的指标去评估测试和产品质量，比如用例通过率、代码覆盖率等都无法独立地评估产品质量。</p>
+<p>评估测试质量时要关心以下几个方面：</p>
+<ul>
+<li>第一是<strong>用例比例</strong>，即每一层的用例比例是多少。</li>
+<li>第二是<strong>测试覆盖率</strong>。</li>
+<li>第三是<strong>测试总运行时间</strong>，因为经过优化以后，总运行时间一定是越来越少。</li>
+<li>第四是<strong>代码质量指标，反映代码的质量和整洁度</strong>。</li>
+</ul>
+<h1 id="测试问题"><a href="#测试问题" class="headerlink" title="测试问题"></a>测试问题</h1><h2 id="编写测试计划的目的是"><a href="#编写测试计划的目的是" class="headerlink" title="编写测试计划的目的是"></a>编写测试计划的目的是</h2><h2 id="对关键词触发模块进行测试"><a href="#对关键词触发模块进行测试" class="headerlink" title="对关键词触发模块进行测试"></a>对关键词触发模块进行测试</h2><h2 id="其他常用笔试题目网址汇总"><a href="#其他常用笔试题目网址汇总" class="headerlink" title="其他常用笔试题目网址汇总"></a>其他常用笔试题目网址汇总</h2><h2 id="测试人员在软件开发过程中的任务是什么"><a href="#测试人员在软件开发过程中的任务是什么" class="headerlink" title="测试人员在软件开发过程中的任务是什么"></a>测试人员在软件开发过程中的任务是什么</h2><h2 id="一条软件Bug记录都包含了哪些内容？"><a href="#一条软件Bug记录都包含了哪些内容？" class="headerlink" title="一条软件Bug记录都包含了哪些内容？"></a>一条软件Bug记录都包含了哪些内容？</h2><h2 id="简述黑盒测试和白盒测试的优缺点"><a href="#简述黑盒测试和白盒测试的优缺点" class="headerlink" title="简述黑盒测试和白盒测试的优缺点"></a>简述黑盒测试和白盒测试的优缺点</h2><h2 id="请列出你所知道的软件测试种类，至少5项"><a href="#请列出你所知道的软件测试种类，至少5项" class="headerlink" title="请列出你所知道的软件测试种类，至少5项"></a>请列出你所知道的软件测试种类，至少5项</h2><h2 id="Alpha测试与Beta测试的区别是什么？"><a href="#Alpha测试与Beta测试的区别是什么？" class="headerlink" title="Alpha测试与Beta测试的区别是什么？"></a>Alpha测试与Beta测试的区别是什么？</h2><h2 id="举例说明什么是Bug？一个bug-report应包含什么关键字？"><a href="#举例说明什么是Bug？一个bug-report应包含什么关键字？" class="headerlink" title="举例说明什么是Bug？一个bug report应包含什么关键字？"></a>举例说明什么是Bug？一个bug report应包含什么关键字？</h2><script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>Grace Koo
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="https://unknown.yuzhouwan.com/posts/22398/" title="软件测试基础">https://unknown.yuzhouwan.com/posts/22398/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-ND</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Software-Test-Basic/" rel="tag"># Software Test Basic</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/posts/57792/" rel="prev" title="DataStructure & Algorithm">
+      <i class="fa fa-chevron-left"></i> DataStructure & Algorithm
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/posts/22488/" rel="next" title="数据库基础">
+      数据库基础 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#软件测试理论"><span class="nav-number">1.</span> <span class="nav-text">软件测试理论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#软件测试的生命周期"><span class="nav-number">1.1.</span> <span class="nav-text">软件测试的生命周期</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#软件的三个要素是什么"><span class="nav-number">1.2.</span> <span class="nav-text">软件的三个要素是什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#软件的产品质量"><span class="nav-number">1.3.</span> <span class="nav-text">软件的产品质量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#软件测试的目的"><span class="nav-number">1.4.</span> <span class="nav-text">软件测试的目的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#软件测试过程中的四个基本活动"><span class="nav-number">1.5.</span> <span class="nav-text">软件测试过程中的四个基本活动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#测试用例设计的基本原则"><span class="nav-number">1.6.</span> <span class="nav-text">测试用例设计的基本原则</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#软件按照生命周期可以分为哪些测试"><span class="nav-number">2.</span> <span class="nav-text">软件按照生命周期可以分为哪些测试</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#黑盒测试"><span class="nav-number">3.</span> <span class="nav-text">黑盒测试</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#等价类划分"><span class="nav-number">3.0.1.</span> <span class="nav-text">等价类划分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#边界值分析法"><span class="nav-number">3.0.2.</span> <span class="nav-text">边界值分析法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#因果图法"><span class="nav-number">3.1.</span> <span class="nav-text">因果图法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#白盒测试"><span class="nav-number">4.</span> <span class="nav-text">白盒测试</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#逻辑覆盖"><span class="nav-number">4.1.</span> <span class="nav-text">逻辑覆盖</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#循环覆盖"><span class="nav-number">4.2.</span> <span class="nav-text">循环覆盖</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基本路径覆盖"><span class="nav-number">4.3.</span> <span class="nav-text">基本路径覆盖</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#静态测试、动态测试"><span class="nav-number">5.</span> <span class="nav-text">静态测试、动态测试</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#软件质量模型"><span class="nav-number">6.</span> <span class="nav-text">软件质量模型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#软件质量"><span class="nav-number">6.1.</span> <span class="nav-text">软件质量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ISO-IEC-9126质量模型"><span class="nav-number">6.2.</span> <span class="nav-text">ISO&#x2F;IEC 9126质量模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GB-T-25000质量模型"><span class="nav-number">6.3.</span> <span class="nav-text">GB&#x2F;T 25000质量模型</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#软件开发中之敏捷开发：DevOps"><span class="nav-number">7.</span> <span class="nav-text">软件开发中之敏捷开发：DevOps</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#软件开发中之微服务架构"><span class="nav-number">8.</span> <span class="nav-text">软件开发中之微服务架构</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#分层理论：金字塔模型"><span class="nav-number">9.</span> <span class="nav-text">分层理论：金字塔模型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#自动化测试"><span class="nav-number">10.</span> <span class="nav-text">自动化测试</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#自动化测试分层及占比"><span class="nav-number">10.1.</span> <span class="nav-text">自动化测试分层及占比</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自动化最佳实践：纺锤模型"><span class="nav-number">10.2.</span> <span class="nav-text">自动化最佳实践：纺锤模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python自动化测试框架"><span class="nav-number">10.3.</span> <span class="nav-text">Python自动化测试框架</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#算法测试"><span class="nav-number">11.</span> <span class="nav-text">算法测试</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#模型评估"><span class="nav-number">11.1.</span> <span class="nav-text">模型评估</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#算法鲁棒性"><span class="nav-number">11.2.</span> <span class="nav-text">算法鲁棒性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模型安全"><span class="nav-number">11.3.</span> <span class="nav-text">模型安全</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#响应速度"><span class="nav-number">11.4.</span> <span class="nav-text">响应速度</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#测试质量评估"><span class="nav-number">12.</span> <span class="nav-text">测试质量评估</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#测试问题"><span class="nav-number">13.</span> <span class="nav-text">测试问题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#编写测试计划的目的是"><span class="nav-number">13.1.</span> <span class="nav-text">编写测试计划的目的是</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对关键词触发模块进行测试"><span class="nav-number">13.2.</span> <span class="nav-text">对关键词触发模块进行测试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其他常用笔试题目网址汇总"><span class="nav-number">13.3.</span> <span class="nav-text">其他常用笔试题目网址汇总</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#测试人员在软件开发过程中的任务是什么"><span class="nav-number">13.4.</span> <span class="nav-text">测试人员在软件开发过程中的任务是什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一条软件Bug记录都包含了哪些内容？"><span class="nav-number">13.5.</span> <span class="nav-text">一条软件Bug记录都包含了哪些内容？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#简述黑盒测试和白盒测试的优缺点"><span class="nav-number">13.6.</span> <span class="nav-text">简述黑盒测试和白盒测试的优缺点</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#请列出你所知道的软件测试种类，至少5项"><span class="nav-number">13.7.</span> <span class="nav-text">请列出你所知道的软件测试种类，至少5项</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Alpha测试与Beta测试的区别是什么？"><span class="nav-number">13.8.</span> <span class="nav-text">Alpha测试与Beta测试的区别是什么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#举例说明什么是Bug？一个bug-report应包含什么关键字？"><span class="nav-number">13.9.</span> <span class="nav-text">举例说明什么是Bug？一个bug report应包含什么关键字？</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Grace Koo</p>
+  <div class="site-description" itemprop="description">正在深入学习各种CV知识</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">20</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">20</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/GraceKoo" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;GraceKoo" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" class="cc-opacity" rel="noopener" target="_blank"><img src="/images/cc-by-nc-nd.svg" alt="Creative Commons"></a>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title">
+      <i class="fa fa-fw fa-link"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://yuzhouwan.com/" title="https:&#x2F;&#x2F;yuzhouwan.com" rel="noopener" target="_blank">宇宙湾</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 2017 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">unknown.yuzhouwan.com</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    <span title="Symbols count total">340k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">5:09</span>
+</div>
+
+        <meta name="referrer" content="always">
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+<script>
+if (document.querySelectorAll('pre.mermaid').length) {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/mermaid@8/dist/mermaid.min.js', () => {
+    mermaid.initialize({
+      theme    : 'forest',
+      logLevel : 3,
+      flowchart: { curve     : 'linear' },
+      gantt    : { axisFormat: '%m/%d/%Y' },
+      sequence : { actorMargin: 50 }
+    });
+  }, window.mermaid);
+}
+</script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+  
+
+  
+
+  
+
+</body>
+</html>
