@@ -21,15 +21,15 @@
     var CONFIG = {"hostname":"unknown.yuzhouwan.com","root":"/","scheme":"Muse","version":"0.0.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":false,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="操作系统同步，异步，阻塞，非阻塞？同步： 多个任务之间有先后顺序执行，一个执行完下个才能执行。 异步： 多个任务之间没有先后顺序，可以同时执行，有时候一个任务可能要在必要的时候获取另一个同时执行的任务的结果，这个就叫回调！ 阻塞： 如果卡住了调用者，调用者不能继续往下执行，就是说调用者阻塞了。 非阻塞： 如果不会卡住，可以继续执行，就是说非阻塞的。 同步异步相对于多任务而言，阻塞非阻塞相对于代码执">
+  <meta name="description" content="同步，异步，阻塞，非阻塞？同步： 多个任务之间有先后顺序执行，一个执行完下个才能执行。 异步： 多个任务之间没有先后顺序，可以同时执行，有时候一个任务可能要在必要的时候获取另一个同时执行的任务的结果，这个就叫回调！ 阻塞： 如果卡住了调用者，调用者不能继续往下执行，就是说调用者阻塞了。 非阻塞： 如果不会卡住，可以继续执行，就是说非阻塞的。 同步异步相对于多任务而言，阻塞非阻塞相对于代码执行而言。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="操作系统">
 <meta property="og:url" content="https://unknown.yuzhouwan.com/posts/2246/index.html">
 <meta property="og:site_name" content="Grace Koo&#39;s Blog">
-<meta property="og:description" content="操作系统同步，异步，阻塞，非阻塞？同步： 多个任务之间有先后顺序执行，一个执行完下个才能执行。 异步： 多个任务之间没有先后顺序，可以同时执行，有时候一个任务可能要在必要的时候获取另一个同时执行的任务的结果，这个就叫回调！ 阻塞： 如果卡住了调用者，调用者不能继续往下执行，就是说调用者阻塞了。 非阻塞： 如果不会卡住，可以继续执行，就是说非阻塞的。 同步异步相对于多任务而言，阻塞非阻塞相对于代码执">
+<meta property="og:description" content="同步，异步，阻塞，非阻塞？同步： 多个任务之间有先后顺序执行，一个执行完下个才能执行。 异步： 多个任务之间没有先后顺序，可以同时执行，有时候一个任务可能要在必要的时候获取另一个同时执行的任务的结果，这个就叫回调！ 阻塞： 如果卡住了调用者，调用者不能继续往下执行，就是说调用者阻塞了。 非阻塞： 如果不会卡住，可以继续执行，就是说非阻塞的。 同步异步相对于多任务而言，阻塞非阻塞相对于代码执行而言。">
 <meta property="og:locale" content="Zh">
 <meta property="article:published_time" content="2020-01-31T23:55:00.000Z">
-<meta property="article:modified_time" content="2020-11-20T06:23:06.395Z">
+<meta property="article:modified_time" content="2020-11-20T06:30:24.049Z">
 <meta property="article:author" content="Grace Koo">
 <meta property="article:tag" content="Operating System">
 <meta name="twitter:card" content="summary">
@@ -75,9 +75,9 @@
   .use-motion .logo-line-before i { left: initial; }
   .use-motion .logo-line-after i { right: initial; }
   </style>
-</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</noscript>
 
-<link rel="alternate" href="/atom.xml" title="Grace Koo's Blog" type="application/atom+xml">
+<link rel="alternate" href="/atom.xml" title="Grace Koo's Blog" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -233,7 +233,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-11-20 06:23:06" itemprop="dateModified" datetime="2020-11-20T06:23:06Z">2020-11-20</time>
+                <time title="Modified: 2020-11-20 06:30:24" itemprop="dateModified" datetime="2020-11-20T06:30:24Z">2020-11-20</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -281,13 +281,13 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="操作系统"><a href="#操作系统" class="headerlink" title="操作系统"></a>操作系统</h1><h2 id="同步，异步，阻塞，非阻塞？"><a href="#同步，异步，阻塞，非阻塞？" class="headerlink" title="同步，异步，阻塞，非阻塞？"></a>同步，异步，阻塞，非阻塞？</h2><p>同步： 多个任务之间有先后顺序执行，一个执行完下个才能执行。</p>
+        <h1 id="同步，异步，阻塞，非阻塞？"><a href="#同步，异步，阻塞，非阻塞？" class="headerlink" title="同步，异步，阻塞，非阻塞？"></a>同步，异步，阻塞，非阻塞？</h1><p>同步： 多个任务之间有先后顺序执行，一个执行完下个才能执行。</p>
 <p>异步： 多个任务之间没有先后顺序，可以同时执行，有时候一个任务可能要在必要的时候获取另一个同时执行的任务的结果，这个就叫回调！</p>
 <p>阻塞： 如果卡住了调用者，调用者不能继续往下执行，就是说调用者阻塞了。</p>
 <p>非阻塞： 如果不会卡住，可以继续执行，就是说非阻塞的。</p>
 <p>同步异步相对于多任务而言，阻塞非阻塞相对于代码执行而言。</p>
 <a id="more"></a>
-<h3 id="同步阻塞、同步非阻塞、多路I-O复用、异步I-O"><a href="#同步阻塞、同步非阻塞、多路I-O复用、异步I-O" class="headerlink" title="同步阻塞、同步非阻塞、多路I/O复用、异步I/O"></a>同步阻塞、同步非阻塞、多路I/O复用、异步I/O</h3><ul>
+<h2 id="同步阻塞、同步非阻塞、多路I-O复用、异步I-O"><a href="#同步阻塞、同步非阻塞、多路I-O复用、异步I-O" class="headerlink" title="同步阻塞、同步非阻塞、多路I/O复用、异步I/O"></a>同步阻塞、同步非阻塞、多路I/O复用、异步I/O</h2><ul>
 <li><p><strong>同步阻塞I/O:</strong> </p>
 <p>当进程调用某些涉及I/O操作的系统调用或库函数是，比如send()、accept()等，进程便暂停下来，等I/O操作完成后再继续运行。</p>
 </li>
@@ -310,13 +310,13 @@
 </ol>
 </li>
 </ul>
-<h3 id="Python异步使用场景有哪些"><a href="#Python异步使用场景有哪些" class="headerlink" title="Python异步使用场景有哪些"></a>Python异步使用场景有哪些</h3><p>异步的使用场景:</p>
+<h2 id="Python异步使用场景有哪些"><a href="#Python异步使用场景有哪些" class="headerlink" title="Python异步使用场景有哪些"></a>Python异步使用场景有哪些</h2><p>异步的使用场景:</p>
 <p>1、 不涉及共享资源，获对共享资源只读，即<strong>非互斥</strong>操作</p>
 <p>2、 <strong>没有时序上的严格关系</strong></p>
 <p>3、 不需要原子操作，或可以通过其他方式控制原子性</p>
 <p>4、 <strong>常用于IO操作等耗时操作</strong>，因为比较影响客户体验和使用性能</p>
 <p>5、 <strong>不影响主线程逻辑</strong></p>
-<h3 id="select-poll和epoll"><a href="#select-poll和epoll" class="headerlink" title="select,poll和epoll"></a>select,poll和epoll</h3><p><strong>进程监视多个描述符</strong></p>
+<h2 id="select-poll和epoll"><a href="#select-poll和epoll" class="headerlink" title="select,poll和epoll"></a>select,poll和epoll</h2><p><strong>进程监视多个描述符</strong></p>
 <p><strong>进程监视多个描述符</strong></p>
 <p><strong>进程监视多个描述符</strong></p>
 <p>Select、poll、epoll都是I/O多路复用的机制。<strong>I/O多路复用就是通过一种机制，一个进程可以监视多个描述符，一旦某个描述符就绪（通常是读写操作），能够通知程序进行相应的读写操作。</strong></p>
@@ -331,7 +331,7 @@
 </ol>
 <p>poll改善了第一个缺点：原因是它是基于<strong>链表来存储的</strong></p>
 <p>epoll改了三个缺点：<strong>epoll通过内核和用户空间共享一块内存来实现</strong>。通知机制需要很多函数回调。</p>
-<h3 id="边沿触发和水平触发"><a href="#边沿触发和水平触发" class="headerlink" title="边沿触发和水平触发"></a>边沿触发和水平触发</h3><p>水平触发是<strong>只要满足条件</strong>就发生一个 io 事件，边缘触发是指每当<strong>状态变化</strong>时发生一个 io 事件。</p>
+<h2 id="边沿触发和水平触发"><a href="#边沿触发和水平触发" class="headerlink" title="边沿触发和水平触发"></a>边沿触发和水平触发</h2><p>水平触发是<strong>只要满足条件</strong>就发生一个 io 事件，边缘触发是指每当<strong>状态变化</strong>时发生一个 io 事件。</p>
 <p>如：epoll也是实现I/O多路复用的一种方法。</p>
 <p>epoll有<strong>水平触发</strong>（level trigger，LT，LT为epoll的默认工作模式）与<strong>边缘触发</strong>（edge trigger，ET）两种工作模式。</p>
 <ul>
@@ -360,7 +360,7 @@
 <p>（1）当缓冲区由不可写变为可写时。</p>
 <p>（2）当有旧数据被发送走，即缓冲区中的内容变少的时候。</p>
 <p>（3）当缓冲区有空间可写，且应用进程对相应的描述符进行<code>EPOLL_CTL_MOD</code> 修改<code>EPOLLOUT</code>事件时。</p>
-<h2 id="进程与线程"><a href="#进程与线程" class="headerlink" title="进程与线程"></a>进程与线程</h2><h3 id="进程总结"><a href="#进程总结" class="headerlink" title="进程总结"></a>进程总结</h3><p><strong>进程：程序运行在操作系统上的一个实例，就称之为进程。进程需要相应的系统资源：内存、时间片、pid。</strong><br>创建进程：<br>首先要导入multiprocessing中的Process：<br>创建一个Process对象;<br>创建Process对象时，可以传递参数;</p>
+<h1 id="进程与线程"><a href="#进程与线程" class="headerlink" title="进程与线程"></a>进程与线程</h1><h2 id="进程总结"><a href="#进程总结" class="headerlink" title="进程总结"></a>进程总结</h2><p><strong>进程：程序运行在操作系统上的一个实例，就称之为进程。进程需要相应的系统资源：内存、时间片、pid。</strong><br>创建进程：<br>首先要导入multiprocessing中的Process：<br>创建一个Process对象;<br>创建Process对象时，可以传递参数;</p>
 <figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">p = Process(target=XXX,args=(tuple,),kwargs={key:value})</span><br><span class="line">target = XXX 指定的任务函数，不用加(),</span><br><span class="line">args=(tuple,)kwargs={key:value}给任务函数传递的参数</span><br></pre></td></tr></tbody></table></figure>
 <p>使用start()启动进程<br>结束进程<br>给子进程指定函数传递参数Demo</p>
 <figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">from</span> mulitprocessing <span class="keyword">import</span> Process</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">pro_func</span><span class="params">(name,age,**kwargs)</span>:</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">5</span>):</span><br><span class="line">        print(<span class="string">"子进程正在运行中，name=%s,age=%d,pid=%d"</span>%(name,age,os.getpid()))</span><br><span class="line">        print(kwargs)</span><br><span class="line">        time.sleep(<span class="number">0.2</span>)</span><br><span class="line"><span class="keyword">if</span> __name__ ==<span class="string">"__main__"</span>:</span><br><span class="line">    <span class="comment">#创建Process对象</span></span><br><span class="line">    p = Process(target=pro_func,args=(<span class="string">'小明'</span>,<span class="number">18</span>),kwargs={<span class="string">'m'</span>:<span class="number">20</span>})</span><br><span class="line">    <span class="comment">#启动进程</span></span><br><span class="line">    p.start()</span><br><span class="line">    time.sleep(<span class="number">1</span>)</span><br><span class="line">    <span class="comment">#1秒钟之后，立刻结束子进程</span></span><br><span class="line">    p.terminate()</span><br><span class="line">    p.join()</span><br></pre></td></tr></tbody></table></figure>
@@ -383,13 +383,13 @@
 <p>如果要使用Pool创建进程，就需要使用multiprocessing.Manager()中的Queue(),而不是multiprocessing.Queue(),否则会得到如下的错误信息：</p>
 <p>RuntimeError： Queue objects should only be shared between processs through inheritance</p>
 <figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> multiprocessing <span class="keyword">import</span> Manager,Pool</span><br><span class="line"><span class="keyword">import</span> os,time,random</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">reader</span><span class="params">(q)</span>:</span></span><br><span class="line">    print(<span class="string">"reader 启动(%s),父进程为（%s)"</span>%(os.getpid(),os.getpid()))</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(q.qsize()):</span><br><span class="line">        print(<span class="string">"reader 从Queue获取到消息:%s"</span>%q.get(<span class="literal">True</span>))</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">writer</span><span class="params">(q)</span>:</span></span><br><span class="line">    print(<span class="string">"writer 启动（%s),父进程为(%s)"</span>%(os.getpid(),os.getpid()))</span><br><span class="line">    <span class="keyword">for</span> i ini <span class="string">"itcast"</span>:</span><br><span class="line">        q.put(i)</span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    print(<span class="string">"(%s)start"</span>%os.getpid())</span><br><span class="line">    q = Manager().Queue()<span class="comment">#使用Manager中的Queue</span></span><br><span class="line">    po = Pool()</span><br><span class="line">    po.apply_async(wrtier,(q,))</span><br><span class="line">    time.sleep(<span class="number">1</span>)</span><br><span class="line">    po.apply_async(reader,(q,))</span><br><span class="line">    po.close()</span><br><span class="line">    po.join()</span><br><span class="line">    print(<span class="string">"(%s)End"</span>%os.getpid())</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="多进程，多线程，以及协程的理解"><a href="#多进程，多线程，以及协程的理解" class="headerlink" title="多进程，多线程，以及协程的理解"></a>多进程，多线程，以及协程的理解</h3><p>这个问题被问的概念相当之大。<br>进程：<strong>一个运行的程序（代码）就是一个进程，没有运行的代码叫程序，进程是系统资源分配的最小单位，进程拥有自己独立的内存空间</strong>，所有进程间数据不共享，开销大。</p>
+<h2 id="多进程，多线程，以及协程的理解"><a href="#多进程，多线程，以及协程的理解" class="headerlink" title="多进程，多线程，以及协程的理解"></a>多进程，多线程，以及协程的理解</h2><p>这个问题被问的概念相当之大。<br>进程：<strong>一个运行的程序（代码）就是一个进程，没有运行的代码叫程序，进程是系统资源分配的最小单位，进程拥有自己独立的内存空间</strong>，所有进程间数据不共享，开销大。</p>
 <p>线程: <strong>cpu调度执行的最小单位，依赖进程存在</strong>，一个进程至少有一个线程，叫主线程，而<strong>多个线程共享内存</strong>（数据共享，共享全局变量), 从而极大地提高了程序的运行效率。</p>
 <p>协程: 是一种用户态的轻量级线程，<strong>协程的调度完全由用户控制。协程拥有自己的寄存器上下文和栈。</strong>协程调度时，将<strong>寄存器上下文和栈</strong>保存到其他地方，在切回来的时候，恢复先前保存的寄存器上下文和栈，直接操作栈则基本没有内核切换的开销，可以不加锁的访问全局变量，所以上下文的切换非常快。</p>
 <p>协程是进程和线程的升级版, <strong>进程和线程都面临着内核态和用户态的切换问题而耗费许多切换时间,而协程就是用户自己控制切换的时机,不再需要陷入系统的内核态.</strong>（实际上当遇到IO操作时做切换才更有意义，（因为IO操作不用占用CPU））</p>
 <p><strong>Python里最常见的yield就是协程的思想</strong>!</p>
 <p>协程：<a href="https://www.cnblogs.com/zingp/p/8678109.html" target="_blank" rel="noopener">https://www.cnblogs.com/zingp/p/8678109.html</a></p>
-<h3 id="协程库：python-asyncio的原理"><a href="#协程库：python-asyncio的原理" class="headerlink" title="协程库：python asyncio的原理"></a>协程库：python asyncio的原理</h3><p>asyncio这个库就是实现协程，<strong>底层都是基于生成器（yield）来实现的。</strong></p>
+<h2 id="协程库：python-asyncio的原理"><a href="#协程库：python-asyncio的原理" class="headerlink" title="协程库：python asyncio的原理"></a>协程库：python asyncio的原理</h2><p>asyncio这个库就是实现协程，<strong>底层都是基于生成器（yield）来实现的。</strong></p>
 <p>在生成器的基础上实现了：</p>
 <ol>
 <li><p>现在的生成器虽然可以在暂停执行时吐出一个值，<strong>但是恢复生成器时，我们不能传入参数。</strong> （言下之意是恢复协程时，应该需要支持传入参数）</p>
@@ -399,7 +399,7 @@
 </ol>
 <figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">import</span> asyncio</span><br><span class="line">&gt;&gt;&gt;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">async</span> <span class="function"><span class="keyword">def</span> <span class="title">hello_world</span><span class="params">()</span>:</span></span><br><span class="line"><span class="meta">... </span>    print(<span class="string">'hello world'</span>)</span><br><span class="line">...</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">async</span> <span class="function"><span class="keyword">def</span> <span class="title">job1</span><span class="params">()</span>:</span></span><br><span class="line"><span class="meta">... </span>    print(<span class="string">'job1 started...'</span>)</span><br><span class="line"><span class="meta">... </span>    print(<span class="string">'job1 paused'</span>)</span><br><span class="line"><span class="meta">... </span>    <span class="keyword">await</span> hello_world()</span><br><span class="line"><span class="meta">... </span>    print(<span class="string">'job1 resumed'</span>)</span><br><span class="line"><span class="meta">... </span>    print(<span class="string">'job1 finished'</span>)</span><br><span class="line">...</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>loop = asyncio.get_event_loop()</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>loop.run_until_complete(job1())</span><br></pre></td></tr></tbody></table></figure>
 <p><a href="http://cosven.me/blogs/88" target="_blank" rel="noopener">http://cosven.me/blogs/88</a></p>
-<h3 id="僵尸进程和孤儿进程？怎么避免僵尸进程"><a href="#僵尸进程和孤儿进程？怎么避免僵尸进程" class="headerlink" title="僵尸进程和孤儿进程？怎么避免僵尸进程"></a>僵尸进程和孤儿进程？怎么避免僵尸进程</h3><ul>
+<h2 id="僵尸进程和孤儿进程？怎么避免僵尸进程"><a href="#僵尸进程和孤儿进程？怎么避免僵尸进程" class="headerlink" title="僵尸进程和孤儿进程？怎么避免僵尸进程"></a>僵尸进程和孤儿进程？怎么避免僵尸进程</h2><ul>
 <li><p>孤儿进程： <strong>父进程退出，子进程还在运行的这些子进程都是孤儿进程</strong>，孤儿进程将被init 进程（进程号为1）所收养，并<strong>由init 进程对他们完成状态收集工作</strong>。</p>
 </li>
 <li><p>僵尸进程： <strong>进程使用fork 创建子进程，如果子进程退出</strong>，而父进程并没有<strong>调用wait （join方法）获waitpid 获取子进程的退出状态信息</strong>，那么<strong>子进程的进程描述符仍然保存在系统中</strong>的这些进程是僵尸进程。</p>
@@ -414,18 +414,18 @@
 <li><p><strong>使用信号量</strong>：在<strong>父进程中处理</strong>signal handler信号，在<strong>处理程序中调用waitpid</strong>, 这样父进程不用阻塞</p>
 </li>
 </ol>
-<h3 id="进程与线程的使用场景"><a href="#进程与线程的使用场景" class="headerlink" title="进程与线程的使用场景"></a>进程与线程的使用场景</h3><p>多线程适合在IO密性型操作（读写数据操作比多的的，比如爬虫）</p>
+<h2 id="进程与线程的使用场景"><a href="#进程与线程的使用场景" class="headerlink" title="进程与线程的使用场景"></a>进程与线程的使用场景</h2><p>多线程适合在IO密性型操作（读写数据操作比多的的，比如爬虫）</p>
 <p>多进程适合在CPU密集操作（cpu操作指令比较多，如位多的的浮点运算）。</p>
-<h3 id="IO密集型和CPU密集型区别"><a href="#IO密集型和CPU密集型区别" class="headerlink" title="IO密集型和CPU密集型区别"></a>IO密集型和CPU密集型区别</h3><p>IO密集型： 系统运行，大部分的状况是CPU在等 I/O（硬盘/内存）的读/写</p>
+<h2 id="IO密集型和CPU密集型区别"><a href="#IO密集型和CPU密集型区别" class="headerlink" title="IO密集型和CPU密集型区别"></a>IO密集型和CPU密集型区别</h2><p>IO密集型： 系统运行，大部分的状况是CPU在等 I/O（硬盘/内存）的读/写</p>
 <p>CPU密集型： 大部分时间用来做计算，逻辑判断等CPU动作的程序称之CPU密集型。</p>
-<h3 id="线程，进程是并发还是并行"><a href="#线程，进程是并发还是并行" class="headerlink" title="线程，进程是并发还是并行"></a>线程，进程是并发还是并行</h3><ul>
+<h2 id="线程，进程是并发还是并行"><a href="#线程，进程是并发还是并行" class="headerlink" title="线程，进程是并发还是并行"></a>线程，进程是并发还是并行</h2><ul>
 <li><p>线程是并发，</p>
 </li>
 <li><p>进程是并行;</p>
 </li>
 </ul>
 <p>进程之间互相独立，是系统分配资源的最小单位，同一个线程中的所有线程共享资源。</p>
-<h3 id="什么是多线程竞争"><a href="#什么是多线程竞争" class="headerlink" title="什么是多线程竞争"></a>什么是多线程竞争</h3><ul>
+<h2 id="什么是多线程竞争"><a href="#什么是多线程竞争" class="headerlink" title="什么是多线程竞争"></a>什么是多线程竞争</h2><ul>
 <li><p>线程是非独立的，<strong>同一个进程里线程是数据共享的，当各个线程访问数据资源时会出现竞争状态即：数据几乎同步会被多个线程占用，造成数据混乱</strong>，即所谓的线程不安全</p>
 </li>
 <li><p>怎么解决多线程竞争问题？—- <strong>锁</strong></p>
@@ -434,7 +434,7 @@
 <p>锁的好处： 确保了某段关键代码（共享数据资源）只能由一个线程从头到尾完整地执行能解决多线程资源竞争下的原子操作问题。</p>
 <p>锁的坏处： <strong>阻止了多线程并发执行</strong>，包含锁的某段代码实际上只能以单线程模式执行，效率就大大地下降了</p>
 <p><strong>锁的致命问题: 死锁</strong></p>
-<h3 id="Python的线程同步"><a href="#Python的线程同步" class="headerlink" title="Python的线程同步"></a>Python的线程同步</h3><p> 一、 setDaemon(False)<br>当一个进程启动之后，会默认产生一个主线程，因为线程是程序执行的最小单位，当设置多线程时，<strong>主线程会创建多个子线程</strong>，在Python中，默认情况下就是setDaemon(False), <strong>主线程执行完自己的任务以后，就退出了，此时子线程会继续执行自己的任务，直到自己的任务结束。</strong></p>
+<h2 id="Python的线程同步"><a href="#Python的线程同步" class="headerlink" title="Python的线程同步"></a>Python的线程同步</h2><p> 一、 setDaemon(False)<br>当一个进程启动之后，会默认产生一个主线程，因为线程是程序执行的最小单位，当设置多线程时，<strong>主线程会创建多个子线程</strong>，在Python中，默认情况下就是setDaemon(False), <strong>主线程执行完自己的任务以后，就退出了，此时子线程会继续执行自己的任务，直到自己的任务结束。</strong></p>
 <p>例子</p>
 <figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> threading </span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">thread</span><span class="params">()</span>:</span></span><br><span class="line">    time.sleep(<span class="number">2</span>)</span><br><span class="line">    print(<span class="string">'---子线程结束---'</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">    t1 = threading.Thread(target=thread)</span><br><span class="line">    t1.start()</span><br><span class="line">    print(<span class="string">'---主线程--结束'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ ==<span class="string">'__main__'</span>:</span><br><span class="line">    main()</span><br><span class="line"><span class="comment">#执行结果</span></span><br><span class="line">---主线程--结束</span><br><span class="line">---子线程结束---</span><br></pre></td></tr></tbody></table></figure>
 <p>二、 setDaemon（True)<br>当我们使用setDaemon(True)时，<strong>这是子线程为守护线程，主线程一旦执行结束，则全部子线程被强制终止</strong></p>
@@ -445,9 +445,9 @@
 <p>没有设置守护线程时，主线程将会等待timeout的累加和这样的一段时间，时间一到，主线程结束，但是并没有杀死子线程，子线程依然可以继续执行，直到子线程全部结束，程序退出。</p>
 <p>例子</p>
 <figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> threading</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">thread</span><span class="params">()</span>:</span></span><br><span class="line">    time.sleep(<span class="number">2</span>)</span><br><span class="line">    print(<span class="string">'---子线程结束---'</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span><span class="params">()</span>:</span></span><br><span class="line">    t1 = threading.Thread(target=thread)</span><br><span class="line">    t1.setDaemon(<span class="literal">True</span>)</span><br><span class="line">    t1.start()</span><br><span class="line">    t1.join(timeout=<span class="number">1</span>)<span class="comment">#1 线程同步，主线程堵塞1s 然后主线程结束，子线程继续执行</span></span><br><span class="line">                        <span class="comment">#2 如果不设置timeout参数就等子线程结束主线程再结束</span></span><br><span class="line">                        <span class="comment">#3 如果设置了setDaemon=True和timeout=1主线程等待1s后会强制杀死子线程，然后主线程结束</span></span><br><span class="line">    print(<span class="string">'---主线程结束---'</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__==<span class="string">'__main___'</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="多线程交互访问数据，如果访问到了就不访问了"><a href="#多线程交互访问数据，如果访问到了就不访问了" class="headerlink" title="多线程交互访问数据，如果访问到了就不访问了"></a>多线程交互访问数据，如果访问到了就不访问了</h3><p>怎么避免重读？</p>
+<h2 id="多线程交互访问数据，如果访问到了就不访问了"><a href="#多线程交互访问数据，如果访问到了就不访问了" class="headerlink" title="多线程交互访问数据，如果访问到了就不访问了"></a>多线程交互访问数据，如果访问到了就不访问了</h2><p>怎么避免重读？</p>
 <p><strong>创建一个已访问数据列表，用于存储已经访问过的数据，并加上互斥锁</strong>，在多线程访问数据的时候先查看数据是否在已访问的列表中，若已存在就直接跳过。</p>
-<h3 id="并行和并发"><a href="#并行和并发" class="headerlink" title="并行和并发"></a>并行和并发</h3><ul>
+<h2 id="并行和并发"><a href="#并行和并发" class="headerlink" title="并行和并发"></a>并行和并发</h2><ul>
 <li><p>并发（concurrency)：不会在同一时刻同时运行，存在交替执行的情况。（threading）</p>
 </li>
 <li><p>并行（parallel）： 同一时刻多个任务同时在运行（multiprocessing）</p>
@@ -455,13 +455,13 @@
 </ul>
 <p>程序需要执行较多的读写、请求和回复任务的需要大量的IO操作，IO密集型操作使用并发更好<strong>（I/O密集型 - 线程 - 并发）</strong></p>
 <p>CPU运算量大的程序，使用并行会更好<strong>（CPU密集型 - 进程 - 并行）</strong></p>
-<h2 id="锁"><a href="#锁" class="headerlink" title="锁"></a>锁</h2><h3 id="锁的种类"><a href="#锁的种类" class="headerlink" title="锁的种类"></a>锁的种类</h3><p>锁(Lock)是python提供的对线程控制的对象。<strong>有互斥锁，可重入锁，死锁</strong>。</p>
+<h1 id="锁"><a href="#锁" class="headerlink" title="锁"></a>锁</h1><h2 id="锁的种类"><a href="#锁的种类" class="headerlink" title="锁的种类"></a>锁的种类</h2><p>锁(Lock)是python提供的对线程控制的对象。<strong>有互斥锁，可重入锁，死锁</strong>。</p>
 <ul>
 <li>死锁：死锁是一个资源被多次调用，而多次调用方都未能释放该资源就会造成死锁</li>
 <li>互斥锁：threading.Lock</li>
 <li>可重入锁：threading.RLock，为了支持在<strong>同一线程中多次请求同一资源</strong>，python提供了“可重入锁”：threading.RLock。<strong>RLock内部维护着一个Lock和一个counter变量，counter记录了acquire的次数，从而使得资源可以被多次acquire。</strong>直到一个线程所有的acquire都被release，其他的线程才能获得资源。</li>
 </ul>
-<h3 id="死锁"><a href="#死锁" class="headerlink" title="死锁"></a>死锁</h3><p>若干子线程在<strong>系统资源竞争</strong>时，都在<strong>等待对方对某部分资源解除占用状态</strong>，结果是<strong>谁也不愿先解锁</strong>，互相干等着，程序无法执行下去，这就是死锁。</p>
+<h2 id="死锁"><a href="#死锁" class="headerlink" title="死锁"></a>死锁</h2><p>若干子线程在<strong>系统资源竞争</strong>时，都在<strong>等待对方对某部分资源解除占用状态</strong>，结果是<strong>谁也不愿先解锁</strong>，互相干等着，程序无法执行下去，这就是死锁。</p>
 <p>必要条件:</p>
 <ol>
 <li>互斥条件</li>
@@ -483,13 +483,13 @@
 <p>死锁概念处理策略详细介绍:<a href="https://wizardforcel.gitbooks.io/wangdaokaoyan-os/content/10.html" target="_blank" rel="noopener">https://wizardforcel.gitbooks.io/wangdaokaoyan-os/content/10.html</a></p>
 <p>一个死锁的例子：</p>
 <figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> threading <span class="keyword">import</span> Lock, Thread</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">print_numbers</span><span class="params">()</span>:</span></span><br><span class="line">    print(<span class="string">"1"</span>)</span><br><span class="line">    s2.acquire()</span><br><span class="line">    print(<span class="string">"2"</span>)</span><br><span class="line">    s1.release()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">print_char</span><span class="params">()</span>:</span></span><br><span class="line">    print(<span class="string">"3"</span>)</span><br><span class="line">    s1.acquire()</span><br><span class="line">    print(<span class="string">"4"</span>)</span><br><span class="line">    s2.release()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    <span class="comment"># 创建锁</span></span><br><span class="line">    s1 = Lock()</span><br><span class="line">    s2 = Lock()</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 创建两个线程</span></span><br><span class="line">    t1 = Thread(name=<span class="string">"打印字符"</span>, target=print_numbers)</span><br><span class="line">    t2 = Thread(name=<span class="string">"打印字母"</span>, target=print_char)</span><br><span class="line">    s1.acquire()</span><br><span class="line">    s2.acquire()</span><br><span class="line">    t1.start()</span><br><span class="line">    t2.start()</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="互斥锁、线程安全"><a href="#互斥锁、线程安全" class="headerlink" title="互斥锁、线程安全"></a>互斥锁、线程安全</h3><p><strong>每个对象</strong>都对应于一个可称为’互斥锁‘的标记，这个<strong>标记用来保证在任一时刻，只能有一个线程访问该对象。</strong></p>
+<h2 id="互斥锁、线程安全"><a href="#互斥锁、线程安全" class="headerlink" title="互斥锁、线程安全"></a>互斥锁、线程安全</h2><p><strong>每个对象</strong>都对应于一个可称为’互斥锁‘的标记，这个<strong>标记用来保证在任一时刻，只能有一个线程访问该对象。</strong></p>
 <p>同一进程中的多线程之间是共享系统资源的，多个线程同时对一个对象进行操作，一个线程操作尚未结束，另一线程已经对其进行操作，导致最终结果出现错误，此时需要对被操作对象添加互斥锁，保证每个线程对该对象的操作都得到正确的结果。</p>
-<h3 id="GIL锁-全局解释器锁"><a href="#GIL锁-全局解释器锁" class="headerlink" title="GIL锁 全局解释器锁"></a>GIL锁 全局解释器锁</h3><p>作用： 限制多线程同时执行，保证同一时间只有一个线程执行，所以cython里的多线程其实是伪多线程！</p>
+<h2 id="GIL锁-全局解释器锁"><a href="#GIL锁-全局解释器锁" class="headerlink" title="GIL锁 全局解释器锁"></a>GIL锁 全局解释器锁</h2><p>作用： 限制多线程同时执行，保证同一时间只有一个线程执行，所以cython里的多线程其实是伪多线程！</p>
 <p>所以python里常常使用协程技术来代替多线程，协程是一种更轻量级的线程。</p>
 <p>进程和线程的切换时由系统决定，而协程由我们程序员自己决定，而模块gevent下切换是遇到了耗时操作时才会切换</p>
 <p>三者的关系：进程里有线程，线程里有协程。</p>
-<h3 id="乐观锁和悲观锁"><a href="#乐观锁和悲观锁" class="headerlink" title="乐观锁和悲观锁"></a>乐观锁和悲观锁</h3><ul>
+<h2 id="乐观锁和悲观锁"><a href="#乐观锁和悲观锁" class="headerlink" title="乐观锁和悲观锁"></a>乐观锁和悲观锁</h2><ul>
 <li><p>悲观锁：假定会发生并发冲突，屏蔽一切可能违反<strong>数据完整性</strong>的操作</p>
 <p><strong>互斥锁、可重入锁都属于悲观锁。</strong>当你读取或者写入数据时，你都悲观地认为有别人正在改动数据，所以你希望在你 操作数据的时候上锁，防止别人改动。当然，当已经有别人上锁，你必须等待别人操作完毕。</p>
 </li>
@@ -507,9 +507,9 @@
 <p>乐观锁与悲观锁的具体区别:</p>
 <p> <a href="http://www.cnblogs.com/Bob-FD/p/3352216.html" target="_blank" rel="noopener">http://www.cnblogs.com/Bob-FD/p/3352216.html</a></p>
 <p><a href="http://blog.csdn.net/chosen0ne/article/details/18093187" target="_blank" rel="noopener">http://blog.csdn.net/chosen0ne/article/details/18093187</a>)</p>
-<h3 id="多线程共同操作同一个数据互斥锁同步？"><a href="#多线程共同操作同一个数据互斥锁同步？" class="headerlink" title="多线程共同操作同一个数据互斥锁同步？"></a>多线程共同操作同一个数据互斥锁同步？</h3><p>两个线程循环打印数字和字母</p>
+<h2 id="多线程共同操作同一个数据互斥锁同步？"><a href="#多线程共同操作同一个数据互斥锁同步？" class="headerlink" title="多线程共同操作同一个数据互斥锁同步？"></a>多线程共同操作同一个数据互斥锁同步？</h2><p>两个线程循环打印数字和字母</p>
 <figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="comment"># @Time: 2020/11/9 11:00 </span></span><br><span class="line"><span class="comment"># @Author: GraceKoo</span></span><br><span class="line"><span class="comment"># @File: test.py</span></span><br><span class="line"><span class="comment"># @Desc:</span></span><br><span class="line"><span class="keyword">from</span> threading <span class="keyword">import</span> Lock, Thread</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">print_numbers</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, <span class="number">27</span>):</span><br><span class="line">        <span class="keyword">if</span> s1.acquire(): <span class="comment"># 判断是否得到锁</span></span><br><span class="line">            print(str(i))</span><br><span class="line">            s1.release() <span class="comment"># 释放锁</span></span><br><span class="line">            time.sleep(<span class="number">0.2</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">print_char</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">65</span>, <span class="number">91</span>):</span><br><span class="line">        <span class="keyword">if</span> s1.acquire():</span><br><span class="line">            print(chr(i))</span><br><span class="line">            s1.release()</span><br><span class="line">            time.sleep(<span class="number">0.2</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    <span class="comment"># 创建锁</span></span><br><span class="line">    s1 = Lock()</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 创建两个线程</span></span><br><span class="line">    t1 = Thread(name=<span class="string">"打印字符"</span>, target=print_numbers)</span><br><span class="line">    t2 = Thread(name=<span class="string">"打印字母"</span>, target=print_char)</span><br><span class="line">    t1.start()</span><br><span class="line">    t2.start()</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="作业调度算法"><a href="#作业调度算法" class="headerlink" title="作业调度算法"></a>作业调度算法</h2><ol>
+<h1 id="作业调度算法"><a href="#作业调度算法" class="headerlink" title="作业调度算法"></a>作业调度算法</h1><ol>
 <li><p>先来先服务(FCFS, First Come First Serve)</p>
 </li>
 <li><p><strong>短作业优先</strong>(SJF, Shortest Job First)</p>
@@ -529,10 +529,10 @@
 <li>最早截至时间优先 EDF</li>
 <li>最低松弛度优先 LLF</li>
 </ol>
-<h2 id="程序编译与链接"><a href="#程序编译与链接" class="headerlink" title="程序编译与链接"></a>程序编译与链接</h2><p>推荐: <a href="http://www.ruanyifeng.com/blog/2014/11/compiler.html" target="_blank" rel="noopener">http://www.ruanyifeng.com/blog/2014/11/compiler.html</a></p>
+<h1 id="程序编译与链接"><a href="#程序编译与链接" class="headerlink" title="程序编译与链接"></a>程序编译与链接</h1><p>推荐: <a href="http://www.ruanyifeng.com/blog/2014/11/compiler.html" target="_blank" rel="noopener">http://www.ruanyifeng.com/blog/2014/11/compiler.html</a></p>
 <p>Bulid过程可以分解为4个步骤:<strong>预处理(Prepressing), 编译(Compilation)、汇编(Assembly)、链接(Linking)</strong></p>
 <p>以c语言为例:</p>
-<h3 id="1-预处理"><a href="#1-预处理" class="headerlink" title="1 预处理"></a>1 预处理</h3><p><strong>预编译过程主要处理那些源文件中的以“#”开始的预编译指令</strong>，主要处理规则有：</p>
+<h2 id="1-预处理"><a href="#1-预处理" class="headerlink" title="1 预处理"></a>1 预处理</h2><p><strong>预编译过程主要处理那些源文件中的以“#”开始的预编译指令</strong>，主要处理规则有：</p>
 <ol>
 <li>将所有的“<strong>#define</strong>”删除，并展开所用的宏定义</li>
 <li>处理所有条件预编译指令，比如“#if”、“#ifdef”、 “#elif”、“#endif”</li>
@@ -541,19 +541,19 @@
 <li><strong>添加行号和文件名标识</strong>，以便于编译时编译器产生调试用的行号信息以及用于编译时产生编译错误或警告时可显示行号</li>
 <li>保留所有的#pragma编译器指令。</li>
 </ol>
-<h3 id="2-编译"><a href="#2-编译" class="headerlink" title="2 编译"></a>2 编译</h3><p>编译过程就是把预处理完的文件进行一系列的<strong>词法分析、语法分析、语义分析及优化</strong>后<strong>生成相应的汇编代码文件</strong>。这个过程是整个程序构建的核心部分。</p>
-<h3 id="3-汇编"><a href="#3-汇编" class="headerlink" title="3 汇编"></a>3 汇编</h3><p>汇编器是将<strong>汇编代码转化成机器可以执行的指令</strong>，每一条汇编语句几乎都是一条机器指令。经过编译、链接、汇编输出的文件<strong>成为目标文件</strong>(Object File)</p>
-<h3 id="4-链接"><a href="#4-链接" class="headerlink" title="4 链接"></a>4 链接</h3><p>链接的主要内容就是把<strong>各个模块之间相互引用的部分处理好，使各个模块可以正确的拼接。</strong><br>链接的主要过程包块地址和空间的分配（Address and Storage Allocation）、符号决议(Symbol Resolution)和重定位(Relocation)等步骤。</p>
-<h2 id="静态链接和动态链接"><a href="#静态链接和动态链接" class="headerlink" title="静态链接和动态链接"></a>静态链接和动态链接</h2><ul>
+<h2 id="2-编译"><a href="#2-编译" class="headerlink" title="2 编译"></a>2 编译</h2><p>编译过程就是把预处理完的文件进行一系列的<strong>词法分析、语法分析、语义分析及优化</strong>后<strong>生成相应的汇编代码文件</strong>。这个过程是整个程序构建的核心部分。</p>
+<h2 id="3-汇编"><a href="#3-汇编" class="headerlink" title="3 汇编"></a>3 汇编</h2><p>汇编器是将<strong>汇编代码转化成机器可以执行的指令</strong>，每一条汇编语句几乎都是一条机器指令。经过编译、链接、汇编输出的文件<strong>成为目标文件</strong>(Object File)</p>
+<h2 id="4-链接"><a href="#4-链接" class="headerlink" title="4 链接"></a>4 链接</h2><p>链接的主要内容就是把<strong>各个模块之间相互引用的部分处理好，使各个模块可以正确的拼接。</strong><br>链接的主要过程包块地址和空间的分配（Address and Storage Allocation）、符号决议(Symbol Resolution)和重定位(Relocation)等步骤。</p>
+<h1 id="静态链接和动态链接"><a href="#静态链接和动态链接" class="headerlink" title="静态链接和动态链接"></a>静态链接和动态链接</h1><ul>
 <li><p>静态链接方法：<strong>静态链接的时候，载入代码就会把程序会用到的动态代码或动态代码的地址确定下来</strong><br>静态库的链接可以使用静态链接，动态链接库也可以使用这种方法链接导入库</p>
 </li>
 <li><p>动态链接方法：使用这种方式的程序并不在一开始就完成动态链接，而是<strong>直到真正调用动态库代码时，载入程序才计算(被调用的那部分)动态代码的逻辑地址</strong>，然后等到某个时候，程序又需要调用另外某块动态代码时，载入程序又去计算这部分代码的逻辑地址，所以，这种方式<strong>使程序初始化时间较短，但运行期间的性能比不上静态链接的程序</strong></p>
 </li>
 </ul>
-<h2 id="虚拟内存技术"><a href="#虚拟内存技术" class="headerlink" title="虚拟内存技术"></a>虚拟内存技术</h2><p>虚拟存储器是指具有<strong>请求调入</strong>功能和<strong>置换功能</strong>,能<strong>从逻辑上对内存容量加以扩充的一种存储系统.</strong></p>
-<h2 id="分页和分段"><a href="#分页和分段" class="headerlink" title="分页和分段"></a>分页和分段</h2><p>分页: <strong>用户程序的地址空间被划分成若干固定大小的区域，称为“页”</strong>，相应地，<strong>内存空间分成若干个物理块，页和块的大小相等</strong>。可将用户程序的任一页放在内存的任一块中，实现了离散分配。</p>
+<h1 id="虚拟内存技术"><a href="#虚拟内存技术" class="headerlink" title="虚拟内存技术"></a>虚拟内存技术</h1><p>虚拟存储器是指具有<strong>请求调入</strong>功能和<strong>置换功能</strong>,能<strong>从逻辑上对内存容量加以扩充的一种存储系统.</strong></p>
+<h1 id="分页和分段"><a href="#分页和分段" class="headerlink" title="分页和分段"></a>分页和分段</h1><p>分页: <strong>用户程序的地址空间被划分成若干固定大小的区域，称为“页”</strong>，相应地，<strong>内存空间分成若干个物理块，页和块的大小相等</strong>。可将用户程序的任一页放在内存的任一块中，实现了离散分配。</p>
 <p>分段: 将用户程序地址空间分成<strong>若干个大小不等的段</strong>，每段可以定义一组相对完整的逻辑信息。存储分配时，以段为单位，<strong>段与段在内存中可以不相邻接，也实现了离散分配。</strong></p>
-<h2 id="分页与分段的主要区别"><a href="#分页与分段的主要区别" class="headerlink" title="分页与分段的主要区别"></a>分页与分段的主要区别</h2><ol>
+<h1 id="分页与分段的主要区别"><a href="#分页与分段的主要区别" class="headerlink" title="分页与分段的主要区别"></a>分页与分段的主要区别</h1><ol>
 <li><p><strong>页是信息的物理单位</strong>,分页是为了实现非连续分配,以便解决内存碎片问题,或者说分页是由于<strong>系统管理的需要</strong>.</p>
 <p><strong>段是信息的逻辑单位</strong>,它含有一组意义相对完整的信息,分段的目的是为了更好地实现共享,<strong>满足用户的需要</strong>.</p>
 </li>
@@ -564,7 +564,7 @@
 <p>分段的地址空间是二维的.</p>
 </li>
 </ol>
-<h2 id="页面置换算法"><a href="#页面置换算法" class="headerlink" title="页面置换算法"></a>页面置换算法</h2><ol>
+<h1 id="页面置换算法"><a href="#页面置换算法" class="headerlink" title="页面置换算法"></a>页面置换算法</h1><ol>
 <li><strong>最佳置换算法OPT</strong>:不可能实现，选择的被淘汰的页面将是以后永不使用的，或是在最长（未来）时间内不再被访问的页面。采用最佳置换算法通常可保证<strong>最低的缺页率</strong>。</li>
 <li><strong>先进先出FIFO</strong></li>
 <li><strong>最近最久未使用算法LRU</strong>: 最近一段时间里最久没有使用过的页面予以置换.</li>
@@ -689,7 +689,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#操作系统"><span class="nav-number">1.</span> <span class="nav-text">操作系统</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#同步，异步，阻塞，非阻塞？"><span class="nav-number">1.1.</span> <span class="nav-text">同步，异步，阻塞，非阻塞？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#同步阻塞、同步非阻塞、多路I-O复用、异步I-O"><span class="nav-number">1.1.1.</span> <span class="nav-text">同步阻塞、同步非阻塞、多路I&#x2F;O复用、异步I&#x2F;O</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Python异步使用场景有哪些"><span class="nav-number">1.1.2.</span> <span class="nav-text">Python异步使用场景有哪些</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#select-poll和epoll"><span class="nav-number">1.1.3.</span> <span class="nav-text">select,poll和epoll</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#边沿触发和水平触发"><span class="nav-number">1.1.4.</span> <span class="nav-text">边沿触发和水平触发</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进程与线程"><span class="nav-number">1.2.</span> <span class="nav-text">进程与线程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#进程总结"><span class="nav-number">1.2.1.</span> <span class="nav-text">进程总结</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多进程，多线程，以及协程的理解"><span class="nav-number">1.2.2.</span> <span class="nav-text">多进程，多线程，以及协程的理解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#协程库：python-asyncio的原理"><span class="nav-number">1.2.3.</span> <span class="nav-text">协程库：python asyncio的原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#僵尸进程和孤儿进程？怎么避免僵尸进程"><span class="nav-number">1.2.4.</span> <span class="nav-text">僵尸进程和孤儿进程？怎么避免僵尸进程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#进程与线程的使用场景"><span class="nav-number">1.2.5.</span> <span class="nav-text">进程与线程的使用场景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IO密集型和CPU密集型区别"><span class="nav-number">1.2.6.</span> <span class="nav-text">IO密集型和CPU密集型区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#线程，进程是并发还是并行"><span class="nav-number">1.2.7.</span> <span class="nav-text">线程，进程是并发还是并行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#什么是多线程竞争"><span class="nav-number">1.2.8.</span> <span class="nav-text">什么是多线程竞争</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Python的线程同步"><span class="nav-number">1.2.9.</span> <span class="nav-text">Python的线程同步</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多线程交互访问数据，如果访问到了就不访问了"><span class="nav-number">1.2.10.</span> <span class="nav-text">多线程交互访问数据，如果访问到了就不访问了</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#并行和并发"><span class="nav-number">1.2.11.</span> <span class="nav-text">并行和并发</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#锁"><span class="nav-number">1.3.</span> <span class="nav-text">锁</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#锁的种类"><span class="nav-number">1.3.1.</span> <span class="nav-text">锁的种类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#死锁"><span class="nav-number">1.3.2.</span> <span class="nav-text">死锁</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#互斥锁、线程安全"><span class="nav-number">1.3.3.</span> <span class="nav-text">互斥锁、线程安全</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GIL锁-全局解释器锁"><span class="nav-number">1.3.4.</span> <span class="nav-text">GIL锁 全局解释器锁</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#乐观锁和悲观锁"><span class="nav-number">1.3.5.</span> <span class="nav-text">乐观锁和悲观锁</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多线程共同操作同一个数据互斥锁同步？"><span class="nav-number">1.3.6.</span> <span class="nav-text">多线程共同操作同一个数据互斥锁同步？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#作业调度算法"><span class="nav-number">1.4.</span> <span class="nav-text">作业调度算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#程序编译与链接"><span class="nav-number">1.5.</span> <span class="nav-text">程序编译与链接</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-预处理"><span class="nav-number">1.5.1.</span> <span class="nav-text">1 预处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-编译"><span class="nav-number">1.5.2.</span> <span class="nav-text">2 编译</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-汇编"><span class="nav-number">1.5.3.</span> <span class="nav-text">3 汇编</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-链接"><span class="nav-number">1.5.4.</span> <span class="nav-text">4 链接</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#静态链接和动态链接"><span class="nav-number">1.6.</span> <span class="nav-text">静态链接和动态链接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#虚拟内存技术"><span class="nav-number">1.7.</span> <span class="nav-text">虚拟内存技术</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分页和分段"><span class="nav-number">1.8.</span> <span class="nav-text">分页和分段</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分页与分段的主要区别"><span class="nav-number">1.9.</span> <span class="nav-text">分页与分段的主要区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#页面置换算法"><span class="nav-number">1.10.</span> <span class="nav-text">页面置换算法</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#同步，异步，阻塞，非阻塞？"><span class="nav-number">1.</span> <span class="nav-text">同步，异步，阻塞，非阻塞？</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#同步阻塞、同步非阻塞、多路I-O复用、异步I-O"><span class="nav-number">1.1.</span> <span class="nav-text">同步阻塞、同步非阻塞、多路I&#x2F;O复用、异步I&#x2F;O</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python异步使用场景有哪些"><span class="nav-number">1.2.</span> <span class="nav-text">Python异步使用场景有哪些</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#select-poll和epoll"><span class="nav-number">1.3.</span> <span class="nav-text">select,poll和epoll</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#边沿触发和水平触发"><span class="nav-number">1.4.</span> <span class="nav-text">边沿触发和水平触发</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#进程与线程"><span class="nav-number">2.</span> <span class="nav-text">进程与线程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#进程总结"><span class="nav-number">2.1.</span> <span class="nav-text">进程总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多进程，多线程，以及协程的理解"><span class="nav-number">2.2.</span> <span class="nav-text">多进程，多线程，以及协程的理解</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#协程库：python-asyncio的原理"><span class="nav-number">2.3.</span> <span class="nav-text">协程库：python asyncio的原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#僵尸进程和孤儿进程？怎么避免僵尸进程"><span class="nav-number">2.4.</span> <span class="nav-text">僵尸进程和孤儿进程？怎么避免僵尸进程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进程与线程的使用场景"><span class="nav-number">2.5.</span> <span class="nav-text">进程与线程的使用场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IO密集型和CPU密集型区别"><span class="nav-number">2.6.</span> <span class="nav-text">IO密集型和CPU密集型区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#线程，进程是并发还是并行"><span class="nav-number">2.7.</span> <span class="nav-text">线程，进程是并发还是并行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是多线程竞争"><span class="nav-number">2.8.</span> <span class="nav-text">什么是多线程竞争</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python的线程同步"><span class="nav-number">2.9.</span> <span class="nav-text">Python的线程同步</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多线程交互访问数据，如果访问到了就不访问了"><span class="nav-number">2.10.</span> <span class="nav-text">多线程交互访问数据，如果访问到了就不访问了</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#并行和并发"><span class="nav-number">2.11.</span> <span class="nav-text">并行和并发</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#锁"><span class="nav-number">3.</span> <span class="nav-text">锁</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#锁的种类"><span class="nav-number">3.1.</span> <span class="nav-text">锁的种类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#死锁"><span class="nav-number">3.2.</span> <span class="nav-text">死锁</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#互斥锁、线程安全"><span class="nav-number">3.3.</span> <span class="nav-text">互斥锁、线程安全</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GIL锁-全局解释器锁"><span class="nav-number">3.4.</span> <span class="nav-text">GIL锁 全局解释器锁</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#乐观锁和悲观锁"><span class="nav-number">3.5.</span> <span class="nav-text">乐观锁和悲观锁</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多线程共同操作同一个数据互斥锁同步？"><span class="nav-number">3.6.</span> <span class="nav-text">多线程共同操作同一个数据互斥锁同步？</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#作业调度算法"><span class="nav-number">4.</span> <span class="nav-text">作业调度算法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#程序编译与链接"><span class="nav-number">5.</span> <span class="nav-text">程序编译与链接</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-预处理"><span class="nav-number">5.1.</span> <span class="nav-text">1 预处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-编译"><span class="nav-number">5.2.</span> <span class="nav-text">2 编译</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-汇编"><span class="nav-number">5.3.</span> <span class="nav-text">3 汇编</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-链接"><span class="nav-number">5.4.</span> <span class="nav-text">4 链接</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#静态链接和动态链接"><span class="nav-number">6.</span> <span class="nav-text">静态链接和动态链接</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#虚拟内存技术"><span class="nav-number">7.</span> <span class="nav-text">虚拟内存技术</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#分页和分段"><span class="nav-number">8.</span> <span class="nav-text">分页和分段</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#分页与分段的主要区别"><span class="nav-number">9.</span> <span class="nav-text">分页与分段的主要区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#页面置换算法"><span class="nav-number">10.</span> <span class="nav-text">页面置换算法</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

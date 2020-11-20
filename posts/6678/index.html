@@ -21,12 +21,12 @@
     var CONFIG = {"hostname":"unknown.yuzhouwan.com","root":"/","scheme":"Muse","version":"0.0.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":false,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="计算机网络三次握手 客户端通过向服务器端发送一个请求报文SYN来创建一个主动打开。 Server端接受连接后回复ACK报文，并为这次连接分配资源。 Client端接收到ACK报文后也向Server段发送报文，并分配资源，这样TCP连接就建立了。">
+  <meta name="description" content="三次握手 客户端通过向服务器端发送一个请求报文SYN来创建一个主动打开。 Server端接受连接后回复ACK报文，并为这次连接分配资源。 Client端接收到ACK报文后也向Server段发送报文，并分配资源，这样TCP连接就建立了。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="计算机网络">
 <meta property="og:url" content="https://unknown.yuzhouwan.com/posts/6678/index.html">
 <meta property="og:site_name" content="Grace Koo&#39;s Blog">
-<meta property="og:description" content="计算机网络三次握手 客户端通过向服务器端发送一个请求报文SYN来创建一个主动打开。 Server端接受连接后回复ACK报文，并为这次连接分配资源。 Client端接收到ACK报文后也向Server段发送报文，并分配资源，这样TCP连接就建立了。">
+<meta property="og:description" content="三次握手 客户端通过向服务器端发送一个请求报文SYN来创建一个主动打开。 Server端接受连接后回复ACK报文，并为这次连接分配资源。 Client端接收到ACK报文后也向Server段发送报文，并分配资源，这样TCP连接就建立了。">
 <meta property="og:locale" content="Zh">
 <meta property="og:image" content="https://unknown.yuzhouwan.com/images/data/Screen%20Shot%202020-11-08%20at%2000.57.08.png">
 <meta property="og:image" content="https://unknown.yuzhouwan.com/images/data/Screen%20Shot%202020-11-08%20at%2000.57.38.png">
@@ -37,7 +37,7 @@
 <meta property="og:image" content="https://unknown.yuzhouwan.com/images/data/Screen%20Shot%202020-11-08%20at%2015.42.14.png">
 <meta property="og:image" content="https://unknown.yuzhouwan.com/images/data/%E6%88%AA%E5%B1%8F2020-11-17%2016.52.08.png">
 <meta property="article:published_time" content="2020-01-30T23:55:00.000Z">
-<meta property="article:modified_time" content="2020-11-20T06:23:23.642Z">
+<meta property="article:modified_time" content="2020-11-20T06:32:38.376Z">
 <meta property="article:author" content="Grace Koo">
 <meta property="article:tag" content="Computer Network">
 <meta name="twitter:card" content="summary">
@@ -84,9 +84,9 @@
   .use-motion .logo-line-before i { left: initial; }
   .use-motion .logo-line-after i { right: initial; }
   </style>
-</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</noscript>
 
-<link rel="alternate" href="/atom.xml" title="Grace Koo's Blog" type="application/atom+xml">
+<link rel="alternate" href="/atom.xml" title="Grace Koo's Blog" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -242,7 +242,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-11-20 06:23:23" itemprop="dateModified" datetime="2020-11-20T06:23:23Z">2020-11-20</time>
+                <time title="Modified: 2020-11-20 06:32:38" itemprop="dateModified" datetime="2020-11-20T06:32:38Z">2020-11-20</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -290,14 +290,14 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="计算机网络"><a href="#计算机网络" class="headerlink" title="计算机网络"></a>计算机网络</h1><h2 id="三次握手"><a href="#三次握手" class="headerlink" title="三次握手"></a>三次握手</h2><ol>
+        <h1 id="三次握手"><a href="#三次握手" class="headerlink" title="三次握手"></a>三次握手</h1><ol>
 <li>客户端通过向服务器端<strong>发送一个请求报文SYN</strong>来创建一个主动打开。</li>
 <li>Server端接受连接后<strong>回复ACK报文</strong>，并为这次连接分配资源。</li>
 <li>Client端接收到<strong>ACK报文</strong>后也向Server段发送报文，并分配资源，这样TCP连接就建立了。</li>
 </ol>
 <a id="more"></a>
 <p><img data-src="/images/data/Screen Shot 2020-11-08 at 00.57.08.png" alt="Screen Shot 2020-11-08 at 00.57.08"></p>
-<h2 id="四次挥手"><a href="#四次挥手" class="headerlink" title="四次挥手"></a>四次挥手</h2><p><em>注意: 中断连接端可以是客户端，也可以是服务器端. 下面仅以客户端断开连接举例, 反之亦然.</em></p>
+<h1 id="四次挥手"><a href="#四次挥手" class="headerlink" title="四次挥手"></a>四次挥手</h1><p><em>注意: 中断连接端可以是客户端，也可以是服务器端. 下面仅以客户端断开连接举例, 反之亦然.</em></p>
 <ol>
 <li>客户端发送一个<strong>FIN报文</strong>. 客户端进入 <strong>FIN-WAIT 状态</strong>. 该状态下客户端只接收数据, 不再发送数据.</li>
 <li>服务器接收到带有 FIN = 1 的数据分段, 发送带有 <strong>ACK = 1 的剩余数据分段</strong>, 确认收到客户端发来的 FIN 信息.</li>
@@ -309,9 +309,9 @@
 </blockquote>
 <p><img data-src="/images/data/Screen Shot 2020-11-08 at 00.57.38.png" alt="Screen Shot 2020-11-08 at 00.57.38"></p>
 <p>图解: <a href="http://blog.csdn.net/whuslei/article/details/6667471" target="_blank" rel="noopener">http://blog.csdn.net/whuslei/article/details/6667471</a></p>
-<h2 id="七层网络模型"><a href="#七层网络模型" class="headerlink" title="七层网络模型"></a>七层网络模型</h2><p>网络通信的分层模型讲起：七层模型，也称OSI (Open System Interconnection)模型。</p>
+<h1 id="七层网络模型"><a href="#七层网络模型" class="headerlink" title="七层网络模型"></a>七层网络模型</h1><p>网络通信的分层模型讲起：七层模型，也称OSI (Open System Interconnection)模型。</p>
 <p><img data-src="/images/data/Screen Shot 2020-11-08 at 11.56.48.png" alt="Screen Shot 2020-11-08 at 11.56.48"></p>
-<h2 id="TCP和UDP对比"><a href="#TCP和UDP对比" class="headerlink" title="TCP和UDP对比"></a>TCP和UDP对比</h2><div class="table-container">
+<h1 id="TCP和UDP对比"><a href="#TCP和UDP对比" class="headerlink" title="TCP和UDP对比"></a>TCP和UDP对比</h1><div class="table-container">
 <table>
 <thead>
 <tr>
@@ -360,7 +360,7 @@
 <li>虽然 UDP 并没有 TCP 传输来的准确，但是也能在很多实时性要求高的地方有所作为</li>
 <li>对数据准确性要求高，速度可以相对较慢的，可以选用TCP</li>
 </ul>
-<h2 id="Socket-Ip-address-TCP-UDP-port"><a href="#Socket-Ip-address-TCP-UDP-port" class="headerlink" title="Socket(Ip address+ TCP/UDP + port)"></a>Socket(Ip address+ TCP/UDP + port)</h2><p><strong>套接字用于描述IP地址和端口，是一个通信链的句柄。</strong>应用程序通过套接字向网络发出请求或应答网络请求。注意的是套接字既不是程序也不是协议，只是<strong>操作系统提供给通信层的一组抽象API接口。</strong></p>
+<h1 id="Socket-Ip-address-TCP-UDP-port"><a href="#Socket-Ip-address-TCP-UDP-port" class="headerlink" title="Socket(Ip address+ TCP/UDP + port)"></a>Socket(Ip address+ TCP/UDP + port)</h1><p><strong>套接字用于描述IP地址和端口，是一个通信链的句柄。</strong>应用程序通过套接字向网络发出请求或应答网络请求。注意的是套接字既不是程序也不是协议，只是<strong>操作系统提供给通信层的一组抽象API接口。</strong></p>
 <p>Socket=Ip address+ TCP/UDP + port</p>
 <p><img data-src="/images/data/Screen Shot 2020-11-08 at 15.31.08.png" alt="Screen Shot 2020-11-08 at 15.31.08"></p>
 <p>推荐: <a href="http://www.360doc.com/content/11/0609/15/5482098_122692444.shtml" target="_blank" rel="noopener">http://www.360doc.com/content/11/0609/15/5482098_122692444.shtml</a></p>
@@ -376,7 +376,7 @@
 <p>但是只有 SOCK_STREAM （TCP）和 SOCK_DGRAM （UDP）是比较常见的。</p>
 </li>
 </ul>
-<h2 id="怎么强行关闭客户端和服务器的连接"><a href="#怎么强行关闭客户端和服务器的连接" class="headerlink" title="怎么强行关闭客户端和服务器的连接"></a>怎么强行关闭客户端和服务器的连接</h2><ul>
+<h1 id="怎么强行关闭客户端和服务器的连接"><a href="#怎么强行关闭客户端和服务器的连接" class="headerlink" title="怎么强行关闭客户端和服务器的连接"></a>怎么强行关闭客户端和服务器的连接</h1><ul>
 <li><p>关闭TCP连接是指TCP协议层的东西，就是两个TCP端之间交换了一些协议包（FIN，RST等），具体的交换过程可以看TCP协议。</p>
 </li>
 <li><p>而关闭socket是指<strong>关闭用户应用程序中的socket句柄，释放相关资源</strong>。但是当用户<strong>关闭socket句柄时会隐含的触发TCP连接的关闭过程</strong>。</p>
@@ -393,7 +393,7 @@
 <li>SD_SEND表明<strong>关闭发送通道</strong>，TCP会将发送缓存中的数据都发送完毕并<strong>收到所有数据的ACK后向对端发送FIN包</strong>，表明本端没有更多数据发送。这个是一个优雅关闭过程。</li>
 <li>SD_BOTH则表示<strong>同时关闭接收通道和发送通道</strong>。</li>
 </ul>
-<h2 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h2><h3 id="HTTP状态码"><a href="#HTTP状态码" class="headerlink" title="HTTP状态码"></a>HTTP状态码</h3><div class="table-container">
+<h1 id="HTTP"><a href="#HTTP" class="headerlink" title="HTTP"></a>HTTP</h1><h2 id="HTTP状态码"><a href="#HTTP状态码" class="headerlink" title="HTTP状态码"></a>HTTP状态码</h2><div class="table-container">
 <table>
 <thead>
 <tr>
@@ -426,7 +426,7 @@
 </table>
 </div>
 <p>403: Forbidden<br>404: Not Found</p>
-<h3 id="HTTP1-0和HTTP1-1"><a href="#HTTP1-0和HTTP1-1" class="headerlink" title="HTTP1.0和HTTP1.1"></a>HTTP1.0和HTTP1.1</h3><p>推荐: <a href="http://blog.csdn.net/elifefly/article/details/3964766" target="_blank" rel="noopener">http://blog.csdn.net/elifefly/article/details/3964766</a></p>
+<h2 id="HTTP1-0和HTTP1-1"><a href="#HTTP1-0和HTTP1-1" class="headerlink" title="HTTP1.0和HTTP1.1"></a>HTTP1.0和HTTP1.1</h2><p>推荐: <a href="http://blog.csdn.net/elifefly/article/details/3964766" target="_blank" rel="noopener">http://blog.csdn.net/elifefly/article/details/3964766</a></p>
 <p><strong>HTTP 1.0*规定浏览器与服务器只保持短暂的连接</strong>，浏览器的每次请求都需要与服务器建立一个<em>TCP</em>连接，服务器完成请求处理后立即断开<em>TCP</em>连接，服务器不跟踪每个客户也不记录过去的请求。</p>
 <p><strong>HTTP1.1改进点</strong></p>
 <ol>
@@ -435,7 +435,7 @@
 <li><strong>增加请求头Host字段</strong>：一个服务器多个虚拟Web站点。</li>
 <li><strong>身份认证,状态管理,Cache缓存等机制</strong>相关的请求头和响应头。</li>
 </ol>
-<h3 id="HTTP常见请求头与响应头"><a href="#HTTP常见请求头与响应头" class="headerlink" title="HTTP常见请求头与响应头"></a>HTTP常见请求头与响应头</h3><p>常见请求头：Request</p>
+<h2 id="HTTP常见请求头与响应头"><a href="#HTTP常见请求头与响应头" class="headerlink" title="HTTP常见请求头与响应头"></a>HTTP常见请求头与响应头</h2><p>常见请求头：Request</p>
 <div class="table-container">
 <table>
 <thead>
@@ -508,7 +508,7 @@
 </div>
 <p><a href="https://itbilu.com/other/relate/EJ3fKUwUx.html" target="_blank" rel="noopener">https://itbilu.com/other/relate/EJ3fKUwUx.html</a></p>
 <p><a href="https://juejin.im/post/6844903745004765198" target="_blank" rel="noopener">https://juejin.im/post/6844903745004765198</a></p>
-<h3 id="HTTP协议以及协议头部中表示数据类型的字段"><a href="#HTTP协议以及协议头部中表示数据类型的字段" class="headerlink" title="HTTP协议以及协议头部中表示数据类型的字段"></a>HTTP协议以及协议头部中表示数据类型的字段</h3><div class="table-container">
+<h2 id="HTTP协议以及协议头部中表示数据类型的字段"><a href="#HTTP协议以及协议头部中表示数据类型的字段" class="headerlink" title="HTTP协议以及协议头部中表示数据类型的字段"></a>HTTP协议以及协议头部中表示数据类型的字段</h2><div class="table-container">
 <table>
 <thead>
 <tr>
@@ -540,7 +540,7 @@
 </tbody>
 </table>
 </div>
-<h3 id="HTTP请求方法"><a href="#HTTP请求方法" class="headerlink" title="HTTP请求方法"></a>HTTP请求方法</h3><p>HTTP请求8种方法介绍<br>HTTP/1.1协议中共定义了8种HTTP请求方法，HTTP请求方法也被叫做“请求动作”，不同的方法规定了不同的操作指定的资源方式。服务端也会根据不同的请求方法做不同的响应。</p>
+<h2 id="HTTP请求方法"><a href="#HTTP请求方法" class="headerlink" title="HTTP请求方法"></a>HTTP请求方法</h2><p>HTTP请求8种方法介绍<br>HTTP/1.1协议中共定义了8种HTTP请求方法，HTTP请求方法也被叫做“请求动作”，不同的方法规定了不同的操作指定的资源方式。服务端也会根据不同的请求方法做不同的响应。</p>
 <ol>
 <li>GET</li>
 </ol>
@@ -581,7 +581,7 @@
 </ol>
 <p>PATCH方法出现的较晚，它在2010年的RFC 5789标准中被定义。PATCH请求与PUT请求类似，同样用于资源的更新。二者有以下两点不同：</p>
 <p><strong>但PATCH一般用于资源的部分更新，而PUT一般用于资源的整体更新。</strong><br>当资源不存在时，PATCH会创建一个新的资源，而PUT只会对已在资源进行更新。</p>
-<h3 id="Post和Get"><a href="#Post和Get" class="headerlink" title="Post和Get"></a>Post和Get</h3><p><a href="http://www.cnblogs.com/nankezhishi/archive/2012/06/09/getandpost.html" target="_blank" rel="noopener">GET和POST有什么区别？及为什么网上的多数答案都是错的</a><br><a href="https://www.zhihu.com/question/31640769?rf=37401322" target="_blank" rel="noopener">知乎回答</a></p>
+<h2 id="Post和Get"><a href="#Post和Get" class="headerlink" title="Post和Get"></a>Post和Get</h2><p><a href="http://www.cnblogs.com/nankezhishi/archive/2012/06/09/getandpost.html" target="_blank" rel="noopener">GET和POST有什么区别？及为什么网上的多数答案都是错的</a><br><a href="https://www.zhihu.com/question/31640769?rf=37401322" target="_blank" rel="noopener">知乎回答</a></p>
 <p>get: <a href="http://tools.ietf.org/html/rfc2616#section-9.3" target="_blank" rel="noopener">RFC 2616 - Hypertext Transfer Protocol — HTTP/1.1</a><br>post: <a href="http://tools.ietf.org/html/rfc2616#section-9.5" target="_blank" rel="noopener">RFC 2616 - Hypertext Transfer Protocol — HTTP/1.1</a></p>
 <p>HTTP协议用法的约定，使用上的区别：</p>
 <ol>
@@ -596,14 +596,14 @@
 <blockquote>
 <p>什么是幂等性？简单来说意味着对同一URL的多个请求应该返回同样的结果。</p>
 </blockquote>
-<h3 id="幂等-Idempotence"><a href="#幂等-Idempotence" class="headerlink" title="幂等 Idempotence"></a>幂等 Idempotence</h3><p><strong>HTTP方法的幂等性是指用户对于同一操作发起的一次请求或者多次请求的结果是一致的，不会因为多次点击而产生了副作用</strong>。(注意是副作用)</p>
+<h2 id="幂等-Idempotence"><a href="#幂等-Idempotence" class="headerlink" title="幂等 Idempotence"></a>幂等 Idempotence</h2><p><strong>HTTP方法的幂等性是指用户对于同一操作发起的一次请求或者多次请求的结果是一致的，不会因为多次点击而产生了副作用</strong>。(注意是副作用)</p>
 <p>1.、HEAD：向服务器索要与GET请求相一致的响应，只不过响应体将不会被返回。这一方法可以在不必传输整个响应内容的情况下，就可以获取包含在响应消息头中的元信息。<br>2、GET：<strong>向特定的资源发出请求数据。（要数据）</strong><br>3、POST：<strong>向指定资源提交数据进行处理请求（给数据）</strong>（例如提交表单或者上传文件）。数据被包含在请求体中。POST请求可能会导致新的资源的创建和/或已有资源的修改。<br>4、PUT：向指定资源位置上传其最新内容。<br>5、DELETE：请求服务器删除Request-URI所标识的资源。 </p>
 <p>如：</p>
 <p><code>GET http://www.bank.com/account/123456</code>，不会改变资源的状态，不论调用一次还是N次都没有副作用。请注意，<strong>这里强调的是一次和N次具有相同的副作用，而不是每次GET的结果相同。</strong><code>GET http://www.news.com/latest-news</code>这个HTTP请求可能会每次得到不同的结果，但它本身并没有产生任何副作用，<strong>因而是满足幂等性的。</strong></p>
 <p>DELETE方法用于删除资源，有副作用，但它<strong>应该满足幂等性</strong>。比如：<code>DELETE http://www.forum.com/article/4231</code>，调用一次和N次对系统产生的副作用是相同的，即删掉id为4231的帖子；因此，调用者可以多次调用或刷新页面而不必担心引起错误。</p>
 <p>POST所对应的URI并非创建的资源本身，而是资源的接收者。比如：<code>POST http://www.forum.com/articles</code>的语义是在<code>http://www.forum.com/articles</code>下创建一篇帖子，HTTP响应中应包含帖子的创建状态以及帖子的URI。两次相同的POST请求会在服务器端创建两份资源，它们具有不同的URI；所以，<strong>POST方法不具备幂等性</strong>。</p>
 <p>PUT所对应的URI是要创建或更新的资源本身。比如：<code>PUT http://www.forum/articles/4231</code>的语义是创建或更新ID为4231的帖子。对同一URI进行多次PUT的副作用和一次PUT是相同的；因此，<strong>PUT方法具有幂等性</strong>。</p>
-<h3 id="HTTP与HTTPS"><a href="#HTTP与HTTPS" class="headerlink" title="HTTP与HTTPS"></a>HTTP与HTTPS</h3><p>HTTPS协议是由<strong>SSL+HTTP协议构建的可进行加密传输</strong>、身份认证的网络协议，要比http协议安全。(SSL: Secure Sockets Layer)</p>
+<h2 id="HTTP与HTTPS"><a href="#HTTP与HTTPS" class="headerlink" title="HTTP与HTTPS"></a>HTTP与HTTPS</h2><p>HTTPS协议是由<strong>SSL+HTTP协议构建的可进行加密传输</strong>、身份认证的网络协议，要比http协议安全。(SSL: Secure Sockets Layer)</p>
 <p>HTTPS和HTTP的区别主要如下：</p>
 <ol>
 <li>https协议需要到ca申请证书，一般免费证书较少，因而需要一定费用。</li>
@@ -613,7 +613,7 @@
 <li><p>http和https使用的是完全不同的连接方式，用的端口也不一样，前者是80，后者是443。</p>
 </li>
 </ol>
-<h2 id="URL的形式"><a href="#URL的形式" class="headerlink" title="URL的形式"></a>URL的形式</h2><ul>
+<h1 id="URL的形式"><a href="#URL的形式" class="headerlink" title="URL的形式"></a>URL的形式</h1><ul>
 <li>定义</li>
 </ul>
 <p>URL(Uniform Resource Locator,统一资源定位符)，定义资源在网上唯一的地址。</p>
@@ -646,13 +646,13 @@
 <p>可选，用于给动态网页（如使用CGI、ISAPI、PHP/JSP/ASP/ASP。NET等技术制作的网页）传递参数，可有多个参数，用“&amp;”符号隔开，每个参数的名和值用“=”符号隔开。</p>
 <figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//变量url即具有了url模块所提供的方法</span><br><span class="line">var url = require(<span class="string">'url'</span>);</span><br><span class="line">var queryUrl = <span class="string">"http://localhost:8888/bb?name=bigbear&amp;memo-helloworld"</span>;</span><br><span class="line">console.log(typeof url.parse(queryUrl));</span><br><span class="line">console.log(url.parse(queryUrl));</span><br></pre></td></tr></tbody></table></figure>
 <figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">object</span><br><span class="line">Url {</span><br><span class="line">  protocol: <span class="string">'http:'</span>,</span><br><span class="line">  slashes: true,</span><br><span class="line">  auth: null,</span><br><span class="line">  host: <span class="string">'localhost:8888'</span>,</span><br><span class="line">  port: <span class="string">'8888'</span>,</span><br><span class="line">  hostname: <span class="string">'localhost'</span>,</span><br><span class="line">  hash: null,</span><br><span class="line">  search: <span class="string">'?name=bigbear&amp;memo-helloworld'</span>,</span><br><span class="line">  query: <span class="string">'name=bigbear&amp;memo-helloworld'</span>,</span><br><span class="line">  pathname: <span class="string">'/bb'</span>,</span><br><span class="line">  path: <span class="string">'/bb?name=bigbear&amp;memo-helloworld'</span>,</span><br><span class="line">  href: <span class="string">'http://localhost:8888/bb?name=bigbear&amp;memo-helloworld'</span> }</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="urllib和urllib2的区别"><a href="#urllib和urllib2的区别" class="headerlink" title="urllib和urllib2的区别"></a>urllib和urllib2的区别</h2><p>这个面试官确实问过,当时答的<strong>urllib2可以Post而urllib不可以</strong>.</p>
+<h1 id="urllib和urllib2的区别"><a href="#urllib和urllib2的区别" class="headerlink" title="urllib和urllib2的区别"></a>urllib和urllib2的区别</h1><p>这个面试官确实问过,当时答的<strong>urllib2可以Post而urllib不可以</strong>.</p>
 <ol>
 <li>urllib提供<strong>urlencode</strong>方法用来<strong>GET查询字符串的产生</strong>，而urllib2没有。这是为何urllib常和urllib2一起使用的原因。</li>
 <li>urllib2可以接受一个<strong>Request类的实例来设置URL请求的headers，urllib仅可以接受URL</strong>。<strong>这意味着，你不可以伪装你的用户代理字符串等</strong>。</li>
 </ol>
-<h2 id="ARP协议"><a href="#ARP协议" class="headerlink" title="ARP协议"></a>ARP协议</h2><p><strong>地址解析协议(Address Resolution Protocol)</strong>，其基本功能为透过目标设备的IP地址，查询目标的MAC地址，<strong>以保证通信的顺利进行</strong>。它是IPv4网络层必不可少的协议，不过在IPv6中已不再适用，并被<strong>邻居发现协议（NDP）所替代</strong>（Neighbor Discovery Protocol）。</p>
-<h2 id="Cookie和Session"><a href="#Cookie和Session" class="headerlink" title="Cookie和Session"></a>Cookie和Session</h2><div class="table-container">
+<h1 id="ARP协议"><a href="#ARP协议" class="headerlink" title="ARP协议"></a>ARP协议</h1><p><strong>地址解析协议(Address Resolution Protocol)</strong>，其基本功能为透过目标设备的IP地址，查询目标的MAC地址，<strong>以保证通信的顺利进行</strong>。它是IPv4网络层必不可少的协议，不过在IPv6中已不再适用，并被<strong>邻居发现协议（NDP）所替代</strong>（Neighbor Discovery Protocol）。</p>
+<h1 id="Cookie和Session"><a href="#Cookie和Session" class="headerlink" title="Cookie和Session"></a>Cookie和Session</h1><div class="table-container">
 <table>
 <thead>
 <tr>
@@ -681,7 +681,7 @@
 </table>
 </div>
 <p>session技术是要使用到cookie的，之所以出现session技术，主要是为了安全。</p>
-<h2 id="apache和nginx的区别（Web服务器）"><a href="#apache和nginx的区别（Web服务器）" class="headerlink" title="apache和nginx的区别（Web服务器）"></a>apache和nginx的区别（Web服务器）</h2><p>nginx 相对 apache 的优点：</p>
+<h1 id="apache和nginx的区别（Web服务器）"><a href="#apache和nginx的区别（Web服务器）" class="headerlink" title="apache和nginx的区别（Web服务器）"></a>apache和nginx的区别（Web服务器）</h1><p>nginx 相对 apache 的优点：</p>
 <ul>
 <li><strong>轻量级</strong>，同样起web 服务，比apache 占用更少的内存及资源</li>
 <li><strong>抗并发，nginx 处理请求是异步非阻塞的，支持更多的并发连接</strong>，而apache 则是阻塞型的，在高并发下nginx 能保持低资源低消耗高性能</li>
@@ -700,13 +700,13 @@
 <li><p><strong>超稳定</strong></p>
 </li>
 </ul>
-<h2 id="网站用户密码保存"><a href="#网站用户密码保存" class="headerlink" title="网站用户密码保存"></a>网站用户密码保存</h2><ol>
+<h1 id="网站用户密码保存"><a href="#网站用户密码保存" class="headerlink" title="网站用户密码保存"></a>网站用户密码保存</h1><ol>
 <li><strong>明文保存</strong>在数据库中</li>
 <li><strong>明文hash后保存,如MD5</strong></li>
 <li><strong>MD5+Salt方式,这个Salt可以随机</strong></li>
 <li>知乎使用了Bcrypy(好像)加密</li>
 </ol>
-<h2 id="浏览器缓存"><a href="#浏览器缓存" class="headerlink" title="浏览器缓存"></a>浏览器缓存</h2><p>推荐: <a href="http://www.cnblogs.com/skynet/archive/2012/11/28/2792503.html" target="_blank" rel="noopener">http://www.cnblogs.com/skynet/archive/2012/11/28/2792503.html</a></p>
+<h1 id="浏览器缓存"><a href="#浏览器缓存" class="headerlink" title="浏览器缓存"></a>浏览器缓存</h1><p>推荐: <a href="http://www.cnblogs.com/skynet/archive/2012/11/28/2792503.html" target="_blank" rel="noopener">http://www.cnblogs.com/skynet/archive/2012/11/28/2792503.html</a></p>
 <p>304 Not Modified</p>
 <p>浏览器缓存机制，其实<strong>主要就是HTTP协议定义的缓存机制</strong>（如：Expires；Cache-control等）</p>
 <p>但是也有非HTTP协议定义的缓存机制。</p>
@@ -723,12 +723,12 @@
 <p><img data-src="/images/data/Screen Shot 2020-11-08 at 15.42.14.png" alt="Screen Shot 2020-11-08 at 15.42.14"></p>
 </li>
 </ol>
-<h2 id="CSRF和XSS"><a href="#CSRF和XSS" class="headerlink" title="CSRF和XSS"></a>CSRF和XSS</h2><ul>
+<h1 id="CSRF和XSS"><a href="#CSRF和XSS" class="headerlink" title="CSRF和XSS"></a>CSRF和XSS</h1><ul>
 <li><strong>CSRF(Cross-site request forgery)跨站请求伪造</strong>：<strong>网站过分信任用户</strong>，放任来自所谓通过访问控制机制的代表合法用户的请求执行网站的某个特定功能。</li>
 <li><strong>XSS(Cross Site Scripting)跨站脚本攻击：用户过分信任网站</strong>，放任来自来自浏览器地址代表的那个网站代码在自己本地任意执行。如果没有浏览器的安全机制限制，XSS代码可以在用户浏览器为所欲为。</li>
 </ul>
 <p>CSRF重点在<strong>请求</strong>,XSS重点在<strong>脚本</strong></p>
-<h2 id="RPC"><a href="#RPC" class="headerlink" title="RPC"></a>RPC</h2><p><strong>RPC（Remote Procedure Call Protocol）——远程过程调用协议</strong>。</p>
+<h1 id="RPC"><a href="#RPC" class="headerlink" title="RPC"></a>RPC</h1><p><strong>RPC（Remote Procedure Call Protocol）——远程过程调用协议</strong>。</p>
 <p>该协议允许运行于一台计算机的程序调用另一台计算机的子程序，而程序员无需额外地为这个交互作用编程。<strong>RPC是一个分布式计算的CS模式，总是由Client向Server发出一个执行若干过程请求，Server接受请求，使用客户端提供的参数，计算完成之后将结果返回给客户端。</strong></p>
 <p><strong>RPC是面向过程，Restful是面向资源</strong>，并且使用了Http动词。从这个维度上看，Restful风格的url在表述的精简性、可读性上都要更好。</p>
 <figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># RPC风格</span></span><br><span class="line">/queryOrder?orderId=123</span><br><span class="line"></span><br><span class="line"><span class="comment"># Restful风格</span></span><br><span class="line">Get  </span><br><span class="line">/order/<span class="number">123</span></span><br></pre></td></tr></tbody></table></figure>
@@ -741,18 +741,18 @@
 <li>A接受远程调用结果,输出30。</li>
 </ol>
 <p><strong>进化的顺序: RPC -&gt; SOAP -&gt; RESTful</strong></p>
-<h2 id="SOAP"><a href="#SOAP" class="headerlink" title="SOAP"></a>SOAP</h2><ol>
+<h1 id="SOAP"><a href="#SOAP" class="headerlink" title="SOAP"></a>SOAP</h1><ol>
 <li>SOAP（原为<strong>Simple Object Access Protocol</strong>的首字母缩写，即<strong>简单对象访问协议</strong>）是交换数据的一种协议规范，<strong>使用在计算机网络Web服务（web service）中</strong>，交换带结构信息。</li>
 <li>SOAP为了简化<strong>网页服务器（Web Server）从XML数据库中提取数据时，节省去格式化页面时间</strong>。不同应用程序之间按照<strong>HTTP通信协议，遵从XML格式执行资料互换</strong>，使其抽象于语言实现、平台和硬件。</li>
 </ol>
-<h2 id="RESTful架构-SOAP-RPC"><a href="#RESTful架构-SOAP-RPC" class="headerlink" title="RESTful架构(SOAP,RPC)"></a>RESTful架构(SOAP,RPC)</h2><p>推荐: <a href="http://www.ruanyifeng.com/blog/2011/09/restful.html" target="_blank" rel="noopener">http://www.ruanyifeng.com/blog/2011/09/restful.html</a></p>
+<h1 id="RESTful架构-SOAP-RPC"><a href="#RESTful架构-SOAP-RPC" class="headerlink" title="RESTful架构(SOAP,RPC)"></a>RESTful架构(SOAP,RPC)</h1><p>推荐: <a href="http://www.ruanyifeng.com/blog/2011/09/restful.html" target="_blank" rel="noopener">http://www.ruanyifeng.com/blog/2011/09/restful.html</a></p>
 <p>Representational State Transfer：表现层状态转移</p>
 <p>RESTful架构，<strong>就是目前最流行的一种互联网软件架构</strong>。它结构清晰、符合标准、易于理解、扩展方便，所以正得到越来越多网站的采用。</p>
 <p>总结一下什么是RESTful架构：</p>
 <p>（1）<strong>每一个URI代表一种资源；</strong></p>
 <p>（2）客户端和服务器之间，传递这种资源的某种表现层；</p>
 <p>（3）客户端通过四个HTTP动词，对服务器端资源进行操作，实现”<strong>表现层状态转化</strong>“。</p>
-<h2 id="CGI和WSGI"><a href="#CGI和WSGI" class="headerlink" title="CGI和WSGI"></a>CGI和WSGI</h2><ul>
+<h1 id="CGI和WSGI"><a href="#CGI和WSGI" class="headerlink" title="CGI和WSGI"></a>CGI和WSGI</h1><ul>
 <li><p>CGI(Common Gateway Interface)是<strong>通用网关接口</strong>，是连接web服务器和应用程序的接口，用户通过CGI来获取<strong>动态数据或文件</strong>等。<br>CGI程序是一个独立的程序，它可以用几乎所有语言来写，包括perl，c，lua，python等等。</p>
 </li>
 <li><p>WSGI(Web Server Gateway Interface)<strong>Web服务器网关接口</strong>，是<strong>Python应用程序或框架和Web服务器</strong>之间的一种接口，WSGI的其中一个目的就是让用户可以用统一的语言(Python)编写前后端。</p>
@@ -760,7 +760,7 @@
 </li>
 </ul>
 <p>官方说明：<a href="https://www.python.org/dev/peps/pep-3333/" target="_blank" rel="noopener">PEP-3333</a></p>
-<h2 id="简述浏览器通过WSGI请求动态资源的过程"><a href="#简述浏览器通过WSGI请求动态资源的过程" class="headerlink" title="简述浏览器通过WSGI请求动态资源的过程"></a>简述浏览器通过WSGI请求动态资源的过程</h2><ul>
+<h1 id="简述浏览器通过WSGI请求动态资源的过程"><a href="#简述浏览器通过WSGI请求动态资源的过程" class="headerlink" title="简述浏览器通过WSGI请求动态资源的过程"></a>简述浏览器通过WSGI请求动态资源的过程</h1><ul>
 <li>静态服务器加载的是一个静态html页面，或是存在服务器中的静态数据。</li>
 <li><p>动态服务器是，当客户端发送一个请求，<strong>服务器拿到这个请求找到相关的程序代码执行，将执行结果返回给客户端的一个过程</strong></p>
 </li>
@@ -778,7 +778,7 @@
 <li>Web服务器把数据返回给浏览器</li>
 </ol>
 <p><img data-src="/images/data/截屏2020-11-17 16.52.08.png" alt="截屏2020-11-17 16.52.08"></p>
-<h2 id="WSGI与Flask之间的关系"><a href="#WSGI与Flask之间的关系" class="headerlink" title="WSGI与Flask之间的关系"></a>WSGI与Flask之间的关系</h2><ol>
+<h1 id="WSGI与Flask之间的关系"><a href="#WSGI与Flask之间的关系" class="headerlink" title="WSGI与Flask之间的关系"></a>WSGI与Flask之间的关系</h1><ol>
 <li>使用<code>app.run()</code>方法来启动flask应用（<code>app.run()</code>代码隐藏着创建一个服务器），<strong>app应用本身会作为参数传递到WSGI服务器中</strong>。</li>
 <li>在客户端（这里就是浏览器）输入网址（发送一个请求），服务器使用WSGI 中间件来处理这个请求。</li>
 <li>WSGI 处理请求对应着<code>wsgi_app(self, environ, start_response)</code>方法，<code>self</code>参数对应着<code>app</code>，即flask程序；<code>environ</code>和 <code>start_response</code>由服务器提供。</li>
@@ -786,9 +786,9 @@
 </ol>
 <figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask</span><br><span class="line"></span><br><span class="line">app = Flask(__name__)  </span><br><span class="line"><span class="comment">#生成app实例，传递 __name__参数，__name__ 就是当前模块名字。</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route("/")</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">index</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">"2017-08-21"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    app.run(debug=<span class="literal">True</span>)</span><br></pre></td></tr></tbody></table></figure>
 <p><a href="https://blog.csdn.net/sinat_36651044/article/details/77462831" target="_blank" rel="noopener">https://blog.csdn.net/sinat_36651044/article/details/77462831</a></p>
-<h2 id="中间人攻击"><a href="#中间人攻击" class="headerlink" title="中间人攻击"></a>中间人攻击</h2><p>在<strong>GFW(Great Firewall: 中国国家防火墙)</strong>里屡见不鲜的,呵呵.</p>
+<h1 id="中间人攻击"><a href="#中间人攻击" class="headerlink" title="中间人攻击"></a>中间人攻击</h1><p>在<strong>GFW(Great Firewall: 中国国家防火墙)</strong>里屡见不鲜的,呵呵.</p>
 <p>中间人攻击（Man-in-the-middle attack，通常缩写为MITM）是指<strong>攻击者与通讯的两端分别创建独立的联系</strong>，并交换其所收到的数据，使通讯的两端认为他们正在通过一个私密的连接与对方直接对话，但事实上整个会话都被攻击者完全控制。</p>
-<h2 id="c10k问题"><a href="#c10k问题" class="headerlink" title="c10k问题"></a>c10k问题</h2><p>所谓<strong>c10k</strong>问题，指的是<strong>服务器同时支持成千上万个客户端</strong>的问题，也就是concurrent 10 000 connection（这也是c10k这个名字的由来）。</p>
+<h1 id="c10k问题"><a href="#c10k问题" class="headerlink" title="c10k问题"></a>c10k问题</h1><p>所谓<strong>c10k</strong>问题，指的是<strong>服务器同时支持成千上万个客户端</strong>的问题，也就是concurrent 10 000 connection（这也是c10k这个名字的由来）。</p>
 <p>解决方法：</p>
 <ol>
 <li><strong>每个连接分配一个独立的线程/进程</strong>：该思路最为直接，但是申请进程/线程是需要系统资源的，且系统需要管理这些进程/线程，所以<strong>会使资源占用过多，可扩展性差</strong></li>
@@ -796,8 +796,8 @@
 </ol>
 <p><a href="https://my.oschina.net/xianggao/blog/664275" target="_blank" rel="noopener">https://my.oschina.net/xianggao/blog/664275</a></p>
 <p><a href="https://www.jianshu.com/p/ba7fa25d3590" target="_blank" rel="noopener">C10K问题及其解决方法</a></p>
-<h2 id="Ajax"><a href="#Ajax" class="headerlink" title="Ajax"></a>Ajax</h2><p>AJAX(Asynchronous JavaScript and XML)（异步的 JavaScript 和 XML）, 是与在不重新加载整个页面的情况下，与<strong>服务器交换数据并更新部分网页的技术</strong>。</p>
-<h2 id="描述用浏览器访问www-baidu-com的过程"><a href="#描述用浏览器访问www-baidu-com的过程" class="headerlink" title="描述用浏览器访问www.baidu.com的过程"></a>描述用浏览器访问www.baidu.com的过程</h2><ol>
+<h1 id="Ajax"><a href="#Ajax" class="headerlink" title="Ajax"></a>Ajax</h1><p>AJAX(Asynchronous JavaScript and XML)（异步的 JavaScript 和 XML）, 是与在不重新加载整个页面的情况下，与<strong>服务器交换数据并更新部分网页的技术</strong>。</p>
+<h1 id="描述用浏览器访问www-baidu-com的过程"><a href="#描述用浏览器访问www-baidu-com的过程" class="headerlink" title="描述用浏览器访问www.baidu.com的过程"></a>描述用浏览器访问www.baidu.com的过程</h1><ol>
 <li>浏览器获取用户输入的域名：www.baidu.com</li>
 <li><p>浏览器<strong>向域名解析器DNS获取www.baidu.com的IP地址</strong></p>
 </li>
@@ -931,7 +931,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#计算机网络"><span class="nav-number">1.</span> <span class="nav-text">计算机网络</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#三次握手"><span class="nav-number">1.1.</span> <span class="nav-text">三次握手</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四次挥手"><span class="nav-number">1.2.</span> <span class="nav-text">四次挥手</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#七层网络模型"><span class="nav-number">1.3.</span> <span class="nav-text">七层网络模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TCP和UDP对比"><span class="nav-number">1.4.</span> <span class="nav-text">TCP和UDP对比</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Socket-Ip-address-TCP-UDP-port"><span class="nav-number">1.5.</span> <span class="nav-text">Socket(Ip address+ TCP&#x2F;UDP + port)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#怎么强行关闭客户端和服务器的连接"><span class="nav-number">1.6.</span> <span class="nav-text">怎么强行关闭客户端和服务器的连接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP"><span class="nav-number">1.7.</span> <span class="nav-text">HTTP</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP状态码"><span class="nav-number">1.7.1.</span> <span class="nav-text">HTTP状态码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP1-0和HTTP1-1"><span class="nav-number">1.7.2.</span> <span class="nav-text">HTTP1.0和HTTP1.1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP常见请求头与响应头"><span class="nav-number">1.7.3.</span> <span class="nav-text">HTTP常见请求头与响应头</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP协议以及协议头部中表示数据类型的字段"><span class="nav-number">1.7.4.</span> <span class="nav-text">HTTP协议以及协议头部中表示数据类型的字段</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP请求方法"><span class="nav-number">1.7.5.</span> <span class="nav-text">HTTP请求方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Post和Get"><span class="nav-number">1.7.6.</span> <span class="nav-text">Post和Get</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#幂等-Idempotence"><span class="nav-number">1.7.7.</span> <span class="nav-text">幂等 Idempotence</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP与HTTPS"><span class="nav-number">1.7.8.</span> <span class="nav-text">HTTP与HTTPS</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#URL的形式"><span class="nav-number">1.8.</span> <span class="nav-text">URL的形式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#urllib和urllib2的区别"><span class="nav-number">1.9.</span> <span class="nav-text">urllib和urllib2的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ARP协议"><span class="nav-number">1.10.</span> <span class="nav-text">ARP协议</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cookie和Session"><span class="nav-number">1.11.</span> <span class="nav-text">Cookie和Session</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#apache和nginx的区别（Web服务器）"><span class="nav-number">1.12.</span> <span class="nav-text">apache和nginx的区别（Web服务器）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网站用户密码保存"><span class="nav-number">1.13.</span> <span class="nav-text">网站用户密码保存</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#浏览器缓存"><span class="nav-number">1.14.</span> <span class="nav-text">浏览器缓存</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSRF和XSS"><span class="nav-number">1.15.</span> <span class="nav-text">CSRF和XSS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RPC"><span class="nav-number">1.16.</span> <span class="nav-text">RPC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SOAP"><span class="nav-number">1.17.</span> <span class="nav-text">SOAP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RESTful架构-SOAP-RPC"><span class="nav-number">1.18.</span> <span class="nav-text">RESTful架构(SOAP,RPC)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CGI和WSGI"><span class="nav-number">1.19.</span> <span class="nav-text">CGI和WSGI</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#简述浏览器通过WSGI请求动态资源的过程"><span class="nav-number">1.20.</span> <span class="nav-text">简述浏览器通过WSGI请求动态资源的过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WSGI与Flask之间的关系"><span class="nav-number">1.21.</span> <span class="nav-text">WSGI与Flask之间的关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#中间人攻击"><span class="nav-number">1.22.</span> <span class="nav-text">中间人攻击</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#c10k问题"><span class="nav-number">1.23.</span> <span class="nav-text">c10k问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ajax"><span class="nav-number">1.24.</span> <span class="nav-text">Ajax</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#描述用浏览器访问www-baidu-com的过程"><span class="nav-number">1.25.</span> <span class="nav-text">描述用浏览器访问www.baidu.com的过程</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#三次握手"><span class="nav-number">1.</span> <span class="nav-text">三次握手</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四次挥手"><span class="nav-number">2.</span> <span class="nav-text">四次挥手</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#七层网络模型"><span class="nav-number">3.</span> <span class="nav-text">七层网络模型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#TCP和UDP对比"><span class="nav-number">4.</span> <span class="nav-text">TCP和UDP对比</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Socket-Ip-address-TCP-UDP-port"><span class="nav-number">5.</span> <span class="nav-text">Socket(Ip address+ TCP&#x2F;UDP + port)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#怎么强行关闭客户端和服务器的连接"><span class="nav-number">6.</span> <span class="nav-text">怎么强行关闭客户端和服务器的连接</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HTTP"><span class="nav-number">7.</span> <span class="nav-text">HTTP</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP状态码"><span class="nav-number">7.1.</span> <span class="nav-text">HTTP状态码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP1-0和HTTP1-1"><span class="nav-number">7.2.</span> <span class="nav-text">HTTP1.0和HTTP1.1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP常见请求头与响应头"><span class="nav-number">7.3.</span> <span class="nav-text">HTTP常见请求头与响应头</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP协议以及协议头部中表示数据类型的字段"><span class="nav-number">7.4.</span> <span class="nav-text">HTTP协议以及协议头部中表示数据类型的字段</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP请求方法"><span class="nav-number">7.5.</span> <span class="nav-text">HTTP请求方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Post和Get"><span class="nav-number">7.6.</span> <span class="nav-text">Post和Get</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#幂等-Idempotence"><span class="nav-number">7.7.</span> <span class="nav-text">幂等 Idempotence</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP与HTTPS"><span class="nav-number">7.8.</span> <span class="nav-text">HTTP与HTTPS</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#URL的形式"><span class="nav-number">8.</span> <span class="nav-text">URL的形式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#urllib和urllib2的区别"><span class="nav-number">9.</span> <span class="nav-text">urllib和urllib2的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ARP协议"><span class="nav-number">10.</span> <span class="nav-text">ARP协议</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Cookie和Session"><span class="nav-number">11.</span> <span class="nav-text">Cookie和Session</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#apache和nginx的区别（Web服务器）"><span class="nav-number">12.</span> <span class="nav-text">apache和nginx的区别（Web服务器）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#网站用户密码保存"><span class="nav-number">13.</span> <span class="nav-text">网站用户密码保存</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#浏览器缓存"><span class="nav-number">14.</span> <span class="nav-text">浏览器缓存</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CSRF和XSS"><span class="nav-number">15.</span> <span class="nav-text">CSRF和XSS</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#RPC"><span class="nav-number">16.</span> <span class="nav-text">RPC</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SOAP"><span class="nav-number">17.</span> <span class="nav-text">SOAP</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#RESTful架构-SOAP-RPC"><span class="nav-number">18.</span> <span class="nav-text">RESTful架构(SOAP,RPC)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CGI和WSGI"><span class="nav-number">19.</span> <span class="nav-text">CGI和WSGI</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简述浏览器通过WSGI请求动态资源的过程"><span class="nav-number">20.</span> <span class="nav-text">简述浏览器通过WSGI请求动态资源的过程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#WSGI与Flask之间的关系"><span class="nav-number">21.</span> <span class="nav-text">WSGI与Flask之间的关系</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#中间人攻击"><span class="nav-number">22.</span> <span class="nav-text">中间人攻击</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#c10k问题"><span class="nav-number">23.</span> <span class="nav-text">c10k问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Ajax"><span class="nav-number">24.</span> <span class="nav-text">Ajax</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#描述用浏览器访问www-baidu-com的过程"><span class="nav-number">25.</span> <span class="nav-text">描述用浏览器访问www.baidu.com的过程</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
