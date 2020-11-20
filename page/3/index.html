@@ -72,9 +72,9 @@
   .use-motion .logo-line-before i { left: initial; }
   .use-motion .logo-line-after i { right: initial; }
   </style>
-</noscript>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 
-<link rel="alternate" href="/atom.xml" title="Grace Koo's Blog" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<link rel="alternate" href="/atom.xml" title="Grace Koo's Blog" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -231,7 +231,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-11-19 08:37:00" itemprop="dateModified" datetime="2020-11-19T08:37:00Z">2020-11-19</time>
+                <time title="Modified: 2020-11-20 06:23:36" itemprop="dateModified" datetime="2020-11-20T06:23:36Z">2020-11-20</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -277,49 +277,14 @@
 <p>（2）非叶子节值大于左边子节点、小于右边子节点；</p>
 <p>（3）树的左右两边的层级数相差不会大于1;</p>
 <p>（4）没有值相等重复的节点;</p>
-<h3 id="红黑树"><a href="#红黑树" class="headerlink" title="红黑树"></a>红黑树</h3><p>红黑树与AVL的比较：</p>
-<ul>
-<li><p>AVL是严格平衡树，因此在增加或者删除节点的时候，根据不同情况，<strong>旋转的次数比红黑树要多；</strong></p>
-</li>
-<li><p>红黑是用非严格的平衡来<strong>换取增删节点时候旋转次数的降低</strong>；</p>
-</li>
-</ul>
-<p>所以简单说，如果你的应用中，<strong>搜索的次数远远大于插入和删除，那么选择AVL</strong>。</p>
-<p>如果<strong>搜索，插入删除次数几乎差不多，应该选择RB</strong>。</p>
-<p>红黑树详解: <a href="https://xieguanglei.github.io/blog/post/red-black-tree.html" target="_blank" rel="noopener">https://xieguanglei.github.io/blog/post/red-black-tree.html</a></p>
-<p>教你透彻了解红黑树: <a href="https://github.com/julycoding/The-Art-Of-Programming-By-July/blob/master/ebook/zh/03.01.md" target="_blank" rel="noopener">https://github.com/julycoding/The-Art-Of-Programming-By-July/blob/master/ebook/zh/03.01.md</a></p>
-<h2 id="B树"><a href="#B树" class="headerlink" title="B树"></a>B树</h2><p>B树和平衡二叉树稍有不同的是B树属于多叉树又名<strong>平衡多路查找树</strong>（查找路径不只两个），数据库索引技术里大量使用者B树和B+树的数据结构。</p>
-<p>（1）排序方式：所有节点关键字是按递增次序排列，并遵循左小右大原则；</p>
-<p>（2）子节点数：非叶节点的子节点数&gt;1，且&lt;=M ，且M&gt;=2，空树除外（注：M阶代表一个树节点最多有多少个查找路径，M=M路,当M=2则是2叉树,M=3则是3叉）；</p>
-<p>（3）关键字数：枝节点的关键字数量大于等于ceil(m/2)-1个且小于等于M-1个（注：ceil()是个朝正无穷方向取整的函数 如ceil(1.1)结果为2);</p>
-<p>（4）所有叶子节点均在同一层、叶子节点除了包含了关键字和关键字记录的指针外也有指向其子节点的指针只不过其指针地址都为null对应下图最后一层节点的空格子;</p>
-<p><img data-src="/images/Desktop/data/B-tree.png" alt="B-tree"></p>
-<h2 id="B-树"><a href="#B-树" class="headerlink" title="B+树"></a>B+树</h2><p>（1）B+跟B树不同B+树的<strong>非叶子</strong>节点不保存关键字记录的指针，<strong>只进行数据索引</strong>，这样使得B+树每个<strong>非叶子</strong>节点所能保存的关键字大大增加；</p>
-<p>（2）B+树<strong>叶子</strong>节点保存了父节点的所有关键字记录的指针，所有数据地址必须要到叶子节点才能获取到。所以每次数据查询的次数都一样；</p>
-<p>（3）B+树叶子节点的关键字从小到大有序排列，左边结尾数据都会保存右边节点开始数据的指针。</p>
-<p>（4）非叶子节点的子节点数=关键字数（来源百度百科）（根据各种资料 这里有两种算法的实现方式，另一种为非叶节点的关键字数=子节点数-1（来源维基百科)，虽然他们数据排列结构不一样，但其原理还是一样的Mysql 的B+树是用第一种方式实现）;</p>
-<h2 id="B-树-1"><a href="#B-树-1" class="headerlink" title="B*树"></a>B*树</h2><p>B*树是B+树的变种，相对于B+树他们的不同之处如下：</p>
-<p>（1）首先是关键字个数限制问题，B+树初始化的关键字初始化个数是cei(m/2)，b<em>树的初始化个数为（cei(2/3</em>m)）</p>
-<p>（2）B+树节点满时就会分裂，而B*树节点满时会检查兄弟节点是否满（因为每个节点都有指向兄弟的指针），如果兄弟节点未满则向兄弟节点转移关键字，如果兄弟节点已满，则从当前节点和兄弟节点各拿出1/3的数据创建一个新的节点出来；</p>
-<script>
-        document.querySelectorAll('.github-emoji')
-          .forEach(el => {
-            if (!el.dataset.src) { return; }
-            const img = document.createElement('img');
-            img.style = 'display:none !important;';
-            img.src = el.dataset.src;
-            img.addEventListener('error', () => {
-              img.remove();
-              el.style.color = 'inherit';
-              el.style.backgroundImage = 'none';
-              el.style.background = 'none';
-            });
-            img.addEventListener('load', () => {
-              img.remove();
-            });
-            document.body.appendChild(img);
-          });
-      </script>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/posts/2248809/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
