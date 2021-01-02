@@ -4,7 +4,7 @@
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.0">
+<meta name="generator" content="Hexo 5.3.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/me.jpg">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/me.jpg">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/me.jpg">
@@ -13,7 +13,7 @@
 <link rel="stylesheet" href="/css/main.css">
 
 
-<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
 
 <script id="hexo-configurations">
@@ -21,13 +21,13 @@
     var CONFIG = {"hostname":"unknown.yuzhouwan.com","root":"/","scheme":"Muse","version":"0.0.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":false,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="三次握手 客户端通过向服务器端发送一个请求报文SYN来创建一个主动打开。 Server端接受连接后回复ACK报文，并为这次连接分配资源。 Client端接收到ACK报文后也向Server段发送报文，并分配资源，这样TCP连接就建立了。">
+  <meta name="description" content="三次握手 客户端通过向服务器端发送一个请求报文SYN来创建一个主动打开。  Server端接受连接后回复ACK报文，并为这次连接分配资源。 如果只有两次通信的话，这时候B不确定A是否收到了确认消息，有可能这个确认消息由于某些原因丢了。  Client端接收到ACK报文后也向Server段发送报文，并分配资源，这样TCP连接就建立了。 这个时候经过了三次握手，A和B双方确认了两边都是通的，可以相互通">
 <meta property="og:type" content="article">
 <meta property="og:title" content="计算机网络">
 <meta property="og:url" content="https://unknown.yuzhouwan.com/posts/6678/index.html">
 <meta property="og:site_name" content="Grace Koo&#39;s Blog">
-<meta property="og:description" content="三次握手 客户端通过向服务器端发送一个请求报文SYN来创建一个主动打开。 Server端接受连接后回复ACK报文，并为这次连接分配资源。 Client端接收到ACK报文后也向Server段发送报文，并分配资源，这样TCP连接就建立了。">
-<meta property="og:locale" content="Zh">
+<meta property="og:description" content="三次握手 客户端通过向服务器端发送一个请求报文SYN来创建一个主动打开。  Server端接受连接后回复ACK报文，并为这次连接分配资源。 如果只有两次通信的话，这时候B不确定A是否收到了确认消息，有可能这个确认消息由于某些原因丢了。  Client端接收到ACK报文后也向Server段发送报文，并分配资源，这样TCP连接就建立了。 这个时候经过了三次握手，A和B双方确认了两边都是通的，可以相互通">
+<meta property="og:locale">
 <meta property="og:image" content="https://unknown.yuzhouwan.com/images/data/Screen%20Shot%202020-11-08%20at%2000.57.08.png">
 <meta property="og:image" content="https://unknown.yuzhouwan.com/images/data/Screen%20Shot%202020-11-08%20at%2000.57.38.png">
 <meta property="og:image" content="https://unknown.yuzhouwan.com/images/data/Screen%20Shot%202020-11-08%20at%2011.56.48.png">
@@ -35,9 +35,9 @@
 <meta property="og:image" content="https://unknown.yuzhouwan.com/images/data/Screen%20Shot%202020-11-08%20at%2015.41.48.png">
 <meta property="og:image" content="https://unknown.yuzhouwan.com/images/data/Screen%20Shot%202020-11-08%20at%2015.42.01.png">
 <meta property="og:image" content="https://unknown.yuzhouwan.com/images/data/Screen%20Shot%202020-11-08%20at%2015.42.14.png">
-<meta property="og:image" content="https://unknown.yuzhouwan.com/images/data/%E6%88%AA%E5%B1%8F2020-11-17%2016.52.08.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/images/data/截屏2020-11-17%2016.52.08.png">
 <meta property="article:published_time" content="2020-01-30T23:55:00.000Z">
-<meta property="article:modified_time" content="2020-11-23T03:16:17.873Z">
+<meta property="article:modified_time" content="2020-12-03T10:56:37.344Z">
 <meta property="article:author" content="Grace Koo">
 <meta property="article:tag" content="Computer Network">
 <meta name="twitter:card" content="summary">
@@ -51,7 +51,8 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : true
+    isPost : true,
+    lang   : 'Zh'
   };
 </script>
 
@@ -86,6 +87,8 @@
   </style>
 </noscript>
 
+
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 <link rel="alternate" href="/atom.xml" title="Grace Koo's Blog" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
@@ -105,14 +108,12 @@
 
   <div class="site-meta">
 
-    <div>
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Grace Koo's Blog</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
-    </div>
-        <p class="site-subtitle">LaLaLa~~~</p>
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Grace Koo's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">LaLaLa~~~</p>
   </div>
 
   <div class="site-nav-right">
@@ -123,42 +124,43 @@
 </div>
 
 
+
+
 <nav class="site-nav">
-  
-  <ul id="menu" class="menu">
+  <ul id="menu" class="main-menu menu">
         <li class="menu-item menu-item-home">
 
-    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
 
   </li>
         <li class="menu-item menu-item-about">
 
-    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
 
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags</a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories</a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
 
   </li>
         <li class="menu-item menu-item-books">
 
-    <a href="/books/" rel="section"><i class="fa fa-fw fa-book"></i>Books</a>
+    <a href="/books/" rel="section"><i class="book fa-fw"></i>Books</a>
 
   </li>
         <li class="menu-item menu-item-mr.sweet">
 
-    <a href="/sweet/" rel="section"><i class="fa fa-fw fa-paw"></i>Mr.Sweet</a>
+    <a href="/sweet/" rel="section"><i class="paw fa-fw"></i>Mr.Sweet</a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -166,16 +168,18 @@
         </a>
       </li>
   </ul>
-
 </nav>
-  <div class="site-search">
+
+
+
+  <div class="search-pop-overlay">
     <div class="popup search-popup">
-    <div class="search-header">
+        <div class="search-header">
   <span class="search-icon">
     <i class="fa fa-search"></i>
   </span>
   <div class="search-input-container">
-    <input autocomplete="off" autocorrect="off" autocapitalize="off"
+    <input autocomplete="off" autocapitalize="off"
            placeholder="Searching..." spellcheck="false"
            type="search" class="search-input">
   </div>
@@ -183,12 +187,15 @@
     <i class="fa fa-times-circle"></i>
   </span>
 </div>
-<div id="search-result"></div>
-
-</div>
-<div class="search-pop-overlay"></div>
-
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
   </div>
+</div>
+
+    </div>
+  </div>
+
 </div>
     </header>
 
@@ -204,14 +211,13 @@
         <div class="content-wrap">
           
 
-          <div class="content">
+          <div class="content post posts-expand">
             
 
-  <div class="posts-expand">
-      
+    
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="Zh">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="Zh">
     <link itemprop="mainEntityOfPage" href="https://unknown.yuzhouwan.com/posts/6678/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -231,7 +237,7 @@
         <div class="post-meta">
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
@@ -239,14 +245,14 @@
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
+                  <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-11-23 03:16:17" itemprop="dateModified" datetime="2020-11-23T03:16:17Z">2020-11-23</time>
+                <time title="Modified: 2020-12-03 10:56:37" itemprop="dateModified" datetime="2020-12-03T10:56:37Z">2020-12-03</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
+                <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
@@ -268,14 +274,14 @@
             </span><br>
             <span class="post-meta-item" title="Symbols count in article">
               <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
+                <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
               <span>12k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
+                <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
               <span>11 mins.</span>
@@ -291,9 +297,15 @@
 
       
         <h1 id="三次握手"><a href="#三次握手" class="headerlink" title="三次握手"></a>三次握手</h1><ol>
-<li>客户端通过向服务器端<strong>发送一个请求报文SYN</strong>来创建一个主动打开。</li>
-<li>Server端接受连接后<strong>回复ACK报文</strong>，并为这次连接分配资源。</li>
-<li>Client端接收到<strong>ACK报文</strong>后也向Server段发送报文，并分配资源，这样TCP连接就建立了。</li>
+<li><p>客户端通过向服务器端<strong>发送一个请求报文SYN</strong>来创建一个主动打开。</p>
+</li>
+<li><p>Server端接受连接后<strong>回复ACK报文</strong>，并为这次连接分配资源。</p>
+<p>如果只有两次通信的话，这时候B不确定A是否收到了确认消息，有可能这个确认消息由于某些原因丢了。</p>
+</li>
+<li><p>Client端接收到<strong>ACK报文</strong>后也向Server段发送报文，并分配资源，这样TCP连接就建立了。</p>
+<p>这个时候经过了三次握手，A和B双方确认了两边都是通的，可以相互通信了，已经可以建立一个可靠的连接，并且可以相互发送数据。</p>
+<p>这个时候已经不需要B再发送一个确认消息了，两边已经通过前三次建立了一个可靠的连接，如果再发送第四次确认消息的话，就浪费资源了。</p>
+</li>
 </ol>
 <a id="more"></a>
 <p><img data-src="/images/data/Screen Shot 2020-11-08 at 00.57.08.png" alt="Screen Shot 2020-11-08 at 00.57.08"></p>
@@ -308,7 +320,7 @@
 <p> 注：MSL是报文最大生存时间，它是任何报文在网络上存在的最长时间，超过这个时间报文将被丢弃。RFC规定为两分钟，实际应用中常用的是30秒，1分钟和2分钟。</p>
 </blockquote>
 <p><img data-src="/images/data/Screen Shot 2020-11-08 at 00.57.38.png" alt="Screen Shot 2020-11-08 at 00.57.38"></p>
-<p>图解: <a href="http://blog.csdn.net/whuslei/article/details/6667471" target="_blank" rel="noopener">http://blog.csdn.net/whuslei/article/details/6667471</a></p>
+<p>图解: <a target="_blank" rel="noopener" href="http://blog.csdn.net/whuslei/article/details/6667471">http://blog.csdn.net/whuslei/article/details/6667471</a></p>
 <h1 id="七层网络模型"><a href="#七层网络模型" class="headerlink" title="七层网络模型"></a>七层网络模型</h1><p>网络通信的分层模型讲起：七层模型，也称OSI (Open System Interconnection)模型。</p>
 <p><img data-src="/images/data/Screen Shot 2020-11-08 at 11.56.48.png" alt="Screen Shot 2020-11-08 at 11.56.48"></p>
 <h1 id="TCP和UDP对比"><a href="#TCP和UDP对比" class="headerlink" title="TCP和UDP对比"></a>TCP和UDP对比</h1><div class="table-container">
@@ -363,7 +375,7 @@
 <h1 id="Socket-Ip-address-TCP-UDP-port"><a href="#Socket-Ip-address-TCP-UDP-port" class="headerlink" title="Socket(Ip address+ TCP/UDP + port)"></a>Socket(Ip address+ TCP/UDP + port)</h1><p><strong>套接字用于描述IP地址和端口，是一个通信链的句柄。</strong>应用程序通过套接字向网络发出请求或应答网络请求。注意的是套接字既不是程序也不是协议，只是<strong>操作系统提供给通信层的一组抽象API接口。</strong></p>
 <p>Socket=Ip address+ TCP/UDP + port</p>
 <p><img data-src="/images/data/Screen Shot 2020-11-08 at 15.31.08.png" alt="Screen Shot 2020-11-08 at 15.31.08"></p>
-<p>推荐: <a href="http://www.360doc.com/content/11/0609/15/5482098_122692444.shtml" target="_blank" rel="noopener">http://www.360doc.com/content/11/0609/15/5482098_122692444.shtml</a></p>
+<p>推荐: <a target="_blank" rel="noopener" href="http://www.360doc.com/content/11/0609/15/5482098_122692444.shtml">http://www.360doc.com/content/11/0609/15/5482098_122692444.shtml</a></p>
 <p>使用Socket套接字需要传入哪些参数？</p>
 <ul>
 <li><p><strong>地址族(Address Family)</strong></p>
@@ -426,7 +438,7 @@
 </table>
 </div>
 <p>403: Forbidden<br>404: Not Found</p>
-<h2 id="HTTP1-0和HTTP1-1"><a href="#HTTP1-0和HTTP1-1" class="headerlink" title="HTTP1.0和HTTP1.1"></a>HTTP1.0和HTTP1.1</h2><p>推荐: <a href="http://blog.csdn.net/elifefly/article/details/3964766" target="_blank" rel="noopener">http://blog.csdn.net/elifefly/article/details/3964766</a></p>
+<h2 id="HTTP1-0和HTTP1-1"><a href="#HTTP1-0和HTTP1-1" class="headerlink" title="HTTP1.0和HTTP1.1"></a>HTTP1.0和HTTP1.1</h2><p>推荐: <a target="_blank" rel="noopener" href="http://blog.csdn.net/elifefly/article/details/3964766">http://blog.csdn.net/elifefly/article/details/3964766</a></p>
 <p><strong>HTTP 1.0*规定浏览器与服务器只保持短暂的连接</strong>，浏览器的每次请求都需要与服务器建立一个<em>TCP</em>连接，服务器完成请求处理后立即断开<em>TCP</em>连接，服务器不跟踪每个客户也不记录过去的请求。</p>
 <p><strong>HTTP1.1改进点</strong></p>
 <ol>
@@ -506,8 +518,8 @@
 </tbody>
 </table>
 </div>
-<p><a href="https://itbilu.com/other/relate/EJ3fKUwUx.html" target="_blank" rel="noopener">https://itbilu.com/other/relate/EJ3fKUwUx.html</a></p>
-<p><a href="https://juejin.im/post/6844903745004765198" target="_blank" rel="noopener">https://juejin.im/post/6844903745004765198</a></p>
+<p><a target="_blank" rel="noopener" href="https://itbilu.com/other/relate/EJ3fKUwUx.html">https://itbilu.com/other/relate/EJ3fKUwUx.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://juejin.im/post/6844903745004765198">https://juejin.im/post/6844903745004765198</a></p>
 <h2 id="HTTP协议以及协议头部中表示数据类型的字段"><a href="#HTTP协议以及协议头部中表示数据类型的字段" class="headerlink" title="HTTP协议以及协议头部中表示数据类型的字段"></a>HTTP协议以及协议头部中表示数据类型的字段</h2><div class="table-container">
 <table>
 <thead>
@@ -581,13 +593,14 @@
 </ol>
 <p>PATCH方法出现的较晚，它在2010年的RFC 5789标准中被定义。PATCH请求与PUT请求类似，同样用于资源的更新。二者有以下两点不同：</p>
 <p><strong>但PATCH一般用于资源的部分更新，而PUT一般用于资源的整体更新。</strong><br>当资源不存在时，PATCH会创建一个新的资源，而PUT只会对已在资源进行更新。</p>
-<h2 id="Post和Get"><a href="#Post和Get" class="headerlink" title="Post和Get"></a>Post和Get</h2><p><a href="http://www.cnblogs.com/nankezhishi/archive/2012/06/09/getandpost.html" target="_blank" rel="noopener">GET和POST有什么区别？及为什么网上的多数答案都是错的</a><br><a href="https://www.zhihu.com/question/31640769?rf=37401322" target="_blank" rel="noopener">知乎回答</a></p>
-<p>get: <a href="http://tools.ietf.org/html/rfc2616#section-9.3" target="_blank" rel="noopener">RFC 2616 - Hypertext Transfer Protocol — HTTP/1.1</a><br>post: <a href="http://tools.ietf.org/html/rfc2616#section-9.5" target="_blank" rel="noopener">RFC 2616 - Hypertext Transfer Protocol — HTTP/1.1</a></p>
+<h2 id="Post和Get"><a href="#Post和Get" class="headerlink" title="Post和Get"></a>Post和Get</h2><p><a target="_blank" rel="noopener" href="http://www.cnblogs.com/nankezhishi/archive/2012/06/09/getandpost.html">GET和POST有什么区别？及为什么网上的多数答案都是错的</a><br><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/31640769?rf=37401322">知乎回答</a></p>
+<p>get: <a target="_blank" rel="noopener" href="http://tools.ietf.org/html/rfc2616#section-9.3">RFC 2616 - Hypertext Transfer Protocol — HTTP/1.1</a><br>post: <a target="_blank" rel="noopener" href="http://tools.ietf.org/html/rfc2616#section-9.5">RFC 2616 - Hypertext Transfer Protocol — HTTP/1.1</a></p>
 <p>HTTP协议用法的约定，使用上的区别：</p>
 <ol>
 <li><strong>GET使用URL或Cookie传参，而POST将数据放在BODY中。</strong></li>
 <li><strong>GET方式提交的数据长度有限，而POST的数据则可以非常大。</strong>（这个是因为它们使用的操作系统和浏览器设置的不同引起的区别。也不是GET和POST本身的区别。）</li>
 <li><strong>POST比GET安全，因为数据在地址栏上不可见。</strong></li>
+<li>对于GET方式，服务器端用Request.QueryString获取变量的值，对于POST方式，服务器端用Request.Form获取提交的数据</li>
 </ol>
 <p>终极区别：</p>
 <ol>
@@ -645,7 +658,7 @@
 </ul>
 <p>可选，用于给动态网页（如使用CGI、ISAPI、PHP/JSP/ASP/ASP。NET等技术制作的网页）传递参数，可有多个参数，用“&amp;”符号隔开，每个参数的名和值用“=”符号隔开。</p>
 <figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//变量url即具有了url模块所提供的方法</span><br><span class="line">var url = require(<span class="string">'url'</span>);</span><br><span class="line">var queryUrl = <span class="string">"http://localhost:8888/bb?name=bigbear&amp;memo-helloworld"</span>;</span><br><span class="line">console.log(typeof url.parse(queryUrl));</span><br><span class="line">console.log(url.parse(queryUrl));</span><br></pre></td></tr></tbody></table></figure>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">object</span><br><span class="line">Url {</span><br><span class="line">  protocol: <span class="string">'http:'</span>,</span><br><span class="line">  slashes: true,</span><br><span class="line">  auth: null,</span><br><span class="line">  host: <span class="string">'localhost:8888'</span>,</span><br><span class="line">  port: <span class="string">'8888'</span>,</span><br><span class="line">  hostname: <span class="string">'localhost'</span>,</span><br><span class="line">  hash: null,</span><br><span class="line">  search: <span class="string">'?name=bigbear&amp;memo-helloworld'</span>,</span><br><span class="line">  query: <span class="string">'name=bigbear&amp;memo-helloworld'</span>,</span><br><span class="line">  pathname: <span class="string">'/bb'</span>,</span><br><span class="line">  path: <span class="string">'/bb?name=bigbear&amp;memo-helloworld'</span>,</span><br><span class="line">  href: <span class="string">'http://localhost:8888/bb?name=bigbear&amp;memo-helloworld'</span> }</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">object</span></span><br><span class="line">Url {</span><br><span class="line">  protocol: <span class="string">'http:'</span>,</span><br><span class="line">  slashes: true,</span><br><span class="line">  auth: null,</span><br><span class="line">  host: <span class="string">'localhost:8888'</span>,</span><br><span class="line">  port: <span class="string">'8888'</span>,</span><br><span class="line">  hostname: <span class="string">'localhost'</span>,</span><br><span class="line">  <span class="built_in">hash</span>: null,</span><br><span class="line">  search: <span class="string">'?name=bigbear&amp;memo-helloworld'</span>,</span><br><span class="line">  query: <span class="string">'name=bigbear&amp;memo-helloworld'</span>,</span><br><span class="line">  pathname: <span class="string">'/bb'</span>,</span><br><span class="line">  path: <span class="string">'/bb?name=bigbear&amp;memo-helloworld'</span>,</span><br><span class="line">  href: <span class="string">'http://localhost:8888/bb?name=bigbear&amp;memo-helloworld'</span> }</span><br></pre></td></tr></tbody></table></figure>
 <h1 id="urllib和urllib2的区别"><a href="#urllib和urllib2的区别" class="headerlink" title="urllib和urllib2的区别"></a>urllib和urllib2的区别</h1><p>这个面试官确实问过,当时答的<strong>urllib2可以Post而urllib不可以</strong>.</p>
 <ol>
 <li>urllib提供<strong>urlencode</strong>方法用来<strong>GET查询字符串的产生</strong>，而urllib2没有。这是为何urllib常和urllib2一起使用的原因。</li>
@@ -681,6 +694,7 @@
 </table>
 </div>
 <p>session技术是要使用到cookie的，之所以出现session技术，主要是为了安全。</p>
+<p>但是禁用Cookie就不能得到Session。因为Session是用Session ID来确定当前对话所对应的服务器Session，而Session ID是通过Cookie来传递的，禁用Cookie相当于SessionID,也就得不到Session。</p>
 <h1 id="apache和nginx的区别（Web服务器）"><a href="#apache和nginx的区别（Web服务器）" class="headerlink" title="apache和nginx的区别（Web服务器）"></a>apache和nginx的区别（Web服务器）</h1><p>nginx 相对 apache 的优点：</p>
 <ul>
 <li><strong>轻量级</strong>，同样起web 服务，比apache 占用更少的内存及资源</li>
@@ -706,7 +720,7 @@
 <li><strong>MD5+Salt方式,这个Salt可以随机</strong></li>
 <li>知乎使用了Bcrypy(好像)加密</li>
 </ol>
-<h1 id="浏览器缓存"><a href="#浏览器缓存" class="headerlink" title="浏览器缓存"></a>浏览器缓存</h1><p>推荐: <a href="http://www.cnblogs.com/skynet/archive/2012/11/28/2792503.html" target="_blank" rel="noopener">http://www.cnblogs.com/skynet/archive/2012/11/28/2792503.html</a></p>
+<h1 id="浏览器缓存"><a href="#浏览器缓存" class="headerlink" title="浏览器缓存"></a>浏览器缓存</h1><p>推荐: <a target="_blank" rel="noopener" href="http://www.cnblogs.com/skynet/archive/2012/11/28/2792503.html">http://www.cnblogs.com/skynet/archive/2012/11/28/2792503.html</a></p>
 <p>304 Not Modified</p>
 <p>浏览器缓存机制，其实<strong>主要就是HTTP协议定义的缓存机制</strong>（如：Expires；Cache-control等）</p>
 <p>但是也有非HTTP协议定义的缓存机制。</p>
@@ -724,7 +738,7 @@
 </li>
 </ol>
 <h1 id="CSRF和XSS"><a href="#CSRF和XSS" class="headerlink" title="CSRF和XSS"></a>CSRF和XSS</h1><ul>
-<li><strong>CSRF(Cross-site request forgery)跨站请求伪造</strong>：<strong>网站过分信任用户</strong>，放任来自所谓通过访问控制机制的代表合法用户的请求执行网站的某个特定功能。</li>
+<li><strong>CSRF(Cross-site request forgery)跨站请求伪造</strong>：<strong>网站过分信任用户</strong>，放任来自所谓通过<strong>访问控制机制</strong>的代表合法用户的请求执行网站的某个特定功能。（利用cookies进行CSRF攻击）</li>
 <li><strong>XSS(Cross Site Scripting)跨站脚本攻击：用户过分信任网站</strong>，放任来自来自浏览器地址代表的那个网站代码在自己本地任意执行。如果没有浏览器的安全机制限制，XSS代码可以在用户浏览器为所欲为。</li>
 </ul>
 <p>CSRF重点在<strong>请求</strong>,XSS重点在<strong>脚本</strong></p>
@@ -745,7 +759,7 @@
 <li>SOAP（原为<strong>Simple Object Access Protocol</strong>的首字母缩写，即<strong>简单对象访问协议</strong>）是交换数据的一种协议规范，<strong>使用在计算机网络Web服务（web service）中</strong>，交换带结构信息。</li>
 <li>SOAP为了简化<strong>网页服务器（Web Server）从XML数据库中提取数据时，节省去格式化页面时间</strong>。不同应用程序之间按照<strong>HTTP通信协议，遵从XML格式执行资料互换</strong>，使其抽象于语言实现、平台和硬件。</li>
 </ol>
-<h1 id="RESTful架构-SOAP-RPC"><a href="#RESTful架构-SOAP-RPC" class="headerlink" title="RESTful架构(SOAP,RPC)"></a>RESTful架构(SOAP,RPC)</h1><p>推荐: <a href="http://www.ruanyifeng.com/blog/2011/09/restful.html" target="_blank" rel="noopener">http://www.ruanyifeng.com/blog/2011/09/restful.html</a></p>
+<h1 id="RESTful架构-SOAP-RPC"><a href="#RESTful架构-SOAP-RPC" class="headerlink" title="RESTful架构(SOAP,RPC)"></a>RESTful架构(SOAP,RPC)</h1><p>推荐: <a target="_blank" rel="noopener" href="http://www.ruanyifeng.com/blog/2011/09/restful.html">http://www.ruanyifeng.com/blog/2011/09/restful.html</a></p>
 <p>Representational State Transfer：表现层状态转移</p>
 <p>RESTful架构，<strong>就是目前最流行的一种互联网软件架构</strong>。它结构清晰、符合标准、易于理解、扩展方便，所以正得到越来越多网站的采用。</p>
 <p>总结一下什么是RESTful架构：</p>
@@ -759,7 +773,7 @@
 <p>它不是服务器,也不是python模块,<strong>它是一种规范,描述Web服务器和应用之间的交互</strong>.通俗来讲, 它就是一条纽带,连接着Web服务器和应用。</p>
 </li>
 </ul>
-<p>官方说明：<a href="https://www.python.org/dev/peps/pep-3333/" target="_blank" rel="noopener">PEP-3333</a></p>
+<p>官方说明：<a target="_blank" rel="noopener" href="https://www.python.org/dev/peps/pep-3333/">PEP-3333</a></p>
 <h1 id="简述浏览器通过WSGI请求动态资源的过程"><a href="#简述浏览器通过WSGI请求动态资源的过程" class="headerlink" title="简述浏览器通过WSGI请求动态资源的过程"></a>简述浏览器通过WSGI请求动态资源的过程</h1><ul>
 <li>静态服务器加载的是一个静态html页面，或是存在服务器中的静态数据。</li>
 <li><p>动态服务器是，当客户端发送一个请求，<strong>服务器拿到这个请求找到相关的程序代码执行，将执行结果返回给客户端的一个过程</strong></p>
@@ -784,8 +798,8 @@
 <li>WSGI 处理请求对应着<code>wsgi_app(self, environ, start_response)</code>方法，<code>self</code>参数对应着<code>app</code>，即flask程序；<code>environ</code>和 <code>start_response</code>由服务器提供。</li>
 <li><code>wsgi_app()</code>作用就是调用各种请求处理函数来处理请求，然后返回处理结果。即用户输入网址后，看到了网页响应。</li>
 </ol>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask</span><br><span class="line"></span><br><span class="line">app = Flask(__name__)  </span><br><span class="line"><span class="comment">#生成app实例，传递 __name__参数，__name__ 就是当前模块名字。</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route("/")</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">index</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">"2017-08-21"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    app.run(debug=<span class="literal">True</span>)</span><br></pre></td></tr></tbody></table></figure>
-<p><a href="https://blog.csdn.net/sinat_36651044/article/details/77462831" target="_blank" rel="noopener">https://blog.csdn.net/sinat_36651044/article/details/77462831</a></p>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> flask <span class="keyword">import</span> Flask</span><br><span class="line"></span><br><span class="line">app = Flask(__name__)  </span><br><span class="line"><span class="comment">#生成app实例，传递 __name__参数，__name__ 就是当前模块名字。</span></span><br><span class="line"></span><br><span class="line"><span class="meta">@app.route(<span class="params"><span class="string">"/"</span></span>)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">index</span>():</span></span><br><span class="line">    <span class="keyword">return</span> <span class="string">"2017-08-21"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    app.run(debug=<span class="literal">True</span>)</span><br></pre></td></tr></tbody></table></figure>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/sinat_36651044/article/details/77462831">https://blog.csdn.net/sinat_36651044/article/details/77462831</a></p>
 <h1 id="中间人攻击"><a href="#中间人攻击" class="headerlink" title="中间人攻击"></a>中间人攻击</h1><p>在<strong>GFW(Great Firewall: 中国国家防火墙)</strong>里屡见不鲜的,呵呵.</p>
 <p>中间人攻击（Man-in-the-middle attack，通常缩写为MITM）是指<strong>攻击者与通讯的两端分别创建独立的联系</strong>，并交换其所收到的数据，使通讯的两端认为他们正在通过一个私密的连接与对方直接对话，但事实上整个会话都被攻击者完全控制。</p>
 <h1 id="c10k问题"><a href="#c10k问题" class="headerlink" title="c10k问题"></a>c10k问题</h1><p>所谓<strong>c10k</strong>问题，指的是<strong>服务器同时支持成千上万个客户端</strong>的问题，也就是concurrent 10 000 connection（这也是c10k这个名字的由来）。</p>
@@ -794,8 +808,8 @@
 <li><strong>每个连接分配一个独立的线程/进程</strong>：该思路最为直接，但是申请进程/线程是需要系统资源的，且系统需要管理这些进程/线程，所以<strong>会使资源占用过多，可扩展性差</strong></li>
 <li><strong>同一个线程/进程同时处理多个连接（I/O多路复用）</strong>：select方式、poll方式、epoll方式、异步I/O以及Windows</li>
 </ol>
-<p><a href="https://my.oschina.net/xianggao/blog/664275" target="_blank" rel="noopener">https://my.oschina.net/xianggao/blog/664275</a></p>
-<p><a href="https://www.jianshu.com/p/ba7fa25d3590" target="_blank" rel="noopener">C10K问题及其解决方法</a></p>
+<p><a target="_blank" rel="noopener" href="https://my.oschina.net/xianggao/blog/664275">https://my.oschina.net/xianggao/blog/664275</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/ba7fa25d3590">C10K问题及其解决方法</a></p>
 <h1 id="Ajax"><a href="#Ajax" class="headerlink" title="Ajax"></a>Ajax</h1><p>AJAX(Asynchronous JavaScript and XML)（异步的 JavaScript 和 XML）, 是与在不重新加载整个页面的情况下，与<strong>服务器交换数据并更新部分网页的技术</strong>。</p>
 <h1 id="描述用浏览器访问www-baidu-com的过程"><a href="#描述用浏览器访问www-baidu-com的过程" class="headerlink" title="描述用浏览器访问www.baidu.com的过程"></a>描述用浏览器访问www.baidu.com的过程</h1><ol>
 <li>浏览器获取用户输入的域名：www.baidu.com</li>
@@ -812,25 +826,16 @@
 </li>
 <li><strong>浏览器解析首页文件</strong>，并将WEB页面显示给用户</li>
 </ol>
-<script>
-        document.querySelectorAll('.github-emoji')
-          .forEach(el => {
-            if (!el.dataset.src) { return; }
-            const img = document.createElement('img');
-            img.style = 'display:none !important;';
-            img.src = el.dataset.src;
-            img.addEventListener('error', () => {
-              img.remove();
-              el.style.color = 'inherit';
-              el.style.backgroundImage = 'none';
-              el.style.background = 'none';
-            });
-            img.addEventListener('load', () => {
-              img.remove();
-            });
-            document.body.appendChild(img);
-          });
-      </script>
+<h1 id="简述QQ登陆过程"><a href="#简述QQ登陆过程" class="headerlink" title="简述QQ登陆过程"></a>简述QQ登陆过程</h1><p>qq登录，在我们的项目中分为了三个接口</p>
+<ul>
+<li><p>第一个接口是请求qq服务器返回一个qq登录的界面;</p>
+</li>
+<li><p>第二个接口是通过扫码或账号登陆进行验证，qq服务器返回给浏览器一个code和state, 利用这个code通过<strong>本地服务器去向qq服务器获取access_token</strong>，凭借access_token再向qq服务器获取用户的openid(openid用户的唯一标识)</p>
+</li>
+<li><p>第三个接口是判断用户是否是第一次qq登录，如果不是的话直接登录返回的jwt-token给用户，对没有绑定过本网站的用户，对openid进行加密生成token进行绑定</p>
+</li>
+</ul>
+
     </div>
 
     
@@ -848,7 +853,7 @@
     <a href="https://unknown.yuzhouwan.com/posts/6678/" title="计算机网络">https://unknown.yuzhouwan.com/posts/6678/</a>
   </li>
   <li class="post-copyright-license">
-    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-ND</a> unless stating additionally.
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-ND</a> unless stating additionally.
   </li>
 </ul>
 </div>
@@ -880,7 +885,6 @@
   
   
 
-  </div>
 
 
           </div>
@@ -888,7 +892,7 @@
 
 <script>
   window.addEventListener('tabs:register', () => {
-    let activeClass = CONFIG.comments.activeClass;
+    let { activeClass } = CONFIG.comments;
     if (CONFIG.comments.storage) {
       activeClass = localStorage.getItem('comments_active') || activeClass;
     }
@@ -931,7 +935,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#三次握手"><span class="nav-number">1.</span> <span class="nav-text">三次握手</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#四次挥手"><span class="nav-number">2.</span> <span class="nav-text">四次挥手</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#七层网络模型"><span class="nav-number">3.</span> <span class="nav-text">七层网络模型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#TCP和UDP对比"><span class="nav-number">4.</span> <span class="nav-text">TCP和UDP对比</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Socket-Ip-address-TCP-UDP-port"><span class="nav-number">5.</span> <span class="nav-text">Socket(Ip address+ TCP&#x2F;UDP + port)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#怎么强行关闭客户端和服务器的连接"><span class="nav-number">6.</span> <span class="nav-text">怎么强行关闭客户端和服务器的连接</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HTTP"><span class="nav-number">7.</span> <span class="nav-text">HTTP</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP状态码"><span class="nav-number">7.1.</span> <span class="nav-text">HTTP状态码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP1-0和HTTP1-1"><span class="nav-number">7.2.</span> <span class="nav-text">HTTP1.0和HTTP1.1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP常见请求头与响应头"><span class="nav-number">7.3.</span> <span class="nav-text">HTTP常见请求头与响应头</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP协议以及协议头部中表示数据类型的字段"><span class="nav-number">7.4.</span> <span class="nav-text">HTTP协议以及协议头部中表示数据类型的字段</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP请求方法"><span class="nav-number">7.5.</span> <span class="nav-text">HTTP请求方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Post和Get"><span class="nav-number">7.6.</span> <span class="nav-text">Post和Get</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#幂等-Idempotence"><span class="nav-number">7.7.</span> <span class="nav-text">幂等 Idempotence</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP与HTTPS"><span class="nav-number">7.8.</span> <span class="nav-text">HTTP与HTTPS</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#URL的形式"><span class="nav-number">8.</span> <span class="nav-text">URL的形式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#urllib和urllib2的区别"><span class="nav-number">9.</span> <span class="nav-text">urllib和urllib2的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ARP协议"><span class="nav-number">10.</span> <span class="nav-text">ARP协议</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Cookie和Session"><span class="nav-number">11.</span> <span class="nav-text">Cookie和Session</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#apache和nginx的区别（Web服务器）"><span class="nav-number">12.</span> <span class="nav-text">apache和nginx的区别（Web服务器）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#网站用户密码保存"><span class="nav-number">13.</span> <span class="nav-text">网站用户密码保存</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#浏览器缓存"><span class="nav-number">14.</span> <span class="nav-text">浏览器缓存</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CSRF和XSS"><span class="nav-number">15.</span> <span class="nav-text">CSRF和XSS</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#RPC"><span class="nav-number">16.</span> <span class="nav-text">RPC</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SOAP"><span class="nav-number">17.</span> <span class="nav-text">SOAP</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#RESTful架构-SOAP-RPC"><span class="nav-number">18.</span> <span class="nav-text">RESTful架构(SOAP,RPC)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CGI和WSGI"><span class="nav-number">19.</span> <span class="nav-text">CGI和WSGI</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简述浏览器通过WSGI请求动态资源的过程"><span class="nav-number">20.</span> <span class="nav-text">简述浏览器通过WSGI请求动态资源的过程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#WSGI与Flask之间的关系"><span class="nav-number">21.</span> <span class="nav-text">WSGI与Flask之间的关系</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#中间人攻击"><span class="nav-number">22.</span> <span class="nav-text">中间人攻击</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#c10k问题"><span class="nav-number">23.</span> <span class="nav-text">c10k问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Ajax"><span class="nav-number">24.</span> <span class="nav-text">Ajax</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#描述用浏览器访问www-baidu-com的过程"><span class="nav-number">25.</span> <span class="nav-text">描述用浏览器访问www.baidu.com的过程</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B"><span class="nav-number">1.</span> <span class="nav-text">三次握手</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B"><span class="nav-number">2.</span> <span class="nav-text">四次挥手</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%83%E5%B1%82%E7%BD%91%E7%BB%9C%E6%A8%A1%E5%9E%8B"><span class="nav-number">3.</span> <span class="nav-text">七层网络模型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#TCP%E5%92%8CUDP%E5%AF%B9%E6%AF%94"><span class="nav-number">4.</span> <span class="nav-text">TCP和UDP对比</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Socket-Ip-address-TCP-UDP-port"><span class="nav-number">5.</span> <span class="nav-text">Socket(Ip address+ TCP&#x2F;UDP + port)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%80%8E%E4%B9%88%E5%BC%BA%E8%A1%8C%E5%85%B3%E9%97%AD%E5%AE%A2%E6%88%B7%E7%AB%AF%E5%92%8C%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E8%BF%9E%E6%8E%A5"><span class="nav-number">6.</span> <span class="nav-text">怎么强行关闭客户端和服务器的连接</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HTTP"><span class="nav-number">7.</span> <span class="nav-text">HTTP</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP%E7%8A%B6%E6%80%81%E7%A0%81"><span class="nav-number">7.1.</span> <span class="nav-text">HTTP状态码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP1-0%E5%92%8CHTTP1-1"><span class="nav-number">7.2.</span> <span class="nav-text">HTTP1.0和HTTP1.1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP%E5%B8%B8%E8%A7%81%E8%AF%B7%E6%B1%82%E5%A4%B4%E4%B8%8E%E5%93%8D%E5%BA%94%E5%A4%B4"><span class="nav-number">7.3.</span> <span class="nav-text">HTTP常见请求头与响应头</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP%E5%8D%8F%E8%AE%AE%E4%BB%A5%E5%8F%8A%E5%8D%8F%E8%AE%AE%E5%A4%B4%E9%83%A8%E4%B8%AD%E8%A1%A8%E7%A4%BA%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%AD%97%E6%AE%B5"><span class="nav-number">7.4.</span> <span class="nav-text">HTTP协议以及协议头部中表示数据类型的字段</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP%E8%AF%B7%E6%B1%82%E6%96%B9%E6%B3%95"><span class="nav-number">7.5.</span> <span class="nav-text">HTTP请求方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Post%E5%92%8CGet"><span class="nav-number">7.6.</span> <span class="nav-text">Post和Get</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B9%82%E7%AD%89-Idempotence"><span class="nav-number">7.7.</span> <span class="nav-text">幂等 Idempotence</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP%E4%B8%8EHTTPS"><span class="nav-number">7.8.</span> <span class="nav-text">HTTP与HTTPS</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#URL%E7%9A%84%E5%BD%A2%E5%BC%8F"><span class="nav-number">8.</span> <span class="nav-text">URL的形式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#urllib%E5%92%8Curllib2%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">9.</span> <span class="nav-text">urllib和urllib2的区别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ARP%E5%8D%8F%E8%AE%AE"><span class="nav-number">10.</span> <span class="nav-text">ARP协议</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Cookie%E5%92%8CSession"><span class="nav-number">11.</span> <span class="nav-text">Cookie和Session</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#apache%E5%92%8Cnginx%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%88Web%E6%9C%8D%E5%8A%A1%E5%99%A8%EF%BC%89"><span class="nav-number">12.</span> <span class="nav-text">apache和nginx的区别（Web服务器）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BD%91%E7%AB%99%E7%94%A8%E6%88%B7%E5%AF%86%E7%A0%81%E4%BF%9D%E5%AD%98"><span class="nav-number">13.</span> <span class="nav-text">网站用户密码保存</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E7%BC%93%E5%AD%98"><span class="nav-number">14.</span> <span class="nav-text">浏览器缓存</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CSRF%E5%92%8CXSS"><span class="nav-number">15.</span> <span class="nav-text">CSRF和XSS</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#RPC"><span class="nav-number">16.</span> <span class="nav-text">RPC</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SOAP"><span class="nav-number">17.</span> <span class="nav-text">SOAP</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#RESTful%E6%9E%B6%E6%9E%84-SOAP-RPC"><span class="nav-number">18.</span> <span class="nav-text">RESTful架构(SOAP,RPC)</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CGI%E5%92%8CWSGI"><span class="nav-number">19.</span> <span class="nav-text">CGI和WSGI</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AE%80%E8%BF%B0%E6%B5%8F%E8%A7%88%E5%99%A8%E9%80%9A%E8%BF%87WSGI%E8%AF%B7%E6%B1%82%E5%8A%A8%E6%80%81%E8%B5%84%E6%BA%90%E7%9A%84%E8%BF%87%E7%A8%8B"><span class="nav-number">20.</span> <span class="nav-text">简述浏览器通过WSGI请求动态资源的过程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#WSGI%E4%B8%8EFlask%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="nav-number">21.</span> <span class="nav-text">WSGI与Flask之间的关系</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%AD%E9%97%B4%E4%BA%BA%E6%94%BB%E5%87%BB"><span class="nav-number">22.</span> <span class="nav-text">中间人攻击</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#c10k%E9%97%AE%E9%A2%98"><span class="nav-number">23.</span> <span class="nav-text">c10k问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Ajax"><span class="nav-number">24.</span> <span class="nav-text">Ajax</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8F%8F%E8%BF%B0%E7%94%A8%E6%B5%8F%E8%A7%88%E5%99%A8%E8%AE%BF%E9%97%AEwww-baidu-com%E7%9A%84%E8%BF%87%E7%A8%8B"><span class="nav-number">25.</span> <span class="nav-text">描述用浏览器访问www.baidu.com的过程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AE%80%E8%BF%B0QQ%E7%99%BB%E9%99%86%E8%BF%87%E7%A8%8B"><span class="nav-number">26.</span> <span class="nav-text">简述QQ登陆过程</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -945,14 +949,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">23</span>
+          <span class="site-state-item-count">24</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-count">11</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -965,7 +969,7 @@
 </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-        <a href="https://github.com/GraceKoo" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;GraceKoo" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+        <a href="https://github.com/GraceKoo" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;GraceKoo" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
       </span>
   </div>
   <div class="cc-license motion-element" itemprop="license">
@@ -974,8 +978,7 @@
 
 
   <div class="links-of-blogroll motion-element">
-    <div class="links-of-blogroll-title">
-      <i class="fa fa-fw fa-link"></i>
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
       Links
     </div>
     <ul class="links-of-blogroll-list">
@@ -999,25 +1002,29 @@
       <div class="footer-inner">
         
 
+        
+
 <div class="copyright">
   
   &copy; 2017 – 
-  <span itemprop="copyrightYear">2020</span>
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
-    <i class="fa fa-user"></i>
+    <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">unknown.yuzhouwan.com</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
-      <i class="fa fa-area-chart"></i>
+      <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">368k</span>
+    <span title="Symbols count total">389k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">5:35</span>
+    <span title="Reading time total">5:54</span>
 </div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
 
         <meta name="referrer" content="always">
 <div class="busuanzi-count">

@@ -4,7 +4,7 @@
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.0">
+<meta name="generator" content="Hexo 5.3.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/me.jpg">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/me.jpg">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/me.jpg">
@@ -13,7 +13,7 @@
 <link rel="stylesheet" href="/css/main.css">
 
 
-<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
 
 <script id="hexo-configurations">
@@ -27,7 +27,7 @@
 <meta property="og:url" content="https://unknown.yuzhouwan.com/posts/25246/index.html">
 <meta property="og:site_name" content="Grace Koo&#39;s Blog">
 <meta property="og:description" content="Git配置config文件 &#x2F;etc&#x2F;gitconfig文件：系统中对所有的用户都普遍适用的配置。若使用git config —system选项，读写就是这个文件  ～&#x2F;.gitconfig文件：用户目录下的配置文件，只适用于该用户。若使用config —global选项，读写就是这个文件  当前Git仓库的git文件（.git&#x2F;config），这里配置只对当前项目有效，每个配置级别都会覆盖上层的">
-<meta property="og:locale" content="Zh">
+<meta property="og:locale">
 <meta property="og:image" content="https://unknown.yuzhouwan.com/images/git/git_1.png">
 <meta property="og:image" content="https://unknown.yuzhouwan.com/images/git/git_0.png">
 <meta property="og:image" content="https://unknown.yuzhouwan.com/images/git/git_2.png">
@@ -55,7 +55,8 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : true
+    isPost : true,
+    lang   : 'Zh'
   };
 </script>
 
@@ -90,6 +91,8 @@
   </style>
 </noscript>
 
+
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 <link rel="alternate" href="/atom.xml" title="Grace Koo's Blog" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
@@ -109,14 +112,12 @@
 
   <div class="site-meta">
 
-    <div>
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Grace Koo's Blog</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
-    </div>
-        <p class="site-subtitle">LaLaLa~~~</p>
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Grace Koo's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">LaLaLa~~~</p>
   </div>
 
   <div class="site-nav-right">
@@ -127,42 +128,43 @@
 </div>
 
 
+
+
 <nav class="site-nav">
-  
-  <ul id="menu" class="menu">
+  <ul id="menu" class="main-menu menu">
         <li class="menu-item menu-item-home">
 
-    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
 
   </li>
         <li class="menu-item menu-item-about">
 
-    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
 
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags</a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories</a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
 
   </li>
         <li class="menu-item menu-item-books">
 
-    <a href="/books/" rel="section"><i class="fa fa-fw fa-book"></i>Books</a>
+    <a href="/books/" rel="section"><i class="book fa-fw"></i>Books</a>
 
   </li>
         <li class="menu-item menu-item-mr.sweet">
 
-    <a href="/sweet/" rel="section"><i class="fa fa-fw fa-paw"></i>Mr.Sweet</a>
+    <a href="/sweet/" rel="section"><i class="paw fa-fw"></i>Mr.Sweet</a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -170,16 +172,18 @@
         </a>
       </li>
   </ul>
-
 </nav>
-  <div class="site-search">
+
+
+
+  <div class="search-pop-overlay">
     <div class="popup search-popup">
-    <div class="search-header">
+        <div class="search-header">
   <span class="search-icon">
     <i class="fa fa-search"></i>
   </span>
   <div class="search-input-container">
-    <input autocomplete="off" autocorrect="off" autocapitalize="off"
+    <input autocomplete="off" autocapitalize="off"
            placeholder="Searching..." spellcheck="false"
            type="search" class="search-input">
   </div>
@@ -187,12 +191,15 @@
     <i class="fa fa-times-circle"></i>
   </span>
 </div>
-<div id="search-result"></div>
-
-</div>
-<div class="search-pop-overlay"></div>
-
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
   </div>
+</div>
+
+    </div>
+  </div>
+
 </div>
     </header>
 
@@ -208,14 +215,13 @@
         <div class="content-wrap">
           
 
-          <div class="content">
+          <div class="content post posts-expand">
             
 
-  <div class="posts-expand">
-      
+    
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="Zh">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="Zh">
     <link itemprop="mainEntityOfPage" href="https://unknown.yuzhouwan.com/posts/25246/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -235,7 +241,7 @@
         <div class="post-meta">
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
@@ -243,14 +249,14 @@
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
+                  <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
                 <time title="Modified: 2020-03-01 13:10:07" itemprop="dateModified" datetime="2020-03-01T13:10:07Z">2020-03-01</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
+                <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
@@ -268,14 +274,14 @@
             </span><br>
             <span class="post-meta-item" title="Symbols count in article">
               <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
+                <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>5.7k</span>
+              <span>5.3k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
+                <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
               <span>5 mins.</span>
@@ -303,13 +309,13 @@
 <h2 id="配置用户信息"><a href="#配置用户信息" class="headerlink" title="配置用户信息"></a>配置用户信息</h2><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --<span class="keyword">global</span> user.name <span class="string">"loen"</span></span><br><span class="line">$ git config --<span class="keyword">global</span> user.email loen@qq.com</span><br></pre></td></tr></tbody></table></figure>
 <p>利用gloabal选项，更改用户主目录下的config文件，以后所有项目都会默认使用这里配置的用户信息</p>
 <p>如果要在某个特定项目里使用其他名字或者邮件，只要去掉—global选项重新配置即可，新的设定保存在当前目录的.git/config 文件里</p>
-<h2 id="查看配置信息"><a href="#查看配置信息" class="headerlink" title="查看配置信息"></a>查看配置信息</h2> <figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git config --list</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="查看配置信息"><a href="#查看配置信息" class="headerlink" title="查看配置信息"></a>查看配置信息</h2> <figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git config --<span class="built_in">list</span></span><br></pre></td></tr></tbody></table></figure>
 <p>有时候会看到重复的变量名，那就说明它们来自不同的配置文件( 比如/etc/gitconfig和~./gitconfig)，不过Git实际采用的是最后一个</p>
 <p>也可以在/etc/gitconfig和~./gitconfig里看到</p>
 <figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ vim ~/.gitconfig</span><br></pre></td></tr></tbody></table></figure>
 <h2 id="忽略特殊文件-gitignore"><a href="#忽略特殊文件-gitignore" class="headerlink" title="忽略特殊文件.gitignore"></a>忽略特殊文件.gitignore</h2><p>有时必须把某些文件放入Git工作目录中，但是又不能将其提交，如存储了数据库密码的配置文件。</p>
 <p>只需在Git工作区的根目录下创建一个名为.gitignore的文件，写入过滤规则就可以了</p>
-<p>.gitignore不需要从头写，所有配置文件可以直接在线浏览<a href="https://github.com/github/.gitignore" target="_blank" rel="noopener">https://github.com/github/.gitignore</a></p>
+<p>.gitignore不需要从头写，所有配置文件可以直接在线浏览<a target="_blank" rel="noopener" href="https://github.com/github/.gitignore">https://github.com/github/.gitignore</a></p>
 <p>忽略文件的原则是：</p>
 <p>1.忽略系统自动生成的文件</p>
 <p>2.忽略编译生成的中间文件</p>
@@ -404,7 +410,7 @@
 <ul>
 <li>创建新分支new_branch</li>
 </ul>
-<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git branch new_branch</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git branch new_branch </span><br></pre></td></tr></tbody></table></figure>
 <ul>
 <li>切换到新分支new_branch：当切换到新分支时，Git会用该分支的最后提交的快照替换工作目录的内容</li>
 </ul>
@@ -443,7 +449,7 @@
 <h2 id="拉取分支"><a href="#拉取分支" class="headerlink" title="拉取分支"></a>拉取分支</h2><p>将origin最新的提交拉取下来</p>
 <figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git pull</span><br></pre></td></tr></tbody></table></figure>
 <p>关联本地dev分支与远程origin/dev分支</p>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git branch --set-upstream dev origin/dev</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git branch --<span class="built_in">set</span>-upstream dev origin/dev</span><br></pre></td></tr></tbody></table></figure>
 <h1 id="回退与撤销"><a href="#回退与撤销" class="headerlink" title="回退与撤销"></a>回退与撤销</h1><h2 id="撤销修改：git-checkout-file"><a href="#撤销修改：git-checkout-file" class="headerlink" title="撤销修改：git checkout - - file"></a>撤销修改：git checkout - - file</h2><p>把该文件在工作区的修改全部撤销，如果文件修改后还没有放到暂存区，撤销修改就是用版本库里的替代工作区内的。如果文件已经被添加到暂存区，那么撤销修改就是用暂存区里的文件替代当前文件。</p>
 <p>总之就是让这个文件回到最近一次git commit或git add时的状态。</p>
 <figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -- file</span><br></pre></td></tr></tbody></table></figure>
@@ -466,7 +472,7 @@
 <figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ git branch</span><br><span class="line">* dev</span><br><span class="line">  master</span><br><span class="line">$ git checkout master</span><br><span class="line">Switch to branch <span class="string">'master'</span></span><br></pre></td></tr></tbody></table></figure>
 <figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git tag v1<span class="number">.0</span></span><br></pre></td></tr></tbody></table></figure>
 <p>也可以直接在某个commit id上打标签</p>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ git log --pretty=online --abbrev-commit //找到历史的commit id</span><br><span class="line">a923sad1 You <span class="keyword">is</span> pig</span><br><span class="line">a923sad2 You <span class="keyword">is</span> cat</span><br><span class="line">$ git tag v0<span class="number">.8</span> a923sad2 //给You <span class="keyword">is</span> cat打标签</span><br><span class="line">$ git tag //查看当前标签</span><br><span class="line">v0<span class="number">.8</span></span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ git log --pretty=online --abbrev-commit //找到历史的commit <span class="built_in">id</span></span><br><span class="line">a923sad1 You <span class="keyword">is</span> pig</span><br><span class="line">a923sad2 You <span class="keyword">is</span> cat</span><br><span class="line">$ git tag v0<span class="number">.8</span> a923sad2 //给You <span class="keyword">is</span> cat打标签</span><br><span class="line">$ git tag //查看当前标签</span><br><span class="line">v0<span class="number">.8</span></span><br></pre></td></tr></tbody></table></figure>
 <p>也可以创建带有说明的标签：</p>
 <figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git tag -a v0<span class="number">.9</span> -m <span class="string">"This is v0.9"</span></span><br></pre></td></tr></tbody></table></figure>
 <h2 id="查看标签"><a href="#查看标签" class="headerlink" title="查看标签"></a>查看标签</h2><p>可以使用git tag来查看所有的标签</p>
@@ -482,25 +488,7 @@
 <figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git tag -d v0<span class="number">.9</span></span><br></pre></td></tr></tbody></table></figure>
 <p>然后从远程删除</p>
 <figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git push origin :refs/tags/v0<span class="number">.9</span> To https://github.com/liming/gitlearn.git</span><br></pre></td></tr></tbody></table></figure>
-<script>
-        document.querySelectorAll('.github-emoji')
-          .forEach(el => {
-            if (!el.dataset.src) { return; }
-            const img = document.createElement('img');
-            img.style = 'display:none !important;';
-            img.src = el.dataset.src;
-            img.addEventListener('error', () => {
-              img.remove();
-              el.style.color = 'inherit';
-              el.style.backgroundImage = 'none';
-              el.style.background = 'none';
-            });
-            img.addEventListener('load', () => {
-              img.remove();
-            });
-            document.body.appendChild(img);
-          });
-      </script>
+
     </div>
 
     
@@ -518,7 +506,7 @@
     <a href="https://unknown.yuzhouwan.com/posts/25246/" title="Git">https://unknown.yuzhouwan.com/posts/25246/</a>
   </li>
   <li class="post-copyright-license">
-    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-ND</a> unless stating additionally.
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-ND</a> unless stating additionally.
   </li>
 </ul>
 </div>
@@ -550,7 +538,6 @@
   
   
 
-  </div>
 
 
           </div>
@@ -558,7 +545,7 @@
 
 <script>
   window.addEventListener('tabs:register', () => {
-    let activeClass = CONFIG.comments.activeClass;
+    let { activeClass } = CONFIG.comments;
     if (CONFIG.comments.storage) {
       activeClass = localStorage.getItem('comments_active') || activeClass;
     }
@@ -601,7 +588,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Git配置"><span class="nav-number">1.</span> <span class="nav-text">Git配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#config文件"><span class="nav-number">1.1.</span> <span class="nav-text">config文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置用户信息"><span class="nav-number">1.2.</span> <span class="nav-text">配置用户信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看配置信息"><span class="nav-number">1.3.</span> <span class="nav-text">查看配置信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#忽略特殊文件-gitignore"><span class="nav-number">1.4.</span> <span class="nav-text">忽略特殊文件.gitignore</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Git工作流程"><span class="nav-number">2.</span> <span class="nav-text">Git工作流程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#快速入门Git"><span class="nav-number">3.</span> <span class="nav-text">快速入门Git</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建版本库：git-init"><span class="nav-number">3.1.</span> <span class="nav-text">创建版本库：git init</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加到暂存区：git-add"><span class="nav-number">3.2.</span> <span class="nav-text">添加到暂存区：git add</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#向仓库提交代码：git-commit"><span class="nav-number">3.3.</span> <span class="nav-text">向仓库提交代码：git commit</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#取消已缓存的内容：git-reset-HEAD"><span class="nav-number">3.4.</span> <span class="nav-text">取消已缓存的内容：git reset HEAD</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#删除文件：git-rm"><span class="nav-number">3.5.</span> <span class="nav-text">删除文件：git rm</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#恢复文件：git-checkout"><span class="nav-number">3.6.</span> <span class="nav-text">恢复文件：git checkout</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#移动-重命名：git-mv"><span class="nav-number">3.7.</span> <span class="nav-text">移动&#x2F;重命名：git mv</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#远程仓库GitHub"><span class="nav-number">4.</span> <span class="nav-text">远程仓库GitHub</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#关联远程仓库"><span class="nav-number">4.1.</span> <span class="nav-text">关联远程仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#克隆远程仓库"><span class="nav-number">4.2.</span> <span class="nav-text">克隆远程仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更新数据：git-fetch"><span class="nav-number">4.3.</span> <span class="nav-text">更新数据：git fetch</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更新数据：git-pull"><span class="nav-number">4.4.</span> <span class="nav-text">更新数据：git pull</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Git分支管理"><span class="nav-number">5.</span> <span class="nav-text">Git分支管理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#分支原理"><span class="nav-number">5.1.</span> <span class="nav-text">分支原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基础命令"><span class="nav-number">5.2.</span> <span class="nav-text">基础命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决冲突"><span class="nav-number">5.3.</span> <span class="nav-text">解决冲突</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看远程库信息"><span class="nav-number">5.4.</span> <span class="nav-text">查看远程库信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#推送分支"><span class="nav-number">5.5.</span> <span class="nav-text">推送分支</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#拉取分支"><span class="nav-number">5.6.</span> <span class="nav-text">拉取分支</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#回退与撤销"><span class="nav-number">6.</span> <span class="nav-text">回退与撤销</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#撤销修改：git-checkout-file"><span class="nav-number">6.1.</span> <span class="nav-text">撤销修改：git checkout - - file</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#历史记录：git-log"><span class="nav-number">6.2.</span> <span class="nav-text">历史记录：git log</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#版本回退：git-reset"><span class="nav-number">6.3.</span> <span class="nav-text">版本回退：git reset</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#标签"><span class="nav-number">7.</span> <span class="nav-text">标签</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建标签：git-tag"><span class="nav-number">7.1.</span> <span class="nav-text">创建标签：git tag</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看标签"><span class="nav-number">7.2.</span> <span class="nav-text">查看标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#删除标签"><span class="nav-number">7.3.</span> <span class="nav-text">删除标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#推送标签到远程"><span class="nav-number">7.4.</span> <span class="nav-text">推送标签到远程</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Git%E9%85%8D%E7%BD%AE"><span class="nav-number">1.</span> <span class="nav-text">Git配置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#config%E6%96%87%E4%BB%B6"><span class="nav-number">1.1.</span> <span class="nav-text">config文件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE%E7%94%A8%E6%88%B7%E4%BF%A1%E6%81%AF"><span class="nav-number">1.2.</span> <span class="nav-text">配置用户信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E9%85%8D%E7%BD%AE%E4%BF%A1%E6%81%AF"><span class="nav-number">1.3.</span> <span class="nav-text">查看配置信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BF%BD%E7%95%A5%E7%89%B9%E6%AE%8A%E6%96%87%E4%BB%B6-gitignore"><span class="nav-number">1.4.</span> <span class="nav-text">忽略特殊文件.gitignore</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Git%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B"><span class="nav-number">2.</span> <span class="nav-text">Git工作流程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8Git"><span class="nav-number">3.</span> <span class="nav-text">快速入门Git</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E7%89%88%E6%9C%AC%E5%BA%93%EF%BC%9Agit-init"><span class="nav-number">3.1.</span> <span class="nav-text">创建版本库：git init</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E5%88%B0%E6%9A%82%E5%AD%98%E5%8C%BA%EF%BC%9Agit-add"><span class="nav-number">3.2.</span> <span class="nav-text">添加到暂存区：git add</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%90%91%E4%BB%93%E5%BA%93%E6%8F%90%E4%BA%A4%E4%BB%A3%E7%A0%81%EF%BC%9Agit-commit"><span class="nav-number">3.3.</span> <span class="nav-text">向仓库提交代码：git commit</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%96%E6%B6%88%E5%B7%B2%E7%BC%93%E5%AD%98%E7%9A%84%E5%86%85%E5%AE%B9%EF%BC%9Agit-reset-HEAD"><span class="nav-number">3.4.</span> <span class="nav-text">取消已缓存的内容：git reset HEAD</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6%EF%BC%9Agit-rm"><span class="nav-number">3.5.</span> <span class="nav-text">删除文件：git rm</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%81%A2%E5%A4%8D%E6%96%87%E4%BB%B6%EF%BC%9Agit-checkout"><span class="nav-number">3.6.</span> <span class="nav-text">恢复文件：git checkout</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A7%BB%E5%8A%A8-%E9%87%8D%E5%91%BD%E5%90%8D%EF%BC%9Agit-mv"><span class="nav-number">3.7.</span> <span class="nav-text">移动&#x2F;重命名：git mv</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93GitHub"><span class="nav-number">4.</span> <span class="nav-text">远程仓库GitHub</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E8%81%94%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93"><span class="nav-number">4.1.</span> <span class="nav-text">关联远程仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%8B%E9%9A%86%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93"><span class="nav-number">4.2.</span> <span class="nav-text">克隆远程仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B4%E6%96%B0%E6%95%B0%E6%8D%AE%EF%BC%9Agit-fetch"><span class="nav-number">4.3.</span> <span class="nav-text">更新数据：git fetch</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B4%E6%96%B0%E6%95%B0%E6%8D%AE%EF%BC%9Agit-pull"><span class="nav-number">4.4.</span> <span class="nav-text">更新数据：git pull</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Git%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86"><span class="nav-number">5.</span> <span class="nav-text">Git分支管理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E6%94%AF%E5%8E%9F%E7%90%86"><span class="nav-number">5.1.</span> <span class="nav-text">分支原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4"><span class="nav-number">5.2.</span> <span class="nav-text">基础命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E5%86%B2%E7%AA%81"><span class="nav-number">5.3.</span> <span class="nav-text">解决冲突</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E8%BF%9C%E7%A8%8B%E5%BA%93%E4%BF%A1%E6%81%AF"><span class="nav-number">5.4.</span> <span class="nav-text">查看远程库信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8E%A8%E9%80%81%E5%88%86%E6%94%AF"><span class="nav-number">5.5.</span> <span class="nav-text">推送分支</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8B%89%E5%8F%96%E5%88%86%E6%94%AF"><span class="nav-number">5.6.</span> <span class="nav-text">拉取分支</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9B%9E%E9%80%80%E4%B8%8E%E6%92%A4%E9%94%80"><span class="nav-number">6.</span> <span class="nav-text">回退与撤销</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%92%A4%E9%94%80%E4%BF%AE%E6%94%B9%EF%BC%9Agit-checkout-file"><span class="nav-number">6.1.</span> <span class="nav-text">撤销修改：git checkout - - file</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8E%86%E5%8F%B2%E8%AE%B0%E5%BD%95%EF%BC%9Agit-log"><span class="nav-number">6.2.</span> <span class="nav-text">历史记录：git log</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%88%E6%9C%AC%E5%9B%9E%E9%80%80%EF%BC%9Agit-reset"><span class="nav-number">6.3.</span> <span class="nav-text">版本回退：git reset</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A0%87%E7%AD%BE"><span class="nav-number">7.</span> <span class="nav-text">标签</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E6%A0%87%E7%AD%BE%EF%BC%9Agit-tag"><span class="nav-number">7.1.</span> <span class="nav-text">创建标签：git tag</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E6%A0%87%E7%AD%BE"><span class="nav-number">7.2.</span> <span class="nav-text">查看标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E6%A0%87%E7%AD%BE"><span class="nav-number">7.3.</span> <span class="nav-text">删除标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8E%A8%E9%80%81%E6%A0%87%E7%AD%BE%E5%88%B0%E8%BF%9C%E7%A8%8B"><span class="nav-number">7.4.</span> <span class="nav-text">推送标签到远程</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -615,14 +602,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">23</span>
+          <span class="site-state-item-count">24</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-count">11</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -635,7 +622,7 @@
 </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-        <a href="https://github.com/GraceKoo" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;GraceKoo" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+        <a href="https://github.com/GraceKoo" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;GraceKoo" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
       </span>
   </div>
   <div class="cc-license motion-element" itemprop="license">
@@ -644,8 +631,7 @@
 
 
   <div class="links-of-blogroll motion-element">
-    <div class="links-of-blogroll-title">
-      <i class="fa fa-fw fa-link"></i>
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
       Links
     </div>
     <ul class="links-of-blogroll-list">
@@ -669,25 +655,29 @@
       <div class="footer-inner">
         
 
+        
+
 <div class="copyright">
   
   &copy; 2017 – 
-  <span itemprop="copyrightYear">2020</span>
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
-    <i class="fa fa-user"></i>
+    <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">unknown.yuzhouwan.com</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
-      <i class="fa fa-area-chart"></i>
+      <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">368k</span>
+    <span title="Symbols count total">389k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">5:35</span>
+    <span title="Reading time total">5:54</span>
 </div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
 
         <meta name="referrer" content="always">
 <div class="busuanzi-count">

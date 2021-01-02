@@ -4,7 +4,7 @@
   <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.0">
+<meta name="generator" content="Hexo 5.3.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/me.jpg">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/me.jpg">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/me.jpg">
@@ -13,7 +13,7 @@
 <link rel="stylesheet" href="/css/main.css">
 
 
-<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
 
 <script id="hexo-configurations">
@@ -27,10 +27,10 @@
 <meta property="og:url" content="https://unknown.yuzhouwan.com/posts/22398665/index.html">
 <meta property="og:site_name" content="Grace Koo&#39;s Blog">
 <meta property="og:description" content="pytest简介pytest是一个非常成熟的Python测试框架  能够支持简单的单元测试和复杂的功能测试，还可以用来做selenium&#x2F;appnium等自动化测试，接口自动化测试（pytest+request） pytest具有很多第三方插件，并且可以自定义扩展，常用的插件有： pytest-selenium（集成selenium） pytest-html（完美html测试报告生成） pytes">
-<meta property="og:locale" content="Zh">
+<meta property="og:locale">
 <meta property="og:image" content="https://unknown.yuzhouwan.com/images/data/POM.png">
 <meta property="article:published_time" content="2020-01-26T23:55:00.000Z">
-<meta property="article:modified_time" content="2020-11-23T03:18:19.554Z">
+<meta property="article:modified_time" content="2020-11-23T03:21:54.121Z">
 <meta property="article:author" content="Grace Koo">
 <meta property="article:tag" content="Software Test Basic">
 <meta name="twitter:card" content="summary">
@@ -44,7 +44,8 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : true
+    isPost : true,
+    lang   : 'Zh'
   };
 </script>
 
@@ -79,6 +80,8 @@
   </style>
 </noscript>
 
+
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
 <link rel="alternate" href="/atom.xml" title="Grace Koo's Blog" type="application/atom+xml"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
@@ -98,14 +101,12 @@
 
   <div class="site-meta">
 
-    <div>
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Grace Koo's Blog</span>
-        <span class="logo-line-after"><i></i></span>
-      </a>
-    </div>
-        <p class="site-subtitle">LaLaLa~~~</p>
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Grace Koo's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">LaLaLa~~~</p>
   </div>
 
   <div class="site-nav-right">
@@ -116,42 +117,43 @@
 </div>
 
 
+
+
 <nav class="site-nav">
-  
-  <ul id="menu" class="menu">
+  <ul id="menu" class="main-menu menu">
         <li class="menu-item menu-item-home">
 
-    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
 
   </li>
         <li class="menu-item menu-item-about">
 
-    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
 
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags</a>
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>Categories</a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
 
   </li>
         <li class="menu-item menu-item-books">
 
-    <a href="/books/" rel="section"><i class="fa fa-fw fa-book"></i>Books</a>
+    <a href="/books/" rel="section"><i class="book fa-fw"></i>Books</a>
 
   </li>
         <li class="menu-item menu-item-mr.sweet">
 
-    <a href="/sweet/" rel="section"><i class="fa fa-fw fa-paw"></i>Mr.Sweet</a>
+    <a href="/sweet/" rel="section"><i class="paw fa-fw"></i>Mr.Sweet</a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -159,16 +161,18 @@
         </a>
       </li>
   </ul>
-
 </nav>
-  <div class="site-search">
+
+
+
+  <div class="search-pop-overlay">
     <div class="popup search-popup">
-    <div class="search-header">
+        <div class="search-header">
   <span class="search-icon">
     <i class="fa fa-search"></i>
   </span>
   <div class="search-input-container">
-    <input autocomplete="off" autocorrect="off" autocapitalize="off"
+    <input autocomplete="off" autocapitalize="off"
            placeholder="Searching..." spellcheck="false"
            type="search" class="search-input">
   </div>
@@ -176,12 +180,15 @@
     <i class="fa fa-times-circle"></i>
   </span>
 </div>
-<div id="search-result"></div>
-
-</div>
-<div class="search-pop-overlay"></div>
-
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
   </div>
+</div>
+
+    </div>
+  </div>
+
 </div>
     </header>
 
@@ -197,14 +204,13 @@
         <div class="content-wrap">
           
 
-          <div class="content">
+          <div class="content post posts-expand">
             
 
-  <div class="posts-expand">
-      
+    
   
   
-  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="Zh">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="Zh">
     <link itemprop="mainEntityOfPage" href="https://unknown.yuzhouwan.com/posts/22398665/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -224,7 +230,7 @@
         <div class="post-meta">
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
+                <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
@@ -232,14 +238,14 @@
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
+                  <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-11-23 03:18:19" itemprop="dateModified" datetime="2020-11-23T03:18:19Z">2020-11-23</time>
+                <time title="Modified: 2020-11-23 03:21:54" itemprop="dateModified" datetime="2020-11-23T03:21:54Z">2020-11-23</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
+                <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
@@ -261,17 +267,17 @@
             </span><br>
             <span class="post-meta-item" title="Symbols count in article">
               <span class="post-meta-item-icon">
-                <i class="fa fa-file-word-o"></i>
+                <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>7.2k</span>
+              <span>6.8k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
-                <i class="fa fa-clock-o"></i>
+                <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>7 mins.</span>
+              <span>6 mins.</span>
             </span>
 
         </div>
@@ -296,8 +302,8 @@
 <li>支持参数化，可以细粒度地控制要测试的测试用例</li>
 <li>可以很好的和CI工具结合，例如Jenkins</li>
 </ol>
-<p><a href="https://docs.pytest.org/en/stable/" target="_blank" rel="noopener">https://docs.pytest.org/en/stable/</a></p>
-<p><a href="https://www.cnblogs.com/mytianying/p/12466302.html" target="_blank" rel="noopener">https://www.cnblogs.com/mytianying/p/12466302.html</a></p>
+<p><a target="_blank" rel="noopener" href="https://docs.pytest.org/en/stable/">https://docs.pytest.org/en/stable/</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/mytianying/p/12466302.html">https://www.cnblogs.com/mytianying/p/12466302.html</a></p>
 <a id="more"></a>
 <h3 id="编写规则"><a href="#编写规则" class="headerlink" title="编写规则"></a>编写规则</h3><ul>
 <li>测试文件以test开头（以test结尾也可以）</li>
@@ -305,7 +311,7 @@
 <li>测试函数以test开头</li>
 <li>断言使用基本的assert即可</li>
 </ul>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># test_whitebalance.py</span></span><br><span class="line"><span class="keyword">import</span> pytest</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TestLoginCase</span><span class="params">(object)</span>:</span></span><br><span class="line">  <span class="comment"># def __init__(self):</span></span><br><span class="line">  </span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">test01</span><span class="params">(self)</span>:</span></span><br><span class="line">    print(<span class="string">"test01"</span>)</span><br><span class="line">    <span class="keyword">assert</span> <span class="number">1</span> == <span class="number">1</span></span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">  pytest.main([<span class="string">"-vs"</span>, <span class="string">"test_whitebalance.py"</span>])</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># test_whitebalance.py</span></span><br><span class="line"><span class="keyword">import</span> pytest</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TestLoginCase</span>(<span class="params"><span class="built_in">object</span></span>):</span></span><br><span class="line">  <span class="comment"># def __init__(self):</span></span><br><span class="line">  </span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">test01</span>(<span class="params">self</span>):</span></span><br><span class="line">    print(<span class="string">"test01"</span>)</span><br><span class="line">    <span class="keyword">assert</span> <span class="number">1</span> == <span class="number">1</span></span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">  pytest.main([<span class="string">"-vs"</span>, <span class="string">"test_whitebalance.py"</span>])</span><br></pre></td></tr></tbody></table></figure>
 <p>Console参数介绍</p>
 <ul>
 <li>-v 用于显示每个测试函数的执行结果</li>
@@ -356,7 +362,7 @@
 </li>
 </ol>
 </blockquote>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># test_whitebalance.py</span></span><br><span class="line"><span class="keyword">import</span> pytest</span><br><span class="line"></span><br><span class="line"><span class="meta">@pytest.mark.do</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test01</span><span class="params">()</span>:</span></span><br><span class="line">  print(<span class="string">"test01"</span>)</span><br><span class="line">  </span><br><span class="line"><span class="meta">@pytest.mark.undo</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test02</span><span class="params">()</span>:</span></span><br><span class="line">  print(<span class="string">"test02"</span>)</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># test_whitebalance.py</span></span><br><span class="line"><span class="keyword">import</span> pytest</span><br><span class="line"></span><br><span class="line"><span class="meta">@pytest.mark.do</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test01</span>():</span></span><br><span class="line">  print(<span class="string">"test01"</span>)</span><br><span class="line">  </span><br><span class="line"><span class="meta">@pytest.mark.undo</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test02</span>():</span></span><br><span class="line">  print(<span class="string">"test02"</span>)</span><br></pre></td></tr></tbody></table></figure>
 <ul>
 <li>pytest -m do test_whitebalance.py</li>
 </ul>
@@ -375,17 +381,17 @@
 <li>用户名正确，密码正确：<code>admin 123</code></li>
 <li>用户名错误，密码错误： <code>*** ***</code></li>
 </ol>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pytest</span><br><span class="line"></span><br><span class="line"><span class="comment"># 列表</span></span><br><span class="line">data1 = [<span class="string">'123'</span>, <span class="string">'456'</span>]</span><br><span class="line"></span><br><span class="line"><span class="meta">@pytest.mark.parametrize('pwd', data1)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test1</span><span class="params">(pwd)</span>:</span></span><br><span class="line">  print(pwd)</span><br></pre></td></tr></tbody></table></figure>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 元组</span></span><br><span class="line">data2 = [</span><br><span class="line">  (<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>), </span><br><span class="line">  (<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>)</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="meta">@pytest.mark.parametrize('a, b, c', data2)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test2</span><span class="params">(pwd)</span>:</span></span><br><span class="line">  print(a, b, c)</span><br></pre></td></tr></tbody></table></figure>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 字典</span></span><br><span class="line">data3 = (</span><br><span class="line">	{</span><br><span class="line">    <span class="string">'usr'</span>: <span class="number">1</span>,</span><br><span class="line">    <span class="string">'pwd'</span>: <span class="number">2</span></span><br><span class="line">  },</span><br><span class="line">  {</span><br><span class="line">    <span class="string">'age'</span>: <span class="number">3</span>,</span><br><span class="line">    <span class="string">'email'</span>: <span class="string">'tom@qq.com'</span></span><br><span class="line">  }</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="meta">@pytest.mark.parametrize('dic', data3)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test3</span><span class="params">(dic)</span>:</span></span><br><span class="line">  print(dic) <span class="comment"># 再去按照字典类型遍历即可</span></span><br></pre></td></tr></tbody></table></figure>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># id值可以自定义，只要方便理解每个用例是干什么的即可, 主要为了增强可读性</span></span><br><span class="line">data4 = [</span><br><span class="line">  pytest.param(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, id=<span class="string">"(a+b):pass"</span>),</span><br><span class="line">  pytest.param(<span class="number">4</span>, <span class="number">5</span>, <span class="number">10</span>, id=<span class="string">"(a+b):fail"</span>)</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">add</span><span class="params">(a, b)</span>:</span></span><br><span class="line">  <span class="keyword">return</span> a + b</span><br><span class="line"></span><br><span class="line"><span class="meta">@pytest.mark.parametrize("a, b, expect", data4)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test_parameterize</span><span class="params">(a, b, expect)</span>:</span></span><br><span class="line">  <span class="keyword">assert</span> add(a, b) == expect</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pytest</span><br><span class="line"></span><br><span class="line"><span class="comment"># 列表</span></span><br><span class="line">data1 = [<span class="string">'123'</span>, <span class="string">'456'</span>]</span><br><span class="line"></span><br><span class="line"><span class="meta">@pytest.mark.parametrize(<span class="params"><span class="string">'pwd'</span>, data1</span>)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test1</span>(<span class="params">pwd</span>):</span></span><br><span class="line">  print(pwd)</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 元组</span></span><br><span class="line">data2 = [</span><br><span class="line">  (<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>), </span><br><span class="line">  (<span class="number">4</span>, <span class="number">5</span>, <span class="number">6</span>)</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="meta">@pytest.mark.parametrize(<span class="params"><span class="string">'a, b, c'</span>, data2</span>)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test2</span>(<span class="params">pwd</span>):</span></span><br><span class="line">  print(a, b, c)</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 字典</span></span><br><span class="line">data3 = (</span><br><span class="line">	{</span><br><span class="line">    <span class="string">'usr'</span>: <span class="number">1</span>,</span><br><span class="line">    <span class="string">'pwd'</span>: <span class="number">2</span></span><br><span class="line">  },</span><br><span class="line">  {</span><br><span class="line">    <span class="string">'age'</span>: <span class="number">3</span>,</span><br><span class="line">    <span class="string">'email'</span>: <span class="string">'tom@qq.com'</span></span><br><span class="line">  }</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="meta">@pytest.mark.parametrize(<span class="params"><span class="string">'dic'</span>, data3</span>)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test3</span>(<span class="params">dic</span>):</span></span><br><span class="line">  print(dic) <span class="comment"># 再去按照字典类型遍历即可</span></span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># id值可以自定义，只要方便理解每个用例是干什么的即可, 主要为了增强可读性</span></span><br><span class="line">data4 = [</span><br><span class="line">  pytest.param(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="built_in">id</span>=<span class="string">"(a+b):pass"</span>),</span><br><span class="line">  pytest.param(<span class="number">4</span>, <span class="number">5</span>, <span class="number">10</span>, <span class="built_in">id</span>=<span class="string">"(a+b):fail"</span>)</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">add</span>(<span class="params">a, b</span>):</span></span><br><span class="line">  <span class="keyword">return</span> a + b</span><br><span class="line"></span><br><span class="line"><span class="meta">@pytest.mark.parametrize(<span class="params"><span class="string">"a, b, expect"</span>, data4</span>)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test_parameterize</span>(<span class="params">a, b, expect</span>):</span></span><br><span class="line">  <span class="keyword">assert</span> add(a, b) == expect</span><br></pre></td></tr></tbody></table></figure>
 <h2 id="pytest-fixture"><a href="#pytest-fixture" class="headerlink" title="@pytest.fixture()"></a>@pytest.fixture()</h2><p>@pytest.fixture() 用于定义一个标记，定义好了之后在其他的测试用例里面，作为第一个参数，来直接引用就可以了。</p>
 <ul>
 <li>定义fixture跟定义普通函数差不多，唯一区别就是在函数上加一个装饰器@pytest.fixture()</li>
 <li>fixture命名不要以test开头，跟用例区分开。fixture是有返回值的，没有返回值默认为None</li>
 <li>用例调用fixture的返回值，直接就是把fixture的函数名称当作变量名称</li>
 </ul>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pytest</span><br><span class="line"></span><br><span class="line"><span class="meta">@pytest.fixture()</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">init</span><span class="params">()</span>:</span></span><br><span class="line">  print(<span class="string">"init..."</span>)</span><br><span class="line">  <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test1</span><span class="params">(init)</span>:</span></span><br><span class="line">  print(<span class="string">"test1"</span>)</span><br><span class="line">  </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test2</span><span class="params">(init)</span>:</span></span><br><span class="line">  print(<span class="string">"test2"</span>)</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pytest</span><br><span class="line"></span><br><span class="line"><span class="meta">@pytest.fixture()</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">init</span>():</span></span><br><span class="line">  print(<span class="string">"init..."</span>)</span><br><span class="line">  <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test1</span>(<span class="params">init</span>):</span></span><br><span class="line">  print(<span class="string">"test1"</span>)</span><br><span class="line">  </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test2</span>(<span class="params">init</span>):</span></span><br><span class="line">  print(<span class="string">"test2"</span>)</span><br></pre></td></tr></tbody></table></figure>
 <h2 id="pytest-setup和teardown"><a href="#pytest-setup和teardown" class="headerlink" title="pytest setup和teardown"></a>pytest setup和teardown</h2><ul>
 <li>作用：<strong>每次用例开始前和结束后都会去执行一次</strong></li>
 <li>还有更高级的setupClass和teardownClass，需配合@classmethod装饰器一起使用</li>
@@ -395,7 +401,7 @@
 <ul>
 <li><p>模块级<strong>（setup_module/teardown_module）</strong>开始于模块始末，全局的</p>
 <p>即一个模块只执行一次</p>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pytest</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">setup_module</span><span class="params">()</span>:</span></span><br><span class="line">  print(<span class="string">"setup_module"</span>)</span><br><span class="line">  </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test1</span><span class="params">()</span>:</span></span><br><span class="line">  print(<span class="string">"test1"</span>)</span><br><span class="line">  </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">teardown_module</span><span class="params">()</span>:</span></span><br><span class="line">  print(<span class="string">"teardown_module"</span>)</span><br><span class="line">  </span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">  pytest.main([<span class="string">'test.py'</span>, <span class="string">'-sv'</span>])</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pytest</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">setup_module</span>():</span></span><br><span class="line">  print(<span class="string">"setup_module"</span>)</span><br><span class="line">  </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test1</span>():</span></span><br><span class="line">  print(<span class="string">"test1"</span>)</span><br><span class="line">  </span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">teardown_module</span>():</span></span><br><span class="line">  print(<span class="string">"teardown_module"</span>)</span><br><span class="line">  </span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">  pytest.main([<span class="string">'test.py'</span>, <span class="string">'-sv'</span>])</span><br></pre></td></tr></tbody></table></figure>
 </li>
 </ul>
 <ul>
@@ -405,7 +411,7 @@
 </ul>
 <ul>
 <li><p>类级<strong>(setup_class/teardown_class)</strong>只在类中前后运行一次（在类中）</p>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TestCase01</span><span class="params">(object)</span>:</span></span><br><span class="line">  </span><br><span class="line"><span class="meta">  @classmethod</span></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">setup_class</span><span class="params">(cls)</span>:</span></span><br><span class="line">    print(<span class="string">"setup_class"</span>)</span><br><span class="line">    </span><br><span class="line"><span class="meta">  @classmethod</span></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">teardown_class</span><span class="params">(cls)</span>:</span></span><br><span class="line">    print(<span class="string">"teardown_class"</span>)</span><br><span class="line">    </span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">test1</span><span class="params">(self)</span>:</span></span><br><span class="line">    print(<span class="string">"test1 setup"</span>)</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TestCase01</span>(<span class="params"><span class="built_in">object</span></span>):</span></span><br><span class="line">  </span><br><span class="line"><span class="meta">  @classmethod</span></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">setup_class</span>(<span class="params">cls</span>):</span></span><br><span class="line">    print(<span class="string">"setup_class"</span>)</span><br><span class="line">    </span><br><span class="line"><span class="meta">  @classmethod</span></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">teardown_class</span>(<span class="params">cls</span>):</span></span><br><span class="line">    print(<span class="string">"teardown_class"</span>)</span><br><span class="line">    </span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">test1</span>(<span class="params">self</span>):</span></span><br><span class="line">    print(<span class="string">"test1 setup"</span>)</span><br></pre></td></tr></tbody></table></figure>
 </li>
 </ul>
 <ul>
@@ -420,11 +426,11 @@
 </ul>
 </li>
 <li>官方文档<ul>
-<li><a href="https://docs.qameta.io" target="_blank" rel="noopener">https://docs.qameta.io</a></li>
+<li><a target="_blank" rel="noopener" href="https://docs.qameta.io">https://docs.qameta.io</a></li>
 </ul>
 </li>
 <li>下载allure<ul>
-<li><a href="https://dl.bintray.com/qameta/generic/io/qameta/allure/allure/2.7.0/" target="_blank" rel="noopener">https://dl.bintray.com/qameta/generic/io/qameta/allure/allure/2.7.0/</a></li>
+<li><a target="_blank" rel="noopener" href="https://dl.bintray.com/qameta/generic/io/qameta/allure/allure/2.7.0/">https://dl.bintray.com/qameta/generic/io/qameta/allure/allure/2.7.0/</a></li>
 </ul>
 </li>
 </ul>
@@ -497,7 +503,7 @@
 </tbody>
 </table>
 </div>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> allure</span><br><span class="line"><span class="keyword">import</span> pytest</span><br><span class="line"></span><br><span class="line"><span class="meta">@pytest.fixture(scope="session")</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">login</span><span class="params">()</span>:</span></span><br><span class="line">  print(<span class="string">"用例先登陆"</span>)</span><br><span class="line">  </span><br><span class="line"><span class="meta">@allure.step("步骤1：点***")</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">step_1</span><span class="params">()</span>:</span></span><br><span class="line">  print(<span class="string">"111"</span>)</span><br><span class="line">  </span><br><span class="line"></span><br><span class="line"><span class="meta">@allure.step("步骤2：点***")</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">step_2</span><span class="params">()</span>:</span></span><br><span class="line">  print(<span class="string">"222"</span>)</span><br><span class="line">  </span><br><span class="line"><span class="meta">@allure.feature("编辑页面")</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TestEditPage</span><span class="params">()</span>:</span></span><br><span class="line">  <span class="string">"""编辑页面"""</span></span><br><span class="line">	</span><br><span class="line"><span class="meta">  @allure.story("这是一个***的用例")</span></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">test_01</span><span class="params">(self, login)</span>:</span></span><br><span class="line">  	<span class="string">"""用例描述：先登陆，再去执行xxx"""</span></span><br><span class="line">    step_1()</span><br><span class="line">    step_2()</span><br><span class="line">    print(<span class="string">"xxx"</span>)</span><br><span class="line">    </span><br><span class="line"><span class="meta">  @allure.story("打开a页面")</span></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">test_02</span><span class="params">(self, login)</span>:</span></span><br><span class="line">  	<span class="string">"""用例描述：先登陆，再去执行yyy"""</span></span><br><span class="line">    step_1()</span><br><span class="line">    step_2()</span><br><span class="line">    print(<span class="string">"yyy"</span>)</span><br><span class="line">    </span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">  <span class="comment"># 注意生成测试报告，必须在命令行里执行</span></span><br><span class="line">  <span class="comment"># pytest --alluredir ./report test08.py</span></span><br><span class="line">  <span class="comment"># allure serve ./report 启动allure 查看报告</span></span><br><span class="line">  pytest.main([<span class="string">'--alluredir'</span>, <span class="string">'./reports'</span>, <span class="string">'test08.py'</span>])</span><br><span class="line">  pytest.main([<span class="string">'--alluredir'</span>, <span class="string">'./reports'</span>, <span class="string">'test08.py'</span>])</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> allure</span><br><span class="line"><span class="keyword">import</span> pytest</span><br><span class="line"></span><br><span class="line"><span class="meta">@pytest.fixture(<span class="params">scope=<span class="string">"session"</span></span>)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">login</span>():</span></span><br><span class="line">  print(<span class="string">"用例先登陆"</span>)</span><br><span class="line">  </span><br><span class="line"><span class="meta">@allure.step(<span class="params"><span class="string">"步骤1：点***"</span></span>)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">step_1</span>():</span></span><br><span class="line">  print(<span class="string">"111"</span>)</span><br><span class="line">  </span><br><span class="line"></span><br><span class="line"><span class="meta">@allure.step(<span class="params"><span class="string">"步骤2：点***"</span></span>)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">step_2</span>():</span></span><br><span class="line">  print(<span class="string">"222"</span>)</span><br><span class="line">  </span><br><span class="line"><span class="meta">@allure.feature(<span class="params"><span class="string">"编辑页面"</span></span>)</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TestEditPage</span>():</span></span><br><span class="line">  <span class="string">"""编辑页面"""</span></span><br><span class="line">	</span><br><span class="line"><span class="meta">  @allure.story(<span class="params"><span class="string">"这是一个***的用例"</span></span>)</span></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">test_01</span>(<span class="params">self, login</span>):</span></span><br><span class="line">  	<span class="string">"""用例描述：先登陆，再去执行xxx"""</span></span><br><span class="line">    step_1()</span><br><span class="line">    step_2()</span><br><span class="line">    print(<span class="string">"xxx"</span>)</span><br><span class="line">    </span><br><span class="line"><span class="meta">  @allure.story(<span class="params"><span class="string">"打开a页面"</span></span>)</span></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">test_02</span>(<span class="params">self, login</span>):</span></span><br><span class="line">  	<span class="string">"""用例描述：先登陆，再去执行yyy"""</span></span><br><span class="line">    step_1()</span><br><span class="line">    step_2()</span><br><span class="line">    print(<span class="string">"yyy"</span>)</span><br><span class="line">    </span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">  <span class="comment"># 注意生成测试报告，必须在命令行里执行</span></span><br><span class="line">  <span class="comment"># pytest --alluredir ./report test08.py</span></span><br><span class="line">  <span class="comment"># allure serve ./report 启动allure 查看报告</span></span><br><span class="line">  pytest.main([<span class="string">'--alluredir'</span>, <span class="string">'./reports'</span>, <span class="string">'test08.py'</span>])</span><br><span class="line">  pytest.main([<span class="string">'--alluredir'</span>, <span class="string">'./reports'</span>, <span class="string">'test08.py'</span>])</span><br></pre></td></tr></tbody></table></figure>
 <h2 id="使用pytest重构项目"><a href="#使用pytest重构项目" class="headerlink" title="使用pytest重构项目"></a>使用pytest重构项目</h2><ul>
 <li>继承unittest.TestCase修改为继承object</li>
 <li>unittest setup方法修改为pytest setup</li>
@@ -507,7 +513,7 @@
 </ul>
 <p>pytest里面的用例的依赖关系，使用@pytest.mark.dependency()</p>
 <p>假如test_category.py需要依赖test_admin_login.py模块的执行成功，需要下面这样写。</p>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># test_category.py</span></span><br><span class="line"><span class="keyword">from</span> testcases.pytest.test_admin_login <span class="keyword">import</span> TestAdminLogin</span><br><span class="line"></span><br><span class="line"><span class="meta">@pytest.mark.dependency(depends=["admin_login"], scope="module")</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test_add_category_error</span><span class="params">(self)</span>:</span></span><br><span class="line">  <span class="keyword">assert</span> <span class="number">1</span> == <span class="number">1</span></span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># test_category.py</span></span><br><span class="line"><span class="keyword">from</span> testcases.pytest.test_admin_login <span class="keyword">import</span> TestAdminLogin</span><br><span class="line"></span><br><span class="line"><span class="meta">@pytest.mark.dependency(<span class="params">depends=[<span class="string">"admin_login"</span>], scope=<span class="string">"module"</span></span>)</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test_add_category_error</span>(<span class="params">self</span>):</span></span><br><span class="line">  <span class="keyword">assert</span> <span class="number">1</span> == <span class="number">1</span></span><br></pre></td></tr></tbody></table></figure>
 <h1 id="日志"><a href="#日志" class="headerlink" title="日志"></a>日志</h1><p>日志级别</p>
 <div class="table-container">
 <table>
@@ -555,33 +561,15 @@
 </ul>
 <p><img data-src="/images/data/POM.png" alt="POM"></p>
 <p>一个非POM的Web测试脚本如下：(测试和代码耦合在一起)</p>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">import</span> unittest</span><br><span class="line"><span class="keyword">from</span> time <span class="keyword">import</span> sleep</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TestBaidu</span><span class="params">(unittest.TestCase)</span>:</span></span><br><span class="line">  </span><br><span class="line"><span class="meta">  @classmethod</span></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">setUpClass</span><span class="params">(cls)</span> -&gt; <span class="keyword">None</span>:</span></span><br><span class="line">    cls.driver = webdriver.Chrome()</span><br><span class="line">    cls.driver.maxmize.window()</span><br><span class="line">    </span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">test_baidu</span><span class="params">(self)</span>:</span></span><br><span class="line">    self.driver.get(<span class="string">"www.baidu.com"</span>)</span><br><span class="line">    self.driver.find_element_by_id(<span class="string">"kw"</span>).send_keys(<span class="string">"selenium"</span>)</span><br><span class="line">    self.driver.find_element_by_id(<span class="string">"su"</span>).click()</span><br><span class="line">    time.sleep(<span class="number">5</span>)</span><br><span class="line">    </span><br><span class="line"><span class="meta">  @classmethod</span></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">tearDownClass</span><span class="params">(cls)</span> -&gt; <span class="keyword">None</span>:</span></span><br><span class="line">    cls.driver.quit()</span><br><span class="line">    </span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">  uinttest.main()</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> selenium <span class="keyword">import</span> webdriver</span><br><span class="line"><span class="keyword">import</span> unittest</span><br><span class="line"><span class="keyword">from</span> time <span class="keyword">import</span> sleep</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TestBaidu</span>(<span class="params">unittest.TestCase</span>):</span></span><br><span class="line">  </span><br><span class="line"><span class="meta">  @classmethod</span></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">setUpClass</span>(<span class="params">cls</span>) -&gt; <span class="keyword">None</span>:</span></span><br><span class="line">    cls.driver = webdriver.Chrome()</span><br><span class="line">    cls.driver.maxmize.window()</span><br><span class="line">    </span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">test_baidu</span>(<span class="params">self</span>):</span></span><br><span class="line">    self.driver.get(<span class="string">"www.baidu.com"</span>)</span><br><span class="line">    self.driver.find_element_by_id(<span class="string">"kw"</span>).send_keys(<span class="string">"selenium"</span>)</span><br><span class="line">    self.driver.find_element_by_id(<span class="string">"su"</span>).click()</span><br><span class="line">    time.sleep(<span class="number">5</span>)</span><br><span class="line">    </span><br><span class="line"><span class="meta">  @classmethod</span></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">tearDownClass</span>(<span class="params">cls</span>) -&gt; <span class="keyword">None</span>:</span></span><br><span class="line">    cls.driver.quit()</span><br><span class="line">    </span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">  uinttest.main()</span><br></pre></td></tr></tbody></table></figure>
 <p>一个POM的Web测试脚本如下：（测试和代码解耦）</p>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 页面类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BaiduPage</span><span class="params">(object)</span>:</span></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self)</span>:</span></span><br><span class="line">    self.driver = webdriver.Chrome()</span><br><span class="line">    self.driver.maxmize_window()</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 定位器</span></span><br><span class="line">    self.input_element = (By.ID, <span class="string">"kw"</span>)</span><br><span class="line">    self.btn_element = (By.ID, <span class="string">"su"</span>)</span><br><span class="line">    </span><br><span class="line">   </span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">goto_baidu</span><span class="params">(self, url)</span>:</span></span><br><span class="line">    self.driver.get(url)</span><br><span class="line">    </span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">test_search</span><span class="params">(self, url, kw)</span>:</span></span><br><span class="line">    self.goto_baidu(url)</span><br><span class="line">    self.driver.find_element(*self.input_element).send_keys(kw)</span><br><span class="line">    self.driver.find_element(*self.btn_element).send_keys.click()</span><br><span class="line">    </span><br><span class="line"><span class="comment"># 测试类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TestBaidu</span><span class="params">(uinttest.TestCase)</span>:</span></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">setUp</span><span class="params">(self)</span> -&gt; <span class="keyword">None</span>:</span></span><br><span class="line">    self.baiduPage = BaiduPage()</span><br><span class="line">    </span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">test_search</span><span class="params">(self)</span>:</span></span><br><span class="line">    self.baduPage.test_search(<span class="string">"www.baidu.com"</span>, <span class="string">"selenium"</span>)</span><br><span class="line">    </span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">  uinttest.main()</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 页面类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">BaiduPage</span>(<span class="params"><span class="built_in">object</span></span>):</span></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self</span>):</span></span><br><span class="line">    self.driver = webdriver.Chrome()</span><br><span class="line">    self.driver.maxmize_window()</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 定位器</span></span><br><span class="line">    self.input_element = (By.ID, <span class="string">"kw"</span>)</span><br><span class="line">    self.btn_element = (By.ID, <span class="string">"su"</span>)</span><br><span class="line">    </span><br><span class="line">   </span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">goto_baidu</span>(<span class="params">self, url</span>):</span></span><br><span class="line">    self.driver.get(url)</span><br><span class="line">    </span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">test_search</span>(<span class="params">self, url, kw</span>):</span></span><br><span class="line">    self.goto_baidu(url)</span><br><span class="line">    self.driver.find_element(*self.input_element).send_keys(kw)</span><br><span class="line">    self.driver.find_element(*self.btn_element).send_keys.click()</span><br><span class="line">    </span><br><span class="line"><span class="comment"># 测试类</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TestBaidu</span>(<span class="params">uinttest.TestCase</span>):</span></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">setUp</span>(<span class="params">self</span>) -&gt; <span class="keyword">None</span>:</span></span><br><span class="line">    self.baiduPage = BaiduPage()</span><br><span class="line">    </span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">test_search</span>(<span class="params">self</span>):</span></span><br><span class="line">    self.baduPage.test_search(<span class="string">"www.baidu.com"</span>, <span class="string">"selenium"</span>)</span><br><span class="line">    </span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">  uinttest.main()</span><br></pre></td></tr></tbody></table></figure>
 <h1 id="持续集成和交付"><a href="#持续集成和交付" class="headerlink" title="持续集成和交付"></a>持续集成和交付</h1><h2 id="Jenkins环境搭建"><a href="#Jenkins环境搭建" class="headerlink" title="Jenkins环境搭建"></a>Jenkins环境搭建</h2><ul>
 <li>下载安装JDK</li>
 <li>下载安装Jenkins</li>
 </ul>
-<h2 id="邮件通知"><a href="#邮件通知" class="headerlink" title="邮件通知"></a>邮件通知</h2><h2 id="定时运行项目：实现自动化测试"><a href="#定时运行项目：实现自动化测试" class="headerlink" title="定时运行项目：实现自动化测试"></a>定时运行项目：实现自动化测试</h2><p><a href="https://time.geekbang.org/course/detail/100055601-280769" target="_blank" rel="noopener">https://time.geekbang.org/course/detail/100055601-280769</a></p>
-<script>
-        document.querySelectorAll('.github-emoji')
-          .forEach(el => {
-            if (!el.dataset.src) { return; }
-            const img = document.createElement('img');
-            img.style = 'display:none !important;';
-            img.src = el.dataset.src;
-            img.addEventListener('error', () => {
-              img.remove();
-              el.style.color = 'inherit';
-              el.style.backgroundImage = 'none';
-              el.style.background = 'none';
-            });
-            img.addEventListener('load', () => {
-              img.remove();
-            });
-            document.body.appendChild(img);
-          });
-      </script>
+<h2 id="邮件通知"><a href="#邮件通知" class="headerlink" title="邮件通知"></a>邮件通知</h2><h2 id="定时运行项目：实现自动化测试"><a href="#定时运行项目：实现自动化测试" class="headerlink" title="定时运行项目：实现自动化测试"></a>定时运行项目：实现自动化测试</h2><p><a target="_blank" rel="noopener" href="https://time.geekbang.org/course/detail/100055601-280769">https://time.geekbang.org/course/detail/100055601-280769</a></p>
+
     </div>
 
     
@@ -599,7 +587,7 @@
     <a href="https://unknown.yuzhouwan.com/posts/22398665/" title="Python自动化测试框架">https://unknown.yuzhouwan.com/posts/22398665/</a>
   </li>
   <li class="post-copyright-license">
-    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-ND</a> unless stating additionally.
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-ND</a> unless stating additionally.
   </li>
 </ul>
 </div>
@@ -616,12 +604,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/posts/224800/" rel="prev" title="Web框架">
+    <a href="/posts/2248001/" rel="prev" title="Web框架">
       <i class="fa fa-chevron-left"></i> Web框架
     </a></div>
       <div class="post-nav-item">
-    <a href="/posts/2248809/" rel="next" title="数据结构">
-      数据结构 <i class="fa fa-chevron-right"></i>
+    <a href="/posts/22488/" rel="next" title="Python面试题">
+      Python面试题 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -631,7 +619,6 @@
   
   
 
-  </div>
 
 
           </div>
@@ -639,7 +626,7 @@
 
 <script>
   window.addEventListener('tabs:register', () => {
-    let activeClass = CONFIG.comments.activeClass;
+    let { activeClass } = CONFIG.comments;
     if (CONFIG.comments.storage) {
       activeClass = localStorage.getItem('comments_active') || activeClass;
     }
@@ -682,7 +669,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#pytest"><span class="nav-number">1.</span> <span class="nav-text">pytest</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#简介"><span class="nav-number">1.1.</span> <span class="nav-text">简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#编写规则"><span class="nav-number">1.1.1.</span> <span class="nav-text">编写规则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#执行测试"><span class="nav-number">1.1.2.</span> <span class="nav-text">执行测试</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pytest标记"><span class="nav-number">1.2.</span> <span class="nav-text">pytest标记</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#pytest查找测试策略"><span class="nav-number">1.2.1.</span> <span class="nav-text">pytest查找测试策略</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#标记测试函数"><span class="nav-number">1.2.2.</span> <span class="nav-text">标记测试函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pytest参数化处理-pytest-mark-parametrize-：数据驱动DDT"><span class="nav-number">1.3.</span> <span class="nav-text">pytest参数化处理@pytest.mark.parametrize()：数据驱动DDT</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pytest-fixture"><span class="nav-number">1.4.</span> <span class="nav-text">@pytest.fixture()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pytest-setup和teardown"><span class="nav-number">1.5.</span> <span class="nav-text">pytest setup和teardown</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pytest-allure生成测试报告"><span class="nav-number">1.6.</span> <span class="nav-text">pytest allure生成测试报告</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用pytest重构项目"><span class="nav-number">1.7.</span> <span class="nav-text">使用pytest重构项目</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#日志"><span class="nav-number">2.</span> <span class="nav-text">日志</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#logging模块的四大组件"><span class="nav-number">2.1.</span> <span class="nav-text">logging模块的四大组件</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#POM设计模式重构项目"><span class="nav-number">3.</span> <span class="nav-text">POM设计模式重构项目</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#持续集成和交付"><span class="nav-number">4.</span> <span class="nav-text">持续集成和交付</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Jenkins环境搭建"><span class="nav-number">4.1.</span> <span class="nav-text">Jenkins环境搭建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#邮件通知"><span class="nav-number">4.2.</span> <span class="nav-text">邮件通知</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#定时运行项目：实现自动化测试"><span class="nav-number">4.3.</span> <span class="nav-text">定时运行项目：实现自动化测试</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#pytest"><span class="nav-number">1.</span> <span class="nav-text">pytest</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%80%E4%BB%8B"><span class="nav-number">1.1.</span> <span class="nav-text">简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%96%E5%86%99%E8%A7%84%E5%88%99"><span class="nav-number">1.1.1.</span> <span class="nav-text">编写规则</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%A7%E8%A1%8C%E6%B5%8B%E8%AF%95"><span class="nav-number">1.1.2.</span> <span class="nav-text">执行测试</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pytest%E6%A0%87%E8%AE%B0"><span class="nav-number">1.2.</span> <span class="nav-text">pytest标记</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#pytest%E6%9F%A5%E6%89%BE%E6%B5%8B%E8%AF%95%E7%AD%96%E7%95%A5"><span class="nav-number">1.2.1.</span> <span class="nav-text">pytest查找测试策略</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%87%E8%AE%B0%E6%B5%8B%E8%AF%95%E5%87%BD%E6%95%B0"><span class="nav-number">1.2.2.</span> <span class="nav-text">标记测试函数</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pytest%E5%8F%82%E6%95%B0%E5%8C%96%E5%A4%84%E7%90%86-pytest-mark-parametrize-%EF%BC%9A%E6%95%B0%E6%8D%AE%E9%A9%B1%E5%8A%A8DDT"><span class="nav-number">1.3.</span> <span class="nav-text">pytest参数化处理@pytest.mark.parametrize()：数据驱动DDT</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pytest-fixture"><span class="nav-number">1.4.</span> <span class="nav-text">@pytest.fixture()</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pytest-setup%E5%92%8Cteardown"><span class="nav-number">1.5.</span> <span class="nav-text">pytest setup和teardown</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pytest-allure%E7%94%9F%E6%88%90%E6%B5%8B%E8%AF%95%E6%8A%A5%E5%91%8A"><span class="nav-number">1.6.</span> <span class="nav-text">pytest allure生成测试报告</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8pytest%E9%87%8D%E6%9E%84%E9%A1%B9%E7%9B%AE"><span class="nav-number">1.7.</span> <span class="nav-text">使用pytest重构项目</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%97%A5%E5%BF%97"><span class="nav-number">2.</span> <span class="nav-text">日志</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#logging%E6%A8%A1%E5%9D%97%E7%9A%84%E5%9B%9B%E5%A4%A7%E7%BB%84%E4%BB%B6"><span class="nav-number">2.1.</span> <span class="nav-text">logging模块的四大组件</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#POM%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F%E9%87%8D%E6%9E%84%E9%A1%B9%E7%9B%AE"><span class="nav-number">3.</span> <span class="nav-text">POM设计模式重构项目</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90%E5%92%8C%E4%BA%A4%E4%BB%98"><span class="nav-number">4.</span> <span class="nav-text">持续集成和交付</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Jenkins%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA"><span class="nav-number">4.1.</span> <span class="nav-text">Jenkins环境搭建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%82%AE%E4%BB%B6%E9%80%9A%E7%9F%A5"><span class="nav-number">4.2.</span> <span class="nav-text">邮件通知</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9A%E6%97%B6%E8%BF%90%E8%A1%8C%E9%A1%B9%E7%9B%AE%EF%BC%9A%E5%AE%9E%E7%8E%B0%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95"><span class="nav-number">4.3.</span> <span class="nav-text">定时运行项目：实现自动化测试</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -696,14 +683,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">23</span>
+          <span class="site-state-item-count">24</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-count">11</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -716,7 +703,7 @@
 </div>
   <div class="links-of-author motion-element">
       <span class="links-of-author-item">
-        <a href="https://github.com/GraceKoo" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;GraceKoo" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+        <a href="https://github.com/GraceKoo" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;GraceKoo" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
       </span>
   </div>
   <div class="cc-license motion-element" itemprop="license">
@@ -725,8 +712,7 @@
 
 
   <div class="links-of-blogroll motion-element">
-    <div class="links-of-blogroll-title">
-      <i class="fa fa-fw fa-link"></i>
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
       Links
     </div>
     <ul class="links-of-blogroll-list">
@@ -750,25 +736,29 @@
       <div class="footer-inner">
         
 
+        
+
 <div class="copyright">
   
   &copy; 2017 – 
-  <span itemprop="copyrightYear">2020</span>
+  <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
-    <i class="fa fa-user"></i>
+    <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">unknown.yuzhouwan.com</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
-      <i class="fa fa-area-chart"></i>
+      <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">368k</span>
+    <span title="Symbols count total">389k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">5:35</span>
+    <span title="Reading time total">5:54</span>
 </div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  </div>
 
         <meta name="referrer" content="always">
 <div class="busuanzi-count">
