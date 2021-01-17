@@ -21,20 +21,25 @@
     var CONFIG = {"hostname":"unknown.yuzhouwan.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="线性代数部分矩阵及其运算合集">
+  <meta name="description" content="Kafka的设计和结构Kafka基本概念 Producer：消息和数据的生产者，向Kafka的一个Topic发布消息的进程&#x2F;代码&#x2F;服务  Consumer：消息和数据的消费者，订阅数据(Topic)并且处理其发布的消息的进程&#x2F;代码&#x2F;服务  Consumer Group：逻辑概念，对于同一个Topic，会广播给不同的group，一个group中，只有一个Consumer可以消费该消息  Broker">
 <meta property="og:type" content="article">
-<meta property="og:title" content="AI中的数学知识">
-<meta property="og:url" content="https://unknown.yuzhouwan.com/posts/59545/index.html">
+<meta property="og:title" content="Kafka初探">
+<meta property="og:url" content="https://unknown.yuzhouwan.com/posts/252123/index.html">
 <meta property="og:site_name" content="Grace Koo&#39;s Blog">
-<meta property="og:description" content="线性代数部分矩阵及其运算合集">
+<meta property="og:description" content="Kafka的设计和结构Kafka基本概念 Producer：消息和数据的生产者，向Kafka的一个Topic发布消息的进程&#x2F;代码&#x2F;服务  Consumer：消息和数据的消费者，订阅数据(Topic)并且处理其发布的消息的进程&#x2F;代码&#x2F;服务  Consumer Group：逻辑概念，对于同一个Topic，会广播给不同的group，一个group中，只有一个Consumer可以消费该消息  Broker">
 <meta property="og:locale">
-<meta property="article:published_time" content="2020-02-01T11:08:26.000Z">
-<meta property="article:modified_time" content="2020-05-07T15:41:47.096Z">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/posts/images/kafka/KafkaBaseStruct.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/posts/images/kafka/KafkaConsumeStruct.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/posts/images/kafka/MessageStruct.png">
+<meta property="og:image" content="https://unknown.yuzhouwan.com/posts/images/kafka/0Copy.png">
+<meta property="article:published_time" content="2020-01-17T23:55:00.000Z">
+<meta property="article:modified_time" content="2021-01-17T14:54:46.824Z">
 <meta property="article:author" content="Grace Koo">
-<meta property="article:tag" content="Machine Learning">
+<meta property="article:tag" content="BigData">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://unknown.yuzhouwan.com/posts/images/kafka/KafkaBaseStruct.png">
 
-<link rel="canonical" href="https://unknown.yuzhouwan.com/posts/59545/">
+<link rel="canonical" href="https://unknown.yuzhouwan.com/posts/252123/">
 
 
 <script id="page-configurations">
@@ -47,7 +52,7 @@
   };
 </script>
 
-  <title>AI中的数学知识 | Grace Koo's Blog</title>
+  <title>Kafka初探 | Grace Koo's Blog</title>
   
 
 
@@ -204,7 +209,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="Zh">
-    <link itemprop="mainEntityOfPage" href="https://unknown.yuzhouwan.com/posts/59545/">
+    <link itemprop="mainEntityOfPage" href="https://unknown.yuzhouwan.com/posts/252123/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -217,7 +222,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          AI中的数学知识
+          Kafka初探
         </h1>
 
         <div class="post-meta">
@@ -227,14 +232,14 @@
               </span>
               <span class="post-meta-item-text">Posted on</span>
 
-              <time title="Created: 2020-02-01 11:08:26" itemprop="dateCreated datePublished" datetime="2020-02-01T11:08:26Z">2020-02-01</time>
+              <time title="Created: 2020-01-17 23:55:00" itemprop="dateCreated datePublished" datetime="2020-01-17T23:55:00Z">2020-01-17</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-05-07 15:41:47" itemprop="dateModified" datetime="2020-05-07T15:41:47Z">2020-05-07</time>
+                <time title="Modified: 2021-01-17 14:54:46" itemprop="dateModified" datetime="2021-01-17T14:54:46Z">2021-01-17</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -242,7 +247,7 @@
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Math/" itemprop="url" rel="index"><span itemprop="name">Math</span></a>
+                  <a href="/categories/BigData/" itemprop="url" rel="index"><span itemprop="name">BigData</span></a>
                 </span>
             </span>
 
@@ -259,7 +264,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>156</span>
+              <span>1.4k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -278,8 +283,97 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <h1 id="线性代数部分"><a href="#线性代数部分" class="headerlink" title="线性代数部分"></a>线性代数部分</h1><h2 id="矩阵及其运算合集"><a href="#矩阵及其运算合集" class="headerlink" title="矩阵及其运算合集"></a>矩阵及其运算合集</h2><a id="more"></a>
-<h2 id="矩阵的行列式"><a href="#矩阵的行列式" class="headerlink" title="矩阵的行列式"></a>矩阵的行列式</h2><h2 id="矩阵的逆"><a href="#矩阵的逆" class="headerlink" title="矩阵的逆"></a>矩阵的逆</h2><h2 id="矩阵的初等变换"><a href="#矩阵的初等变换" class="headerlink" title="矩阵的初等变换"></a>矩阵的初等变换</h2><h2 id="矩阵的秩"><a href="#矩阵的秩" class="headerlink" title="矩阵的秩"></a>矩阵的秩</h2><h2 id="矩阵的特征值和特征向量"><a href="#矩阵的特征值和特征向量" class="headerlink" title="矩阵的特征值和特征向量"></a>矩阵的特征值和特征向量</h2><h2 id="矩阵对角化二次型"><a href="#矩阵对角化二次型" class="headerlink" title="矩阵对角化二次型"></a>矩阵对角化二次型</h2><h2 id="SVD分解的证明"><a href="#SVD分解的证明" class="headerlink" title="SVD分解的证明"></a>SVD分解的证明</h2><h2 id="SVD的应用与多元线性回归"><a href="#SVD的应用与多元线性回归" class="headerlink" title="SVD的应用与多元线性回归"></a>SVD的应用与多元线性回归</h2><h1 id="微积分部分"><a href="#微积分部分" class="headerlink" title="微积分部分"></a>微积分部分</h1><h2 id="导数中的中值定理"><a href="#导数中的中值定理" class="headerlink" title="导数中的中值定理"></a>导数中的中值定理</h2><h2 id="泰勒公式函数极值定积分"><a href="#泰勒公式函数极值定积分" class="headerlink" title="泰勒公式函数极值定积分"></a>泰勒公式函数极值定积分</h2><h2 id="多元微积分"><a href="#多元微积分" class="headerlink" title="多元微积分"></a>多元微积分</h2><h1 id="概率论部分"><a href="#概率论部分" class="headerlink" title="概率论部分"></a>概率论部分</h1><h2 id="概率基础"><a href="#概率基础" class="headerlink" title="概率基础"></a>概率基础</h2><h2 id="随机变量与多维随机变量"><a href="#随机变量与多维随机变量" class="headerlink" title="随机变量与多维随机变量"></a>随机变量与多维随机变量</h2><h2 id="期望与方差"><a href="#期望与方差" class="headerlink" title="期望与方差"></a>期望与方差</h2><h2 id="参数的估计"><a href="#参数的估计" class="headerlink" title="参数的估计"></a>参数的估计</h2><h1 id="最优化理论"><a href="#最优化理论" class="headerlink" title="最优化理论"></a>最优化理论</h1><h2 id="无约束最优化"><a href="#无约束最优化" class="headerlink" title="无约束最优化"></a>无约束最优化</h2><h2 id="带约束的最优化"><a href="#带约束的最优化" class="headerlink" title="带约束的最优化"></a>带约束的最优化</h2><h2 id="对偶理论"><a href="#对偶理论" class="headerlink" title="对偶理论"></a>对偶理论</h2>
+        <h1 id="Kafka的设计和结构"><a href="#Kafka的设计和结构" class="headerlink" title="Kafka的设计和结构"></a>Kafka的设计和结构</h1><h2 id="Kafka基本概念"><a href="#Kafka基本概念" class="headerlink" title="Kafka基本概念"></a>Kafka基本概念</h2><ul>
+<li><p>Producer：消息和数据的生产者，向Kafka的一个Topic发布消息的进程/代码/服务</p>
+</li>
+<li><p>Consumer：消息和数据的消费者，订阅数据(Topic)并且处理其发布的消息的进程/代码/服务</p>
+</li>
+<li><p>Consumer Group：逻辑概念，对于同一个Topic，会广播给不同的group，一个group中，只有一个Consumer可以消费该消息</p>
+</li>
+<li><p>Broker：物理概念，Kafka集群中的每个Kafka节点</p>
+</li>
+<li><p>Topic：逻辑概念，Kafka消息的类别，对数据进行分区、隔离</p>
+</li>
+<li><p>Partition：物理概念，Kafka下数据存储的基本单元，一个Topic数据，会被分散存储到多个Partition，每一个Partition是有序的</p>
+</li>
+<li><p>Replication：同一个Partition可能会有多个Replica，多个Replica之间数据是一样的</p>
+</li>
+<li><p>Replication Leader：一个Partition的多个Replica上，需要一个Leader负责该Partition上与Producer和Consumer交互</p>
+</li>
+<li><p>Replica Manager：负责管理当前Broker所有分区和副本的信息，处理Kafka Controller发起的一些请求，副本状态的切换、添加/读取消息等</p>
+</li>
+</ul>
+<h2 id="Kafka基本结构"><a href="#Kafka基本结构" class="headerlink" title="Kafka基本结构"></a>Kafka基本结构</h2><ul>
+<li>Produer Api</li>
+<li>Consumer Api</li>
+<li>Streams Api</li>
+<li>Connectors Api</li>
+</ul>
+<p><img data-src="../images/kafka/KafkaBaseStruct.png" alt="KafkaBaseStruct"></p>
+<p>Kafka消费架构</p>
+<p><img data-src="../images/kafka/KafkaConsumeStruct.png" alt="KafkaConsumeStruct"></p>
+<p>Kafka消息结构</p>
+<p><img data-src="../images/kafka/MessageStruct.png" alt="MessageStruct"></p>
+<h1 id="Kafka应用场景"><a href="#Kafka应用场景" class="headerlink" title="Kafka应用场景"></a>Kafka应用场景</h1><ul>
+<li>消息队列</li>
+<li>行为跟踪</li>
+<li>元信息监控</li>
+<li>日志收集</li>
+<li>流处理</li>
+<li>事件源</li>
+<li>持久性日志</li>
+</ul>
+<h2 id="下载与安装"><a href="#下载与安装" class="headerlink" title="下载与安装"></a>下载与安装</h2><ul>
+<li><p>ZooKeeper下载：</p>
+<p><a target="_blank" rel="noopener" href="http://zookeeper.apache.org/releases.html#download">http://zookeeper.apache.org/releases.html#download</a></p>
+</li>
+<li><p>Kafka下载：</p>
+<p><a target="_blank" rel="noopener" href="http://kafka.apache.org/downloads">http://kafka.apache.org/downloads</a></p>
+</li>
+<li><p>安装：解压，配置环境变量</p>
+</li>
+<li><p>Mac便捷安装：</p>
+<figure class="highlight shell"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install kafka</span><br></pre></td></tr></tbody></table></figure>
+<h1 id="Kafka高级特性"><a href="#Kafka高级特性" class="headerlink" title="Kafka高级特性"></a>Kafka高级特性</h1></li>
+</ul>
+<h2 id="消息事务"><a href="#消息事务" class="headerlink" title="消息事务"></a>消息事务</h2><h3 id="为什么要支持事务"><a href="#为什么要支持事务" class="headerlink" title="为什么要支持事务"></a>为什么要支持事务</h3><ul>
+<li>满足“读取-处理-写入”模式</li>
+<li>流处理需求的不断增强</li>
+<li>不准确的数据处理的容忍度</li>
+</ul>
+<h3 id="数据传输的事务定义"><a href="#数据传输的事务定义" class="headerlink" title="数据传输的事务定义"></a>数据传输的事务定义</h3><ul>
+<li>最多一次：消息不会被重复发送，最多被传输一次，但也有可能一次不传输</li>
+<li>最少一次：消息不会被漏发送，最少被传输一次，但也有可能被重复传输</li>
+<li>精确的一次：不会漏传输也不会重复传输，每个消息都传输一次且仅仅被传输一次，这是大家希望的</li>
+</ul>
+<h3 id="Kafka消息事务"><a href="#Kafka消息事务" class="headerlink" title="Kafka消息事务"></a>Kafka消息事务</h3><ul>
+<li>事务保证<ul>
+<li>内部重试问题：Procedure幂等处理</li>
+<li>多分区原子写入</li>
+</ul>
+</li>
+<li>事务保证 — 避免僵尸实例<ul>
+<li>每个事务Producer分配一个transactional.id，在进程重新启动时能够识别相同的Producer实例</li>
+<li>Kafka增加了一个与transactional.id相关的epoch，存储每个transaction.id内部元数据</li>
+<li>一旦epoch被触发，任何具有相同的transactional.id和更旧的epoch的Producer被视为僵尸，Kafka会拒绝来自这些Producer的后续事务性写入</li>
+</ul>
+</li>
+</ul>
+<h2 id="零拷贝"><a href="#零拷贝" class="headerlink" title="零拷贝"></a>零拷贝</h2><h3 id="零拷贝简介"><a href="#零拷贝简介" class="headerlink" title="零拷贝简介"></a>零拷贝简介</h3><p>文件传输网络的公共数据路径</p>
+<ul>
+<li>操作系统将数据从<strong>磁盘</strong>读入到<strong>内核空间的页缓存</strong></li>
+<li>应用程序将数据从<strong>内核空间</strong>读入到<strong>用户空间缓存</strong>中</li>
+<li>应用程序将数据写回到<strong>内核空间到socket缓存</strong>中</li>
+<li>操作系统将数据从socket缓存区复制到<strong>网卡缓冲区</strong>，以便将数据经网络发出</li>
+</ul>
+<p>零拷贝过程</p>
+<ul>
+<li>操作系统将数据从<strong>磁盘</strong>读入到<strong>内核空间的页缓存</strong></li>
+<li>将数据的位置和长度的信息描述符增加至<strong>内核空间</strong>（socket缓冲区）</li>
+<li>操作系统直接将数据从内核空间拷贝到<strong>网卡缓冲区</strong>，以便将数据经网络发出</li>
+</ul>
+<p><img data-src="../images/kafka/0Copy.png" alt="0Copy"></p>
+
     </div>
 
     
@@ -294,7 +388,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>Post link: </strong>
-    <a href="https://unknown.yuzhouwan.com/posts/59545/" title="AI中的数学知识">https://unknown.yuzhouwan.com/posts/59545/</a>
+    <a href="https://unknown.yuzhouwan.com/posts/252123/" title="Kafka初探">https://unknown.yuzhouwan.com/posts/252123/</a>
   </li>
   <li class="post-copyright-license">
     <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-ND</a> unless stating additionally.
@@ -305,7 +399,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/Machine-Learning/" rel="tag"># Machine Learning</a>
+              <a href="/tags/BigData/" rel="tag"># BigData</a>
           </div>
 
         
@@ -314,12 +408,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/posts/29871/" rel="prev" title="TensorFlow2.0 In Action">
-      <i class="fa fa-chevron-left"></i> TensorFlow2.0 In Action
+    <a href="/posts/57792/" rel="prev" title="DataStructure & Algorithm">
+      <i class="fa fa-chevron-left"></i> DataStructure & Algorithm
     </a></div>
       <div class="post-nav-item">
-    <a href="/posts/58748/" rel="next" title="Image-Algorithm-Summarize">
-      Image-Algorithm-Summarize <i class="fa fa-chevron-right"></i>
+    <a href="/posts/2248001/" rel="next" title="Web框架">
+      Web框架 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -379,7 +473,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E9%83%A8%E5%88%86"><span class="nav-number">1.</span> <span class="nav-text">线性代数部分</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E5%8F%8A%E5%85%B6%E8%BF%90%E7%AE%97%E5%90%88%E9%9B%86"><span class="nav-number">1.1.</span> <span class="nav-text">矩阵及其运算合集</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E7%9A%84%E8%A1%8C%E5%88%97%E5%BC%8F"><span class="nav-number">1.2.</span> <span class="nav-text">矩阵的行列式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E7%9A%84%E9%80%86"><span class="nav-number">1.3.</span> <span class="nav-text">矩阵的逆</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E7%9A%84%E5%88%9D%E7%AD%89%E5%8F%98%E6%8D%A2"><span class="nav-number">1.4.</span> <span class="nav-text">矩阵的初等变换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E7%9A%84%E7%A7%A9"><span class="nav-number">1.5.</span> <span class="nav-text">矩阵的秩</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E7%9A%84%E7%89%B9%E5%BE%81%E5%80%BC%E5%92%8C%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F"><span class="nav-number">1.6.</span> <span class="nav-text">矩阵的特征值和特征向量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E5%AF%B9%E8%A7%92%E5%8C%96%E4%BA%8C%E6%AC%A1%E5%9E%8B"><span class="nav-number">1.7.</span> <span class="nav-text">矩阵对角化二次型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SVD%E5%88%86%E8%A7%A3%E7%9A%84%E8%AF%81%E6%98%8E"><span class="nav-number">1.8.</span> <span class="nav-text">SVD分解的证明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SVD%E7%9A%84%E5%BA%94%E7%94%A8%E4%B8%8E%E5%A4%9A%E5%85%83%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92"><span class="nav-number">1.9.</span> <span class="nav-text">SVD的应用与多元线性回归</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%BE%AE%E7%A7%AF%E5%88%86%E9%83%A8%E5%88%86"><span class="nav-number">2.</span> <span class="nav-text">微积分部分</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%BC%E6%95%B0%E4%B8%AD%E7%9A%84%E4%B8%AD%E5%80%BC%E5%AE%9A%E7%90%86"><span class="nav-number">2.1.</span> <span class="nav-text">导数中的中值定理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%B0%E5%8B%92%E5%85%AC%E5%BC%8F%E5%87%BD%E6%95%B0%E6%9E%81%E5%80%BC%E5%AE%9A%E7%A7%AF%E5%88%86"><span class="nav-number">2.2.</span> <span class="nav-text">泰勒公式函数极值定积分</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%9A%E5%85%83%E5%BE%AE%E7%A7%AF%E5%88%86"><span class="nav-number">2.3.</span> <span class="nav-text">多元微积分</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A6%82%E7%8E%87%E8%AE%BA%E9%83%A8%E5%88%86"><span class="nav-number">3.</span> <span class="nav-text">概率论部分</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A6%82%E7%8E%87%E5%9F%BA%E7%A1%80"><span class="nav-number">3.1.</span> <span class="nav-text">概率基础</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F%E4%B8%8E%E5%A4%9A%E7%BB%B4%E9%9A%8F%E6%9C%BA%E5%8F%98%E9%87%8F"><span class="nav-number">3.2.</span> <span class="nav-text">随机变量与多维随机变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%9F%E6%9C%9B%E4%B8%8E%E6%96%B9%E5%B7%AE"><span class="nav-number">3.3.</span> <span class="nav-text">期望与方差</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E6%95%B0%E7%9A%84%E4%BC%B0%E8%AE%A1"><span class="nav-number">3.4.</span> <span class="nav-text">参数的估计</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9C%80%E4%BC%98%E5%8C%96%E7%90%86%E8%AE%BA"><span class="nav-number">4.</span> <span class="nav-text">最优化理论</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%97%A0%E7%BA%A6%E6%9D%9F%E6%9C%80%E4%BC%98%E5%8C%96"><span class="nav-number">4.1.</span> <span class="nav-text">无约束最优化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%A6%E7%BA%A6%E6%9D%9F%E7%9A%84%E6%9C%80%E4%BC%98%E5%8C%96"><span class="nav-number">4.2.</span> <span class="nav-text">带约束的最优化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%B9%E5%81%B6%E7%90%86%E8%AE%BA"><span class="nav-number">4.3.</span> <span class="nav-text">对偶理论</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Kafka%E7%9A%84%E8%AE%BE%E8%AE%A1%E5%92%8C%E7%BB%93%E6%9E%84"><span class="nav-number">1.</span> <span class="nav-text">Kafka的设计和结构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Kafka%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-number">1.1.</span> <span class="nav-text">Kafka基本概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Kafka%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84"><span class="nav-number">1.2.</span> <span class="nav-text">Kafka基本结构</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Kafka%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="nav-number">2.</span> <span class="nav-text">Kafka应用场景</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85"><span class="nav-number">2.1.</span> <span class="nav-text">下载与安装</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Kafka%E9%AB%98%E7%BA%A7%E7%89%B9%E6%80%A7"><span class="nav-number">3.</span> <span class="nav-text">Kafka高级特性</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B6%88%E6%81%AF%E4%BA%8B%E5%8A%A1"><span class="nav-number">3.1.</span> <span class="nav-text">消息事务</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E6%94%AF%E6%8C%81%E4%BA%8B%E5%8A%A1"><span class="nav-number">3.1.1.</span> <span class="nav-text">为什么要支持事务</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93%E7%9A%84%E4%BA%8B%E5%8A%A1%E5%AE%9A%E4%B9%89"><span class="nav-number">3.1.2.</span> <span class="nav-text">数据传输的事务定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Kafka%E6%B6%88%E6%81%AF%E4%BA%8B%E5%8A%A1"><span class="nav-number">3.1.3.</span> <span class="nav-text">Kafka消息事务</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9B%B6%E6%8B%B7%E8%B4%9D"><span class="nav-number">3.2.</span> <span class="nav-text">零拷贝</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9B%B6%E6%8B%B7%E8%B4%9D%E7%AE%80%E4%BB%8B"><span class="nav-number">3.2.1.</span> <span class="nav-text">零拷贝简介</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
