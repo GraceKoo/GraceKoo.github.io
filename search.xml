@@ -485,18 +485,6 @@
       </tags>
   </entry>
   <entry>
-    <title>AI中的数学知识</title>
-    <url>/posts/59545/</url>
-    <content><![CDATA[<h1 id="线性代数部分"><a href="#线性代数部分" class="headerlink" title="线性代数部分"></a>线性代数部分</h1><h2 id="矩阵及其运算合集"><a href="#矩阵及其运算合集" class="headerlink" title="矩阵及其运算合集"></a>矩阵及其运算合集</h2><a id="more"></a>
-<h2 id="矩阵的行列式"><a href="#矩阵的行列式" class="headerlink" title="矩阵的行列式"></a>矩阵的行列式</h2><h2 id="矩阵的逆"><a href="#矩阵的逆" class="headerlink" title="矩阵的逆"></a>矩阵的逆</h2><h2 id="矩阵的初等变换"><a href="#矩阵的初等变换" class="headerlink" title="矩阵的初等变换"></a>矩阵的初等变换</h2><h2 id="矩阵的秩"><a href="#矩阵的秩" class="headerlink" title="矩阵的秩"></a>矩阵的秩</h2><h2 id="矩阵的特征值和特征向量"><a href="#矩阵的特征值和特征向量" class="headerlink" title="矩阵的特征值和特征向量"></a>矩阵的特征值和特征向量</h2><h2 id="矩阵对角化二次型"><a href="#矩阵对角化二次型" class="headerlink" title="矩阵对角化二次型"></a>矩阵对角化二次型</h2><h2 id="SVD分解的证明"><a href="#SVD分解的证明" class="headerlink" title="SVD分解的证明"></a>SVD分解的证明</h2><h2 id="SVD的应用与多元线性回归"><a href="#SVD的应用与多元线性回归" class="headerlink" title="SVD的应用与多元线性回归"></a>SVD的应用与多元线性回归</h2><h1 id="微积分部分"><a href="#微积分部分" class="headerlink" title="微积分部分"></a>微积分部分</h1><h2 id="导数中的中值定理"><a href="#导数中的中值定理" class="headerlink" title="导数中的中值定理"></a>导数中的中值定理</h2><h2 id="泰勒公式函数极值定积分"><a href="#泰勒公式函数极值定积分" class="headerlink" title="泰勒公式函数极值定积分"></a>泰勒公式函数极值定积分</h2><h2 id="多元微积分"><a href="#多元微积分" class="headerlink" title="多元微积分"></a>多元微积分</h2><h1 id="概率论部分"><a href="#概率论部分" class="headerlink" title="概率论部分"></a>概率论部分</h1><h2 id="概率基础"><a href="#概率基础" class="headerlink" title="概率基础"></a>概率基础</h2><h2 id="随机变量与多维随机变量"><a href="#随机变量与多维随机变量" class="headerlink" title="随机变量与多维随机变量"></a>随机变量与多维随机变量</h2><h2 id="期望与方差"><a href="#期望与方差" class="headerlink" title="期望与方差"></a>期望与方差</h2><h2 id="参数的估计"><a href="#参数的估计" class="headerlink" title="参数的估计"></a>参数的估计</h2><h1 id="最优化理论"><a href="#最优化理论" class="headerlink" title="最优化理论"></a>最优化理论</h1><h2 id="无约束最优化"><a href="#无约束最优化" class="headerlink" title="无约束最优化"></a>无约束最优化</h2><h2 id="带约束的最优化"><a href="#带约束的最优化" class="headerlink" title="带约束的最优化"></a>带约束的最优化</h2><h2 id="对偶理论"><a href="#对偶理论" class="headerlink" title="对偶理论"></a>对偶理论</h2>]]></content>
-      <categories>
-        <category>Math</category>
-      </categories>
-      <tags>
-        <tag>Machine Learning</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Numpy基础</title>
     <url>/posts/21763/</url>
     <content><![CDATA[<p>Numpy是Python中用于科学计算的核心库。它提供了高性能的多维数组对象，以及相关工具</p>
@@ -569,115 +557,15 @@
       </tags>
   </entry>
   <entry>
-    <title>Regex</title>
-    <url>/posts/25256/</url>
-    <content><![CDATA[<h1 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h1><h2 id="元字符"><a href="#元字符" class="headerlink" title="元字符"></a>元字符</h2><div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:center">元字符</th>
-<th style="text-align:center">说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">.</td>
-<td style="text-align:center">匹配除换行符以外的任意字符</td>
-</tr>
-<tr>
-<td style="text-align:center">\w</td>
-<td style="text-align:center">匹配字母、数字、下划线、汉字</td>
-</tr>
-<tr>
-<td style="text-align:center">\s</td>
-<td style="text-align:center">匹配任意的空白符</td>
-</tr>
-<tr>
-<td style="text-align:center">\d</td>
-<td style="text-align:center">匹配数字</td>
-</tr>
-<tr>
-<td style="text-align:center">\b</td>
-<td style="text-align:center">匹配单词的开始或结束</td>
-</tr>
-<tr>
-<td style="text-align:center">^</td>
-<td style="text-align:center">匹配字符串的开始</td>
-</tr>
-<tr>
-<td style="text-align:center">$</td>
-<td style="text-align:center">匹配字符串的结束</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>例：匹配有abc开头的字符串</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">\babc或^abc</span><br></pre></td></tr></tbody></table></figure>
-<a id="more"></a>
-<h2 id="重复限定符"><a href="#重复限定符" class="headerlink" title="重复限定符"></a>重复限定符</h2><div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:center">语法</th>
-<th style="text-align:center">说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">*</td>
-<td style="text-align:center">重复零次或更多次</td>
-</tr>
-<tr>
-<td style="text-align:center">+</td>
-<td style="text-align:center">重复一次或者更多次</td>
-</tr>
-<tr>
-<td style="text-align:center">？</td>
-<td style="text-align:center">重复零次或一次</td>
-</tr>
-<tr>
-<td style="text-align:center">{n}</td>
-<td style="text-align:center">重复n次</td>
-</tr>
-<tr>
-<td style="text-align:center">{n,}</td>
-<td style="text-align:center">重复n次或更多次</td>
-</tr>
-<tr>
-<td style="text-align:center">{n,m}</td>
-<td style="text-align:center">重复n次到m次</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>限定符作用于与它<strong>左边</strong>最近的一个字符。</p>
-<p>例：匹配以a开头，0个或者多个以b结尾的字符串</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">^ab*$</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="分组"><a href="#分组" class="headerlink" title="分组"></a>分组</h2><p>以”()“作为分组。</p>
-<p>例：匹配以ab开头，0个或者多个以b结尾的字符串</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">^(ab)*$</span><br></pre></td></tr></tbody></table></figure>
-<p>注：如需匹配小括号，只要加转义字符串即可。</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">^(\(ab\))*$</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="条件或"><a href="#条件或" class="headerlink" title="条件或"></a>条件或</h2><p>利用“｜”来表达条件或。</p>
-<p>例：匹配130/131/181/177等开头的11位手机号。</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">^(<span class="number">130</span>|<span class="number">131</span>|<span class="number">181</span>|<span class="number">177</span>)\d{<span class="number">8</span>}$</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="区间"><a href="#区间" class="headerlink" title="区间"></a>区间</h2><p>利用“[]”来表达区间条件。</p>
-<blockquote>
-<p>[0-9]：限定0到9</p>
-<p>[A-Z]：限定A到Z</p>
-<p>[165]：限定规定数字</p>
-</blockquote>
-<p>例：匹配130/131/132/156/158/159/145/177开头的11位数字</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">^((<span class="number">13</span>[<span class="number">0</span>-<span class="number">2</span>])|(<span class="number">15</span>[<span class="number">689</span>])|<span class="number">145</span>|<span class="number">177</span>)\d{<span class="number">8</span>}$</span><br></pre></td></tr></tbody></table></figure>
-<h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><ul>
-<li><a href="https://juejin.im/post/5b96a8e2e51d450e6a2de115">掘金博文</a></li>
-</ul>
-]]></content>
+    <title>AI中的数学知识</title>
+    <url>/posts/59545/</url>
+    <content><![CDATA[<h1 id="线性代数部分"><a href="#线性代数部分" class="headerlink" title="线性代数部分"></a>线性代数部分</h1><h2 id="矩阵及其运算合集"><a href="#矩阵及其运算合集" class="headerlink" title="矩阵及其运算合集"></a>矩阵及其运算合集</h2><a id="more"></a>
+<h2 id="矩阵的行列式"><a href="#矩阵的行列式" class="headerlink" title="矩阵的行列式"></a>矩阵的行列式</h2><h2 id="矩阵的逆"><a href="#矩阵的逆" class="headerlink" title="矩阵的逆"></a>矩阵的逆</h2><h2 id="矩阵的初等变换"><a href="#矩阵的初等变换" class="headerlink" title="矩阵的初等变换"></a>矩阵的初等变换</h2><h2 id="矩阵的秩"><a href="#矩阵的秩" class="headerlink" title="矩阵的秩"></a>矩阵的秩</h2><h2 id="矩阵的特征值和特征向量"><a href="#矩阵的特征值和特征向量" class="headerlink" title="矩阵的特征值和特征向量"></a>矩阵的特征值和特征向量</h2><h2 id="矩阵对角化二次型"><a href="#矩阵对角化二次型" class="headerlink" title="矩阵对角化二次型"></a>矩阵对角化二次型</h2><h2 id="SVD分解的证明"><a href="#SVD分解的证明" class="headerlink" title="SVD分解的证明"></a>SVD分解的证明</h2><h2 id="SVD的应用与多元线性回归"><a href="#SVD的应用与多元线性回归" class="headerlink" title="SVD的应用与多元线性回归"></a>SVD的应用与多元线性回归</h2><h1 id="微积分部分"><a href="#微积分部分" class="headerlink" title="微积分部分"></a>微积分部分</h1><h2 id="导数中的中值定理"><a href="#导数中的中值定理" class="headerlink" title="导数中的中值定理"></a>导数中的中值定理</h2><h2 id="泰勒公式函数极值定积分"><a href="#泰勒公式函数极值定积分" class="headerlink" title="泰勒公式函数极值定积分"></a>泰勒公式函数极值定积分</h2><h2 id="多元微积分"><a href="#多元微积分" class="headerlink" title="多元微积分"></a>多元微积分</h2><h1 id="概率论部分"><a href="#概率论部分" class="headerlink" title="概率论部分"></a>概率论部分</h1><h2 id="概率基础"><a href="#概率基础" class="headerlink" title="概率基础"></a>概率基础</h2><h2 id="随机变量与多维随机变量"><a href="#随机变量与多维随机变量" class="headerlink" title="随机变量与多维随机变量"></a>随机变量与多维随机变量</h2><h2 id="期望与方差"><a href="#期望与方差" class="headerlink" title="期望与方差"></a>期望与方差</h2><h2 id="参数的估计"><a href="#参数的估计" class="headerlink" title="参数的估计"></a>参数的估计</h2><h1 id="最优化理论"><a href="#最优化理论" class="headerlink" title="最优化理论"></a>最优化理论</h1><h2 id="无约束最优化"><a href="#无约束最优化" class="headerlink" title="无约束最优化"></a>无约束最优化</h2><h2 id="带约束的最优化"><a href="#带约束的最优化" class="headerlink" title="带约束的最优化"></a>带约束的最优化</h2><h2 id="对偶理论"><a href="#对偶理论" class="headerlink" title="对偶理论"></a>对偶理论</h2>]]></content>
       <categories>
-        <category>Tools</category>
+        <category>Math</category>
       </categories>
       <tags>
-        <tag>Regex</tag>
+        <tag>Machine Learning</tag>
       </tags>
   </entry>
   <entry>
@@ -970,6 +858,118 @@
       </categories>
       <tags>
         <tag>Software Test Basic</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Regex</title>
+    <url>/posts/25256/</url>
+    <content><![CDATA[<h1 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h1><h2 id="元字符"><a href="#元字符" class="headerlink" title="元字符"></a>元字符</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">元字符</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">.</td>
+<td style="text-align:center">匹配除换行符以外的任意字符</td>
+</tr>
+<tr>
+<td style="text-align:center">\w</td>
+<td style="text-align:center">匹配字母、数字、下划线、汉字</td>
+</tr>
+<tr>
+<td style="text-align:center">\s</td>
+<td style="text-align:center">匹配任意的空白符</td>
+</tr>
+<tr>
+<td style="text-align:center">\d</td>
+<td style="text-align:center">匹配数字</td>
+</tr>
+<tr>
+<td style="text-align:center">\b</td>
+<td style="text-align:center">匹配单词的开始或结束</td>
+</tr>
+<tr>
+<td style="text-align:center">^</td>
+<td style="text-align:center">匹配字符串的开始</td>
+</tr>
+<tr>
+<td style="text-align:center">$</td>
+<td style="text-align:center">匹配字符串的结束</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>例：匹配有abc开头的字符串</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">\babc或^abc</span><br></pre></td></tr></tbody></table></figure>
+<a id="more"></a>
+<h2 id="重复限定符"><a href="#重复限定符" class="headerlink" title="重复限定符"></a>重复限定符</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">语法</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">*</td>
+<td style="text-align:center">重复零次或更多次</td>
+</tr>
+<tr>
+<td style="text-align:center">+</td>
+<td style="text-align:center">重复一次或者更多次</td>
+</tr>
+<tr>
+<td style="text-align:center">？</td>
+<td style="text-align:center">重复零次或一次</td>
+</tr>
+<tr>
+<td style="text-align:center">{n}</td>
+<td style="text-align:center">重复n次</td>
+</tr>
+<tr>
+<td style="text-align:center">{n,}</td>
+<td style="text-align:center">重复n次或更多次</td>
+</tr>
+<tr>
+<td style="text-align:center">{n,m}</td>
+<td style="text-align:center">重复n次到m次</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>限定符作用于与它<strong>左边</strong>最近的一个字符。</p>
+<p>例：匹配以a开头，0个或者多个以b结尾的字符串</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">^ab*$</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="分组"><a href="#分组" class="headerlink" title="分组"></a>分组</h2><p>以”()“作为分组。</p>
+<p>例：匹配以ab开头，0个或者多个以b结尾的字符串</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">^(ab)*$</span><br></pre></td></tr></tbody></table></figure>
+<p>注：如需匹配小括号，只要加转义字符串即可。</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">^(\(ab\))*$</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="条件或"><a href="#条件或" class="headerlink" title="条件或"></a>条件或</h2><p>利用“｜”来表达条件或。</p>
+<p>例：匹配130/131/181/177等开头的11位手机号。</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">^(<span class="number">130</span>|<span class="number">131</span>|<span class="number">181</span>|<span class="number">177</span>)\d{<span class="number">8</span>}$</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="区间"><a href="#区间" class="headerlink" title="区间"></a>区间</h2><p>利用“[]”来表达区间条件。</p>
+<blockquote>
+<p>[0-9]：限定0到9</p>
+<p>[A-Z]：限定A到Z</p>
+<p>[165]：限定规定数字</p>
+</blockquote>
+<p>例：匹配130/131/132/156/158/159/145/177开头的11位数字</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">^((<span class="number">13</span>[<span class="number">0</span>-<span class="number">2</span>])|(<span class="number">15</span>[<span class="number">689</span>])|<span class="number">145</span>|<span class="number">177</span>)\d{<span class="number">8</span>}$</span><br></pre></td></tr></tbody></table></figure>
+<h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><ul>
+<li><a href="https://juejin.im/post/5b96a8e2e51d450e6a2de115">掘金博文</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Tools</category>
+      </categories>
+      <tags>
+        <tag>Regex</tag>
       </tags>
   </entry>
   <entry>
