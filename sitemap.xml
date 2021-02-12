@@ -242,13 +242,6 @@
   </url>
   
   <url>
-    <loc>https://unknown.yuzhouwan.com/tags/BigData/</loc>
-    <lastmod>2021-02-12</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://unknown.yuzhouwan.com/tags/Machine-Learning/</loc>
     <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
@@ -263,6 +256,13 @@
   </url>
   
   <url>
+    <loc>https://unknown.yuzhouwan.com/tags/BigData/</loc>
+    <lastmod>2021-02-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://unknown.yuzhouwan.com/tags/Numpy/</loc>
     <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
@@ -270,14 +270,14 @@
   </url>
   
   <url>
-    <loc>https://unknown.yuzhouwan.com/tags/Software-Test-Basic/</loc>
+    <loc>https://unknown.yuzhouwan.com/tags/Regex/</loc>
     <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://unknown.yuzhouwan.com/tags/Regex/</loc>
+    <loc>https://unknown.yuzhouwan.com/tags/Software-Test-Basic/</loc>
     <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -405,7 +405,7 @@
   </url>
   
   <url>
-    <loc>https://unknown.yuzhouwan.com/categories/BigData/</loc>
+    <loc>https://unknown.yuzhouwan.com/categories/Math/</loc>
     <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -419,7 +419,7 @@
   </url>
   
   <url>
-    <loc>https://unknown.yuzhouwan.com/categories/Math/</loc>
+    <loc>https://unknown.yuzhouwan.com/categories/BigData/</loc>
     <lastmod>2021-02-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
