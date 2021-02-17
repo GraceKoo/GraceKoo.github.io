@@ -1,62 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Image-Algorithm-Summarize</title>
-    <url>/posts/58748/</url>
-    <content><![CDATA[<h1 id="YUV、RGB、HSV"><a href="#YUV、RGB、HSV" class="headerlink" title="YUV、RGB、HSV"></a>YUV、RGB、HSV</h1><p>YUV：亮度信息 即灰度值。UV：色彩信息 定义了颜色的两个方面-色调与饱和度，分别用Cr和CB来表示。其中，Cr反映了RGB输入信号红色部分与RGB信号亮度值之间的差异。而CB反映的是RGB输入信号蓝色部分与RGB信号亮度值之同的差异。通过运算，YUV三分量可以还原出R（红），G（绿），B（蓝）。</p>
-<p>HSV: 色调（H），饱和度（S），明度（V）</p>
-<p>相互转换</p>
-<h2 id="ARGB-gt-RGB"><a href="#ARGB-gt-RGB" class="headerlink" title="ARGB -> RGB"></a>ARGB -&gt; RGB</h2><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">//unsigned char *data 存的是ARGB的裸数据；</span><br><span class="line"> </span><br><span class="line">cv::Mat argbImg;</span><br><span class="line">cv::Mat rgbImg(cy, cx,CV_8UC3);</span><br><span class="line">yuvImg.create(cy, cx, CV_8UC4);</span><br><span class="line">memcpy(argbImg.data, data, <span class="built_in">len</span>);</span><br><span class="line">cv::cvtColor(argbImg, rgbImg, CV_RGBA2RGB);</span><br><span class="line">flip(rgbImg, rgbImg, <span class="number">0</span>);    //垂直翻转</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="YUV-gt-RGB"><a href="#YUV-gt-RGB" class="headerlink" title="YUV -> RGB"></a>YUV -&gt; RGB</h2><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">//unsigned char *data 存的是YUYV的裸数据；</span><br><span class="line"> </span><br><span class="line">cv::Mat yuvImg;</span><br><span class="line">cv::Mat rgbImg(cy, cx,CV_8UC3);</span><br><span class="line">yuvImg.create(cy , cx, CV_8UC2);</span><br><span class="line">memcpy(yuvImg.data, data, <span class="built_in">len</span>);</span><br><span class="line">cv::cvtColor(yuvImg, rgbImg, CV_YUV2BGR_YUYV);</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="I420-gt-RGB"><a href="#I420-gt-RGB" class="headerlink" title="I420 -> RGB"></a>I420 -&gt; RGB</h2><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">//unsigned char *data 存的是I420的裸数据；</span><br><span class="line"> </span><br><span class="line">cv::Mat yuvImg;</span><br><span class="line">cv::Mat rgbImg(cy, cx,CV_8UC3);</span><br><span class="line">yuvImg.create(cy * <span class="number">3</span>/<span class="number">2</span>, cx, CV_8UC1);</span><br><span class="line">memcpy(yuvImg.data, data, <span class="built_in">len</span>);</span><br><span class="line">cv::cvtColor(yuvImg, rgbImg, CV_YUV2BGR_I420);</span><br></pre></td></tr></tbody></table></figure>
-<p>OpenCV提供的转换函数实现YUV到RGB的转换：</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="built_in">bool</span> YV12ToBGR24_OpenCV(unsigned char* pYUV,unsigned char* pBGR24,<span class="built_in">int</span> width,<span class="built_in">int</span> height) </span><br><span class="line">{ </span><br><span class="line"><span class="keyword">if</span> (width &lt; <span class="number">1</span> || height &lt; <span class="number">1</span> || pYUV == NULL || pBGR24 == NULL) </span><br><span class="line"><span class="keyword">return</span> false; </span><br><span class="line">Mat dst(height,width,CV_8UC3,pBGR24); </span><br><span class="line">Mat src(height + height/<span class="number">2</span>,width,CV_8UC1,pYUV); </span><br><span class="line">cvtColor(src,dst,CV_YUV2BGR_YV12); </span><br><span class="line"><span class="keyword">return</span> true; </span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="RGB-gt-HSV"><a href="#RGB-gt-HSV" class="headerlink" title="RGB -> HSV"></a>RGB -&gt; HSV</h2><figure class="highlight c++"><table><tbody><tr><td class="code"><pre><span class="line"># -*- coding:utf<span class="number">-8</span> -*-</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"></span><br><span class="line"><span class="string">""</span><span class="string">"</span></span><br><span class="line"><span class="string">功能：读取一张图片，显示出来，并转化为HSV色彩空间</span></span><br><span class="line"><span class="string">"</span><span class="string">""</span></span><br><span class="line">image = cv2.imread('images/my_wife2.jpg') # 根据路径读取一张图片</span><br><span class="line">cv2.imshow(<span class="string">"BGR"</span>, image) # 显示图片</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 转化图片到HSV色彩空间</span><br><span class="line">dst = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)</span><br><span class="line">cv2.imshow(<span class="string">"HSV"</span>, dst) # 显示图片</span><br><span class="line">cv2.waitKey(<span class="number">0</span>) # 等待键盘触发事件，释放窗口</span><br></pre></td></tr></tbody></table></figure>
-<h1 id="White-Balance"><a href="#White-Balance" class="headerlink" title="White Balance"></a>White Balance</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>相机的白平衡控制，是为了让实际环境中白色的物体在你拍摄的画面中也呈现出“真正”的白色。不同性质的光源会在画面中产生不同的色彩倾向，比如说，蜡烛的光线会使画面偏橘黄色，而黄昏过后的光线则会为景物披上一层蓝色的冷调。而我们的视觉系统会自动对不同的光线作出补偿，所以无论在暖调还是冷调的光线环境下，我们看一张白纸永远还是白色的。但相机则不然，它只会直接记录呈现在它面前的色彩，这就会导致画面色彩偏暖或偏冷。</p>
-<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><p>开暖光灯：YUV -&gt; RGB -&gt; SV ，全图SV值S需在0～0.1之间，V需在90～255之间。</p>
-<a id="more"></a>
-<h1 id="IR-Cut"><a href="#IR-Cut" class="headerlink" title="IR-Cut"></a>IR-Cut</h1><h2 id="概念-1"><a href="#概念-1" class="headerlink" title="概念"></a>概念</h2><p>自然界存在着各种波长的光线，通过折射人眼能看到不同颜色的光线，这就是光线的波长不同所导致的。其实还有许多光线是人眼看不到的，人眼识别光线的波长范围在320nm-760nm之间， 超过760nm的光线人眼就无法见到，比如红外光等。<br>随着科学的进步，人类发明了摄像机，理论上讲摄像机可以看到绝大部分波长的光线，但在摄像机的使用过程中就出现了一个问题，由于各种光线的参杂，摄像机看到的物体反映在监视器上与人眼直接看到的就变样了。如人眼看到绿色，通过摄像机则变成蓝色，产生彩色失真。过去，为解决色彩失真问题，一般在CCD前贴有一低通滤片，该滤片阻碍了红外光的进出，故白天彩色不失真，但夜间却没有了夜视功能。<br>IR CUT是一种机械装置，内有两个窗口，一为低通滤片一为透明玻璃，可依需要左右移动，从而白天彩色不失真，且夜间仍有夜视功能。简单的说，通过IR CUT，白天只允许760nm或780nm以下波长的光线进入，避免了白天的彩色失真。晚上只允许760nm或780nm以上波长的红外光线进入，避免760nm或780nm以下波长的可见光对红外光的干扰，于是在白天与夜晚都能取得最佳视觉效果。随着技术的进步，IR CUT结合低通滤片与<a href="https://www.baidu.com/s?wd=高通&amp;tn=SE_PcZhidaonwhc_ngpagmjz&amp;rsv_dl=gh_pc_zhidao">高通</a>滤片在改进<a href="https://www.baidu.com/s?wd=夜视摄像机&amp;tn=SE_PcZhidaonwhc_ngpagmjz&amp;rsv_dl=gh_pc_zhidao">夜视摄像机</a>的性能上发挥越来越重要的作用．低通滤片：以镀膜方式使光线中波长在760nm或780nm以下的光线通过，超过760nm或780nm波长的光线阻止通过。<a href="https://www.baidu.com/s?wd=高通&amp;tn=SE_PcZhidaonwhc_ngpagmjz&amp;rsv_dl=gh_pc_zhidao">高通</a>滤片：以镀膜方式使光线中波长在760nm或780nm以下的光线阻止通过，只准超过760nm或780nm以上波长的光线通过。<br>根据上述分析，应用低通滤片技术，摄像机能够模拟人的眼睛，只接收同样范围波长的光线，这样就解决了摄像机的色彩失真问题。而通过<a href="https://www.baidu.com/s?wd=高通&amp;tn=SE_PcZhidaonwhc_ngpagmjz&amp;rsv_dl=gh_pc_zhidao">高通</a>滤片技术的应用，解决了在夜间杂光干扰红外光问题。LED红外技术的出现，大大拓宽了监控领域的时空范畴，<a href="https://www.baidu.com/s?wd=红外摄像机&amp;tn=SE_PcZhidaonwhc_ngpagmjz&amp;rsv_dl=gh_pc_zhidao">红外摄像机</a>得到了广泛的应用。但同时，我们也发现市场上流行的传统LED<a href="https://www.baidu.com/s?wd=红外摄像机&amp;tn=SE_PcZhidaonwhc_ngpagmjz&amp;rsv_dl=gh_pc_zhidao">红外摄像机</a>存在着许多致命的缺陷：如散热问题、寿命问题、手电筒效应问题，夜晚可见光干扰的问题等。LED Array 技术解决了寿命问题，新一代的LED Array技术基本解决了“手电筒”效应，而IR CUT技术完美地解决了杂光干扰。</p>
-<h2 id="实现-1"><a href="#实现-1" class="headerlink" title="实现"></a>实现</h2><p>关、开滤光片，打开红外灯，计算平均亮度是否符合要求（155～255之间）。</p>
-<h1 id="Bad-Pixel"><a href="#Bad-Pixel" class="headerlink" title="Bad Pixel"></a>Bad Pixel</h1><h2 id="概念-2"><a href="#概念-2" class="headerlink" title="概念"></a>概念</h2><p>图像坏点(Bad pixel) : 图像传感器上光线采集点(像素点)所形成的阵列存在工艺上的缺陷，或光信号进行转化为电信号的过程中出现错误，从而会造成图像上像素信息错误，导致图像中的像素值不准确，这些有缺陷的像素即为图像坏点。</p>
-<h2 id="实现-2"><a href="#实现-2" class="headerlink" title="实现"></a>实现</h2><p>根据灰度值确定坏点</p>
-<h1 id="Shading"><a href="#Shading" class="headerlink" title="Shading"></a>Shading</h1><h2 id="概念-3"><a href="#概念-3" class="headerlink" title="概念"></a>概念</h2><p>暗角一词属于摄影术语。对着亮度均匀景物，画面四角有变暗的现象，叫做“失光”，俗称“暗角”。</p>
-<p>产生暗角的原因主要有：</p>
-<p>1.边角的成像光线与<a href="https://baike.baidu.com/item/镜头光轴/10196349">镜头光轴</a>有较大的夹角，是造成边角失光的主要原因。沿着<a href="https://baike.baidu.com/item/视场/8231871">视场</a>边缘的光线的前进方向看<a href="https://baike.baidu.com/item/光圈/94964">光圈</a>，由于光线与光圈所在的平面有夹角，看到的光圈是椭圆的，所以通光面积减小。镜头光心到胶片的边缘距离较大，同样的光圈直径到达底片的光线夹角较小，亮度必然减小。同理，同样的光线偏角，对于边角光线位移较大，等价于照在较大的面积上。而面积是与位移的平方成正比的，所以综合上述原因，边缘亮度与光线和光轴夹角的COS值的4次方成正比。换句话说，<a href="https://baike.baidu.com/item/广角镜头/278835">广角镜头</a>边缘亮度随着视角变大急剧下降。</p>
-<p>2.<a href="https://baike.baidu.com/item/长焦镜头/879928">长焦镜头</a>尤其是<a href="https://baike.baidu.com/item/变焦/9696019">变焦</a>长焦镜头镜片很多，偏离<a href="https://baike.baidu.com/item/光圈/94964">光圈</a>比较远的镜片为了能让边角光线通过，这些镜片必须很大。为了降低成本，缩小了这些镜片直径，造成边角成像光线不能完全通过，降低了边角的亮度。</p>
-<p>3.边角的<a href="https://baike.baidu.com/item/像差/448364">像差</a>较大。为了提高像质，某些镜片的边缘或专门设置的光阑有意挡住部分影响成像质量的边缘光线，造成边角失光。</p>
-<p><a href="https://baike.baidu.com/item/鱼眼镜头/343506">鱼眼镜头</a>虽然视角极大，但是由于边缘<a href="https://baike.baidu.com/item/放大倍率/10294653">放大倍率</a>很小，所以几乎没有边角失光。</p>
-<p>高档<a href="https://baike.baidu.com/item/变焦镜头/2971419">变焦镜头</a>已经花了大的成本，可以加大某些镜片、完美地校正像差，高档长焦镜头包括变焦镜头边缘失光很小。</p>
-<p>还有：<a href="https://baike.baidu.com/item/广角镜头/278835">广角镜头</a>如果使用了过多的<a href="https://baike.baidu.com/item/滤色镜/205532">滤色镜</a>，等价于增长了镜筒，可能造成边角暗角甚至黑角！</p>
-<p>暗角在任何一只镜头上都存在，在MTF<a href="https://baike.baidu.com/item/透光率/1192539">透光率</a>图上可以知道，从中心到边缘会损失不少，尤其在<a href="https://baike.baidu.com/item/大光圈/8567887">大光圈</a>。在冲扩<a href="https://baike.baidu.com/item/负片/3897269">负片</a>是问题不大，因为放大头也存在这个问题，会抵消掉一部分影响，当然，如果镜头太滥，失光极其明显，那就能在照片上看出来了。</p>
-<p>对于<a href="https://baike.baidu.com/item/反转片/3897682">反转片</a>，问题就严重一些，就需要仔细研究研究了，一般的现象是：广角比长焦明显一些，反正怎么样全看你的使用情况，缩小一下<a href="https://baike.baidu.com/item/光圈/94964">光圈</a>就是了。 </p>
-<p>— from baike.baidu.com</p>
-<h2 id="实现-3"><a href="#实现-3" class="headerlink" title="实现"></a>实现</h2><p>开冷光灯：分为亮度暗角和色彩暗角。</p>
-<p>亮度暗角：取四个角（10 * 10像素），四个角亮度与中间块做比值，需在0.3～1之间。</p>
-<p>色彩暗角：图像被分成20 * 20块，算每块的R/G、B/G，分别除以中心的R/G，四个角比值都应在0.8～1.2之间。</p>
-<h1 id="清晰度测试"><a href="#清晰度测试" class="headerlink" title="清晰度测试"></a>清晰度测试</h1><p>清晰度：影像细部影纹及边界的清晰程度，摄像机一般使用分解力来衡量它分解被摄景物细节的能力，单位有TVLine、4K分辨率、8K分辨率</p>
-<p>衡量分解力的三个标准：</p>
-<ol>
-<li><p>TVLine检测（锲形线测试），用于主观测试，ISO 12233 chart读出的线对数</p>
-</li>
-<li><p>MTF检测（频率线测试），调制传递函数，调制度随空间频率变化的函数，镜头的MTF曲线表明镜头的能力。</p>
-<p>MTF计算线对间最亮和最暗线对的对比度</p>
-<p>MTF = （最大亮度 - 最小亮度） / （最大亮度 + 最小亮度）</p>
-<p>测不用频率下的MTF值，通过将这些值和空间频率进行一一对照。</p>
-</li>
-<li><p>SFR检测（spatial frequency response）用于测量随着空间频率的线条增加对单一影像所造成的影响。SFR是MTF的另一种测试方法。SFR最终是希望得到MTF曲线。</p>
-<p>SFR不需拍不同空间频率下的线对。只需一个黑白刀口（斜边），即可换算约略相等于所有空间频率下的MTF。</p>
-<p>斜边 -&gt; 超采样 -&gt; 得到黑白变换的直线（ESF） -&gt; 求导  -&gt; 直线变换率 -&gt; FFT变换  -&gt; 各个频率下的MTF值</p>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>CV</category>
-      </categories>
-      <tags>
-        <tag>ImageAlgorithm</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Git</title>
     <url>/posts/25246/</url>
     <content><![CDATA[<h1 id="Git配置"><a href="#Git配置" class="headerlink" title="Git配置"></a>Git配置</h1><h2 id="config文件"><a href="#config文件" class="headerlink" title="config文件"></a>config文件</h2><ul>
@@ -261,6 +205,62 @@
       </tags>
   </entry>
   <entry>
+    <title>Image-Algorithm-Summarize</title>
+    <url>/posts/58748/</url>
+    <content><![CDATA[<h1 id="YUV、RGB、HSV"><a href="#YUV、RGB、HSV" class="headerlink" title="YUV、RGB、HSV"></a>YUV、RGB、HSV</h1><p>YUV：亮度信息 即灰度值。UV：色彩信息 定义了颜色的两个方面-色调与饱和度，分别用Cr和CB来表示。其中，Cr反映了RGB输入信号红色部分与RGB信号亮度值之间的差异。而CB反映的是RGB输入信号蓝色部分与RGB信号亮度值之同的差异。通过运算，YUV三分量可以还原出R（红），G（绿），B（蓝）。</p>
+<p>HSV: 色调（H），饱和度（S），明度（V）</p>
+<p>相互转换</p>
+<h2 id="ARGB-gt-RGB"><a href="#ARGB-gt-RGB" class="headerlink" title="ARGB -> RGB"></a>ARGB -&gt; RGB</h2><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">//unsigned char *data 存的是ARGB的裸数据；</span><br><span class="line"> </span><br><span class="line">cv::Mat argbImg;</span><br><span class="line">cv::Mat rgbImg(cy, cx,CV_8UC3);</span><br><span class="line">yuvImg.create(cy, cx, CV_8UC4);</span><br><span class="line">memcpy(argbImg.data, data, <span class="built_in">len</span>);</span><br><span class="line">cv::cvtColor(argbImg, rgbImg, CV_RGBA2RGB);</span><br><span class="line">flip(rgbImg, rgbImg, <span class="number">0</span>);    //垂直翻转</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="YUV-gt-RGB"><a href="#YUV-gt-RGB" class="headerlink" title="YUV -> RGB"></a>YUV -&gt; RGB</h2><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">//unsigned char *data 存的是YUYV的裸数据；</span><br><span class="line"> </span><br><span class="line">cv::Mat yuvImg;</span><br><span class="line">cv::Mat rgbImg(cy, cx,CV_8UC3);</span><br><span class="line">yuvImg.create(cy , cx, CV_8UC2);</span><br><span class="line">memcpy(yuvImg.data, data, <span class="built_in">len</span>);</span><br><span class="line">cv::cvtColor(yuvImg, rgbImg, CV_YUV2BGR_YUYV);</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="I420-gt-RGB"><a href="#I420-gt-RGB" class="headerlink" title="I420 -> RGB"></a>I420 -&gt; RGB</h2><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">//unsigned char *data 存的是I420的裸数据；</span><br><span class="line"> </span><br><span class="line">cv::Mat yuvImg;</span><br><span class="line">cv::Mat rgbImg(cy, cx,CV_8UC3);</span><br><span class="line">yuvImg.create(cy * <span class="number">3</span>/<span class="number">2</span>, cx, CV_8UC1);</span><br><span class="line">memcpy(yuvImg.data, data, <span class="built_in">len</span>);</span><br><span class="line">cv::cvtColor(yuvImg, rgbImg, CV_YUV2BGR_I420);</span><br></pre></td></tr></tbody></table></figure>
+<p>OpenCV提供的转换函数实现YUV到RGB的转换：</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="built_in">bool</span> YV12ToBGR24_OpenCV(unsigned char* pYUV,unsigned char* pBGR24,<span class="built_in">int</span> width,<span class="built_in">int</span> height) </span><br><span class="line">{ </span><br><span class="line"><span class="keyword">if</span> (width &lt; <span class="number">1</span> || height &lt; <span class="number">1</span> || pYUV == NULL || pBGR24 == NULL) </span><br><span class="line"><span class="keyword">return</span> false; </span><br><span class="line">Mat dst(height,width,CV_8UC3,pBGR24); </span><br><span class="line">Mat src(height + height/<span class="number">2</span>,width,CV_8UC1,pYUV); </span><br><span class="line">cvtColor(src,dst,CV_YUV2BGR_YV12); </span><br><span class="line"><span class="keyword">return</span> true; </span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="RGB-gt-HSV"><a href="#RGB-gt-HSV" class="headerlink" title="RGB -> HSV"></a>RGB -&gt; HSV</h2><figure class="highlight c++"><table><tbody><tr><td class="code"><pre><span class="line"># -*- coding:utf<span class="number">-8</span> -*-</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"></span><br><span class="line"><span class="string">""</span><span class="string">"</span></span><br><span class="line"><span class="string">功能：读取一张图片，显示出来，并转化为HSV色彩空间</span></span><br><span class="line"><span class="string">"</span><span class="string">""</span></span><br><span class="line">image = cv2.imread('images/my_wife2.jpg') # 根据路径读取一张图片</span><br><span class="line">cv2.imshow(<span class="string">"BGR"</span>, image) # 显示图片</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 转化图片到HSV色彩空间</span><br><span class="line">dst = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)</span><br><span class="line">cv2.imshow(<span class="string">"HSV"</span>, dst) # 显示图片</span><br><span class="line">cv2.waitKey(<span class="number">0</span>) # 等待键盘触发事件，释放窗口</span><br></pre></td></tr></tbody></table></figure>
+<h1 id="White-Balance"><a href="#White-Balance" class="headerlink" title="White Balance"></a>White Balance</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>相机的白平衡控制，是为了让实际环境中白色的物体在你拍摄的画面中也呈现出“真正”的白色。不同性质的光源会在画面中产生不同的色彩倾向，比如说，蜡烛的光线会使画面偏橘黄色，而黄昏过后的光线则会为景物披上一层蓝色的冷调。而我们的视觉系统会自动对不同的光线作出补偿，所以无论在暖调还是冷调的光线环境下，我们看一张白纸永远还是白色的。但相机则不然，它只会直接记录呈现在它面前的色彩，这就会导致画面色彩偏暖或偏冷。</p>
+<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><p>开暖光灯：YUV -&gt; RGB -&gt; SV ，全图SV值S需在0～0.1之间，V需在90～255之间。</p>
+<a id="more"></a>
+<h1 id="IR-Cut"><a href="#IR-Cut" class="headerlink" title="IR-Cut"></a>IR-Cut</h1><h2 id="概念-1"><a href="#概念-1" class="headerlink" title="概念"></a>概念</h2><p>自然界存在着各种波长的光线，通过折射人眼能看到不同颜色的光线，这就是光线的波长不同所导致的。其实还有许多光线是人眼看不到的，人眼识别光线的波长范围在320nm-760nm之间， 超过760nm的光线人眼就无法见到，比如红外光等。<br>随着科学的进步，人类发明了摄像机，理论上讲摄像机可以看到绝大部分波长的光线，但在摄像机的使用过程中就出现了一个问题，由于各种光线的参杂，摄像机看到的物体反映在监视器上与人眼直接看到的就变样了。如人眼看到绿色，通过摄像机则变成蓝色，产生彩色失真。过去，为解决色彩失真问题，一般在CCD前贴有一低通滤片，该滤片阻碍了红外光的进出，故白天彩色不失真，但夜间却没有了夜视功能。<br>IR CUT是一种机械装置，内有两个窗口，一为低通滤片一为透明玻璃，可依需要左右移动，从而白天彩色不失真，且夜间仍有夜视功能。简单的说，通过IR CUT，白天只允许760nm或780nm以下波长的光线进入，避免了白天的彩色失真。晚上只允许760nm或780nm以上波长的红外光线进入，避免760nm或780nm以下波长的可见光对红外光的干扰，于是在白天与夜晚都能取得最佳视觉效果。随着技术的进步，IR CUT结合低通滤片与<a href="https://www.baidu.com/s?wd=高通&amp;tn=SE_PcZhidaonwhc_ngpagmjz&amp;rsv_dl=gh_pc_zhidao">高通</a>滤片在改进<a href="https://www.baidu.com/s?wd=夜视摄像机&amp;tn=SE_PcZhidaonwhc_ngpagmjz&amp;rsv_dl=gh_pc_zhidao">夜视摄像机</a>的性能上发挥越来越重要的作用．低通滤片：以镀膜方式使光线中波长在760nm或780nm以下的光线通过，超过760nm或780nm波长的光线阻止通过。<a href="https://www.baidu.com/s?wd=高通&amp;tn=SE_PcZhidaonwhc_ngpagmjz&amp;rsv_dl=gh_pc_zhidao">高通</a>滤片：以镀膜方式使光线中波长在760nm或780nm以下的光线阻止通过，只准超过760nm或780nm以上波长的光线通过。<br>根据上述分析，应用低通滤片技术，摄像机能够模拟人的眼睛，只接收同样范围波长的光线，这样就解决了摄像机的色彩失真问题。而通过<a href="https://www.baidu.com/s?wd=高通&amp;tn=SE_PcZhidaonwhc_ngpagmjz&amp;rsv_dl=gh_pc_zhidao">高通</a>滤片技术的应用，解决了在夜间杂光干扰红外光问题。LED红外技术的出现，大大拓宽了监控领域的时空范畴，<a href="https://www.baidu.com/s?wd=红外摄像机&amp;tn=SE_PcZhidaonwhc_ngpagmjz&amp;rsv_dl=gh_pc_zhidao">红外摄像机</a>得到了广泛的应用。但同时，我们也发现市场上流行的传统LED<a href="https://www.baidu.com/s?wd=红外摄像机&amp;tn=SE_PcZhidaonwhc_ngpagmjz&amp;rsv_dl=gh_pc_zhidao">红外摄像机</a>存在着许多致命的缺陷：如散热问题、寿命问题、手电筒效应问题，夜晚可见光干扰的问题等。LED Array 技术解决了寿命问题，新一代的LED Array技术基本解决了“手电筒”效应，而IR CUT技术完美地解决了杂光干扰。</p>
+<h2 id="实现-1"><a href="#实现-1" class="headerlink" title="实现"></a>实现</h2><p>关、开滤光片，打开红外灯，计算平均亮度是否符合要求（155～255之间）。</p>
+<h1 id="Bad-Pixel"><a href="#Bad-Pixel" class="headerlink" title="Bad Pixel"></a>Bad Pixel</h1><h2 id="概念-2"><a href="#概念-2" class="headerlink" title="概念"></a>概念</h2><p>图像坏点(Bad pixel) : 图像传感器上光线采集点(像素点)所形成的阵列存在工艺上的缺陷，或光信号进行转化为电信号的过程中出现错误，从而会造成图像上像素信息错误，导致图像中的像素值不准确，这些有缺陷的像素即为图像坏点。</p>
+<h2 id="实现-2"><a href="#实现-2" class="headerlink" title="实现"></a>实现</h2><p>根据灰度值确定坏点</p>
+<h1 id="Shading"><a href="#Shading" class="headerlink" title="Shading"></a>Shading</h1><h2 id="概念-3"><a href="#概念-3" class="headerlink" title="概念"></a>概念</h2><p>暗角一词属于摄影术语。对着亮度均匀景物，画面四角有变暗的现象，叫做“失光”，俗称“暗角”。</p>
+<p>产生暗角的原因主要有：</p>
+<p>1.边角的成像光线与<a href="https://baike.baidu.com/item/镜头光轴/10196349">镜头光轴</a>有较大的夹角，是造成边角失光的主要原因。沿着<a href="https://baike.baidu.com/item/视场/8231871">视场</a>边缘的光线的前进方向看<a href="https://baike.baidu.com/item/光圈/94964">光圈</a>，由于光线与光圈所在的平面有夹角，看到的光圈是椭圆的，所以通光面积减小。镜头光心到胶片的边缘距离较大，同样的光圈直径到达底片的光线夹角较小，亮度必然减小。同理，同样的光线偏角，对于边角光线位移较大，等价于照在较大的面积上。而面积是与位移的平方成正比的，所以综合上述原因，边缘亮度与光线和光轴夹角的COS值的4次方成正比。换句话说，<a href="https://baike.baidu.com/item/广角镜头/278835">广角镜头</a>边缘亮度随着视角变大急剧下降。</p>
+<p>2.<a href="https://baike.baidu.com/item/长焦镜头/879928">长焦镜头</a>尤其是<a href="https://baike.baidu.com/item/变焦/9696019">变焦</a>长焦镜头镜片很多，偏离<a href="https://baike.baidu.com/item/光圈/94964">光圈</a>比较远的镜片为了能让边角光线通过，这些镜片必须很大。为了降低成本，缩小了这些镜片直径，造成边角成像光线不能完全通过，降低了边角的亮度。</p>
+<p>3.边角的<a href="https://baike.baidu.com/item/像差/448364">像差</a>较大。为了提高像质，某些镜片的边缘或专门设置的光阑有意挡住部分影响成像质量的边缘光线，造成边角失光。</p>
+<p><a href="https://baike.baidu.com/item/鱼眼镜头/343506">鱼眼镜头</a>虽然视角极大，但是由于边缘<a href="https://baike.baidu.com/item/放大倍率/10294653">放大倍率</a>很小，所以几乎没有边角失光。</p>
+<p>高档<a href="https://baike.baidu.com/item/变焦镜头/2971419">变焦镜头</a>已经花了大的成本，可以加大某些镜片、完美地校正像差，高档长焦镜头包括变焦镜头边缘失光很小。</p>
+<p>还有：<a href="https://baike.baidu.com/item/广角镜头/278835">广角镜头</a>如果使用了过多的<a href="https://baike.baidu.com/item/滤色镜/205532">滤色镜</a>，等价于增长了镜筒，可能造成边角暗角甚至黑角！</p>
+<p>暗角在任何一只镜头上都存在，在MTF<a href="https://baike.baidu.com/item/透光率/1192539">透光率</a>图上可以知道，从中心到边缘会损失不少，尤其在<a href="https://baike.baidu.com/item/大光圈/8567887">大光圈</a>。在冲扩<a href="https://baike.baidu.com/item/负片/3897269">负片</a>是问题不大，因为放大头也存在这个问题，会抵消掉一部分影响，当然，如果镜头太滥，失光极其明显，那就能在照片上看出来了。</p>
+<p>对于<a href="https://baike.baidu.com/item/反转片/3897682">反转片</a>，问题就严重一些，就需要仔细研究研究了，一般的现象是：广角比长焦明显一些，反正怎么样全看你的使用情况，缩小一下<a href="https://baike.baidu.com/item/光圈/94964">光圈</a>就是了。 </p>
+<p>— from baike.baidu.com</p>
+<h2 id="实现-3"><a href="#实现-3" class="headerlink" title="实现"></a>实现</h2><p>开冷光灯：分为亮度暗角和色彩暗角。</p>
+<p>亮度暗角：取四个角（10 * 10像素），四个角亮度与中间块做比值，需在0.3～1之间。</p>
+<p>色彩暗角：图像被分成20 * 20块，算每块的R/G、B/G，分别除以中心的R/G，四个角比值都应在0.8～1.2之间。</p>
+<h1 id="清晰度测试"><a href="#清晰度测试" class="headerlink" title="清晰度测试"></a>清晰度测试</h1><p>清晰度：影像细部影纹及边界的清晰程度，摄像机一般使用分解力来衡量它分解被摄景物细节的能力，单位有TVLine、4K分辨率、8K分辨率</p>
+<p>衡量分解力的三个标准：</p>
+<ol>
+<li><p>TVLine检测（锲形线测试），用于主观测试，ISO 12233 chart读出的线对数</p>
+</li>
+<li><p>MTF检测（频率线测试），调制传递函数，调制度随空间频率变化的函数，镜头的MTF曲线表明镜头的能力。</p>
+<p>MTF计算线对间最亮和最暗线对的对比度</p>
+<p>MTF = （最大亮度 - 最小亮度） / （最大亮度 + 最小亮度）</p>
+<p>测不用频率下的MTF值，通过将这些值和空间频率进行一一对照。</p>
+</li>
+<li><p>SFR检测（spatial frequency response）用于测量随着空间频率的线条增加对单一影像所造成的影响。SFR是MTF的另一种测试方法。SFR最终是希望得到MTF曲线。</p>
+<p>SFR不需拍不同空间频率下的线对。只需一个黑白刀口（斜边），即可换算约略相等于所有空间频率下的MTF。</p>
+<p>斜边 -&gt; 超采样 -&gt; 得到黑白变换的直线（ESF） -&gt; 求导  -&gt; 直线变换率 -&gt; FFT变换  -&gt; 各个频率下的MTF值</p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>CV</category>
+      </categories>
+      <tags>
+        <tag>ImageAlgorithm</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Kafka初探</title>
     <url>/posts/252123/</url>
     <content><![CDATA[<h1 id="Kafka的设计和结构"><a href="#Kafka的设计和结构" class="headerlink" title="Kafka的设计和结构"></a>Kafka的设计和结构</h1><h2 id="Kafka基本概念"><a href="#Kafka基本概念" class="headerlink" title="Kafka基本概念"></a>Kafka基本概念</h2><ul>
@@ -359,6 +359,90 @@
       </categories>
       <tags>
         <tag>BigData</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>AI中的数学知识</title>
+    <url>/posts/59545/</url>
+    <content><![CDATA[<h1 id="线性代数部分"><a href="#线性代数部分" class="headerlink" title="线性代数部分"></a>线性代数部分</h1><h2 id="矩阵及其运算合集"><a href="#矩阵及其运算合集" class="headerlink" title="矩阵及其运算合集"></a>矩阵及其运算合集</h2><a id="more"></a>
+<h2 id="矩阵的行列式"><a href="#矩阵的行列式" class="headerlink" title="矩阵的行列式"></a>矩阵的行列式</h2><h2 id="矩阵的逆"><a href="#矩阵的逆" class="headerlink" title="矩阵的逆"></a>矩阵的逆</h2><h2 id="矩阵的初等变换"><a href="#矩阵的初等变换" class="headerlink" title="矩阵的初等变换"></a>矩阵的初等变换</h2><h2 id="矩阵的秩"><a href="#矩阵的秩" class="headerlink" title="矩阵的秩"></a>矩阵的秩</h2><h2 id="矩阵的特征值和特征向量"><a href="#矩阵的特征值和特征向量" class="headerlink" title="矩阵的特征值和特征向量"></a>矩阵的特征值和特征向量</h2><h2 id="矩阵对角化二次型"><a href="#矩阵对角化二次型" class="headerlink" title="矩阵对角化二次型"></a>矩阵对角化二次型</h2><h2 id="SVD分解的证明"><a href="#SVD分解的证明" class="headerlink" title="SVD分解的证明"></a>SVD分解的证明</h2><h2 id="SVD的应用与多元线性回归"><a href="#SVD的应用与多元线性回归" class="headerlink" title="SVD的应用与多元线性回归"></a>SVD的应用与多元线性回归</h2><h1 id="微积分部分"><a href="#微积分部分" class="headerlink" title="微积分部分"></a>微积分部分</h1><h2 id="导数中的中值定理"><a href="#导数中的中值定理" class="headerlink" title="导数中的中值定理"></a>导数中的中值定理</h2><h2 id="泰勒公式函数极值定积分"><a href="#泰勒公式函数极值定积分" class="headerlink" title="泰勒公式函数极值定积分"></a>泰勒公式函数极值定积分</h2><h2 id="多元微积分"><a href="#多元微积分" class="headerlink" title="多元微积分"></a>多元微积分</h2><h1 id="概率论部分"><a href="#概率论部分" class="headerlink" title="概率论部分"></a>概率论部分</h1><h2 id="概率基础"><a href="#概率基础" class="headerlink" title="概率基础"></a>概率基础</h2><h2 id="随机变量与多维随机变量"><a href="#随机变量与多维随机变量" class="headerlink" title="随机变量与多维随机变量"></a>随机变量与多维随机变量</h2><h2 id="期望与方差"><a href="#期望与方差" class="headerlink" title="期望与方差"></a>期望与方差</h2><h2 id="参数的估计"><a href="#参数的估计" class="headerlink" title="参数的估计"></a>参数的估计</h2><h1 id="最优化理论"><a href="#最优化理论" class="headerlink" title="最优化理论"></a>最优化理论</h1><h2 id="无约束最优化"><a href="#无约束最优化" class="headerlink" title="无约束最优化"></a>无约束最优化</h2><h2 id="带约束的最优化"><a href="#带约束的最优化" class="headerlink" title="带约束的最优化"></a>带约束的最优化</h2><h2 id="对偶理论"><a href="#对偶理论" class="headerlink" title="对偶理论"></a>对偶理论</h2>]]></content>
+      <categories>
+        <category>Math</category>
+      </categories>
+      <tags>
+        <tag>Machine Learning</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Numpy基础</title>
+    <url>/posts/21763/</url>
+    <content><![CDATA[<p>Numpy是Python中用于科学计算的核心库。它提供了高性能的多维数组对象，以及相关工具</p>
+<h1 id="绘制雪花"><a href="#绘制雪花" class="headerlink" title="绘制雪花"></a>绘制雪花</h1><p>转自博客上看到的一位大牛的程序，利用Numpy + matplotlib 绘制雪花，效果如下：</p>
+<p><img data-src="/images/snow.jpg" alt="snow"></p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">plt.rcParams[<span class="string">'font.sans-serif'</span>] = [<span class="string">'FangSong'</span>]  <span class="comment"># 指定默认字体</span></span><br><span class="line">plt.rcParams[<span class="string">'axes.unicode_minus'</span>] = <span class="literal">False</span>  <span class="comment"># 解决中文显示为方块的问题</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">rotate</span>(<span class="params">p, d</span>):</span></span><br><span class="line">    <span class="string">"""返回点p绕原点逆时针旋转d度的坐标"""</span></span><br><span class="line"></span><br><span class="line">    a = np.radians(d)</span><br><span class="line">    m = np.array([[np.cos(a), np.sin(a)], [-np.sin(a), np.cos(a)]])</span><br><span class="line">    <span class="keyword">return</span> np.dot(p, m)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">koch_curve</span>(<span class="params">p, q</span>):</span></span><br><span class="line">    <span class="string">"""将线段pq生成科赫曲线，返回uvw三个点"""</span></span><br><span class="line"></span><br><span class="line">    p, q = np.array(p), np.array(q)</span><br><span class="line">    u = p + (q - p) / <span class="number">3</span>  <span class="comment"># 三等分点u的坐标</span></span><br><span class="line">    v = q - (q - p) / <span class="number">3</span>  <span class="comment"># 三等分点V的坐标</span></span><br><span class="line">    w = rotate(v - u, <span class="number">60</span>) + u  <span class="comment"># 线段uv绕u点逆时针旋转60°得到点w的坐标</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> u.tolist(), v.tolist(), w.tolist()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">snow</span>(<span class="params">triangle, k</span>):</span></span><br><span class="line">    <span class="string">"""给定三角形，生成封闭的科赫雪花"""</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(k):</span><br><span class="line">        result = <span class="built_in">list</span>()</span><br><span class="line">        t_len = <span class="built_in">len</span>(triangle)</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(t_len):</span><br><span class="line">            p = triangle[j]</span><br><span class="line">            q = triangle[(j + <span class="number">1</span>) % t_len]</span><br><span class="line">            u, v, w = koch_curve(p, q)</span><br><span class="line">            result.extend([p, u, w, v])</span><br><span class="line">        triangle = result.copy()</span><br><span class="line"></span><br><span class="line">    triangle.append(triangle[<span class="number">0</span>])</span><br><span class="line">    <span class="keyword">return</span> triangle</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">plot_snow</span>(<span class="params">snow_list</span>):</span></span><br><span class="line">    <span class="string">"""绘制雪花"""</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> triangle, k <span class="keyword">in</span> snow_list:</span><br><span class="line">        data = np.array(snow(triangle, k))</span><br><span class="line">        x, y = np.split(data, <span class="number">2</span>, axis=<span class="number">1</span>)</span><br><span class="line">        plt.plot(x, y)</span><br><span class="line"></span><br><span class="line">    plt.axis(<span class="string">'equal'</span>)</span><br><span class="line">    plt.show()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">snow_list = [</span><br><span class="line">    ([(<span class="number">0</span>, <span class="number">0</span>), (<span class="number">0.5</span>, <span class="number">0.8660254</span>), (<span class="number">1</span>, <span class="number">0</span>)], <span class="number">5</span>),</span><br><span class="line">    ([(<span class="number">1.1</span>, <span class="number">0.4</span>), (<span class="number">1.35</span>, <span class="number">0.8330127</span>), (<span class="number">1.6</span>, <span class="number">0.4</span>)], <span class="number">4</span>),</span><br><span class="line">    ([(<span class="number">1.1</span>, -<span class="number">0.1</span>), (<span class="number">1.25</span>, <span class="number">0.15980761</span>), (<span class="number">1.4</span>, -<span class="number">0.1</span>)], <span class="number">3</span>)</span><br><span class="line">]</span><br><span class="line">plot_snow(snow_list)</span><br></pre></td></tr></tbody></table></figure>
+<a id="more"></a>
+<h1 id="数组Arrays"><a href="#数组Arrays" class="headerlink" title="数组Arrays"></a>数组Arrays</h1><p>numpy数组是一个由不同数值组成的网格。网格中的数据都是<strong>同一种数据类型</strong>，可以通过非负整型数的元组来访问。</p>
+<p>我们可以从列表创建数组，然后利用方括号访问其中的元素。</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">a = np.array([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>])   <span class="comment">#创建一个一维数组</span></span><br><span class="line">print(<span class="built_in">type</span>(a))</span><br><span class="line">print(a[<span class="number">0</span>],a[<span class="number">1</span>],a[<span class="number">2</span>])</span><br><span class="line">a[<span class="number">0</span>] = <span class="number">5</span></span><br><span class="line">print(a)</span><br><span class="line"></span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> '<span class="title">numpy</span>.<span class="title">ndarray</span>'&gt;</span></span><br><span class="line"><span class="class">1 2 3</span></span><br><span class="line"><span class="class">[5 2 3]</span></span><br></pre></td></tr></tbody></table></figure>
+<h1 id="函数shape-用法"><a href="#函数shape-用法" class="headerlink" title="函数shape()用法"></a>函数shape()用法</h1><p>shape函数功能室查看矩阵或者数组的<strong>维度</strong>。</p>
+<p>例如：建立一个3✖3的单位矩阵e，e.shape()为（3，3），<strong>表示三行三列</strong>，第一维的长度是3，第二维的长度也是3。</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">e = np.eye(<span class="number">3</span>)</span><br><span class="line">print(e)</span><br><span class="line">print(e.shape)</span><br><span class="line">print(e[<span class="number">0</span>,<span class="number">0</span>],e[<span class="number">1</span>,<span class="number">1</span>])</span><br><span class="line"></span><br><span class="line">[[ <span class="number">1.</span>  <span class="number">0.</span>  <span class="number">0.</span>]</span><br><span class="line"> [ <span class="number">0.</span>  <span class="number">1.</span>  <span class="number">0.</span>]</span><br><span class="line"> [ <span class="number">0.</span>  <span class="number">0.</span>  <span class="number">1.</span>]]</span><br><span class="line">(<span class="number">3</span>, <span class="number">3</span>)</span><br><span class="line"><span class="number">1.0</span> <span class="number">1.0</span></span><br></pre></td></tr></tbody></table></figure>
+<p>建立一个一维矩阵b，b.shape为矩阵的长度。</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">b = np.array([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>])</span><br><span class="line">print(b.shape)</span><br><span class="line"></span><br><span class="line">(<span class="number">4</span>,)</span><br></pre></td></tr></tbody></table></figure>
+<p>建立一个4✖2的矩阵c，c.shape[1]为第一维的长度，c.shape[0]为第二维的长度，c.shape[1]为第一维的长度。</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">c = np.array([[<span class="number">1</span>,<span class="number">2</span>],[<span class="number">3</span>,<span class="number">5</span>],[<span class="number">9</span>,<span class="number">5</span>],[<span class="number">4</span>,<span class="number">0</span>]])</span><br><span class="line">print(c.shape[<span class="number">0</span>])</span><br><span class="line">print(c.shape[<span class="number">1</span>])</span><br><span class="line"></span><br><span class="line"><span class="number">4</span></span><br><span class="line"><span class="number">2</span></span><br></pre></td></tr></tbody></table></figure>
+<p>一个单独的数值，返回值为空。</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">np.shape(<span class="number">3</span>)</span><br><span class="line"></span><br><span class="line">()</span><br></pre></td></tr></tbody></table></figure>
+<h1 id="其他创建数组的方法"><a href="#其他创建数组的方法" class="headerlink" title="其他创建数组的方法"></a>其他创建数组的方法</h1><p>Numpy还提供了很多其他创建数组的方法：</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">a = np.zeros((<span class="number">2</span>,<span class="number">3</span>))        <span class="comment">#创建一个2✖️3全0数组</span></span><br><span class="line">print(a)</span><br><span class="line">print(<span class="string">"\n"</span>)</span><br><span class="line"></span><br><span class="line">b = np.ones((<span class="number">1</span>,<span class="number">2</span>))         <span class="comment">#创建一个1✖️2全1数组</span></span><br><span class="line">print(b)</span><br><span class="line">print(<span class="string">"\n"</span>)</span><br><span class="line"></span><br><span class="line">c = np.full((<span class="number">4</span>,<span class="number">2</span>),<span class="number">7</span>)       <span class="comment">#创建一个4✖️2的全7数组</span></span><br><span class="line">print(c)</span><br><span class="line">print(<span class="string">"\n"</span>)</span><br><span class="line"></span><br><span class="line">d = np.eye(<span class="number">2</span>)              <span class="comment">#创建一个二维单位矩阵</span></span><br><span class="line">print(d)</span><br><span class="line">print(<span class="string">"\n"</span>)</span><br><span class="line"></span><br><span class="line">e = np.random.random((<span class="number">2</span>,<span class="number">2</span>))<span class="comment">#创建一个2✖️2由随机数字组成的数组</span></span><br><span class="line">print(e)</span><br><span class="line"></span><br><span class="line">[[ <span class="number">0.</span>  <span class="number">0.</span>  <span class="number">0.</span>]</span><br><span class="line"> [ <span class="number">0.</span>  <span class="number">0.</span>  <span class="number">0.</span>]]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">[[ <span class="number">1.</span>  <span class="number">1.</span>]]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">[[<span class="number">7</span> <span class="number">7</span>]</span><br><span class="line"> [<span class="number">7</span> <span class="number">7</span>]</span><br><span class="line"> [<span class="number">7</span> <span class="number">7</span>]</span><br><span class="line"> [<span class="number">7</span> <span class="number">7</span>]]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">[[ <span class="number">1.</span>  <span class="number">0.</span>]</span><br><span class="line"> [ <span class="number">0.</span>  <span class="number">1.</span>]]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">[[ <span class="number">0.82662589</span>  <span class="number">0.93604335</span>]</span><br><span class="line"> [ <span class="number">0.20764393</span>  <span class="number">0.53211415</span>]]</span><br></pre></td></tr></tbody></table></figure>
+<h1 id="访问数组"><a href="#访问数组" class="headerlink" title="访问数组"></a>访问数组</h1><h2 id="切片"><a href="#切片" class="headerlink" title="切片"></a>切片</h2><p>切片：和Python列表类似，numpy数组可以使用切片语法。因为数组是多维的，所以必须为每个维度指定好切片。</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"><span class="comment">#创建一个3✖️4的数组</span></span><br><span class="line">a = np.array([[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>],[<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>],[<span class="number">9</span>,<span class="number">10</span>,<span class="number">11</span>,<span class="number">12</span>]])</span><br><span class="line">print(a)</span><br><span class="line">print(<span class="string">"\n"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#利用切片来截取前两行，第1到2列。注意这里“：2”是第0，1行，不包含第二行，与range()相同</span></span><br><span class="line">b = a[:<span class="number">2</span>,<span class="number">1</span>:<span class="number">3</span>]</span><br><span class="line">print(b)</span><br><span class="line">print(<span class="string">"\n"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#切片是原数组的一部分，所以改变切片，原数组也会改变</span></span><br><span class="line">print(a[<span class="number">0</span>,<span class="number">1</span>])</span><br><span class="line">b[<span class="number">0</span>,<span class="number">0</span>] = <span class="number">77</span></span><br><span class="line">print(a)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">[[ <span class="number">1</span>  <span class="number">2</span>  <span class="number">3</span>  <span class="number">4</span>]</span><br><span class="line"> [ <span class="number">5</span>  <span class="number">6</span>  <span class="number">7</span>  <span class="number">8</span>]</span><br><span class="line"> [ <span class="number">9</span> <span class="number">10</span> <span class="number">11</span> <span class="number">12</span>]]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">[[<span class="number">2</span> <span class="number">3</span>]</span><br><span class="line"> [<span class="number">6</span> <span class="number">7</span>]]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="number">2</span></span><br><span class="line">[[ <span class="number">1</span> <span class="number">77</span>  <span class="number">3</span>  <span class="number">4</span>]</span><br><span class="line"> [ <span class="number">5</span>  <span class="number">6</span>  <span class="number">7</span>  <span class="number">8</span>]</span><br><span class="line"> [ <span class="number">9</span> <span class="number">10</span> <span class="number">11</span> <span class="number">12</span>]]</span><br></pre></td></tr></tbody></table></figure>
+<p>你可以<strong>同时使用整型和切片语法来访问数组</strong>。但是，这样<strong>会产生一个比原数组低阶的新数组。</strong></p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"><span class="comment">#3✖️4</span></span><br><span class="line">a = np.array([[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>],[<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>],[<span class="number">9</span>,<span class="number">10</span>,<span class="number">11</span>,<span class="number">12</span>]])</span><br><span class="line">print(a)</span><br><span class="line">print(a.shape)</span><br><span class="line">print(<span class="string">"\n"</span>)</span><br><span class="line"></span><br><span class="line">row_r1 = a[<span class="number">1</span>,:]</span><br><span class="line">row_r2 = a[<span class="number">1</span>:<span class="number">2</span>,:]</span><br><span class="line"></span><br><span class="line">print(row_r1)</span><br><span class="line">print(row_r1.shape)</span><br><span class="line">print(<span class="string">"\n"</span>)</span><br><span class="line"></span><br><span class="line">print(row_r2)</span><br><span class="line">print(row_r2.shape)</span><br><span class="line">print(<span class="string">"\n"</span>)</span><br><span class="line"></span><br><span class="line">[[ <span class="number">1</span>  <span class="number">2</span>  <span class="number">3</span>  <span class="number">4</span>]</span><br><span class="line"> [ <span class="number">5</span>  <span class="number">6</span>  <span class="number">7</span>  <span class="number">8</span>]</span><br><span class="line"> [ <span class="number">9</span> <span class="number">10</span> <span class="number">11</span> <span class="number">12</span>]]</span><br><span class="line">(<span class="number">3</span>, <span class="number">4</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">[<span class="number">5</span> <span class="number">6</span> <span class="number">7</span> <span class="number">8</span>]</span><br><span class="line">(<span class="number">4</span>,)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">[[<span class="number">5</span> <span class="number">6</span> <span class="number">7</span> <span class="number">8</span>]]</span><br><span class="line">(<span class="number">1</span>, <span class="number">4</span>)</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="整型数组访问"><a href="#整型数组访问" class="headerlink" title="整型数组访问"></a>整型数组访问</h2><p> 当我们使用切片语法访问数组时，得到的总是原数组的一个子集。整型数组访问允许我们利用其他数组的数据构建一个新的数组。</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">a = np.array([[<span class="number">1</span>,<span class="number">2</span>],[<span class="number">3</span>,<span class="number">4</span>],[<span class="number">5</span>,<span class="number">6</span>]])</span><br><span class="line">print(a)</span><br><span class="line">print(<span class="string">"\n"</span>)</span><br><span class="line"></span><br><span class="line">print(a[[<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>],[<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>]])</span><br><span class="line"></span><br><span class="line"><span class="comment">#上面的print等价于</span></span><br><span class="line">print([a[<span class="number">0</span>,<span class="number">0</span>],a[<span class="number">1</span>,<span class="number">1</span>],a[<span class="number">2</span>,<span class="number">0</span>]])</span><br><span class="line"></span><br><span class="line">[[<span class="number">1</span> <span class="number">2</span>]</span><br><span class="line"> [<span class="number">3</span> <span class="number">4</span>]</span><br><span class="line"> [<span class="number">5</span> <span class="number">6</span>]]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">[[<span class="number">1</span> <span class="number">4</span> <span class="number">5</span>]]</span><br><span class="line">[<span class="number">1</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br></pre></td></tr></tbody></table></figure>
+<p>整型数组访问语法还有一个有用的技巧，可以用来选择或者更改矩阵中每行中的一个元素：</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">a = np.array([[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],[<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>],[<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>],[<span class="number">10</span>,<span class="number">11</span>,<span class="number">12</span>]])</span><br><span class="line">print(a)</span><br><span class="line">print(<span class="string">"\n"</span>)</span><br><span class="line"></span><br><span class="line">b = np.array([<span class="number">0</span>,<span class="number">2</span>,<span class="number">0</span>,<span class="number">1</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment">#利用b中的索引在a的每行选择一个元素</span></span><br><span class="line">print(a[np.arange(<span class="number">4</span>),b])</span><br><span class="line">print(<span class="string">"\n"</span>)</span><br><span class="line"></span><br><span class="line">a[np.arange(<span class="number">4</span>),b] += <span class="number">10</span></span><br><span class="line">print(a)</span><br><span class="line"></span><br><span class="line">[[ <span class="number">1</span>  <span class="number">2</span>  <span class="number">3</span>]</span><br><span class="line"> [ <span class="number">4</span>  <span class="number">5</span>  <span class="number">6</span>]</span><br><span class="line"> [ <span class="number">7</span>  <span class="number">8</span>  <span class="number">9</span>]</span><br><span class="line"> [<span class="number">10</span> <span class="number">11</span> <span class="number">12</span>]]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">[ <span class="number">1</span>  <span class="number">6</span>  <span class="number">7</span> <span class="number">11</span>]</span><br><span class="line"></span><br><span class="line">[[<span class="number">11</span>  <span class="number">2</span>  <span class="number">3</span>]</span><br><span class="line"> [ <span class="number">4</span>  <span class="number">5</span> <span class="number">16</span>]</span><br><span class="line"> [<span class="number">17</span>  <span class="number">8</span>  <span class="number">9</span>]</span><br><span class="line"> [<span class="number">10</span> <span class="number">21</span> <span class="number">12</span>]]</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="布尔型数组访问"><a href="#布尔型数组访问" class="headerlink" title="布尔型数组访问"></a>布尔型数组访问</h2><p>布尔数组访问可以让你选择数组中任意元素。通常，这种访问方式用于选取数组中满足某些条件的元素。</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">a = np.array([[<span class="number">1</span>,<span class="number">2</span>],[<span class="number">3</span>,<span class="number">4</span>],[<span class="number">5</span>,<span class="number">6</span>]])</span><br><span class="line"></span><br><span class="line"><span class="comment">#返回大于2的元素，这返回一个与原数组同型的布尔数组</span></span><br><span class="line">bool_idx = (a &gt; <span class="number">2</span>) </span><br><span class="line"></span><br><span class="line">print(bool_idx)</span><br><span class="line"></span><br><span class="line"><span class="comment">#利用生成的布尔数组构建一个大于2的一维数组</span></span><br><span class="line">print(a[bool_idx])</span><br><span class="line"></span><br><span class="line">print(a[a &gt; <span class="number">2</span>])</span><br><span class="line"></span><br><span class="line">[[<span class="literal">False</span> <span class="literal">False</span>]</span><br><span class="line"> [ <span class="literal">True</span>  <span class="literal">True</span>]</span><br><span class="line"> [ <span class="literal">True</span>  <span class="literal">True</span>]]</span><br><span class="line">[<span class="number">3</span> <span class="number">4</span> <span class="number">5</span> <span class="number">6</span>]</span><br><span class="line">[<span class="number">3</span> <span class="number">4</span> <span class="number">5</span> <span class="number">6</span>]</span><br></pre></td></tr></tbody></table></figure>
+<h1 id="数组计算"><a href="#数组计算" class="headerlink" title="数组计算"></a>数组计算</h1><p>既可利用操作符重载，也可以使用函数方式：</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">x = np.array([[<span class="number">1</span>,<span class="number">2</span>],[<span class="number">3</span>,<span class="number">4</span>]],dtype=np.float64)</span><br><span class="line">y = np.array([[<span class="number">5</span>,<span class="number">6</span>],[<span class="number">7</span>,<span class="number">8</span>]],dtype=np.float64)</span><br><span class="line"></span><br><span class="line"><span class="comment">#加</span></span><br><span class="line">print(x+y)</span><br><span class="line">print(np.add(x,y))</span><br><span class="line"></span><br><span class="line"><span class="comment">#减</span></span><br><span class="line">print(x-y)</span><br><span class="line">print(np.subtract(x,y))</span><br><span class="line"></span><br><span class="line"><span class="comment">#乘,对应元素乘法</span></span><br><span class="line">print(x*y)</span><br><span class="line">print(np.multiply(x,y))</span><br><span class="line"></span><br><span class="line"><span class="comment">#除，对应元素除法</span></span><br><span class="line">print(x/y)</span><br><span class="line">print(np.divide(x,y))</span><br><span class="line"></span><br><span class="line"><span class="comment">#开方</span></span><br><span class="line">print(np.sqrt(x))</span><br><span class="line"></span><br><span class="line"><span class="comment">#矩阵乘法</span></span><br><span class="line">a = np.array([[<span class="number">1</span>,<span class="number">2</span>],[<span class="number">3</span>,<span class="number">4</span>]])</span><br><span class="line">b = np.array([[<span class="number">5</span>,<span class="number">6</span>],[<span class="number">7</span>,<span class="number">8</span>]])</span><br><span class="line"></span><br><span class="line">v = np.array([<span class="number">9</span>,<span class="number">10</span>])</span><br><span class="line">w = np.array([<span class="number">11</span>,<span class="number">12</span>])</span><br><span class="line"></span><br><span class="line">print(v.dot(w))</span><br><span class="line">print(np.dot(v,w))</span><br><span class="line">print(a.dot(v))</span><br><span class="line">print(np.dot(a,v))</span><br></pre></td></tr></tbody></table></figure>
+<p>Numpy提供了很多计算数组的函数，其中最常用的一个是sum:</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">x = np.array([[<span class="number">1</span>,<span class="number">2</span>],[<span class="number">3</span>,<span class="number">4</span>]])</span><br><span class="line"></span><br><span class="line"><span class="comment">#Compute sum of all elements</span></span><br><span class="line">print(np.<span class="built_in">sum</span>(x))</span><br><span class="line"></span><br><span class="line"><span class="comment">#Compute sum of each column</span></span><br><span class="line">print(np.<span class="built_in">sum</span>(x,axis=<span class="number">0</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment">#Compute sum of each row</span></span><br><span class="line">print(np.<span class="built_in">sum</span>(x,axis=<span class="number">1</span>))</span><br></pre></td></tr></tbody></table></figure>
+<p>查看更多函数，查看<a href="https://docs.scipy.org/doc/numpy/reference/routines.math.html">SciPy.org</a></p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">x = np.array([[<span class="number">1</span>,<span class="number">2</span>],[<span class="number">3</span>,<span class="number">4</span>]])</span><br><span class="line"><span class="comment">#转置</span></span><br><span class="line">print(x.T)</span><br></pre></td></tr></tbody></table></figure>
+<p>查看<a href="https://docs.scipy.org/doc/numpy/reference/routines.array-manipulation.html">更多操作数组的方法</a></p>
+<h1 id="广播Broadcasting"><a href="#广播Broadcasting" class="headerlink" title="广播Broadcasting"></a>广播Broadcasting</h1><p>广播是一种强有力的机制，它让Numpy可以让不同大小的矩阵在一起进行数学计算。我们常会有一个小的矩阵和一个大的矩阵，然后需要用小的矩阵对大的矩阵做一些计算。</p>
+<p>例如，我们想要把一个向量加到矩阵的每一行，我们可以这样做：</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">x = np.array([[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],[<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>],[<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>],[<span class="number">10</span>,<span class="number">11</span>,<span class="number">12</span>]])</span><br><span class="line">v = np.array([<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>])</span><br><span class="line"><span class="comment">#Create an empty matrix with the same shape as x</span></span><br><span class="line">y = np.empty_like(x)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">4</span>):</span><br><span class="line">    y[i,:] = x[i,:] + v</span><br><span class="line">    </span><br><span class="line">print(y)</span><br></pre></td></tr></tbody></table></figure>
+<p>这样是行的通的，但是当x矩阵非常大，利用循环开计算就会变得很慢很慢。我们可以换一种思路。</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">x = np.array([[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],[<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>],[<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>],[<span class="number">10</span>,<span class="number">11</span>,<span class="number">12</span>]])</span><br><span class="line">v = np.array([<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment">#stack 4 copies of v on top of each other</span></span><br><span class="line">vv = np.tile(v,(<span class="number">4</span>,<span class="number">1</span>))</span><br><span class="line">print(vv)</span><br><span class="line"></span><br><span class="line">y = x + vv</span><br><span class="line">print(y)</span><br><span class="line"></span><br><span class="line">[[<span class="number">1</span> <span class="number">0</span> <span class="number">1</span>]</span><br><span class="line"> [<span class="number">1</span> <span class="number">0</span> <span class="number">1</span>]</span><br><span class="line"> [<span class="number">1</span> <span class="number">0</span> <span class="number">1</span>]</span><br><span class="line"> [<span class="number">1</span> <span class="number">0</span> <span class="number">1</span>]]</span><br><span class="line"></span><br><span class="line">[[ <span class="number">2</span>  <span class="number">2</span>  <span class="number">4</span>]</span><br><span class="line"> [ <span class="number">5</span>  <span class="number">5</span>  <span class="number">7</span>]</span><br><span class="line"> [ <span class="number">8</span>  <span class="number">8</span> <span class="number">10</span>]</span><br><span class="line"> [<span class="number">11</span> <span class="number">11</span> <span class="number">13</span>]]</span><br></pre></td></tr></tbody></table></figure>
+<p><strong>Numpy广播机制可以让我们不用创建vv，就能直接运算</strong>，看看下面的例子。</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">x = np.array([[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],[<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>],[<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>],[<span class="number">10</span>,<span class="number">11</span>,<span class="number">12</span>]])</span><br><span class="line">v = np.array([<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>])</span><br><span class="line"></span><br><span class="line">y = x + v</span><br><span class="line">print(y)</span><br><span class="line"></span><br><span class="line">[[ <span class="number">2</span>  <span class="number">2</span>  <span class="number">4</span>]</span><br><span class="line"> [ <span class="number">5</span>  <span class="number">5</span>  <span class="number">7</span>]</span><br><span class="line"> [ <span class="number">8</span>  <span class="number">8</span> <span class="number">10</span>]</span><br><span class="line"> [<span class="number">11</span> <span class="number">11</span> <span class="number">13</span>]]</span><br></pre></td></tr></tbody></table></figure>
+<p>对两个数组使用广播机制要遵守下列规则：</p>
+<p>1.如果数组的秩不同，使用1来将秩小的数组进行扩展，直到两个数组的尺寸长度都一样。</p>
+<p>2.如果两个数组在某个维度上的长度是一样的，或者其中一个数组在该维度上的长度为1，那么我们说这两个数组在该维度上是<strong>相容</strong>的。</p>
+<p>3.<strong>如果两个数组在所有维度上都是相容的，它们就能使用广播。</strong></p>
+<p>4.如果两个输入数组的尺寸不同，那么注意其中较大的那个尺寸。因为广播之后，两个数组的尺寸将和较大的尺寸一样。</p>
+<p>5.在任何一个维度上，如果一个数组的长度为1，另一个数组的长度大于1，那么在该维度上，就好像是对第一个数组进行了复制。</p>
+<p>参阅<a href="https://docs.scipy.org/doc/numpy/user/basics.broadcasting.html">文档</a>和<a href="http://scipy.github.io/old-wiki/pages/EricsBroadcastingDoc">注释</a>。支持广播机制的函数是全局函数。哪些是全局函数可以在<a href="https://docs.scipy.org/doc/numpy/reference/ufuncs.html#available-ufuncs">文档</a>中查找。</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"><span class="comment">#v is [1,2,3],w is [4,5]</span></span><br><span class="line">v = np.array([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>])</span><br><span class="line">w = np.array([<span class="number">4</span>,<span class="number">5</span>])</span><br><span class="line"></span><br><span class="line">print(np.reshape(v,(<span class="number">3</span>,<span class="number">1</span>)) * w)</span><br><span class="line"></span><br><span class="line"><span class="comment">#x is [[1,2,3]</span></span><br><span class="line"><span class="comment">#     [4,5,6]]</span></span><br><span class="line">x = np.array([[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],[<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]])</span><br><span class="line">print(x + v)</span><br><span class="line"></span><br><span class="line">print(x.T + w)</span><br><span class="line"></span><br><span class="line">print(x + np.reshape(w,(<span class="number">2</span>,<span class="number">1</span>)))</span><br><span class="line"></span><br><span class="line">print(x * <span class="number">2</span>)</span><br><span class="line"></span><br><span class="line">[[ <span class="number">4</span>  <span class="number">5</span>]</span><br><span class="line"> [ <span class="number">8</span> <span class="number">10</span>]</span><br><span class="line"> [<span class="number">12</span> <span class="number">15</span>]]</span><br><span class="line"></span><br><span class="line">[[<span class="number">2</span> <span class="number">4</span> <span class="number">6</span>]</span><br><span class="line"> [<span class="number">5</span> <span class="number">7</span> <span class="number">9</span>]]</span><br><span class="line"></span><br><span class="line">[[ <span class="number">5</span>  <span class="number">9</span>]</span><br><span class="line"> [ <span class="number">6</span> <span class="number">10</span>]</span><br><span class="line"> [ <span class="number">7</span> <span class="number">11</span>]]</span><br><span class="line"></span><br><span class="line">[[ <span class="number">5</span>  <span class="number">6</span>  <span class="number">7</span>]</span><br><span class="line"> [ <span class="number">9</span> <span class="number">10</span> <span class="number">11</span>]]</span><br><span class="line"></span><br><span class="line">[[ <span class="number">2</span>  <span class="number">4</span>  <span class="number">6</span>]</span><br><span class="line"> [ <span class="number">8</span> <span class="number">10</span> <span class="number">12</span>]]</span><br></pre></td></tr></tbody></table></figure>
+<h1 id="Numpy文档"><a href="#Numpy文档" class="headerlink" title="Numpy文档"></a>Numpy文档</h1><p>此文介绍了numpy中的一些重要内容，但是numpy远不止如此，可以查阅<a href="https://docs.scipy.org/doc/numpy/reference/">numpy</a>文献来学习更多。</p>
+<h1 id="SciPy"><a href="#SciPy" class="headerlink" title="SciPy"></a>SciPy</h1><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">$ pip3 install Pillow</span><br></pre></td></tr></tbody></table></figure>
+<p>Numpy提供了高性能的多维数组，以及计算和操作数组的基本工具。Scipy基于Numpy，提供了大量的计算和操作数组的函数，这些函数对于不同类型的科学和工程计算非常有用。</p>
+<p><a href="https://docs.scipy.org/doc/scipy/reference/index.html">SciPy文档</a>。</p>
+<h1 id="点之间的距离"><a href="#点之间的距离" class="headerlink" title="点之间的距离"></a>点之间的距离</h1><p>SciPy定义了一些有用的函数，可以计算集合中点之间的距离。</p>
+<p>函数scipy.spatial.distance.pdist能够计算集合中所有两点之间的距离。</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> scipy.spatial.distance <span class="keyword">import</span> pdist, squareform</span><br><span class="line"></span><br><span class="line">x = np.array([[<span class="number">0</span>,<span class="number">1</span>],[<span class="number">1</span>,<span class="number">0</span>],[<span class="number">2</span>,<span class="number">0</span>]])</span><br><span class="line">print(x)</span><br><span class="line"></span><br><span class="line">d = squareform(pdist(x,<span class="string">'euclidean'</span>))</span><br><span class="line">print(d)</span><br></pre></td></tr></tbody></table></figure>
+<p>具体细节请阅读<a href="http://link.zhihu.com/?target=http%3A//docs.scipy.org/doc/scipy/reference/generated/scipy.spatial.distance.pdist.html">文档</a>。</p>
+<p>函数<strong>scipy.spatial.distance.cdist</strong>可以计算不同集合中点的距离，具体请查看<a href="http://link.zhihu.com/?target=http%3A//docs.scipy.org/doc/scipy/reference/generated/scipy.spatial.distance.cdist.html">文档</a>。</p>
+]]></content>
+      <categories>
+        <category>DataView</category>
+      </categories>
+      <tags>
+        <tag>Numpy</tag>
+        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
@@ -485,87 +569,115 @@
       </tags>
   </entry>
   <entry>
-    <title>AI中的数学知识</title>
-    <url>/posts/59545/</url>
-    <content><![CDATA[<h1 id="线性代数部分"><a href="#线性代数部分" class="headerlink" title="线性代数部分"></a>线性代数部分</h1><h2 id="矩阵及其运算合集"><a href="#矩阵及其运算合集" class="headerlink" title="矩阵及其运算合集"></a>矩阵及其运算合集</h2><a id="more"></a>
-<h2 id="矩阵的行列式"><a href="#矩阵的行列式" class="headerlink" title="矩阵的行列式"></a>矩阵的行列式</h2><h2 id="矩阵的逆"><a href="#矩阵的逆" class="headerlink" title="矩阵的逆"></a>矩阵的逆</h2><h2 id="矩阵的初等变换"><a href="#矩阵的初等变换" class="headerlink" title="矩阵的初等变换"></a>矩阵的初等变换</h2><h2 id="矩阵的秩"><a href="#矩阵的秩" class="headerlink" title="矩阵的秩"></a>矩阵的秩</h2><h2 id="矩阵的特征值和特征向量"><a href="#矩阵的特征值和特征向量" class="headerlink" title="矩阵的特征值和特征向量"></a>矩阵的特征值和特征向量</h2><h2 id="矩阵对角化二次型"><a href="#矩阵对角化二次型" class="headerlink" title="矩阵对角化二次型"></a>矩阵对角化二次型</h2><h2 id="SVD分解的证明"><a href="#SVD分解的证明" class="headerlink" title="SVD分解的证明"></a>SVD分解的证明</h2><h2 id="SVD的应用与多元线性回归"><a href="#SVD的应用与多元线性回归" class="headerlink" title="SVD的应用与多元线性回归"></a>SVD的应用与多元线性回归</h2><h1 id="微积分部分"><a href="#微积分部分" class="headerlink" title="微积分部分"></a>微积分部分</h1><h2 id="导数中的中值定理"><a href="#导数中的中值定理" class="headerlink" title="导数中的中值定理"></a>导数中的中值定理</h2><h2 id="泰勒公式函数极值定积分"><a href="#泰勒公式函数极值定积分" class="headerlink" title="泰勒公式函数极值定积分"></a>泰勒公式函数极值定积分</h2><h2 id="多元微积分"><a href="#多元微积分" class="headerlink" title="多元微积分"></a>多元微积分</h2><h1 id="概率论部分"><a href="#概率论部分" class="headerlink" title="概率论部分"></a>概率论部分</h1><h2 id="概率基础"><a href="#概率基础" class="headerlink" title="概率基础"></a>概率基础</h2><h2 id="随机变量与多维随机变量"><a href="#随机变量与多维随机变量" class="headerlink" title="随机变量与多维随机变量"></a>随机变量与多维随机变量</h2><h2 id="期望与方差"><a href="#期望与方差" class="headerlink" title="期望与方差"></a>期望与方差</h2><h2 id="参数的估计"><a href="#参数的估计" class="headerlink" title="参数的估计"></a>参数的估计</h2><h1 id="最优化理论"><a href="#最优化理论" class="headerlink" title="最优化理论"></a>最优化理论</h1><h2 id="无约束最优化"><a href="#无约束最优化" class="headerlink" title="无约束最优化"></a>无约束最优化</h2><h2 id="带约束的最优化"><a href="#带约束的最优化" class="headerlink" title="带约束的最优化"></a>带约束的最优化</h2><h2 id="对偶理论"><a href="#对偶理论" class="headerlink" title="对偶理论"></a>对偶理论</h2>]]></content>
-      <categories>
-        <category>Math</category>
-      </categories>
-      <tags>
-        <tag>Machine Learning</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Numpy基础</title>
-    <url>/posts/21763/</url>
-    <content><![CDATA[<p>Numpy是Python中用于科学计算的核心库。它提供了高性能的多维数组对象，以及相关工具</p>
-<h1 id="绘制雪花"><a href="#绘制雪花" class="headerlink" title="绘制雪花"></a>绘制雪花</h1><p>转自博客上看到的一位大牛的程序，利用Numpy + matplotlib 绘制雪花，效果如下：</p>
-<p><img data-src="/images/snow.jpg" alt="snow"></p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">plt.rcParams[<span class="string">'font.sans-serif'</span>] = [<span class="string">'FangSong'</span>]  <span class="comment"># 指定默认字体</span></span><br><span class="line">plt.rcParams[<span class="string">'axes.unicode_minus'</span>] = <span class="literal">False</span>  <span class="comment"># 解决中文显示为方块的问题</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">rotate</span>(<span class="params">p, d</span>):</span></span><br><span class="line">    <span class="string">"""返回点p绕原点逆时针旋转d度的坐标"""</span></span><br><span class="line"></span><br><span class="line">    a = np.radians(d)</span><br><span class="line">    m = np.array([[np.cos(a), np.sin(a)], [-np.sin(a), np.cos(a)]])</span><br><span class="line">    <span class="keyword">return</span> np.dot(p, m)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">koch_curve</span>(<span class="params">p, q</span>):</span></span><br><span class="line">    <span class="string">"""将线段pq生成科赫曲线，返回uvw三个点"""</span></span><br><span class="line"></span><br><span class="line">    p, q = np.array(p), np.array(q)</span><br><span class="line">    u = p + (q - p) / <span class="number">3</span>  <span class="comment"># 三等分点u的坐标</span></span><br><span class="line">    v = q - (q - p) / <span class="number">3</span>  <span class="comment"># 三等分点V的坐标</span></span><br><span class="line">    w = rotate(v - u, <span class="number">60</span>) + u  <span class="comment"># 线段uv绕u点逆时针旋转60°得到点w的坐标</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> u.tolist(), v.tolist(), w.tolist()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">snow</span>(<span class="params">triangle, k</span>):</span></span><br><span class="line">    <span class="string">"""给定三角形，生成封闭的科赫雪花"""</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(k):</span><br><span class="line">        result = <span class="built_in">list</span>()</span><br><span class="line">        t_len = <span class="built_in">len</span>(triangle)</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(t_len):</span><br><span class="line">            p = triangle[j]</span><br><span class="line">            q = triangle[(j + <span class="number">1</span>) % t_len]</span><br><span class="line">            u, v, w = koch_curve(p, q)</span><br><span class="line">            result.extend([p, u, w, v])</span><br><span class="line">        triangle = result.copy()</span><br><span class="line"></span><br><span class="line">    triangle.append(triangle[<span class="number">0</span>])</span><br><span class="line">    <span class="keyword">return</span> triangle</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">plot_snow</span>(<span class="params">snow_list</span>):</span></span><br><span class="line">    <span class="string">"""绘制雪花"""</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> triangle, k <span class="keyword">in</span> snow_list:</span><br><span class="line">        data = np.array(snow(triangle, k))</span><br><span class="line">        x, y = np.split(data, <span class="number">2</span>, axis=<span class="number">1</span>)</span><br><span class="line">        plt.plot(x, y)</span><br><span class="line"></span><br><span class="line">    plt.axis(<span class="string">'equal'</span>)</span><br><span class="line">    plt.show()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">snow_list = [</span><br><span class="line">    ([(<span class="number">0</span>, <span class="number">0</span>), (<span class="number">0.5</span>, <span class="number">0.8660254</span>), (<span class="number">1</span>, <span class="number">0</span>)], <span class="number">5</span>),</span><br><span class="line">    ([(<span class="number">1.1</span>, <span class="number">0.4</span>), (<span class="number">1.35</span>, <span class="number">0.8330127</span>), (<span class="number">1.6</span>, <span class="number">0.4</span>)], <span class="number">4</span>),</span><br><span class="line">    ([(<span class="number">1.1</span>, -<span class="number">0.1</span>), (<span class="number">1.25</span>, <span class="number">0.15980761</span>), (<span class="number">1.4</span>, -<span class="number">0.1</span>)], <span class="number">3</span>)</span><br><span class="line">]</span><br><span class="line">plot_snow(snow_list)</span><br></pre></td></tr></tbody></table></figure>
+    <title>Regex</title>
+    <url>/posts/25256/</url>
+    <content><![CDATA[<h1 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h1><h2 id="元字符"><a href="#元字符" class="headerlink" title="元字符"></a>元字符</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">元字符</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">.</td>
+<td style="text-align:center">匹配除换行符以外的任意字符</td>
+</tr>
+<tr>
+<td style="text-align:center">\w</td>
+<td style="text-align:center">匹配字母、数字、下划线、汉字</td>
+</tr>
+<tr>
+<td style="text-align:center">\s</td>
+<td style="text-align:center">匹配任意的空白符</td>
+</tr>
+<tr>
+<td style="text-align:center">\d</td>
+<td style="text-align:center">匹配数字</td>
+</tr>
+<tr>
+<td style="text-align:center">\b</td>
+<td style="text-align:center">匹配单词的开始或结束</td>
+</tr>
+<tr>
+<td style="text-align:center">^</td>
+<td style="text-align:center">匹配字符串的开始</td>
+</tr>
+<tr>
+<td style="text-align:center">$</td>
+<td style="text-align:center">匹配字符串的结束</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>例：匹配有abc开头的字符串</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">\babc或^abc</span><br></pre></td></tr></tbody></table></figure>
 <a id="more"></a>
-<h1 id="数组Arrays"><a href="#数组Arrays" class="headerlink" title="数组Arrays"></a>数组Arrays</h1><p>numpy数组是一个由不同数值组成的网格。网格中的数据都是<strong>同一种数据类型</strong>，可以通过非负整型数的元组来访问。</p>
-<p>我们可以从列表创建数组，然后利用方括号访问其中的元素。</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">a = np.array([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>])   <span class="comment">#创建一个一维数组</span></span><br><span class="line">print(<span class="built_in">type</span>(a))</span><br><span class="line">print(a[<span class="number">0</span>],a[<span class="number">1</span>],a[<span class="number">2</span>])</span><br><span class="line">a[<span class="number">0</span>] = <span class="number">5</span></span><br><span class="line">print(a)</span><br><span class="line"></span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> '<span class="title">numpy</span>.<span class="title">ndarray</span>'&gt;</span></span><br><span class="line"><span class="class">1 2 3</span></span><br><span class="line"><span class="class">[5 2 3]</span></span><br></pre></td></tr></tbody></table></figure>
-<h1 id="函数shape-用法"><a href="#函数shape-用法" class="headerlink" title="函数shape()用法"></a>函数shape()用法</h1><p>shape函数功能室查看矩阵或者数组的<strong>维度</strong>。</p>
-<p>例如：建立一个3✖3的单位矩阵e，e.shape()为（3，3），<strong>表示三行三列</strong>，第一维的长度是3，第二维的长度也是3。</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">e = np.eye(<span class="number">3</span>)</span><br><span class="line">print(e)</span><br><span class="line">print(e.shape)</span><br><span class="line">print(e[<span class="number">0</span>,<span class="number">0</span>],e[<span class="number">1</span>,<span class="number">1</span>])</span><br><span class="line"></span><br><span class="line">[[ <span class="number">1.</span>  <span class="number">0.</span>  <span class="number">0.</span>]</span><br><span class="line"> [ <span class="number">0.</span>  <span class="number">1.</span>  <span class="number">0.</span>]</span><br><span class="line"> [ <span class="number">0.</span>  <span class="number">0.</span>  <span class="number">1.</span>]]</span><br><span class="line">(<span class="number">3</span>, <span class="number">3</span>)</span><br><span class="line"><span class="number">1.0</span> <span class="number">1.0</span></span><br></pre></td></tr></tbody></table></figure>
-<p>建立一个一维矩阵b，b.shape为矩阵的长度。</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">b = np.array([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>])</span><br><span class="line">print(b.shape)</span><br><span class="line"></span><br><span class="line">(<span class="number">4</span>,)</span><br></pre></td></tr></tbody></table></figure>
-<p>建立一个4✖2的矩阵c，c.shape[1]为第一维的长度，c.shape[0]为第二维的长度，c.shape[1]为第一维的长度。</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">c = np.array([[<span class="number">1</span>,<span class="number">2</span>],[<span class="number">3</span>,<span class="number">5</span>],[<span class="number">9</span>,<span class="number">5</span>],[<span class="number">4</span>,<span class="number">0</span>]])</span><br><span class="line">print(c.shape[<span class="number">0</span>])</span><br><span class="line">print(c.shape[<span class="number">1</span>])</span><br><span class="line"></span><br><span class="line"><span class="number">4</span></span><br><span class="line"><span class="number">2</span></span><br></pre></td></tr></tbody></table></figure>
-<p>一个单独的数值，返回值为空。</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">np.shape(<span class="number">3</span>)</span><br><span class="line"></span><br><span class="line">()</span><br></pre></td></tr></tbody></table></figure>
-<h1 id="其他创建数组的方法"><a href="#其他创建数组的方法" class="headerlink" title="其他创建数组的方法"></a>其他创建数组的方法</h1><p>Numpy还提供了很多其他创建数组的方法：</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">a = np.zeros((<span class="number">2</span>,<span class="number">3</span>))        <span class="comment">#创建一个2✖️3全0数组</span></span><br><span class="line">print(a)</span><br><span class="line">print(<span class="string">"\n"</span>)</span><br><span class="line"></span><br><span class="line">b = np.ones((<span class="number">1</span>,<span class="number">2</span>))         <span class="comment">#创建一个1✖️2全1数组</span></span><br><span class="line">print(b)</span><br><span class="line">print(<span class="string">"\n"</span>)</span><br><span class="line"></span><br><span class="line">c = np.full((<span class="number">4</span>,<span class="number">2</span>),<span class="number">7</span>)       <span class="comment">#创建一个4✖️2的全7数组</span></span><br><span class="line">print(c)</span><br><span class="line">print(<span class="string">"\n"</span>)</span><br><span class="line"></span><br><span class="line">d = np.eye(<span class="number">2</span>)              <span class="comment">#创建一个二维单位矩阵</span></span><br><span class="line">print(d)</span><br><span class="line">print(<span class="string">"\n"</span>)</span><br><span class="line"></span><br><span class="line">e = np.random.random((<span class="number">2</span>,<span class="number">2</span>))<span class="comment">#创建一个2✖️2由随机数字组成的数组</span></span><br><span class="line">print(e)</span><br><span class="line"></span><br><span class="line">[[ <span class="number">0.</span>  <span class="number">0.</span>  <span class="number">0.</span>]</span><br><span class="line"> [ <span class="number">0.</span>  <span class="number">0.</span>  <span class="number">0.</span>]]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">[[ <span class="number">1.</span>  <span class="number">1.</span>]]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">[[<span class="number">7</span> <span class="number">7</span>]</span><br><span class="line"> [<span class="number">7</span> <span class="number">7</span>]</span><br><span class="line"> [<span class="number">7</span> <span class="number">7</span>]</span><br><span class="line"> [<span class="number">7</span> <span class="number">7</span>]]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">[[ <span class="number">1.</span>  <span class="number">0.</span>]</span><br><span class="line"> [ <span class="number">0.</span>  <span class="number">1.</span>]]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">[[ <span class="number">0.82662589</span>  <span class="number">0.93604335</span>]</span><br><span class="line"> [ <span class="number">0.20764393</span>  <span class="number">0.53211415</span>]]</span><br></pre></td></tr></tbody></table></figure>
-<h1 id="访问数组"><a href="#访问数组" class="headerlink" title="访问数组"></a>访问数组</h1><h2 id="切片"><a href="#切片" class="headerlink" title="切片"></a>切片</h2><p>切片：和Python列表类似，numpy数组可以使用切片语法。因为数组是多维的，所以必须为每个维度指定好切片。</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"><span class="comment">#创建一个3✖️4的数组</span></span><br><span class="line">a = np.array([[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>],[<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>],[<span class="number">9</span>,<span class="number">10</span>,<span class="number">11</span>,<span class="number">12</span>]])</span><br><span class="line">print(a)</span><br><span class="line">print(<span class="string">"\n"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#利用切片来截取前两行，第1到2列。注意这里“：2”是第0，1行，不包含第二行，与range()相同</span></span><br><span class="line">b = a[:<span class="number">2</span>,<span class="number">1</span>:<span class="number">3</span>]</span><br><span class="line">print(b)</span><br><span class="line">print(<span class="string">"\n"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#切片是原数组的一部分，所以改变切片，原数组也会改变</span></span><br><span class="line">print(a[<span class="number">0</span>,<span class="number">1</span>])</span><br><span class="line">b[<span class="number">0</span>,<span class="number">0</span>] = <span class="number">77</span></span><br><span class="line">print(a)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">[[ <span class="number">1</span>  <span class="number">2</span>  <span class="number">3</span>  <span class="number">4</span>]</span><br><span class="line"> [ <span class="number">5</span>  <span class="number">6</span>  <span class="number">7</span>  <span class="number">8</span>]</span><br><span class="line"> [ <span class="number">9</span> <span class="number">10</span> <span class="number">11</span> <span class="number">12</span>]]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">[[<span class="number">2</span> <span class="number">3</span>]</span><br><span class="line"> [<span class="number">6</span> <span class="number">7</span>]]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="number">2</span></span><br><span class="line">[[ <span class="number">1</span> <span class="number">77</span>  <span class="number">3</span>  <span class="number">4</span>]</span><br><span class="line"> [ <span class="number">5</span>  <span class="number">6</span>  <span class="number">7</span>  <span class="number">8</span>]</span><br><span class="line"> [ <span class="number">9</span> <span class="number">10</span> <span class="number">11</span> <span class="number">12</span>]]</span><br></pre></td></tr></tbody></table></figure>
-<p>你可以<strong>同时使用整型和切片语法来访问数组</strong>。但是，这样<strong>会产生一个比原数组低阶的新数组。</strong></p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"><span class="comment">#3✖️4</span></span><br><span class="line">a = np.array([[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>],[<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>],[<span class="number">9</span>,<span class="number">10</span>,<span class="number">11</span>,<span class="number">12</span>]])</span><br><span class="line">print(a)</span><br><span class="line">print(a.shape)</span><br><span class="line">print(<span class="string">"\n"</span>)</span><br><span class="line"></span><br><span class="line">row_r1 = a[<span class="number">1</span>,:]</span><br><span class="line">row_r2 = a[<span class="number">1</span>:<span class="number">2</span>,:]</span><br><span class="line"></span><br><span class="line">print(row_r1)</span><br><span class="line">print(row_r1.shape)</span><br><span class="line">print(<span class="string">"\n"</span>)</span><br><span class="line"></span><br><span class="line">print(row_r2)</span><br><span class="line">print(row_r2.shape)</span><br><span class="line">print(<span class="string">"\n"</span>)</span><br><span class="line"></span><br><span class="line">[[ <span class="number">1</span>  <span class="number">2</span>  <span class="number">3</span>  <span class="number">4</span>]</span><br><span class="line"> [ <span class="number">5</span>  <span class="number">6</span>  <span class="number">7</span>  <span class="number">8</span>]</span><br><span class="line"> [ <span class="number">9</span> <span class="number">10</span> <span class="number">11</span> <span class="number">12</span>]]</span><br><span class="line">(<span class="number">3</span>, <span class="number">4</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">[<span class="number">5</span> <span class="number">6</span> <span class="number">7</span> <span class="number">8</span>]</span><br><span class="line">(<span class="number">4</span>,)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">[[<span class="number">5</span> <span class="number">6</span> <span class="number">7</span> <span class="number">8</span>]]</span><br><span class="line">(<span class="number">1</span>, <span class="number">4</span>)</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="整型数组访问"><a href="#整型数组访问" class="headerlink" title="整型数组访问"></a>整型数组访问</h2><p> 当我们使用切片语法访问数组时，得到的总是原数组的一个子集。整型数组访问允许我们利用其他数组的数据构建一个新的数组。</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">a = np.array([[<span class="number">1</span>,<span class="number">2</span>],[<span class="number">3</span>,<span class="number">4</span>],[<span class="number">5</span>,<span class="number">6</span>]])</span><br><span class="line">print(a)</span><br><span class="line">print(<span class="string">"\n"</span>)</span><br><span class="line"></span><br><span class="line">print(a[[<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>],[<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>]])</span><br><span class="line"></span><br><span class="line"><span class="comment">#上面的print等价于</span></span><br><span class="line">print([a[<span class="number">0</span>,<span class="number">0</span>],a[<span class="number">1</span>,<span class="number">1</span>],a[<span class="number">2</span>,<span class="number">0</span>]])</span><br><span class="line"></span><br><span class="line">[[<span class="number">1</span> <span class="number">2</span>]</span><br><span class="line"> [<span class="number">3</span> <span class="number">4</span>]</span><br><span class="line"> [<span class="number">5</span> <span class="number">6</span>]]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">[[<span class="number">1</span> <span class="number">4</span> <span class="number">5</span>]]</span><br><span class="line">[<span class="number">1</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br></pre></td></tr></tbody></table></figure>
-<p>整型数组访问语法还有一个有用的技巧，可以用来选择或者更改矩阵中每行中的一个元素：</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">a = np.array([[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],[<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>],[<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>],[<span class="number">10</span>,<span class="number">11</span>,<span class="number">12</span>]])</span><br><span class="line">print(a)</span><br><span class="line">print(<span class="string">"\n"</span>)</span><br><span class="line"></span><br><span class="line">b = np.array([<span class="number">0</span>,<span class="number">2</span>,<span class="number">0</span>,<span class="number">1</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment">#利用b中的索引在a的每行选择一个元素</span></span><br><span class="line">print(a[np.arange(<span class="number">4</span>),b])</span><br><span class="line">print(<span class="string">"\n"</span>)</span><br><span class="line"></span><br><span class="line">a[np.arange(<span class="number">4</span>),b] += <span class="number">10</span></span><br><span class="line">print(a)</span><br><span class="line"></span><br><span class="line">[[ <span class="number">1</span>  <span class="number">2</span>  <span class="number">3</span>]</span><br><span class="line"> [ <span class="number">4</span>  <span class="number">5</span>  <span class="number">6</span>]</span><br><span class="line"> [ <span class="number">7</span>  <span class="number">8</span>  <span class="number">9</span>]</span><br><span class="line"> [<span class="number">10</span> <span class="number">11</span> <span class="number">12</span>]]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">[ <span class="number">1</span>  <span class="number">6</span>  <span class="number">7</span> <span class="number">11</span>]</span><br><span class="line"></span><br><span class="line">[[<span class="number">11</span>  <span class="number">2</span>  <span class="number">3</span>]</span><br><span class="line"> [ <span class="number">4</span>  <span class="number">5</span> <span class="number">16</span>]</span><br><span class="line"> [<span class="number">17</span>  <span class="number">8</span>  <span class="number">9</span>]</span><br><span class="line"> [<span class="number">10</span> <span class="number">21</span> <span class="number">12</span>]]</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="布尔型数组访问"><a href="#布尔型数组访问" class="headerlink" title="布尔型数组访问"></a>布尔型数组访问</h2><p>布尔数组访问可以让你选择数组中任意元素。通常，这种访问方式用于选取数组中满足某些条件的元素。</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">a = np.array([[<span class="number">1</span>,<span class="number">2</span>],[<span class="number">3</span>,<span class="number">4</span>],[<span class="number">5</span>,<span class="number">6</span>]])</span><br><span class="line"></span><br><span class="line"><span class="comment">#返回大于2的元素，这返回一个与原数组同型的布尔数组</span></span><br><span class="line">bool_idx = (a &gt; <span class="number">2</span>) </span><br><span class="line"></span><br><span class="line">print(bool_idx)</span><br><span class="line"></span><br><span class="line"><span class="comment">#利用生成的布尔数组构建一个大于2的一维数组</span></span><br><span class="line">print(a[bool_idx])</span><br><span class="line"></span><br><span class="line">print(a[a &gt; <span class="number">2</span>])</span><br><span class="line"></span><br><span class="line">[[<span class="literal">False</span> <span class="literal">False</span>]</span><br><span class="line"> [ <span class="literal">True</span>  <span class="literal">True</span>]</span><br><span class="line"> [ <span class="literal">True</span>  <span class="literal">True</span>]]</span><br><span class="line">[<span class="number">3</span> <span class="number">4</span> <span class="number">5</span> <span class="number">6</span>]</span><br><span class="line">[<span class="number">3</span> <span class="number">4</span> <span class="number">5</span> <span class="number">6</span>]</span><br></pre></td></tr></tbody></table></figure>
-<h1 id="数组计算"><a href="#数组计算" class="headerlink" title="数组计算"></a>数组计算</h1><p>既可利用操作符重载，也可以使用函数方式：</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">x = np.array([[<span class="number">1</span>,<span class="number">2</span>],[<span class="number">3</span>,<span class="number">4</span>]],dtype=np.float64)</span><br><span class="line">y = np.array([[<span class="number">5</span>,<span class="number">6</span>],[<span class="number">7</span>,<span class="number">8</span>]],dtype=np.float64)</span><br><span class="line"></span><br><span class="line"><span class="comment">#加</span></span><br><span class="line">print(x+y)</span><br><span class="line">print(np.add(x,y))</span><br><span class="line"></span><br><span class="line"><span class="comment">#减</span></span><br><span class="line">print(x-y)</span><br><span class="line">print(np.subtract(x,y))</span><br><span class="line"></span><br><span class="line"><span class="comment">#乘,对应元素乘法</span></span><br><span class="line">print(x*y)</span><br><span class="line">print(np.multiply(x,y))</span><br><span class="line"></span><br><span class="line"><span class="comment">#除，对应元素除法</span></span><br><span class="line">print(x/y)</span><br><span class="line">print(np.divide(x,y))</span><br><span class="line"></span><br><span class="line"><span class="comment">#开方</span></span><br><span class="line">print(np.sqrt(x))</span><br><span class="line"></span><br><span class="line"><span class="comment">#矩阵乘法</span></span><br><span class="line">a = np.array([[<span class="number">1</span>,<span class="number">2</span>],[<span class="number">3</span>,<span class="number">4</span>]])</span><br><span class="line">b = np.array([[<span class="number">5</span>,<span class="number">6</span>],[<span class="number">7</span>,<span class="number">8</span>]])</span><br><span class="line"></span><br><span class="line">v = np.array([<span class="number">9</span>,<span class="number">10</span>])</span><br><span class="line">w = np.array([<span class="number">11</span>,<span class="number">12</span>])</span><br><span class="line"></span><br><span class="line">print(v.dot(w))</span><br><span class="line">print(np.dot(v,w))</span><br><span class="line">print(a.dot(v))</span><br><span class="line">print(np.dot(a,v))</span><br></pre></td></tr></tbody></table></figure>
-<p>Numpy提供了很多计算数组的函数，其中最常用的一个是sum:</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">x = np.array([[<span class="number">1</span>,<span class="number">2</span>],[<span class="number">3</span>,<span class="number">4</span>]])</span><br><span class="line"></span><br><span class="line"><span class="comment">#Compute sum of all elements</span></span><br><span class="line">print(np.<span class="built_in">sum</span>(x))</span><br><span class="line"></span><br><span class="line"><span class="comment">#Compute sum of each column</span></span><br><span class="line">print(np.<span class="built_in">sum</span>(x,axis=<span class="number">0</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment">#Compute sum of each row</span></span><br><span class="line">print(np.<span class="built_in">sum</span>(x,axis=<span class="number">1</span>))</span><br></pre></td></tr></tbody></table></figure>
-<p>查看更多函数，查看<a href="https://docs.scipy.org/doc/numpy/reference/routines.math.html">SciPy.org</a></p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">x = np.array([[<span class="number">1</span>,<span class="number">2</span>],[<span class="number">3</span>,<span class="number">4</span>]])</span><br><span class="line"><span class="comment">#转置</span></span><br><span class="line">print(x.T)</span><br></pre></td></tr></tbody></table></figure>
-<p>查看<a href="https://docs.scipy.org/doc/numpy/reference/routines.array-manipulation.html">更多操作数组的方法</a></p>
-<h1 id="广播Broadcasting"><a href="#广播Broadcasting" class="headerlink" title="广播Broadcasting"></a>广播Broadcasting</h1><p>广播是一种强有力的机制，它让Numpy可以让不同大小的矩阵在一起进行数学计算。我们常会有一个小的矩阵和一个大的矩阵，然后需要用小的矩阵对大的矩阵做一些计算。</p>
-<p>例如，我们想要把一个向量加到矩阵的每一行，我们可以这样做：</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">x = np.array([[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],[<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>],[<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>],[<span class="number">10</span>,<span class="number">11</span>,<span class="number">12</span>]])</span><br><span class="line">v = np.array([<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>])</span><br><span class="line"><span class="comment">#Create an empty matrix with the same shape as x</span></span><br><span class="line">y = np.empty_like(x)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">4</span>):</span><br><span class="line">    y[i,:] = x[i,:] + v</span><br><span class="line">    </span><br><span class="line">print(y)</span><br></pre></td></tr></tbody></table></figure>
-<p>这样是行的通的，但是当x矩阵非常大，利用循环开计算就会变得很慢很慢。我们可以换一种思路。</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">x = np.array([[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],[<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>],[<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>],[<span class="number">10</span>,<span class="number">11</span>,<span class="number">12</span>]])</span><br><span class="line">v = np.array([<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment">#stack 4 copies of v on top of each other</span></span><br><span class="line">vv = np.tile(v,(<span class="number">4</span>,<span class="number">1</span>))</span><br><span class="line">print(vv)</span><br><span class="line"></span><br><span class="line">y = x + vv</span><br><span class="line">print(y)</span><br><span class="line"></span><br><span class="line">[[<span class="number">1</span> <span class="number">0</span> <span class="number">1</span>]</span><br><span class="line"> [<span class="number">1</span> <span class="number">0</span> <span class="number">1</span>]</span><br><span class="line"> [<span class="number">1</span> <span class="number">0</span> <span class="number">1</span>]</span><br><span class="line"> [<span class="number">1</span> <span class="number">0</span> <span class="number">1</span>]]</span><br><span class="line"></span><br><span class="line">[[ <span class="number">2</span>  <span class="number">2</span>  <span class="number">4</span>]</span><br><span class="line"> [ <span class="number">5</span>  <span class="number">5</span>  <span class="number">7</span>]</span><br><span class="line"> [ <span class="number">8</span>  <span class="number">8</span> <span class="number">10</span>]</span><br><span class="line"> [<span class="number">11</span> <span class="number">11</span> <span class="number">13</span>]]</span><br></pre></td></tr></tbody></table></figure>
-<p><strong>Numpy广播机制可以让我们不用创建vv，就能直接运算</strong>，看看下面的例子。</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">x = np.array([[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],[<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>],[<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>],[<span class="number">10</span>,<span class="number">11</span>,<span class="number">12</span>]])</span><br><span class="line">v = np.array([<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>])</span><br><span class="line"></span><br><span class="line">y = x + v</span><br><span class="line">print(y)</span><br><span class="line"></span><br><span class="line">[[ <span class="number">2</span>  <span class="number">2</span>  <span class="number">4</span>]</span><br><span class="line"> [ <span class="number">5</span>  <span class="number">5</span>  <span class="number">7</span>]</span><br><span class="line"> [ <span class="number">8</span>  <span class="number">8</span> <span class="number">10</span>]</span><br><span class="line"> [<span class="number">11</span> <span class="number">11</span> <span class="number">13</span>]]</span><br></pre></td></tr></tbody></table></figure>
-<p>对两个数组使用广播机制要遵守下列规则：</p>
-<p>1.如果数组的秩不同，使用1来将秩小的数组进行扩展，直到两个数组的尺寸长度都一样。</p>
-<p>2.如果两个数组在某个维度上的长度是一样的，或者其中一个数组在该维度上的长度为1，那么我们说这两个数组在该维度上是<strong>相容</strong>的。</p>
-<p>3.<strong>如果两个数组在所有维度上都是相容的，它们就能使用广播。</strong></p>
-<p>4.如果两个输入数组的尺寸不同，那么注意其中较大的那个尺寸。因为广播之后，两个数组的尺寸将和较大的尺寸一样。</p>
-<p>5.在任何一个维度上，如果一个数组的长度为1，另一个数组的长度大于1，那么在该维度上，就好像是对第一个数组进行了复制。</p>
-<p>参阅<a href="https://docs.scipy.org/doc/numpy/user/basics.broadcasting.html">文档</a>和<a href="http://scipy.github.io/old-wiki/pages/EricsBroadcastingDoc">注释</a>。支持广播机制的函数是全局函数。哪些是全局函数可以在<a href="https://docs.scipy.org/doc/numpy/reference/ufuncs.html#available-ufuncs">文档</a>中查找。</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"><span class="comment">#v is [1,2,3],w is [4,5]</span></span><br><span class="line">v = np.array([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>])</span><br><span class="line">w = np.array([<span class="number">4</span>,<span class="number">5</span>])</span><br><span class="line"></span><br><span class="line">print(np.reshape(v,(<span class="number">3</span>,<span class="number">1</span>)) * w)</span><br><span class="line"></span><br><span class="line"><span class="comment">#x is [[1,2,3]</span></span><br><span class="line"><span class="comment">#     [4,5,6]]</span></span><br><span class="line">x = np.array([[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],[<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]])</span><br><span class="line">print(x + v)</span><br><span class="line"></span><br><span class="line">print(x.T + w)</span><br><span class="line"></span><br><span class="line">print(x + np.reshape(w,(<span class="number">2</span>,<span class="number">1</span>)))</span><br><span class="line"></span><br><span class="line">print(x * <span class="number">2</span>)</span><br><span class="line"></span><br><span class="line">[[ <span class="number">4</span>  <span class="number">5</span>]</span><br><span class="line"> [ <span class="number">8</span> <span class="number">10</span>]</span><br><span class="line"> [<span class="number">12</span> <span class="number">15</span>]]</span><br><span class="line"></span><br><span class="line">[[<span class="number">2</span> <span class="number">4</span> <span class="number">6</span>]</span><br><span class="line"> [<span class="number">5</span> <span class="number">7</span> <span class="number">9</span>]]</span><br><span class="line"></span><br><span class="line">[[ <span class="number">5</span>  <span class="number">9</span>]</span><br><span class="line"> [ <span class="number">6</span> <span class="number">10</span>]</span><br><span class="line"> [ <span class="number">7</span> <span class="number">11</span>]]</span><br><span class="line"></span><br><span class="line">[[ <span class="number">5</span>  <span class="number">6</span>  <span class="number">7</span>]</span><br><span class="line"> [ <span class="number">9</span> <span class="number">10</span> <span class="number">11</span>]]</span><br><span class="line"></span><br><span class="line">[[ <span class="number">2</span>  <span class="number">4</span>  <span class="number">6</span>]</span><br><span class="line"> [ <span class="number">8</span> <span class="number">10</span> <span class="number">12</span>]]</span><br></pre></td></tr></tbody></table></figure>
-<h1 id="Numpy文档"><a href="#Numpy文档" class="headerlink" title="Numpy文档"></a>Numpy文档</h1><p>此文介绍了numpy中的一些重要内容，但是numpy远不止如此，可以查阅<a href="https://docs.scipy.org/doc/numpy/reference/">numpy</a>文献来学习更多。</p>
-<h1 id="SciPy"><a href="#SciPy" class="headerlink" title="SciPy"></a>SciPy</h1><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">$ pip3 install Pillow</span><br></pre></td></tr></tbody></table></figure>
-<p>Numpy提供了高性能的多维数组，以及计算和操作数组的基本工具。Scipy基于Numpy，提供了大量的计算和操作数组的函数，这些函数对于不同类型的科学和工程计算非常有用。</p>
-<p><a href="https://docs.scipy.org/doc/scipy/reference/index.html">SciPy文档</a>。</p>
-<h1 id="点之间的距离"><a href="#点之间的距离" class="headerlink" title="点之间的距离"></a>点之间的距离</h1><p>SciPy定义了一些有用的函数，可以计算集合中点之间的距离。</p>
-<p>函数scipy.spatial.distance.pdist能够计算集合中所有两点之间的距离。</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> scipy.spatial.distance <span class="keyword">import</span> pdist, squareform</span><br><span class="line"></span><br><span class="line">x = np.array([[<span class="number">0</span>,<span class="number">1</span>],[<span class="number">1</span>,<span class="number">0</span>],[<span class="number">2</span>,<span class="number">0</span>]])</span><br><span class="line">print(x)</span><br><span class="line"></span><br><span class="line">d = squareform(pdist(x,<span class="string">'euclidean'</span>))</span><br><span class="line">print(d)</span><br></pre></td></tr></tbody></table></figure>
-<p>具体细节请阅读<a href="http://link.zhihu.com/?target=http%3A//docs.scipy.org/doc/scipy/reference/generated/scipy.spatial.distance.pdist.html">文档</a>。</p>
-<p>函数<strong>scipy.spatial.distance.cdist</strong>可以计算不同集合中点的距离，具体请查看<a href="http://link.zhihu.com/?target=http%3A//docs.scipy.org/doc/scipy/reference/generated/scipy.spatial.distance.cdist.html">文档</a>。</p>
+<h2 id="重复限定符"><a href="#重复限定符" class="headerlink" title="重复限定符"></a>重复限定符</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">语法</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">*</td>
+<td style="text-align:center">重复零次或更多次</td>
+</tr>
+<tr>
+<td style="text-align:center">+</td>
+<td style="text-align:center">重复一次或者更多次</td>
+</tr>
+<tr>
+<td style="text-align:center">？</td>
+<td style="text-align:center">重复零次或一次</td>
+</tr>
+<tr>
+<td style="text-align:center">{n}</td>
+<td style="text-align:center">重复n次</td>
+</tr>
+<tr>
+<td style="text-align:center">{n,}</td>
+<td style="text-align:center">重复n次或更多次</td>
+</tr>
+<tr>
+<td style="text-align:center">{n,m}</td>
+<td style="text-align:center">重复n次到m次</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>限定符作用于与它<strong>左边</strong>最近的一个字符。</p>
+<p>例：匹配以a开头，0个或者多个以b结尾的字符串</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">^ab*$</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="分组"><a href="#分组" class="headerlink" title="分组"></a>分组</h2><p>以”()“作为分组。</p>
+<p>例：匹配以ab开头，0个或者多个以b结尾的字符串</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">^(ab)*$</span><br></pre></td></tr></tbody></table></figure>
+<p>注：如需匹配小括号，只要加转义字符串即可。</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">^(\(ab\))*$</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="条件或"><a href="#条件或" class="headerlink" title="条件或"></a>条件或</h2><p>利用“｜”来表达条件或。</p>
+<p>例：匹配130/131/181/177等开头的11位手机号。</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">^(<span class="number">130</span>|<span class="number">131</span>|<span class="number">181</span>|<span class="number">177</span>)\d{<span class="number">8</span>}$</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="区间"><a href="#区间" class="headerlink" title="区间"></a>区间</h2><p>利用“[]”来表达区间条件。</p>
+<blockquote>
+<p>[0-9]：限定0到9</p>
+<p>[A-Z]：限定A到Z</p>
+<p>[165]：限定规定数字</p>
+</blockquote>
+<p>例：匹配130/131/132/156/158/159/145/177开头的11位数字</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">^((<span class="number">13</span>[<span class="number">0</span>-<span class="number">2</span>])|(<span class="number">15</span>[<span class="number">689</span>])|<span class="number">145</span>|<span class="number">177</span>)\d{<span class="number">8</span>}$</span><br></pre></td></tr></tbody></table></figure>
+<h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><ul>
+<li><a href="https://juejin.im/post/5b96a8e2e51d450e6a2de115">掘金博文</a></li>
+</ul>
 ]]></content>
       <categories>
-        <category>DataView</category>
+        <category>Tools</category>
       </categories>
       <tags>
-        <tag>Python</tag>
-        <tag>Numpy</tag>
+        <tag>Regex</tag>
       </tags>
   </entry>
   <entry>
@@ -861,141 +973,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Regex</title>
-    <url>/posts/25256/</url>
-    <content><![CDATA[<h1 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h1><h2 id="元字符"><a href="#元字符" class="headerlink" title="元字符"></a>元字符</h2><div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:center">元字符</th>
-<th style="text-align:center">说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">.</td>
-<td style="text-align:center">匹配除换行符以外的任意字符</td>
-</tr>
-<tr>
-<td style="text-align:center">\w</td>
-<td style="text-align:center">匹配字母、数字、下划线、汉字</td>
-</tr>
-<tr>
-<td style="text-align:center">\s</td>
-<td style="text-align:center">匹配任意的空白符</td>
-</tr>
-<tr>
-<td style="text-align:center">\d</td>
-<td style="text-align:center">匹配数字</td>
-</tr>
-<tr>
-<td style="text-align:center">\b</td>
-<td style="text-align:center">匹配单词的开始或结束</td>
-</tr>
-<tr>
-<td style="text-align:center">^</td>
-<td style="text-align:center">匹配字符串的开始</td>
-</tr>
-<tr>
-<td style="text-align:center">$</td>
-<td style="text-align:center">匹配字符串的结束</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>例：匹配有abc开头的字符串</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">\babc或^abc</span><br></pre></td></tr></tbody></table></figure>
-<a id="more"></a>
-<h2 id="重复限定符"><a href="#重复限定符" class="headerlink" title="重复限定符"></a>重复限定符</h2><div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:center">语法</th>
-<th style="text-align:center">说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">*</td>
-<td style="text-align:center">重复零次或更多次</td>
-</tr>
-<tr>
-<td style="text-align:center">+</td>
-<td style="text-align:center">重复一次或者更多次</td>
-</tr>
-<tr>
-<td style="text-align:center">？</td>
-<td style="text-align:center">重复零次或一次</td>
-</tr>
-<tr>
-<td style="text-align:center">{n}</td>
-<td style="text-align:center">重复n次</td>
-</tr>
-<tr>
-<td style="text-align:center">{n,}</td>
-<td style="text-align:center">重复n次或更多次</td>
-</tr>
-<tr>
-<td style="text-align:center">{n,m}</td>
-<td style="text-align:center">重复n次到m次</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>限定符作用于与它<strong>左边</strong>最近的一个字符。</p>
-<p>例：匹配以a开头，0个或者多个以b结尾的字符串</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">^ab*$</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="分组"><a href="#分组" class="headerlink" title="分组"></a>分组</h2><p>以”()“作为分组。</p>
-<p>例：匹配以ab开头，0个或者多个以b结尾的字符串</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">^(ab)*$</span><br></pre></td></tr></tbody></table></figure>
-<p>注：如需匹配小括号，只要加转义字符串即可。</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">^(\(ab\))*$</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="条件或"><a href="#条件或" class="headerlink" title="条件或"></a>条件或</h2><p>利用“｜”来表达条件或。</p>
-<p>例：匹配130/131/181/177等开头的11位手机号。</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">^(<span class="number">130</span>|<span class="number">131</span>|<span class="number">181</span>|<span class="number">177</span>)\d{<span class="number">8</span>}$</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="区间"><a href="#区间" class="headerlink" title="区间"></a>区间</h2><p>利用“[]”来表达区间条件。</p>
-<blockquote>
-<p>[0-9]：限定0到9</p>
-<p>[A-Z]：限定A到Z</p>
-<p>[165]：限定规定数字</p>
-</blockquote>
-<p>例：匹配130/131/132/156/158/159/145/177开头的11位数字</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">^((<span class="number">13</span>[<span class="number">0</span>-<span class="number">2</span>])|(<span class="number">15</span>[<span class="number">689</span>])|<span class="number">145</span>|<span class="number">177</span>)\d{<span class="number">8</span>}$</span><br></pre></td></tr></tbody></table></figure>
-<h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><ul>
-<li><a href="https://juejin.im/post/5b96a8e2e51d450e6a2de115">掘金博文</a></li>
-</ul>
-]]></content>
-      <categories>
-        <category>Tools</category>
-      </categories>
-      <tags>
-        <tag>Regex</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Spring</title>
-    <url>/posts/25249120/</url>
-    <content><![CDATA[<h1 id="Spring概况"><a href="#Spring概况" class="headerlink" title="Spring概况"></a>Spring概况</h1><ul>
-<li><p>Spring是一个开源框架，为了解决企业级应用开发的复杂性而创建的，但现在已经不止应用于企业应用</p>
-</li>
-<li><p>Spring是一个轻量级的控制反转(IOC)和面向切面(AOP)的容器框架</p>
-<ul>
-<li>从大小与开销方面而言Spring是轻量的</li>
-<li>通过控制反转(IOC)的技术达到松耦合的目的</li>
-<li>提供了面向切面编程的丰富支持，允许通过分离应用的业务逻辑与系统级服务进行内聚性的开发</li>
-<li>包含并管理应用对象的配置和生命周期，这个意义上是一种容器</li>
-</ul>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Java FrameWork</category>
-      </categories>
-      <tags>
-        <tag>BigData</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>TensorFlow2.0 In Action</title>
     <url>/posts/29871/</url>
     <content><![CDATA[<h1 id="TensorFlow2-0简化的模型开发流程"><a href="#TensorFlow2-0简化的模型开发流程" class="headerlink" title="TensorFlow2.0简化的模型开发流程"></a>TensorFlow2.0简化的模型开发流程</h1><ul>
@@ -1041,6 +1018,29 @@
       </categories>
       <tags>
         <tag>Neural Network</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Spring</title>
+    <url>/posts/25249120/</url>
+    <content><![CDATA[<h1 id="Spring概况"><a href="#Spring概况" class="headerlink" title="Spring概况"></a>Spring概况</h1><ul>
+<li><p>Spring是一个开源框架，为了解决企业级应用开发的复杂性而创建的，但现在已经不止应用于企业应用</p>
+</li>
+<li><p>Spring是一个轻量级的控制反转(IOC)和面向切面(AOP)的容器框架</p>
+<ul>
+<li>从大小与开销方面而言Spring是轻量的</li>
+<li>通过控制反转(IOC)的技术达到松耦合的目的</li>
+<li>提供了面向切面编程的丰富支持，允许通过分离应用的业务逻辑与系统级服务进行内聚性的开发</li>
+<li>包含并管理应用对象的配置和生命周期，这个意义上是一种容器</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Java FrameWork</category>
+      </categories>
+      <tags>
+        <tag>BigData</tag>
       </tags>
   </entry>
   <entry>
@@ -2783,6 +2783,369 @@ cond(no)-&gt;op</textarea><textarea id="flowchart-0-options" style="display: non
       </tags>
   </entry>
   <entry>
+    <title>软件测试基础</title>
+    <url>/posts/22398/</url>
+    <content><![CDATA[<h1 id="软件测试理论"><a href="#软件测试理论" class="headerlink" title="软件测试理论"></a>软件测试理论</h1><h2 id="软件测试的生命周期"><a href="#软件测试的生命周期" class="headerlink" title="软件测试的生命周期"></a>软件测试的生命周期</h2><p>软件测试生命周期是指从项目计划建立到BUG提交的整个测试过程，包括：</p>
+<ol>
+<li>软件项目测试计划</li>
+<li>测试需求分析</li>
+<li>测试用例设计</li>
+<li>测试用例执行</li>
+<li>BUG提交</li>
+</ol>
+<a id="more"></a>
+<h2 id="软件的三个要素是什么"><a href="#软件的三个要素是什么" class="headerlink" title="软件的三个要素是什么"></a>软件的三个要素是什么</h2><p>程序+数据+文档</p>
+<h2 id="软件的产品质量"><a href="#软件的产品质量" class="headerlink" title="软件的产品质量"></a>软件的产品质量</h2><p>参考质量模型部分</p>
+<h2 id="软件测试的目的"><a href="#软件测试的目的" class="headerlink" title="软件测试的目的"></a>软件测试的目的</h2><ol>
+<li>验证软件是否满足软件开发合同或者项目<strong>开发计划，软件需求规格说明书，软件产品说明</strong>等规定的软件质量要求</li>
+<li>通过测试，发现软件中迄今为止尚未发现的缺陷</li>
+<li>为软件产品的质量测量和评价提供依据</li>
+</ol>
+<h2 id="软件测试过程中的四个基本活动"><a href="#软件测试过程中的四个基本活动" class="headerlink" title="软件测试过程中的四个基本活动"></a>软件测试过程中的四个基本活动</h2><ol>
+<li><strong>测试策划</strong>：进行测试的需求分析和测试计划的编写</li>
+<li><strong>测试设计</strong>：依据测试需求，分析并选用已有的测试用例或者设计新的测试用例，进行用例评审</li>
+<li><strong>测试执行</strong>：执行测试用例，获取测试结果，分析并判定测试结果</li>
+<li><strong>测试总结</strong>：整理和分析测试数据，描述测试状态，最后完成软件测试报告并通过测试评审</li>
+</ol>
+<h2 id="测试用例设计的基本原则"><a href="#测试用例设计的基本原则" class="headerlink" title="测试用例设计的基本原则"></a>测试用例设计的基本原则</h2><p>case的设计应该符合以下几点：</p>
+<ol>
+<li>一个case一个功能点：每个case都要有个测点，找准一个测点即可，不能同时覆盖很多功能点</li>
+<li>case的执行粒度：粒度越小越好</li>
+<li>步骤清晰：一个case多个步骤，指明怎么去操作</li>
+<li>总体设计：先正常，后异常，这样可以确保正常情况下功能能够走通</li>
+</ol>
+<h1 id="测试的分类"><a href="#测试的分类" class="headerlink" title="测试的分类"></a>测试的分类</h1><ul>
+<li>按开发阶段划分<ul>
+<li>单元测试：基于软件设计文档</li>
+<li>集成测试：基于软件结构设计文档</li>
+<li>系统测试：基于用户需求</li>
+<li>验收测试：基于软件研制合同</li>
+</ul>
+</li>
+<li>按是否查看代码分类<ul>
+<li>黑盒测试：功能测试</li>
+<li>白盒测试：基于程序的测试</li>
+<li>灰盒测试：黑盒 + 白盒</li>
+</ul>
+</li>
+<li>按是否运行划分<ul>
+<li>静态测试：不执行被测软件，也可以用静态分析测试工具来进行（代码扫描）。</li>
+<li>动态测试：执行被测试程序。通过执行结果，分析软件可能出现的错误。执行测试用例等。</li>
+</ul>
+</li>
+<li>按测试对象划分<ul>
+<li>性能测试</li>
+<li>安全测试</li>
+<li>兼容性测试</li>
+<li>文档测试</li>
+<li>用户体验测试</li>
+<li>业务测试</li>
+<li>界面测试</li>
+<li>安装测试</li>
+<li>内存泄漏测试</li>
+</ul>
+</li>
+<li>按测试实施的组织<ul>
+<li>$\alpha$测试：初期测试，软件完成后，由<strong>程序员</strong>来测试执行查看软件功能性是否正常</li>
+<li>$\beta$测试：验收测试，交给<strong>最终的用户</strong>来测试其功能性</li>
+<li>第三方测试：介于开发者和用户之间，由第三方组织来进行</li>
+</ul>
+</li>
+<li>按是否手工执行划分<ul>
+<li>手工测试</li>
+<li>自动化测试</li>
+</ul>
+</li>
+<li>其他分类<ul>
+<li>冒烟测试：针对不同的版本，每次需求变更之后，<strong>在正式测试之前</strong>，对产品或者系统进行一次<strong>简单的验证测试 — 自测</strong></li>
+<li>回归测试：修改代码之后，需要测试下是否引起了其他的一些问题</li>
+<li>A/B测试：AB测试是为<a href="https://baike.baidu.com/item/Web/150564">Web</a>或<a href="https://baike.baidu.com/item/App/6133292">App</a>界面或流程制作两个（A/B）或多个（A/B/n）版本，在同一<a href="https://baike.baidu.com/item/时间维度/6762941">时间维度</a>，分别让<strong>组成成分相同（相似）的访客群组</strong>（目标人群）<strong>随机的访问这些版本</strong>，收集各群组的用户体验数据和业务数据，最后分析、评估出最好版本，正式采用。</li>
+</ul>
+</li>
+</ul>
+<h1 id="黑盒测试"><a href="#黑盒测试" class="headerlink" title="黑盒测试"></a>黑盒测试</h1><p><strong>黑盒测试：功能测试</strong>，数据驱动测试或者基于规格说明书的测试。这种测试<strong>不必了解程序的内部逻辑结构</strong>，而是<strong>根据需求说明书中的功能来设计测试用例。</strong>具体方法分为：等价类划分法、边界值分析法、判定表法、因果图法、错误推测法</p>
+<h2 id="等价类划分"><a href="#等价类划分" class="headerlink" title="等价类划分"></a>等价类划分</h2><ol>
+<li>定义：等价类划分是在分析需求规格说明的基础上，把<strong>程序的输入域划分成若干个部分，然后在每部分选取代表性的数据形成测试用例</strong></li>
+<li>等价类划分法的步骤如下：<ol>
+<li><strong>划分有效等价类</strong>：对规格说明是有意义的、合理的输入数据所构成的集合。利用有效等价类可以检验程序是否满足规格说明所规定的<strong>功能和性能</strong>。</li>
+<li><strong>划分无效等价类</strong>：不合理的输入数据所构成的集合。使用无效等价类可以<strong>测试程序/系统的容错性</strong>—对异常输入情况的处理。</li>
+</ol>
+</li>
+</ol>
+<h2 id="边界值分析法"><a href="#边界值分析法" class="headerlink" title="边界值分析法"></a>边界值分析法</h2><ol>
+<li>定义：边界值分析法是针对边界值进行测试的，使用等于、大于或者小于边界值的数据对程序进行测试的方法</li>
+<li>边界值分析法的步骤：<ol>
+<li>通过分析规格说明书找出所有可能的边界条件</li>
+<li>对每个边界条件给出满足和不满足的输入数据</li>
+<li>设计相应的测试用例</li>
+</ol>
+</li>
+</ol>
+<h2 id="因果图法"><a href="#因果图法" class="headerlink" title="因果图法"></a>因果图法</h2><h1 id="白盒测试"><a href="#白盒测试" class="headerlink" title="白盒测试"></a>白盒测试</h1><p><strong>白盒测试：又称为结构测试</strong>、逻辑驱动测试或者基于程序的测试。这种测试应该了解软件程序的内部构造，并且根据程序的内部结构来设计测试用例。<strong>白盒测试是基于覆盖的测试，尽可能覆盖程序的结构特征和逻辑路径。</strong>其具体方法有逻辑覆盖、循环覆盖、基本路径覆盖。逻辑覆盖又可分为语句覆盖、判定覆盖、条件覆盖、判定/条件覆盖、条件组合覆盖。</p>
+<p><a href="https://www.cnblogs.com/keaihaizi/p/11523683.html">https://www.cnblogs.com/keaihaizi/p/11523683.html</a></p>
+<h2 id="逻辑覆盖"><a href="#逻辑覆盖" class="headerlink" title="逻辑覆盖"></a>逻辑覆盖</h2><h3 id="语句覆盖"><a href="#语句覆盖" class="headerlink" title="语句覆盖"></a>语句覆盖</h3><p>每条语句至少执行一次</p>
+<h3 id="判定覆盖"><a href="#判定覆盖" class="headerlink" title="判定覆盖"></a>判定覆盖</h3><p>分支执行一次</p>
+<h3 id="条件覆盖"><a href="#条件覆盖" class="headerlink" title="条件覆盖"></a>条件覆盖</h3><p>每个条件取到<strong>各种可能的值</strong></p>
+<p>A=T 　　　　A=F<br>B=T 　　　　B=F</p>
+<h3 id="条件组合覆盖"><a href="#条件组合覆盖" class="headerlink" title="条件组合覆盖"></a>条件组合覆盖</h3><p>每个判断语句中条件结果的所有可能组合至少出现一次</p>
+<p>A= T　　　 B= T<br>A= T 　　　B= F<br>A= F　　　 B= T<br>A= F 　　　B= F </p>
+<h2 id="循环覆盖"><a href="#循环覆盖" class="headerlink" title="循环覆盖"></a>循环覆盖</h2><h2 id="基本路径覆盖"><a href="#基本路径覆盖" class="headerlink" title="基本路径覆盖"></a>基本路径覆盖</h2><p>设计出的测试用例要保证在测试中程序的语句覆盖100%，条件覆盖100%。条件组合未必能覆盖到。</p>
+<h1 id="静态测试、动态测试"><a href="#静态测试、动态测试" class="headerlink" title="静态测试、动态测试"></a>静态测试、动态测试</h1><ol>
+<li>静态测试：又称为静态分析结束，其基本特征是不执行被测软件，根据检查列表，<strong>对需求分析说明书、软件设计说明书以及源程序做结构检查、流程图分析等找出软件错误</strong>。静态测试一般采用人工分析（针对文档），也可以用静态分析测试工具来进行（代码扫描）。</li>
+<li>动态测试：其基本特征是执行被测试程序。通过执行结果，分析软件可能出现的错误 ，一般由人工设计程序测试用例，也可以由测试工具做检查和分析。</li>
+</ol>
+<h1 id="软件质量模型"><a href="#软件质量模型" class="headerlink" title="软件质量模型"></a>软件质量模型</h1><h2 id="软件质量"><a href="#软件质量" class="headerlink" title="软件质量"></a>软件质量</h2><p>ANSI/IEEE 定义软件质量为：“与软件产品满足规定的和隐含的需求的能力有关的特征或特性的全体”。</p>
+<h2 id="ISO-IEC-9126质量模型"><a href="#ISO-IEC-9126质量模型" class="headerlink" title="ISO/IEC 9126质量模型"></a>ISO/IEC 9126质量模型</h2><p>测试是对软件质量的度量，那么如何度量，从哪些角度度量。</p>
+<p>我们需要一套标准，或者说模型来作参考，赋予不同指标不同的权重，通过计算软件质量的得分，便可以评判出质量的好坏。</p>
+<p>ISO/IEC 9126在1991年12月发布，将软件质量归为6大特性和27个子特性。</p>
+<p><img data-src="/images/data/Screen Shot 2020-11-10 at 11.44.26.png" alt="Screen Shot 2020-11-10 at 11.44.26"></p>
+<p>功能性：软件产品提供满足明确和隐含需求功能的能力</p>
+<ul>
+<li>适合性：为规定任务提供一组合适功能的功能，即做了该做的事</li>
+<li>准确性：得到正确或相符的预期结果的能力</li>
+<li>互操作性：与其他系统软件交互的能力</li>
+<li>保密安全性：防止对程序及数据的非授权的故意或意外访问的能力</li>
+</ul>
+<p>可靠性：软件产品维护规定的性能级别的能力</p>
+<ul>
+<li>成熟性：避免软件内部的错误扩散而导致系统失效的能力</li>
+<li>容错性：防止外部接口错误扩散而导致系统失效的能力</li>
+<li>易恢复性：系统失效后，重新恢复原有的功能和性能的能力</li>
+</ul>
+<p>易用性：软件产品被理解、学习、使用及吸引用户的能力</p>
+<ul>
+<li>易理解性：交互性要清晰、准确和易懂</li>
+<li>易学性：用户学习软件所花努力的属性</li>
+<li>易操作性：用户操作和控制软件的能力</li>
+<li>吸引性：吸引用户的能力</li>
+</ul>
+<p><strong>性能效率</strong>：相对于所用资源的数量，软件产品可提供适当性能的能力</p>
+<ul>
+<li><strong>时间特性</strong>：软件执行功能时的响应、处理时间和吞吐率</li>
+<li><strong>资源特性</strong>：软件执行功能时所使用的资源数量和类型</li>
+</ul>
+<p>维护性：软件产品可以被修改的能力，修改可能包括修改、改进或者适应环境、需求和功能规约的变化</p>
+<ul>
+<li>易分析性：诊断缺陷或失效原因所需努力的属性</li>
+<li>易改变性：进行修改、排除错误或适应环境变化的能力</li>
+<li>稳定性：避免软件修改而造成意外结果的能力</li>
+<li>易测试性：提供辅助性手段帮助测试人员实现其测试意图</li>
+</ul>
+<p>可移植性：软件产品从一个环境迁移到另一个环境的能力</p>
+<ul>
+<li>适应性：无需相应变动就能适应不同环境的能力</li>
+<li>易安装性：尽可能少的提供选择，方便用户直接安装</li>
+<li>共存性：与其他公共软件共存</li>
+<li>易替换性：同等环境下，替换其他同类产品的能力</li>
+</ul>
+<h2 id="GB-T-25000质量模型"><a href="#GB-T-25000质量模型" class="headerlink" title="GB/T 25000质量模型"></a>GB/T 25000质量模型</h2><p>于2016年发布，(新增兼容性和信息安全)，大方向没有改变，新增的2大特性（信息安全性、兼容性）也是从原有的功能性和可移植性中分裂出来。</p>
+<p><img data-src="/images/data/Screen Shot 2020-11-10 at 11.54.54.png" alt="Screen Shot 2020-11-10 at 11.54.54"></p>
+<p>信息安全性，产品或系统保护信息和数据的程序，以使用户、其他产品或系统具有与其授权和授权级别一致的数据访问度</p>
+<ul>
+<li>保密性，产品或系统确保数据只有在被授权时才能被访问的程度</li>
+<li>完整性，系统、产品或组件防止未授权访问、篡改计算机程序或数据的程度</li>
+<li>抗抵赖性，活动或事件发生后可以被证实且不可被否认的程度</li>
+<li>可核查性，实体的活动可以被唯一地追溯到该实体的程度</li>
+<li>真实性，对象或资源的身份标识能够被证实符合其声明的程度</li>
+</ul>
+<p><a href="https://juejin.im/post/6844903878354272269">从纺锤模型到金字塔模型</a></p>
+<h1 id="软件开发中之敏捷开发：DevOps"><a href="#软件开发中之敏捷开发：DevOps" class="headerlink" title="软件开发中之敏捷开发：DevOps"></a>软件开发中之敏捷开发：DevOps</h1><p>DevOps是一套实践方法论和文化，提倡打破原有组织和限制，职能团队开始拥抱和接受<strong>DevOps所倡导的高度协同，研发、测试、运维及交付一体化的思维</strong>。随着DevOps和敏捷热度的不断提升，无论是互联网企业还是传统软件企业都开始拥抱<strong>敏捷</strong>，实践DevOps。<strong>持续集成CI（Continuous integration）、持续交付CD（Continuous delivery ）</strong>作为DevOps的最佳实践，越来越受到重视。</p>
+<h1 id="软件开发中之微服务架构"><a href="#软件开发中之微服务架构" class="headerlink" title="软件开发中之微服务架构"></a>软件开发中之微服务架构</h1><p>微服务架构源起于DevOps意识形态和实践中，是一种软件架构风格。微服务架构带来了一系列好处，例如<strong>可部署性、可靠性、可用性</strong>等等。虽然原则上可以使用任何架构来实践DevOps，但微服务架构<strong>正在成为构建持续部署 (CD)</strong>系统的标准<strong>架构风格</strong>。由于<strong>每项服务的规模都很小</strong>，它允许通过<strong>连续重构来实现单个服务</strong>的体系结构，因此<strong>减少了对大型项目前期设计的需求，允许尽早发布软件并且持续交付</strong>。微服务和DevOps是天然的共同体，结合起来共同实现软件开发行业的变革。</p>
+<h1 id="分层理论：金字塔模型"><a href="#分层理论：金字塔模型" class="headerlink" title="分层理论：金字塔模型"></a>分层理论：金字塔模型</h1><p>随着敏捷和微服务架构的引入，<strong>CI/CD成为构建和部署的标准</strong>。传统的手工测试方式在人员和效率上都存在严重不足，因此自动化测试已经成为现代软件研发过程中一个关键组成部分。<strong>自动化测试是打通持续集成和持续交付的核心</strong>，没有有效的自动化测试保证，持续集成和持续交付就仅仅是一个没有灵魂的躯壳。</p>
+<p>Martin Fowler描述<strong>测试金字塔</strong>分为单元、服务和UI三个层级。</p>
+<p><strong>1)单元测试</strong></p>
+<p>单元测试是针对<strong>代码单元（通常是类/方法）</strong>的测试，单元测试的价值在于能提供最快的反馈，在开发过程中就可以对逻辑单元进行验证。好的单元测试可以帮助改善既有设计，在团队掌握 TDD的前提下，单元测试能辅助重构，帮助提升代码整洁度。</p>
+<p><strong>2)接口（服务/API）测试</strong></p>
+<p><strong>接口测试是针对业务接口进行的测试</strong>，主要测试内部接口功能实现是否完整。比如内部逻辑是否正常、异常处理是否正确。接口测试的主要价值在于接口定义相对稳定，不像界面或底层代码会经常发生变化，所以接口测试比较容易编写，用例的维护成本也相对较低。在接口层面准备测试的性价比相对较高。</p>
+<p><strong>3)集成（UI）测试</strong></p>
+<p><strong>集成测试从用户的角度验证产品功能的正确性，测的是端到端的流程</strong>，并且加入用户场景和数据，验证整个过程是否健康流畅。集成测试的业务价值最高，它验证的是一个完整的流程，但因为需要验证完整流程，在环境部署、准备用例及实施等方面成本较高，实施起来并不容易。</p>
+<h1 id="自动化测试"><a href="#自动化测试" class="headerlink" title="自动化测试"></a>自动化测试</h1><h2 id="自动化测试分层及占比"><a href="#自动化测试分层及占比" class="headerlink" title="自动化测试分层及占比"></a>自动化测试分层及占比</h2><p>先来看一般的功能测试如何进行：设计并编写用例文档，描述测试步骤和预期结果；测试人员根据测试用例描述按步骤操作，然后判断实际结果与预期是否一致。如果一致，测试通过；如果不符，测试失败。</p>
+<p><strong>自动化测试要做的事情与功能测试是一致的。分层理论和自动化测试方法结合，出现了三个层面的自动化：单元测试自动化、接口测试自动化和UI测试自动化。</strong>当然，不同层面的自动化关注点是不一样的。所以，从测试的行为本质上来看，功能测试与单元自动化测试、接口自动化测试和UI自动化测试并没有区别。唯一的区别是，一个由人来执行，一个由代码或工具执行。</p>
+<ul>
+<li>单元自动化测试</li>
+</ul>
+<p>单元测试关注的是代码的实现与逻辑。单元测试是最基本的测试，也是测试中的最小单元，它的对象是函数对象，也可以包含输入输出，针对的是函数功能或者函数内部的代码逻辑，并不包含业务逻辑。</p>
+<p>该类测试一般由研发人员完成，需要借助单元测试框架，如java的Junit、TestNG，python的<strong>unittest</strong>等。</p>
+<ul>
+<li>接口自动化测试</li>
+</ul>
+<p>接口自动化测试，主要验证<strong>模块间的调用返回以及不同系统、服务间的数据交换</strong>。</p>
+<p>根据接口文档是RESTful还是RPC，最终断言返回的结果是否等于预期结果。如果相等，测试通过；如果不相等，测试失败。</p>
+<p>常见的接口测试工具有<strong>postman、jmeter、loadrunner</strong>等。</p>
+<ul>
+<li>集成自动化测试</li>
+</ul>
+<p>UI层是用户使用产品的入口，所有功能通过这一层提供给用户。</p>
+<p>当UI自动化登录成功后，就去获取这个数据进行断言，断言如果相等，测试通过；如果不相等，测试失败。</p>
+<p>所以，UI自动化的关注点用户操作形为，以及UI上各种组件是否可用。常见的测试工具有<strong>UFT、Robot Framework、Selenium、Appium</strong>等。</p>
+<p>按照测试金字塔模型以及投入/产出比，我们得知越向下回报率越高，<strong>所以应该使用大量的单元测试和全面的接口测试来覆盖产品提供的基本逻辑和功能，使用少量的集成（UI）测试来进行前端界面的功能验证。</strong></p>
+<p>都说业内最佳实践看Google，Google的自动化分层投入占比是：<strong>单元测试（Unit）：占比70%；接口测试（Service）：占比20%；集成测试（UI）：占比10%.</strong></p>
+<h2 id="自动化最佳实践：纺锤模型"><a href="#自动化最佳实践：纺锤模型" class="headerlink" title="自动化最佳实践：纺锤模型"></a>自动化最佳实践：纺锤模型</h2><p><strong>对现阶段公司大部分团队来说，更符合实际测试模式是纺锤模型</strong>。新项目中，可能由于时限原因或者开发人员习惯问题，一开始并没有把单元测试准备得很完善；而某些遗留老项目，可能原本就没有多少单元测试。</p>
+<p>在上述情况下，一般的做法是先将重心放在中间层的测试上，原因有以下两点：</p>
+<ul>
+<li>第一，中间层<strong>投入产出比较高</strong>，可以实现较高的自动化率；</li>
+<li>第二，可以帮助加强<strong>开发跟测试人员之间的协作</strong>，提高测试质量。这一层需要开发跟测试人员共同定义，因为开发知道内部实现的细节，测试掌握业务场景。</li>
+</ul>
+<p>当项目进行一段时间以后，各层测试占比有必要向理想型的金字塔型过渡，这时需要关注以下三个方面：</p>
+<ul>
+<li>开发与测试互相传递能力；</li>
+<li>全员关注产品设计跟代码的质量；</li>
+<li>让用例逐步下沉，最后逐步过渡到理想型。</li>
+</ul>
+<p><img data-src="/images/data/Screen Shot 2020-11-10 at 13.09.44.png" alt="Screen Shot 2020-11-10 at 13.09.44"></p>
+<h1 id="测试质量评估"><a href="#测试质量评估" class="headerlink" title="测试质量评估"></a>测试质量评估</h1><p>关于度量，不要用单一的指标去评估测试和产品质量，比如用例通过率、代码覆盖率等都无法独立地评估产品质量。</p>
+<p>评估测试质量时要关心以下几个方面：</p>
+<ul>
+<li>第一是<strong>用例比例</strong>，即每一层的用例比例是多少。</li>
+<li>第二是<strong>测试覆盖率</strong>。</li>
+<li>第三是<strong>测试总运行时间</strong>，因为经过优化以后，总运行时间一定是越来越少。</li>
+<li>第四是<strong>代码质量指标，反映代码的质量和整洁度</strong>。</li>
+</ul>
+<h1 id="Python自动化测试框架"><a href="#Python自动化测试框架" class="headerlink" title="Python自动化测试框架"></a>Python自动化测试框架</h1><ol>
+<li><p>python+selenium+unittest+htmltestrunner</p>
+</li>
+<li><p>python+selenium+pytest+allure</p>
+</li>
+<li><p>robotframework+Selenium2Library</p>
+</li>
+</ol>
+<h2 id="pytest"><a href="#pytest" class="headerlink" title="pytest"></a>pytest</h2><p>pytest是一个非常成熟的Python测试框架</p>
+<ol>
+<li>能够支持简单的单元测试和复杂的功能测试，还可以用来做selenium/appnium等自动化测试，接口自动化测试（pytest+request）</li>
+<li>pytest具有很多第三方插件，并且可以自定义扩展，常用的插件有：<ol>
+<li>pytest-selenium（集成selenium）</li>
+<li>pytest-html（完美html测试报告生成）</li>
+<li>pytest-rerunfailures（失败case重复执行）</li>
+<li>pytest-xdist（多CPU分发）</li>
+</ol>
+</li>
+</ol>
+<p><a href="https://www.cnblogs.com/mytianying/p/12466302.html">https://www.cnblogs.com/mytianying/p/12466302.html</a></p>
+<h1 id="算法测试"><a href="#算法测试" class="headerlink" title="算法测试"></a>算法测试</h1><h2 id="模型评估"><a href="#模型评估" class="headerlink" title="模型评估"></a>模型评估</h2><h3 id="线下评估-—-准确度、查准率、召回率"><a href="#线下评估-—-准确度、查准率、召回率" class="headerlink" title="线下评估 — 准确度、查准率、召回率"></a>线下评估 — 准确度、查准率、召回率</h3><p>数据拆分：训练数据集&amp;测试数据集： 利用训练集训练模型，然后利用模型在测试集上进行测试。</p>
+<p>评价分类结果：<strong>混淆矩阵、精准度、精准率、召回率、F1 Score</strong>、ROC曲线、AUC值等</p>
+<p>评价回归结果：MES、RMES、MAE、R Squared</p>
+<ul>
+<li>Precision &amp; Recall</li>
+</ul>
+<p><strong>混淆矩阵：</strong>对于二分类问题来说，所有的问题被分为0和1两类。</p>
+<p><strong>True Positive(TP)</strong>：正实际为正实际为正，预测对了(True)</p>
+<p><strong>False Negative(FN)</strong>: 预测为负实际为正，预测错了(False)</p>
+<p><strong>False Positive(FP)</strong>: 预测为负实际为正，预测错了(False)</p>
+<p><strong>True Negative(TN)</strong>: 预测为负实际为负，预测对了(True)</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th></th>
+<th>真实值正</th>
+<th>真实值负</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>预测值正</td>
+<td>TP</td>
+<td>FP</td>
+</tr>
+<tr>
+<td>预测值负</td>
+<td>FN</td>
+<td>TN</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Accuracy指准确度</strong>，意味着系统误差(System Error)小，即偏差(Bias) 小，描述了的实际值与真实结果的偏离程度。</p>
+<p>$accuracy = \frac{TP + TN}{TP + FP + FN + TN}$</p>
+<blockquote>
+<p>如果存在<strong>样本不均衡</strong>的情况下，就不能使用accuracy来进行衡量了。比如，一个总样本中，正样本占90%,负样本占10%，那么只需要将所有样本预测为正，就可以拿到90%的准确率，而这显然是无意义的。正因为如此，我们就需要精准率和召回率了。</p>
+</blockquote>
+<p><strong>Precision指查准率，即预测为正的样本中，实际为正的比例。</strong></p>
+<p>$Precision=\frac{TP}{TP+FP}$</p>
+<blockquote>
+<p>为什么管它叫精准率呢？在有偏的数据中，我们<strong>通常更关注值为1的特征</strong>，比如“患病”，比如“有风险”。在100次结果为患病的预测，平均有40次预测是对的。即<strong>精准率为我们关注的那个事件，预测的有多准。</strong></p>
+<p>医生预测为癌症，患者确实患癌症的比例。</p>
+</blockquote>
+<p><strong>Recall召回率：所有真实值为正的数据中，预测对了的个数。</strong></p>
+<p>$Recall = \frac{TP}{TP + FN}$</p>
+<blockquote>
+<p><strong>也就是我们关注的那个事件真实的发生情况下，我们成功预测的比例是多少。</strong></p>
+<p>至于两个指标如何使用，需要看具体场景，实际上这两个指标是互斥的，一个高，必有另一个低。</p>
+</blockquote>
+<p><strong>F1 Score: </strong>P为查准率，R为查全率。F1score就是在查准率与查全率之间寻找一个平衡点。</p>
+<p>$F1 Score = 2<em>\frac{P </em> R}{P + R}$</p>
+<ul>
+<li>MAP</li>
+</ul>
+<p>在目标检测中：</p>
+<p><strong>如果IoU&gt; 0.5，则认为它是True Positive，否则认为是False Positive。</strong>而COCO数据集的评估指标建议对不同的IoU阈值进行计算，但为简单起见，我们这里仅讨论一个阈值0.5，这是PASCAL VOC数据集所用的指标。</p>
+<p><strong>为了计算Recall，我们需要Negatives的数量</strong>。由于图片中我们没有预测到物体的每个部分都被视为Negative，因此计算True Negatives比较难办。<strong>一般通过改变置信度的值，</strong>阈值<strong>以上的所有预测（Box + Class）都被认为是Positives，并且低于该值的都是Negatives。</strong></p>
+<p>PASCAL VOC组织者推荐采用一种可以用于任何模型的评估指标，选择了11个不同的recall，可以认为是选择了11个rank，由于是按照置信度进行排序的，实际上等于选择了11个不同的置信度阈值。AP就定义为在这11个recall下precision的平均值。</p>
+<p>代码见：<a href="https://zhuanlan.zhihu.com/p/37910324">https://zhuanlan.zhihu.com/p/37910324</a></p>
+<ul>
+<li>MES、RMES、MAE</li>
+</ul>
+<p>MES(Mean Squared Error)均方误差:  $\frac{1}{m} \sum<em>{i=1}^m(y</em>{test}^i - y_{test}^i)^2$</p>
+<p>RMES(Root Mean Squared Error)均方根误差: $\sqrt{MES}$</p>
+<p>MAE(Mean Absolute Error)平均绝对误差：$\frac{1}{m} \sum<em>{i=1}^m|y</em>{test}^i - y_{test}^i|$</p>
+<h3 id="线上评估-—-A-B-testing"><a href="#线上评估-—-A-B-testing" class="headerlink" title="线上评估 — A/B testing"></a>线上评估 — A/B testing</h3><p>A/B testing</p>
+<p>AB测试是为<a href="https://baike.baidu.com/item/Web/150564">Web</a>或<a href="https://baike.baidu.com/item/App/6133292">App</a>界面或流程制作两个（A/B）或多个（A/B/n）版本，在同一<a href="https://baike.baidu.com/item/时间维度/6762941">时间维度</a>，分别让<strong>组成成分相同（相似）的访客群组</strong>（目标人群）<strong>随机的访问这些版本</strong>，收集各群组的用户体验数据和业务数据，最后分析、评估出最好版本，正式采用。</p>
+<h2 id="算法鲁棒性"><a href="#算法鲁棒性" class="headerlink" title="算法鲁棒性"></a>算法鲁棒性</h2><h2 id="模型安全"><a href="#模型安全" class="headerlink" title="模型安全"></a>模型安全</h2><h2 id="响应速度"><a href="#响应速度" class="headerlink" title="响应速度"></a>响应速度</h2><h1 id="测试工具"><a href="#测试工具" class="headerlink" title="测试工具"></a>测试工具</h1><div class="table-container">
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>WEB UI自动化：</td>
+<td><strong>selenium</strong>、robotframework</td>
+</tr>
+<tr>
+<td>接口自动化：</td>
+<td>Jmeter、<strong>Postman</strong>、soapUI、requests、httprunner</td>
+</tr>
+<tr>
+<td>App自动化：</td>
+<td>Appium、Monkey、Monkeyrunner、UIautomation，UIAutomator，Robotium，macaca，airtest</td>
+</tr>
+<tr>
+<td>PC端自动化：</td>
+<td>QTP(UFT)</td>
+</tr>
+<tr>
+<td>云测平台</td>
+<td>Testin、百度云测</td>
+</tr>
+<tr>
+<td>性能测试：</td>
+<td>Jmeter、<strong>LoadRunner</strong></td>
+</tr>
+<tr>
+<td>安全测试：</td>
+<td>Appscan</td>
+</tr>
+<tr>
+<td>持续集成：</td>
+<td><strong>Jenkins</strong></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h1 id="测试问题汇总"><a href="#测试问题汇总" class="headerlink" title="测试问题汇总"></a>测试问题汇总</h1><h2 id="编写测试计划的目的是"><a href="#编写测试计划的目的是" class="headerlink" title="编写测试计划的目的是"></a>编写测试计划的目的是</h2><h2 id="对关键词触发模块进行测试"><a href="#对关键词触发模块进行测试" class="headerlink" title="对关键词触发模块进行测试"></a>对关键词触发模块进行测试</h2><h2 id="其他常用笔试题目网址汇总"><a href="#其他常用笔试题目网址汇总" class="headerlink" title="其他常用笔试题目网址汇总"></a>其他常用笔试题目网址汇总</h2><h2 id="测试人员在软件开发过程中的任务是什么"><a href="#测试人员在软件开发过程中的任务是什么" class="headerlink" title="测试人员在软件开发过程中的任务是什么"></a>测试人员在软件开发过程中的任务是什么</h2><h2 id="一条软件Bug记录都包含了哪些内容？"><a href="#一条软件Bug记录都包含了哪些内容？" class="headerlink" title="一条软件Bug记录都包含了哪些内容？"></a>一条软件Bug记录都包含了哪些内容？</h2><h2 id="简述黑盒测试和白盒测试的优缺点"><a href="#简述黑盒测试和白盒测试的优缺点" class="headerlink" title="简述黑盒测试和白盒测试的优缺点"></a>简述黑盒测试和白盒测试的优缺点</h2><h2 id="请列出你所知道的软件测试种类，至少5项"><a href="#请列出你所知道的软件测试种类，至少5项" class="headerlink" title="请列出你所知道的软件测试种类，至少5项"></a>请列出你所知道的软件测试种类，至少5项</h2><h2 id="Alpha测试与Beta测试的区别是什么？"><a href="#Alpha测试与Beta测试的区别是什么？" class="headerlink" title="Alpha测试与Beta测试的区别是什么？"></a>Alpha测试与Beta测试的区别是什么？</h2><h2 id="举例说明什么是Bug？一个bug-report应包含什么关键字？"><a href="#举例说明什么是Bug？一个bug-report应包含什么关键字？" class="headerlink" title="举例说明什么是Bug？一个bug report应包含什么关键字？"></a>举例说明什么是Bug？一个bug report应包含什么关键字？</h2><h2 id="在selenium自动化测试中，你一般完成什么类型的测试？自动化覆盖率？"><a href="#在selenium自动化测试中，你一般完成什么类型的测试？自动化覆盖率？" class="headerlink" title="在selenium自动化测试中，你一般完成什么类型的测试？自动化覆盖率？"></a><strong>在selenium自动化测试中，你一般完成什么类型的测试？自动化覆盖率？</strong></h2><p>主要是冒烟测试和回归测试。回归测试主要写一些功能稳定的场景，通过自动化手段去实现，节约测试时间。因为自动化测试用例也是在不断的更新和迭代，没有刻意去统计，大概在30%-40%左右！</p>
+<h2 id="什么是PO模式，为什么要使用它"><a href="#什么是PO模式，为什么要使用它" class="headerlink" title="什么是PO模式，为什么要使用它"></a><strong>什么是PO模式，为什么要使用它</strong></h2><p>PO是Page Object 模式的简称，它是一种设计思想，意思是，把一个页面，当做一个对象，页面的元素和元素之间操作方法就是页面对象的属性和行为，PO模式一般使用三层架构，分别为：基础封装层BasePage，PO页面对象层，TestCase测试用例层。</p>
+]]></content>
+      <categories>
+        <category>Computer Basic</category>
+        <category>Interview</category>
+      </categories>
+      <tags>
+        <tag>Software Test Basic</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>计算机网络</title>
     <url>/posts/6678/</url>
     <content><![CDATA[<h1 id="三次握手"><a href="#三次握手" class="headerlink" title="三次握手"></a>三次握手</h1><ol>
@@ -3331,369 +3694,6 @@ cond(no)-&gt;op</textarea><textarea id="flowchart-0-options" style="display: non
       </categories>
       <tags>
         <tag>Computer Network</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>软件测试基础</title>
-    <url>/posts/22398/</url>
-    <content><![CDATA[<h1 id="软件测试理论"><a href="#软件测试理论" class="headerlink" title="软件测试理论"></a>软件测试理论</h1><h2 id="软件测试的生命周期"><a href="#软件测试的生命周期" class="headerlink" title="软件测试的生命周期"></a>软件测试的生命周期</h2><p>软件测试生命周期是指从项目计划建立到BUG提交的整个测试过程，包括：</p>
-<ol>
-<li>软件项目测试计划</li>
-<li>测试需求分析</li>
-<li>测试用例设计</li>
-<li>测试用例执行</li>
-<li>BUG提交</li>
-</ol>
-<a id="more"></a>
-<h2 id="软件的三个要素是什么"><a href="#软件的三个要素是什么" class="headerlink" title="软件的三个要素是什么"></a>软件的三个要素是什么</h2><p>程序+数据+文档</p>
-<h2 id="软件的产品质量"><a href="#软件的产品质量" class="headerlink" title="软件的产品质量"></a>软件的产品质量</h2><p>参考质量模型部分</p>
-<h2 id="软件测试的目的"><a href="#软件测试的目的" class="headerlink" title="软件测试的目的"></a>软件测试的目的</h2><ol>
-<li>验证软件是否满足软件开发合同或者项目<strong>开发计划，软件需求规格说明书，软件产品说明</strong>等规定的软件质量要求</li>
-<li>通过测试，发现软件中迄今为止尚未发现的缺陷</li>
-<li>为软件产品的质量测量和评价提供依据</li>
-</ol>
-<h2 id="软件测试过程中的四个基本活动"><a href="#软件测试过程中的四个基本活动" class="headerlink" title="软件测试过程中的四个基本活动"></a>软件测试过程中的四个基本活动</h2><ol>
-<li><strong>测试策划</strong>：进行测试的需求分析和测试计划的编写</li>
-<li><strong>测试设计</strong>：依据测试需求，分析并选用已有的测试用例或者设计新的测试用例，进行用例评审</li>
-<li><strong>测试执行</strong>：执行测试用例，获取测试结果，分析并判定测试结果</li>
-<li><strong>测试总结</strong>：整理和分析测试数据，描述测试状态，最后完成软件测试报告并通过测试评审</li>
-</ol>
-<h2 id="测试用例设计的基本原则"><a href="#测试用例设计的基本原则" class="headerlink" title="测试用例设计的基本原则"></a>测试用例设计的基本原则</h2><p>case的设计应该符合以下几点：</p>
-<ol>
-<li>一个case一个功能点：每个case都要有个测点，找准一个测点即可，不能同时覆盖很多功能点</li>
-<li>case的执行粒度：粒度越小越好</li>
-<li>步骤清晰：一个case多个步骤，指明怎么去操作</li>
-<li>总体设计：先正常，后异常，这样可以确保正常情况下功能能够走通</li>
-</ol>
-<h1 id="测试的分类"><a href="#测试的分类" class="headerlink" title="测试的分类"></a>测试的分类</h1><ul>
-<li>按开发阶段划分<ul>
-<li>单元测试：基于软件设计文档</li>
-<li>集成测试：基于软件结构设计文档</li>
-<li>系统测试：基于用户需求</li>
-<li>验收测试：基于软件研制合同</li>
-</ul>
-</li>
-<li>按是否查看代码分类<ul>
-<li>黑盒测试：功能测试</li>
-<li>白盒测试：基于程序的测试</li>
-<li>灰盒测试：黑盒 + 白盒</li>
-</ul>
-</li>
-<li>按是否运行划分<ul>
-<li>静态测试：不执行被测软件，也可以用静态分析测试工具来进行（代码扫描）。</li>
-<li>动态测试：执行被测试程序。通过执行结果，分析软件可能出现的错误。执行测试用例等。</li>
-</ul>
-</li>
-<li>按测试对象划分<ul>
-<li>性能测试</li>
-<li>安全测试</li>
-<li>兼容性测试</li>
-<li>文档测试</li>
-<li>用户体验测试</li>
-<li>业务测试</li>
-<li>界面测试</li>
-<li>安装测试</li>
-<li>内存泄漏测试</li>
-</ul>
-</li>
-<li>按测试实施的组织<ul>
-<li>$\alpha$测试：初期测试，软件完成后，由<strong>程序员</strong>来测试执行查看软件功能性是否正常</li>
-<li>$\beta$测试：验收测试，交给<strong>最终的用户</strong>来测试其功能性</li>
-<li>第三方测试：介于开发者和用户之间，由第三方组织来进行</li>
-</ul>
-</li>
-<li>按是否手工执行划分<ul>
-<li>手工测试</li>
-<li>自动化测试</li>
-</ul>
-</li>
-<li>其他分类<ul>
-<li>冒烟测试：针对不同的版本，每次需求变更之后，<strong>在正式测试之前</strong>，对产品或者系统进行一次<strong>简单的验证测试 — 自测</strong></li>
-<li>回归测试：修改代码之后，需要测试下是否引起了其他的一些问题</li>
-<li>A/B测试：AB测试是为<a href="https://baike.baidu.com/item/Web/150564">Web</a>或<a href="https://baike.baidu.com/item/App/6133292">App</a>界面或流程制作两个（A/B）或多个（A/B/n）版本，在同一<a href="https://baike.baidu.com/item/时间维度/6762941">时间维度</a>，分别让<strong>组成成分相同（相似）的访客群组</strong>（目标人群）<strong>随机的访问这些版本</strong>，收集各群组的用户体验数据和业务数据，最后分析、评估出最好版本，正式采用。</li>
-</ul>
-</li>
-</ul>
-<h1 id="黑盒测试"><a href="#黑盒测试" class="headerlink" title="黑盒测试"></a>黑盒测试</h1><p><strong>黑盒测试：功能测试</strong>，数据驱动测试或者基于规格说明书的测试。这种测试<strong>不必了解程序的内部逻辑结构</strong>，而是<strong>根据需求说明书中的功能来设计测试用例。</strong>具体方法分为：等价类划分法、边界值分析法、判定表法、因果图法、错误推测法</p>
-<h2 id="等价类划分"><a href="#等价类划分" class="headerlink" title="等价类划分"></a>等价类划分</h2><ol>
-<li>定义：等价类划分是在分析需求规格说明的基础上，把<strong>程序的输入域划分成若干个部分，然后在每部分选取代表性的数据形成测试用例</strong></li>
-<li>等价类划分法的步骤如下：<ol>
-<li><strong>划分有效等价类</strong>：对规格说明是有意义的、合理的输入数据所构成的集合。利用有效等价类可以检验程序是否满足规格说明所规定的<strong>功能和性能</strong>。</li>
-<li><strong>划分无效等价类</strong>：不合理的输入数据所构成的集合。使用无效等价类可以<strong>测试程序/系统的容错性</strong>—对异常输入情况的处理。</li>
-</ol>
-</li>
-</ol>
-<h2 id="边界值分析法"><a href="#边界值分析法" class="headerlink" title="边界值分析法"></a>边界值分析法</h2><ol>
-<li>定义：边界值分析法是针对边界值进行测试的，使用等于、大于或者小于边界值的数据对程序进行测试的方法</li>
-<li>边界值分析法的步骤：<ol>
-<li>通过分析规格说明书找出所有可能的边界条件</li>
-<li>对每个边界条件给出满足和不满足的输入数据</li>
-<li>设计相应的测试用例</li>
-</ol>
-</li>
-</ol>
-<h2 id="因果图法"><a href="#因果图法" class="headerlink" title="因果图法"></a>因果图法</h2><h1 id="白盒测试"><a href="#白盒测试" class="headerlink" title="白盒测试"></a>白盒测试</h1><p><strong>白盒测试：又称为结构测试</strong>、逻辑驱动测试或者基于程序的测试。这种测试应该了解软件程序的内部构造，并且根据程序的内部结构来设计测试用例。<strong>白盒测试是基于覆盖的测试，尽可能覆盖程序的结构特征和逻辑路径。</strong>其具体方法有逻辑覆盖、循环覆盖、基本路径覆盖。逻辑覆盖又可分为语句覆盖、判定覆盖、条件覆盖、判定/条件覆盖、条件组合覆盖。</p>
-<p><a href="https://www.cnblogs.com/keaihaizi/p/11523683.html">https://www.cnblogs.com/keaihaizi/p/11523683.html</a></p>
-<h2 id="逻辑覆盖"><a href="#逻辑覆盖" class="headerlink" title="逻辑覆盖"></a>逻辑覆盖</h2><h3 id="语句覆盖"><a href="#语句覆盖" class="headerlink" title="语句覆盖"></a>语句覆盖</h3><p>每条语句至少执行一次</p>
-<h3 id="判定覆盖"><a href="#判定覆盖" class="headerlink" title="判定覆盖"></a>判定覆盖</h3><p>分支执行一次</p>
-<h3 id="条件覆盖"><a href="#条件覆盖" class="headerlink" title="条件覆盖"></a>条件覆盖</h3><p>每个条件取到<strong>各种可能的值</strong></p>
-<p>A=T 　　　　A=F<br>B=T 　　　　B=F</p>
-<h3 id="条件组合覆盖"><a href="#条件组合覆盖" class="headerlink" title="条件组合覆盖"></a>条件组合覆盖</h3><p>每个判断语句中条件结果的所有可能组合至少出现一次</p>
-<p>A= T　　　 B= T<br>A= T 　　　B= F<br>A= F　　　 B= T<br>A= F 　　　B= F </p>
-<h2 id="循环覆盖"><a href="#循环覆盖" class="headerlink" title="循环覆盖"></a>循环覆盖</h2><h2 id="基本路径覆盖"><a href="#基本路径覆盖" class="headerlink" title="基本路径覆盖"></a>基本路径覆盖</h2><p>设计出的测试用例要保证在测试中程序的语句覆盖100%，条件覆盖100%。条件组合未必能覆盖到。</p>
-<h1 id="静态测试、动态测试"><a href="#静态测试、动态测试" class="headerlink" title="静态测试、动态测试"></a>静态测试、动态测试</h1><ol>
-<li>静态测试：又称为静态分析结束，其基本特征是不执行被测软件，根据检查列表，<strong>对需求分析说明书、软件设计说明书以及源程序做结构检查、流程图分析等找出软件错误</strong>。静态测试一般采用人工分析（针对文档），也可以用静态分析测试工具来进行（代码扫描）。</li>
-<li>动态测试：其基本特征是执行被测试程序。通过执行结果，分析软件可能出现的错误 ，一般由人工设计程序测试用例，也可以由测试工具做检查和分析。</li>
-</ol>
-<h1 id="软件质量模型"><a href="#软件质量模型" class="headerlink" title="软件质量模型"></a>软件质量模型</h1><h2 id="软件质量"><a href="#软件质量" class="headerlink" title="软件质量"></a>软件质量</h2><p>ANSI/IEEE 定义软件质量为：“与软件产品满足规定的和隐含的需求的能力有关的特征或特性的全体”。</p>
-<h2 id="ISO-IEC-9126质量模型"><a href="#ISO-IEC-9126质量模型" class="headerlink" title="ISO/IEC 9126质量模型"></a>ISO/IEC 9126质量模型</h2><p>测试是对软件质量的度量，那么如何度量，从哪些角度度量。</p>
-<p>我们需要一套标准，或者说模型来作参考，赋予不同指标不同的权重，通过计算软件质量的得分，便可以评判出质量的好坏。</p>
-<p>ISO/IEC 9126在1991年12月发布，将软件质量归为6大特性和27个子特性。</p>
-<p><img data-src="/images/data/Screen Shot 2020-11-10 at 11.44.26.png" alt="Screen Shot 2020-11-10 at 11.44.26"></p>
-<p>功能性：软件产品提供满足明确和隐含需求功能的能力</p>
-<ul>
-<li>适合性：为规定任务提供一组合适功能的功能，即做了该做的事</li>
-<li>准确性：得到正确或相符的预期结果的能力</li>
-<li>互操作性：与其他系统软件交互的能力</li>
-<li>保密安全性：防止对程序及数据的非授权的故意或意外访问的能力</li>
-</ul>
-<p>可靠性：软件产品维护规定的性能级别的能力</p>
-<ul>
-<li>成熟性：避免软件内部的错误扩散而导致系统失效的能力</li>
-<li>容错性：防止外部接口错误扩散而导致系统失效的能力</li>
-<li>易恢复性：系统失效后，重新恢复原有的功能和性能的能力</li>
-</ul>
-<p>易用性：软件产品被理解、学习、使用及吸引用户的能力</p>
-<ul>
-<li>易理解性：交互性要清晰、准确和易懂</li>
-<li>易学性：用户学习软件所花努力的属性</li>
-<li>易操作性：用户操作和控制软件的能力</li>
-<li>吸引性：吸引用户的能力</li>
-</ul>
-<p><strong>性能效率</strong>：相对于所用资源的数量，软件产品可提供适当性能的能力</p>
-<ul>
-<li><strong>时间特性</strong>：软件执行功能时的响应、处理时间和吞吐率</li>
-<li><strong>资源特性</strong>：软件执行功能时所使用的资源数量和类型</li>
-</ul>
-<p>维护性：软件产品可以被修改的能力，修改可能包括修改、改进或者适应环境、需求和功能规约的变化</p>
-<ul>
-<li>易分析性：诊断缺陷或失效原因所需努力的属性</li>
-<li>易改变性：进行修改、排除错误或适应环境变化的能力</li>
-<li>稳定性：避免软件修改而造成意外结果的能力</li>
-<li>易测试性：提供辅助性手段帮助测试人员实现其测试意图</li>
-</ul>
-<p>可移植性：软件产品从一个环境迁移到另一个环境的能力</p>
-<ul>
-<li>适应性：无需相应变动就能适应不同环境的能力</li>
-<li>易安装性：尽可能少的提供选择，方便用户直接安装</li>
-<li>共存性：与其他公共软件共存</li>
-<li>易替换性：同等环境下，替换其他同类产品的能力</li>
-</ul>
-<h2 id="GB-T-25000质量模型"><a href="#GB-T-25000质量模型" class="headerlink" title="GB/T 25000质量模型"></a>GB/T 25000质量模型</h2><p>于2016年发布，(新增兼容性和信息安全)，大方向没有改变，新增的2大特性（信息安全性、兼容性）也是从原有的功能性和可移植性中分裂出来。</p>
-<p><img data-src="/images/data/Screen Shot 2020-11-10 at 11.54.54.png" alt="Screen Shot 2020-11-10 at 11.54.54"></p>
-<p>信息安全性，产品或系统保护信息和数据的程序，以使用户、其他产品或系统具有与其授权和授权级别一致的数据访问度</p>
-<ul>
-<li>保密性，产品或系统确保数据只有在被授权时才能被访问的程度</li>
-<li>完整性，系统、产品或组件防止未授权访问、篡改计算机程序或数据的程度</li>
-<li>抗抵赖性，活动或事件发生后可以被证实且不可被否认的程度</li>
-<li>可核查性，实体的活动可以被唯一地追溯到该实体的程度</li>
-<li>真实性，对象或资源的身份标识能够被证实符合其声明的程度</li>
-</ul>
-<p><a href="https://juejin.im/post/6844903878354272269">从纺锤模型到金字塔模型</a></p>
-<h1 id="软件开发中之敏捷开发：DevOps"><a href="#软件开发中之敏捷开发：DevOps" class="headerlink" title="软件开发中之敏捷开发：DevOps"></a>软件开发中之敏捷开发：DevOps</h1><p>DevOps是一套实践方法论和文化，提倡打破原有组织和限制，职能团队开始拥抱和接受<strong>DevOps所倡导的高度协同，研发、测试、运维及交付一体化的思维</strong>。随着DevOps和敏捷热度的不断提升，无论是互联网企业还是传统软件企业都开始拥抱<strong>敏捷</strong>，实践DevOps。<strong>持续集成CI（Continuous integration）、持续交付CD（Continuous delivery ）</strong>作为DevOps的最佳实践，越来越受到重视。</p>
-<h1 id="软件开发中之微服务架构"><a href="#软件开发中之微服务架构" class="headerlink" title="软件开发中之微服务架构"></a>软件开发中之微服务架构</h1><p>微服务架构源起于DevOps意识形态和实践中，是一种软件架构风格。微服务架构带来了一系列好处，例如<strong>可部署性、可靠性、可用性</strong>等等。虽然原则上可以使用任何架构来实践DevOps，但微服务架构<strong>正在成为构建持续部署 (CD)</strong>系统的标准<strong>架构风格</strong>。由于<strong>每项服务的规模都很小</strong>，它允许通过<strong>连续重构来实现单个服务</strong>的体系结构，因此<strong>减少了对大型项目前期设计的需求，允许尽早发布软件并且持续交付</strong>。微服务和DevOps是天然的共同体，结合起来共同实现软件开发行业的变革。</p>
-<h1 id="分层理论：金字塔模型"><a href="#分层理论：金字塔模型" class="headerlink" title="分层理论：金字塔模型"></a>分层理论：金字塔模型</h1><p>随着敏捷和微服务架构的引入，<strong>CI/CD成为构建和部署的标准</strong>。传统的手工测试方式在人员和效率上都存在严重不足，因此自动化测试已经成为现代软件研发过程中一个关键组成部分。<strong>自动化测试是打通持续集成和持续交付的核心</strong>，没有有效的自动化测试保证，持续集成和持续交付就仅仅是一个没有灵魂的躯壳。</p>
-<p>Martin Fowler描述<strong>测试金字塔</strong>分为单元、服务和UI三个层级。</p>
-<p><strong>1)单元测试</strong></p>
-<p>单元测试是针对<strong>代码单元（通常是类/方法）</strong>的测试，单元测试的价值在于能提供最快的反馈，在开发过程中就可以对逻辑单元进行验证。好的单元测试可以帮助改善既有设计，在团队掌握 TDD的前提下，单元测试能辅助重构，帮助提升代码整洁度。</p>
-<p><strong>2)接口（服务/API）测试</strong></p>
-<p><strong>接口测试是针对业务接口进行的测试</strong>，主要测试内部接口功能实现是否完整。比如内部逻辑是否正常、异常处理是否正确。接口测试的主要价值在于接口定义相对稳定，不像界面或底层代码会经常发生变化，所以接口测试比较容易编写，用例的维护成本也相对较低。在接口层面准备测试的性价比相对较高。</p>
-<p><strong>3)集成（UI）测试</strong></p>
-<p><strong>集成测试从用户的角度验证产品功能的正确性，测的是端到端的流程</strong>，并且加入用户场景和数据，验证整个过程是否健康流畅。集成测试的业务价值最高，它验证的是一个完整的流程，但因为需要验证完整流程，在环境部署、准备用例及实施等方面成本较高，实施起来并不容易。</p>
-<h1 id="自动化测试"><a href="#自动化测试" class="headerlink" title="自动化测试"></a>自动化测试</h1><h2 id="自动化测试分层及占比"><a href="#自动化测试分层及占比" class="headerlink" title="自动化测试分层及占比"></a>自动化测试分层及占比</h2><p>先来看一般的功能测试如何进行：设计并编写用例文档，描述测试步骤和预期结果；测试人员根据测试用例描述按步骤操作，然后判断实际结果与预期是否一致。如果一致，测试通过；如果不符，测试失败。</p>
-<p><strong>自动化测试要做的事情与功能测试是一致的。分层理论和自动化测试方法结合，出现了三个层面的自动化：单元测试自动化、接口测试自动化和UI测试自动化。</strong>当然，不同层面的自动化关注点是不一样的。所以，从测试的行为本质上来看，功能测试与单元自动化测试、接口自动化测试和UI自动化测试并没有区别。唯一的区别是，一个由人来执行，一个由代码或工具执行。</p>
-<ul>
-<li>单元自动化测试</li>
-</ul>
-<p>单元测试关注的是代码的实现与逻辑。单元测试是最基本的测试，也是测试中的最小单元，它的对象是函数对象，也可以包含输入输出，针对的是函数功能或者函数内部的代码逻辑，并不包含业务逻辑。</p>
-<p>该类测试一般由研发人员完成，需要借助单元测试框架，如java的Junit、TestNG，python的<strong>unittest</strong>等。</p>
-<ul>
-<li>接口自动化测试</li>
-</ul>
-<p>接口自动化测试，主要验证<strong>模块间的调用返回以及不同系统、服务间的数据交换</strong>。</p>
-<p>根据接口文档是RESTful还是RPC，最终断言返回的结果是否等于预期结果。如果相等，测试通过；如果不相等，测试失败。</p>
-<p>常见的接口测试工具有<strong>postman、jmeter、loadrunner</strong>等。</p>
-<ul>
-<li>集成自动化测试</li>
-</ul>
-<p>UI层是用户使用产品的入口，所有功能通过这一层提供给用户。</p>
-<p>当UI自动化登录成功后，就去获取这个数据进行断言，断言如果相等，测试通过；如果不相等，测试失败。</p>
-<p>所以，UI自动化的关注点用户操作形为，以及UI上各种组件是否可用。常见的测试工具有<strong>UFT、Robot Framework、Selenium、Appium</strong>等。</p>
-<p>按照测试金字塔模型以及投入/产出比，我们得知越向下回报率越高，<strong>所以应该使用大量的单元测试和全面的接口测试来覆盖产品提供的基本逻辑和功能，使用少量的集成（UI）测试来进行前端界面的功能验证。</strong></p>
-<p>都说业内最佳实践看Google，Google的自动化分层投入占比是：<strong>单元测试（Unit）：占比70%；接口测试（Service）：占比20%；集成测试（UI）：占比10%.</strong></p>
-<h2 id="自动化最佳实践：纺锤模型"><a href="#自动化最佳实践：纺锤模型" class="headerlink" title="自动化最佳实践：纺锤模型"></a>自动化最佳实践：纺锤模型</h2><p><strong>对现阶段公司大部分团队来说，更符合实际测试模式是纺锤模型</strong>。新项目中，可能由于时限原因或者开发人员习惯问题，一开始并没有把单元测试准备得很完善；而某些遗留老项目，可能原本就没有多少单元测试。</p>
-<p>在上述情况下，一般的做法是先将重心放在中间层的测试上，原因有以下两点：</p>
-<ul>
-<li>第一，中间层<strong>投入产出比较高</strong>，可以实现较高的自动化率；</li>
-<li>第二，可以帮助加强<strong>开发跟测试人员之间的协作</strong>，提高测试质量。这一层需要开发跟测试人员共同定义，因为开发知道内部实现的细节，测试掌握业务场景。</li>
-</ul>
-<p>当项目进行一段时间以后，各层测试占比有必要向理想型的金字塔型过渡，这时需要关注以下三个方面：</p>
-<ul>
-<li>开发与测试互相传递能力；</li>
-<li>全员关注产品设计跟代码的质量；</li>
-<li>让用例逐步下沉，最后逐步过渡到理想型。</li>
-</ul>
-<p><img data-src="/images/data/Screen Shot 2020-11-10 at 13.09.44.png" alt="Screen Shot 2020-11-10 at 13.09.44"></p>
-<h1 id="测试质量评估"><a href="#测试质量评估" class="headerlink" title="测试质量评估"></a>测试质量评估</h1><p>关于度量，不要用单一的指标去评估测试和产品质量，比如用例通过率、代码覆盖率等都无法独立地评估产品质量。</p>
-<p>评估测试质量时要关心以下几个方面：</p>
-<ul>
-<li>第一是<strong>用例比例</strong>，即每一层的用例比例是多少。</li>
-<li>第二是<strong>测试覆盖率</strong>。</li>
-<li>第三是<strong>测试总运行时间</strong>，因为经过优化以后，总运行时间一定是越来越少。</li>
-<li>第四是<strong>代码质量指标，反映代码的质量和整洁度</strong>。</li>
-</ul>
-<h1 id="Python自动化测试框架"><a href="#Python自动化测试框架" class="headerlink" title="Python自动化测试框架"></a>Python自动化测试框架</h1><ol>
-<li><p>python+selenium+unittest+htmltestrunner</p>
-</li>
-<li><p>python+selenium+pytest+allure</p>
-</li>
-<li><p>robotframework+Selenium2Library</p>
-</li>
-</ol>
-<h2 id="pytest"><a href="#pytest" class="headerlink" title="pytest"></a>pytest</h2><p>pytest是一个非常成熟的Python测试框架</p>
-<ol>
-<li>能够支持简单的单元测试和复杂的功能测试，还可以用来做selenium/appnium等自动化测试，接口自动化测试（pytest+request）</li>
-<li>pytest具有很多第三方插件，并且可以自定义扩展，常用的插件有：<ol>
-<li>pytest-selenium（集成selenium）</li>
-<li>pytest-html（完美html测试报告生成）</li>
-<li>pytest-rerunfailures（失败case重复执行）</li>
-<li>pytest-xdist（多CPU分发）</li>
-</ol>
-</li>
-</ol>
-<p><a href="https://www.cnblogs.com/mytianying/p/12466302.html">https://www.cnblogs.com/mytianying/p/12466302.html</a></p>
-<h1 id="算法测试"><a href="#算法测试" class="headerlink" title="算法测试"></a>算法测试</h1><h2 id="模型评估"><a href="#模型评估" class="headerlink" title="模型评估"></a>模型评估</h2><h3 id="线下评估-—-准确度、查准率、召回率"><a href="#线下评估-—-准确度、查准率、召回率" class="headerlink" title="线下评估 — 准确度、查准率、召回率"></a>线下评估 — 准确度、查准率、召回率</h3><p>数据拆分：训练数据集&amp;测试数据集： 利用训练集训练模型，然后利用模型在测试集上进行测试。</p>
-<p>评价分类结果：<strong>混淆矩阵、精准度、精准率、召回率、F1 Score</strong>、ROC曲线、AUC值等</p>
-<p>评价回归结果：MES、RMES、MAE、R Squared</p>
-<ul>
-<li>Precision &amp; Recall</li>
-</ul>
-<p><strong>混淆矩阵：</strong>对于二分类问题来说，所有的问题被分为0和1两类。</p>
-<p><strong>True Positive(TP)</strong>：正实际为正实际为正，预测对了(True)</p>
-<p><strong>False Negative(FN)</strong>: 预测为负实际为正，预测错了(False)</p>
-<p><strong>False Positive(FP)</strong>: 预测为负实际为正，预测错了(False)</p>
-<p><strong>True Negative(TN)</strong>: 预测为负实际为负，预测对了(True)</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th></th>
-<th>真实值正</th>
-<th>真实值负</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>预测值正</td>
-<td>TP</td>
-<td>FP</td>
-</tr>
-<tr>
-<td>预测值负</td>
-<td>FN</td>
-<td>TN</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p><strong>Accuracy指准确度</strong>，意味着系统误差(System Error)小，即偏差(Bias) 小，描述了的实际值与真实结果的偏离程度。</p>
-<p>$accuracy = \frac{TP + TN}{TP + FP + FN + TN}$</p>
-<blockquote>
-<p>如果存在<strong>样本不均衡</strong>的情况下，就不能使用accuracy来进行衡量了。比如，一个总样本中，正样本占90%,负样本占10%，那么只需要将所有样本预测为正，就可以拿到90%的准确率，而这显然是无意义的。正因为如此，我们就需要精准率和召回率了。</p>
-</blockquote>
-<p><strong>Precision指查准率，即预测为正的样本中，实际为正的比例。</strong></p>
-<p>$Precision=\frac{TP}{TP+FP}$</p>
-<blockquote>
-<p>为什么管它叫精准率呢？在有偏的数据中，我们<strong>通常更关注值为1的特征</strong>，比如“患病”，比如“有风险”。在100次结果为患病的预测，平均有40次预测是对的。即<strong>精准率为我们关注的那个事件，预测的有多准。</strong></p>
-<p>医生预测为癌症，患者确实患癌症的比例。</p>
-</blockquote>
-<p><strong>Recall召回率：所有真实值为正的数据中，预测对了的个数。</strong></p>
-<p>$Recall = \frac{TP}{TP + FN}$</p>
-<blockquote>
-<p><strong>也就是我们关注的那个事件真实的发生情况下，我们成功预测的比例是多少。</strong></p>
-<p>至于两个指标如何使用，需要看具体场景，实际上这两个指标是互斥的，一个高，必有另一个低。</p>
-</blockquote>
-<p><strong>F1 Score: </strong>P为查准率，R为查全率。F1score就是在查准率与查全率之间寻找一个平衡点。</p>
-<p>$F1 Score = 2<em>\frac{P </em> R}{P + R}$</p>
-<ul>
-<li>MAP</li>
-</ul>
-<p>在目标检测中：</p>
-<p><strong>如果IoU&gt; 0.5，则认为它是True Positive，否则认为是False Positive。</strong>而COCO数据集的评估指标建议对不同的IoU阈值进行计算，但为简单起见，我们这里仅讨论一个阈值0.5，这是PASCAL VOC数据集所用的指标。</p>
-<p><strong>为了计算Recall，我们需要Negatives的数量</strong>。由于图片中我们没有预测到物体的每个部分都被视为Negative，因此计算True Negatives比较难办。<strong>一般通过改变置信度的值，</strong>阈值<strong>以上的所有预测（Box + Class）都被认为是Positives，并且低于该值的都是Negatives。</strong></p>
-<p>PASCAL VOC组织者推荐采用一种可以用于任何模型的评估指标，选择了11个不同的recall，可以认为是选择了11个rank，由于是按照置信度进行排序的，实际上等于选择了11个不同的置信度阈值。AP就定义为在这11个recall下precision的平均值。</p>
-<p>代码见：<a href="https://zhuanlan.zhihu.com/p/37910324">https://zhuanlan.zhihu.com/p/37910324</a></p>
-<ul>
-<li>MES、RMES、MAE</li>
-</ul>
-<p>MES(Mean Squared Error)均方误差:  $\frac{1}{m} \sum<em>{i=1}^m(y</em>{test}^i - y_{test}^i)^2$</p>
-<p>RMES(Root Mean Squared Error)均方根误差: $\sqrt{MES}$</p>
-<p>MAE(Mean Absolute Error)平均绝对误差：$\frac{1}{m} \sum<em>{i=1}^m|y</em>{test}^i - y_{test}^i|$</p>
-<h3 id="线上评估-—-A-B-testing"><a href="#线上评估-—-A-B-testing" class="headerlink" title="线上评估 — A/B testing"></a>线上评估 — A/B testing</h3><p>A/B testing</p>
-<p>AB测试是为<a href="https://baike.baidu.com/item/Web/150564">Web</a>或<a href="https://baike.baidu.com/item/App/6133292">App</a>界面或流程制作两个（A/B）或多个（A/B/n）版本，在同一<a href="https://baike.baidu.com/item/时间维度/6762941">时间维度</a>，分别让<strong>组成成分相同（相似）的访客群组</strong>（目标人群）<strong>随机的访问这些版本</strong>，收集各群组的用户体验数据和业务数据，最后分析、评估出最好版本，正式采用。</p>
-<h2 id="算法鲁棒性"><a href="#算法鲁棒性" class="headerlink" title="算法鲁棒性"></a>算法鲁棒性</h2><h2 id="模型安全"><a href="#模型安全" class="headerlink" title="模型安全"></a>模型安全</h2><h2 id="响应速度"><a href="#响应速度" class="headerlink" title="响应速度"></a>响应速度</h2><h1 id="测试工具"><a href="#测试工具" class="headerlink" title="测试工具"></a>测试工具</h1><div class="table-container">
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>WEB UI自动化：</td>
-<td><strong>selenium</strong>、robotframework</td>
-</tr>
-<tr>
-<td>接口自动化：</td>
-<td>Jmeter、<strong>Postman</strong>、soapUI、requests、httprunner</td>
-</tr>
-<tr>
-<td>App自动化：</td>
-<td>Appium、Monkey、Monkeyrunner、UIautomation，UIAutomator，Robotium，macaca，airtest</td>
-</tr>
-<tr>
-<td>PC端自动化：</td>
-<td>QTP(UFT)</td>
-</tr>
-<tr>
-<td>云测平台</td>
-<td>Testin、百度云测</td>
-</tr>
-<tr>
-<td>性能测试：</td>
-<td>Jmeter、<strong>LoadRunner</strong></td>
-</tr>
-<tr>
-<td>安全测试：</td>
-<td>Appscan</td>
-</tr>
-<tr>
-<td>持续集成：</td>
-<td><strong>Jenkins</strong></td>
-</tr>
-</tbody>
-</table>
-</div>
-<h1 id="测试问题汇总"><a href="#测试问题汇总" class="headerlink" title="测试问题汇总"></a>测试问题汇总</h1><h2 id="编写测试计划的目的是"><a href="#编写测试计划的目的是" class="headerlink" title="编写测试计划的目的是"></a>编写测试计划的目的是</h2><h2 id="对关键词触发模块进行测试"><a href="#对关键词触发模块进行测试" class="headerlink" title="对关键词触发模块进行测试"></a>对关键词触发模块进行测试</h2><h2 id="其他常用笔试题目网址汇总"><a href="#其他常用笔试题目网址汇总" class="headerlink" title="其他常用笔试题目网址汇总"></a>其他常用笔试题目网址汇总</h2><h2 id="测试人员在软件开发过程中的任务是什么"><a href="#测试人员在软件开发过程中的任务是什么" class="headerlink" title="测试人员在软件开发过程中的任务是什么"></a>测试人员在软件开发过程中的任务是什么</h2><h2 id="一条软件Bug记录都包含了哪些内容？"><a href="#一条软件Bug记录都包含了哪些内容？" class="headerlink" title="一条软件Bug记录都包含了哪些内容？"></a>一条软件Bug记录都包含了哪些内容？</h2><h2 id="简述黑盒测试和白盒测试的优缺点"><a href="#简述黑盒测试和白盒测试的优缺点" class="headerlink" title="简述黑盒测试和白盒测试的优缺点"></a>简述黑盒测试和白盒测试的优缺点</h2><h2 id="请列出你所知道的软件测试种类，至少5项"><a href="#请列出你所知道的软件测试种类，至少5项" class="headerlink" title="请列出你所知道的软件测试种类，至少5项"></a>请列出你所知道的软件测试种类，至少5项</h2><h2 id="Alpha测试与Beta测试的区别是什么？"><a href="#Alpha测试与Beta测试的区别是什么？" class="headerlink" title="Alpha测试与Beta测试的区别是什么？"></a>Alpha测试与Beta测试的区别是什么？</h2><h2 id="举例说明什么是Bug？一个bug-report应包含什么关键字？"><a href="#举例说明什么是Bug？一个bug-report应包含什么关键字？" class="headerlink" title="举例说明什么是Bug？一个bug report应包含什么关键字？"></a>举例说明什么是Bug？一个bug report应包含什么关键字？</h2><h2 id="在selenium自动化测试中，你一般完成什么类型的测试？自动化覆盖率？"><a href="#在selenium自动化测试中，你一般完成什么类型的测试？自动化覆盖率？" class="headerlink" title="在selenium自动化测试中，你一般完成什么类型的测试？自动化覆盖率？"></a><strong>在selenium自动化测试中，你一般完成什么类型的测试？自动化覆盖率？</strong></h2><p>主要是冒烟测试和回归测试。回归测试主要写一些功能稳定的场景，通过自动化手段去实现，节约测试时间。因为自动化测试用例也是在不断的更新和迭代，没有刻意去统计，大概在30%-40%左右！</p>
-<h2 id="什么是PO模式，为什么要使用它"><a href="#什么是PO模式，为什么要使用它" class="headerlink" title="什么是PO模式，为什么要使用它"></a><strong>什么是PO模式，为什么要使用它</strong></h2><p>PO是Page Object 模式的简称，它是一种设计思想，意思是，把一个页面，当做一个对象，页面的元素和元素之间操作方法就是页面对象的属性和行为，PO模式一般使用三层架构，分别为：基础封装层BasePage，PO页面对象层，TestCase测试用例层。</p>
-]]></content>
-      <categories>
-        <category>Computer Basic</category>
-        <category>Interview</category>
-      </categories>
-      <tags>
-        <tag>Software Test Basic</tag>
       </tags>
   </entry>
   <entry>
