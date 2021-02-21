@@ -1,62 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Image-Algorithm-Summarize</title>
-    <url>/posts/58748/</url>
-    <content><![CDATA[<h1 id="YUV、RGB、HSV"><a href="#YUV、RGB、HSV" class="headerlink" title="YUV、RGB、HSV"></a>YUV、RGB、HSV</h1><p>YUV：亮度信息 即灰度值。UV：色彩信息 定义了颜色的两个方面-色调与饱和度，分别用Cr和CB来表示。其中，Cr反映了RGB输入信号红色部分与RGB信号亮度值之间的差异。而CB反映的是RGB输入信号蓝色部分与RGB信号亮度值之同的差异。通过运算，YUV三分量可以还原出R（红），G（绿），B（蓝）。</p>
-<p>HSV: 色调（H），饱和度（S），明度（V）</p>
-<p>相互转换</p>
-<h2 id="ARGB-gt-RGB"><a href="#ARGB-gt-RGB" class="headerlink" title="ARGB -> RGB"></a>ARGB -&gt; RGB</h2><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">//unsigned char *data 存的是ARGB的裸数据；</span><br><span class="line"> </span><br><span class="line">cv::Mat argbImg;</span><br><span class="line">cv::Mat rgbImg(cy, cx,CV_8UC3);</span><br><span class="line">yuvImg.create(cy, cx, CV_8UC4);</span><br><span class="line">memcpy(argbImg.data, data, <span class="built_in">len</span>);</span><br><span class="line">cv::cvtColor(argbImg, rgbImg, CV_RGBA2RGB);</span><br><span class="line">flip(rgbImg, rgbImg, <span class="number">0</span>);    //垂直翻转</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="YUV-gt-RGB"><a href="#YUV-gt-RGB" class="headerlink" title="YUV -> RGB"></a>YUV -&gt; RGB</h2><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">//unsigned char *data 存的是YUYV的裸数据；</span><br><span class="line"> </span><br><span class="line">cv::Mat yuvImg;</span><br><span class="line">cv::Mat rgbImg(cy, cx,CV_8UC3);</span><br><span class="line">yuvImg.create(cy , cx, CV_8UC2);</span><br><span class="line">memcpy(yuvImg.data, data, <span class="built_in">len</span>);</span><br><span class="line">cv::cvtColor(yuvImg, rgbImg, CV_YUV2BGR_YUYV);</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="I420-gt-RGB"><a href="#I420-gt-RGB" class="headerlink" title="I420 -> RGB"></a>I420 -&gt; RGB</h2><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">//unsigned char *data 存的是I420的裸数据；</span><br><span class="line"> </span><br><span class="line">cv::Mat yuvImg;</span><br><span class="line">cv::Mat rgbImg(cy, cx,CV_8UC3);</span><br><span class="line">yuvImg.create(cy * <span class="number">3</span>/<span class="number">2</span>, cx, CV_8UC1);</span><br><span class="line">memcpy(yuvImg.data, data, <span class="built_in">len</span>);</span><br><span class="line">cv::cvtColor(yuvImg, rgbImg, CV_YUV2BGR_I420);</span><br></pre></td></tr></tbody></table></figure>
-<p>OpenCV提供的转换函数实现YUV到RGB的转换：</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="built_in">bool</span> YV12ToBGR24_OpenCV(unsigned char* pYUV,unsigned char* pBGR24,<span class="built_in">int</span> width,<span class="built_in">int</span> height) </span><br><span class="line">{ </span><br><span class="line"><span class="keyword">if</span> (width &lt; <span class="number">1</span> || height &lt; <span class="number">1</span> || pYUV == NULL || pBGR24 == NULL) </span><br><span class="line"><span class="keyword">return</span> false; </span><br><span class="line">Mat dst(height,width,CV_8UC3,pBGR24); </span><br><span class="line">Mat src(height + height/<span class="number">2</span>,width,CV_8UC1,pYUV); </span><br><span class="line">cvtColor(src,dst,CV_YUV2BGR_YV12); </span><br><span class="line"><span class="keyword">return</span> true; </span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="RGB-gt-HSV"><a href="#RGB-gt-HSV" class="headerlink" title="RGB -> HSV"></a>RGB -&gt; HSV</h2><figure class="highlight c++"><table><tbody><tr><td class="code"><pre><span class="line"># -*- coding:utf<span class="number">-8</span> -*-</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"></span><br><span class="line"><span class="string">""</span><span class="string">"</span></span><br><span class="line"><span class="string">功能：读取一张图片，显示出来，并转化为HSV色彩空间</span></span><br><span class="line"><span class="string">"</span><span class="string">""</span></span><br><span class="line">image = cv2.imread('images/my_wife2.jpg') # 根据路径读取一张图片</span><br><span class="line">cv2.imshow(<span class="string">"BGR"</span>, image) # 显示图片</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 转化图片到HSV色彩空间</span><br><span class="line">dst = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)</span><br><span class="line">cv2.imshow(<span class="string">"HSV"</span>, dst) # 显示图片</span><br><span class="line">cv2.waitKey(<span class="number">0</span>) # 等待键盘触发事件，释放窗口</span><br></pre></td></tr></tbody></table></figure>
-<h1 id="White-Balance"><a href="#White-Balance" class="headerlink" title="White Balance"></a>White Balance</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>相机的白平衡控制，是为了让实际环境中白色的物体在你拍摄的画面中也呈现出“真正”的白色。不同性质的光源会在画面中产生不同的色彩倾向，比如说，蜡烛的光线会使画面偏橘黄色，而黄昏过后的光线则会为景物披上一层蓝色的冷调。而我们的视觉系统会自动对不同的光线作出补偿，所以无论在暖调还是冷调的光线环境下，我们看一张白纸永远还是白色的。但相机则不然，它只会直接记录呈现在它面前的色彩，这就会导致画面色彩偏暖或偏冷。</p>
-<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><p>开暖光灯：YUV -&gt; RGB -&gt; SV ，全图SV值S需在0～0.1之间，V需在90～255之间。</p>
-<a id="more"></a>
-<h1 id="IR-Cut"><a href="#IR-Cut" class="headerlink" title="IR-Cut"></a>IR-Cut</h1><h2 id="概念-1"><a href="#概念-1" class="headerlink" title="概念"></a>概念</h2><p>自然界存在着各种波长的光线，通过折射人眼能看到不同颜色的光线，这就是光线的波长不同所导致的。其实还有许多光线是人眼看不到的，人眼识别光线的波长范围在320nm-760nm之间， 超过760nm的光线人眼就无法见到，比如红外光等。<br>随着科学的进步，人类发明了摄像机，理论上讲摄像机可以看到绝大部分波长的光线，但在摄像机的使用过程中就出现了一个问题，由于各种光线的参杂，摄像机看到的物体反映在监视器上与人眼直接看到的就变样了。如人眼看到绿色，通过摄像机则变成蓝色，产生彩色失真。过去，为解决色彩失真问题，一般在CCD前贴有一低通滤片，该滤片阻碍了红外光的进出，故白天彩色不失真，但夜间却没有了夜视功能。<br>IR CUT是一种机械装置，内有两个窗口，一为低通滤片一为透明玻璃，可依需要左右移动，从而白天彩色不失真，且夜间仍有夜视功能。简单的说，通过IR CUT，白天只允许760nm或780nm以下波长的光线进入，避免了白天的彩色失真。晚上只允许760nm或780nm以上波长的红外光线进入，避免760nm或780nm以下波长的可见光对红外光的干扰，于是在白天与夜晚都能取得最佳视觉效果。随着技术的进步，IR CUT结合低通滤片与<a href="https://www.baidu.com/s?wd=高通&amp;tn=SE_PcZhidaonwhc_ngpagmjz&amp;rsv_dl=gh_pc_zhidao">高通</a>滤片在改进<a href="https://www.baidu.com/s?wd=夜视摄像机&amp;tn=SE_PcZhidaonwhc_ngpagmjz&amp;rsv_dl=gh_pc_zhidao">夜视摄像机</a>的性能上发挥越来越重要的作用．低通滤片：以镀膜方式使光线中波长在760nm或780nm以下的光线通过，超过760nm或780nm波长的光线阻止通过。<a href="https://www.baidu.com/s?wd=高通&amp;tn=SE_PcZhidaonwhc_ngpagmjz&amp;rsv_dl=gh_pc_zhidao">高通</a>滤片：以镀膜方式使光线中波长在760nm或780nm以下的光线阻止通过，只准超过760nm或780nm以上波长的光线通过。<br>根据上述分析，应用低通滤片技术，摄像机能够模拟人的眼睛，只接收同样范围波长的光线，这样就解决了摄像机的色彩失真问题。而通过<a href="https://www.baidu.com/s?wd=高通&amp;tn=SE_PcZhidaonwhc_ngpagmjz&amp;rsv_dl=gh_pc_zhidao">高通</a>滤片技术的应用，解决了在夜间杂光干扰红外光问题。LED红外技术的出现，大大拓宽了监控领域的时空范畴，<a href="https://www.baidu.com/s?wd=红外摄像机&amp;tn=SE_PcZhidaonwhc_ngpagmjz&amp;rsv_dl=gh_pc_zhidao">红外摄像机</a>得到了广泛的应用。但同时，我们也发现市场上流行的传统LED<a href="https://www.baidu.com/s?wd=红外摄像机&amp;tn=SE_PcZhidaonwhc_ngpagmjz&amp;rsv_dl=gh_pc_zhidao">红外摄像机</a>存在着许多致命的缺陷：如散热问题、寿命问题、手电筒效应问题，夜晚可见光干扰的问题等。LED Array 技术解决了寿命问题，新一代的LED Array技术基本解决了“手电筒”效应，而IR CUT技术完美地解决了杂光干扰。</p>
-<h2 id="实现-1"><a href="#实现-1" class="headerlink" title="实现"></a>实现</h2><p>关、开滤光片，打开红外灯，计算平均亮度是否符合要求（155～255之间）。</p>
-<h1 id="Bad-Pixel"><a href="#Bad-Pixel" class="headerlink" title="Bad Pixel"></a>Bad Pixel</h1><h2 id="概念-2"><a href="#概念-2" class="headerlink" title="概念"></a>概念</h2><p>图像坏点(Bad pixel) : 图像传感器上光线采集点(像素点)所形成的阵列存在工艺上的缺陷，或光信号进行转化为电信号的过程中出现错误，从而会造成图像上像素信息错误，导致图像中的像素值不准确，这些有缺陷的像素即为图像坏点。</p>
-<h2 id="实现-2"><a href="#实现-2" class="headerlink" title="实现"></a>实现</h2><p>根据灰度值确定坏点</p>
-<h1 id="Shading"><a href="#Shading" class="headerlink" title="Shading"></a>Shading</h1><h2 id="概念-3"><a href="#概念-3" class="headerlink" title="概念"></a>概念</h2><p>暗角一词属于摄影术语。对着亮度均匀景物，画面四角有变暗的现象，叫做“失光”，俗称“暗角”。</p>
-<p>产生暗角的原因主要有：</p>
-<p>1.边角的成像光线与<a href="https://baike.baidu.com/item/镜头光轴/10196349">镜头光轴</a>有较大的夹角，是造成边角失光的主要原因。沿着<a href="https://baike.baidu.com/item/视场/8231871">视场</a>边缘的光线的前进方向看<a href="https://baike.baidu.com/item/光圈/94964">光圈</a>，由于光线与光圈所在的平面有夹角，看到的光圈是椭圆的，所以通光面积减小。镜头光心到胶片的边缘距离较大，同样的光圈直径到达底片的光线夹角较小，亮度必然减小。同理，同样的光线偏角，对于边角光线位移较大，等价于照在较大的面积上。而面积是与位移的平方成正比的，所以综合上述原因，边缘亮度与光线和光轴夹角的COS值的4次方成正比。换句话说，<a href="https://baike.baidu.com/item/广角镜头/278835">广角镜头</a>边缘亮度随着视角变大急剧下降。</p>
-<p>2.<a href="https://baike.baidu.com/item/长焦镜头/879928">长焦镜头</a>尤其是<a href="https://baike.baidu.com/item/变焦/9696019">变焦</a>长焦镜头镜片很多，偏离<a href="https://baike.baidu.com/item/光圈/94964">光圈</a>比较远的镜片为了能让边角光线通过，这些镜片必须很大。为了降低成本，缩小了这些镜片直径，造成边角成像光线不能完全通过，降低了边角的亮度。</p>
-<p>3.边角的<a href="https://baike.baidu.com/item/像差/448364">像差</a>较大。为了提高像质，某些镜片的边缘或专门设置的光阑有意挡住部分影响成像质量的边缘光线，造成边角失光。</p>
-<p><a href="https://baike.baidu.com/item/鱼眼镜头/343506">鱼眼镜头</a>虽然视角极大，但是由于边缘<a href="https://baike.baidu.com/item/放大倍率/10294653">放大倍率</a>很小，所以几乎没有边角失光。</p>
-<p>高档<a href="https://baike.baidu.com/item/变焦镜头/2971419">变焦镜头</a>已经花了大的成本，可以加大某些镜片、完美地校正像差，高档长焦镜头包括变焦镜头边缘失光很小。</p>
-<p>还有：<a href="https://baike.baidu.com/item/广角镜头/278835">广角镜头</a>如果使用了过多的<a href="https://baike.baidu.com/item/滤色镜/205532">滤色镜</a>，等价于增长了镜筒，可能造成边角暗角甚至黑角！</p>
-<p>暗角在任何一只镜头上都存在，在MTF<a href="https://baike.baidu.com/item/透光率/1192539">透光率</a>图上可以知道，从中心到边缘会损失不少，尤其在<a href="https://baike.baidu.com/item/大光圈/8567887">大光圈</a>。在冲扩<a href="https://baike.baidu.com/item/负片/3897269">负片</a>是问题不大，因为放大头也存在这个问题，会抵消掉一部分影响，当然，如果镜头太滥，失光极其明显，那就能在照片上看出来了。</p>
-<p>对于<a href="https://baike.baidu.com/item/反转片/3897682">反转片</a>，问题就严重一些，就需要仔细研究研究了，一般的现象是：广角比长焦明显一些，反正怎么样全看你的使用情况，缩小一下<a href="https://baike.baidu.com/item/光圈/94964">光圈</a>就是了。 </p>
-<p>— from baike.baidu.com</p>
-<h2 id="实现-3"><a href="#实现-3" class="headerlink" title="实现"></a>实现</h2><p>开冷光灯：分为亮度暗角和色彩暗角。</p>
-<p>亮度暗角：取四个角（10 * 10像素），四个角亮度与中间块做比值，需在0.3～1之间。</p>
-<p>色彩暗角：图像被分成20 * 20块，算每块的R/G、B/G，分别除以中心的R/G，四个角比值都应在0.8～1.2之间。</p>
-<h1 id="清晰度测试"><a href="#清晰度测试" class="headerlink" title="清晰度测试"></a>清晰度测试</h1><p>清晰度：影像细部影纹及边界的清晰程度，摄像机一般使用分解力来衡量它分解被摄景物细节的能力，单位有TVLine、4K分辨率、8K分辨率</p>
-<p>衡量分解力的三个标准：</p>
-<ol>
-<li><p>TVLine检测（锲形线测试），用于主观测试，ISO 12233 chart读出的线对数</p>
-</li>
-<li><p>MTF检测（频率线测试），调制传递函数，调制度随空间频率变化的函数，镜头的MTF曲线表明镜头的能力。</p>
-<p>MTF计算线对间最亮和最暗线对的对比度</p>
-<p>MTF = （最大亮度 - 最小亮度） / （最大亮度 + 最小亮度）</p>
-<p>测不用频率下的MTF值，通过将这些值和空间频率进行一一对照。</p>
-</li>
-<li><p>SFR检测（spatial frequency response）用于测量随着空间频率的线条增加对单一影像所造成的影响。SFR是MTF的另一种测试方法。SFR最终是希望得到MTF曲线。</p>
-<p>SFR不需拍不同空间频率下的线对。只需一个黑白刀口（斜边），即可换算约略相等于所有空间频率下的MTF。</p>
-<p>斜边 -&gt; 超采样 -&gt; 得到黑白变换的直线（ESF） -&gt; 求导  -&gt; 直线变换率 -&gt; FFT变换  -&gt; 各个频率下的MTF值</p>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>CV</category>
-      </categories>
-      <tags>
-        <tag>ImageAlgorithm</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Git</title>
     <url>/posts/25246/</url>
     <content><![CDATA[<h1 id="Git配置"><a href="#Git配置" class="headerlink" title="Git配置"></a>Git配置</h1><h2 id="config文件"><a href="#config文件" class="headerlink" title="config文件"></a>config文件</h2><ul>
@@ -258,6 +202,62 @@
       </categories>
       <tags>
         <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Image-Algorithm-Summarize</title>
+    <url>/posts/58748/</url>
+    <content><![CDATA[<h1 id="YUV、RGB、HSV"><a href="#YUV、RGB、HSV" class="headerlink" title="YUV、RGB、HSV"></a>YUV、RGB、HSV</h1><p>YUV：亮度信息 即灰度值。UV：色彩信息 定义了颜色的两个方面-色调与饱和度，分别用Cr和CB来表示。其中，Cr反映了RGB输入信号红色部分与RGB信号亮度值之间的差异。而CB反映的是RGB输入信号蓝色部分与RGB信号亮度值之同的差异。通过运算，YUV三分量可以还原出R（红），G（绿），B（蓝）。</p>
+<p>HSV: 色调（H），饱和度（S），明度（V）</p>
+<p>相互转换</p>
+<h2 id="ARGB-gt-RGB"><a href="#ARGB-gt-RGB" class="headerlink" title="ARGB -> RGB"></a>ARGB -&gt; RGB</h2><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">//unsigned char *data 存的是ARGB的裸数据；</span><br><span class="line"> </span><br><span class="line">cv::Mat argbImg;</span><br><span class="line">cv::Mat rgbImg(cy, cx,CV_8UC3);</span><br><span class="line">yuvImg.create(cy, cx, CV_8UC4);</span><br><span class="line">memcpy(argbImg.data, data, <span class="built_in">len</span>);</span><br><span class="line">cv::cvtColor(argbImg, rgbImg, CV_RGBA2RGB);</span><br><span class="line">flip(rgbImg, rgbImg, <span class="number">0</span>);    //垂直翻转</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="YUV-gt-RGB"><a href="#YUV-gt-RGB" class="headerlink" title="YUV -> RGB"></a>YUV -&gt; RGB</h2><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">//unsigned char *data 存的是YUYV的裸数据；</span><br><span class="line"> </span><br><span class="line">cv::Mat yuvImg;</span><br><span class="line">cv::Mat rgbImg(cy, cx,CV_8UC3);</span><br><span class="line">yuvImg.create(cy , cx, CV_8UC2);</span><br><span class="line">memcpy(yuvImg.data, data, <span class="built_in">len</span>);</span><br><span class="line">cv::cvtColor(yuvImg, rgbImg, CV_YUV2BGR_YUYV);</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="I420-gt-RGB"><a href="#I420-gt-RGB" class="headerlink" title="I420 -> RGB"></a>I420 -&gt; RGB</h2><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">//unsigned char *data 存的是I420的裸数据；</span><br><span class="line"> </span><br><span class="line">cv::Mat yuvImg;</span><br><span class="line">cv::Mat rgbImg(cy, cx,CV_8UC3);</span><br><span class="line">yuvImg.create(cy * <span class="number">3</span>/<span class="number">2</span>, cx, CV_8UC1);</span><br><span class="line">memcpy(yuvImg.data, data, <span class="built_in">len</span>);</span><br><span class="line">cv::cvtColor(yuvImg, rgbImg, CV_YUV2BGR_I420);</span><br></pre></td></tr></tbody></table></figure>
+<p>OpenCV提供的转换函数实现YUV到RGB的转换：</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="built_in">bool</span> YV12ToBGR24_OpenCV(unsigned char* pYUV,unsigned char* pBGR24,<span class="built_in">int</span> width,<span class="built_in">int</span> height) </span><br><span class="line">{ </span><br><span class="line"><span class="keyword">if</span> (width &lt; <span class="number">1</span> || height &lt; <span class="number">1</span> || pYUV == NULL || pBGR24 == NULL) </span><br><span class="line"><span class="keyword">return</span> false; </span><br><span class="line">Mat dst(height,width,CV_8UC3,pBGR24); </span><br><span class="line">Mat src(height + height/<span class="number">2</span>,width,CV_8UC1,pYUV); </span><br><span class="line">cvtColor(src,dst,CV_YUV2BGR_YV12); </span><br><span class="line"><span class="keyword">return</span> true; </span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="RGB-gt-HSV"><a href="#RGB-gt-HSV" class="headerlink" title="RGB -> HSV"></a>RGB -&gt; HSV</h2><figure class="highlight c++"><table><tbody><tr><td class="code"><pre><span class="line"># -*- coding:utf<span class="number">-8</span> -*-</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"></span><br><span class="line"><span class="string">""</span><span class="string">"</span></span><br><span class="line"><span class="string">功能：读取一张图片，显示出来，并转化为HSV色彩空间</span></span><br><span class="line"><span class="string">"</span><span class="string">""</span></span><br><span class="line">image = cv2.imread('images/my_wife2.jpg') # 根据路径读取一张图片</span><br><span class="line">cv2.imshow(<span class="string">"BGR"</span>, image) # 显示图片</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 转化图片到HSV色彩空间</span><br><span class="line">dst = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)</span><br><span class="line">cv2.imshow(<span class="string">"HSV"</span>, dst) # 显示图片</span><br><span class="line">cv2.waitKey(<span class="number">0</span>) # 等待键盘触发事件，释放窗口</span><br></pre></td></tr></tbody></table></figure>
+<h1 id="White-Balance"><a href="#White-Balance" class="headerlink" title="White Balance"></a>White Balance</h1><h2 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h2><p>相机的白平衡控制，是为了让实际环境中白色的物体在你拍摄的画面中也呈现出“真正”的白色。不同性质的光源会在画面中产生不同的色彩倾向，比如说，蜡烛的光线会使画面偏橘黄色，而黄昏过后的光线则会为景物披上一层蓝色的冷调。而我们的视觉系统会自动对不同的光线作出补偿，所以无论在暖调还是冷调的光线环境下，我们看一张白纸永远还是白色的。但相机则不然，它只会直接记录呈现在它面前的色彩，这就会导致画面色彩偏暖或偏冷。</p>
+<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><p>开暖光灯：YUV -&gt; RGB -&gt; SV ，全图SV值S需在0～0.1之间，V需在90～255之间。</p>
+<a id="more"></a>
+<h1 id="IR-Cut"><a href="#IR-Cut" class="headerlink" title="IR-Cut"></a>IR-Cut</h1><h2 id="概念-1"><a href="#概念-1" class="headerlink" title="概念"></a>概念</h2><p>自然界存在着各种波长的光线，通过折射人眼能看到不同颜色的光线，这就是光线的波长不同所导致的。其实还有许多光线是人眼看不到的，人眼识别光线的波长范围在320nm-760nm之间， 超过760nm的光线人眼就无法见到，比如红外光等。<br>随着科学的进步，人类发明了摄像机，理论上讲摄像机可以看到绝大部分波长的光线，但在摄像机的使用过程中就出现了一个问题，由于各种光线的参杂，摄像机看到的物体反映在监视器上与人眼直接看到的就变样了。如人眼看到绿色，通过摄像机则变成蓝色，产生彩色失真。过去，为解决色彩失真问题，一般在CCD前贴有一低通滤片，该滤片阻碍了红外光的进出，故白天彩色不失真，但夜间却没有了夜视功能。<br>IR CUT是一种机械装置，内有两个窗口，一为低通滤片一为透明玻璃，可依需要左右移动，从而白天彩色不失真，且夜间仍有夜视功能。简单的说，通过IR CUT，白天只允许760nm或780nm以下波长的光线进入，避免了白天的彩色失真。晚上只允许760nm或780nm以上波长的红外光线进入，避免760nm或780nm以下波长的可见光对红外光的干扰，于是在白天与夜晚都能取得最佳视觉效果。随着技术的进步，IR CUT结合低通滤片与<a href="https://www.baidu.com/s?wd=高通&amp;tn=SE_PcZhidaonwhc_ngpagmjz&amp;rsv_dl=gh_pc_zhidao">高通</a>滤片在改进<a href="https://www.baidu.com/s?wd=夜视摄像机&amp;tn=SE_PcZhidaonwhc_ngpagmjz&amp;rsv_dl=gh_pc_zhidao">夜视摄像机</a>的性能上发挥越来越重要的作用．低通滤片：以镀膜方式使光线中波长在760nm或780nm以下的光线通过，超过760nm或780nm波长的光线阻止通过。<a href="https://www.baidu.com/s?wd=高通&amp;tn=SE_PcZhidaonwhc_ngpagmjz&amp;rsv_dl=gh_pc_zhidao">高通</a>滤片：以镀膜方式使光线中波长在760nm或780nm以下的光线阻止通过，只准超过760nm或780nm以上波长的光线通过。<br>根据上述分析，应用低通滤片技术，摄像机能够模拟人的眼睛，只接收同样范围波长的光线，这样就解决了摄像机的色彩失真问题。而通过<a href="https://www.baidu.com/s?wd=高通&amp;tn=SE_PcZhidaonwhc_ngpagmjz&amp;rsv_dl=gh_pc_zhidao">高通</a>滤片技术的应用，解决了在夜间杂光干扰红外光问题。LED红外技术的出现，大大拓宽了监控领域的时空范畴，<a href="https://www.baidu.com/s?wd=红外摄像机&amp;tn=SE_PcZhidaonwhc_ngpagmjz&amp;rsv_dl=gh_pc_zhidao">红外摄像机</a>得到了广泛的应用。但同时，我们也发现市场上流行的传统LED<a href="https://www.baidu.com/s?wd=红外摄像机&amp;tn=SE_PcZhidaonwhc_ngpagmjz&amp;rsv_dl=gh_pc_zhidao">红外摄像机</a>存在着许多致命的缺陷：如散热问题、寿命问题、手电筒效应问题，夜晚可见光干扰的问题等。LED Array 技术解决了寿命问题，新一代的LED Array技术基本解决了“手电筒”效应，而IR CUT技术完美地解决了杂光干扰。</p>
+<h2 id="实现-1"><a href="#实现-1" class="headerlink" title="实现"></a>实现</h2><p>关、开滤光片，打开红外灯，计算平均亮度是否符合要求（155～255之间）。</p>
+<h1 id="Bad-Pixel"><a href="#Bad-Pixel" class="headerlink" title="Bad Pixel"></a>Bad Pixel</h1><h2 id="概念-2"><a href="#概念-2" class="headerlink" title="概念"></a>概念</h2><p>图像坏点(Bad pixel) : 图像传感器上光线采集点(像素点)所形成的阵列存在工艺上的缺陷，或光信号进行转化为电信号的过程中出现错误，从而会造成图像上像素信息错误，导致图像中的像素值不准确，这些有缺陷的像素即为图像坏点。</p>
+<h2 id="实现-2"><a href="#实现-2" class="headerlink" title="实现"></a>实现</h2><p>根据灰度值确定坏点</p>
+<h1 id="Shading"><a href="#Shading" class="headerlink" title="Shading"></a>Shading</h1><h2 id="概念-3"><a href="#概念-3" class="headerlink" title="概念"></a>概念</h2><p>暗角一词属于摄影术语。对着亮度均匀景物，画面四角有变暗的现象，叫做“失光”，俗称“暗角”。</p>
+<p>产生暗角的原因主要有：</p>
+<p>1.边角的成像光线与<a href="https://baike.baidu.com/item/镜头光轴/10196349">镜头光轴</a>有较大的夹角，是造成边角失光的主要原因。沿着<a href="https://baike.baidu.com/item/视场/8231871">视场</a>边缘的光线的前进方向看<a href="https://baike.baidu.com/item/光圈/94964">光圈</a>，由于光线与光圈所在的平面有夹角，看到的光圈是椭圆的，所以通光面积减小。镜头光心到胶片的边缘距离较大，同样的光圈直径到达底片的光线夹角较小，亮度必然减小。同理，同样的光线偏角，对于边角光线位移较大，等价于照在较大的面积上。而面积是与位移的平方成正比的，所以综合上述原因，边缘亮度与光线和光轴夹角的COS值的4次方成正比。换句话说，<a href="https://baike.baidu.com/item/广角镜头/278835">广角镜头</a>边缘亮度随着视角变大急剧下降。</p>
+<p>2.<a href="https://baike.baidu.com/item/长焦镜头/879928">长焦镜头</a>尤其是<a href="https://baike.baidu.com/item/变焦/9696019">变焦</a>长焦镜头镜片很多，偏离<a href="https://baike.baidu.com/item/光圈/94964">光圈</a>比较远的镜片为了能让边角光线通过，这些镜片必须很大。为了降低成本，缩小了这些镜片直径，造成边角成像光线不能完全通过，降低了边角的亮度。</p>
+<p>3.边角的<a href="https://baike.baidu.com/item/像差/448364">像差</a>较大。为了提高像质，某些镜片的边缘或专门设置的光阑有意挡住部分影响成像质量的边缘光线，造成边角失光。</p>
+<p><a href="https://baike.baidu.com/item/鱼眼镜头/343506">鱼眼镜头</a>虽然视角极大，但是由于边缘<a href="https://baike.baidu.com/item/放大倍率/10294653">放大倍率</a>很小，所以几乎没有边角失光。</p>
+<p>高档<a href="https://baike.baidu.com/item/变焦镜头/2971419">变焦镜头</a>已经花了大的成本，可以加大某些镜片、完美地校正像差，高档长焦镜头包括变焦镜头边缘失光很小。</p>
+<p>还有：<a href="https://baike.baidu.com/item/广角镜头/278835">广角镜头</a>如果使用了过多的<a href="https://baike.baidu.com/item/滤色镜/205532">滤色镜</a>，等价于增长了镜筒，可能造成边角暗角甚至黑角！</p>
+<p>暗角在任何一只镜头上都存在，在MTF<a href="https://baike.baidu.com/item/透光率/1192539">透光率</a>图上可以知道，从中心到边缘会损失不少，尤其在<a href="https://baike.baidu.com/item/大光圈/8567887">大光圈</a>。在冲扩<a href="https://baike.baidu.com/item/负片/3897269">负片</a>是问题不大，因为放大头也存在这个问题，会抵消掉一部分影响，当然，如果镜头太滥，失光极其明显，那就能在照片上看出来了。</p>
+<p>对于<a href="https://baike.baidu.com/item/反转片/3897682">反转片</a>，问题就严重一些，就需要仔细研究研究了，一般的现象是：广角比长焦明显一些，反正怎么样全看你的使用情况，缩小一下<a href="https://baike.baidu.com/item/光圈/94964">光圈</a>就是了。 </p>
+<p>— from baike.baidu.com</p>
+<h2 id="实现-3"><a href="#实现-3" class="headerlink" title="实现"></a>实现</h2><p>开冷光灯：分为亮度暗角和色彩暗角。</p>
+<p>亮度暗角：取四个角（10 * 10像素），四个角亮度与中间块做比值，需在0.3～1之间。</p>
+<p>色彩暗角：图像被分成20 * 20块，算每块的R/G、B/G，分别除以中心的R/G，四个角比值都应在0.8～1.2之间。</p>
+<h1 id="清晰度测试"><a href="#清晰度测试" class="headerlink" title="清晰度测试"></a>清晰度测试</h1><p>清晰度：影像细部影纹及边界的清晰程度，摄像机一般使用分解力来衡量它分解被摄景物细节的能力，单位有TVLine、4K分辨率、8K分辨率</p>
+<p>衡量分解力的三个标准：</p>
+<ol>
+<li><p>TVLine检测（锲形线测试），用于主观测试，ISO 12233 chart读出的线对数</p>
+</li>
+<li><p>MTF检测（频率线测试），调制传递函数，调制度随空间频率变化的函数，镜头的MTF曲线表明镜头的能力。</p>
+<p>MTF计算线对间最亮和最暗线对的对比度</p>
+<p>MTF = （最大亮度 - 最小亮度） / （最大亮度 + 最小亮度）</p>
+<p>测不用频率下的MTF值，通过将这些值和空间频率进行一一对照。</p>
+</li>
+<li><p>SFR检测（spatial frequency response）用于测量随着空间频率的线条增加对单一影像所造成的影响。SFR是MTF的另一种测试方法。SFR最终是希望得到MTF曲线。</p>
+<p>SFR不需拍不同空间频率下的线对。只需一个黑白刀口（斜边），即可换算约略相等于所有空间频率下的MTF。</p>
+<p>斜边 -&gt; 超采样 -&gt; 得到黑白变换的直线（ESF） -&gt; 求导  -&gt; 直线变换率 -&gt; FFT变换  -&gt; 各个频率下的MTF值</p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>CV</category>
+      </categories>
+      <tags>
+        <tag>ImageAlgorithm</tag>
       </tags>
   </entry>
   <entry>
@@ -569,341 +569,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Spring</title>
-    <url>/posts/25249120/</url>
-    <content><![CDATA[<h1 id="Spring概况"><a href="#Spring概况" class="headerlink" title="Spring概况"></a>Spring概况</h1><ul>
-<li><p>Spring是一个开源框架，为了解决企业级应用开发的复杂性而创建的，但现在已经不止应用于企业应用</p>
-</li>
-<li><p>Spring是一个轻量级的控制反转(IOC)和面向切面(AOP)的容器框架</p>
-<ul>
-<li>从大小与开销方面而言Spring是轻量的</li>
-<li>通过控制反转(IOC)的技术达到松耦合的目的</li>
-<li>提供了面向切面编程的丰富支持，允许通过分离应用的业务逻辑与系统级服务进行内聚性的开发</li>
-<li>包含并管理应用对象的配置和生命周期，这个意义上是一种容器</li>
-</ul>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Java FrameWork</category>
-      </categories>
-      <tags>
-        <tag>BigData</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Regex</title>
-    <url>/posts/25256/</url>
-    <content><![CDATA[<h1 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h1><h2 id="元字符"><a href="#元字符" class="headerlink" title="元字符"></a>元字符</h2><div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:center">元字符</th>
-<th style="text-align:center">说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">.</td>
-<td style="text-align:center">匹配除换行符以外的任意字符</td>
-</tr>
-<tr>
-<td style="text-align:center">\w</td>
-<td style="text-align:center">匹配字母、数字、下划线、汉字</td>
-</tr>
-<tr>
-<td style="text-align:center">\s</td>
-<td style="text-align:center">匹配任意的空白符</td>
-</tr>
-<tr>
-<td style="text-align:center">\d</td>
-<td style="text-align:center">匹配数字</td>
-</tr>
-<tr>
-<td style="text-align:center">\b</td>
-<td style="text-align:center">匹配单词的开始或结束</td>
-</tr>
-<tr>
-<td style="text-align:center">^</td>
-<td style="text-align:center">匹配字符串的开始</td>
-</tr>
-<tr>
-<td style="text-align:center">$</td>
-<td style="text-align:center">匹配字符串的结束</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>例：匹配有abc开头的字符串</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">\babc或^abc</span><br></pre></td></tr></tbody></table></figure>
-<a id="more"></a>
-<h2 id="重复限定符"><a href="#重复限定符" class="headerlink" title="重复限定符"></a>重复限定符</h2><div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:center">语法</th>
-<th style="text-align:center">说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">*</td>
-<td style="text-align:center">重复零次或更多次</td>
-</tr>
-<tr>
-<td style="text-align:center">+</td>
-<td style="text-align:center">重复一次或者更多次</td>
-</tr>
-<tr>
-<td style="text-align:center">？</td>
-<td style="text-align:center">重复零次或一次</td>
-</tr>
-<tr>
-<td style="text-align:center">{n}</td>
-<td style="text-align:center">重复n次</td>
-</tr>
-<tr>
-<td style="text-align:center">{n,}</td>
-<td style="text-align:center">重复n次或更多次</td>
-</tr>
-<tr>
-<td style="text-align:center">{n,m}</td>
-<td style="text-align:center">重复n次到m次</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>限定符作用于与它<strong>左边</strong>最近的一个字符。</p>
-<p>例：匹配以a开头，0个或者多个以b结尾的字符串</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">^ab*$</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="分组"><a href="#分组" class="headerlink" title="分组"></a>分组</h2><p>以”()“作为分组。</p>
-<p>例：匹配以ab开头，0个或者多个以b结尾的字符串</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">^(ab)*$</span><br></pre></td></tr></tbody></table></figure>
-<p>注：如需匹配小括号，只要加转义字符串即可。</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">^(\(ab\))*$</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="条件或"><a href="#条件或" class="headerlink" title="条件或"></a>条件或</h2><p>利用“｜”来表达条件或。</p>
-<p>例：匹配130/131/181/177等开头的11位手机号。</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">^(<span class="number">130</span>|<span class="number">131</span>|<span class="number">181</span>|<span class="number">177</span>)\d{<span class="number">8</span>}$</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="区间"><a href="#区间" class="headerlink" title="区间"></a>区间</h2><p>利用“[]”来表达区间条件。</p>
-<blockquote>
-<p>[0-9]：限定0到9</p>
-<p>[A-Z]：限定A到Z</p>
-<p>[165]：限定规定数字</p>
-</blockquote>
-<p>例：匹配130/131/132/156/158/159/145/177开头的11位数字</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">^((<span class="number">13</span>[<span class="number">0</span>-<span class="number">2</span>])|(<span class="number">15</span>[<span class="number">689</span>])|<span class="number">145</span>|<span class="number">177</span>)\d{<span class="number">8</span>}$</span><br></pre></td></tr></tbody></table></figure>
-<h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><ul>
-<li><a href="https://juejin.im/post/5b96a8e2e51d450e6a2de115">掘金博文</a></li>
-</ul>
-]]></content>
-      <categories>
-        <category>Tools</category>
-      </categories>
-      <tags>
-        <tag>Regex</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Mardown</title>
-    <url>/posts/20260/</url>
-    <content><![CDATA[<h1 id="Markdown语法"><a href="#Markdown语法" class="headerlink" title="Markdown语法"></a>Markdown语法</h1><h2 id="数学表达式"><a href="#数学表达式" class="headerlink" title="数学表达式"></a>数学表达式</h2><p>要启用这个功能，首先到<code>Preference</code>-&gt;<code>Editor</code>中启用。然后使用<script type="math/tex">`符号包裹Tex命令，例如：`$lim_{x \to \infty} \ exp(-x)=0</script>将产生如下的数学表达式：</p>
-<p>$\lim_{x \to \infty} \exp(-x)=0$</p>
-<h2 id="下标"><a href="#下标" class="headerlink" title="下标"></a>下标</h2><p>下标使用<code>~</code>包裹，例如：<code>H~2~O</code>将产生H~2~O, 即水的分子式。</p>
-<h2 id="上标"><a href="#上标" class="headerlink" title="上标"></a>上标</h2><p>上标使用<code>^</code>包裹，例如：<code>y^2^=4</code>将产生表达式y^2^ = 4</p>
-<h2 id="插入表情-happy"><a href="#插入表情-happy" class="headerlink" title="插入表情:happy:"></a>插入表情:happy:</h2><p>使用<code>:happy:</code>输入表情:happy:,使用<code>:sad:</code>输入表情:sad:,使用<code>:cry:</code>输入表情<span class="github-emoji"><span>😢</span><img data-src="https://github.githubassets.com/images/icons/emoji/unicode/1f622.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>等。以此类推！</p>
-<h2 id="下划线"><a href="#下划线" class="headerlink" title="下划线"></a>下划线</h2><p>用HTML的语法<code>&lt;u&gt;Underline&lt;/u&gt;</code>将产生下划线<u>Underline</u>.</p>
-<h2 id="删除线"><a href="#删除线" class="headerlink" title="删除线"></a>删除线</h2><p>GFM添加了删除文本的语法，这是标准的Markdown语法木有的。使用<code>~~</code>包裹的文本将会具有删除的样式，例如<code>~删除文本~</code>将产生<del>删除文本</del>的样式。</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><ul>
-<li>使用`包裹的内容将会以代码样式显示，例如</li>
-</ul>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">使用`printf()`</span><br></pre></td></tr></tbody></table></figure>
-<p>则会产生<code>printf()</code>样式。</p>
-<a id="more"></a>
-<ul>
-<li>输入<code>``或者</code>然后回车，可以输入代码块，并且可以选择代码的语言。例如：</li>
-</ul>
-<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> Class HelloWorld{</span><br><span class="line">System.out.println(<span class="string">"Hello World!"</span>);</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<p>将会产生</p>
-<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> Class HelloWorld{</span><br><span class="line">System.out.println(<span class="string">"Hello World!"</span>);</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="强调"><a href="#强调" class="headerlink" title="强调"></a>强调</h2><p>使用两个<code>*</code>号或者两个<code>_</code>包裹的内容将会被强调。例如</p>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">**使用两个*号强调内容**</span><br><span class="line">__使用两个下划线强调内容__</span><br></pre></td></tr></tbody></table></figure>
-<p>将会输出</p>
-<p><strong>使用两个*号强调内容</strong><br><strong>使用两个下划线强调内容</strong><br>Typroa 推荐使用两个*号。</p>
-<h2 id="斜体"><a href="#斜体" class="headerlink" title="斜体"></a>斜体</h2><p>  在标准的Markdown语法中，*和_包裹的内容会是斜体显示，但是GFM下划线一般用来分隔人名和代码变量名，因此我们推荐是用星号来包裹斜体内容。如果要显示星号，则使用转义：</p>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">\*</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="插入URL连接"><a href="#插入URL连接" class="headerlink" title="插入URL连接"></a>插入URL连接</h2><p>使用尖括号包裹的url将产生一个连接，例如：<code>&lt;www.baidu.com&gt;</code>将产生连接:<www.baidu.com>.</www.baidu.com></p>
-<p>如果是标准的url，则会自动产生连接，例如:www.google.com</p>
-<h2 id="目录列表Table-of-Contents（TOC）"><a href="#目录列表Table-of-Contents（TOC）" class="headerlink" title="目录列表Table of Contents（TOC）"></a>目录列表Table of Contents（TOC）</h2><p>输入[toc]然后回车，将会产生一个目录，这个目录抽取了文章的所有标题，自动更新内容。</p>
-<h2 id="水平分割线"><a href="#水平分割线" class="headerlink" title="水平分割线"></a>水平分割线</h2><p>使用<code>***</code>或者<code>---</code>，然后回车，来产生水平分割线。</p>
-<hr>
-<h2 id="标注"><a href="#标注" class="headerlink" title="标注"></a>标注</h2><p>我们可以对某一个词语进行标注。例如</p>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">某些人用过了才知道[^注释]</span><br><span class="line">[^注释]:Somebody that I used to know.</span><br></pre></td></tr></tbody></table></figure>
-<p>将产生：</p>
-<p>某些人用过了才知道<sup><a href="#fn_注释" id="reffn_注释">注释</a></sup><br><sup><a href="#fn_注释" id="reffn_注释">注释</a></sup>: Somebody that I used to know.</p>
-<p>把鼠标放在<code>注释</code>上，将会有提示内容。</p>
-<h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">|姓名|性别|毕业学校|工资|</span><br><span class="line">|:---|:---:|:---:|---:|</span><br><span class="line">|杨洋|男|重庆交通大学|3200|</span><br><span class="line">|峰哥|男|贵州大学|5000|</span><br><span class="line">|小阳|女|北京大学|2000|</span><br></pre></td></tr></tbody></table></figure>
-<p>将产生:</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:left">姓名</th>
-<th style="text-align:center">性别</th>
-<th style="text-align:center">毕业学校</th>
-<th style="text-align:right">工资</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">杨洋</td>
-<td style="text-align:center">男</td>
-<td style="text-align:center">重庆交通大学</td>
-<td style="text-align:right">3200</td>
-</tr>
-<tr>
-<td style="text-align:left">峰哥</td>
-<td style="text-align:center">男</td>
-<td style="text-align:center">贵州大学</td>
-<td style="text-align:right">5000</td>
-</tr>
-<tr>
-<td style="text-align:left">小阳</td>
-<td style="text-align:center">女</td>
-<td style="text-align:center">北京大学</td>
-<td style="text-align:right">2000</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>其中代码的第二行指定对齐的方式，第一个是左对齐，第二个和第三个是居中，最后一个是右对齐。</p>
-<h2 id="数学表达式块"><a href="#数学表达式块" class="headerlink" title="数学表达式块"></a>数学表达式块</h2><p>输入两个美元符号，然后回车，就可以输入数学表达式块了。例如：</p>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">$$\mathbf{V}_1 \times \mathbf{V}_2 =  \begin{vmatrix} \mathbf{i} &amp; \mathbf{j} &amp; \mathbf{k} \\\frac{\partial X}{\partial u} &amp;  \frac{\partial Y}{\partial u} &amp; 0 \\\frac{\partial X}{\partial v} &amp;  \frac{\partial Y}{\partial v} &amp; 0 \\\end{vmatrix}$$</span><br></pre></td></tr></tbody></table></figure>
-<p>将会产生:</p>
-<script type="math/tex; mode=display">\mathbf{V}_1 \times \mathbf{V}_2 =  \begin{vmatrix} \mathbf{i} & \mathbf{j} & \mathbf{k} \\\frac{\partial X}{\partial u} &  \frac{\partial Y}{\partial u} & 0 \\\frac{\partial X}{\partial v} &  \frac{\partial Y}{\partial v} & 0 \\\end{vmatrix}</script><h2 id="任务列表"><a href="#任务列表" class="headerlink" title="任务列表"></a>任务列表</h2><p>使用如下的代码创建任务列表，在[]中输入x表示完成，也可以通过点击选择完成或者没完成。</p>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">- [ ] 吃饭</span><br><span class="line">- [ ] 逛街</span><br><span class="line">- [ ] 看电影</span><br></pre></td></tr></tbody></table></figure>
-<ul>
-<li><p>[x] 吃饭</p>
-</li>
-<li><p>[x] 逛街</p>
-</li>
-<li><p>[x] 看电影</p>
-</li>
-<li><p>[x] </p>
-</li>
-</ul>
-<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><p>输入+, -, *,创建无序的列表，使用任意数字开头，创建有序列表，例如：</p>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">**无序的列表**</span><br><span class="line">* tfboys</span><br><span class="line">* 杨洋</span><br><span class="line">* Mr.Smith</span><br></pre></td></tr></tbody></table></figure>
-<p><strong>无序的列表</strong></p>
-<ul>
-<li>tfboys</li>
-<li>杨洋</li>
-<li>Mr.Smith</li>
-</ul>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">**有序的列表**</span><br><span class="line">1. 苹果</span><br><span class="line">6. 香蕉</span><br><span class="line">10. 我都不喜欢</span><br></pre></td></tr></tbody></table></figure>
-<p><strong>有序的列表</strong></p>
-<ol>
-<li>苹果</li>
-<li>香蕉</li>
-<li>我都不喜欢</li>
-</ol>
-<h2 id="块引用"><a href="#块引用" class="headerlink" title="块引用"></a>块引用</h2><p>使用&gt;来插入块引用。例如：</p>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">&gt;这是一个块引用！</span><br></pre></td></tr></tbody></table></figure>
-<p>将产生：</p>
-<blockquote>
-<p>这是一个块引用！</p>
-</blockquote>
-<h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><p>使用#表示一级标题，##表示二级标题，以此类推，有6个标题。</p>
-<h1 id="Markdown插件"><a href="#Markdown插件" class="headerlink" title="Markdown插件"></a>Markdown插件</h1><h2 id="画图"><a href="#画图" class="headerlink" title="画图"></a>画图</h2><h3 id="Sequence-Diagrams"><a href="#Sequence-Diagrams" class="headerlink" title="Sequence Diagrams"></a>Sequence Diagrams</h3><ul>
-<li><a href="https://bramp.github.io/js-sequence-diagrams/">官网链接</a></li>
-</ul>
-<figure class="highlight markdown"><table><tbody><tr><td class="code"><pre><span class="line">Andrew-&gt;China: Says Hello</span><br><span class="line">Note right of China: China thinks\nabout it</span><br><span class="line">China--&gt;Andrew: How are you?</span><br><span class="line">Andrew-&gt;&gt;China: I am good thanks!</span><br></pre></td></tr></tbody></table></figure>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">Andrew-&gt;China: Says Hello</span><br><span class="line">Note right of China: China thinks\nabout it</span><br><span class="line">China--&gt;Andrew: How are you?</span><br><span class="line">Andrew-&gt;&gt;China: I am good thanks!</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="Flowcharts"><a href="#Flowcharts" class="headerlink" title="Flowcharts"></a>Flowcharts</h3><ul>
-<li><a href="http://flowchart.js.org/">官网链接</a></li>
-</ul>
-<figure class="highlight markdown"><table><tbody><tr><td class="code"><pre><span class="line">st=&gt;start: Start</span><br><span class="line">op=&gt;operation: Your Operation</span><br><span class="line">cond=&gt;condition: Yes or No?</span><br><span class="line">e=&gt;end</span><br><span class="line"></span><br><span class="line">st-&gt;op-&gt;cond</span><br><span class="line">cond(yes)-&gt;e</span><br><span class="line">cond(no)-&gt;op</span><br></pre></td></tr></tbody></table></figure>
-<div id="flowchart-0" class="flow-chart"></div>
-
-<h3 id="Mermaid"><a href="#Mermaid" class="headerlink" title="Mermaid"></a>Mermaid</h3><ul>
-<li><a href="https://knsv.github.io/mermaid/#/">官网链接</a>：支持时序图、流程图、甘特图、 类图、 状态图、派图</li>
-</ul>
-<figure class="highlight markdown"><table><tbody><tr><td class="code"><pre><span class="line">%% Example with selection of syntaxes</span><br><span class="line">gantt</span><br><span class="line">dateFormat  YYYY-MM-DD</span><br><span class="line">title Adding GANTT diagram functionality to mermaid</span><br><span class="line"></span><br><span class="line">section A section</span><br><span class="line">Completed task            :done,    des1, 2014-01-06,2014-01-08</span><br><span class="line">Active task               :active,  des2, 2014-01-09, 3d</span><br><span class="line">Future task               :         des3, after des2, 5d</span><br><span class="line">Future task2               :         des4, after des3, 5d</span><br><span class="line"></span><br><span class="line">section Critical tasks</span><br><span class="line">Completed task in the critical line :crit, done, 2014-01-06,24h</span><br><span class="line">Implement parser and jison          :crit, done, after des1, 2d</span><br><span class="line">Create tests for parser             :crit, active, 3d</span><br><span class="line">Future task in critical line        :crit, 5d</span><br><span class="line">Create tests for renderer           :2d</span><br><span class="line">Add to mermaid                      :1d</span><br><span class="line"></span><br><span class="line">section Documentation</span><br><span class="line">Describe gantt syntax               :active, a1, after des1, 3d</span><br><span class="line">Add gantt diagram to demo page      :after a1  , 20h</span><br><span class="line">Add another diagram to demo page    :doc1, after a1  , 48h</span><br><span class="line"></span><br><span class="line">section Last section</span><br><span class="line">Describe gantt syntax               :after doc1, 3d</span><br><span class="line">Add gantt diagram to demo page      : 20h</span><br><span class="line">Add another diagram to demo page    : 48h</span><br></pre></td></tr></tbody></table></figure>
-<pre class="mermaid">%% Example with selection of syntaxes
-gantt
-dateFormat  YYYY-MM-DD
-title Adding GANTT diagram functionality to mermaid
-
-section A section
-Completed task            :done,    des1, 2014-01-06,2014-01-08
-Active task               :active,  des2, 2014-01-09, 3d
-Future task               :         des3, after des2, 5d
-Future task2               :         des4, after des3, 5d
-
-section Critical tasks
-Completed task in the critical line :crit, done, 2014-01-06,24h
-Implement parser and jison          :crit, done, after des1, 2d
-Create tests for parser             :crit, active, 3d
-Future task in critical line        :crit, 5d
-Create tests for renderer           :2d
-Add to mermaid                      :1d
-
-section Documentation
-Describe gantt syntax               :active, a1, after des1, 3d
-Add gantt diagram to demo page      :after a1  , 20h
-Add another diagram to demo page    :doc1, after a1  , 48h
-
-section Last section
-Describe gantt syntax               :after doc1, 3d
-Add gantt diagram to demo page      : 20h
-Add another diagram to demo page    : 48h</pre>
-
-<figure class="highlight markdown"><table><tbody><tr><td class="code"><pre><span class="line">classDiagram</span><br><span class="line">Animal &lt;|-- Duck</span><br><span class="line">Animal &lt;|-- Fish</span><br><span class="line">Animal &lt;|-- Zebra</span><br><span class="line">Animal : +int age</span><br><span class="line">Animal : +String gender</span><br><span class="line">Animal: +isMammal()</span><br><span class="line">Animal: +mate()</span><br><span class="line">class Duck{</span><br><span class="line">+String beakColor</span><br><span class="line">+swim()</span><br><span class="line">+quack()</span><br><span class="line">}</span><br><span class="line">class Fish{</span><br><span class="line">-int sizeInFeet</span><br><span class="line">-canEat()</span><br><span class="line">}</span><br><span class="line">class Zebra{</span><br><span class="line">+bool is<span class="emphasis">_wild</span></span><br><span class="line"><span class="emphasis">+run()</span></span><br><span class="line"><span class="emphasis">}</span></span><br></pre></td></tr></tbody></table></figure>
-<pre class="mermaid">classDiagram
-      Animal &lt;|-- Duck
-      Animal &lt;|-- Fish
-      Animal &lt;|-- Zebra
-      Animal : +int age
-      Animal : +String gender
-      Animal: +isMammal()
-      Animal: +mate()
-      class Duck{
-          +String beakColor
-          +swim()
-          +quack()
-      }
-      class Fish{
-          -int sizeInFeet
-          -canEat()
-      }
-      class Zebra{
-          +bool is_wild
-          +run()
-      }</pre>
-
-<figure class="highlight markdown"><table><tbody><tr><td class="code"><pre><span class="line">pie</span><br><span class="line"><span class="code">    title Pie Chart</span></span><br><span class="line"><span class="code">    "Dogs" : 386</span></span><br><span class="line"><span class="code">    "Cats" : 85</span></span><br><span class="line"><span class="code">    "Rats" : 150 </span></span><br></pre></td></tr></tbody></table></figure>
-<pre class="mermaid">pie
-    title Pie Chart
-    "Dogs" : 386
-    "Cats" : 85
-    "Rats" : 150</pre>
-
-<p><script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.6.5/flowchart.min.js"></script><textarea id="flowchart-0-code" style="display: none">st=&gt;start: Start
-op=&gt;operation: Your Operation
-cond=&gt;condition: Yes or No?
-e=&gt;end
-
-st-&gt;op-&gt;cond
-cond(yes)-&gt;e
-cond(no)-&gt;op</textarea><textarea id="flowchart-0-options" style="display: none">{"scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12}</textarea><script>  var code = document.getElementById("flowchart-0-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("flowchart-0-options").value));  var diagram = flowchart.parse(code);  diagram.drawSVG("flowchart-0", options);</script></p>
-]]></content>
-      <categories>
-        <category>Tools</category>
-      </categories>
-      <tags>
-        <tag>markdown</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Python自动化测试框架</title>
     <url>/posts/22398665/</url>
     <content><![CDATA[<h1 id="pytest"><a href="#pytest" class="headerlink" title="pytest"></a>pytest</h1><h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>pytest是一个非常成熟的Python测试框架</p>
@@ -1196,6 +861,141 @@ cond(no)-&gt;op</textarea><textarea id="flowchart-0-options" style="display: non
       </tags>
   </entry>
   <entry>
+    <title>Regex</title>
+    <url>/posts/25256/</url>
+    <content><![CDATA[<h1 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h1><h2 id="元字符"><a href="#元字符" class="headerlink" title="元字符"></a>元字符</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">元字符</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">.</td>
+<td style="text-align:center">匹配除换行符以外的任意字符</td>
+</tr>
+<tr>
+<td style="text-align:center">\w</td>
+<td style="text-align:center">匹配字母、数字、下划线、汉字</td>
+</tr>
+<tr>
+<td style="text-align:center">\s</td>
+<td style="text-align:center">匹配任意的空白符</td>
+</tr>
+<tr>
+<td style="text-align:center">\d</td>
+<td style="text-align:center">匹配数字</td>
+</tr>
+<tr>
+<td style="text-align:center">\b</td>
+<td style="text-align:center">匹配单词的开始或结束</td>
+</tr>
+<tr>
+<td style="text-align:center">^</td>
+<td style="text-align:center">匹配字符串的开始</td>
+</tr>
+<tr>
+<td style="text-align:center">$</td>
+<td style="text-align:center">匹配字符串的结束</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>例：匹配有abc开头的字符串</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">\babc或^abc</span><br></pre></td></tr></tbody></table></figure>
+<a id="more"></a>
+<h2 id="重复限定符"><a href="#重复限定符" class="headerlink" title="重复限定符"></a>重复限定符</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">语法</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">*</td>
+<td style="text-align:center">重复零次或更多次</td>
+</tr>
+<tr>
+<td style="text-align:center">+</td>
+<td style="text-align:center">重复一次或者更多次</td>
+</tr>
+<tr>
+<td style="text-align:center">？</td>
+<td style="text-align:center">重复零次或一次</td>
+</tr>
+<tr>
+<td style="text-align:center">{n}</td>
+<td style="text-align:center">重复n次</td>
+</tr>
+<tr>
+<td style="text-align:center">{n,}</td>
+<td style="text-align:center">重复n次或更多次</td>
+</tr>
+<tr>
+<td style="text-align:center">{n,m}</td>
+<td style="text-align:center">重复n次到m次</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>限定符作用于与它<strong>左边</strong>最近的一个字符。</p>
+<p>例：匹配以a开头，0个或者多个以b结尾的字符串</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">^ab*$</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="分组"><a href="#分组" class="headerlink" title="分组"></a>分组</h2><p>以”()“作为分组。</p>
+<p>例：匹配以ab开头，0个或者多个以b结尾的字符串</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">^(ab)*$</span><br></pre></td></tr></tbody></table></figure>
+<p>注：如需匹配小括号，只要加转义字符串即可。</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">^(\(ab\))*$</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="条件或"><a href="#条件或" class="headerlink" title="条件或"></a>条件或</h2><p>利用“｜”来表达条件或。</p>
+<p>例：匹配130/131/181/177等开头的11位手机号。</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">^(<span class="number">130</span>|<span class="number">131</span>|<span class="number">181</span>|<span class="number">177</span>)\d{<span class="number">8</span>}$</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="区间"><a href="#区间" class="headerlink" title="区间"></a>区间</h2><p>利用“[]”来表达区间条件。</p>
+<blockquote>
+<p>[0-9]：限定0到9</p>
+<p>[A-Z]：限定A到Z</p>
+<p>[165]：限定规定数字</p>
+</blockquote>
+<p>例：匹配130/131/132/156/158/159/145/177开头的11位数字</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">^((<span class="number">13</span>[<span class="number">0</span>-<span class="number">2</span>])|(<span class="number">15</span>[<span class="number">689</span>])|<span class="number">145</span>|<span class="number">177</span>)\d{<span class="number">8</span>}$</span><br></pre></td></tr></tbody></table></figure>
+<h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><ul>
+<li><a href="https://juejin.im/post/5b96a8e2e51d450e6a2de115">掘金博文</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Tools</category>
+      </categories>
+      <tags>
+        <tag>Regex</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Spring</title>
+    <url>/posts/25249120/</url>
+    <content><![CDATA[<h1 id="Spring概况"><a href="#Spring概况" class="headerlink" title="Spring概况"></a>Spring概况</h1><ul>
+<li><p>Spring是一个开源框架，为了解决企业级应用开发的复杂性而创建的，但现在已经不止应用于企业应用</p>
+</li>
+<li><p>Spring是一个轻量级的控制反转(IOC)和面向切面(AOP)的容器框架</p>
+<ul>
+<li>从大小与开销方面而言Spring是轻量的</li>
+<li>通过控制反转(IOC)的技术达到松耦合的目的</li>
+<li>提供了面向切面编程的丰富支持，允许通过分离应用的业务逻辑与系统级服务进行内聚性的开发</li>
+<li>包含并管理应用对象的配置和生命周期，这个意义上是一种容器</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Java FrameWork</category>
+      </categories>
+      <tags>
+        <tag>BigData</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>TensorFlow2.0 In Action</title>
     <url>/posts/29871/</url>
     <content><![CDATA[<h1 id="TensorFlow2-0简化的模型开发流程"><a href="#TensorFlow2-0简化的模型开发流程" class="headerlink" title="TensorFlow2.0简化的模型开发流程"></a>TensorFlow2.0简化的模型开发流程</h1><ul>
@@ -1241,6 +1041,206 @@ cond(no)-&gt;op</textarea><textarea id="flowchart-0-options" style="display: non
       </categories>
       <tags>
         <tag>Neural Network</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Mardown</title>
+    <url>/posts/20260/</url>
+    <content><![CDATA[<h1 id="Markdown语法"><a href="#Markdown语法" class="headerlink" title="Markdown语法"></a>Markdown语法</h1><h2 id="数学表达式"><a href="#数学表达式" class="headerlink" title="数学表达式"></a>数学表达式</h2><p>要启用这个功能，首先到<code>Preference</code>-&gt;<code>Editor</code>中启用。然后使用<script type="math/tex">`符号包裹Tex命令，例如：`$lim_{x \to \infty} \ exp(-x)=0</script>将产生如下的数学表达式：</p>
+<p>$\lim_{x \to \infty} \exp(-x)=0$</p>
+<h2 id="下标"><a href="#下标" class="headerlink" title="下标"></a>下标</h2><p>下标使用<code>~</code>包裹，例如：<code>H~2~O</code>将产生H~2~O, 即水的分子式。</p>
+<h2 id="上标"><a href="#上标" class="headerlink" title="上标"></a>上标</h2><p>上标使用<code>^</code>包裹，例如：<code>y^2^=4</code>将产生表达式y^2^ = 4</p>
+<h2 id="插入表情-happy"><a href="#插入表情-happy" class="headerlink" title="插入表情:happy:"></a>插入表情:happy:</h2><p>使用<code>:happy:</code>输入表情:happy:,使用<code>:sad:</code>输入表情:sad:,使用<code>:cry:</code>输入表情<span class="github-emoji"><span>😢</span><img data-src="https://github.githubassets.com/images/icons/emoji/unicode/1f622.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span>等。以此类推！</p>
+<h2 id="下划线"><a href="#下划线" class="headerlink" title="下划线"></a>下划线</h2><p>用HTML的语法<code>&lt;u&gt;Underline&lt;/u&gt;</code>将产生下划线<u>Underline</u>.</p>
+<h2 id="删除线"><a href="#删除线" class="headerlink" title="删除线"></a>删除线</h2><p>GFM添加了删除文本的语法，这是标准的Markdown语法木有的。使用<code>~~</code>包裹的文本将会具有删除的样式，例如<code>~删除文本~</code>将产生<del>删除文本</del>的样式。</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><ul>
+<li>使用`包裹的内容将会以代码样式显示，例如</li>
+</ul>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">使用`printf()`</span><br></pre></td></tr></tbody></table></figure>
+<p>则会产生<code>printf()</code>样式。</p>
+<a id="more"></a>
+<ul>
+<li>输入<code>``或者</code>然后回车，可以输入代码块，并且可以选择代码的语言。例如：</li>
+</ul>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> Class HelloWorld{</span><br><span class="line">System.out.println(<span class="string">"Hello World!"</span>);</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p>将会产生</p>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> Class HelloWorld{</span><br><span class="line">System.out.println(<span class="string">"Hello World!"</span>);</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="强调"><a href="#强调" class="headerlink" title="强调"></a>强调</h2><p>使用两个<code>*</code>号或者两个<code>_</code>包裹的内容将会被强调。例如</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">**使用两个*号强调内容**</span><br><span class="line">__使用两个下划线强调内容__</span><br></pre></td></tr></tbody></table></figure>
+<p>将会输出</p>
+<p><strong>使用两个*号强调内容</strong><br><strong>使用两个下划线强调内容</strong><br>Typroa 推荐使用两个*号。</p>
+<h2 id="斜体"><a href="#斜体" class="headerlink" title="斜体"></a>斜体</h2><p>  在标准的Markdown语法中，*和_包裹的内容会是斜体显示，但是GFM下划线一般用来分隔人名和代码变量名，因此我们推荐是用星号来包裹斜体内容。如果要显示星号，则使用转义：</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">\*</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="插入URL连接"><a href="#插入URL连接" class="headerlink" title="插入URL连接"></a>插入URL连接</h2><p>使用尖括号包裹的url将产生一个连接，例如：<code>&lt;www.baidu.com&gt;</code>将产生连接:<www.baidu.com>.</www.baidu.com></p>
+<p>如果是标准的url，则会自动产生连接，例如:www.google.com</p>
+<h2 id="目录列表Table-of-Contents（TOC）"><a href="#目录列表Table-of-Contents（TOC）" class="headerlink" title="目录列表Table of Contents（TOC）"></a>目录列表Table of Contents（TOC）</h2><p>输入[toc]然后回车，将会产生一个目录，这个目录抽取了文章的所有标题，自动更新内容。</p>
+<h2 id="水平分割线"><a href="#水平分割线" class="headerlink" title="水平分割线"></a>水平分割线</h2><p>使用<code>***</code>或者<code>---</code>，然后回车，来产生水平分割线。</p>
+<hr>
+<h2 id="标注"><a href="#标注" class="headerlink" title="标注"></a>标注</h2><p>我们可以对某一个词语进行标注。例如</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">某些人用过了才知道[^注释]</span><br><span class="line">[^注释]:Somebody that I used to know.</span><br></pre></td></tr></tbody></table></figure>
+<p>将产生：</p>
+<p>某些人用过了才知道<sup><a href="#fn_注释" id="reffn_注释">注释</a></sup><br><sup><a href="#fn_注释" id="reffn_注释">注释</a></sup>: Somebody that I used to know.</p>
+<p>把鼠标放在<code>注释</code>上，将会有提示内容。</p>
+<h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">|姓名|性别|毕业学校|工资|</span><br><span class="line">|:---|:---:|:---:|---:|</span><br><span class="line">|杨洋|男|重庆交通大学|3200|</span><br><span class="line">|峰哥|男|贵州大学|5000|</span><br><span class="line">|小阳|女|北京大学|2000|</span><br></pre></td></tr></tbody></table></figure>
+<p>将产生:</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">姓名</th>
+<th style="text-align:center">性别</th>
+<th style="text-align:center">毕业学校</th>
+<th style="text-align:right">工资</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">杨洋</td>
+<td style="text-align:center">男</td>
+<td style="text-align:center">重庆交通大学</td>
+<td style="text-align:right">3200</td>
+</tr>
+<tr>
+<td style="text-align:left">峰哥</td>
+<td style="text-align:center">男</td>
+<td style="text-align:center">贵州大学</td>
+<td style="text-align:right">5000</td>
+</tr>
+<tr>
+<td style="text-align:left">小阳</td>
+<td style="text-align:center">女</td>
+<td style="text-align:center">北京大学</td>
+<td style="text-align:right">2000</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>其中代码的第二行指定对齐的方式，第一个是左对齐，第二个和第三个是居中，最后一个是右对齐。</p>
+<h2 id="数学表达式块"><a href="#数学表达式块" class="headerlink" title="数学表达式块"></a>数学表达式块</h2><p>输入两个美元符号，然后回车，就可以输入数学表达式块了。例如：</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">$$\mathbf{V}_1 \times \mathbf{V}_2 =  \begin{vmatrix} \mathbf{i} &amp; \mathbf{j} &amp; \mathbf{k} \\\frac{\partial X}{\partial u} &amp;  \frac{\partial Y}{\partial u} &amp; 0 \\\frac{\partial X}{\partial v} &amp;  \frac{\partial Y}{\partial v} &amp; 0 \\\end{vmatrix}$$</span><br></pre></td></tr></tbody></table></figure>
+<p>将会产生:</p>
+<script type="math/tex; mode=display">\mathbf{V}_1 \times \mathbf{V}_2 =  \begin{vmatrix} \mathbf{i} & \mathbf{j} & \mathbf{k} \\\frac{\partial X}{\partial u} &  \frac{\partial Y}{\partial u} & 0 \\\frac{\partial X}{\partial v} &  \frac{\partial Y}{\partial v} & 0 \\\end{vmatrix}</script><h2 id="任务列表"><a href="#任务列表" class="headerlink" title="任务列表"></a>任务列表</h2><p>使用如下的代码创建任务列表，在[]中输入x表示完成，也可以通过点击选择完成或者没完成。</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">- [ ] 吃饭</span><br><span class="line">- [ ] 逛街</span><br><span class="line">- [ ] 看电影</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li><p>[x] 吃饭</p>
+</li>
+<li><p>[x] 逛街</p>
+</li>
+<li><p>[x] 看电影</p>
+</li>
+<li><p>[x] </p>
+</li>
+</ul>
+<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><p>输入+, -, *,创建无序的列表，使用任意数字开头，创建有序列表，例如：</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">**无序的列表**</span><br><span class="line">* tfboys</span><br><span class="line">* 杨洋</span><br><span class="line">* Mr.Smith</span><br></pre></td></tr></tbody></table></figure>
+<p><strong>无序的列表</strong></p>
+<ul>
+<li>tfboys</li>
+<li>杨洋</li>
+<li>Mr.Smith</li>
+</ul>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">**有序的列表**</span><br><span class="line">1. 苹果</span><br><span class="line">6. 香蕉</span><br><span class="line">10. 我都不喜欢</span><br></pre></td></tr></tbody></table></figure>
+<p><strong>有序的列表</strong></p>
+<ol>
+<li>苹果</li>
+<li>香蕉</li>
+<li>我都不喜欢</li>
+</ol>
+<h2 id="块引用"><a href="#块引用" class="headerlink" title="块引用"></a>块引用</h2><p>使用&gt;来插入块引用。例如：</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">&gt;这是一个块引用！</span><br></pre></td></tr></tbody></table></figure>
+<p>将产生：</p>
+<blockquote>
+<p>这是一个块引用！</p>
+</blockquote>
+<h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><p>使用#表示一级标题，##表示二级标题，以此类推，有6个标题。</p>
+<h1 id="Markdown插件"><a href="#Markdown插件" class="headerlink" title="Markdown插件"></a>Markdown插件</h1><h2 id="画图"><a href="#画图" class="headerlink" title="画图"></a>画图</h2><h3 id="Sequence-Diagrams"><a href="#Sequence-Diagrams" class="headerlink" title="Sequence Diagrams"></a>Sequence Diagrams</h3><ul>
+<li><a href="https://bramp.github.io/js-sequence-diagrams/">官网链接</a></li>
+</ul>
+<figure class="highlight markdown"><table><tbody><tr><td class="code"><pre><span class="line">Andrew-&gt;China: Says Hello</span><br><span class="line">Note right of China: China thinks\nabout it</span><br><span class="line">China--&gt;Andrew: How are you?</span><br><span class="line">Andrew-&gt;&gt;China: I am good thanks!</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">Andrew-&gt;China: Says Hello</span><br><span class="line">Note right of China: China thinks\nabout it</span><br><span class="line">China--&gt;Andrew: How are you?</span><br><span class="line">Andrew-&gt;&gt;China: I am good thanks!</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="Flowcharts"><a href="#Flowcharts" class="headerlink" title="Flowcharts"></a>Flowcharts</h3><ul>
+<li><a href="http://flowchart.js.org/">官网链接</a></li>
+</ul>
+<figure class="highlight markdown"><table><tbody><tr><td class="code"><pre><span class="line">st=&gt;start: Start</span><br><span class="line">op=&gt;operation: Your Operation</span><br><span class="line">cond=&gt;condition: Yes or No?</span><br><span class="line">e=&gt;end</span><br><span class="line"></span><br><span class="line">st-&gt;op-&gt;cond</span><br><span class="line">cond(yes)-&gt;e</span><br><span class="line">cond(no)-&gt;op</span><br></pre></td></tr></tbody></table></figure>
+<div id="flowchart-0" class="flow-chart"></div>
+
+<h3 id="Mermaid"><a href="#Mermaid" class="headerlink" title="Mermaid"></a>Mermaid</h3><ul>
+<li><a href="https://knsv.github.io/mermaid/#/">官网链接</a>：支持时序图、流程图、甘特图、 类图、 状态图、派图</li>
+</ul>
+<figure class="highlight markdown"><table><tbody><tr><td class="code"><pre><span class="line">%% Example with selection of syntaxes</span><br><span class="line">gantt</span><br><span class="line">dateFormat  YYYY-MM-DD</span><br><span class="line">title Adding GANTT diagram functionality to mermaid</span><br><span class="line"></span><br><span class="line">section A section</span><br><span class="line">Completed task            :done,    des1, 2014-01-06,2014-01-08</span><br><span class="line">Active task               :active,  des2, 2014-01-09, 3d</span><br><span class="line">Future task               :         des3, after des2, 5d</span><br><span class="line">Future task2               :         des4, after des3, 5d</span><br><span class="line"></span><br><span class="line">section Critical tasks</span><br><span class="line">Completed task in the critical line :crit, done, 2014-01-06,24h</span><br><span class="line">Implement parser and jison          :crit, done, after des1, 2d</span><br><span class="line">Create tests for parser             :crit, active, 3d</span><br><span class="line">Future task in critical line        :crit, 5d</span><br><span class="line">Create tests for renderer           :2d</span><br><span class="line">Add to mermaid                      :1d</span><br><span class="line"></span><br><span class="line">section Documentation</span><br><span class="line">Describe gantt syntax               :active, a1, after des1, 3d</span><br><span class="line">Add gantt diagram to demo page      :after a1  , 20h</span><br><span class="line">Add another diagram to demo page    :doc1, after a1  , 48h</span><br><span class="line"></span><br><span class="line">section Last section</span><br><span class="line">Describe gantt syntax               :after doc1, 3d</span><br><span class="line">Add gantt diagram to demo page      : 20h</span><br><span class="line">Add another diagram to demo page    : 48h</span><br></pre></td></tr></tbody></table></figure>
+<pre class="mermaid">%% Example with selection of syntaxes
+gantt
+dateFormat  YYYY-MM-DD
+title Adding GANTT diagram functionality to mermaid
+
+section A section
+Completed task            :done,    des1, 2014-01-06,2014-01-08
+Active task               :active,  des2, 2014-01-09, 3d
+Future task               :         des3, after des2, 5d
+Future task2               :         des4, after des3, 5d
+
+section Critical tasks
+Completed task in the critical line :crit, done, 2014-01-06,24h
+Implement parser and jison          :crit, done, after des1, 2d
+Create tests for parser             :crit, active, 3d
+Future task in critical line        :crit, 5d
+Create tests for renderer           :2d
+Add to mermaid                      :1d
+
+section Documentation
+Describe gantt syntax               :active, a1, after des1, 3d
+Add gantt diagram to demo page      :after a1  , 20h
+Add another diagram to demo page    :doc1, after a1  , 48h
+
+section Last section
+Describe gantt syntax               :after doc1, 3d
+Add gantt diagram to demo page      : 20h
+Add another diagram to demo page    : 48h</pre>
+
+<figure class="highlight markdown"><table><tbody><tr><td class="code"><pre><span class="line">classDiagram</span><br><span class="line">Animal &lt;|-- Duck</span><br><span class="line">Animal &lt;|-- Fish</span><br><span class="line">Animal &lt;|-- Zebra</span><br><span class="line">Animal : +int age</span><br><span class="line">Animal : +String gender</span><br><span class="line">Animal: +isMammal()</span><br><span class="line">Animal: +mate()</span><br><span class="line">class Duck{</span><br><span class="line">+String beakColor</span><br><span class="line">+swim()</span><br><span class="line">+quack()</span><br><span class="line">}</span><br><span class="line">class Fish{</span><br><span class="line">-int sizeInFeet</span><br><span class="line">-canEat()</span><br><span class="line">}</span><br><span class="line">class Zebra{</span><br><span class="line">+bool is<span class="emphasis">_wild</span></span><br><span class="line"><span class="emphasis">+run()</span></span><br><span class="line"><span class="emphasis">}</span></span><br></pre></td></tr></tbody></table></figure>
+<pre class="mermaid">classDiagram
+      Animal &lt;|-- Duck
+      Animal &lt;|-- Fish
+      Animal &lt;|-- Zebra
+      Animal : +int age
+      Animal : +String gender
+      Animal: +isMammal()
+      Animal: +mate()
+      class Duck{
+          +String beakColor
+          +swim()
+          +quack()
+      }
+      class Fish{
+          -int sizeInFeet
+          -canEat()
+      }
+      class Zebra{
+          +bool is_wild
+          +run()
+      }</pre>
+
+<figure class="highlight markdown"><table><tbody><tr><td class="code"><pre><span class="line">pie</span><br><span class="line"><span class="code">    title Pie Chart</span></span><br><span class="line"><span class="code">    "Dogs" : 386</span></span><br><span class="line"><span class="code">    "Cats" : 85</span></span><br><span class="line"><span class="code">    "Rats" : 150 </span></span><br></pre></td></tr></tbody></table></figure>
+<pre class="mermaid">pie
+    title Pie Chart
+    "Dogs" : 386
+    "Cats" : 85
+    "Rats" : 150</pre>
+
+<p><script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.6.5/flowchart.min.js"></script><textarea id="flowchart-0-code" style="display: none">st=&gt;start: Start
+op=&gt;operation: Your Operation
+cond=&gt;condition: Yes or No?
+e=&gt;end
+
+st-&gt;op-&gt;cond
+cond(yes)-&gt;e
+cond(no)-&gt;op</textarea><textarea id="flowchart-0-options" style="display: none">{"scale":1,"line-width":2,"line-length":50,"text-margin":10,"font-size":12}</textarea><script>  var code = document.getElementById("flowchart-0-code").value;  var options = JSON.parse(decodeURIComponent(document.getElementById("flowchart-0-options").value));  var diagram = flowchart.parse(code);  diagram.drawSVG("flowchart-0", options);</script></p>
+]]></content>
+      <categories>
+        <category>Tools</category>
+      </categories>
+      <tags>
+        <tag>markdown</tag>
       </tags>
   </entry>
   <entry>
@@ -2251,6 +2251,281 @@ cond(no)-&gt;op</textarea><textarea id="flowchart-0-options" style="display: non
       </tags>
   </entry>
   <entry>
+    <title>数据库基础</title>
+    <url>/posts/22488/</url>
+    <content><![CDATA[<h1 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h1><p>数据库事务(Database Transaction) ，是指为访问并可能操作各个数据项的<strong>一个数据库操作序列，这些操作要么全部执行，要么全部不执行</strong>，是一个不可分割的工作单位。事务由事务开始与结束之间执行的全部数据库操作组成。</p>
+<p>如：我们去银行转账，操作可能分为以下两个环节：</p>
+<p>（1）从第一个账户划出款项</p>
+<p>（2）将款项存入第二个账户</p>
+<p>这两个环节是关联的，如果第二个环节没有完成，那么所有的环节都应该取消。</p>
+<p>性质：</p>
+<p>A：原子性（Atomicity）事务中的全部操作在数据库中是不可分割的，要么全部完成，要么全部不执行。</p>
+<p>C：一致性（Consistency）几个并行执行的事务，其执行结果必须与按某一顺序 串行执行的结果相一致。</p>
+<p>I：隔离性（Isolation）事务的执行不受其他事务的干扰，事务执行的中间结果对其他事务必须是透明的。</p>
+<p>D：持久性（Durability）对于任意已提交事务，系统必须保证该事务对数据库的改变不被丢失，即使数据库出现故障。</p>
+<p>彻底理解数据库事务: <a href="http://www.hollischuang.com/archives/898">http://www.hollischuang.com/archives/898</a></p>
+<a id="more"></a>
+<h1 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h1><h2 id="主键-超键-候选键-外键"><a href="#主键-超键-候选键-外键" class="headerlink" title="主键 超键 候选键 外键"></a>主键 超键 候选键 外键</h2><ul>
+<li><p><strong>主键</strong>：指的是<strong>一个列或多列的组合，其值能唯一地标识表中的每一行</strong>，通过它可强制表的实体完整性。主键主要是用与其他表的外键关联，以及本记录的修改与删除。</p>
+<p>身份证号也是一种业务场景，如果身份证号升位了，或者需要变更，作为主键，不得不修改的时候，就会对业务产生严重影响。 所以，选取主键的一个基本原则是：<strong>不使用任何业务相关的字段作为主键</strong>。 因此，身份证号、手机号、邮箱地址这些看上去可以唯一的字段，均不可用作主键。</p>
+</li>
+<li><p><strong>外键</strong>：关系模式R1中的某属性集不是R1的主键，而是另一个<strong>关系R2的主键</strong>则该属性集是关系模式<strong>R1的外键</strong>。</p>
+</li>
+<li><p><strong>超键</strong>：<strong>在关系中能唯一标识元组的属性集称为关系模式的超键</strong>。一个属性可以作为一个超键，多个属性组合在一起也可以作为一个超键。<strong>超键包含候选键和主键。</strong></p>
+</li>
+<li><p><strong>候选键</strong>：是最小超键，即没有冗余元素的超键。</p>
+</li>
+</ul>
+<p>例子：</p>
+<blockquote>
+<p>假设有如下两个表：</p>
+<p>学生（学号，姓名，性别，身份证号，教师编号）</p>
+<p>教师（教师编号，姓名，工资）</p>
+</blockquote>
+<p><strong>超键：</strong></p>
+<p>由超键的定义可知，学生表中含有学号或者身份证号的任意组合都为此表的超键。如：（学号）、（学号，姓名）、（身份证号，性别）等。</p>
+<p><strong>候选键：</strong></p>
+<p>候选键属于超键，它是最小的超键，就是说如果再去掉候选键中的任何一个属性它就不再是超键了。学生表中的候选键为：（学号）、（身份证号）。</p>
+<p><strong>主键：</strong></p>
+<p>主键就是候选键里面的一个，是人为规定的，例如学生表中，我们通常会让“学号”做主键，教师表中让“教师编号”做主键。</p>
+<p><strong>外键：</strong></p>
+<p>外键比较简单，学生表中的外键就是“教师编号”。外键主要是用来描述两个表的关系。</p>
+<h2 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h2><ul>
+<li>索引是关系数据库中对<strong>某一列或多个列的值进行预排序的数据结构</strong>。通过使用索引，可以让数据库系统不必扫描整个表，而是<strong>直接定位到符合条件的记录，这样就大大加快了查询速度。</strong></li>
+</ul>
+<p>索引的效率<strong>取决于索引列的值是否散列</strong>，即该<strong>列的值如果越不相同，那么索引效率越高</strong>。反过来，如果记录的列存在大量相同的值。例如gender列，那对该列创建索引就没有意义。</p>
+<p>例如：创建名称为idx_score，使用列score的索引。</p>
+<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> students</span><br><span class="line"><span class="keyword">ADD</span> <span class="keyword">INDEX</span> idx_score (score)</span><br></pre></td></tr></tbody></table></figure>
+<p>推荐:<a href="https://www.liaoxuefeng.com/wiki/1177760294764384/1218728442198976">https://www.liaoxuefeng.com/wiki/1177760294764384/1218728442198976</a></p>
+<p><a href="http://blog.codinglabs.org/articles/theory-of-mysql-index.html">MySQL索引背后的数据结构及算法原理</a></p>
+<p>聚集索引,非聚集索引, B-Tree（B树属于多叉树又名<strong>平衡多路查找树</strong>（查找路径不只两个））,B+Tree, 最左前缀原理</p>
+<ul>
+<li>数据库索引，<strong>是数据库管理系统中一个排序的数据结构，以协助快速查询</strong>，更新数据库表中数据。索引的实现通常使用<strong>B树($O(Log_2N)$)以其变种B+树</strong>。</li>
+</ul>
+<p>在数据之外，数据库系统还维护着<strong>满足特定查找算法的数据结构</strong>，这些数据结构以某种方式引用（指向）数据，这样就可以在这些数据结构上实现高级查找算法。<strong>这种数据结构，就是索引</strong>。</p>
+<p>为表设置索引要付出代价的：<strong>一是增加了数据库的存储空间，二是在插入和修改数据时要花费较多的时间（因为索引也要随之变动）</strong></p>
+<h2 id="视图"><a href="#视图" class="headerlink" title="视图"></a>视图</h2><ul>
+<li><strong>视图是虚拟的表，主要用于简化检索，保护数据，并不用于更新，而且大部分视图都不可以更新。</strong>隐藏具体的细节，保护数据; 视图创建后，可以使用与表相同的方式利用它们。</li>
+</ul>
+<p>视图不能被索引，也不能有关联的触发器或默认值，如果视图本身内有order by则对视图再次order by将被覆盖。</p>
+<blockquote>
+<p>创建视图： create view xxx as xxxxxx</p>
+</blockquote>
+<p>优点：</p>
+<ol>
+<li>使用视图，可以定制用户数据，聚焦特定的数据。</li>
+<li>使用视图，可以简化数据操作。</li>
+<li>使用视图，基表中的数据就有了一定的安全性</li>
+</ol>
+<p><a href="https://www.jianshu.com/p/6a2c7407be4c">https://www.jianshu.com/p/6a2c7407be4c</a></p>
+<h2 id="drop-truncate-delete的区别"><a href="#drop-truncate-delete的区别" class="headerlink" title="drop, truncate, delete的区别"></a>drop, truncate, delete的区别</h2><ul>
+<li><p>drop直接删掉表</p>
+</li>
+<li><p>truncate删除表中数据，<strong>再插入时自增长id又从1开始</strong></p>
+<p>truncate table则一次性地从表中删除所有的数据并不把单独的删除操作记录记入日志保存，<strong>删除行是不能恢复的</strong>。并且在删除的过程中不会激活与表有关的删除触发器，执行速度快；</p>
+</li>
+<li><p>delete删除表中数据，<strong>可以加where字句</strong></p>
+<p>delete 语句执行删除的过程是<strong>每次从表中删除一行</strong>，并且同时将该行的删除操作作为事务记录在日志中保存以便进行回滚操作。</p>
+</li>
+</ul>
+<ol>
+<li><p>表和索引所占空间：drop语句将表所占用的空间全释放掉；当表被truncate后，这个表和索引所占用的空间会恢复到初始大小，而delete操作不会减少表或索引所占用的空间。</p>
+</li>
+<li><p>一般而言，drop&gt;truncate&gt;delete</p>
+</li>
+<li><p>应用范围。truncate只能对table，delete可以是table和view</p>
+</li>
+<li><p>truncate和delete只删除数据，而drop则删除整个表<strong>（结构和数据)</strong></p>
+</li>
+<li><p>truncate与不带where的delete:只删除数据，<strong>而不删除表的结构（定义）</strong>drop语句将删除表的结构被依赖的<strong>约束(constrain),触发器（trigger)索引(index)</strong>;依赖于该表的存储过程/函数将被保留，但其状态会变为:invalid.</p>
+</li>
+</ol>
+<h2 id="连接的种类：内连接、外连接、交叉连接"><a href="#连接的种类：内连接、外连接、交叉连接" class="headerlink" title="连接的种类：内连接、外连接、交叉连接"></a>连接的种类：内连接、外连接、交叉连接</h2><p>join_type 指出连接类型。join_condition指连接条件。</p>
+<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line">FROM  join_table join_type join_table[ON (join_condition)]</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li><p><strong>内连接（inner join）</strong>：使用比较运算符（包括=、&gt;、&lt;、&lt;&gt;、&gt;=、&lt;=、!&gt;和!&lt;）进行表间的比较操作，查询与连接条件相匹配的数据</p>
+<ul>
+<li>等值连接（=）</li>
+</ul>
+<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> T_student s, T_class c <span class="keyword">where</span> s.classID = c.classID</span><br><span class="line">等于</span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> T_student s <span class="keyword">inner</span> <span class="keyword">join</span> T_class <span class="keyword">on</span> s.classID = c.classID</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>自然连接：与等值相同，<strong>但是会删除表中的重复列</strong></li>
+</ul>
+<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> s.*,c.className <span class="keyword">from</span> T_student s <span class="keyword">inner</span> <span class="keyword">join</span> T_class c <span class="keyword">on</span> s.classId = c.classId</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>不等连接（&lt;, &gt;, &lt;&gt;, &gt;=, &lt;=, !&gt;, !&lt;）</li>
+</ul>
+<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> T_student s <span class="keyword">inner</span> <span class="keyword">join</span> T_class c <span class="keyword">on</span> s.classId &lt;&gt; c.classId</span><br></pre></td></tr></tbody></table></figure></li>
+<li><p><strong>外连接</strong>（left join、right join、full join）</p>
+<ul>
+<li><p><strong>左连接</strong>（LEFT JOIN）：返回左表中的所有行，如果左表中行在右表中没有匹配行，则结果中右表中的列返回空值。</p>
+<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span>  T_student s <span class="keyword">left</span> <span class="keyword">join</span> T_class c <span class="keyword">on</span> s.classId = c.classId</span><br></pre></td></tr></tbody></table></figure></li>
+<li><p>左外连接（LEFT OUTER JOIN）:</p>
+</li>
+<li><p><strong>右连接</strong>（RIGHT JOIN）: 与左连接相反</p>
+</li>
+<li><p>右外连接（RIGHT OUTER JOIN）</p>
+</li>
+<li><p><strong>全连接</strong>（FULL JOIN）: 返回左表和右表中的所有行。当某行在另一表中没有匹配行，则另一表中的列返回空值</p>
+</li>
+<li><p>全外连接（FULL OUTER JOIN）</p>
+</li>
+</ul>
+</li>
+<li><p><strong>交叉连接</strong>：笛卡尔积（cross join）</p>
+<p>不带WHERE条件子句，<strong>它将会返回被连接的两个表的笛卡尔积</strong>，返回结果的行数等于两个表行数的乘积（例如：T_student和T_class，返回4*4=16条记录）；如果带where，返回或显示的是匹配的行数。</p>
+<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> T_student s <span class="keyword">cross</span> <span class="keyword">join</span> T_class c <span class="keyword">where</span> s.classId = c.classId </span><br></pre></td></tr></tbody></table></figure>
+</li>
+</ul>
+<h2 id="存储过程与触发器的区别"><a href="#存储过程与触发器的区别" class="headerlink" title="存储过程与触发器的区别"></a>存储过程与触发器的区别</h2><ul>
+<li>存储过程：用户调用的时候才会执行</li>
+</ul>
+<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">PROCEDURE</span> 创建的存储过程名字(<span class="keyword">OUT</span>|<span class="keyword">IN</span>|INOUT 参数名 数据类型,...,...) 特征 过程体</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>触发器：对表进行诸如UPDATE、INSERT、DELETE等时，<strong>SqlServer自动执行触发器定义的SQL语句</strong>，通过事件触发</li>
+</ul>
+<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TRIGGER</span> 创建的触发器名字 BEFFOR|<span class="keyword">AFTER</span>  <span class="keyword">INSERT</span>|<span class="keyword">UPDATE</span>|<span class="keyword">DELETE</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">ON</span> 表名字 <span class="keyword">FOR</span>  触发器的执行间隔   触发器的<span class="keyword">SQL</span>语句</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="数据库优化的思路"><a href="#数据库优化的思路" class="headerlink" title="数据库优化的思路"></a>数据库优化的思路</h2><ol>
+<li><p>SQL语句优化</p>
+<ul>
+<li>应尽量避免在 where 子句中对字段进行 <strong>null 值</strong>判断，否则将导致<strong>引擎放弃使用索引而进行全表扫描</strong></li>
+<li>应尽量避免在 where 子句中使用<strong>!=或&lt;&gt;操作符</strong>，否则将<strong>引擎放弃使用索引而进行全表扫描</strong></li>
+</ul>
+</li>
+<li><p>索引优化</p>
+<ul>
+<li>创建索引：<strong>对经常需要搜索的列上</strong>，可以加快搜索的速度；<strong>在经常需要排序的列上创建索引</strong>，因为索引已经排序，这样查询可以利用索引的排序，加快排序查询时间；</li>
+<li>不应该创建索引：对于那些在查询中很少使用或者参考的列不应该创建索引；当修改性能远远大于检索性能时，不应该创建索引</li>
+</ul>
+</li>
+<li><p>数据库结构优化</p>
+<ul>
+<li>范式优化：消除冗余（节省空间）</li>
+<li>反范式优化：适当增加冗余（减少join）</li>
+</ul>
+</li>
+<li><p>服务器硬件优化</p>
+<p>花钱</p>
+</li>
+</ol>
+<p><a href="https://www.jishuchi.com/read/mysql-interview/2810">https://www.jishuchi.com/read/mysql-interview/2810</a></p>
+<h2 id="关系数据库范式"><a href="#关系数据库范式" class="headerlink" title="关系数据库范式"></a>关系数据库范式</h2><p>在进行数据库的设计时，所遵循的一些规范，只要按照设计规范进行设计，就能设计出没有数据冗余和数据维护异常的数据库结构。</p>
+<p>数据库的设计的规范有很多，通常来说我们在设是数据库时只要达到其中一些规范就可以了，这些规范又称之为数据库的三范式，一共有三条，也存在着其他范式，我们只要做到满足前三个范式的要求，就能设陈出符合我们的数据库了，我们也不能全部来按照范式的要求来做，还要考虑实际的业务使用情况，所以有时候也需要做一些违反范式的要求。</p>
+<ol>
+<li><p>数据库设计的第一范式(最基本)，基本上所有数据库的范式都是符合第一范式的，符合第一范式的表具有以下几个特点：</p>
+<p><strong>数据库表中的所有字段都只具有单一属性，是指数据库表的每一列(即每个属性)都是不可分割的基本数据项，同一列中不能有多个值</strong>（整型，浮点型，字符型等）</p>
+</li>
+<li><p>数据库设计的第二范式(是在第一范式的基础上设计的)，<strong>要求一个表中只具有一个业务主键</strong>，也就是说符合第二范式的表中<strong>不能存在非主键列对只对部分主键的依赖关系</strong></p>
+</li>
+<li><p>数据库设计的第三范式，<strong>第三范式就是属性不依赖于其它非主属性</strong>。</p>
+</li>
+</ol>
+<h2 id="MySQL引擎：InnoDB、MyIASM和MEMORY"><a href="#MySQL引擎：InnoDB、MyIASM和MEMORY" class="headerlink" title="MySQL引擎：InnoDB、MyIASM和MEMORY"></a>MySQL引擎：InnoDB、MyIASM和MEMORY</h2><p>MySQL支持三个引擎：InnoDB、MyIASM和MEMORY</p>
+<p><strong>InnoDB 和 MyISAM之间的区别：</strong></p>
+<ul>
+<li><p>两者索引<strong>都使用B+树</strong>，InnoDB是MySQL默认的存储引擎</p>
+</li>
+<li><p>InnoDB<strong>支持事务</strong>，而MyISAM不支持事务</p>
+</li>
+<li>InnoDB<strong>支持外键</strong>，而MyISAM不支持</li>
+<li>InnoDB<strong>支持MVCC,</strong> 而MyISAM不支持</li>
+<li>InnoDB<strong>不支持全文索引</strong>，而MyISAM支持</li>
+</ul>
+<p><strong>InnoDB</strong> ：如果要提供提交、回滚、崩溃恢复的事务安全能力，用InnoDB</p>
+<p><strong>MyISAM</strong>：如果数据表主要用来<strong>插入和查询</strong>记录，MyISAM能提供较高的处理速度</p>
+<p><strong>MEMORY：</strong>如果只是临时存放数据，数据量不大，不需要较高的安全性，可以选择将数据保存在内存中的MEMORY引擎</p>
+<p>mysql 数据库引擎: <a href="http://www.cnblogs.com/0201zcr/p/5296843.html">http://www.cnblogs.com/0201zcr/p/5296843.html</a><br>MySQL存储引擎－－MyISAM与InnoDB区别: <a href="https://segmentfault.com/a/1190000008227211">https://segmentfault.com/a/1190000008227211</a></p>
+<h2 id="？-MySQL的innodb引擎是如何实现MVCC的"><a href="#？-MySQL的innodb引擎是如何实现MVCC的" class="headerlink" title="？ MySQL的innodb引擎是如何实现MVCC的"></a>？ <a href="http://lib.csdn.net/base/mysql">MySQL</a>的innodb引擎是如何实现MVCC的</h2><blockquote>
+<p>​    全称是Multi-Version Concurrent Control，即多版本并发控制，在MVCC协议下，<strong>每个读操作会看到一个一致性的snapshot</strong>，并且可以实现非阻塞的读。MVCC允许数据具有多个版本，这个版本可以是时间戳或者是全局递增的事务ID，在同一个时间点，不同的事务看到的数据是不同的。</p>
+</blockquote>
+<p>innodb会为每一行添加两个字段，分别表示该行<strong>创建的版本</strong>和<strong>删除的版本</strong>，填入的是事务的版本号，这个版本号随着事务的创建不断递增。在repeated read的隔离级别（<a href="http://blog.csdn.net/chosen0ne/article/details/10036775">事务的隔离级别请看这篇文章</a>）下，具体各种数据库操作的实现：</p>
+<ul>
+<li>select：满足以下两个条件innodb会返回该行数据：<ul>
+<li>该行的创建版本号小于等于当前版本号，用于保证在select操作之前所有的操作已经执行落地。</li>
+<li>该行的删除版本号大于当前版本或者为空。删除版本号大于当前版本意味着有一个并发事务将该行删除了。</li>
+</ul>
+</li>
+<li>insert：将新插入的行的创建版本号设置为当前系统的版本号。</li>
+<li>delete：将要删除的行的删除版本号设置为当前系统的版本号。</li>
+<li>update：不执行原地update，而是转换成insert + delete。将旧行的删除版本号设置为当前版本号，并将新行insert同时设置创建版本号为当前版本号。</li>
+</ul>
+<p>其中，写操作（insert、delete和update）执行时，需要将系统版本号递增。</p>
+<p>​    由于旧数据并不真正的删除，所以必须对这些数据进行清理，innodb会开启一个后台线程执行清理工作，具体的规则是将删除版本号小于当前系统版本的行删除，这个过程叫做purge。</p>
+<p>通过MVCC很好的实现了事务的隔离性，可以达到repeated read级别，要实现serializable还必须加锁。</p>
+<h2 id="MySQL怎么限制IP访问？"><a href="#MySQL怎么限制IP访问？" class="headerlink" title="MySQL怎么限制IP访问？"></a>MySQL怎么限制IP访问？</h2><figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">grant</span> <span class="keyword">all</span> priviledge <span class="keyword">on</span> <span class="string">"*"</span> <span class="keyword">to</span> <span class="string">"用户名@ip地址"</span> <span class="keyword">identified</span> <span class="keyword">by</span> <span class="string">"数据库密码"</span></span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 创建用户</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">user</span> <span class="string">'admin@192.168.0.1'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 修改密码</span></span><br><span class="line"><span class="keyword">set</span> <span class="keyword">password</span> <span class="keyword">for</span> <span class="string">'admin@192.168.0.1'</span> = <span class="keyword">password</span>(<span class="string">"admin"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 授权：只有来自192.168.0.1的用户才能通过admin访问服务器</span></span><br><span class="line"><span class="keyword">grant</span> <span class="keyword">all</span> priviledges <span class="keyword">on</span> <span class="string">"*"</span> <span class="keyword">to</span> <span class="string">"admin@192.168.0.1"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 刷新权限</span></span><br><span class="line"><span class="keyword">flush</span> priviledges</span><br></pre></td></tr></tbody></table></figure>
+<h1 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h1><h2 id="Redis是什么？"><a href="#Redis是什么？" class="headerlink" title="Redis是什么？"></a>Redis是什么？</h2><ol>
+<li>是一个完全开源免费的<strong>key-value内存数据库</strong> </li>
+<li>通常被认为是一个数据结构服务器，主要是因为其有着丰富的数据结构 strings、map、 list、sets、 sorted sets</li>
+</ol>
+<h2 id="Redis数据库"><a href="#Redis数据库" class="headerlink" title="Redis数据库"></a>Redis数据库</h2><blockquote>
+<p>​    通常局限点来说，Redis也以消息队列的形式存在，作为内嵌的List存在，满足实时的高并发需求。在使用缓存的时候，redis比memcached具有更多的优势，并且支持更多的数据类型，把redis当作一个中间存储系统，用<strong>来处理高并发的数据库操作</strong></p>
+</blockquote>
+<ul>
+<li>速度快：使用标准C写，<strong>所有数据都在内存中完成</strong>，读写速度分别达到10万/20万 </li>
+<li>持久化：对数据的更新采用Copy-on-write技术，可以异步地保存到磁盘上，主要有两种策略，一是根据时间，更新次数的快照（save 300 10 ）二是基于语句追加方式(Append-only file，aof) </li>
+<li>自动操作：对不同数据类型的操作都是自动的，很安全 </li>
+<li><strong>快速的主—从复制</strong>，官方提供了一个数据，Slave在21秒即完成了对Amazon网站10G key set的复制。 </li>
+<li>Sharding技术： 很容易将数据分布到多个Redis实例中，数据库的扩展是个永恒的话题，在关系型数据库中，主要是以添加硬件、以分区为主要技术形式的纵向扩展解决了很多的应用场景，但随着web2.0、移动互联网、云计算等应用的兴起，这种扩展模式已经不太适合了，所以近年来，像采用主从配置、数据库复制形式的，Sharding这种技术把负载分布到多个特理节点上去的横向扩展方式用处越来越多。</li>
+</ul>
+<h2 id="Redis缺点"><a href="#Redis缺点" class="headerlink" title="Redis缺点"></a>Redis缺点</h2><ul>
+<li><strong>是数据库容量受到物理内存的限制,</strong> 不能用作海量数据的高性能读写, 因此Redis适合的场景主要<strong>局限在较小数据量的高性能操作和运算上。</strong></li>
+<li>Redis较难支持在线扩容，在集群容量达到上限时在线扩容会变得很复杂。为避免这一问题，运维人员在系统上线时必须确保有足够的空间，这对资源造成了很大的浪费。</li>
+</ul>
+<h2 id="Redis宕机怎么解决"><a href="#Redis宕机怎么解决" class="headerlink" title="Redis宕机怎么解决"></a>Redis宕机怎么解决</h2><p>宕机:服务器停止服务</p>
+<p><strong>如果只有一台redis，肯定会造成数据丢失，无法挽救</strong></p>
+<p>多台redis或者是redis集群，宕机则需要分为在主从模式下区分来看：</p>
+<ul>
+<li><p>slave从redis宕机：配置主从复制的时候才配置从的redis，从的会从主的redis中读取主的redis的操作日志，在redis中从库重新启动后会自动加入到主从架构中，自动完成同步数据;</p>
+</li>
+<li><p>主redis宕机：如果从数据库实现了持久化，此时千万不要立马重启服务，否则可能会造成数据丢失，正确的操作如下：<strong>在slave</strong>数据上执行SLAVEOF ON ONE, <strong>来断开主从关系并把slave升级为主库</strong>，此时重新启动主数据库，执行SLAVEOF，<strong>把主库设置为从库</strong>，连接到主的redis上面做主从复制，自动备份数据。</p>
+</li>
+</ul>
+<p>以上过程很容易配置错误，可以使用redis提供的哨兵机制来简化上面的操作。简单的方法: <strong>redis的哨兵(sentinel)</strong>的功能</p>
+<h2 id="Redis和mecached的区别，以及使用场景"><a href="#Redis和mecached的区别，以及使用场景" class="headerlink" title="Redis和mecached的区别，以及使用场景"></a>Redis和mecached的区别，以及使用场景</h2><p>总结</p>
+<p>都是内存数据库</p>
+<p>redis挂掉后会备份，并实现了持久化，除了k/v，还支持多种类型的数据存储。</p>
+<p>memcache挂掉后，数据不可恢复，仅支持k/v。</p>
+<p>使用场景</p>
+<ol>
+<li><p>如果有<strong>持久方面的需求</strong>或对<strong>数据类型和处理有要求</strong>的应该选择redis</p>
+</li>
+<li><p>如果<strong>简单的key/value存储应该选择memcached</strong>.</p>
+</li>
+</ol>
+<p>区别</p>
+<p>1、redis和Memcache都是<strong>将数据存放在内存中，都是内存数据库</strong>。不过memcache还可以用于缓存其他东西，例如图片，视频等等</p>
+<p>2、Redis不仅仅支持简单的<strong>k/v类型的数据</strong>，同时还提供<strong>list,set,hash等数据结构的存储</strong></p>
+<p>3、虚拟内存-redis当物流内存用完时，可以将一些很久没用的value交换到磁盘</p>
+<p>4、过期策略-memcache在set时就指定，例如set key1 0 0 8，即永不过期。Redis可以通过例如expire设定，例如expire name 10</p>
+<p>5、分布式-设定memcache集群，利用magent做一主多从，redis可以做一主多从。都可以一主一从</p>
+<p>6、存储数据安全-<strong>memcache挂掉后，数据没了</strong>。<strong>redis可以定期保存到磁盘(持久化)</strong></p>
+<p>7、灾难恢复-<strong>memcache挂掉后，数据不可恢复</strong>。redis数据丢失后可以通过aof恢复</p>
+<p>8、Redis支持数据的备份，即master-slave模式的数据备份</p>
+<p>9、应用场景不一样，redis除了作为NoSQL数据库使用外，还能用做消息队列，数据堆栈和数据缓存等; Memcache适合于缓存SQL语句，数据集，用户临时性数据，延迟查询数据和session等</p>
+<h2 id="Redis集群方案该怎么做-都有哪些方案"><a href="#Redis集群方案该怎么做-都有哪些方案" class="headerlink" title="Redis集群方案该怎么做?都有哪些方案?"></a>Redis集群方案该怎么做?都有哪些方案?</h2><ol>
+<li><p>codis</p>
+<p>目前用的最多的集群方案，基本和twemproxy一致的效果，但它支持在节点数量改变情况下，旧节点数据客恢复到新hash节点</p>
+</li>
+<li><p>redis cluster3.0自带的集群，特点在于他的分布式算法不是一致性hash，而是hash槽的概念，以及自身支持节点设置从节点。具体看官方介绍</p>
+</li>
+<li><p>在业务代码层实现，起几个毫无关联的redis实例，在代码层，对key进行hash计算，然后去对应的redis实例操作数据。这种方式对hash层代码要求比较高，考虑部分包括，节点失效后的替代算法方案，数据震荡后的字典脚本恢复，实例的监控，等等</p>
+</li>
+</ol>
+<h2 id="Redis回收进程是如何工作的"><a href="#Redis回收进程是如何工作的" class="headerlink" title="Redis回收进程是如何工作的"></a>Redis回收进程是如何工作的</h2><p>一个客户端运行了新的命令，添加了新的数据。</p>
+<p>redis检查内存使用情况，如果大于maxmemory的限制，则根据<strong>设定好的策略</strong>进行回收。</p>
+<p>一个新的命令被执行等等，所以我们不断地穿越内存限制的边界，通过<strong>不断达到边界然后不断回收回到边界以下</strong>。</p>
+<p>如果一个命令的结果导致大量内存被使用(例如很大的集合的交集保存到一个新的键)，不用多久内存限制就会被这个内存使用量超越。</p>
+<h1 id="MongoDB"><a href="#MongoDB" class="headerlink" title="MongoDB"></a>MongoDB</h1><h2 id="211-MongoDB中对多条记录做更新操作命令是什么？"><a href="#211-MongoDB中对多条记录做更新操作命令是什么？" class="headerlink" title="211.MongoDB中对多条记录做更新操作命令是什么？"></a>211.MongoDB中对多条记录做更新操作命令是什么？</h2><h2 id="212-MongoDB如何才会拓展到多个shard里？"><a href="#212-MongoDB如何才会拓展到多个shard里？" class="headerlink" title="212.MongoDB如何才会拓展到多个shard里？"></a>212.MongoDB如何才会拓展到多个shard里？</h2>]]></content>
+      <categories>
+        <category>Computer Basic</category>
+        <category>Interview</category>
+      </categories>
+      <tags>
+        <tag>DataBase Basic</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>操作系统</title>
     <url>/posts/2246/</url>
     <content><![CDATA[<h1 id="同步，异步，阻塞，非阻塞？"><a href="#同步，异步，阻塞，非阻塞？" class="headerlink" title="同步，异步，阻塞，非阻塞？"></a>同步，异步，阻塞，非阻塞？</h1><p>同步： 多个任务之间有先后顺序执行，一个执行完下个才能执行。</p>
@@ -2552,278 +2827,366 @@ cond(no)-&gt;op</textarea><textarea id="flowchart-0-options" style="display: non
       </tags>
   </entry>
   <entry>
-    <title>数据库基础</title>
-    <url>/posts/22488/</url>
-    <content><![CDATA[<h1 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h1><p>数据库事务(Database Transaction) ，是指为访问并可能操作各个数据项的<strong>一个数据库操作序列，这些操作要么全部执行，要么全部不执行</strong>，是一个不可分割的工作单位。事务由事务开始与结束之间执行的全部数据库操作组成。</p>
-<p>如：我们去银行转账，操作可能分为以下两个环节：</p>
-<p>（1）从第一个账户划出款项</p>
-<p>（2）将款项存入第二个账户</p>
-<p>这两个环节是关联的，如果第二个环节没有完成，那么所有的环节都应该取消。</p>
-<p>性质：</p>
-<p>A：原子性（Atomicity）事务中的全部操作在数据库中是不可分割的，要么全部完成，要么全部不执行。</p>
-<p>C：一致性（Consistency）几个并行执行的事务，其执行结果必须与按某一顺序 串行执行的结果相一致。</p>
-<p>I：隔离性（Isolation）事务的执行不受其他事务的干扰，事务执行的中间结果对其他事务必须是透明的。</p>
-<p>D：持久性（Durability）对于任意已提交事务，系统必须保证该事务对数据库的改变不被丢失，即使数据库出现故障。</p>
-<p>彻底理解数据库事务: <a href="http://www.hollischuang.com/archives/898">http://www.hollischuang.com/archives/898</a></p>
+    <title>软件测试基础</title>
+    <url>/posts/22398/</url>
+    <content><![CDATA[<h1 id="软件测试理论"><a href="#软件测试理论" class="headerlink" title="软件测试理论"></a>软件测试理论</h1><h2 id="软件测试的生命周期"><a href="#软件测试的生命周期" class="headerlink" title="软件测试的生命周期"></a>软件测试的生命周期</h2><p>软件测试生命周期是指从项目计划建立到BUG提交的整个测试过程，包括：</p>
+<ol>
+<li>软件项目测试计划</li>
+<li>测试需求分析</li>
+<li>测试用例设计</li>
+<li>测试用例执行</li>
+<li>BUG提交</li>
+</ol>
 <a id="more"></a>
-<h1 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h1><h2 id="主键-超键-候选键-外键"><a href="#主键-超键-候选键-外键" class="headerlink" title="主键 超键 候选键 外键"></a>主键 超键 候选键 外键</h2><ul>
-<li><p><strong>主键</strong>：指的是<strong>一个列或多列的组合，其值能唯一地标识表中的每一行</strong>，通过它可强制表的实体完整性。主键主要是用与其他表的外键关联，以及本记录的修改与删除。</p>
-<p>身份证号也是一种业务场景，如果身份证号升位了，或者需要变更，作为主键，不得不修改的时候，就会对业务产生严重影响。 所以，选取主键的一个基本原则是：<strong>不使用任何业务相关的字段作为主键</strong>。 因此，身份证号、手机号、邮箱地址这些看上去可以唯一的字段，均不可用作主键。</p>
+<h2 id="软件的三个要素是什么"><a href="#软件的三个要素是什么" class="headerlink" title="软件的三个要素是什么"></a>软件的三个要素是什么</h2><p>程序+数据+文档</p>
+<h2 id="软件的产品质量"><a href="#软件的产品质量" class="headerlink" title="软件的产品质量"></a>软件的产品质量</h2><p>参考质量模型部分</p>
+<h2 id="软件测试的目的"><a href="#软件测试的目的" class="headerlink" title="软件测试的目的"></a>软件测试的目的</h2><ol>
+<li>验证软件是否满足软件开发合同或者项目<strong>开发计划，软件需求规格说明书，软件产品说明</strong>等规定的软件质量要求</li>
+<li>通过测试，发现软件中迄今为止尚未发现的缺陷</li>
+<li>为软件产品的质量测量和评价提供依据</li>
+</ol>
+<h2 id="软件测试过程中的四个基本活动"><a href="#软件测试过程中的四个基本活动" class="headerlink" title="软件测试过程中的四个基本活动"></a>软件测试过程中的四个基本活动</h2><ol>
+<li><strong>测试策划</strong>：进行测试的需求分析和测试计划的编写</li>
+<li><strong>测试设计</strong>：依据测试需求，分析并选用已有的测试用例或者设计新的测试用例，进行用例评审</li>
+<li><strong>测试执行</strong>：执行测试用例，获取测试结果，分析并判定测试结果</li>
+<li><strong>测试总结</strong>：整理和分析测试数据，描述测试状态，最后完成软件测试报告并通过测试评审</li>
+</ol>
+<h2 id="测试用例设计的基本原则"><a href="#测试用例设计的基本原则" class="headerlink" title="测试用例设计的基本原则"></a>测试用例设计的基本原则</h2><p>case的设计应该符合以下几点：</p>
+<ol>
+<li>一个case一个功能点：每个case都要有个测点，找准一个测点即可，不能同时覆盖很多功能点</li>
+<li>case的执行粒度：粒度越小越好</li>
+<li>步骤清晰：一个case多个步骤，指明怎么去操作</li>
+<li>总体设计：先正常，后异常，这样可以确保正常情况下功能能够走通</li>
+</ol>
+<h1 id="测试的分类"><a href="#测试的分类" class="headerlink" title="测试的分类"></a>测试的分类</h1><ul>
+<li>按开发阶段划分<ul>
+<li>单元测试：基于软件设计文档</li>
+<li>集成测试：基于软件结构设计文档</li>
+<li>系统测试：基于用户需求</li>
+<li>验收测试：基于软件研制合同</li>
+</ul>
 </li>
-<li><p><strong>外键</strong>：关系模式R1中的某属性集不是R1的主键，而是另一个<strong>关系R2的主键</strong>则该属性集是关系模式<strong>R1的外键</strong>。</p>
+<li>按是否查看代码分类<ul>
+<li>黑盒测试：功能测试</li>
+<li>白盒测试：基于程序的测试</li>
+<li>灰盒测试：黑盒 + 白盒</li>
+</ul>
 </li>
-<li><p><strong>超键</strong>：<strong>在关系中能唯一标识元组的属性集称为关系模式的超键</strong>。一个属性可以作为一个超键，多个属性组合在一起也可以作为一个超键。<strong>超键包含候选键和主键。</strong></p>
+<li>按是否运行划分<ul>
+<li>静态测试：不执行被测软件，也可以用静态分析测试工具来进行（代码扫描）。</li>
+<li>动态测试：执行被测试程序。通过执行结果，分析软件可能出现的错误。执行测试用例等。</li>
+</ul>
 </li>
-<li><p><strong>候选键</strong>：是最小超键，即没有冗余元素的超键。</p>
+<li>按测试对象划分<ul>
+<li>性能测试</li>
+<li>安全测试</li>
+<li>兼容性测试</li>
+<li>文档测试</li>
+<li>用户体验测试</li>
+<li>业务测试</li>
+<li>界面测试</li>
+<li>安装测试</li>
+<li>内存泄漏测试</li>
+</ul>
+</li>
+<li>按测试实施的组织<ul>
+<li>$\alpha$测试：初期测试，软件完成后，由<strong>程序员</strong>来测试执行查看软件功能性是否正常</li>
+<li>$\beta$测试：验收测试，交给<strong>最终的用户</strong>来测试其功能性</li>
+<li>第三方测试：介于开发者和用户之间，由第三方组织来进行</li>
+</ul>
+</li>
+<li>按是否手工执行划分<ul>
+<li>手工测试</li>
+<li>自动化测试</li>
+</ul>
+</li>
+<li>其他分类<ul>
+<li>冒烟测试：针对不同的版本，每次需求变更之后，<strong>在正式测试之前</strong>，对产品或者系统进行一次<strong>简单的验证测试 — 自测</strong></li>
+<li>回归测试：修改代码之后，需要测试下是否引起了其他的一些问题</li>
+<li>A/B测试：AB测试是为<a href="https://baike.baidu.com/item/Web/150564">Web</a>或<a href="https://baike.baidu.com/item/App/6133292">App</a>界面或流程制作两个（A/B）或多个（A/B/n）版本，在同一<a href="https://baike.baidu.com/item/时间维度/6762941">时间维度</a>，分别让<strong>组成成分相同（相似）的访客群组</strong>（目标人群）<strong>随机的访问这些版本</strong>，收集各群组的用户体验数据和业务数据，最后分析、评估出最好版本，正式采用。</li>
+</ul>
 </li>
 </ul>
-<p>例子：</p>
+<h1 id="黑盒测试"><a href="#黑盒测试" class="headerlink" title="黑盒测试"></a>黑盒测试</h1><p><strong>黑盒测试：功能测试</strong>，数据驱动测试或者基于规格说明书的测试。这种测试<strong>不必了解程序的内部逻辑结构</strong>，而是<strong>根据需求说明书中的功能来设计测试用例。</strong>具体方法分为：等价类划分法、边界值分析法、判定表法、因果图法、错误推测法</p>
+<h2 id="等价类划分"><a href="#等价类划分" class="headerlink" title="等价类划分"></a>等价类划分</h2><ol>
+<li>定义：等价类划分是在分析需求规格说明的基础上，把<strong>程序的输入域划分成若干个部分，然后在每部分选取代表性的数据形成测试用例</strong></li>
+<li>等价类划分法的步骤如下：<ol>
+<li><strong>划分有效等价类</strong>：对规格说明是有意义的、合理的输入数据所构成的集合。利用有效等价类可以检验程序是否满足规格说明所规定的<strong>功能和性能</strong>。</li>
+<li><strong>划分无效等价类</strong>：不合理的输入数据所构成的集合。使用无效等价类可以<strong>测试程序/系统的容错性</strong>—对异常输入情况的处理。</li>
+</ol>
+</li>
+</ol>
+<h2 id="边界值分析法"><a href="#边界值分析法" class="headerlink" title="边界值分析法"></a>边界值分析法</h2><ol>
+<li>定义：边界值分析法是针对边界值进行测试的，使用等于、大于或者小于边界值的数据对程序进行测试的方法</li>
+<li>边界值分析法的步骤：<ol>
+<li>通过分析规格说明书找出所有可能的边界条件</li>
+<li>对每个边界条件给出满足和不满足的输入数据</li>
+<li>设计相应的测试用例</li>
+</ol>
+</li>
+</ol>
+<h2 id="因果图法"><a href="#因果图法" class="headerlink" title="因果图法"></a>因果图法</h2><h1 id="白盒测试"><a href="#白盒测试" class="headerlink" title="白盒测试"></a>白盒测试</h1><p><strong>白盒测试：又称为结构测试</strong>、逻辑驱动测试或者基于程序的测试。这种测试应该了解软件程序的内部构造，并且根据程序的内部结构来设计测试用例。<strong>白盒测试是基于覆盖的测试，尽可能覆盖程序的结构特征和逻辑路径。</strong>其具体方法有逻辑覆盖、循环覆盖、基本路径覆盖。逻辑覆盖又可分为语句覆盖、判定覆盖、条件覆盖、判定/条件覆盖、条件组合覆盖。</p>
+<p><a href="https://www.cnblogs.com/keaihaizi/p/11523683.html">https://www.cnblogs.com/keaihaizi/p/11523683.html</a></p>
+<h2 id="逻辑覆盖"><a href="#逻辑覆盖" class="headerlink" title="逻辑覆盖"></a>逻辑覆盖</h2><h3 id="语句覆盖"><a href="#语句覆盖" class="headerlink" title="语句覆盖"></a>语句覆盖</h3><p>每条语句至少执行一次</p>
+<h3 id="判定覆盖"><a href="#判定覆盖" class="headerlink" title="判定覆盖"></a>判定覆盖</h3><p>分支执行一次</p>
+<h3 id="条件覆盖"><a href="#条件覆盖" class="headerlink" title="条件覆盖"></a>条件覆盖</h3><p>每个条件取到<strong>各种可能的值</strong></p>
+<p>A=T 　　　　A=F<br>B=T 　　　　B=F</p>
+<h3 id="条件组合覆盖"><a href="#条件组合覆盖" class="headerlink" title="条件组合覆盖"></a>条件组合覆盖</h3><p>每个判断语句中条件结果的所有可能组合至少出现一次</p>
+<p>A= T　　　 B= T<br>A= T 　　　B= F<br>A= F　　　 B= T<br>A= F 　　　B= F </p>
+<h2 id="循环覆盖"><a href="#循环覆盖" class="headerlink" title="循环覆盖"></a>循环覆盖</h2><h2 id="基本路径覆盖"><a href="#基本路径覆盖" class="headerlink" title="基本路径覆盖"></a>基本路径覆盖</h2><p>设计出的测试用例要保证在测试中程序的语句覆盖100%，条件覆盖100%。条件组合未必能覆盖到。</p>
+<h1 id="静态测试、动态测试"><a href="#静态测试、动态测试" class="headerlink" title="静态测试、动态测试"></a>静态测试、动态测试</h1><ol>
+<li>静态测试：又称为静态分析结束，其基本特征是不执行被测软件，根据检查列表，<strong>对需求分析说明书、软件设计说明书以及源程序做结构检查、流程图分析等找出软件错误</strong>。静态测试一般采用人工分析（针对文档），也可以用静态分析测试工具来进行（代码扫描）。</li>
+<li>动态测试：其基本特征是执行被测试程序。通过执行结果，分析软件可能出现的错误 ，一般由人工设计程序测试用例，也可以由测试工具做检查和分析。</li>
+</ol>
+<h1 id="软件质量模型"><a href="#软件质量模型" class="headerlink" title="软件质量模型"></a>软件质量模型</h1><h2 id="软件质量"><a href="#软件质量" class="headerlink" title="软件质量"></a>软件质量</h2><p>ANSI/IEEE 定义软件质量为：“与软件产品满足规定的和隐含的需求的能力有关的特征或特性的全体”。</p>
+<h2 id="ISO-IEC-9126质量模型"><a href="#ISO-IEC-9126质量模型" class="headerlink" title="ISO/IEC 9126质量模型"></a>ISO/IEC 9126质量模型</h2><p>测试是对软件质量的度量，那么如何度量，从哪些角度度量。</p>
+<p>我们需要一套标准，或者说模型来作参考，赋予不同指标不同的权重，通过计算软件质量的得分，便可以评判出质量的好坏。</p>
+<p>ISO/IEC 9126在1991年12月发布，将软件质量归为6大特性和27个子特性。</p>
+<p><img data-src="/images/data/Screen Shot 2020-11-10 at 11.44.26.png" alt="Screen Shot 2020-11-10 at 11.44.26"></p>
+<p>功能性：软件产品提供满足明确和隐含需求功能的能力</p>
+<ul>
+<li>适合性：为规定任务提供一组合适功能的功能，即做了该做的事</li>
+<li>准确性：得到正确或相符的预期结果的能力</li>
+<li>互操作性：与其他系统软件交互的能力</li>
+<li>保密安全性：防止对程序及数据的非授权的故意或意外访问的能力</li>
+</ul>
+<p>可靠性：软件产品维护规定的性能级别的能力</p>
+<ul>
+<li>成熟性：避免软件内部的错误扩散而导致系统失效的能力</li>
+<li>容错性：防止外部接口错误扩散而导致系统失效的能力</li>
+<li>易恢复性：系统失效后，重新恢复原有的功能和性能的能力</li>
+</ul>
+<p>易用性：软件产品被理解、学习、使用及吸引用户的能力</p>
+<ul>
+<li>易理解性：交互性要清晰、准确和易懂</li>
+<li>易学性：用户学习软件所花努力的属性</li>
+<li>易操作性：用户操作和控制软件的能力</li>
+<li>吸引性：吸引用户的能力</li>
+</ul>
+<p><strong>性能效率</strong>：相对于所用资源的数量，软件产品可提供适当性能的能力</p>
+<ul>
+<li><strong>时间特性</strong>：软件执行功能时的响应、处理时间和吞吐率</li>
+<li><strong>资源特性</strong>：软件执行功能时所使用的资源数量和类型</li>
+</ul>
+<p>维护性：软件产品可以被修改的能力，修改可能包括修改、改进或者适应环境、需求和功能规约的变化</p>
+<ul>
+<li>易分析性：诊断缺陷或失效原因所需努力的属性</li>
+<li>易改变性：进行修改、排除错误或适应环境变化的能力</li>
+<li>稳定性：避免软件修改而造成意外结果的能力</li>
+<li>易测试性：提供辅助性手段帮助测试人员实现其测试意图</li>
+</ul>
+<p>可移植性：软件产品从一个环境迁移到另一个环境的能力</p>
+<ul>
+<li>适应性：无需相应变动就能适应不同环境的能力</li>
+<li>易安装性：尽可能少的提供选择，方便用户直接安装</li>
+<li>共存性：与其他公共软件共存</li>
+<li>易替换性：同等环境下，替换其他同类产品的能力</li>
+</ul>
+<h2 id="GB-T-25000质量模型"><a href="#GB-T-25000质量模型" class="headerlink" title="GB/T 25000质量模型"></a>GB/T 25000质量模型</h2><p>于2016年发布，(新增兼容性和信息安全)，大方向没有改变，新增的2大特性（信息安全性、兼容性）也是从原有的功能性和可移植性中分裂出来。</p>
+<p><img data-src="/images/data/Screen Shot 2020-11-10 at 11.54.54.png" alt="Screen Shot 2020-11-10 at 11.54.54"></p>
+<p>信息安全性，产品或系统保护信息和数据的程序，以使用户、其他产品或系统具有与其授权和授权级别一致的数据访问度</p>
+<ul>
+<li>保密性，产品或系统确保数据只有在被授权时才能被访问的程度</li>
+<li>完整性，系统、产品或组件防止未授权访问、篡改计算机程序或数据的程度</li>
+<li>抗抵赖性，活动或事件发生后可以被证实且不可被否认的程度</li>
+<li>可核查性，实体的活动可以被唯一地追溯到该实体的程度</li>
+<li>真实性，对象或资源的身份标识能够被证实符合其声明的程度</li>
+</ul>
+<p><a href="https://juejin.im/post/6844903878354272269">从纺锤模型到金字塔模型</a></p>
+<h1 id="软件开发中之敏捷开发：DevOps"><a href="#软件开发中之敏捷开发：DevOps" class="headerlink" title="软件开发中之敏捷开发：DevOps"></a>软件开发中之敏捷开发：DevOps</h1><p>DevOps是一套实践方法论和文化，提倡打破原有组织和限制，职能团队开始拥抱和接受<strong>DevOps所倡导的高度协同，研发、测试、运维及交付一体化的思维</strong>。随着DevOps和敏捷热度的不断提升，无论是互联网企业还是传统软件企业都开始拥抱<strong>敏捷</strong>，实践DevOps。<strong>持续集成CI（Continuous integration）、持续交付CD（Continuous delivery ）</strong>作为DevOps的最佳实践，越来越受到重视。</p>
+<h1 id="软件开发中之微服务架构"><a href="#软件开发中之微服务架构" class="headerlink" title="软件开发中之微服务架构"></a>软件开发中之微服务架构</h1><p>微服务架构源起于DevOps意识形态和实践中，是一种软件架构风格。微服务架构带来了一系列好处，例如<strong>可部署性、可靠性、可用性</strong>等等。虽然原则上可以使用任何架构来实践DevOps，但微服务架构<strong>正在成为构建持续部署 (CD)</strong>系统的标准<strong>架构风格</strong>。由于<strong>每项服务的规模都很小</strong>，它允许通过<strong>连续重构来实现单个服务</strong>的体系结构，因此<strong>减少了对大型项目前期设计的需求，允许尽早发布软件并且持续交付</strong>。微服务和DevOps是天然的共同体，结合起来共同实现软件开发行业的变革。</p>
+<h1 id="分层理论：金字塔模型"><a href="#分层理论：金字塔模型" class="headerlink" title="分层理论：金字塔模型"></a>分层理论：金字塔模型</h1><p>随着敏捷和微服务架构的引入，<strong>CI/CD成为构建和部署的标准</strong>。传统的手工测试方式在人员和效率上都存在严重不足，因此自动化测试已经成为现代软件研发过程中一个关键组成部分。<strong>自动化测试是打通持续集成和持续交付的核心</strong>，没有有效的自动化测试保证，持续集成和持续交付就仅仅是一个没有灵魂的躯壳。</p>
+<p>Martin Fowler描述<strong>测试金字塔</strong>分为单元、服务和UI三个层级。</p>
+<p><strong>1)单元测试</strong></p>
+<p>单元测试是针对<strong>代码单元（通常是类/方法）</strong>的测试，单元测试的价值在于能提供最快的反馈，在开发过程中就可以对逻辑单元进行验证。好的单元测试可以帮助改善既有设计，在团队掌握 TDD的前提下，单元测试能辅助重构，帮助提升代码整洁度。</p>
+<p><strong>2)接口（服务/API）测试</strong></p>
+<p><strong>接口测试是针对业务接口进行的测试</strong>，主要测试内部接口功能实现是否完整。比如内部逻辑是否正常、异常处理是否正确。接口测试的主要价值在于接口定义相对稳定，不像界面或底层代码会经常发生变化，所以接口测试比较容易编写，用例的维护成本也相对较低。在接口层面准备测试的性价比相对较高。</p>
+<p><strong>3)集成（UI）测试</strong></p>
+<p><strong>集成测试从用户的角度验证产品功能的正确性，测的是端到端的流程</strong>，并且加入用户场景和数据，验证整个过程是否健康流畅。集成测试的业务价值最高，它验证的是一个完整的流程，但因为需要验证完整流程，在环境部署、准备用例及实施等方面成本较高，实施起来并不容易。</p>
+<h1 id="自动化测试"><a href="#自动化测试" class="headerlink" title="自动化测试"></a>自动化测试</h1><h2 id="自动化测试分层及占比"><a href="#自动化测试分层及占比" class="headerlink" title="自动化测试分层及占比"></a>自动化测试分层及占比</h2><p>先来看一般的功能测试如何进行：设计并编写用例文档，描述测试步骤和预期结果；测试人员根据测试用例描述按步骤操作，然后判断实际结果与预期是否一致。如果一致，测试通过；如果不符，测试失败。</p>
+<p><strong>自动化测试要做的事情与功能测试是一致的。分层理论和自动化测试方法结合，出现了三个层面的自动化：单元测试自动化、接口测试自动化和UI测试自动化。</strong>当然，不同层面的自动化关注点是不一样的。所以，从测试的行为本质上来看，功能测试与单元自动化测试、接口自动化测试和UI自动化测试并没有区别。唯一的区别是，一个由人来执行，一个由代码或工具执行。</p>
+<ul>
+<li>单元自动化测试</li>
+</ul>
+<p>单元测试关注的是代码的实现与逻辑。单元测试是最基本的测试，也是测试中的最小单元，它的对象是函数对象，也可以包含输入输出，针对的是函数功能或者函数内部的代码逻辑，并不包含业务逻辑。</p>
+<p>该类测试一般由研发人员完成，需要借助单元测试框架，如java的Junit、TestNG，python的<strong>unittest</strong>等。</p>
+<ul>
+<li>接口自动化测试</li>
+</ul>
+<p>接口自动化测试，主要验证<strong>模块间的调用返回以及不同系统、服务间的数据交换</strong>。</p>
+<p>根据接口文档是RESTful还是RPC，最终断言返回的结果是否等于预期结果。如果相等，测试通过；如果不相等，测试失败。</p>
+<p>常见的接口测试工具有<strong>postman、jmeter、loadrunner</strong>等。</p>
+<ul>
+<li>集成自动化测试</li>
+</ul>
+<p>UI层是用户使用产品的入口，所有功能通过这一层提供给用户。</p>
+<p>当UI自动化登录成功后，就去获取这个数据进行断言，断言如果相等，测试通过；如果不相等，测试失败。</p>
+<p>所以，UI自动化的关注点用户操作形为，以及UI上各种组件是否可用。常见的测试工具有<strong>UFT、Robot Framework、Selenium、Appium</strong>等。</p>
+<p>按照测试金字塔模型以及投入/产出比，我们得知越向下回报率越高，<strong>所以应该使用大量的单元测试和全面的接口测试来覆盖产品提供的基本逻辑和功能，使用少量的集成（UI）测试来进行前端界面的功能验证。</strong></p>
+<p>都说业内最佳实践看Google，Google的自动化分层投入占比是：<strong>单元测试（Unit）：占比70%；接口测试（Service）：占比20%；集成测试（UI）：占比10%.</strong></p>
+<h2 id="自动化最佳实践：纺锤模型"><a href="#自动化最佳实践：纺锤模型" class="headerlink" title="自动化最佳实践：纺锤模型"></a>自动化最佳实践：纺锤模型</h2><p><strong>对现阶段公司大部分团队来说，更符合实际测试模式是纺锤模型</strong>。新项目中，可能由于时限原因或者开发人员习惯问题，一开始并没有把单元测试准备得很完善；而某些遗留老项目，可能原本就没有多少单元测试。</p>
+<p>在上述情况下，一般的做法是先将重心放在中间层的测试上，原因有以下两点：</p>
+<ul>
+<li>第一，中间层<strong>投入产出比较高</strong>，可以实现较高的自动化率；</li>
+<li>第二，可以帮助加强<strong>开发跟测试人员之间的协作</strong>，提高测试质量。这一层需要开发跟测试人员共同定义，因为开发知道内部实现的细节，测试掌握业务场景。</li>
+</ul>
+<p>当项目进行一段时间以后，各层测试占比有必要向理想型的金字塔型过渡，这时需要关注以下三个方面：</p>
+<ul>
+<li>开发与测试互相传递能力；</li>
+<li>全员关注产品设计跟代码的质量；</li>
+<li>让用例逐步下沉，最后逐步过渡到理想型。</li>
+</ul>
+<p><img data-src="/images/data/Screen Shot 2020-11-10 at 13.09.44.png" alt="Screen Shot 2020-11-10 at 13.09.44"></p>
+<h1 id="测试质量评估"><a href="#测试质量评估" class="headerlink" title="测试质量评估"></a>测试质量评估</h1><p>关于度量，不要用单一的指标去评估测试和产品质量，比如用例通过率、代码覆盖率等都无法独立地评估产品质量。</p>
+<p>评估测试质量时要关心以下几个方面：</p>
+<ul>
+<li>第一是<strong>用例比例</strong>，即每一层的用例比例是多少。</li>
+<li>第二是<strong>测试覆盖率</strong>。</li>
+<li>第三是<strong>测试总运行时间</strong>，因为经过优化以后，总运行时间一定是越来越少。</li>
+<li>第四是<strong>代码质量指标，反映代码的质量和整洁度</strong>。</li>
+</ul>
+<h1 id="Python自动化测试框架"><a href="#Python自动化测试框架" class="headerlink" title="Python自动化测试框架"></a>Python自动化测试框架</h1><ol>
+<li><p>python+selenium+unittest+htmltestrunner</p>
+</li>
+<li><p>python+selenium+pytest+allure</p>
+</li>
+<li><p>robotframework+Selenium2Library</p>
+</li>
+</ol>
+<h2 id="pytest"><a href="#pytest" class="headerlink" title="pytest"></a>pytest</h2><p>pytest是一个非常成熟的Python测试框架</p>
+<ol>
+<li>能够支持简单的单元测试和复杂的功能测试，还可以用来做selenium/appnium等自动化测试，接口自动化测试（pytest+request）</li>
+<li>pytest具有很多第三方插件，并且可以自定义扩展，常用的插件有：<ol>
+<li>pytest-selenium（集成selenium）</li>
+<li>pytest-html（完美html测试报告生成）</li>
+<li>pytest-rerunfailures（失败case重复执行）</li>
+<li>pytest-xdist（多CPU分发）</li>
+</ol>
+</li>
+</ol>
+<p><a href="https://www.cnblogs.com/mytianying/p/12466302.html">https://www.cnblogs.com/mytianying/p/12466302.html</a></p>
+<h1 id="算法测试"><a href="#算法测试" class="headerlink" title="算法测试"></a>算法测试</h1><h2 id="模型评估"><a href="#模型评估" class="headerlink" title="模型评估"></a>模型评估</h2><h3 id="线下评估-—-准确度、查准率、召回率"><a href="#线下评估-—-准确度、查准率、召回率" class="headerlink" title="线下评估 — 准确度、查准率、召回率"></a>线下评估 — 准确度、查准率、召回率</h3><p>数据拆分：训练数据集&amp;测试数据集： 利用训练集训练模型，然后利用模型在测试集上进行测试。</p>
+<p>评价分类结果：<strong>混淆矩阵、精准度、精准率、召回率、F1 Score</strong>、ROC曲线、AUC值等</p>
+<p>评价回归结果：MES、RMES、MAE、R Squared</p>
+<ul>
+<li>Precision &amp; Recall</li>
+</ul>
+<p><strong>混淆矩阵：</strong>对于二分类问题来说，所有的问题被分为0和1两类。</p>
+<p><strong>True Positive(TP)</strong>：正实际为正实际为正，预测对了(True)</p>
+<p><strong>False Negative(FN)</strong>: 预测为负实际为正，预测错了(False)</p>
+<p><strong>False Positive(FP)</strong>: 预测为负实际为正，预测错了(False)</p>
+<p><strong>True Negative(TN)</strong>: 预测为负实际为负，预测对了(True)</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th></th>
+<th>真实值正</th>
+<th>真实值负</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>预测值正</td>
+<td>TP</td>
+<td>FP</td>
+</tr>
+<tr>
+<td>预测值负</td>
+<td>FN</td>
+<td>TN</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><strong>Accuracy指准确度</strong>，意味着系统误差(System Error)小，即偏差(Bias) 小，描述了的实际值与真实结果的偏离程度。</p>
+<p>$accuracy = \frac{TP + TN}{TP + FP + FN + TN}$</p>
 <blockquote>
-<p>假设有如下两个表：</p>
-<p>学生（学号，姓名，性别，身份证号，教师编号）</p>
-<p>教师（教师编号，姓名，工资）</p>
+<p>如果存在<strong>样本不均衡</strong>的情况下，就不能使用accuracy来进行衡量了。比如，一个总样本中，正样本占90%,负样本占10%，那么只需要将所有样本预测为正，就可以拿到90%的准确率，而这显然是无意义的。正因为如此，我们就需要精准率和召回率了。</p>
 </blockquote>
-<p><strong>超键：</strong></p>
-<p>由超键的定义可知，学生表中含有学号或者身份证号的任意组合都为此表的超键。如：（学号）、（学号，姓名）、（身份证号，性别）等。</p>
-<p><strong>候选键：</strong></p>
-<p>候选键属于超键，它是最小的超键，就是说如果再去掉候选键中的任何一个属性它就不再是超键了。学生表中的候选键为：（学号）、（身份证号）。</p>
-<p><strong>主键：</strong></p>
-<p>主键就是候选键里面的一个，是人为规定的，例如学生表中，我们通常会让“学号”做主键，教师表中让“教师编号”做主键。</p>
-<p><strong>外键：</strong></p>
-<p>外键比较简单，学生表中的外键就是“教师编号”。外键主要是用来描述两个表的关系。</p>
-<h2 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h2><ul>
-<li>索引是关系数据库中对<strong>某一列或多个列的值进行预排序的数据结构</strong>。通过使用索引，可以让数据库系统不必扫描整个表，而是<strong>直接定位到符合条件的记录，这样就大大加快了查询速度。</strong></li>
-</ul>
-<p>索引的效率<strong>取决于索引列的值是否散列</strong>，即该<strong>列的值如果越不相同，那么索引效率越高</strong>。反过来，如果记录的列存在大量相同的值。例如gender列，那对该列创建索引就没有意义。</p>
-<p>例如：创建名称为idx_score，使用列score的索引。</p>
-<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> students</span><br><span class="line"><span class="keyword">ADD</span> <span class="keyword">INDEX</span> idx_score (score)</span><br></pre></td></tr></tbody></table></figure>
-<p>推荐:<a href="https://www.liaoxuefeng.com/wiki/1177760294764384/1218728442198976">https://www.liaoxuefeng.com/wiki/1177760294764384/1218728442198976</a></p>
-<p><a href="http://blog.codinglabs.org/articles/theory-of-mysql-index.html">MySQL索引背后的数据结构及算法原理</a></p>
-<p>聚集索引,非聚集索引, B-Tree（B树属于多叉树又名<strong>平衡多路查找树</strong>（查找路径不只两个））,B+Tree, 最左前缀原理</p>
-<ul>
-<li>数据库索引，<strong>是数据库管理系统中一个排序的数据结构，以协助快速查询</strong>，更新数据库表中数据。索引的实现通常使用<strong>B树($O(Log_2N)$)以其变种B+树</strong>。</li>
-</ul>
-<p>在数据之外，数据库系统还维护着<strong>满足特定查找算法的数据结构</strong>，这些数据结构以某种方式引用（指向）数据，这样就可以在这些数据结构上实现高级查找算法。<strong>这种数据结构，就是索引</strong>。</p>
-<p>为表设置索引要付出代价的：<strong>一是增加了数据库的存储空间，二是在插入和修改数据时要花费较多的时间（因为索引也要随之变动）</strong></p>
-<h2 id="视图"><a href="#视图" class="headerlink" title="视图"></a>视图</h2><ul>
-<li><strong>视图是虚拟的表，主要用于简化检索，保护数据，并不用于更新，而且大部分视图都不可以更新。</strong>隐藏具体的细节，保护数据; 视图创建后，可以使用与表相同的方式利用它们。</li>
-</ul>
-<p>视图不能被索引，也不能有关联的触发器或默认值，如果视图本身内有order by则对视图再次order by将被覆盖。</p>
+<p><strong>Precision指查准率，即预测为正的样本中，实际为正的比例。</strong></p>
+<p>$Precision=\frac{TP}{TP+FP}$</p>
 <blockquote>
-<p>创建视图： create view xxx as xxxxxx</p>
+<p>为什么管它叫精准率呢？在有偏的数据中，我们<strong>通常更关注值为1的特征</strong>，比如“患病”，比如“有风险”。在100次结果为患病的预测，平均有40次预测是对的。即<strong>精准率为我们关注的那个事件，预测的有多准。</strong></p>
+<p>医生预测为癌症，患者确实患癌症的比例。</p>
 </blockquote>
-<p>优点：</p>
-<ol>
-<li>使用视图，可以定制用户数据，聚焦特定的数据。</li>
-<li>使用视图，可以简化数据操作。</li>
-<li>使用视图，基表中的数据就有了一定的安全性</li>
-</ol>
-<p><a href="https://www.jianshu.com/p/6a2c7407be4c">https://www.jianshu.com/p/6a2c7407be4c</a></p>
-<h2 id="drop-truncate-delete的区别"><a href="#drop-truncate-delete的区别" class="headerlink" title="drop, truncate, delete的区别"></a>drop, truncate, delete的区别</h2><ul>
-<li><p>drop直接删掉表</p>
-</li>
-<li><p>truncate删除表中数据，<strong>再插入时自增长id又从1开始</strong></p>
-<p>truncate table则一次性地从表中删除所有的数据并不把单独的删除操作记录记入日志保存，<strong>删除行是不能恢复的</strong>。并且在删除的过程中不会激活与表有关的删除触发器，执行速度快；</p>
-</li>
-<li><p>delete删除表中数据，<strong>可以加where字句</strong></p>
-<p>delete 语句执行删除的过程是<strong>每次从表中删除一行</strong>，并且同时将该行的删除操作作为事务记录在日志中保存以便进行回滚操作。</p>
-</li>
-</ul>
-<ol>
-<li><p>表和索引所占空间：drop语句将表所占用的空间全释放掉；当表被truncate后，这个表和索引所占用的空间会恢复到初始大小，而delete操作不会减少表或索引所占用的空间。</p>
-</li>
-<li><p>一般而言，drop&gt;truncate&gt;delete</p>
-</li>
-<li><p>应用范围。truncate只能对table，delete可以是table和view</p>
-</li>
-<li><p>truncate和delete只删除数据，而drop则删除整个表<strong>（结构和数据)</strong></p>
-</li>
-<li><p>truncate与不带where的delete:只删除数据，<strong>而不删除表的结构（定义）</strong>drop语句将删除表的结构被依赖的<strong>约束(constrain),触发器（trigger)索引(index)</strong>;依赖于该表的存储过程/函数将被保留，但其状态会变为:invalid.</p>
-</li>
-</ol>
-<h2 id="连接的种类：内连接、外连接、交叉连接"><a href="#连接的种类：内连接、外连接、交叉连接" class="headerlink" title="连接的种类：内连接、外连接、交叉连接"></a>连接的种类：内连接、外连接、交叉连接</h2><p>join_type 指出连接类型。join_condition指连接条件。</p>
-<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line">FROM  join_table join_type join_table[ON (join_condition)]</span><br></pre></td></tr></tbody></table></figure>
-<ul>
-<li><p><strong>内连接（inner join）</strong>：使用比较运算符（包括=、&gt;、&lt;、&lt;&gt;、&gt;=、&lt;=、!&gt;和!&lt;）进行表间的比较操作，查询与连接条件相匹配的数据</p>
-<ul>
-<li>等值连接（=）</li>
-</ul>
-<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> T_student s, T_class c <span class="keyword">where</span> s.classID = c.classID</span><br><span class="line">等于</span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> T_student s <span class="keyword">inner</span> <span class="keyword">join</span> T_class <span class="keyword">on</span> s.classID = c.classID</span><br></pre></td></tr></tbody></table></figure>
-<ul>
-<li>自然连接：与等值相同，<strong>但是会删除表中的重复列</strong></li>
-</ul>
-<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> s.*,c.className <span class="keyword">from</span> T_student s <span class="keyword">inner</span> <span class="keyword">join</span> T_class c <span class="keyword">on</span> s.classId = c.classId</span><br></pre></td></tr></tbody></table></figure>
-<ul>
-<li>不等连接（&lt;, &gt;, &lt;&gt;, &gt;=, &lt;=, !&gt;, !&lt;）</li>
-</ul>
-<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> T_student s <span class="keyword">inner</span> <span class="keyword">join</span> T_class c <span class="keyword">on</span> s.classId &lt;&gt; c.classId</span><br></pre></td></tr></tbody></table></figure></li>
-<li><p><strong>外连接</strong>（left join、right join、full join）</p>
-<ul>
-<li><p><strong>左连接</strong>（LEFT JOIN）：返回左表中的所有行，如果左表中行在右表中没有匹配行，则结果中右表中的列返回空值。</p>
-<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span>  T_student s <span class="keyword">left</span> <span class="keyword">join</span> T_class c <span class="keyword">on</span> s.classId = c.classId</span><br></pre></td></tr></tbody></table></figure></li>
-<li><p>左外连接（LEFT OUTER JOIN）:</p>
-</li>
-<li><p><strong>右连接</strong>（RIGHT JOIN）: 与左连接相反</p>
-</li>
-<li><p>右外连接（RIGHT OUTER JOIN）</p>
-</li>
-<li><p><strong>全连接</strong>（FULL JOIN）: 返回左表和右表中的所有行。当某行在另一表中没有匹配行，则另一表中的列返回空值</p>
-</li>
-<li><p>全外连接（FULL OUTER JOIN）</p>
-</li>
-</ul>
-</li>
-<li><p><strong>交叉连接</strong>：笛卡尔积（cross join）</p>
-<p>不带WHERE条件子句，<strong>它将会返回被连接的两个表的笛卡尔积</strong>，返回结果的行数等于两个表行数的乘积（例如：T_student和T_class，返回4*4=16条记录）；如果带where，返回或显示的是匹配的行数。</p>
-<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> T_student s <span class="keyword">cross</span> <span class="keyword">join</span> T_class c <span class="keyword">where</span> s.classId = c.classId </span><br></pre></td></tr></tbody></table></figure>
-</li>
-</ul>
-<h2 id="存储过程与触发器的区别"><a href="#存储过程与触发器的区别" class="headerlink" title="存储过程与触发器的区别"></a>存储过程与触发器的区别</h2><ul>
-<li>存储过程：用户调用的时候才会执行</li>
-</ul>
-<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">PROCEDURE</span> 创建的存储过程名字(<span class="keyword">OUT</span>|<span class="keyword">IN</span>|INOUT 参数名 数据类型,...,...) 特征 过程体</span><br></pre></td></tr></tbody></table></figure>
-<ul>
-<li>触发器：对表进行诸如UPDATE、INSERT、DELETE等时，<strong>SqlServer自动执行触发器定义的SQL语句</strong>，通过事件触发</li>
-</ul>
-<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TRIGGER</span> 创建的触发器名字 BEFFOR|<span class="keyword">AFTER</span>  <span class="keyword">INSERT</span>|<span class="keyword">UPDATE</span>|<span class="keyword">DELETE</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">ON</span> 表名字 <span class="keyword">FOR</span>  触发器的执行间隔   触发器的<span class="keyword">SQL</span>语句</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="数据库优化的思路"><a href="#数据库优化的思路" class="headerlink" title="数据库优化的思路"></a>数据库优化的思路</h2><ol>
-<li><p>SQL语句优化</p>
-<ul>
-<li>应尽量避免在 where 子句中对字段进行 <strong>null 值</strong>判断，否则将导致<strong>引擎放弃使用索引而进行全表扫描</strong></li>
-<li>应尽量避免在 where 子句中使用<strong>!=或&lt;&gt;操作符</strong>，否则将<strong>引擎放弃使用索引而进行全表扫描</strong></li>
-</ul>
-</li>
-<li><p>索引优化</p>
-<ul>
-<li>创建索引：<strong>对经常需要搜索的列上</strong>，可以加快搜索的速度；<strong>在经常需要排序的列上创建索引</strong>，因为索引已经排序，这样查询可以利用索引的排序，加快排序查询时间；</li>
-<li>不应该创建索引：对于那些在查询中很少使用或者参考的列不应该创建索引；当修改性能远远大于检索性能时，不应该创建索引</li>
-</ul>
-</li>
-<li><p>数据库结构优化</p>
-<ul>
-<li>范式优化：消除冗余（节省空间）</li>
-<li>反范式优化：适当增加冗余（减少join）</li>
-</ul>
-</li>
-<li><p>服务器硬件优化</p>
-<p>花钱</p>
-</li>
-</ol>
-<p><a href="https://www.jishuchi.com/read/mysql-interview/2810">https://www.jishuchi.com/read/mysql-interview/2810</a></p>
-<h2 id="关系数据库范式"><a href="#关系数据库范式" class="headerlink" title="关系数据库范式"></a>关系数据库范式</h2><p>在进行数据库的设计时，所遵循的一些规范，只要按照设计规范进行设计，就能设计出没有数据冗余和数据维护异常的数据库结构。</p>
-<p>数据库的设计的规范有很多，通常来说我们在设是数据库时只要达到其中一些规范就可以了，这些规范又称之为数据库的三范式，一共有三条，也存在着其他范式，我们只要做到满足前三个范式的要求，就能设陈出符合我们的数据库了，我们也不能全部来按照范式的要求来做，还要考虑实际的业务使用情况，所以有时候也需要做一些违反范式的要求。</p>
-<ol>
-<li><p>数据库设计的第一范式(最基本)，基本上所有数据库的范式都是符合第一范式的，符合第一范式的表具有以下几个特点：</p>
-<p><strong>数据库表中的所有字段都只具有单一属性，是指数据库表的每一列(即每个属性)都是不可分割的基本数据项，同一列中不能有多个值</strong>（整型，浮点型，字符型等）</p>
-</li>
-<li><p>数据库设计的第二范式(是在第一范式的基础上设计的)，<strong>要求一个表中只具有一个业务主键</strong>，也就是说符合第二范式的表中<strong>不能存在非主键列对只对部分主键的依赖关系</strong></p>
-</li>
-<li><p>数据库设计的第三范式，<strong>第三范式就是属性不依赖于其它非主属性</strong>。</p>
-</li>
-</ol>
-<h2 id="MySQL引擎：InnoDB、MyIASM和MEMORY"><a href="#MySQL引擎：InnoDB、MyIASM和MEMORY" class="headerlink" title="MySQL引擎：InnoDB、MyIASM和MEMORY"></a>MySQL引擎：InnoDB、MyIASM和MEMORY</h2><p>MySQL支持三个引擎：InnoDB、MyIASM和MEMORY</p>
-<p><strong>InnoDB 和 MyISAM之间的区别：</strong></p>
-<ul>
-<li><p>两者索引<strong>都使用B+树</strong>，InnoDB是MySQL默认的存储引擎</p>
-</li>
-<li><p>InnoDB<strong>支持事务</strong>，而MyISAM不支持事务</p>
-</li>
-<li>InnoDB<strong>支持外键</strong>，而MyISAM不支持</li>
-<li>InnoDB<strong>支持MVCC,</strong> 而MyISAM不支持</li>
-<li>InnoDB<strong>不支持全文索引</strong>，而MyISAM支持</li>
-</ul>
-<p><strong>InnoDB</strong> ：如果要提供提交、回滚、崩溃恢复的事务安全能力，用InnoDB</p>
-<p><strong>MyISAM</strong>：如果数据表主要用来<strong>插入和查询</strong>记录，MyISAM能提供较高的处理速度</p>
-<p><strong>MEMORY：</strong>如果只是临时存放数据，数据量不大，不需要较高的安全性，可以选择将数据保存在内存中的MEMORY引擎</p>
-<p>mysql 数据库引擎: <a href="http://www.cnblogs.com/0201zcr/p/5296843.html">http://www.cnblogs.com/0201zcr/p/5296843.html</a><br>MySQL存储引擎－－MyISAM与InnoDB区别: <a href="https://segmentfault.com/a/1190000008227211">https://segmentfault.com/a/1190000008227211</a></p>
-<h2 id="？-MySQL的innodb引擎是如何实现MVCC的"><a href="#？-MySQL的innodb引擎是如何实现MVCC的" class="headerlink" title="？ MySQL的innodb引擎是如何实现MVCC的"></a>？ <a href="http://lib.csdn.net/base/mysql">MySQL</a>的innodb引擎是如何实现MVCC的</h2><blockquote>
-<p>​    全称是Multi-Version Concurrent Control，即多版本并发控制，在MVCC协议下，<strong>每个读操作会看到一个一致性的snapshot</strong>，并且可以实现非阻塞的读。MVCC允许数据具有多个版本，这个版本可以是时间戳或者是全局递增的事务ID，在同一个时间点，不同的事务看到的数据是不同的。</p>
+<p><strong>Recall召回率：所有真实值为正的数据中，预测对了的个数。</strong></p>
+<p>$Recall = \frac{TP}{TP + FN}$</p>
+<blockquote>
+<p><strong>也就是我们关注的那个事件真实的发生情况下，我们成功预测的比例是多少。</strong></p>
+<p>至于两个指标如何使用，需要看具体场景，实际上这两个指标是互斥的，一个高，必有另一个低。</p>
 </blockquote>
-<p>innodb会为每一行添加两个字段，分别表示该行<strong>创建的版本</strong>和<strong>删除的版本</strong>，填入的是事务的版本号，这个版本号随着事务的创建不断递增。在repeated read的隔离级别（<a href="http://blog.csdn.net/chosen0ne/article/details/10036775">事务的隔离级别请看这篇文章</a>）下，具体各种数据库操作的实现：</p>
+<p><strong>F1 Score: </strong>P为查准率，R为查全率。F1score就是在查准率与查全率之间寻找一个平衡点。</p>
+<p>$F1 Score = 2<em>\frac{P </em> R}{P + R}$</p>
 <ul>
-<li>select：满足以下两个条件innodb会返回该行数据：<ul>
-<li>该行的创建版本号小于等于当前版本号，用于保证在select操作之前所有的操作已经执行落地。</li>
-<li>该行的删除版本号大于当前版本或者为空。删除版本号大于当前版本意味着有一个并发事务将该行删除了。</li>
+<li>MAP</li>
 </ul>
-</li>
-<li>insert：将新插入的行的创建版本号设置为当前系统的版本号。</li>
-<li>delete：将要删除的行的删除版本号设置为当前系统的版本号。</li>
-<li>update：不执行原地update，而是转换成insert + delete。将旧行的删除版本号设置为当前版本号，并将新行insert同时设置创建版本号为当前版本号。</li>
-</ul>
-<p>其中，写操作（insert、delete和update）执行时，需要将系统版本号递增。</p>
-<p>​    由于旧数据并不真正的删除，所以必须对这些数据进行清理，innodb会开启一个后台线程执行清理工作，具体的规则是将删除版本号小于当前系统版本的行删除，这个过程叫做purge。</p>
-<p>通过MVCC很好的实现了事务的隔离性，可以达到repeated read级别，要实现serializable还必须加锁。</p>
-<h2 id="MySQL怎么限制IP访问？"><a href="#MySQL怎么限制IP访问？" class="headerlink" title="MySQL怎么限制IP访问？"></a>MySQL怎么限制IP访问？</h2><figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">grant</span> <span class="keyword">all</span> priviledge <span class="keyword">on</span> <span class="string">"*"</span> <span class="keyword">to</span> <span class="string">"用户名@ip地址"</span> <span class="keyword">identified</span> <span class="keyword">by</span> <span class="string">"数据库密码"</span></span><br></pre></td></tr></tbody></table></figure>
-<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 创建用户</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">user</span> <span class="string">'admin@192.168.0.1'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 修改密码</span></span><br><span class="line"><span class="keyword">set</span> <span class="keyword">password</span> <span class="keyword">for</span> <span class="string">'admin@192.168.0.1'</span> = <span class="keyword">password</span>(<span class="string">"admin"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 授权：只有来自192.168.0.1的用户才能通过admin访问服务器</span></span><br><span class="line"><span class="keyword">grant</span> <span class="keyword">all</span> priviledges <span class="keyword">on</span> <span class="string">"*"</span> <span class="keyword">to</span> <span class="string">"admin@192.168.0.1"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 刷新权限</span></span><br><span class="line"><span class="keyword">flush</span> priviledges</span><br></pre></td></tr></tbody></table></figure>
-<h1 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h1><h2 id="Redis是什么？"><a href="#Redis是什么？" class="headerlink" title="Redis是什么？"></a>Redis是什么？</h2><ol>
-<li>是一个完全开源免费的<strong>key-value内存数据库</strong> </li>
-<li>通常被认为是一个数据结构服务器，主要是因为其有着丰富的数据结构 strings、map、 list、sets、 sorted sets</li>
-</ol>
-<h2 id="Redis数据库"><a href="#Redis数据库" class="headerlink" title="Redis数据库"></a>Redis数据库</h2><blockquote>
-<p>​    通常局限点来说，Redis也以消息队列的形式存在，作为内嵌的List存在，满足实时的高并发需求。在使用缓存的时候，redis比memcached具有更多的优势，并且支持更多的数据类型，把redis当作一个中间存储系统，用<strong>来处理高并发的数据库操作</strong></p>
-</blockquote>
+<p>在目标检测中：</p>
+<p><strong>如果IoU&gt; 0.5，则认为它是True Positive，否则认为是False Positive。</strong>而COCO数据集的评估指标建议对不同的IoU阈值进行计算，但为简单起见，我们这里仅讨论一个阈值0.5，这是PASCAL VOC数据集所用的指标。</p>
+<p><strong>为了计算Recall，我们需要Negatives的数量</strong>。由于图片中我们没有预测到物体的每个部分都被视为Negative，因此计算True Negatives比较难办。<strong>一般通过改变置信度的值，</strong>阈值<strong>以上的所有预测（Box + Class）都被认为是Positives，并且低于该值的都是Negatives。</strong></p>
+<p>PASCAL VOC组织者推荐采用一种可以用于任何模型的评估指标，选择了11个不同的recall，可以认为是选择了11个rank，由于是按照置信度进行排序的，实际上等于选择了11个不同的置信度阈值。AP就定义为在这11个recall下precision的平均值。</p>
+<p>代码见：<a href="https://zhuanlan.zhihu.com/p/37910324">https://zhuanlan.zhihu.com/p/37910324</a></p>
 <ul>
-<li>速度快：使用标准C写，<strong>所有数据都在内存中完成</strong>，读写速度分别达到10万/20万 </li>
-<li>持久化：对数据的更新采用Copy-on-write技术，可以异步地保存到磁盘上，主要有两种策略，一是根据时间，更新次数的快照（save 300 10 ）二是基于语句追加方式(Append-only file，aof) </li>
-<li>自动操作：对不同数据类型的操作都是自动的，很安全 </li>
-<li><strong>快速的主—从复制</strong>，官方提供了一个数据，Slave在21秒即完成了对Amazon网站10G key set的复制。 </li>
-<li>Sharding技术： 很容易将数据分布到多个Redis实例中，数据库的扩展是个永恒的话题，在关系型数据库中，主要是以添加硬件、以分区为主要技术形式的纵向扩展解决了很多的应用场景，但随着web2.0、移动互联网、云计算等应用的兴起，这种扩展模式已经不太适合了，所以近年来，像采用主从配置、数据库复制形式的，Sharding这种技术把负载分布到多个特理节点上去的横向扩展方式用处越来越多。</li>
+<li>MES、RMES、MAE</li>
 </ul>
-<h2 id="Redis缺点"><a href="#Redis缺点" class="headerlink" title="Redis缺点"></a>Redis缺点</h2><ul>
-<li><strong>是数据库容量受到物理内存的限制,</strong> 不能用作海量数据的高性能读写, 因此Redis适合的场景主要<strong>局限在较小数据量的高性能操作和运算上。</strong></li>
-<li>Redis较难支持在线扩容，在集群容量达到上限时在线扩容会变得很复杂。为避免这一问题，运维人员在系统上线时必须确保有足够的空间，这对资源造成了很大的浪费。</li>
-</ul>
-<h2 id="Redis宕机怎么解决"><a href="#Redis宕机怎么解决" class="headerlink" title="Redis宕机怎么解决"></a>Redis宕机怎么解决</h2><p>宕机:服务器停止服务</p>
-<p><strong>如果只有一台redis，肯定会造成数据丢失，无法挽救</strong></p>
-<p>多台redis或者是redis集群，宕机则需要分为在主从模式下区分来看：</p>
-<ul>
-<li><p>slave从redis宕机：配置主从复制的时候才配置从的redis，从的会从主的redis中读取主的redis的操作日志，在redis中从库重新启动后会自动加入到主从架构中，自动完成同步数据;</p>
-</li>
-<li><p>主redis宕机：如果从数据库实现了持久化，此时千万不要立马重启服务，否则可能会造成数据丢失，正确的操作如下：<strong>在slave</strong>数据上执行SLAVEOF ON ONE, <strong>来断开主从关系并把slave升级为主库</strong>，此时重新启动主数据库，执行SLAVEOF，<strong>把主库设置为从库</strong>，连接到主的redis上面做主从复制，自动备份数据。</p>
-</li>
-</ul>
-<p>以上过程很容易配置错误，可以使用redis提供的哨兵机制来简化上面的操作。简单的方法: <strong>redis的哨兵(sentinel)</strong>的功能</p>
-<h2 id="Redis和mecached的区别，以及使用场景"><a href="#Redis和mecached的区别，以及使用场景" class="headerlink" title="Redis和mecached的区别，以及使用场景"></a>Redis和mecached的区别，以及使用场景</h2><p>总结</p>
-<p>都是内存数据库</p>
-<p>redis挂掉后会备份，并实现了持久化，除了k/v，还支持多种类型的数据存储。</p>
-<p>memcache挂掉后，数据不可恢复，仅支持k/v。</p>
-<p>使用场景</p>
-<ol>
-<li><p>如果有<strong>持久方面的需求</strong>或对<strong>数据类型和处理有要求</strong>的应该选择redis</p>
-</li>
-<li><p>如果<strong>简单的key/value存储应该选择memcached</strong>.</p>
-</li>
-</ol>
-<p>区别</p>
-<p>1、redis和Memcache都是<strong>将数据存放在内存中，都是内存数据库</strong>。不过memcache还可以用于缓存其他东西，例如图片，视频等等</p>
-<p>2、Redis不仅仅支持简单的<strong>k/v类型的数据</strong>，同时还提供<strong>list,set,hash等数据结构的存储</strong></p>
-<p>3、虚拟内存-redis当物流内存用完时，可以将一些很久没用的value交换到磁盘</p>
-<p>4、过期策略-memcache在set时就指定，例如set key1 0 0 8，即永不过期。Redis可以通过例如expire设定，例如expire name 10</p>
-<p>5、分布式-设定memcache集群，利用magent做一主多从，redis可以做一主多从。都可以一主一从</p>
-<p>6、存储数据安全-<strong>memcache挂掉后，数据没了</strong>。<strong>redis可以定期保存到磁盘(持久化)</strong></p>
-<p>7、灾难恢复-<strong>memcache挂掉后，数据不可恢复</strong>。redis数据丢失后可以通过aof恢复</p>
-<p>8、Redis支持数据的备份，即master-slave模式的数据备份</p>
-<p>9、应用场景不一样，redis除了作为NoSQL数据库使用外，还能用做消息队列，数据堆栈和数据缓存等; Memcache适合于缓存SQL语句，数据集，用户临时性数据，延迟查询数据和session等</p>
-<h2 id="Redis集群方案该怎么做-都有哪些方案"><a href="#Redis集群方案该怎么做-都有哪些方案" class="headerlink" title="Redis集群方案该怎么做?都有哪些方案?"></a>Redis集群方案该怎么做?都有哪些方案?</h2><ol>
-<li><p>codis</p>
-<p>目前用的最多的集群方案，基本和twemproxy一致的效果，但它支持在节点数量改变情况下，旧节点数据客恢复到新hash节点</p>
-</li>
-<li><p>redis cluster3.0自带的集群，特点在于他的分布式算法不是一致性hash，而是hash槽的概念，以及自身支持节点设置从节点。具体看官方介绍</p>
-</li>
-<li><p>在业务代码层实现，起几个毫无关联的redis实例，在代码层，对key进行hash计算，然后去对应的redis实例操作数据。这种方式对hash层代码要求比较高，考虑部分包括，节点失效后的替代算法方案，数据震荡后的字典脚本恢复，实例的监控，等等</p>
-</li>
-</ol>
-<h2 id="Redis回收进程是如何工作的"><a href="#Redis回收进程是如何工作的" class="headerlink" title="Redis回收进程是如何工作的"></a>Redis回收进程是如何工作的</h2><p>一个客户端运行了新的命令，添加了新的数据。</p>
-<p>redis检查内存使用情况，如果大于maxmemory的限制，则根据<strong>设定好的策略</strong>进行回收。</p>
-<p>一个新的命令被执行等等，所以我们不断地穿越内存限制的边界，通过<strong>不断达到边界然后不断回收回到边界以下</strong>。</p>
-<p>如果一个命令的结果导致大量内存被使用(例如很大的集合的交集保存到一个新的键)，不用多久内存限制就会被这个内存使用量超越。</p>
-<h1 id="MongoDB"><a href="#MongoDB" class="headerlink" title="MongoDB"></a>MongoDB</h1><h2 id="211-MongoDB中对多条记录做更新操作命令是什么？"><a href="#211-MongoDB中对多条记录做更新操作命令是什么？" class="headerlink" title="211.MongoDB中对多条记录做更新操作命令是什么？"></a>211.MongoDB中对多条记录做更新操作命令是什么？</h2><h2 id="212-MongoDB如何才会拓展到多个shard里？"><a href="#212-MongoDB如何才会拓展到多个shard里？" class="headerlink" title="212.MongoDB如何才会拓展到多个shard里？"></a>212.MongoDB如何才会拓展到多个shard里？</h2>]]></content>
+<p>MES(Mean Squared Error)均方误差:  $\frac{1}{m} \sum<em>{i=1}^m(y</em>{test}^i - y_{test}^i)^2$</p>
+<p>RMES(Root Mean Squared Error)均方根误差: $\sqrt{MES}$</p>
+<p>MAE(Mean Absolute Error)平均绝对误差：$\frac{1}{m} \sum<em>{i=1}^m|y</em>{test}^i - y_{test}^i|$</p>
+<h3 id="线上评估-—-A-B-testing"><a href="#线上评估-—-A-B-testing" class="headerlink" title="线上评估 — A/B testing"></a>线上评估 — A/B testing</h3><p>A/B testing</p>
+<p>AB测试是为<a href="https://baike.baidu.com/item/Web/150564">Web</a>或<a href="https://baike.baidu.com/item/App/6133292">App</a>界面或流程制作两个（A/B）或多个（A/B/n）版本，在同一<a href="https://baike.baidu.com/item/时间维度/6762941">时间维度</a>，分别让<strong>组成成分相同（相似）的访客群组</strong>（目标人群）<strong>随机的访问这些版本</strong>，收集各群组的用户体验数据和业务数据，最后分析、评估出最好版本，正式采用。</p>
+<h2 id="算法鲁棒性"><a href="#算法鲁棒性" class="headerlink" title="算法鲁棒性"></a>算法鲁棒性</h2><h2 id="模型安全"><a href="#模型安全" class="headerlink" title="模型安全"></a>模型安全</h2><h2 id="响应速度"><a href="#响应速度" class="headerlink" title="响应速度"></a>响应速度</h2><h1 id="测试工具"><a href="#测试工具" class="headerlink" title="测试工具"></a>测试工具</h1><div class="table-container">
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>WEB UI自动化：</td>
+<td><strong>selenium</strong>、robotframework</td>
+</tr>
+<tr>
+<td>接口自动化：</td>
+<td>Jmeter、<strong>Postman</strong>、soapUI、requests、httprunner</td>
+</tr>
+<tr>
+<td>App自动化：</td>
+<td>Appium、Monkey、Monkeyrunner、UIautomation，UIAutomator，Robotium，macaca，airtest</td>
+</tr>
+<tr>
+<td>PC端自动化：</td>
+<td>QTP(UFT)</td>
+</tr>
+<tr>
+<td>云测平台</td>
+<td>Testin、百度云测</td>
+</tr>
+<tr>
+<td>性能测试：</td>
+<td>Jmeter、<strong>LoadRunner</strong></td>
+</tr>
+<tr>
+<td>安全测试：</td>
+<td>Appscan</td>
+</tr>
+<tr>
+<td>持续集成：</td>
+<td><strong>Jenkins</strong></td>
+</tr>
+</tbody>
+</table>
+</div>
+<h1 id="测试问题汇总"><a href="#测试问题汇总" class="headerlink" title="测试问题汇总"></a>测试问题汇总</h1><h2 id="编写测试计划的目的是"><a href="#编写测试计划的目的是" class="headerlink" title="编写测试计划的目的是"></a>编写测试计划的目的是</h2><h2 id="对关键词触发模块进行测试"><a href="#对关键词触发模块进行测试" class="headerlink" title="对关键词触发模块进行测试"></a>对关键词触发模块进行测试</h2><h2 id="其他常用笔试题目网址汇总"><a href="#其他常用笔试题目网址汇总" class="headerlink" title="其他常用笔试题目网址汇总"></a>其他常用笔试题目网址汇总</h2><h2 id="测试人员在软件开发过程中的任务是什么"><a href="#测试人员在软件开发过程中的任务是什么" class="headerlink" title="测试人员在软件开发过程中的任务是什么"></a>测试人员在软件开发过程中的任务是什么</h2><h2 id="一条软件Bug记录都包含了哪些内容？"><a href="#一条软件Bug记录都包含了哪些内容？" class="headerlink" title="一条软件Bug记录都包含了哪些内容？"></a>一条软件Bug记录都包含了哪些内容？</h2><h2 id="简述黑盒测试和白盒测试的优缺点"><a href="#简述黑盒测试和白盒测试的优缺点" class="headerlink" title="简述黑盒测试和白盒测试的优缺点"></a>简述黑盒测试和白盒测试的优缺点</h2><h2 id="请列出你所知道的软件测试种类，至少5项"><a href="#请列出你所知道的软件测试种类，至少5项" class="headerlink" title="请列出你所知道的软件测试种类，至少5项"></a>请列出你所知道的软件测试种类，至少5项</h2><h2 id="Alpha测试与Beta测试的区别是什么？"><a href="#Alpha测试与Beta测试的区别是什么？" class="headerlink" title="Alpha测试与Beta测试的区别是什么？"></a>Alpha测试与Beta测试的区别是什么？</h2><h2 id="举例说明什么是Bug？一个bug-report应包含什么关键字？"><a href="#举例说明什么是Bug？一个bug-report应包含什么关键字？" class="headerlink" title="举例说明什么是Bug？一个bug report应包含什么关键字？"></a>举例说明什么是Bug？一个bug report应包含什么关键字？</h2><h2 id="在selenium自动化测试中，你一般完成什么类型的测试？自动化覆盖率？"><a href="#在selenium自动化测试中，你一般完成什么类型的测试？自动化覆盖率？" class="headerlink" title="在selenium自动化测试中，你一般完成什么类型的测试？自动化覆盖率？"></a><strong>在selenium自动化测试中，你一般完成什么类型的测试？自动化覆盖率？</strong></h2><p>主要是冒烟测试和回归测试。回归测试主要写一些功能稳定的场景，通过自动化手段去实现，节约测试时间。因为自动化测试用例也是在不断的更新和迭代，没有刻意去统计，大概在30%-40%左右！</p>
+<h2 id="什么是PO模式，为什么要使用它"><a href="#什么是PO模式，为什么要使用它" class="headerlink" title="什么是PO模式，为什么要使用它"></a><strong>什么是PO模式，为什么要使用它</strong></h2><p>PO是Page Object 模式的简称，它是一种设计思想，意思是，把一个页面，当做一个对象，页面的元素和元素之间操作方法就是页面对象的属性和行为，PO模式一般使用三层架构，分别为：基础封装层BasePage，PO页面对象层，TestCase测试用例层。</p>
+]]></content>
       <categories>
         <category>Computer Basic</category>
         <category>Interview</category>
       </categories>
       <tags>
-        <tag>DataBase Basic</tag>
+        <tag>Software Test Basic</tag>
       </tags>
   </entry>
   <entry>
@@ -3378,366 +3741,199 @@ cond(no)-&gt;op</textarea><textarea id="flowchart-0-options" style="display: non
       </tags>
   </entry>
   <entry>
-    <title>软件测试基础</title>
-    <url>/posts/22398/</url>
-    <content><![CDATA[<h1 id="软件测试理论"><a href="#软件测试理论" class="headerlink" title="软件测试理论"></a>软件测试理论</h1><h2 id="软件测试的生命周期"><a href="#软件测试的生命周期" class="headerlink" title="软件测试的生命周期"></a>软件测试的生命周期</h2><p>软件测试生命周期是指从项目计划建立到BUG提交的整个测试过程，包括：</p>
-<ol>
-<li>软件项目测试计划</li>
-<li>测试需求分析</li>
-<li>测试用例设计</li>
-<li>测试用例执行</li>
-<li>BUG提交</li>
-</ol>
+    <title>CNN</title>
+    <url>/posts/16452/</url>
+    <content><![CDATA[<h1 id="Convolutional-Neural-Networks"><a href="#Convolutional-Neural-Networks" class="headerlink" title="Convolutional Neural Networks"></a>Convolutional Neural Networks</h1><h2 id="Edge-Detection"><a href="#Edge-Detection" class="headerlink" title="Edge Detection"></a>Edge Detection</h2><p>卷积运算是卷积神经网络最基本的组成成分，使用边缘检测作为入门样例。下面介绍卷积计算是如何实现的。</p>
+<p>使用一个3✖️3的<strong>过滤器(核)</strong>与原始矩阵进行元素相乘，再相加，最后和的结果为<strong>卷积运算</strong>后的第一个元素值，然后依次计算，下面例子中，做一次卷积运算后结果为一个4✖️4的矩阵。</p>
+<p>这种卷积运算可以理解成为，<strong>垂直边缘检测器。</strong></p>
+<p><img data-src="/images/picturesof-4/CNN_1.png" alt="屏幕快照 2018-02-09 下午12.25.09"></p>
+<p>在不同的编程环境中可以使用不同的函数来实现卷积运算。</p>
+<p><img data-src="/images/picturesof-4/CNN_2.png" alt="屏幕快照 2018-02-09 下午12.38.47"></p>
+<p>那么为什么这个可以用作垂直检测呢？来看下面的例子。</p>
 <a id="more"></a>
-<h2 id="软件的三个要素是什么"><a href="#软件的三个要素是什么" class="headerlink" title="软件的三个要素是什么"></a>软件的三个要素是什么</h2><p>程序+数据+文档</p>
-<h2 id="软件的产品质量"><a href="#软件的产品质量" class="headerlink" title="软件的产品质量"></a>软件的产品质量</h2><p>参考质量模型部分</p>
-<h2 id="软件测试的目的"><a href="#软件测试的目的" class="headerlink" title="软件测试的目的"></a>软件测试的目的</h2><ol>
-<li>验证软件是否满足软件开发合同或者项目<strong>开发计划，软件需求规格说明书，软件产品说明</strong>等规定的软件质量要求</li>
-<li>通过测试，发现软件中迄今为止尚未发现的缺陷</li>
-<li>为软件产品的质量测量和评价提供依据</li>
-</ol>
-<h2 id="软件测试过程中的四个基本活动"><a href="#软件测试过程中的四个基本活动" class="headerlink" title="软件测试过程中的四个基本活动"></a>软件测试过程中的四个基本活动</h2><ol>
-<li><strong>测试策划</strong>：进行测试的需求分析和测试计划的编写</li>
-<li><strong>测试设计</strong>：依据测试需求，分析并选用已有的测试用例或者设计新的测试用例，进行用例评审</li>
-<li><strong>测试执行</strong>：执行测试用例，获取测试结果，分析并判定测试结果</li>
-<li><strong>测试总结</strong>：整理和分析测试数据，描述测试状态，最后完成软件测试报告并通过测试评审</li>
-</ol>
-<h2 id="测试用例设计的基本原则"><a href="#测试用例设计的基本原则" class="headerlink" title="测试用例设计的基本原则"></a>测试用例设计的基本原则</h2><p>case的设计应该符合以下几点：</p>
-<ol>
-<li>一个case一个功能点：每个case都要有个测点，找准一个测点即可，不能同时覆盖很多功能点</li>
-<li>case的执行粒度：粒度越小越好</li>
-<li>步骤清晰：一个case多个步骤，指明怎么去操作</li>
-<li>总体设计：先正常，后异常，这样可以确保正常情况下功能能够走通</li>
-</ol>
-<h1 id="测试的分类"><a href="#测试的分类" class="headerlink" title="测试的分类"></a>测试的分类</h1><ul>
-<li>按开发阶段划分<ul>
-<li>单元测试：基于软件设计文档</li>
-<li>集成测试：基于软件结构设计文档</li>
-<li>系统测试：基于用户需求</li>
-<li>验收测试：基于软件研制合同</li>
-</ul>
-</li>
-<li>按是否查看代码分类<ul>
-<li>黑盒测试：功能测试</li>
-<li>白盒测试：基于程序的测试</li>
-<li>灰盒测试：黑盒 + 白盒</li>
-</ul>
-</li>
-<li>按是否运行划分<ul>
-<li>静态测试：不执行被测软件，也可以用静态分析测试工具来进行（代码扫描）。</li>
-<li>动态测试：执行被测试程序。通过执行结果，分析软件可能出现的错误。执行测试用例等。</li>
-</ul>
-</li>
-<li>按测试对象划分<ul>
-<li>性能测试</li>
-<li>安全测试</li>
-<li>兼容性测试</li>
-<li>文档测试</li>
-<li>用户体验测试</li>
-<li>业务测试</li>
-<li>界面测试</li>
-<li>安装测试</li>
-<li>内存泄漏测试</li>
-</ul>
-</li>
-<li>按测试实施的组织<ul>
-<li>$\alpha$测试：初期测试，软件完成后，由<strong>程序员</strong>来测试执行查看软件功能性是否正常</li>
-<li>$\beta$测试：验收测试，交给<strong>最终的用户</strong>来测试其功能性</li>
-<li>第三方测试：介于开发者和用户之间，由第三方组织来进行</li>
-</ul>
-</li>
-<li>按是否手工执行划分<ul>
-<li>手工测试</li>
-<li>自动化测试</li>
-</ul>
-</li>
-<li>其他分类<ul>
-<li>冒烟测试：针对不同的版本，每次需求变更之后，<strong>在正式测试之前</strong>，对产品或者系统进行一次<strong>简单的验证测试 — 自测</strong></li>
-<li>回归测试：修改代码之后，需要测试下是否引起了其他的一些问题</li>
-<li>A/B测试：AB测试是为<a href="https://baike.baidu.com/item/Web/150564">Web</a>或<a href="https://baike.baidu.com/item/App/6133292">App</a>界面或流程制作两个（A/B）或多个（A/B/n）版本，在同一<a href="https://baike.baidu.com/item/时间维度/6762941">时间维度</a>，分别让<strong>组成成分相同（相似）的访客群组</strong>（目标人群）<strong>随机的访问这些版本</strong>，收集各群组的用户体验数据和业务数据，最后分析、评估出最好版本，正式采用。</li>
-</ul>
-</li>
-</ul>
-<h1 id="黑盒测试"><a href="#黑盒测试" class="headerlink" title="黑盒测试"></a>黑盒测试</h1><p><strong>黑盒测试：功能测试</strong>，数据驱动测试或者基于规格说明书的测试。这种测试<strong>不必了解程序的内部逻辑结构</strong>，而是<strong>根据需求说明书中的功能来设计测试用例。</strong>具体方法分为：等价类划分法、边界值分析法、判定表法、因果图法、错误推测法</p>
-<h2 id="等价类划分"><a href="#等价类划分" class="headerlink" title="等价类划分"></a>等价类划分</h2><ol>
-<li>定义：等价类划分是在分析需求规格说明的基础上，把<strong>程序的输入域划分成若干个部分，然后在每部分选取代表性的数据形成测试用例</strong></li>
-<li>等价类划分法的步骤如下：<ol>
-<li><strong>划分有效等价类</strong>：对规格说明是有意义的、合理的输入数据所构成的集合。利用有效等价类可以检验程序是否满足规格说明所规定的<strong>功能和性能</strong>。</li>
-<li><strong>划分无效等价类</strong>：不合理的输入数据所构成的集合。使用无效等价类可以<strong>测试程序/系统的容错性</strong>—对异常输入情况的处理。</li>
-</ol>
-</li>
-</ol>
-<h2 id="边界值分析法"><a href="#边界值分析法" class="headerlink" title="边界值分析法"></a>边界值分析法</h2><ol>
-<li>定义：边界值分析法是针对边界值进行测试的，使用等于、大于或者小于边界值的数据对程序进行测试的方法</li>
-<li>边界值分析法的步骤：<ol>
-<li>通过分析规格说明书找出所有可能的边界条件</li>
-<li>对每个边界条件给出满足和不满足的输入数据</li>
-<li>设计相应的测试用例</li>
-</ol>
-</li>
-</ol>
-<h2 id="因果图法"><a href="#因果图法" class="headerlink" title="因果图法"></a>因果图法</h2><h1 id="白盒测试"><a href="#白盒测试" class="headerlink" title="白盒测试"></a>白盒测试</h1><p><strong>白盒测试：又称为结构测试</strong>、逻辑驱动测试或者基于程序的测试。这种测试应该了解软件程序的内部构造，并且根据程序的内部结构来设计测试用例。<strong>白盒测试是基于覆盖的测试，尽可能覆盖程序的结构特征和逻辑路径。</strong>其具体方法有逻辑覆盖、循环覆盖、基本路径覆盖。逻辑覆盖又可分为语句覆盖、判定覆盖、条件覆盖、判定/条件覆盖、条件组合覆盖。</p>
-<p><a href="https://www.cnblogs.com/keaihaizi/p/11523683.html">https://www.cnblogs.com/keaihaizi/p/11523683.html</a></p>
-<h2 id="逻辑覆盖"><a href="#逻辑覆盖" class="headerlink" title="逻辑覆盖"></a>逻辑覆盖</h2><h3 id="语句覆盖"><a href="#语句覆盖" class="headerlink" title="语句覆盖"></a>语句覆盖</h3><p>每条语句至少执行一次</p>
-<h3 id="判定覆盖"><a href="#判定覆盖" class="headerlink" title="判定覆盖"></a>判定覆盖</h3><p>分支执行一次</p>
-<h3 id="条件覆盖"><a href="#条件覆盖" class="headerlink" title="条件覆盖"></a>条件覆盖</h3><p>每个条件取到<strong>各种可能的值</strong></p>
-<p>A=T 　　　　A=F<br>B=T 　　　　B=F</p>
-<h3 id="条件组合覆盖"><a href="#条件组合覆盖" class="headerlink" title="条件组合覆盖"></a>条件组合覆盖</h3><p>每个判断语句中条件结果的所有可能组合至少出现一次</p>
-<p>A= T　　　 B= T<br>A= T 　　　B= F<br>A= F　　　 B= T<br>A= F 　　　B= F </p>
-<h2 id="循环覆盖"><a href="#循环覆盖" class="headerlink" title="循环覆盖"></a>循环覆盖</h2><h2 id="基本路径覆盖"><a href="#基本路径覆盖" class="headerlink" title="基本路径覆盖"></a>基本路径覆盖</h2><p>设计出的测试用例要保证在测试中程序的语句覆盖100%，条件覆盖100%。条件组合未必能覆盖到。</p>
-<h1 id="静态测试、动态测试"><a href="#静态测试、动态测试" class="headerlink" title="静态测试、动态测试"></a>静态测试、动态测试</h1><ol>
-<li>静态测试：又称为静态分析结束，其基本特征是不执行被测软件，根据检查列表，<strong>对需求分析说明书、软件设计说明书以及源程序做结构检查、流程图分析等找出软件错误</strong>。静态测试一般采用人工分析（针对文档），也可以用静态分析测试工具来进行（代码扫描）。</li>
-<li>动态测试：其基本特征是执行被测试程序。通过执行结果，分析软件可能出现的错误 ，一般由人工设计程序测试用例，也可以由测试工具做检查和分析。</li>
-</ol>
-<h1 id="软件质量模型"><a href="#软件质量模型" class="headerlink" title="软件质量模型"></a>软件质量模型</h1><h2 id="软件质量"><a href="#软件质量" class="headerlink" title="软件质量"></a>软件质量</h2><p>ANSI/IEEE 定义软件质量为：“与软件产品满足规定的和隐含的需求的能力有关的特征或特性的全体”。</p>
-<h2 id="ISO-IEC-9126质量模型"><a href="#ISO-IEC-9126质量模型" class="headerlink" title="ISO/IEC 9126质量模型"></a>ISO/IEC 9126质量模型</h2><p>测试是对软件质量的度量，那么如何度量，从哪些角度度量。</p>
-<p>我们需要一套标准，或者说模型来作参考，赋予不同指标不同的权重，通过计算软件质量的得分，便可以评判出质量的好坏。</p>
-<p>ISO/IEC 9126在1991年12月发布，将软件质量归为6大特性和27个子特性。</p>
-<p><img data-src="/images/data/Screen Shot 2020-11-10 at 11.44.26.png" alt="Screen Shot 2020-11-10 at 11.44.26"></p>
-<p>功能性：软件产品提供满足明确和隐含需求功能的能力</p>
-<ul>
-<li>适合性：为规定任务提供一组合适功能的功能，即做了该做的事</li>
-<li>准确性：得到正确或相符的预期结果的能力</li>
-<li>互操作性：与其他系统软件交互的能力</li>
-<li>保密安全性：防止对程序及数据的非授权的故意或意外访问的能力</li>
-</ul>
-<p>可靠性：软件产品维护规定的性能级别的能力</p>
-<ul>
-<li>成熟性：避免软件内部的错误扩散而导致系统失效的能力</li>
-<li>容错性：防止外部接口错误扩散而导致系统失效的能力</li>
-<li>易恢复性：系统失效后，重新恢复原有的功能和性能的能力</li>
-</ul>
-<p>易用性：软件产品被理解、学习、使用及吸引用户的能力</p>
-<ul>
-<li>易理解性：交互性要清晰、准确和易懂</li>
-<li>易学性：用户学习软件所花努力的属性</li>
-<li>易操作性：用户操作和控制软件的能力</li>
-<li>吸引性：吸引用户的能力</li>
-</ul>
-<p><strong>性能效率</strong>：相对于所用资源的数量，软件产品可提供适当性能的能力</p>
-<ul>
-<li><strong>时间特性</strong>：软件执行功能时的响应、处理时间和吞吐率</li>
-<li><strong>资源特性</strong>：软件执行功能时所使用的资源数量和类型</li>
-</ul>
-<p>维护性：软件产品可以被修改的能力，修改可能包括修改、改进或者适应环境、需求和功能规约的变化</p>
-<ul>
-<li>易分析性：诊断缺陷或失效原因所需努力的属性</li>
-<li>易改变性：进行修改、排除错误或适应环境变化的能力</li>
-<li>稳定性：避免软件修改而造成意外结果的能力</li>
-<li>易测试性：提供辅助性手段帮助测试人员实现其测试意图</li>
-</ul>
-<p>可移植性：软件产品从一个环境迁移到另一个环境的能力</p>
-<ul>
-<li>适应性：无需相应变动就能适应不同环境的能力</li>
-<li>易安装性：尽可能少的提供选择，方便用户直接安装</li>
-<li>共存性：与其他公共软件共存</li>
-<li>易替换性：同等环境下，替换其他同类产品的能力</li>
-</ul>
-<h2 id="GB-T-25000质量模型"><a href="#GB-T-25000质量模型" class="headerlink" title="GB/T 25000质量模型"></a>GB/T 25000质量模型</h2><p>于2016年发布，(新增兼容性和信息安全)，大方向没有改变，新增的2大特性（信息安全性、兼容性）也是从原有的功能性和可移植性中分裂出来。</p>
-<p><img data-src="/images/data/Screen Shot 2020-11-10 at 11.54.54.png" alt="Screen Shot 2020-11-10 at 11.54.54"></p>
-<p>信息安全性，产品或系统保护信息和数据的程序，以使用户、其他产品或系统具有与其授权和授权级别一致的数据访问度</p>
-<ul>
-<li>保密性，产品或系统确保数据只有在被授权时才能被访问的程度</li>
-<li>完整性，系统、产品或组件防止未授权访问、篡改计算机程序或数据的程度</li>
-<li>抗抵赖性，活动或事件发生后可以被证实且不可被否认的程度</li>
-<li>可核查性，实体的活动可以被唯一地追溯到该实体的程度</li>
-<li>真实性，对象或资源的身份标识能够被证实符合其声明的程度</li>
-</ul>
-<p><a href="https://juejin.im/post/6844903878354272269">从纺锤模型到金字塔模型</a></p>
-<h1 id="软件开发中之敏捷开发：DevOps"><a href="#软件开发中之敏捷开发：DevOps" class="headerlink" title="软件开发中之敏捷开发：DevOps"></a>软件开发中之敏捷开发：DevOps</h1><p>DevOps是一套实践方法论和文化，提倡打破原有组织和限制，职能团队开始拥抱和接受<strong>DevOps所倡导的高度协同，研发、测试、运维及交付一体化的思维</strong>。随着DevOps和敏捷热度的不断提升，无论是互联网企业还是传统软件企业都开始拥抱<strong>敏捷</strong>，实践DevOps。<strong>持续集成CI（Continuous integration）、持续交付CD（Continuous delivery ）</strong>作为DevOps的最佳实践，越来越受到重视。</p>
-<h1 id="软件开发中之微服务架构"><a href="#软件开发中之微服务架构" class="headerlink" title="软件开发中之微服务架构"></a>软件开发中之微服务架构</h1><p>微服务架构源起于DevOps意识形态和实践中，是一种软件架构风格。微服务架构带来了一系列好处，例如<strong>可部署性、可靠性、可用性</strong>等等。虽然原则上可以使用任何架构来实践DevOps，但微服务架构<strong>正在成为构建持续部署 (CD)</strong>系统的标准<strong>架构风格</strong>。由于<strong>每项服务的规模都很小</strong>，它允许通过<strong>连续重构来实现单个服务</strong>的体系结构，因此<strong>减少了对大型项目前期设计的需求，允许尽早发布软件并且持续交付</strong>。微服务和DevOps是天然的共同体，结合起来共同实现软件开发行业的变革。</p>
-<h1 id="分层理论：金字塔模型"><a href="#分层理论：金字塔模型" class="headerlink" title="分层理论：金字塔模型"></a>分层理论：金字塔模型</h1><p>随着敏捷和微服务架构的引入，<strong>CI/CD成为构建和部署的标准</strong>。传统的手工测试方式在人员和效率上都存在严重不足，因此自动化测试已经成为现代软件研发过程中一个关键组成部分。<strong>自动化测试是打通持续集成和持续交付的核心</strong>，没有有效的自动化测试保证，持续集成和持续交付就仅仅是一个没有灵魂的躯壳。</p>
-<p>Martin Fowler描述<strong>测试金字塔</strong>分为单元、服务和UI三个层级。</p>
-<p><strong>1)单元测试</strong></p>
-<p>单元测试是针对<strong>代码单元（通常是类/方法）</strong>的测试，单元测试的价值在于能提供最快的反馈，在开发过程中就可以对逻辑单元进行验证。好的单元测试可以帮助改善既有设计，在团队掌握 TDD的前提下，单元测试能辅助重构，帮助提升代码整洁度。</p>
-<p><strong>2)接口（服务/API）测试</strong></p>
-<p><strong>接口测试是针对业务接口进行的测试</strong>，主要测试内部接口功能实现是否完整。比如内部逻辑是否正常、异常处理是否正确。接口测试的主要价值在于接口定义相对稳定，不像界面或底层代码会经常发生变化，所以接口测试比较容易编写，用例的维护成本也相对较低。在接口层面准备测试的性价比相对较高。</p>
-<p><strong>3)集成（UI）测试</strong></p>
-<p><strong>集成测试从用户的角度验证产品功能的正确性，测的是端到端的流程</strong>，并且加入用户场景和数据，验证整个过程是否健康流畅。集成测试的业务价值最高，它验证的是一个完整的流程，但因为需要验证完整流程，在环境部署、准备用例及实施等方面成本较高，实施起来并不容易。</p>
-<h1 id="自动化测试"><a href="#自动化测试" class="headerlink" title="自动化测试"></a>自动化测试</h1><h2 id="自动化测试分层及占比"><a href="#自动化测试分层及占比" class="headerlink" title="自动化测试分层及占比"></a>自动化测试分层及占比</h2><p>先来看一般的功能测试如何进行：设计并编写用例文档，描述测试步骤和预期结果；测试人员根据测试用例描述按步骤操作，然后判断实际结果与预期是否一致。如果一致，测试通过；如果不符，测试失败。</p>
-<p><strong>自动化测试要做的事情与功能测试是一致的。分层理论和自动化测试方法结合，出现了三个层面的自动化：单元测试自动化、接口测试自动化和UI测试自动化。</strong>当然，不同层面的自动化关注点是不一样的。所以，从测试的行为本质上来看，功能测试与单元自动化测试、接口自动化测试和UI自动化测试并没有区别。唯一的区别是，一个由人来执行，一个由代码或工具执行。</p>
-<ul>
-<li>单元自动化测试</li>
-</ul>
-<p>单元测试关注的是代码的实现与逻辑。单元测试是最基本的测试，也是测试中的最小单元，它的对象是函数对象，也可以包含输入输出，针对的是函数功能或者函数内部的代码逻辑，并不包含业务逻辑。</p>
-<p>该类测试一般由研发人员完成，需要借助单元测试框架，如java的Junit、TestNG，python的<strong>unittest</strong>等。</p>
-<ul>
-<li>接口自动化测试</li>
-</ul>
-<p>接口自动化测试，主要验证<strong>模块间的调用返回以及不同系统、服务间的数据交换</strong>。</p>
-<p>根据接口文档是RESTful还是RPC，最终断言返回的结果是否等于预期结果。如果相等，测试通过；如果不相等，测试失败。</p>
-<p>常见的接口测试工具有<strong>postman、jmeter、loadrunner</strong>等。</p>
-<ul>
-<li>集成自动化测试</li>
-</ul>
-<p>UI层是用户使用产品的入口，所有功能通过这一层提供给用户。</p>
-<p>当UI自动化登录成功后，就去获取这个数据进行断言，断言如果相等，测试通过；如果不相等，测试失败。</p>
-<p>所以，UI自动化的关注点用户操作形为，以及UI上各种组件是否可用。常见的测试工具有<strong>UFT、Robot Framework、Selenium、Appium</strong>等。</p>
-<p>按照测试金字塔模型以及投入/产出比，我们得知越向下回报率越高，<strong>所以应该使用大量的单元测试和全面的接口测试来覆盖产品提供的基本逻辑和功能，使用少量的集成（UI）测试来进行前端界面的功能验证。</strong></p>
-<p>都说业内最佳实践看Google，Google的自动化分层投入占比是：<strong>单元测试（Unit）：占比70%；接口测试（Service）：占比20%；集成测试（UI）：占比10%.</strong></p>
-<h2 id="自动化最佳实践：纺锤模型"><a href="#自动化最佳实践：纺锤模型" class="headerlink" title="自动化最佳实践：纺锤模型"></a>自动化最佳实践：纺锤模型</h2><p><strong>对现阶段公司大部分团队来说，更符合实际测试模式是纺锤模型</strong>。新项目中，可能由于时限原因或者开发人员习惯问题，一开始并没有把单元测试准备得很完善；而某些遗留老项目，可能原本就没有多少单元测试。</p>
-<p>在上述情况下，一般的做法是先将重心放在中间层的测试上，原因有以下两点：</p>
-<ul>
-<li>第一，中间层<strong>投入产出比较高</strong>，可以实现较高的自动化率；</li>
-<li>第二，可以帮助加强<strong>开发跟测试人员之间的协作</strong>，提高测试质量。这一层需要开发跟测试人员共同定义，因为开发知道内部实现的细节，测试掌握业务场景。</li>
-</ul>
-<p>当项目进行一段时间以后，各层测试占比有必要向理想型的金字塔型过渡，这时需要关注以下三个方面：</p>
-<ul>
-<li>开发与测试互相传递能力；</li>
-<li>全员关注产品设计跟代码的质量；</li>
-<li>让用例逐步下沉，最后逐步过渡到理想型。</li>
-</ul>
-<p><img data-src="/images/data/Screen Shot 2020-11-10 at 13.09.44.png" alt="Screen Shot 2020-11-10 at 13.09.44"></p>
-<h1 id="测试质量评估"><a href="#测试质量评估" class="headerlink" title="测试质量评估"></a>测试质量评估</h1><p>关于度量，不要用单一的指标去评估测试和产品质量，比如用例通过率、代码覆盖率等都无法独立地评估产品质量。</p>
-<p>评估测试质量时要关心以下几个方面：</p>
-<ul>
-<li>第一是<strong>用例比例</strong>，即每一层的用例比例是多少。</li>
-<li>第二是<strong>测试覆盖率</strong>。</li>
-<li>第三是<strong>测试总运行时间</strong>，因为经过优化以后，总运行时间一定是越来越少。</li>
-<li>第四是<strong>代码质量指标，反映代码的质量和整洁度</strong>。</li>
-</ul>
-<h1 id="Python自动化测试框架"><a href="#Python自动化测试框架" class="headerlink" title="Python自动化测试框架"></a>Python自动化测试框架</h1><ol>
-<li><p>python+selenium+unittest+htmltestrunner</p>
-</li>
-<li><p>python+selenium+pytest+allure</p>
-</li>
-<li><p>robotframework+Selenium2Library</p>
-</li>
-</ol>
-<h2 id="pytest"><a href="#pytest" class="headerlink" title="pytest"></a>pytest</h2><p>pytest是一个非常成熟的Python测试框架</p>
-<ol>
-<li>能够支持简单的单元测试和复杂的功能测试，还可以用来做selenium/appnium等自动化测试，接口自动化测试（pytest+request）</li>
-<li>pytest具有很多第三方插件，并且可以自定义扩展，常用的插件有：<ol>
-<li>pytest-selenium（集成selenium）</li>
-<li>pytest-html（完美html测试报告生成）</li>
-<li>pytest-rerunfailures（失败case重复执行）</li>
-<li>pytest-xdist（多CPU分发）</li>
-</ol>
-</li>
-</ol>
-<p><a href="https://www.cnblogs.com/mytianying/p/12466302.html">https://www.cnblogs.com/mytianying/p/12466302.html</a></p>
-<h1 id="算法测试"><a href="#算法测试" class="headerlink" title="算法测试"></a>算法测试</h1><h2 id="模型评估"><a href="#模型评估" class="headerlink" title="模型评估"></a>模型评估</h2><h3 id="线下评估-—-准确度、查准率、召回率"><a href="#线下评估-—-准确度、查准率、召回率" class="headerlink" title="线下评估 — 准确度、查准率、召回率"></a>线下评估 — 准确度、查准率、召回率</h3><p>数据拆分：训练数据集&amp;测试数据集： 利用训练集训练模型，然后利用模型在测试集上进行测试。</p>
-<p>评价分类结果：<strong>混淆矩阵、精准度、精准率、召回率、F1 Score</strong>、ROC曲线、AUC值等</p>
-<p>评价回归结果：MES、RMES、MAE、R Squared</p>
-<ul>
-<li>Precision &amp; Recall</li>
-</ul>
-<p><strong>混淆矩阵：</strong>对于二分类问题来说，所有的问题被分为0和1两类。</p>
-<p><strong>True Positive(TP)</strong>：正实际为正实际为正，预测对了(True)</p>
-<p><strong>False Negative(FN)</strong>: 预测为负实际为正，预测错了(False)</p>
-<p><strong>False Positive(FP)</strong>: 预测为负实际为正，预测错了(False)</p>
-<p><strong>True Negative(TN)</strong>: 预测为负实际为负，预测对了(True)</p>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th></th>
-<th>真实值正</th>
-<th>真实值负</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>预测值正</td>
-<td>TP</td>
-<td>FP</td>
-</tr>
-<tr>
-<td>预测值负</td>
-<td>FN</td>
-<td>TN</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p><strong>Accuracy指准确度</strong>，意味着系统误差(System Error)小，即偏差(Bias) 小，描述了的实际值与真实结果的偏离程度。</p>
-<p>$accuracy = \frac{TP + TN}{TP + FP + FN + TN}$</p>
-<blockquote>
-<p>如果存在<strong>样本不均衡</strong>的情况下，就不能使用accuracy来进行衡量了。比如，一个总样本中，正样本占90%,负样本占10%，那么只需要将所有样本预测为正，就可以拿到90%的准确率，而这显然是无意义的。正因为如此，我们就需要精准率和召回率了。</p>
-</blockquote>
-<p><strong>Precision指查准率，即预测为正的样本中，实际为正的比例。</strong></p>
-<p>$Precision=\frac{TP}{TP+FP}$</p>
-<blockquote>
-<p>为什么管它叫精准率呢？在有偏的数据中，我们<strong>通常更关注值为1的特征</strong>，比如“患病”，比如“有风险”。在100次结果为患病的预测，平均有40次预测是对的。即<strong>精准率为我们关注的那个事件，预测的有多准。</strong></p>
-<p>医生预测为癌症，患者确实患癌症的比例。</p>
-</blockquote>
-<p><strong>Recall召回率：所有真实值为正的数据中，预测对了的个数。</strong></p>
-<p>$Recall = \frac{TP}{TP + FN}$</p>
-<blockquote>
-<p><strong>也就是我们关注的那个事件真实的发生情况下，我们成功预测的比例是多少。</strong></p>
-<p>至于两个指标如何使用，需要看具体场景，实际上这两个指标是互斥的，一个高，必有另一个低。</p>
-</blockquote>
-<p><strong>F1 Score: </strong>P为查准率，R为查全率。F1score就是在查准率与查全率之间寻找一个平衡点。</p>
-<p>$F1 Score = 2<em>\frac{P </em> R}{P + R}$</p>
-<ul>
-<li>MAP</li>
-</ul>
-<p>在目标检测中：</p>
-<p><strong>如果IoU&gt; 0.5，则认为它是True Positive，否则认为是False Positive。</strong>而COCO数据集的评估指标建议对不同的IoU阈值进行计算，但为简单起见，我们这里仅讨论一个阈值0.5，这是PASCAL VOC数据集所用的指标。</p>
-<p><strong>为了计算Recall，我们需要Negatives的数量</strong>。由于图片中我们没有预测到物体的每个部分都被视为Negative，因此计算True Negatives比较难办。<strong>一般通过改变置信度的值，</strong>阈值<strong>以上的所有预测（Box + Class）都被认为是Positives，并且低于该值的都是Negatives。</strong></p>
-<p>PASCAL VOC组织者推荐采用一种可以用于任何模型的评估指标，选择了11个不同的recall，可以认为是选择了11个rank，由于是按照置信度进行排序的，实际上等于选择了11个不同的置信度阈值。AP就定义为在这11个recall下precision的平均值。</p>
-<p>代码见：<a href="https://zhuanlan.zhihu.com/p/37910324">https://zhuanlan.zhihu.com/p/37910324</a></p>
-<ul>
-<li>MES、RMES、MAE</li>
-</ul>
-<p>MES(Mean Squared Error)均方误差:  $\frac{1}{m} \sum<em>{i=1}^m(y</em>{test}^i - y_{test}^i)^2$</p>
-<p>RMES(Root Mean Squared Error)均方根误差: $\sqrt{MES}$</p>
-<p>MAE(Mean Absolute Error)平均绝对误差：$\frac{1}{m} \sum<em>{i=1}^m|y</em>{test}^i - y_{test}^i|$</p>
-<h3 id="线上评估-—-A-B-testing"><a href="#线上评估-—-A-B-testing" class="headerlink" title="线上评估 — A/B testing"></a>线上评估 — A/B testing</h3><p>A/B testing</p>
-<p>AB测试是为<a href="https://baike.baidu.com/item/Web/150564">Web</a>或<a href="https://baike.baidu.com/item/App/6133292">App</a>界面或流程制作两个（A/B）或多个（A/B/n）版本，在同一<a href="https://baike.baidu.com/item/时间维度/6762941">时间维度</a>，分别让<strong>组成成分相同（相似）的访客群组</strong>（目标人群）<strong>随机的访问这些版本</strong>，收集各群组的用户体验数据和业务数据，最后分析、评估出最好版本，正式采用。</p>
-<h2 id="算法鲁棒性"><a href="#算法鲁棒性" class="headerlink" title="算法鲁棒性"></a>算法鲁棒性</h2><h2 id="模型安全"><a href="#模型安全" class="headerlink" title="模型安全"></a>模型安全</h2><h2 id="响应速度"><a href="#响应速度" class="headerlink" title="响应速度"></a>响应速度</h2><h1 id="测试工具"><a href="#测试工具" class="headerlink" title="测试工具"></a>测试工具</h1><div class="table-container">
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>WEB UI自动化：</td>
-<td><strong>selenium</strong>、robotframework</td>
-</tr>
-<tr>
-<td>接口自动化：</td>
-<td>Jmeter、<strong>Postman</strong>、soapUI、requests、httprunner</td>
-</tr>
-<tr>
-<td>App自动化：</td>
-<td>Appium、Monkey、Monkeyrunner、UIautomation，UIAutomator，Robotium，macaca，airtest</td>
-</tr>
-<tr>
-<td>PC端自动化：</td>
-<td>QTP(UFT)</td>
-</tr>
-<tr>
-<td>云测平台</td>
-<td>Testin、百度云测</td>
-</tr>
-<tr>
-<td>性能测试：</td>
-<td>Jmeter、<strong>LoadRunner</strong></td>
-</tr>
-<tr>
-<td>安全测试：</td>
-<td>Appscan</td>
-</tr>
-<tr>
-<td>持续集成：</td>
-<td><strong>Jenkins</strong></td>
-</tr>
-</tbody>
-</table>
-</div>
-<h1 id="测试问题汇总"><a href="#测试问题汇总" class="headerlink" title="测试问题汇总"></a>测试问题汇总</h1><h2 id="编写测试计划的目的是"><a href="#编写测试计划的目的是" class="headerlink" title="编写测试计划的目的是"></a>编写测试计划的目的是</h2><h2 id="对关键词触发模块进行测试"><a href="#对关键词触发模块进行测试" class="headerlink" title="对关键词触发模块进行测试"></a>对关键词触发模块进行测试</h2><h2 id="其他常用笔试题目网址汇总"><a href="#其他常用笔试题目网址汇总" class="headerlink" title="其他常用笔试题目网址汇总"></a>其他常用笔试题目网址汇总</h2><h2 id="测试人员在软件开发过程中的任务是什么"><a href="#测试人员在软件开发过程中的任务是什么" class="headerlink" title="测试人员在软件开发过程中的任务是什么"></a>测试人员在软件开发过程中的任务是什么</h2><h2 id="一条软件Bug记录都包含了哪些内容？"><a href="#一条软件Bug记录都包含了哪些内容？" class="headerlink" title="一条软件Bug记录都包含了哪些内容？"></a>一条软件Bug记录都包含了哪些内容？</h2><h2 id="简述黑盒测试和白盒测试的优缺点"><a href="#简述黑盒测试和白盒测试的优缺点" class="headerlink" title="简述黑盒测试和白盒测试的优缺点"></a>简述黑盒测试和白盒测试的优缺点</h2><h2 id="请列出你所知道的软件测试种类，至少5项"><a href="#请列出你所知道的软件测试种类，至少5项" class="headerlink" title="请列出你所知道的软件测试种类，至少5项"></a>请列出你所知道的软件测试种类，至少5项</h2><h2 id="Alpha测试与Beta测试的区别是什么？"><a href="#Alpha测试与Beta测试的区别是什么？" class="headerlink" title="Alpha测试与Beta测试的区别是什么？"></a>Alpha测试与Beta测试的区别是什么？</h2><h2 id="举例说明什么是Bug？一个bug-report应包含什么关键字？"><a href="#举例说明什么是Bug？一个bug-report应包含什么关键字？" class="headerlink" title="举例说明什么是Bug？一个bug report应包含什么关键字？"></a>举例说明什么是Bug？一个bug report应包含什么关键字？</h2><h2 id="在selenium自动化测试中，你一般完成什么类型的测试？自动化覆盖率？"><a href="#在selenium自动化测试中，你一般完成什么类型的测试？自动化覆盖率？" class="headerlink" title="在selenium自动化测试中，你一般完成什么类型的测试？自动化覆盖率？"></a><strong>在selenium自动化测试中，你一般完成什么类型的测试？自动化覆盖率？</strong></h2><p>主要是冒烟测试和回归测试。回归测试主要写一些功能稳定的场景，通过自动化手段去实现，节约测试时间。因为自动化测试用例也是在不断的更新和迭代，没有刻意去统计，大概在30%-40%左右！</p>
-<h2 id="什么是PO模式，为什么要使用它"><a href="#什么是PO模式，为什么要使用它" class="headerlink" title="什么是PO模式，为什么要使用它"></a><strong>什么是PO模式，为什么要使用它</strong></h2><p>PO是Page Object 模式的简称，它是一种设计思想，意思是，把一个页面，当做一个对象，页面的元素和元素之间操作方法就是页面对象的属性和行为，PO模式一般使用三层架构，分别为：基础封装层BasePage，PO页面对象层，TestCase测试用例层。</p>
+<p>这是一个简单的6✖️6的图像，图像左边一半是10，右边一半是0，如果你把它看成一个图像，那么是左白右灰的，10代表比较亮的颜色，0代表比较黑的颜色。图片里，有一个特别明显的垂直边缘在图像中间，这条直线是从黑到白的过度线。<strong>所以当你使用一个3✖️3的过滤器进行卷积运算的时候，这个过滤器可视化成下面这个样子</strong>，在左边有明亮的像素，然后有一个过滤段0在中间，右边是黑色的。使用过滤器进行卷积元算，得到的是右边的矩阵，可视化样子如下，在中间有段亮一点的区域，对应检查到这个6✖️6的图像中间的垂直边缘，这里的维数似乎有点不正确，检测到的边缘太粗了，因为这个例子中的图片太小了，如果你用一个1000✖️1000的图像，而不是6✖️6的图像，你会发现，它可以很好的检测出图像中的垂直边缘。在这个例子中，在输出图像中间区域的亮出，表示在图像中间，有一个特别明显的垂直边缘。</p>
+<p>从垂直边缘检测中可以得到的启发是，因为我们使用的是3✖️3的矩阵，所以垂直边缘是一个3✖️3的区域，左边是明亮的像素，中间的的并不需要考虑，右边是深色像素。在这个6✖️6图像中，明亮的像素在左边，深色的像素在右边，这样的话就会被视为一个垂直边缘。卷积运算提供了一个方便的方法，来发现图像中的垂直边缘。</p>
+<p><img data-src="/images/picturesof-4/CNN_3.png" alt="屏幕快照 2018-02-09 下午1.05.04"></p>
+<h2 id="More-Edge-Detection"><a href="#More-Edge-Detection" class="headerlink" title="More Edge Detection"></a>More Edge Detection</h2><p>使用相同的过滤器过滤两个颜色刚好相反的图片，可以看到，第一个是30，第二个是-30，<strong>其中正数(30)代表第一幅图是由亮向暗过度，负数(-30)代表第二张图片是由暗向亮过度。</strong></p>
+<p><img data-src="/images/picturesof-4/CNN_4.png" alt="屏幕快照 2018-03-01 上午9.41.33"></p>
+<p>有垂直过滤器，就会有水平过滤器。下面举一个更为复杂的例子，在下图的这个图片矩阵中，我们使用水平过滤器进行边缘检测，得到的卷积结果如右下方所示，<strong>用绿色方框圈出的”+30”，代表原始图片中用绿色圈出的3✖️3矩阵的卷积结果，可以看到，这块矩阵的水平边缘确实是由亮到暗过度的，所以卷积结果为正。</strong></p>
+<p><img data-src="/images/picturesof-4/CNN_5.png" alt="屏幕快照 2018-03-01 上午9.56.15"></p>
+<p>事实上，对于这个3✖️3的滤波器来说，我们只使用了其中一种数字组合，但在历史上的计算机视觉的文献中，曾经公平的争论过，怎样的数字组合才是最好的，所以你还可以使用如下图所示的过滤器，<strong>如Sobel过滤器</strong>，它的优点在于，增加了中间一行元素的权重，也就是处在图像中央的像素点，这使得结果的健壮性更高一些。<strong>Scharr过滤器。</strong></p>
+<p>实际上是，当你在做复杂图像的边缘检测时，并不一定要使用刚刚我们提到的9个数字，但是你可以从中学习，把<strong>这矩阵中的9个数字当成9个参数，并且在之后可以使用反向传播算法，学习这9个参数。</strong>得到的结果与原始图片进行卷积，将会得到一个出色的边缘检测结果。</p>
+<p>相比这种单纯的垂直边缘与水平边缘检测，它可以检测出45度、70度、73度，甚至是任何角度的边缘。</p>
+<p><img data-src="/images/picturesof-4/CNN_6.png" alt="屏幕快照 2018-03-01 上午10.19.16"></p>
+<h2 id="Padding"><a href="#Padding" class="headerlink" title="Padding"></a>Padding</h2><p>为了构建深度神经网络，你需要学会使用的一个基本的卷积操作就是Padding。Padding出现的原因是，当你在做卷积操作的时候，像素矩阵中，中间的矩阵是被卷积计算多次的，也就是多次使用到了这个矩阵的信息，而边缘的像素矩阵，则会被使用较少次，比如说对角的矩阵，则只是被卷积了一次。这样则会导致会忽略边缘矩阵的信息。<strong>采取的措施是使用“填充(Padding)”方法，进行像素填充。使得边缘像素矩阵信息可以被卷积多次。</strong>填充之后的矩阵再进行卷积操作后，就会得到一个和原始矩阵一样大的矩阵，而不是缩小。</p>
+<p>习惯上，你可以使用”0”去填充。</p>
+<p><img data-src="/images/picturesof-4/CNN_7.png" alt="屏幕快照 2018-03-01 上午11.25.36"></p>
+<p>至于选择填充多少像素，通常有两个选择，<strong>分别叫做Valid卷积和Same卷积。</strong>Valid卷积：意味着不填充，所以得到的输出矩阵会比原始矩阵小。要想和原始矩阵得到的一样大，则使用Same卷积，你可以使用下面的计算公式来计算需要Pad多少个像素。<strong>n是原始图片的维数，f是过滤器的维数，最后得到的输出矩阵大小为n-f+1维。（f通常是奇数，如果为偶数，则会导致左右填充不均匀的情况）</strong></p>
+<p><img data-src="/images/picturesof-4/CNN_8.png" alt="屏幕快照 2018-03-01 上午11.59.32"></p>
+<h2 id="Strided-Convolutions-卷积步长"><a href="#Strided-Convolutions-卷积步长" class="headerlink" title="Strided Convolutions 卷积步长"></a>Strided Convolutions 卷积步长</h2><p>卷积中的步幅是另一个构建卷积神经网络的基本操作。每次卷积移动步长个单位，而不是我们之前提到的1个步长。这时候，计算输出函数的维数公式变成了如下情况。</p>
+<p>如果求得的商不是一个整数怎么办？这里采用向下取整。</p>
+<p><img data-src="/images/picturesof-4/CNN_9.png" alt="屏幕快照 2018-03-01 下午1.59.37"></p>
+<h2 id="Convolutions-Over-Volume"><a href="#Convolutions-Over-Volume" class="headerlink" title="Convolutions Over Volume"></a>Convolutions Over Volume</h2><p>之前讨论的卷积操作是在二维图像上进行的，现在讨论如何在三维立体(RGB)上做卷积操作。注意，图像的通道数和过滤器的通道数需一致。</p>
+<p>和一维图形中类似，使用三层过滤器依次与相对应层级中的元素相乘，每层得到9个数字，3层就是27个数字，将这27个数字相加后，就可以得到输出矩阵中的每个元素值。</p>
+<p><img data-src="/images/picturesof-4/CNN_10.png" alt="屏幕快照 2018-03-01 下午2.30.40"></p>
+<h2 id="One-Layer-of-a-Convolutional-Network-单层卷积网络"><a href="#One-Layer-of-a-Convolutional-Network-单层卷积网络" class="headerlink" title="One Layer of a Convolutional Network 单层卷积网络"></a>One Layer of a Convolutional Network 单层卷积网络</h2><p>下图演示了利用两个过滤器将6✖️6✖️3的矩阵转化为4✖️4✖️2的矩阵的过程，这个4✖️4✖️2的矩阵就是卷积中的一层结果。利用n个过滤器来提取特征，如垂直边缘，水平边缘或者其他特征。</p>
+<p><img data-src="/images/picturesof-4/CNN_11.png" alt="屏幕快照 2018-03-01 下午3.38.38"></p>
+<p>对于一些标识及每层的数量，总结如下：</p>
+<p><img data-src="/images/picturesof-4/CNN_12.png" alt="屏幕快照 2018-03-01 下午4.16.42"></p>
+<h2 id="Simple-Convolutional-Network-Example"><a href="#Simple-Convolutional-Network-Example" class="headerlink" title="Simple Convolutional Network Example"></a>Simple Convolutional Network Example</h2><p>下图是模拟一个卷积神经网络的计算过程。最后我们得到一个7✖️7✖️40的矩阵，也就是1960个元素值，将这1960个元素展开，使用逻辑回归或者SoftMax，进行图片的分类判断。</p>
+<p>可以看到，高度和宽度会在某一时间段内保持一致，然后随着网络深度的加深而逐渐减少，而信道数量在增加。</p>
+<p><img data-src="/images/picturesof-4/CNN_13.png" alt="屏幕快照 2018-03-01 下午4.50.51"></p>
+<p>典型的神经网络通常由三层组成，第一个是卷积层(convolution Layer)，第二个是池化层(Pooling Layer)，最后一个是全连接层(Fully Connect Layer)。虽然仅用卷积层也有可能构建出很好的神经网络，但大部分神经网络架构师依然会添加池化层和全连接层。</p>
+<p><img data-src="/images/picturesof-4/CNN_14.png" alt="屏幕快照 2018-03-01 下午5.06.05"></p>
+<h2 id="Pooling-Layers"><a href="#Pooling-Layers" class="headerlink" title="Pooling Layers"></a>Pooling Layers</h2><p>除了卷积层，卷积网络也经常使用池化层，来缩减模型的大小，提高计算速度，同时提高所提取特征的健壮性。</p>
+<p>所谓<strong>最大池化层</strong>，即将原始矩阵分成四个区域，输出的每个元素都是其对应颜色区域中的最大元素值。</p>
+<p>最大化操作的功能就是只要在任何一个象限内提取到某个特征，他都会保留在最大池化的输出里。最大化运算的实际作用就是，如果在过滤器中提取到某个特征，那么保留其最大值。必须承认，人们使用最大池化的主要原因是，此法在很多实验中，效果都很好。<strong>其中有一个有意思的特点就是，它有一组超级参数，但是并没有参数需要学习，一旦确定了f和s，它就是一个固定运算。</strong></p>
+<p><img data-src="/images/picturesof-4/CNN_15.png" alt="屏幕快照 2018-03-01 下午6.00.49"></p>
+<p>下图是最大池化的演示。</p>
+<p><img data-src="/images/picturesof-4/CNN_16.png" alt="屏幕快照 2018-03-01 下午6.02.50"></p>
+<p>另外还有一种类型的池化，—<strong>平均池化</strong>，它不太常用。这种运算顾名思义，选取的不是每个过滤器的最大值，而是平均值。当建立一个深度很深的神经网络时，你可以利用平均池化来分解规模为7✖️7✖️1000的网络的表示层。但是在神经网络中，最大池化比平均池化用的更多。</p>
+<p><img data-src="/images/picturesof-4/CNN_17.png" alt="屏幕快照 2018-03-01 下午6.18.08"></p>
+<p>总结一下，池化的超级参数包括过滤器大小f和步长s。常用的参数值为f=2，s=2，或者f=3，s=3。你也可以根据自己的意愿来决定是否使用padding，<strong>但是在最大池化操作中，很少使用padding。</strong></p>
+<p><strong>最大池化只是计算神经网络某一层的静态属性，它的超参是不需要学习的。</strong></p>
+<p><img data-src="/images/picturesof-4/CNN_18.png" alt="屏幕快照 2018-03-01 下午6.25.52"></p>
+<h2 id="CNN-Example"><a href="#CNN-Example" class="headerlink" title="CNN Example"></a>CNN Example</h2><p> 我们将卷积层和池化层有时会合并起来看作神经网络中的某一层，因为池化层是不需要权重的，它只有超参数。通过卷积和池化，我们得到一个5✖️5✖️16(=400)的矩阵，现在将POOL2平整化为一个大小为400的一维向量。然后利用这400个单元构建下一层，下一层含有120个单元，<strong>这就是我们第一个全连接层，这400个单元与120个单元紧密相连。它很像一个单神经网络层，这是一个标准的神经网络。</strong>它在120✖️400的维度上具有一个权重矩阵W，这就是全连接层。</p>
+<p>然后我们对这120个单元再添加一个全连接层，这层更小，假设有84个单元。最后，用这84个单元填充一个SoftMax单元，如果你想识别0～9的数字，那么这个SoftMax输出层则会有10个输出。</p>
+<p>在对于超级参数的选择问题上，建议不要自己凭空设定，而是查看文献中别人采取了哪些超级参数，选一个在别人任务重，效果很好的架构。</p>
+<p><img data-src="/images/picturesof-4/CNN_19.png" alt="屏幕快照 2018-03-02 上午10.58.49"></p>
+<p>还有一种在CNN中，另一种常见的模式是，一个或者多个卷积层后跟随一个池化层，然后是几个全连接层，最后是SoftMax层。从下面的表格中可以看出，第一，池化层和最大池化层没有参数。第二，卷积层的参数相对来说比较少。其实许多参数都存在于CNN中的全连接层。观察可发现，随着神经网络的加深，激活值会逐渐变小，如果激活值下降过快，也会影响网络性能。</p>
+<p><strong>（parameters208来源：第一个卷积层中，过滤器维度为5✖️5，每个过滤器有1个bias，一共有8个过滤器，即5✖️5 + 1 ✖️ 8 = 208，所以第一层的weights是208）</strong></p>
+<p><img data-src="/images/picturesof-4/CNN_20.png" alt="屏幕快照 2018-03-02 上午11.17.15"></p>
+<h2 id="Why-Convolutions"><a href="#Why-Convolutions" class="headerlink" title="Why Convolutions?"></a>Why Convolutions?</h2><p>与传统的神经网络相比，CNN的主要两个优势在于：<strong>参数共享、稀疏连接</strong></p>
+<p>参数共享：通过观察发现，特征检测如垂直边缘检测如果适用于图片的某个区域，那么它可能适用于图片的其他区域。<strong>也就是说，如果你用一个3✖️3的过滤器检测垂直边缘，那么图片的左上角区域以及旁边的各个区域都可以使用这个3✖️3的过滤器。每个特征检测器及输出都可以在输入图片的的不同区域中使用相同的参数。以便提取垂直边缘或者其他特征。</strong>它不仅适用于边缘特征这样的低阶特征，同样适用于高阶特征，例如提取脸上的眼睛，猫或者其他特征对象。</p>
+<p>神经网络可以通过这两种机制减少参数，以便于我们用更小的训练集来训练它， 从而预防过度拟合。</p>
+<p><img data-src="/images/picturesof-4/CNN_21.png" alt="屏幕快照 2018-03-02 下午12.04.13"></p>
+<p>计算损失，使用优化算法来优化权重。</p>
+<p><img data-src="/images/picturesof-4/CNN_22.png" alt="屏幕快照 2018-03-02 下午12.11.50"></p>
+<h1 id="Case-studies"><a href="#Case-studies" class="headerlink" title="Case studies"></a>Case studies</h1><h2 id="Classic-Networks-经典网络"><a href="#Classic-Networks-经典网络" class="headerlink" title="Classic Networks 经典网络"></a>Classic Networks 经典网络</h2><p>下面是一些经典的网络。</p>
+<p><img data-src="/images/picturesof-4/CNN_23.png" alt="屏幕快照 2018-03-07 上午10.41.57"></p>
+<p><img data-src="/images/picturesof-4/CNN_24.png" alt="屏幕快照 2018-03-07 上午10.56.07"></p>
+<p><img data-src="/images/picturesof-4/CNN_25.png" alt="屏幕快照 2018-03-07 上午11.02.34"></p>
+<p><img data-src="/images/picturesof-4/CNN_26.png" alt="屏幕快照 2018-03-07 上午11.09.52"></p>
+<h2 id="ResNets-残差网络"><a href="#ResNets-残差网络" class="headerlink" title="ResNets 残差网络"></a>ResNets 残差网络</h2><p>非常非常深的网络是很难被训练的，因为存在<strong>梯度消失</strong>和<strong>梯度爆炸</strong>的问题。下面要提到的是<strong>跳远连接</strong>(Skip Connection)，它可以从某一网络层获取激活，然后迅速反应给另外一层，甚至是神经网络的更深层。我们可以利用Skip Connection构建能够训练深度网络的ResNets，有时深度能够超过100层。</p>
+<p><strong>ResNets是由残差块构建的。</strong>下面解释什么是残差块(Residual Block)。</p>
+<p>在一般的神经网络系统中，激活层a[l]通常经过线性化处理，非线性化处理，再线性化处理，再非线性化，最后得到输出层a[l+2]。这被称作“主路径”(Main Path)</p>
+<p><img data-src="/images/picturesof-4/CNN_27.png" alt="屏幕快照 2018-03-07 下午4.25.01"></p>
+<p><strong>在ResNets中，有一点变化，我们将a[l]直接向后拷贝到神经网络的深层。</strong>在Relu非线性激活前加上a[l]，这是一条捷径(Shortcut)。也就是a[l]不再沿着主路径进行传递。这样一来a[l+2]变成了如下所示的样子，也就是加上的这个a[l]产生了一个残差块。所以a[l]插入的时机是在线性激活之后，Relu激活之前。</p>
+<p><img data-src="/images/picturesof-4/CNN_28.png" alt="屏幕快照 2018-03-07 下午4.45.08"></p>
+<p>除了<strong>捷径(ShortCut)</strong>，你可能还会听到另一个术语<strong>跳远连接(Skip Connection)</strong>，就是指a[l]跳过一层甚至是好几层，从而将消息传递到神经网络的更深层。</p>
+<p>使用残差块能够训练更深的神经网络，所以构建一个ResNet网络就是通过将很多这样的残差块堆砌在一起，形成一个深度神经网络。</p>
+<p>将一个普通的神经网络(PlainNetWork)编程一个残差网络(ResNets)的方法就是添加很多残差块，如下图所示。有5个残差块。如果我们使用标准优化算法训练一个普通网络，比如梯度下降或者其他热门的优化算法，如果没有多余的残差，没有这些捷径或者跳远连接，你会发现，随着网络深度的加深，训练错误会先减少，然后增多，而理论上，应该是随着网络深度的加深，错误应该越少越好。<strong>但事实上，对于一个普通网络来说，深度越深意味着用优化算法越难训练，训练错误就会越来越多，但是有了ResNet就不一样了。</strong>即使网络再深，训练的表现却不错，比如说错误会减少，甚至在100层，1000层的网络中也不例外。这种方式确实能有效的解决梯度消失和梯度爆炸的问题。让我们在训练更深的网络的同时，又能保证好的性能。</p>
+<p><img data-src="/images/picturesof-4/CNN_29.png" alt="屏幕快照 2018-03-07 下午4.59.04"></p>
+<p><img data-src="/images/picturesof-4/CNN_30.png" alt="屏幕快照 2018-03-07 下午6.31.41"></p>
+<h2 id="1x1-Convolutions-1✖️1卷积"><a href="#1x1-Convolutions-1✖️1卷积" class="headerlink" title="1x1 Convolutions 1✖️1卷积"></a>1x1 Convolutions 1✖️1卷积</h2><p>使用1✖️1卷积可以根据自己的意愿来压缩或者保持、甚至增加输入层中信道的数量。</p>
+<p><img data-src="/images/picturesof-4/CNN_31.png" alt="屏幕快照 2018-03-07 下午6.58.29"></p>
+<p>上图中输入层中是28✖️28✖️192的维度，如果我们想要达到降维的效果，可以利用32个1✖️1的filter，因为过滤器的信道数量必须和输出层中的信道数量保持一致，所以每个filter中都有192个信道，每个过滤器进行一次卷积操作，再相加，最后生成一个28✖️28✖️32的输出层，达到了降维的效果。同样，想要达到增加或者保持维度的效果，使用1✖️1的卷积也是可以的。</p>
+<p>下面介绍1✖️1卷积是如何运用到Inception网络中的。</p>
+<h2 id="Inception-Network-Motivation-Inception网络"><a href="#Inception-Network-Motivation-Inception网络" class="headerlink" title="Inception Network Motivation Inception网络"></a>Inception Network Motivation Inception网络</h2><p>在做卷积网络时，你需要<strong>为过滤器的大小做决定，而Inception网络的作用就是它会自动为你做抉择</strong>，虽然网络架构因此会变得更加复杂，但网络表现却非常好。</p>
+<p><strong>Inception网络不需要人为决定使用哪个过滤器，</strong>或是否需要池化，而是由网络自行确定这些参数，你可以给网络添加这些参数的所有可能值，然后把这些输出连接起来，让网络自己学习它需要什么样的参数，采用哪些过滤器组合。</p>
+<p>如下图所示，输入层是一个28✖️28✖️192的矩阵，首先使用一个1✖️1的filter，输出一个28✖️28✖️64的矩阵，得到下图中的绿色块结果，以此类推，将filter的结果全部拼凑在一起，形成一个28✖️28✖️256的输出。</p>
+<p><img data-src="/images/picturesof-4/CNN_32.png" alt="屏幕快照 2018-03-07 下午7.42.53"></p>
+<p><strong>使用1✖️1卷积可以减少运算复杂度。</strong></p>
+<p>如下，不使用1✖️1卷积计算次数为1.2亿次。</p>
+<p><img data-src="/images/picturesof-4/CNN_33.png" alt="屏幕快照 2018-03-07 下午8.06.29"></p>
+<p>使用1✖️1卷积，计算次数相较减少了10倍的计算量。<img data-src="/images/picturesof-4/CNN_34.png" alt="屏幕快照 2018-03-07 下午8.06.09"></p>
+<p>将以上综合起来，构建自己的Inception网络。</p>
+<p><img data-src="/images/picturesof-4/CNN_35.png" alt="屏幕快照 2018-03-07 下午8.36.19"></p>
+<h1 id="Detection-algorithms"><a href="#Detection-algorithms" class="headerlink" title="Detection algorithms"></a>Detection algorithms</h1><h2 id="Object-Localization-对象定位"><a href="#Object-Localization-对象定位" class="headerlink" title="Object Localization 对象定位"></a>Object Localization 对象定位</h2><p><img data-src="/images/picturesof-4/CNN_36.png" alt="屏幕快照 2018-03-09 上午9.35.21"></p>
+<p>首先先谈目标分类和目标定位问题。对于图片中可能的输出进行一个分类，这是分类问题，那么如何对图片中的目标物体进行定位呢？对于这个问题，<strong>我们将神经网络的输出增加一个目标标签y，用来表示目标物体的位置信息。</strong>如下所示，bx表示目标物体的中心的横坐标，by表示目标物体中心的纵坐标，bh表示目标物体的高度，bw表示物体的宽度。当然，这四个数据你在训练集中就应该构建好。<img data-src="/images/picturesof-4/CNN_37.png" alt="屏幕快照 2018-03-09 上午9.40.53"></p>
+<p>那么如何表示<strong>输出呢？它是一个向量</strong>，第一个组件Pc表示是否含有对象，所以如果对象属于前3类，Pc值应该为1，<strong>也可以将Pc理解成被检测对象属于某一分类的概率。</strong>如果检测到了对象，就应该将它的位置信息也一并输出，也就是bx,by,bh,bw，还应该同时输出c1,c2,c3用来表示对象属于哪个类别。</p>
+<p><img data-src="/images/picturesof-4/CNN_38.png" alt="屏幕快照 2018-03-09 上午9.59.35"></p>
+<p>下面来讨论损失函数的定义。两种情况，如果检测到了物体，也就是Pc==1，那么将剩下元素做差平方相加，计算损失，如果没有检测到也就是Pc==0，那么我们只用检测第一个元素值，也就是Pc值即可。</p>
+<p><img data-src="/images/picturesof-4/CNN_39.png" alt="屏幕快照 2018-03-09 上午10.02.14"></p>
+<h2 id="Convolutional-Implementation-of-Sliding-Windows-卷积的滑动窗口实现"><a href="#Convolutional-Implementation-of-Sliding-Windows-卷积的滑动窗口实现" class="headerlink" title="Convolutional Implementation of Sliding Windows 卷积的滑动窗口实现"></a>Convolutional Implementation of Sliding Windows 卷积的滑动窗口实现</h2><p>如何通过卷积网络进行对象检测 —— 采用<strong>基于滑动窗口</strong>的目标检测算法。</p>
+<p><img data-src="/images/picturesof-4/CNN_40.png" alt="屏幕快照 2018-03-12 上午10.06.06"></p>
+<p>滑动窗口的过程在于，首先选取一个合适的窗口大小，将依据这个窗口对要预测的图片进行剪裁，将结果输入CNN，由CNN来预测窗口里是否含有目标物体。然后窗口向一个方向移动相应的步幅，由CNN再进行预测。</p>
+<p><img data-src="/images/picturesof-4/CNN_41.png" alt="屏幕快照 2018-03-12 上午10.22.13"></p>
+<p>滑动窗口算法带来的问题是，<strong>计算成本</strong>。如果你的窗口面积过小，那么将要多次对CNN进行输入操作，计算成本高。但是如果你将窗口调整的过大，则会带来粗粒度影响性能的问题。</p>
+<p>幸运的是，上述过程所造成的计算成本问题已经得到了良好的解决。</p>
+<p>为了构建滑动窗口的卷积运用，首先要知道如何把<strong>神经网络的全连接层转化为卷积层</strong>。我们<strong>使用一定大小的过滤器</strong>来将输出结果与传统意义上的全连接层输出结果保持一致。</p>
+<p><img data-src="/images/picturesof-4/CNN_42.png" alt="屏幕快照 2018-03-12 上午10.40.46"></p>
+<p>其次要解决的是，<strong>如何通过卷积来实现滑动窗口对象检测算法</strong>。可以看到，如果我们的输入图片从训练的14✖️14变成了16✖️16，我们在过滤器不变的情况下，对于最后这个4✖️4的输出矩阵可以理解为，左上角对应图片左上角的输出结果，右上角对应原始图片右上角的输出结果。以此类推。<strong>所以该卷积操作的原理是，我们不需要将输入图片分成四个子集，分别执行前向传播，而是把它们作为一张图片输入给卷积网络进行计算，一次得到所有的预测值。</strong>其中的公有区域可以共享很多计算。</p>
+<p><img data-src="/images/picturesof-4/CNN_43.png" alt="屏幕快照 2018-03-12 上午11.16.05"></p>
+<p>改进的方法大大提高了运算成本，但是也有一个缺点，就是<strong>边界框的位置不够准确</strong>。下面介绍如何解决这个问题。</p>
+<h2 id="Bounding-Box-Predictions-预测边界-—-YOLO算法"><a href="#Bounding-Box-Predictions-预测边界-—-YOLO算法" class="headerlink" title="Bounding Box Predictions 预测边界 — YOLO算法"></a>Bounding Box Predictions 预测边界 — YOLO算法</h2><p>This algorithm “only looks once” at the image in the sense that it requires only one forward propagation pass through the network to make predictions. After non-max suppression, it then outputs recognized objects together with the bounding boxes.</p>
+<p>如下图所示，当你在使用窗口检测目标物体时，如果窗口在移动过程中不能完全覆盖目标物体，那么怎样才能确定精准的边界框呢？</p>
+<p><img data-src="/images/picturesof-4/CNN_44.png" alt="屏幕快照 2018-03-12 下午1.52.28"></p>
+<p><strong>其中一个能得到更精准边界框的算法是，YOLO算法。</strong>YOLO的意思是“你只看一次”。是这么做的，比如你输入的图像是100✖️100的，然后在图像上放一个网格，将图像分类和定位算法分别应用到每个网格上，也就是有多个输出向量y，y的定义和之前一样。假如一个物体同时出现在了两个网格上，<strong>那么取物体的中心点，中心点在哪个网格上，那么物体就属于哪个网格。</strong></p>
+<p><img data-src="/images/picturesof-4/CNN_45.png" alt="屏幕快照 2018-03-12 下午2.27.45"></p>
+<p>再次说明一下，这个方法只对一个网格中出现一个物体的情况有效。对于出现多个物体的情况，稍后做详细的讨论。</p>
+<p><img data-src="/images/picturesof-4/CNN_46.png" alt="屏幕快照 2018-03-12 下午2.34.49"></p>
+<h2 id="Intersection-Over-Union-交并比函数"><a href="#Intersection-Over-Union-交并比函数" class="headerlink" title="Intersection Over Union 交并比函数"></a>Intersection Over Union 交并比函数</h2><p><strong>交并比函数可以用来评价对象检测算法。</strong>如果你希望定位到的对象是红色部分，但是你的算法却给出的是紫色部分，那么这个结果是好是坏呢？交并比的意思就是，<strong>计算两个边框交集和并集的比值(lOU)来检测结果的好坏。</strong>一般情况下，我们将lOU的阈值定义为0.5，并认为大于0.5就是一个可以接受的结果，当然你也可以定义更高。</p>
+<p><img data-src="/images/picturesof-4/CNN_47.png" alt="屏幕快照 2018-03-12 下午3.11.02"></p>
+<h2 id="Non-max-Suppression-非极大值抑制—检测YOLO算法"><a href="#Non-max-Suppression-非极大值抑制—检测YOLO算法" class="headerlink" title="Non-max Suppression 非极大值抑制—检测YOLO算法"></a>Non-max Suppression 非极大值抑制—检测YOLO算法</h2><p>到目前为止对象检测算法中的问题是，算法可能对同一个对象做出多次检测，所以算法不是对某一个对象检测出一次，而是检测出多次，<strong>非极大抑制这个方法可以确保你的算法对某个对象只检测出一次。</strong></p>
+<p>假设下图是你需要进行检测的图片，将它用19✖️19的网格覆盖，每个车只有一个中点，也就是对于一辆覆盖到多个网格中的车来说，应该只有一个网格，也就是中点所在的网格的预测结果是1。</p>
+<p>因为你要在所有网络上都跑一遍图像检测和定位算法，那么覆盖到车子的格子中输出y的PC的值都会是1，而不是所有格子中，只有两个格子会报告检测出了对象。所以最后可能会对一个对象做出多次检测。所以非最大抑制做的就是清理这些检测结果。所以每辆车只检测一次，而不是多次。当你检测出了多次时，<strong>选出输出概率最大的检测结果，对lOU值很高的其他边框进行抑制，这就是非最大值抑制的含义。</strong></p>
+<p><img data-src="/images/picturesof-4/CNN_48.png" alt="屏幕快照 2018-03-12 下午3.50.54"></p>
+<p>下面是Non-max Suppression算法的具体过程。</p>
+<p><img data-src="/images/picturesof-4/CNN_49.png" alt="屏幕快照 2018-03-12 下午4.05.23"></p>
+<h2 id="Anchor-Boxes"><a href="#Anchor-Boxes" class="headerlink" title="Anchor Boxes"></a>Anchor Boxes</h2><p><strong>如果你需要让一个格子能够检测出多个对象，那么就需要用到Anchor Boxes。</strong>如下图所示，如果你要检测的对象是人和车辆，这张图中这两者有同样一个中点，如果我们使用传统的y向量输出，会发现这两者的概率是一样的，那么我们必须从这两者中选择出一个作为结果，这是不合理的。Anchor Boxes的思路是这样的，预先定义两个不同形状的Anchor Boxes，把预测结果和这两个Anchor Boxes关联起来。</p>
+<p><img data-src="/images/picturesof-4/CNN_50.png" alt="屏幕快照 2018-03-12 下午4.19.47"></p>
+<p>总结一下，用Anchor Boxes之前，你做的是，对于训练图像中的每个对象，都根据那个对象中点的位置，将对象分配到某个格子中，然后输出一个3✖️3✖️8的向量，3✖️3是因为你用到9个网格，8是每个网格中的y输出(PC,bx,by,bw,bh,c1,c2,c3)。现在用到Anchor Boxes这个概念，现在每个对象都和之前一样分配到某个格子中（中点所在），但是它还分配到一个和对象形状交并比最高的Anchor Box中。所以现在的输出变成了3✖️3✖️16。</p>
+<p><img data-src="/images/picturesof-4/CNN_51.png" alt="屏幕快照 2018-03-12 下午4.32.57"></p>
+<p>下面举一个具体的例子。</p>
+<p><img data-src="/images/picturesof-4/CNN_52.png" alt="屏幕快照 2018-03-12 下午4.40.30"></p>
+<h2 id="YOLO-Algorithm"><a href="#YOLO-Algorithm" class="headerlink" title="YOLO Algorithm"></a>YOLO Algorithm</h2><p>我们将之前提到的所有组件组合在一起，<strong>构成YOLO对象检测算法</strong>。</p>
+<p>y向量由Anchor Boxes组成，Anchor Boxes就可以看成y向量，下图中我们用到了两个Anchor Boxes，当我们进行检测是，假若检测到了物体，将边框画出后，与两个Anchor Boxes进行对比，发现与第二个Anchor Boxe的IOU值最高，那么车子就和向量的下半部分有关系。因为你将图片分成了9个网格，每个网格的维度是16，所以最后的输出是3✖️3✖️16。</p>
+<p><img data-src="/images/picturesof-4/CNN_53.png" alt="屏幕快照 2018-03-12 下午4.53.00"></p>
+<p><img data-src="/images/picturesof-4/CNN_54.png" alt="屏幕快照 2018-03-12 下午4.57.19"></p>
+<p>最后你要跑一下非最大值抑制，这就是运行非最大值抑制的过程。如果你使用两个Anchor Boxes，那么对于9个格子中的任意一个都会有两个预测的边界框，其中一个的概率PC很低。<img data-src="/images/picturesof-4/CNN_55.png" alt="屏幕快照 2018-03-12 下午5.03.57"></p>
+<p>接着你抛弃PC值很低的边界，连神经网络都说，这里可能什么都没有。</p>
+<p><img data-src="/images/picturesof-4/CNN_56.png" alt="屏幕快照 2018-03-12 下午5.05.25"></p>
+<p>最后，如果你有三个对象检测类别，对于每个类别，单独运行非最大抑制，处理预测结果是那个类别的边界框。</p>
+<p><img data-src="/images/picturesof-4/CNN_57.png" alt="屏幕快照 2018-03-12 下午5.08.12"></p>
+<h2 id="Region-Proposals-—-RPN网络"><a href="#Region-Proposals-—-RPN网络" class="headerlink" title="Region Proposals — RPN网络"></a>Region Proposals — RPN网络</h2><p>带区域的CNN —  这个算法尝试选出一些区域，在这些区域上运行CNN是有意义的。选出候选区域的方法是运行图像分割算法，先找出可能的多个色块，然后在各个色块上放置边界框。然后在边界框上跑CNN分类算法。这样需要处理的位置可能少得多。<img data-src="/images/picturesof-4/CNN_58.png" alt="屏幕快照 2018-03-12 下午5.24.12"></p>
+<p><img data-src="/images/picturesof-4/CNN_59.png" alt="屏幕快照 2018-03-12 下午5.29.09"></p>
+<p><strong>Summary:</strong></p>
+<p><img data-src="/images/picturesof-4/CNN_60.png" alt="屏幕快照 2018-03-13 上午9.52.04"></p>
+<p><img data-src="/images/picturesof-4/CNN_61.png" alt="屏幕快照 2018-03-13 上午9.55.50"></p>
+<p><img data-src="/images/picturesof-4/CNN_62.png" alt="屏幕快照 2018-03-13 上午11.44.02"></p>
+<h1 id="Face-Recognition"><a href="#Face-Recognition" class="headerlink" title="Face Recognition"></a>Face Recognition</h1><h2 id="Face-verification"><a href="#Face-verification" class="headerlink" title="Face verification"></a>Face verification</h2><p><img data-src="/images/picturesof-4/CNN_63.png" alt="屏幕快照 2018-03-13 下午3.11.41"></p>
+<p><img data-src="/images/picturesof-4/CNN_64.png" alt="屏幕快照 2018-03-14 上午10.09.35"></p>
+<h2 id="One-Shot-Learning-一次学习"><a href="#One-Shot-Learning-一次学习" class="headerlink" title="One Shot Learning 一次学习"></a>One Shot Learning 一次学习</h2><p>人脸识别所面临的一个挑战，就是你需要解决“一次学习”问题，即只需要单单一张图片，或者单单一个人脸样例，就能识别出一个人。现在的问题是，你的训练集中通常只有指定一个人的一张照片，如果公司新来一个人，难道要放进庞大的CNN体系中重新学习吗？</p>
+<p><img data-src="/images/picturesof-4/CNN_65.png" alt="屏幕快照 2018-03-13 下午3.19.48"></p>
+<p>所以要让神经网络做到一次学习，应该是学习<strong>“Similarity”函数</strong>。具体的说，你是希望<strong>神经网络能够学习这个用d表示的函数。它以两张照片作为输入，然后输出这两张照片的差异值。</strong></p>
+<p><img data-src="/images/picturesof-4/CNN_66.png" alt="屏幕快照 2018-03-13 下午3.48.26"></p>
+<h2 id="Siamese-Network-Siamese-网络"><a href="#Siamese-Network-Siamese-网络" class="headerlink" title="Siamese Network Siamese 网络"></a>Siamese Network Siamese 网络</h2><p><strong>实现上述d函数的一个方式就是Siamese 网络。</strong>也就是训练一组参数，使得如果输入的不是一个人的话，它的输出f(x1)会跟其他人的输出结果f(x2)产生差距，这个差距可以用诸如曼哈顿距离来衡量，如果两个输入的输出结果很相近，那么可以认为是同一个人。</p>
+<p><img data-src="/images/picturesof-4/CNN_67.png" alt="屏幕快照 2018-03-13 下午4.10.16"></p>
+<p><img data-src="/images/picturesof-4/CNN_68.png" alt="屏幕快照 2018-03-13 下午4.10.36"></p>
+<h2 id="Triplet-Loss-—-三元组损失函数"><a href="#Triplet-Loss-—-三元组损失函数" class="headerlink" title="Triplet Loss — 三元组损失函数"></a>Triplet Loss — 三元组损失函数</h2><p>想要通过学习神经网络的参数来得到优质的人脸图片编码，方式之一就是使用<strong>三元组损失函数</strong>然后使用梯度下降。</p>
+<p><strong>我们希望，相同人的图片的距离可以远远小于不相同的距离。</strong>为了防止无意义的0输出，使用一个间隔参数a。</p>
+<p><img data-src="/images/picturesof-4/CNN_69.png" alt="屏幕快照 2018-03-13 下午4.58.36"></p>
+<p>三元组损失函数的定义基于三张图片，样本图片A(Anchor)，相同人样本P(Positive)，不同人样本N(Negative)。<img data-src="/images/picturesof-4/CNN_70.png" alt="屏幕快照 2018-03-13 下午5.10.42"></p>
+<p>在选择训练集的时候，要尽量避免使用随机的配对方式，因为随机的图片很容易满足损失函数的要求，为了达到更好的效果，<strong>建议使用比较难训练的样本</strong>，“比较难训练”是指A与N的距离，与A与P的距离非常相近。<img data-src="/images/picturesof-4/CNN_71.png" alt="屏幕快照 2018-03-13 下午5.28.22"></p>
+<p><img data-src="/images/picturesof-4/CNN_72.png" alt="屏幕快照 2018-03-13 下午5.33.05"></p>
+<h2 id="Face-Verification-and-Binary-Classification"><a href="#Face-Verification-and-Binary-Classification" class="headerlink" title="Face Verification and Binary Classification"></a>Face Verification and Binary Classification</h2><p>如何将人脸识别问题化作一个二分类问题？</p>
+<p><img data-src="/images/picturesof-4/CNN_73.png" alt="屏幕快照 2018-03-13 下午5.50.23"></p>
+<p><img data-src="/images/picturesof-4/CNN_74.png" alt="屏幕快照 2018-03-13 下午5.51.03"></p>
+<p><img data-src="/images/picturesof-4/CNN_75.png" alt="屏幕快照 2018-03-14 上午11.12.29"></p>
+<h1 id="Neural-Style-Transfer-神经风格迁移"><a href="#Neural-Style-Transfer-神经风格迁移" class="headerlink" title="Neural Style Transfer 神经风格迁移"></a>Neural Style Transfer 神经风格迁移</h1><p><img data-src="/images/picturesof-4/CNN_76.png" alt="屏幕快照 2018-03-13 下午7.02.31"></p>
+<h2 id="What-are-deep-ConvNets-learning"><a href="#What-are-deep-ConvNets-learning" class="headerlink" title="What are deep ConvNets learning?"></a>What are deep ConvNets learning?</h2><p><img data-src="/images/picturesof-4/CNN_77.png" alt="屏幕快照 2018-03-13 下午7.09.06"></p>
+<p><img data-src="/images/picturesof-4/CNN_78.png" alt="屏幕快照 2018-03-13 下午7.13.39"></p>
+<h2 id="Cost-Function"><a href="#Cost-Function" class="headerlink" title="Cost Function"></a>Cost Function</h2><p>我们<strong>将损失函数定义为“内容损失➕风格损失”</strong>，内容损失是指生成的图片和原图内容的相似性，风格损失是指生成图片和原图风格的相似性。</p>
+<p><img data-src="/images/picturesof-4/CNN_79.png" alt="屏幕快照 2018-03-13 下午7.22.05"></p>
+<p><img data-src="/images/picturesof-4/CNN_80.png" alt="屏幕快照 2018-03-13 下午7.22.37"></p>
+<h2 id="Content-Cost-Function-内容损失函数"><a href="#Content-Cost-Function-内容损失函数" class="headerlink" title="Content Cost Function 内容损失函数"></a>Content Cost Function 内容损失函数</h2><p>内容损失函数定义为某一隐藏层中与既定（如VGG网络）隐藏层激活后的值的相似程度。</p>
+<p><img data-src="/images/picturesof-4/CNN_81.png" alt="屏幕快照 2018-03-13 下午7.32.08"></p>
+<h2 id="Style-Cost-Function-风格损失函数"><a href="#Style-Cost-Function-风格损失函数" class="headerlink" title="Style Cost Function 风格损失函数"></a>Style Cost Function 风格损失函数</h2><p>风格损失函数定义为某一隐藏层中，通道之间的相关程度。</p>
+<p><img data-src="/images/picturesof-4/CNN_82.png" alt="屏幕快照 2018-03-13 下午7.43.28"></p>
+<p>这个相关程度可以理解为，比如风格图片是灰色的地方同时又出现了垂直线条。那么输入图片中，某一隐藏层，观察到了灰色和出现了垂直线条的几率，定义为通道之间的相关程度。</p>
+<p><img data-src="/images/picturesof-4/CNN_83.png" alt="屏幕快照 2018-03-13 下午7.45.28"></p>
+<p>损失函数定义如下：为输入图片与原图片，某一隐藏层，某一通道中激活值的相关性，使用绝对平方值来计算，还乘以了一个归一化常数。<img data-src="/images/picturesof-4/CNN_84.png" alt="屏幕快照 2018-03-13 下午8.00.14"></p>
+<p>“内容损失➕风格损失  =  损失函数”</p>
+<p><img data-src="/images/picturesof-4/CNN_85.png" alt="屏幕快照 2018-03-13 下午8.03.07"></p>
+<p><img data-src="/images/picturesof-4/CNN_86.png" alt="屏幕快照 2018-03-14 上午9.16.13"></p>
+<p><img data-src="/images/picturesof-4/CNN_87.png" alt="屏幕快照 2018-03-14 上午9.20.42"></p>
+<p><img data-src="/images/picturesof-4/CNN_88.png" alt="屏幕快照 2018-03-14 上午9.40.49"></p>
+<h2 id="1D-and-3D-Generalizations-一维到三维推广"><a href="#1D-and-3D-Generalizations-一维到三维推广" class="headerlink" title="1D and 3D Generalizations 一维到三维推广"></a>1D and 3D Generalizations 一维到三维推广</h2><p>许多图片不仅限于二维，有可能是1维或者3维。那么如何进行处理呢？我们一样可以使用卷积操作。<img data-src="/images/picturesof-4/CNN_89.png" alt="屏幕快照 2018-03-13 下午8.28.53"></p>
+<p><img data-src="/images/picturesof-4/CNN_90.png" alt="屏幕快照 2018-03-13 下午8.29.33"></p>
 ]]></content>
       <categories>
-        <category>Computer Basic</category>
-        <category>Interview</category>
+        <category>CV</category>
       </categories>
       <tags>
-        <tag>Software Test Basic</tag>
+        <tag>CNN</tag>
       </tags>
   </entry>
   <entry>
@@ -4045,202 +4241,6 @@ cond(no)-&gt;op</textarea><textarea id="flowchart-0-options" style="display: non
         <tag>iPython</tag>
         <tag>Pygal</tag>
         <tag>Matplotlib</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>CNN</title>
-    <url>/posts/16452/</url>
-    <content><![CDATA[<h1 id="Convolutional-Neural-Networks"><a href="#Convolutional-Neural-Networks" class="headerlink" title="Convolutional Neural Networks"></a>Convolutional Neural Networks</h1><h2 id="Edge-Detection"><a href="#Edge-Detection" class="headerlink" title="Edge Detection"></a>Edge Detection</h2><p>卷积运算是卷积神经网络最基本的组成成分，使用边缘检测作为入门样例。下面介绍卷积计算是如何实现的。</p>
-<p>使用一个3✖️3的<strong>过滤器(核)</strong>与原始矩阵进行元素相乘，再相加，最后和的结果为<strong>卷积运算</strong>后的第一个元素值，然后依次计算，下面例子中，做一次卷积运算后结果为一个4✖️4的矩阵。</p>
-<p>这种卷积运算可以理解成为，<strong>垂直边缘检测器。</strong></p>
-<p><img data-src="/images/picturesof-4/CNN_1.png" alt="屏幕快照 2018-02-09 下午12.25.09"></p>
-<p>在不同的编程环境中可以使用不同的函数来实现卷积运算。</p>
-<p><img data-src="/images/picturesof-4/CNN_2.png" alt="屏幕快照 2018-02-09 下午12.38.47"></p>
-<p>那么为什么这个可以用作垂直检测呢？来看下面的例子。</p>
-<a id="more"></a>
-<p>这是一个简单的6✖️6的图像，图像左边一半是10，右边一半是0，如果你把它看成一个图像，那么是左白右灰的，10代表比较亮的颜色，0代表比较黑的颜色。图片里，有一个特别明显的垂直边缘在图像中间，这条直线是从黑到白的过度线。<strong>所以当你使用一个3✖️3的过滤器进行卷积运算的时候，这个过滤器可视化成下面这个样子</strong>，在左边有明亮的像素，然后有一个过滤段0在中间，右边是黑色的。使用过滤器进行卷积元算，得到的是右边的矩阵，可视化样子如下，在中间有段亮一点的区域，对应检查到这个6✖️6的图像中间的垂直边缘，这里的维数似乎有点不正确，检测到的边缘太粗了，因为这个例子中的图片太小了，如果你用一个1000✖️1000的图像，而不是6✖️6的图像，你会发现，它可以很好的检测出图像中的垂直边缘。在这个例子中，在输出图像中间区域的亮出，表示在图像中间，有一个特别明显的垂直边缘。</p>
-<p>从垂直边缘检测中可以得到的启发是，因为我们使用的是3✖️3的矩阵，所以垂直边缘是一个3✖️3的区域，左边是明亮的像素，中间的的并不需要考虑，右边是深色像素。在这个6✖️6图像中，明亮的像素在左边，深色的像素在右边，这样的话就会被视为一个垂直边缘。卷积运算提供了一个方便的方法，来发现图像中的垂直边缘。</p>
-<p><img data-src="/images/picturesof-4/CNN_3.png" alt="屏幕快照 2018-02-09 下午1.05.04"></p>
-<h2 id="More-Edge-Detection"><a href="#More-Edge-Detection" class="headerlink" title="More Edge Detection"></a>More Edge Detection</h2><p>使用相同的过滤器过滤两个颜色刚好相反的图片，可以看到，第一个是30，第二个是-30，<strong>其中正数(30)代表第一幅图是由亮向暗过度，负数(-30)代表第二张图片是由暗向亮过度。</strong></p>
-<p><img data-src="/images/picturesof-4/CNN_4.png" alt="屏幕快照 2018-03-01 上午9.41.33"></p>
-<p>有垂直过滤器，就会有水平过滤器。下面举一个更为复杂的例子，在下图的这个图片矩阵中，我们使用水平过滤器进行边缘检测，得到的卷积结果如右下方所示，<strong>用绿色方框圈出的”+30”，代表原始图片中用绿色圈出的3✖️3矩阵的卷积结果，可以看到，这块矩阵的水平边缘确实是由亮到暗过度的，所以卷积结果为正。</strong></p>
-<p><img data-src="/images/picturesof-4/CNN_5.png" alt="屏幕快照 2018-03-01 上午9.56.15"></p>
-<p>事实上，对于这个3✖️3的滤波器来说，我们只使用了其中一种数字组合，但在历史上的计算机视觉的文献中，曾经公平的争论过，怎样的数字组合才是最好的，所以你还可以使用如下图所示的过滤器，<strong>如Sobel过滤器</strong>，它的优点在于，增加了中间一行元素的权重，也就是处在图像中央的像素点，这使得结果的健壮性更高一些。<strong>Scharr过滤器。</strong></p>
-<p>实际上是，当你在做复杂图像的边缘检测时，并不一定要使用刚刚我们提到的9个数字，但是你可以从中学习，把<strong>这矩阵中的9个数字当成9个参数，并且在之后可以使用反向传播算法，学习这9个参数。</strong>得到的结果与原始图片进行卷积，将会得到一个出色的边缘检测结果。</p>
-<p>相比这种单纯的垂直边缘与水平边缘检测，它可以检测出45度、70度、73度，甚至是任何角度的边缘。</p>
-<p><img data-src="/images/picturesof-4/CNN_6.png" alt="屏幕快照 2018-03-01 上午10.19.16"></p>
-<h2 id="Padding"><a href="#Padding" class="headerlink" title="Padding"></a>Padding</h2><p>为了构建深度神经网络，你需要学会使用的一个基本的卷积操作就是Padding。Padding出现的原因是，当你在做卷积操作的时候，像素矩阵中，中间的矩阵是被卷积计算多次的，也就是多次使用到了这个矩阵的信息，而边缘的像素矩阵，则会被使用较少次，比如说对角的矩阵，则只是被卷积了一次。这样则会导致会忽略边缘矩阵的信息。<strong>采取的措施是使用“填充(Padding)”方法，进行像素填充。使得边缘像素矩阵信息可以被卷积多次。</strong>填充之后的矩阵再进行卷积操作后，就会得到一个和原始矩阵一样大的矩阵，而不是缩小。</p>
-<p>习惯上，你可以使用”0”去填充。</p>
-<p><img data-src="/images/picturesof-4/CNN_7.png" alt="屏幕快照 2018-03-01 上午11.25.36"></p>
-<p>至于选择填充多少像素，通常有两个选择，<strong>分别叫做Valid卷积和Same卷积。</strong>Valid卷积：意味着不填充，所以得到的输出矩阵会比原始矩阵小。要想和原始矩阵得到的一样大，则使用Same卷积，你可以使用下面的计算公式来计算需要Pad多少个像素。<strong>n是原始图片的维数，f是过滤器的维数，最后得到的输出矩阵大小为n-f+1维。（f通常是奇数，如果为偶数，则会导致左右填充不均匀的情况）</strong></p>
-<p><img data-src="/images/picturesof-4/CNN_8.png" alt="屏幕快照 2018-03-01 上午11.59.32"></p>
-<h2 id="Strided-Convolutions-卷积步长"><a href="#Strided-Convolutions-卷积步长" class="headerlink" title="Strided Convolutions 卷积步长"></a>Strided Convolutions 卷积步长</h2><p>卷积中的步幅是另一个构建卷积神经网络的基本操作。每次卷积移动步长个单位，而不是我们之前提到的1个步长。这时候，计算输出函数的维数公式变成了如下情况。</p>
-<p>如果求得的商不是一个整数怎么办？这里采用向下取整。</p>
-<p><img data-src="/images/picturesof-4/CNN_9.png" alt="屏幕快照 2018-03-01 下午1.59.37"></p>
-<h2 id="Convolutions-Over-Volume"><a href="#Convolutions-Over-Volume" class="headerlink" title="Convolutions Over Volume"></a>Convolutions Over Volume</h2><p>之前讨论的卷积操作是在二维图像上进行的，现在讨论如何在三维立体(RGB)上做卷积操作。注意，图像的通道数和过滤器的通道数需一致。</p>
-<p>和一维图形中类似，使用三层过滤器依次与相对应层级中的元素相乘，每层得到9个数字，3层就是27个数字，将这27个数字相加后，就可以得到输出矩阵中的每个元素值。</p>
-<p><img data-src="/images/picturesof-4/CNN_10.png" alt="屏幕快照 2018-03-01 下午2.30.40"></p>
-<h2 id="One-Layer-of-a-Convolutional-Network-单层卷积网络"><a href="#One-Layer-of-a-Convolutional-Network-单层卷积网络" class="headerlink" title="One Layer of a Convolutional Network 单层卷积网络"></a>One Layer of a Convolutional Network 单层卷积网络</h2><p>下图演示了利用两个过滤器将6✖️6✖️3的矩阵转化为4✖️4✖️2的矩阵的过程，这个4✖️4✖️2的矩阵就是卷积中的一层结果。利用n个过滤器来提取特征，如垂直边缘，水平边缘或者其他特征。</p>
-<p><img data-src="/images/picturesof-4/CNN_11.png" alt="屏幕快照 2018-03-01 下午3.38.38"></p>
-<p>对于一些标识及每层的数量，总结如下：</p>
-<p><img data-src="/images/picturesof-4/CNN_12.png" alt="屏幕快照 2018-03-01 下午4.16.42"></p>
-<h2 id="Simple-Convolutional-Network-Example"><a href="#Simple-Convolutional-Network-Example" class="headerlink" title="Simple Convolutional Network Example"></a>Simple Convolutional Network Example</h2><p>下图是模拟一个卷积神经网络的计算过程。最后我们得到一个7✖️7✖️40的矩阵，也就是1960个元素值，将这1960个元素展开，使用逻辑回归或者SoftMax，进行图片的分类判断。</p>
-<p>可以看到，高度和宽度会在某一时间段内保持一致，然后随着网络深度的加深而逐渐减少，而信道数量在增加。</p>
-<p><img data-src="/images/picturesof-4/CNN_13.png" alt="屏幕快照 2018-03-01 下午4.50.51"></p>
-<p>典型的神经网络通常由三层组成，第一个是卷积层(convolution Layer)，第二个是池化层(Pooling Layer)，最后一个是全连接层(Fully Connect Layer)。虽然仅用卷积层也有可能构建出很好的神经网络，但大部分神经网络架构师依然会添加池化层和全连接层。</p>
-<p><img data-src="/images/picturesof-4/CNN_14.png" alt="屏幕快照 2018-03-01 下午5.06.05"></p>
-<h2 id="Pooling-Layers"><a href="#Pooling-Layers" class="headerlink" title="Pooling Layers"></a>Pooling Layers</h2><p>除了卷积层，卷积网络也经常使用池化层，来缩减模型的大小，提高计算速度，同时提高所提取特征的健壮性。</p>
-<p>所谓<strong>最大池化层</strong>，即将原始矩阵分成四个区域，输出的每个元素都是其对应颜色区域中的最大元素值。</p>
-<p>最大化操作的功能就是只要在任何一个象限内提取到某个特征，他都会保留在最大池化的输出里。最大化运算的实际作用就是，如果在过滤器中提取到某个特征，那么保留其最大值。必须承认，人们使用最大池化的主要原因是，此法在很多实验中，效果都很好。<strong>其中有一个有意思的特点就是，它有一组超级参数，但是并没有参数需要学习，一旦确定了f和s，它就是一个固定运算。</strong></p>
-<p><img data-src="/images/picturesof-4/CNN_15.png" alt="屏幕快照 2018-03-01 下午6.00.49"></p>
-<p>下图是最大池化的演示。</p>
-<p><img data-src="/images/picturesof-4/CNN_16.png" alt="屏幕快照 2018-03-01 下午6.02.50"></p>
-<p>另外还有一种类型的池化，—<strong>平均池化</strong>，它不太常用。这种运算顾名思义，选取的不是每个过滤器的最大值，而是平均值。当建立一个深度很深的神经网络时，你可以利用平均池化来分解规模为7✖️7✖️1000的网络的表示层。但是在神经网络中，最大池化比平均池化用的更多。</p>
-<p><img data-src="/images/picturesof-4/CNN_17.png" alt="屏幕快照 2018-03-01 下午6.18.08"></p>
-<p>总结一下，池化的超级参数包括过滤器大小f和步长s。常用的参数值为f=2，s=2，或者f=3，s=3。你也可以根据自己的意愿来决定是否使用padding，<strong>但是在最大池化操作中，很少使用padding。</strong></p>
-<p><strong>最大池化只是计算神经网络某一层的静态属性，它的超参是不需要学习的。</strong></p>
-<p><img data-src="/images/picturesof-4/CNN_18.png" alt="屏幕快照 2018-03-01 下午6.25.52"></p>
-<h2 id="CNN-Example"><a href="#CNN-Example" class="headerlink" title="CNN Example"></a>CNN Example</h2><p> 我们将卷积层和池化层有时会合并起来看作神经网络中的某一层，因为池化层是不需要权重的，它只有超参数。通过卷积和池化，我们得到一个5✖️5✖️16(=400)的矩阵，现在将POOL2平整化为一个大小为400的一维向量。然后利用这400个单元构建下一层，下一层含有120个单元，<strong>这就是我们第一个全连接层，这400个单元与120个单元紧密相连。它很像一个单神经网络层，这是一个标准的神经网络。</strong>它在120✖️400的维度上具有一个权重矩阵W，这就是全连接层。</p>
-<p>然后我们对这120个单元再添加一个全连接层，这层更小，假设有84个单元。最后，用这84个单元填充一个SoftMax单元，如果你想识别0～9的数字，那么这个SoftMax输出层则会有10个输出。</p>
-<p>在对于超级参数的选择问题上，建议不要自己凭空设定，而是查看文献中别人采取了哪些超级参数，选一个在别人任务重，效果很好的架构。</p>
-<p><img data-src="/images/picturesof-4/CNN_19.png" alt="屏幕快照 2018-03-02 上午10.58.49"></p>
-<p>还有一种在CNN中，另一种常见的模式是，一个或者多个卷积层后跟随一个池化层，然后是几个全连接层，最后是SoftMax层。从下面的表格中可以看出，第一，池化层和最大池化层没有参数。第二，卷积层的参数相对来说比较少。其实许多参数都存在于CNN中的全连接层。观察可发现，随着神经网络的加深，激活值会逐渐变小，如果激活值下降过快，也会影响网络性能。</p>
-<p><strong>（parameters208来源：第一个卷积层中，过滤器维度为5✖️5，每个过滤器有1个bias，一共有8个过滤器，即5✖️5 + 1 ✖️ 8 = 208，所以第一层的weights是208）</strong></p>
-<p><img data-src="/images/picturesof-4/CNN_20.png" alt="屏幕快照 2018-03-02 上午11.17.15"></p>
-<h2 id="Why-Convolutions"><a href="#Why-Convolutions" class="headerlink" title="Why Convolutions?"></a>Why Convolutions?</h2><p>与传统的神经网络相比，CNN的主要两个优势在于：<strong>参数共享、稀疏连接</strong></p>
-<p>参数共享：通过观察发现，特征检测如垂直边缘检测如果适用于图片的某个区域，那么它可能适用于图片的其他区域。<strong>也就是说，如果你用一个3✖️3的过滤器检测垂直边缘，那么图片的左上角区域以及旁边的各个区域都可以使用这个3✖️3的过滤器。每个特征检测器及输出都可以在输入图片的的不同区域中使用相同的参数。以便提取垂直边缘或者其他特征。</strong>它不仅适用于边缘特征这样的低阶特征，同样适用于高阶特征，例如提取脸上的眼睛，猫或者其他特征对象。</p>
-<p>神经网络可以通过这两种机制减少参数，以便于我们用更小的训练集来训练它， 从而预防过度拟合。</p>
-<p><img data-src="/images/picturesof-4/CNN_21.png" alt="屏幕快照 2018-03-02 下午12.04.13"></p>
-<p>计算损失，使用优化算法来优化权重。</p>
-<p><img data-src="/images/picturesof-4/CNN_22.png" alt="屏幕快照 2018-03-02 下午12.11.50"></p>
-<h1 id="Case-studies"><a href="#Case-studies" class="headerlink" title="Case studies"></a>Case studies</h1><h2 id="Classic-Networks-经典网络"><a href="#Classic-Networks-经典网络" class="headerlink" title="Classic Networks 经典网络"></a>Classic Networks 经典网络</h2><p>下面是一些经典的网络。</p>
-<p><img data-src="/images/picturesof-4/CNN_23.png" alt="屏幕快照 2018-03-07 上午10.41.57"></p>
-<p><img data-src="/images/picturesof-4/CNN_24.png" alt="屏幕快照 2018-03-07 上午10.56.07"></p>
-<p><img data-src="/images/picturesof-4/CNN_25.png" alt="屏幕快照 2018-03-07 上午11.02.34"></p>
-<p><img data-src="/images/picturesof-4/CNN_26.png" alt="屏幕快照 2018-03-07 上午11.09.52"></p>
-<h2 id="ResNets-残差网络"><a href="#ResNets-残差网络" class="headerlink" title="ResNets 残差网络"></a>ResNets 残差网络</h2><p>非常非常深的网络是很难被训练的，因为存在<strong>梯度消失</strong>和<strong>梯度爆炸</strong>的问题。下面要提到的是<strong>跳远连接</strong>(Skip Connection)，它可以从某一网络层获取激活，然后迅速反应给另外一层，甚至是神经网络的更深层。我们可以利用Skip Connection构建能够训练深度网络的ResNets，有时深度能够超过100层。</p>
-<p><strong>ResNets是由残差块构建的。</strong>下面解释什么是残差块(Residual Block)。</p>
-<p>在一般的神经网络系统中，激活层a[l]通常经过线性化处理，非线性化处理，再线性化处理，再非线性化，最后得到输出层a[l+2]。这被称作“主路径”(Main Path)</p>
-<p><img data-src="/images/picturesof-4/CNN_27.png" alt="屏幕快照 2018-03-07 下午4.25.01"></p>
-<p><strong>在ResNets中，有一点变化，我们将a[l]直接向后拷贝到神经网络的深层。</strong>在Relu非线性激活前加上a[l]，这是一条捷径(Shortcut)。也就是a[l]不再沿着主路径进行传递。这样一来a[l+2]变成了如下所示的样子，也就是加上的这个a[l]产生了一个残差块。所以a[l]插入的时机是在线性激活之后，Relu激活之前。</p>
-<p><img data-src="/images/picturesof-4/CNN_28.png" alt="屏幕快照 2018-03-07 下午4.45.08"></p>
-<p>除了<strong>捷径(ShortCut)</strong>，你可能还会听到另一个术语<strong>跳远连接(Skip Connection)</strong>，就是指a[l]跳过一层甚至是好几层，从而将消息传递到神经网络的更深层。</p>
-<p>使用残差块能够训练更深的神经网络，所以构建一个ResNet网络就是通过将很多这样的残差块堆砌在一起，形成一个深度神经网络。</p>
-<p>将一个普通的神经网络(PlainNetWork)编程一个残差网络(ResNets)的方法就是添加很多残差块，如下图所示。有5个残差块。如果我们使用标准优化算法训练一个普通网络，比如梯度下降或者其他热门的优化算法，如果没有多余的残差，没有这些捷径或者跳远连接，你会发现，随着网络深度的加深，训练错误会先减少，然后增多，而理论上，应该是随着网络深度的加深，错误应该越少越好。<strong>但事实上，对于一个普通网络来说，深度越深意味着用优化算法越难训练，训练错误就会越来越多，但是有了ResNet就不一样了。</strong>即使网络再深，训练的表现却不错，比如说错误会减少，甚至在100层，1000层的网络中也不例外。这种方式确实能有效的解决梯度消失和梯度爆炸的问题。让我们在训练更深的网络的同时，又能保证好的性能。</p>
-<p><img data-src="/images/picturesof-4/CNN_29.png" alt="屏幕快照 2018-03-07 下午4.59.04"></p>
-<p><img data-src="/images/picturesof-4/CNN_30.png" alt="屏幕快照 2018-03-07 下午6.31.41"></p>
-<h2 id="1x1-Convolutions-1✖️1卷积"><a href="#1x1-Convolutions-1✖️1卷积" class="headerlink" title="1x1 Convolutions 1✖️1卷积"></a>1x1 Convolutions 1✖️1卷积</h2><p>使用1✖️1卷积可以根据自己的意愿来压缩或者保持、甚至增加输入层中信道的数量。</p>
-<p><img data-src="/images/picturesof-4/CNN_31.png" alt="屏幕快照 2018-03-07 下午6.58.29"></p>
-<p>上图中输入层中是28✖️28✖️192的维度，如果我们想要达到降维的效果，可以利用32个1✖️1的filter，因为过滤器的信道数量必须和输出层中的信道数量保持一致，所以每个filter中都有192个信道，每个过滤器进行一次卷积操作，再相加，最后生成一个28✖️28✖️32的输出层，达到了降维的效果。同样，想要达到增加或者保持维度的效果，使用1✖️1的卷积也是可以的。</p>
-<p>下面介绍1✖️1卷积是如何运用到Inception网络中的。</p>
-<h2 id="Inception-Network-Motivation-Inception网络"><a href="#Inception-Network-Motivation-Inception网络" class="headerlink" title="Inception Network Motivation Inception网络"></a>Inception Network Motivation Inception网络</h2><p>在做卷积网络时，你需要<strong>为过滤器的大小做决定，而Inception网络的作用就是它会自动为你做抉择</strong>，虽然网络架构因此会变得更加复杂，但网络表现却非常好。</p>
-<p><strong>Inception网络不需要人为决定使用哪个过滤器，</strong>或是否需要池化，而是由网络自行确定这些参数，你可以给网络添加这些参数的所有可能值，然后把这些输出连接起来，让网络自己学习它需要什么样的参数，采用哪些过滤器组合。</p>
-<p>如下图所示，输入层是一个28✖️28✖️192的矩阵，首先使用一个1✖️1的filter，输出一个28✖️28✖️64的矩阵，得到下图中的绿色块结果，以此类推，将filter的结果全部拼凑在一起，形成一个28✖️28✖️256的输出。</p>
-<p><img data-src="/images/picturesof-4/CNN_32.png" alt="屏幕快照 2018-03-07 下午7.42.53"></p>
-<p><strong>使用1✖️1卷积可以减少运算复杂度。</strong></p>
-<p>如下，不使用1✖️1卷积计算次数为1.2亿次。</p>
-<p><img data-src="/images/picturesof-4/CNN_33.png" alt="屏幕快照 2018-03-07 下午8.06.29"></p>
-<p>使用1✖️1卷积，计算次数相较减少了10倍的计算量。<img data-src="/images/picturesof-4/CNN_34.png" alt="屏幕快照 2018-03-07 下午8.06.09"></p>
-<p>将以上综合起来，构建自己的Inception网络。</p>
-<p><img data-src="/images/picturesof-4/CNN_35.png" alt="屏幕快照 2018-03-07 下午8.36.19"></p>
-<h1 id="Detection-algorithms"><a href="#Detection-algorithms" class="headerlink" title="Detection algorithms"></a>Detection algorithms</h1><h2 id="Object-Localization-对象定位"><a href="#Object-Localization-对象定位" class="headerlink" title="Object Localization 对象定位"></a>Object Localization 对象定位</h2><p><img data-src="/images/picturesof-4/CNN_36.png" alt="屏幕快照 2018-03-09 上午9.35.21"></p>
-<p>首先先谈目标分类和目标定位问题。对于图片中可能的输出进行一个分类，这是分类问题，那么如何对图片中的目标物体进行定位呢？对于这个问题，<strong>我们将神经网络的输出增加一个目标标签y，用来表示目标物体的位置信息。</strong>如下所示，bx表示目标物体的中心的横坐标，by表示目标物体中心的纵坐标，bh表示目标物体的高度，bw表示物体的宽度。当然，这四个数据你在训练集中就应该构建好。<img data-src="/images/picturesof-4/CNN_37.png" alt="屏幕快照 2018-03-09 上午9.40.53"></p>
-<p>那么如何表示<strong>输出呢？它是一个向量</strong>，第一个组件Pc表示是否含有对象，所以如果对象属于前3类，Pc值应该为1，<strong>也可以将Pc理解成被检测对象属于某一分类的概率。</strong>如果检测到了对象，就应该将它的位置信息也一并输出，也就是bx,by,bh,bw，还应该同时输出c1,c2,c3用来表示对象属于哪个类别。</p>
-<p><img data-src="/images/picturesof-4/CNN_38.png" alt="屏幕快照 2018-03-09 上午9.59.35"></p>
-<p>下面来讨论损失函数的定义。两种情况，如果检测到了物体，也就是Pc==1，那么将剩下元素做差平方相加，计算损失，如果没有检测到也就是Pc==0，那么我们只用检测第一个元素值，也就是Pc值即可。</p>
-<p><img data-src="/images/picturesof-4/CNN_39.png" alt="屏幕快照 2018-03-09 上午10.02.14"></p>
-<h2 id="Convolutional-Implementation-of-Sliding-Windows-卷积的滑动窗口实现"><a href="#Convolutional-Implementation-of-Sliding-Windows-卷积的滑动窗口实现" class="headerlink" title="Convolutional Implementation of Sliding Windows 卷积的滑动窗口实现"></a>Convolutional Implementation of Sliding Windows 卷积的滑动窗口实现</h2><p>如何通过卷积网络进行对象检测 —— 采用<strong>基于滑动窗口</strong>的目标检测算法。</p>
-<p><img data-src="/images/picturesof-4/CNN_40.png" alt="屏幕快照 2018-03-12 上午10.06.06"></p>
-<p>滑动窗口的过程在于，首先选取一个合适的窗口大小，将依据这个窗口对要预测的图片进行剪裁，将结果输入CNN，由CNN来预测窗口里是否含有目标物体。然后窗口向一个方向移动相应的步幅，由CNN再进行预测。</p>
-<p><img data-src="/images/picturesof-4/CNN_41.png" alt="屏幕快照 2018-03-12 上午10.22.13"></p>
-<p>滑动窗口算法带来的问题是，<strong>计算成本</strong>。如果你的窗口面积过小，那么将要多次对CNN进行输入操作，计算成本高。但是如果你将窗口调整的过大，则会带来粗粒度影响性能的问题。</p>
-<p>幸运的是，上述过程所造成的计算成本问题已经得到了良好的解决。</p>
-<p>为了构建滑动窗口的卷积运用，首先要知道如何把<strong>神经网络的全连接层转化为卷积层</strong>。我们<strong>使用一定大小的过滤器</strong>来将输出结果与传统意义上的全连接层输出结果保持一致。</p>
-<p><img data-src="/images/picturesof-4/CNN_42.png" alt="屏幕快照 2018-03-12 上午10.40.46"></p>
-<p>其次要解决的是，<strong>如何通过卷积来实现滑动窗口对象检测算法</strong>。可以看到，如果我们的输入图片从训练的14✖️14变成了16✖️16，我们在过滤器不变的情况下，对于最后这个4✖️4的输出矩阵可以理解为，左上角对应图片左上角的输出结果，右上角对应原始图片右上角的输出结果。以此类推。<strong>所以该卷积操作的原理是，我们不需要将输入图片分成四个子集，分别执行前向传播，而是把它们作为一张图片输入给卷积网络进行计算，一次得到所有的预测值。</strong>其中的公有区域可以共享很多计算。</p>
-<p><img data-src="/images/picturesof-4/CNN_43.png" alt="屏幕快照 2018-03-12 上午11.16.05"></p>
-<p>改进的方法大大提高了运算成本，但是也有一个缺点，就是<strong>边界框的位置不够准确</strong>。下面介绍如何解决这个问题。</p>
-<h2 id="Bounding-Box-Predictions-预测边界-—-YOLO算法"><a href="#Bounding-Box-Predictions-预测边界-—-YOLO算法" class="headerlink" title="Bounding Box Predictions 预测边界 — YOLO算法"></a>Bounding Box Predictions 预测边界 — YOLO算法</h2><p>This algorithm “only looks once” at the image in the sense that it requires only one forward propagation pass through the network to make predictions. After non-max suppression, it then outputs recognized objects together with the bounding boxes.</p>
-<p>如下图所示，当你在使用窗口检测目标物体时，如果窗口在移动过程中不能完全覆盖目标物体，那么怎样才能确定精准的边界框呢？</p>
-<p><img data-src="/images/picturesof-4/CNN_44.png" alt="屏幕快照 2018-03-12 下午1.52.28"></p>
-<p><strong>其中一个能得到更精准边界框的算法是，YOLO算法。</strong>YOLO的意思是“你只看一次”。是这么做的，比如你输入的图像是100✖️100的，然后在图像上放一个网格，将图像分类和定位算法分别应用到每个网格上，也就是有多个输出向量y，y的定义和之前一样。假如一个物体同时出现在了两个网格上，<strong>那么取物体的中心点，中心点在哪个网格上，那么物体就属于哪个网格。</strong></p>
-<p><img data-src="/images/picturesof-4/CNN_45.png" alt="屏幕快照 2018-03-12 下午2.27.45"></p>
-<p>再次说明一下，这个方法只对一个网格中出现一个物体的情况有效。对于出现多个物体的情况，稍后做详细的讨论。</p>
-<p><img data-src="/images/picturesof-4/CNN_46.png" alt="屏幕快照 2018-03-12 下午2.34.49"></p>
-<h2 id="Intersection-Over-Union-交并比函数"><a href="#Intersection-Over-Union-交并比函数" class="headerlink" title="Intersection Over Union 交并比函数"></a>Intersection Over Union 交并比函数</h2><p><strong>交并比函数可以用来评价对象检测算法。</strong>如果你希望定位到的对象是红色部分，但是你的算法却给出的是紫色部分，那么这个结果是好是坏呢？交并比的意思就是，<strong>计算两个边框交集和并集的比值(lOU)来检测结果的好坏。</strong>一般情况下，我们将lOU的阈值定义为0.5，并认为大于0.5就是一个可以接受的结果，当然你也可以定义更高。</p>
-<p><img data-src="/images/picturesof-4/CNN_47.png" alt="屏幕快照 2018-03-12 下午3.11.02"></p>
-<h2 id="Non-max-Suppression-非极大值抑制—检测YOLO算法"><a href="#Non-max-Suppression-非极大值抑制—检测YOLO算法" class="headerlink" title="Non-max Suppression 非极大值抑制—检测YOLO算法"></a>Non-max Suppression 非极大值抑制—检测YOLO算法</h2><p>到目前为止对象检测算法中的问题是，算法可能对同一个对象做出多次检测，所以算法不是对某一个对象检测出一次，而是检测出多次，<strong>非极大抑制这个方法可以确保你的算法对某个对象只检测出一次。</strong></p>
-<p>假设下图是你需要进行检测的图片，将它用19✖️19的网格覆盖，每个车只有一个中点，也就是对于一辆覆盖到多个网格中的车来说，应该只有一个网格，也就是中点所在的网格的预测结果是1。</p>
-<p>因为你要在所有网络上都跑一遍图像检测和定位算法，那么覆盖到车子的格子中输出y的PC的值都会是1，而不是所有格子中，只有两个格子会报告检测出了对象。所以最后可能会对一个对象做出多次检测。所以非最大抑制做的就是清理这些检测结果。所以每辆车只检测一次，而不是多次。当你检测出了多次时，<strong>选出输出概率最大的检测结果，对lOU值很高的其他边框进行抑制，这就是非最大值抑制的含义。</strong></p>
-<p><img data-src="/images/picturesof-4/CNN_48.png" alt="屏幕快照 2018-03-12 下午3.50.54"></p>
-<p>下面是Non-max Suppression算法的具体过程。</p>
-<p><img data-src="/images/picturesof-4/CNN_49.png" alt="屏幕快照 2018-03-12 下午4.05.23"></p>
-<h2 id="Anchor-Boxes"><a href="#Anchor-Boxes" class="headerlink" title="Anchor Boxes"></a>Anchor Boxes</h2><p><strong>如果你需要让一个格子能够检测出多个对象，那么就需要用到Anchor Boxes。</strong>如下图所示，如果你要检测的对象是人和车辆，这张图中这两者有同样一个中点，如果我们使用传统的y向量输出，会发现这两者的概率是一样的，那么我们必须从这两者中选择出一个作为结果，这是不合理的。Anchor Boxes的思路是这样的，预先定义两个不同形状的Anchor Boxes，把预测结果和这两个Anchor Boxes关联起来。</p>
-<p><img data-src="/images/picturesof-4/CNN_50.png" alt="屏幕快照 2018-03-12 下午4.19.47"></p>
-<p>总结一下，用Anchor Boxes之前，你做的是，对于训练图像中的每个对象，都根据那个对象中点的位置，将对象分配到某个格子中，然后输出一个3✖️3✖️8的向量，3✖️3是因为你用到9个网格，8是每个网格中的y输出(PC,bx,by,bw,bh,c1,c2,c3)。现在用到Anchor Boxes这个概念，现在每个对象都和之前一样分配到某个格子中（中点所在），但是它还分配到一个和对象形状交并比最高的Anchor Box中。所以现在的输出变成了3✖️3✖️16。</p>
-<p><img data-src="/images/picturesof-4/CNN_51.png" alt="屏幕快照 2018-03-12 下午4.32.57"></p>
-<p>下面举一个具体的例子。</p>
-<p><img data-src="/images/picturesof-4/CNN_52.png" alt="屏幕快照 2018-03-12 下午4.40.30"></p>
-<h2 id="YOLO-Algorithm"><a href="#YOLO-Algorithm" class="headerlink" title="YOLO Algorithm"></a>YOLO Algorithm</h2><p>我们将之前提到的所有组件组合在一起，<strong>构成YOLO对象检测算法</strong>。</p>
-<p>y向量由Anchor Boxes组成，Anchor Boxes就可以看成y向量，下图中我们用到了两个Anchor Boxes，当我们进行检测是，假若检测到了物体，将边框画出后，与两个Anchor Boxes进行对比，发现与第二个Anchor Boxe的IOU值最高，那么车子就和向量的下半部分有关系。因为你将图片分成了9个网格，每个网格的维度是16，所以最后的输出是3✖️3✖️16。</p>
-<p><img data-src="/images/picturesof-4/CNN_53.png" alt="屏幕快照 2018-03-12 下午4.53.00"></p>
-<p><img data-src="/images/picturesof-4/CNN_54.png" alt="屏幕快照 2018-03-12 下午4.57.19"></p>
-<p>最后你要跑一下非最大值抑制，这就是运行非最大值抑制的过程。如果你使用两个Anchor Boxes，那么对于9个格子中的任意一个都会有两个预测的边界框，其中一个的概率PC很低。<img data-src="/images/picturesof-4/CNN_55.png" alt="屏幕快照 2018-03-12 下午5.03.57"></p>
-<p>接着你抛弃PC值很低的边界，连神经网络都说，这里可能什么都没有。</p>
-<p><img data-src="/images/picturesof-4/CNN_56.png" alt="屏幕快照 2018-03-12 下午5.05.25"></p>
-<p>最后，如果你有三个对象检测类别，对于每个类别，单独运行非最大抑制，处理预测结果是那个类别的边界框。</p>
-<p><img data-src="/images/picturesof-4/CNN_57.png" alt="屏幕快照 2018-03-12 下午5.08.12"></p>
-<h2 id="Region-Proposals-—-RPN网络"><a href="#Region-Proposals-—-RPN网络" class="headerlink" title="Region Proposals — RPN网络"></a>Region Proposals — RPN网络</h2><p>带区域的CNN —  这个算法尝试选出一些区域，在这些区域上运行CNN是有意义的。选出候选区域的方法是运行图像分割算法，先找出可能的多个色块，然后在各个色块上放置边界框。然后在边界框上跑CNN分类算法。这样需要处理的位置可能少得多。<img data-src="/images/picturesof-4/CNN_58.png" alt="屏幕快照 2018-03-12 下午5.24.12"></p>
-<p><img data-src="/images/picturesof-4/CNN_59.png" alt="屏幕快照 2018-03-12 下午5.29.09"></p>
-<p><strong>Summary:</strong></p>
-<p><img data-src="/images/picturesof-4/CNN_60.png" alt="屏幕快照 2018-03-13 上午9.52.04"></p>
-<p><img data-src="/images/picturesof-4/CNN_61.png" alt="屏幕快照 2018-03-13 上午9.55.50"></p>
-<p><img data-src="/images/picturesof-4/CNN_62.png" alt="屏幕快照 2018-03-13 上午11.44.02"></p>
-<h1 id="Face-Recognition"><a href="#Face-Recognition" class="headerlink" title="Face Recognition"></a>Face Recognition</h1><h2 id="Face-verification"><a href="#Face-verification" class="headerlink" title="Face verification"></a>Face verification</h2><p><img data-src="/images/picturesof-4/CNN_63.png" alt="屏幕快照 2018-03-13 下午3.11.41"></p>
-<p><img data-src="/images/picturesof-4/CNN_64.png" alt="屏幕快照 2018-03-14 上午10.09.35"></p>
-<h2 id="One-Shot-Learning-一次学习"><a href="#One-Shot-Learning-一次学习" class="headerlink" title="One Shot Learning 一次学习"></a>One Shot Learning 一次学习</h2><p>人脸识别所面临的一个挑战，就是你需要解决“一次学习”问题，即只需要单单一张图片，或者单单一个人脸样例，就能识别出一个人。现在的问题是，你的训练集中通常只有指定一个人的一张照片，如果公司新来一个人，难道要放进庞大的CNN体系中重新学习吗？</p>
-<p><img data-src="/images/picturesof-4/CNN_65.png" alt="屏幕快照 2018-03-13 下午3.19.48"></p>
-<p>所以要让神经网络做到一次学习，应该是学习<strong>“Similarity”函数</strong>。具体的说，你是希望<strong>神经网络能够学习这个用d表示的函数。它以两张照片作为输入，然后输出这两张照片的差异值。</strong></p>
-<p><img data-src="/images/picturesof-4/CNN_66.png" alt="屏幕快照 2018-03-13 下午3.48.26"></p>
-<h2 id="Siamese-Network-Siamese-网络"><a href="#Siamese-Network-Siamese-网络" class="headerlink" title="Siamese Network Siamese 网络"></a>Siamese Network Siamese 网络</h2><p><strong>实现上述d函数的一个方式就是Siamese 网络。</strong>也就是训练一组参数，使得如果输入的不是一个人的话，它的输出f(x1)会跟其他人的输出结果f(x2)产生差距，这个差距可以用诸如曼哈顿距离来衡量，如果两个输入的输出结果很相近，那么可以认为是同一个人。</p>
-<p><img data-src="/images/picturesof-4/CNN_67.png" alt="屏幕快照 2018-03-13 下午4.10.16"></p>
-<p><img data-src="/images/picturesof-4/CNN_68.png" alt="屏幕快照 2018-03-13 下午4.10.36"></p>
-<h2 id="Triplet-Loss-—-三元组损失函数"><a href="#Triplet-Loss-—-三元组损失函数" class="headerlink" title="Triplet Loss — 三元组损失函数"></a>Triplet Loss — 三元组损失函数</h2><p>想要通过学习神经网络的参数来得到优质的人脸图片编码，方式之一就是使用<strong>三元组损失函数</strong>然后使用梯度下降。</p>
-<p><strong>我们希望，相同人的图片的距离可以远远小于不相同的距离。</strong>为了防止无意义的0输出，使用一个间隔参数a。</p>
-<p><img data-src="/images/picturesof-4/CNN_69.png" alt="屏幕快照 2018-03-13 下午4.58.36"></p>
-<p>三元组损失函数的定义基于三张图片，样本图片A(Anchor)，相同人样本P(Positive)，不同人样本N(Negative)。<img data-src="/images/picturesof-4/CNN_70.png" alt="屏幕快照 2018-03-13 下午5.10.42"></p>
-<p>在选择训练集的时候，要尽量避免使用随机的配对方式，因为随机的图片很容易满足损失函数的要求，为了达到更好的效果，<strong>建议使用比较难训练的样本</strong>，“比较难训练”是指A与N的距离，与A与P的距离非常相近。<img data-src="/images/picturesof-4/CNN_71.png" alt="屏幕快照 2018-03-13 下午5.28.22"></p>
-<p><img data-src="/images/picturesof-4/CNN_72.png" alt="屏幕快照 2018-03-13 下午5.33.05"></p>
-<h2 id="Face-Verification-and-Binary-Classification"><a href="#Face-Verification-and-Binary-Classification" class="headerlink" title="Face Verification and Binary Classification"></a>Face Verification and Binary Classification</h2><p>如何将人脸识别问题化作一个二分类问题？</p>
-<p><img data-src="/images/picturesof-4/CNN_73.png" alt="屏幕快照 2018-03-13 下午5.50.23"></p>
-<p><img data-src="/images/picturesof-4/CNN_74.png" alt="屏幕快照 2018-03-13 下午5.51.03"></p>
-<p><img data-src="/images/picturesof-4/CNN_75.png" alt="屏幕快照 2018-03-14 上午11.12.29"></p>
-<h1 id="Neural-Style-Transfer-神经风格迁移"><a href="#Neural-Style-Transfer-神经风格迁移" class="headerlink" title="Neural Style Transfer 神经风格迁移"></a>Neural Style Transfer 神经风格迁移</h1><p><img data-src="/images/picturesof-4/CNN_76.png" alt="屏幕快照 2018-03-13 下午7.02.31"></p>
-<h2 id="What-are-deep-ConvNets-learning"><a href="#What-are-deep-ConvNets-learning" class="headerlink" title="What are deep ConvNets learning?"></a>What are deep ConvNets learning?</h2><p><img data-src="/images/picturesof-4/CNN_77.png" alt="屏幕快照 2018-03-13 下午7.09.06"></p>
-<p><img data-src="/images/picturesof-4/CNN_78.png" alt="屏幕快照 2018-03-13 下午7.13.39"></p>
-<h2 id="Cost-Function"><a href="#Cost-Function" class="headerlink" title="Cost Function"></a>Cost Function</h2><p>我们<strong>将损失函数定义为“内容损失➕风格损失”</strong>，内容损失是指生成的图片和原图内容的相似性，风格损失是指生成图片和原图风格的相似性。</p>
-<p><img data-src="/images/picturesof-4/CNN_79.png" alt="屏幕快照 2018-03-13 下午7.22.05"></p>
-<p><img data-src="/images/picturesof-4/CNN_80.png" alt="屏幕快照 2018-03-13 下午7.22.37"></p>
-<h2 id="Content-Cost-Function-内容损失函数"><a href="#Content-Cost-Function-内容损失函数" class="headerlink" title="Content Cost Function 内容损失函数"></a>Content Cost Function 内容损失函数</h2><p>内容损失函数定义为某一隐藏层中与既定（如VGG网络）隐藏层激活后的值的相似程度。</p>
-<p><img data-src="/images/picturesof-4/CNN_81.png" alt="屏幕快照 2018-03-13 下午7.32.08"></p>
-<h2 id="Style-Cost-Function-风格损失函数"><a href="#Style-Cost-Function-风格损失函数" class="headerlink" title="Style Cost Function 风格损失函数"></a>Style Cost Function 风格损失函数</h2><p>风格损失函数定义为某一隐藏层中，通道之间的相关程度。</p>
-<p><img data-src="/images/picturesof-4/CNN_82.png" alt="屏幕快照 2018-03-13 下午7.43.28"></p>
-<p>这个相关程度可以理解为，比如风格图片是灰色的地方同时又出现了垂直线条。那么输入图片中，某一隐藏层，观察到了灰色和出现了垂直线条的几率，定义为通道之间的相关程度。</p>
-<p><img data-src="/images/picturesof-4/CNN_83.png" alt="屏幕快照 2018-03-13 下午7.45.28"></p>
-<p>损失函数定义如下：为输入图片与原图片，某一隐藏层，某一通道中激活值的相关性，使用绝对平方值来计算，还乘以了一个归一化常数。<img data-src="/images/picturesof-4/CNN_84.png" alt="屏幕快照 2018-03-13 下午8.00.14"></p>
-<p>“内容损失➕风格损失  =  损失函数”</p>
-<p><img data-src="/images/picturesof-4/CNN_85.png" alt="屏幕快照 2018-03-13 下午8.03.07"></p>
-<p><img data-src="/images/picturesof-4/CNN_86.png" alt="屏幕快照 2018-03-14 上午9.16.13"></p>
-<p><img data-src="/images/picturesof-4/CNN_87.png" alt="屏幕快照 2018-03-14 上午9.20.42"></p>
-<p><img data-src="/images/picturesof-4/CNN_88.png" alt="屏幕快照 2018-03-14 上午9.40.49"></p>
-<h2 id="1D-and-3D-Generalizations-一维到三维推广"><a href="#1D-and-3D-Generalizations-一维到三维推广" class="headerlink" title="1D and 3D Generalizations 一维到三维推广"></a>1D and 3D Generalizations 一维到三维推广</h2><p>许多图片不仅限于二维，有可能是1维或者3维。那么如何进行处理呢？我们一样可以使用卷积操作。<img data-src="/images/picturesof-4/CNN_89.png" alt="屏幕快照 2018-03-13 下午8.28.53"></p>
-<p><img data-src="/images/picturesof-4/CNN_90.png" alt="屏幕快照 2018-03-13 下午8.29.33"></p>
-]]></content>
-      <categories>
-        <category>CV</category>
-      </categories>
-      <tags>
-        <tag>CNN</tag>
       </tags>
   </entry>
   <entry>
