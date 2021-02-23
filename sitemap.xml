@@ -228,13 +228,6 @@
 
   
   <url>
-    <loc>https://unknown.yuzhouwan.com/tags/BigData/</loc>
-    <lastmod>2021-02-23</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://unknown.yuzhouwan.com/tags/Git/</loc>
     <lastmod>2021-02-23</lastmod>
     <changefreq>daily</changefreq>
@@ -243,6 +236,13 @@
   
   <url>
     <loc>https://unknown.yuzhouwan.com/tags/ImageAlgorithm/</loc>
+    <lastmod>2021-02-23</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://unknown.yuzhouwan.com/tags/BigData/</loc>
     <lastmod>2021-02-23</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -284,14 +284,14 @@
   </url>
   
   <url>
-    <loc>https://unknown.yuzhouwan.com/tags/Neural-Network/</loc>
+    <loc>https://unknown.yuzhouwan.com/tags/markdown/</loc>
     <lastmod>2021-02-23</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://unknown.yuzhouwan.com/tags/markdown/</loc>
+    <loc>https://unknown.yuzhouwan.com/tags/Neural-Network/</loc>
     <lastmod>2021-02-23</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -391,13 +391,6 @@
 
   
   <url>
-    <loc>https://unknown.yuzhouwan.com/categories/BigData/</loc>
-    <lastmod>2021-02-23</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://unknown.yuzhouwan.com/categories/Tools/</loc>
     <lastmod>2021-02-23</lastmod>
     <changefreq>daily</changefreq>
@@ -412,7 +405,7 @@
   </url>
   
   <url>
-    <loc>https://unknown.yuzhouwan.com/categories/Machine-Learning/</loc>
+    <loc>https://unknown.yuzhouwan.com/categories/BigData/</loc>
     <lastmod>2021-02-23</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -420,6 +413,13 @@
   
   <url>
     <loc>https://unknown.yuzhouwan.com/categories/Math/</loc>
+    <lastmod>2021-02-23</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://unknown.yuzhouwan.com/categories/Machine-Learning/</loc>
     <lastmod>2021-02-23</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
