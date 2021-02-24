@@ -270,14 +270,14 @@
   </url>
   
   <url>
-    <loc>https://unknown.yuzhouwan.com/tags/Regex/</loc>
+    <loc>https://unknown.yuzhouwan.com/tags/Software-Test-Basic/</loc>
     <lastmod>2021-02-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://unknown.yuzhouwan.com/tags/Software-Test-Basic/</loc>
+    <loc>https://unknown.yuzhouwan.com/tags/Regex/</loc>
     <lastmod>2021-02-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -354,6 +354,13 @@
   </url>
   
   <url>
+    <loc>https://unknown.yuzhouwan.com/tags/CNN/</loc>
+    <lastmod>2021-02-24</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://unknown.yuzhouwan.com/tags/iPython/</loc>
     <lastmod>2021-02-24</lastmod>
     <changefreq>daily</changefreq>
@@ -369,13 +376,6 @@
   
   <url>
     <loc>https://unknown.yuzhouwan.com/tags/Matplotlib/</loc>
-    <lastmod>2021-02-24</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://unknown.yuzhouwan.com/tags/CNN/</loc>
     <lastmod>2021-02-24</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
