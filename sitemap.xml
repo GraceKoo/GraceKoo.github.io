@@ -412,13 +412,6 @@
   </url>
   
   <url>
-    <loc>https://unknown.yuzhouwan.com/categories/Math/</loc>
-    <lastmod>2021-02-25</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://unknown.yuzhouwan.com/categories/Machine-Learning/</loc>
     <lastmod>2021-02-25</lastmod>
     <changefreq>daily</changefreq>
@@ -427,6 +420,13 @@
   
   <url>
     <loc>https://unknown.yuzhouwan.com/categories/DataView/</loc>
+    <lastmod>2021-02-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://unknown.yuzhouwan.com/categories/Math/</loc>
     <lastmod>2021-02-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
