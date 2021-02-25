@@ -362,6 +362,18 @@
       </tags>
   </entry>
   <entry>
+    <title>AI中的数学知识</title>
+    <url>/posts/59545/</url>
+    <content><![CDATA[<h1 id="线性代数部分"><a href="#线性代数部分" class="headerlink" title="线性代数部分"></a>线性代数部分</h1><h2 id="矩阵及其运算合集"><a href="#矩阵及其运算合集" class="headerlink" title="矩阵及其运算合集"></a>矩阵及其运算合集</h2><a id="more"></a>
+<h2 id="矩阵的行列式"><a href="#矩阵的行列式" class="headerlink" title="矩阵的行列式"></a>矩阵的行列式</h2><h2 id="矩阵的逆"><a href="#矩阵的逆" class="headerlink" title="矩阵的逆"></a>矩阵的逆</h2><h2 id="矩阵的初等变换"><a href="#矩阵的初等变换" class="headerlink" title="矩阵的初等变换"></a>矩阵的初等变换</h2><h2 id="矩阵的秩"><a href="#矩阵的秩" class="headerlink" title="矩阵的秩"></a>矩阵的秩</h2><h2 id="矩阵的特征值和特征向量"><a href="#矩阵的特征值和特征向量" class="headerlink" title="矩阵的特征值和特征向量"></a>矩阵的特征值和特征向量</h2><h2 id="矩阵对角化二次型"><a href="#矩阵对角化二次型" class="headerlink" title="矩阵对角化二次型"></a>矩阵对角化二次型</h2><h2 id="SVD分解的证明"><a href="#SVD分解的证明" class="headerlink" title="SVD分解的证明"></a>SVD分解的证明</h2><h2 id="SVD的应用与多元线性回归"><a href="#SVD的应用与多元线性回归" class="headerlink" title="SVD的应用与多元线性回归"></a>SVD的应用与多元线性回归</h2><h1 id="微积分部分"><a href="#微积分部分" class="headerlink" title="微积分部分"></a>微积分部分</h1><h2 id="导数中的中值定理"><a href="#导数中的中值定理" class="headerlink" title="导数中的中值定理"></a>导数中的中值定理</h2><h2 id="泰勒公式函数极值定积分"><a href="#泰勒公式函数极值定积分" class="headerlink" title="泰勒公式函数极值定积分"></a>泰勒公式函数极值定积分</h2><h2 id="多元微积分"><a href="#多元微积分" class="headerlink" title="多元微积分"></a>多元微积分</h2><h1 id="概率论部分"><a href="#概率论部分" class="headerlink" title="概率论部分"></a>概率论部分</h1><h2 id="概率基础"><a href="#概率基础" class="headerlink" title="概率基础"></a>概率基础</h2><h2 id="随机变量与多维随机变量"><a href="#随机变量与多维随机变量" class="headerlink" title="随机变量与多维随机变量"></a>随机变量与多维随机变量</h2><h2 id="期望与方差"><a href="#期望与方差" class="headerlink" title="期望与方差"></a>期望与方差</h2><h2 id="参数的估计"><a href="#参数的估计" class="headerlink" title="参数的估计"></a>参数的估计</h2><h1 id="最优化理论"><a href="#最优化理论" class="headerlink" title="最优化理论"></a>最优化理论</h1><h2 id="无约束最优化"><a href="#无约束最优化" class="headerlink" title="无约束最优化"></a>无约束最优化</h2><h2 id="带约束的最优化"><a href="#带约束的最优化" class="headerlink" title="带约束的最优化"></a>带约束的最优化</h2><h2 id="对偶理论"><a href="#对偶理论" class="headerlink" title="对偶理论"></a>对偶理论</h2>]]></content>
+      <categories>
+        <category>Math</category>
+      </categories>
+      <tags>
+        <tag>Machine Learning</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Machine Learning基础</title>
     <url>/posts/59544/</url>
     <content><![CDATA[<p><img data-src="/images/MachineLearning/MLMindNode.png" alt="MLMindNode"></p>
@@ -482,18 +494,6 @@
       <tags>
         <tag>Machine Learning</tag>
         <tag>Python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>AI中的数学知识</title>
-    <url>/posts/59545/</url>
-    <content><![CDATA[<h1 id="线性代数部分"><a href="#线性代数部分" class="headerlink" title="线性代数部分"></a>线性代数部分</h1><h2 id="矩阵及其运算合集"><a href="#矩阵及其运算合集" class="headerlink" title="矩阵及其运算合集"></a>矩阵及其运算合集</h2><a id="more"></a>
-<h2 id="矩阵的行列式"><a href="#矩阵的行列式" class="headerlink" title="矩阵的行列式"></a>矩阵的行列式</h2><h2 id="矩阵的逆"><a href="#矩阵的逆" class="headerlink" title="矩阵的逆"></a>矩阵的逆</h2><h2 id="矩阵的初等变换"><a href="#矩阵的初等变换" class="headerlink" title="矩阵的初等变换"></a>矩阵的初等变换</h2><h2 id="矩阵的秩"><a href="#矩阵的秩" class="headerlink" title="矩阵的秩"></a>矩阵的秩</h2><h2 id="矩阵的特征值和特征向量"><a href="#矩阵的特征值和特征向量" class="headerlink" title="矩阵的特征值和特征向量"></a>矩阵的特征值和特征向量</h2><h2 id="矩阵对角化二次型"><a href="#矩阵对角化二次型" class="headerlink" title="矩阵对角化二次型"></a>矩阵对角化二次型</h2><h2 id="SVD分解的证明"><a href="#SVD分解的证明" class="headerlink" title="SVD分解的证明"></a>SVD分解的证明</h2><h2 id="SVD的应用与多元线性回归"><a href="#SVD的应用与多元线性回归" class="headerlink" title="SVD的应用与多元线性回归"></a>SVD的应用与多元线性回归</h2><h1 id="微积分部分"><a href="#微积分部分" class="headerlink" title="微积分部分"></a>微积分部分</h1><h2 id="导数中的中值定理"><a href="#导数中的中值定理" class="headerlink" title="导数中的中值定理"></a>导数中的中值定理</h2><h2 id="泰勒公式函数极值定积分"><a href="#泰勒公式函数极值定积分" class="headerlink" title="泰勒公式函数极值定积分"></a>泰勒公式函数极值定积分</h2><h2 id="多元微积分"><a href="#多元微积分" class="headerlink" title="多元微积分"></a>多元微积分</h2><h1 id="概率论部分"><a href="#概率论部分" class="headerlink" title="概率论部分"></a>概率论部分</h1><h2 id="概率基础"><a href="#概率基础" class="headerlink" title="概率基础"></a>概率基础</h2><h2 id="随机变量与多维随机变量"><a href="#随机变量与多维随机变量" class="headerlink" title="随机变量与多维随机变量"></a>随机变量与多维随机变量</h2><h2 id="期望与方差"><a href="#期望与方差" class="headerlink" title="期望与方差"></a>期望与方差</h2><h2 id="参数的估计"><a href="#参数的估计" class="headerlink" title="参数的估计"></a>参数的估计</h2><h1 id="最优化理论"><a href="#最优化理论" class="headerlink" title="最优化理论"></a>最优化理论</h1><h2 id="无约束最优化"><a href="#无约束最优化" class="headerlink" title="无约束最优化"></a>无约束最优化</h2><h2 id="带约束的最优化"><a href="#带约束的最优化" class="headerlink" title="带约束的最优化"></a>带约束的最优化</h2><h2 id="对偶理论"><a href="#对偶理论" class="headerlink" title="对偶理论"></a>对偶理论</h2>]]></content>
-      <categories>
-        <category>Math</category>
-      </categories>
-      <tags>
-        <tag>Machine Learning</tag>
       </tags>
   </entry>
   <entry>
@@ -973,6 +973,29 @@
       </tags>
   </entry>
   <entry>
+    <title>Spring</title>
+    <url>/posts/25249120/</url>
+    <content><![CDATA[<h1 id="Spring概况"><a href="#Spring概况" class="headerlink" title="Spring概况"></a>Spring概况</h1><ul>
+<li><p>Spring是一个开源框架，为了解决企业级应用开发的复杂性而创建的，但现在已经不止应用于企业应用</p>
+</li>
+<li><p>Spring是一个轻量级的控制反转(IOC)和面向切面(AOP)的容器框架</p>
+<ul>
+<li>从大小与开销方面而言Spring是轻量的</li>
+<li>通过控制反转(IOC)的技术达到松耦合的目的</li>
+<li>提供了面向切面编程的丰富支持，允许通过分离应用的业务逻辑与系统级服务进行内聚性的开发</li>
+<li>包含并管理应用对象的配置和生命周期，这个意义上是一种容器</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Java FrameWork</category>
+      </categories>
+      <tags>
+        <tag>BigData</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>TensorFlow2.0 In Action</title>
     <url>/posts/29871/</url>
     <content><![CDATA[<h1 id="TensorFlow2-0简化的模型开发流程"><a href="#TensorFlow2-0简化的模型开发流程" class="headerlink" title="TensorFlow2.0简化的模型开发流程"></a>TensorFlow2.0简化的模型开发流程</h1><ul>
@@ -1018,29 +1041,6 @@
       </categories>
       <tags>
         <tag>Neural Network</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Spring</title>
-    <url>/posts/25249120/</url>
-    <content><![CDATA[<h1 id="Spring概况"><a href="#Spring概况" class="headerlink" title="Spring概况"></a>Spring概况</h1><ul>
-<li><p>Spring是一个开源框架，为了解决企业级应用开发的复杂性而创建的，但现在已经不止应用于企业应用</p>
-</li>
-<li><p>Spring是一个轻量级的控制反转(IOC)和面向切面(AOP)的容器框架</p>
-<ul>
-<li>从大小与开销方面而言Spring是轻量的</li>
-<li>通过控制反转(IOC)的技术达到松耦合的目的</li>
-<li>提供了面向切面编程的丰富支持，允许通过分离应用的业务逻辑与系统级服务进行内聚性的开发</li>
-<li>包含并管理应用对象的配置和生命周期，这个意义上是一种容器</li>
-</ul>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Java FrameWork</category>
-      </categories>
-      <tags>
-        <tag>BigData</tag>
       </tags>
   </entry>
   <entry>
@@ -1429,6 +1429,286 @@ cond(no)-&gt;op</textarea><textarea id="flowchart-0-options" style="display: non
       </tags>
   </entry>
   <entry>
+    <title>OpenCV-Base</title>
+    <url>/posts/16645/</url>
+    <content><![CDATA[<h1 id="OpenCV的安装"><a href="#OpenCV的安装" class="headerlink" title="OpenCV的安装"></a>OpenCV的安装</h1><p>国内一些pip的镜像源：</p>
+<p>阿里云 <a href="https://mirrors.aliyun.com/pypi/simple/">https://mirrors.aliyun.com/pypi/simple/</a><br>中国科技大学 <a href="https://pypi.mirrors.ustc.edu.cn/simple/">https://pypi.mirrors.ustc.edu.cn/simple/</a><br>豆瓣(douban) <a href="http://pypi.douban.com/simple/">http://pypi.douban.com/simple/</a><br>清华大学 <a href="https://pypi.tuna.tsinghua.edu.cn/simple/">https://pypi.tuna.tsinghua.edu.cn/simple/</a><br>中国科学技术大学 <a href="http://pypi.mirrors.ustc.edu.cn/simple/">http://pypi.mirrors.ustc.edu.cn/simple/</a></p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">(base)$ conda create -n py365 python=<span class="number">3.6</span><span class="number">.5</span>   <span class="comment"># anaconda中创建python版本为3.7.3的虚拟环境</span></span><br><span class="line">(base)$ conda activate py365                 <span class="comment"># 激活该环境</span></span><br><span class="line">pip install opencv-python==<span class="number">3.4</span><span class="number">.1</span><span class="number">.15</span> -i http://pypi.douban.com/simple --trusted-host pypi.douban.com                              <span class="comment"># 安装opencv-python 3.4.1.15，同时还会加载相应的依赖库</span></span><br></pre></td></tr></tbody></table></figure>
+<p>内容完善中……</p>
+<a id="more"></a>
+<h1 id="图像金字塔"><a href="#图像金字塔" class="headerlink" title="图像金字塔"></a>图像金字塔</h1><h2 id="高斯金字塔"><a href="#高斯金字塔" class="headerlink" title="高斯金字塔"></a>高斯金字塔</h2><p><img data-src="/images/opencv/Pyramid_1.png" alt="Pyramid_1"></p>
+<p><strong>高斯金字塔：向下采样法（缩小）</strong></p>
+<p><img data-src="/images/opencv/Pyramid_2.png" alt="Pyramid_2"></p>
+<p>实例：</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">img = cv2.imread(<span class="string">"A.png"</span>)</span><br><span class="line">down = cv2.pyrDown(img)</span><br><span class="line">cv2.imshow(<span class="string">"down"</span>,down)</span><br></pre></td></tr></tbody></table></figure>
+<p><strong>高斯金字塔：向上采样法（放大）</strong></p>
+<p><img data-src="/images/opencv/Pyramid_3.png" alt="Pyramid_3"></p>
+<p>实例：</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">img = cv2.imread(<span class="string">"A.png"</span>)</span><br><span class="line">up = cv2.pyrUp(img)</span><br><span class="line">cv2.imshow(<span class="string">"up"</span>,up)</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="拉普拉斯金字塔"><a href="#拉普拉斯金字塔" class="headerlink" title="拉普拉斯金字塔"></a>拉普拉斯金字塔</h2><p><img data-src="/images/opencv/Pyramid_4.png" alt="Pyramid_4"></p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">down=cv2.pyrDown(img)</span><br><span class="line">down_up=cv2.pyrUp(down)</span><br><span class="line">l_img=img-down_up</span><br><span class="line">cv2.imshow(l_img,<span class="string">'l_1'</span>)</span><br></pre></td></tr></tbody></table></figure>
+<h1 id="轮廓检测"><a href="#轮廓检测" class="headerlink" title="轮廓检测"></a>轮廓检测</h1><p><strong>cv2.findContours(img,mode,method)</strong></p>
+<p>mode:轮廓检索模式</p>
+<ul>
+<li>RETR_EXTERNAL ：只检索最外面的轮廓；</li>
+<li>RETR_LIST：检索所有的轮廓，并将其保存到一条链表当中；</li>
+<li>RETR_CCOMP：检索所有的轮廓，并将他们组织为两层：顶层是各部分的外部边界，第二层是空洞的边界;</li>
+<li>RETR_TREE：检索所有的轮廓，并重构嵌套轮廓的整个层次;</li>
+</ul>
+<p>method:轮廓逼近方法</p>
+<ul>
+<li>CHAIN_APPROX_NONE：以Freeman链码的方式输出轮廓，所有其他方法输出多边形（顶点的序列）。</li>
+<li>CHAIN_APPROX_SIMPLE:压缩水平的、垂直的和斜的部分，也就是，函数只保留他们的终点部分。</li>
+</ul>
+<p>为了得到更高的准确率，使用二值图像。</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">img = cv2.imread(<span class="string">'contours.png'</span>)</span><br><span class="line">gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)</span><br><span class="line">ret, thresh = cv2.threshold(gray, <span class="number">127</span>, <span class="number">255</span>, cv2.THRESH_BINARY)</span><br><span class="line">cv2.imshow(thresh,<span class="string">'thresh'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># binary 输出的二值图；contours 边缘；hierarchy 层次结构</span></span><br><span class="line">binary, contours, hierarchy = cv2.findContours(thresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_NONE)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘制轮廓：参数分别为，轮廓，轮廓索引（-1表示所有轮廓），颜色，线条厚度</span></span><br><span class="line">draw_img = img.copy()</span><br><span class="line">res = cv2.drawContours(draw_img, contours, -<span class="number">1</span>, (<span class="number">0</span>, <span class="number">0</span>, <span class="number">255</span>), <span class="number">2</span>)</span><br><span class="line">cv_show(res,<span class="string">'res'</span>)</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="轮廓特征"><a href="#轮廓特征" class="headerlink" title="轮廓特征"></a>轮廓特征</h2><h3 id="炬"><a href="#炬" class="headerlink" title="炬"></a>炬</h3><h3 id="面积"><a href="#面积" class="headerlink" title="面积"></a>面积</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">cnt = contours[<span class="number">0</span>]</span><br><span class="line"><span class="comment">#面积</span></span><br><span class="line">cv2.contourArea(cnt)</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="周长"><a href="#周长" class="headerlink" title="周长"></a>周长</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">cnt = contours[<span class="number">0</span>]</span><br><span class="line">cv2.arcLength(cnt,<span class="literal">True</span>) <span class="comment"># True表示闭合</span></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="轮廓近似"><a href="#轮廓近似" class="headerlink" title="轮廓近似"></a>轮廓近似</h3><p><img data-src="/images/opencv/contours3.png" alt="contours3"></p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 找轮廓</span></span><br><span class="line">img = cv2.imread(<span class="string">'contours2.png'</span>)</span><br><span class="line"></span><br><span class="line">gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)</span><br><span class="line">ret, thresh = cv2.threshold(gray, <span class="number">127</span>, <span class="number">255</span>, cv2.THRESH_BINARY)</span><br><span class="line">binary, contours, hierarchy = cv2.findContours(thresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_NONE)</span><br><span class="line">cnt = contours[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">draw_img = img.copy()</span><br><span class="line">res = cv2.drawContours(draw_img, [cnt], -<span class="number">1</span>, (<span class="number">0</span>, <span class="number">0</span>, <span class="number">255</span>), <span class="number">2</span>)</span><br><span class="line">cv_show(res,<span class="string">'res'</span>)</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">epsilon = <span class="number">0.15</span>*cv2.arcLength(cnt,<span class="literal">True</span>)  <span class="comment"># epsilon一般按照周长的百分比进行设置，越小，轮廓近似值越大</span></span><br><span class="line">approx = cv2.approxPolyDP(cnt,epsilon,<span class="literal">True</span>) </span><br><span class="line"></span><br><span class="line">draw_img = img.copy()</span><br><span class="line">res = cv2.drawContours(draw_img, [approx], -<span class="number">1</span>, (<span class="number">0</span>, <span class="number">0</span>, <span class="number">255</span>), <span class="number">2</span>)</span><br><span class="line">cv_show(res,<span class="string">'res'</span>)</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="边界矩形"><a href="#边界矩形" class="headerlink" title="边界矩形"></a>边界矩形</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">img = cv2.imread(<span class="string">'contours.png'</span>)</span><br><span class="line"></span><br><span class="line">gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)</span><br><span class="line">ret, thresh = cv2.threshold(gray, <span class="number">127</span>, <span class="number">255</span>, cv2.THRESH_BINARY)</span><br><span class="line">binary, contours, hierarchy = cv2.findContours(thresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_NONE)</span><br><span class="line">cnt = contours[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">x,y,w,h = cv2.boundingRect(cnt)</span><br><span class="line">img = cv2.rectangle(img,(x,y),(x+w,y+h),(<span class="number">0</span>,<span class="number">255</span>,<span class="number">0</span>),<span class="number">2</span>)</span><br><span class="line">cv_show(img,<span class="string">'img'</span>)</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">area = cv2.contourArea(cnt)</span><br><span class="line">x, y, w, h = cv2.boundingRect(cnt)</span><br><span class="line">rect_area = w * h</span><br><span class="line">extent = <span class="built_in">float</span>(area) / rect_area</span><br><span class="line"><span class="built_in">print</span> (<span class="string">'轮廓面积与边界矩形比'</span>,extent)</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="最小外接圆"><a href="#最小外接圆" class="headerlink" title="最小外接圆"></a>最小外接圆</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">(x,y),radius = cv2.minEnclosingCircle(cnt) </span><br><span class="line">center = (<span class="built_in">int</span>(x),<span class="built_in">int</span>(y)) </span><br><span class="line">radius = <span class="built_in">int</span>(radius) </span><br><span class="line">img = cv2.circle(img,center,radius,(<span class="number">0</span>,<span class="number">255</span>,<span class="number">0</span>),<span class="number">2</span>)</span><br><span class="line">cv_show(img,<span class="string">'img'</span>)</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="轮廓的性质"><a href="#轮廓的性质" class="headerlink" title="轮廓的性质"></a>轮廓的性质</h2><h3 id="Solidty"><a href="#Solidty" class="headerlink" title="Solidty"></a>Solidty</h3><h3 id="Equivalent-Diameter"><a href="#Equivalent-Diameter" class="headerlink" title="Equivalent Diameter"></a>Equivalent Diameter</h3><h3 id="方向"><a href="#方向" class="headerlink" title="方向"></a>方向</h3><h3 id="掩模和像素点"><a href="#掩模和像素点" class="headerlink" title="掩模和像素点"></a>掩模和像素点</h3><h3 id="平均颜色和平均灰度"><a href="#平均颜色和平均灰度" class="headerlink" title="平均颜色和平均灰度"></a>平均颜色和平均灰度</h3><h3 id="极点"><a href="#极点" class="headerlink" title="极点"></a>极点</h3><h1 id="模版匹配"><a href="#模版匹配" class="headerlink" title="模版匹配"></a>模版匹配</h1><p>模版匹配和卷积原理很像，模版在原图上从原点开始滑动，计算模版与（图像被模版覆盖的地方）的差别程度，这个差别程度的计算方法在opencv里有6种。然后将每次计算的结果放入一个矩阵里，作为结果输出。假如原图形是A✖️B大小，而模版是a✖️b的大小，则输出结果的矩阵是（A-a+1）✖️（B-b+1）的大小。</p>
+<ul>
+<li>TM_SQDIFF：计算平方差，计算出来的值越小，越相关</li>
+<li>TM_CCORR：计算相关性，计算出来的值越大，越相关</li>
+<li>TM_CCOEFF：计算相关系数，计算出来的值越大，越相关</li>
+<li>TM_SQDIFF_NORMED：计算归一化平方差，计算出来的值越接近0，越相关</li>
+<li><p>TM_CCORR_NORMED：计算归一化相关性，计算出来的值越接近1，越相关</p>
+</li>
+<li><p>TM_CCOEFF_NORMED：计算归一化相关系数，计算出来的值越接近1，越相关</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">img = cv2.imread(<span class="string">"lena.jpg"</span>,<span class="number">0</span>)</span><br><span class="line">h,w = img.shape[:<span class="number">2</span>][::-<span class="number">1</span>]</span><br><span class="line">template = cv2.imread(<span class="string">"face"</span>,<span class="number">0</span>)</span><br><span class="line">methods = [<span class="string">'cv2.TM_CCOEFF'</span>,<span class="string">'cv2.TM_CCORR_NORME'</span>,<span class="string">'cv2.TM_CCORR'</span>,<span class="string">'cv2.TM_CCORR_NORMED'</span>,<span class="string">'cv2.TM_SQDIFF'</span>,<span class="string">'cv2.TM_SQDIFF_NORMED'</span>]</span><br><span class="line">res = cv2.matchTemplate(img,template,<span class="number">1</span>) <span class="comment"># 模版匹配</span></span><br><span class="line">min_val,max_val,min_loc,max_loc = cv2.minMacLoc(res) <span class="comment"># 返回最小最大值的坐标和位置</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> meth <span class="keyword">in</span> methods:</span><br><span class="line">  img2 = img.copy()</span><br><span class="line">  </span><br><span class="line">  <span class="comment"># 匹配方法的真值</span></span><br><span class="line">  method = <span class="built_in">eval</span>(meth)</span><br><span class="line">  res = cv2.matchTemplate(img,template,<span class="number">1</span>) <span class="comment"># 模版匹配</span></span><br><span class="line">  min_val,max_val,min_loc,max_loc = cv2.minMacLoc(res) <span class="comment"># 返回最小最大值的坐标和位置</span></span><br><span class="line">  </span><br><span class="line">  <span class="comment"># 如果是平方差匹配TM_SQDIFF或者归一化平方差匹配TM_SQDIFF_NORMED，取最小值</span></span><br><span class="line">  <span class="keyword">if</span> method <span class="keyword">in</span> [cv2.TM_SQDIFF,cv2.TM_SQDIFF_NORMED]:</span><br><span class="line">    top_left = min_loc</span><br><span class="line">  <span class="keyword">else</span>:</span><br><span class="line">    top_left = max_loc</span><br><span class="line">  bottom_right = (top_left[<span class="number">0</span>]+w,top_left[<span class="number">1</span>]+h)</span><br><span class="line">  </span><br><span class="line">  cv2.rectangle(img2,top_left,bottom_right,<span class="number">255</span>,<span class="number">2</span>)</span><br><span class="line">  </span><br><span class="line">  plt.subplot(<span class="number">121</span>),plt.imshow(res,cmap=<span class="string">'gray'</span>)</span><br><span class="line">  plt.sticks([]),plt.yticks([])</span><br><span class="line">  plt.subplot(<span class="number">122</span>),plt.imshow(img2,cmap=<span class="string">'gray'</span>)</span><br><span class="line">  plt.sticks([]),plt.yticks([])</span><br><span class="line">  plt.subtitle(meth)</span><br><span class="line">  plt.show()</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 匹配多个对象</span></span><br><span class="line">img = cv2.imread(<span class="string">"lena.jpg"</span>,<span class="number">0</span>)</span><br><span class="line">h,w = img.shape[:<span class="number">2</span>][::-<span class="number">1</span>]</span><br><span class="line">template = cv2.imread(<span class="string">"face"</span>,<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">res = cv2.matchTemplate(img,template,cv2.TM_CCORR_NORME) <span class="comment"># 模版匹配</span></span><br><span class="line">threshold = <span class="number">0.8</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取匹配程度大于0.8的坐标</span></span><br><span class="line">loc = np.where(res &gt;= threshold)</span><br><span class="line"><span class="keyword">for</span> pt <span class="keyword">in</span> <span class="built_in">zip</span>(*loc[::-<span class="number">1</span>]): <span class="comment">#*号表示可选参数</span></span><br><span class="line">  bottom_right = (pt[<span class="number">0</span>] + w, pt[<span class="number">1</span>] + h)</span><br><span class="line">  cv2.rectangle(img,pt,bottom_right,(<span class="number">0</span>,<span class="number">0</span>,<span class="number">255</span>),<span class="number">2</span>)</span><br><span class="line">  </span><br><span class="line">cv2.imshow(<span class="string">"img"</span>,img)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br></pre></td></tr></tbody></table></figure>
+<h1 id="直方图"><a href="#直方图" class="headerlink" title="直方图"></a>直方图</h1><p>统计图中的像素点分布。</p>
+<h2 id="直方图的计算、绘制与分析"><a href="#直方图的计算、绘制与分析" class="headerlink" title="直方图的计算、绘制与分析"></a>直方图的计算、绘制与分析</h2><p>cv2.calcHist(images, channels,mask,histSize,range)</p>
+<ul>
+<li>images:原图像格式为uint8或float32，当传入函数时应用中括号，例如[img]</li>
+<li>channels:同样用中括号，如果图像时灰度图，它的值是[0]，如果是彩色图像，那传入的参数可以是【0】【1】【2】</li>
+<li>mask:掩模图像，统计整幅图像就将它设为None，但是如果只想统计一部分，就制作一个掩模。</li>
+<li>histSize:BIN的数目，也用中括号</li>
+<li>ranges:像素值范围，为[0,256]</li>
+</ul>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">img = cv2.imread(<span class="string">"cat.png"</span>,<span class="number">0</span>)</span><br><span class="line">hist = cv2.calcHist([img],[<span class="number">0</span>],<span class="literal">None</span>,[<span class="number">256</span>],[<span class="number">0</span>,<span class="number">256</span>])</span><br><span class="line">plt.hist(img.ravel(),<span class="number">256</span>))</span><br><span class="line">plt.show()</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="mask操作"><a href="#mask操作" class="headerlink" title="mask操作"></a>mask操作</h2><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 创建mask</span></span><br><span class="line">mask = np.zeros(img.shape[:<span class="number">2</span>],np.uint8)</span><br><span class="line">mask[<span class="number">100</span>:<span class="number">300</span>,<span class="number">100</span>:<span class="number">400</span>] = <span class="number">255</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 操作mask</span></span><br><span class="line">mask_img = cv2.bitwise_and(img,img,mask=mask) <span class="comment">#与操作</span></span><br><span class="line">cv2.imshow(<span class="string">"img"</span>,img)</span><br><span class="line"></span><br><span class="line">hist_full = cv2.calHist([img],[<span class="number">0</span>],<span class="literal">None</span>,[<span class="number">256</span>],[<span class="number">0</span>,<span class="number">256</span>])</span><br><span class="line">hist_mask = cv2.calHist([img],[<span class="number">0</span>],mask,[<span class="number">256</span>],[<span class="number">0</span>,<span class="number">256</span>])</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="直方图均衡化"><a href="#直方图均衡化" class="headerlink" title="直方图均衡化"></a>直方图均衡化</h2><p>均衡后，色彩和亮度能够稍微的提升。</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">equ = cv2.equalizeHist(img)</span><br><span class="line">plt.hist(equ,ravel(<span class="number">0</span>,<span class="number">256</span>))</span><br><span class="line">plt.show()</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>自适应直方图均衡化</li>
+</ul>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">clahe = cv2.createCLAHE(clipLimit=<span class="number">2.0</span>,tilerGridSize(<span class="number">8</span>,<span class="number">8</span>))</span><br><span class="line">res_clahe = clahe.apple(img)</span><br></pre></td></tr></tbody></table></figure>
+<h1 id="傅立叶变换"><a href="#傅立叶变换" class="headerlink" title="傅立叶变换"></a>傅立叶变换</h1><p>中心思想：<strong>任何函数都能通过傅立叶堆叠出来。</strong></p>
+<p>以时间为参照就是时域分析。</p>
+<p><strong>傅立叶变换的作用：</strong></p>
+<ul>
+<li>高频：变化剧烈的灰度分量，例如边界</li>
+<li>低频：变化缓慢的灰度分量，例如一片大海</li>
+</ul>
+<p>可以找到图像中的高频与低频部分。</p>
+<p><strong>滤波：</strong></p>
+<ul>
+<li>低通滤波器：只保留低频，会使图像模糊</li>
+<li>高通滤波器：只保留高频，会使图像细节增强</li>
+</ul>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="keyword">from</span> matplotlib <span class="keyword">import</span> pyplot <span class="keyword">as</span> plt</span><br><span class="line">img = cv2.imread(<span class="string">"lena.jpg"</span>,<span class="number">0</span>)</span><br><span class="line">img_float32 = np.float32(img)</span><br><span class="line"></span><br><span class="line">dft = cv2.dft(img_float32,flags = cv2.DFT_COMPLEX_OUTPUT)</span><br><span class="line">dft_shift = np.fft.fftshift(dft) <span class="comment">#将低频值转换到中间的位置</span></span><br><span class="line"><span class="comment"># 得到灰度图能够表示的形式</span></span><br><span class="line">magnitude_spectrum = <span class="number">20</span>*np.log(cv2.magnitude(dft_shift[:,:,<span class="number">0</span>],dft_shift[:,:,<span class="number">1</span>]))</span><br><span class="line"></span><br><span class="line">plt.subplot((<span class="number">121</span>),plt.imshow(img,cmap=<span class="string">'gray'</span>)</span><br><span class="line">plt.title(<span class="string">"Input image"</span>),plt.xticks([]),plt.yticks([])</span><br><span class="line">plt.subplot(<span class="number">122</span>),plt.imshow(magnitude_spectrum,cmap=<span class="string">'gray'</span>)</span><br><span class="line">plt.title(<span class="string">'magnitude_spectrum'</span>),plt.xticks([]),plt.yticks([])</span><br><span class="line">plt.show()</span><br></pre></td></tr></tbody></table></figure>
+<h1 id="图像特征"><a href="#图像特征" class="headerlink" title="图像特征"></a>图像特征</h1><h2 id="Harris角点检测"><a href="#Harris角点检测" class="headerlink" title="Harris角点检测"></a>Harris角点检测</h2><p>边界：一个特征值大，一个特征值小，自相关函数值在某一方向上大，在其他方向上小。</p>
+<p>平面：两个特征值都小，且近似相等，自相关函数数值在各个方向上都小。</p>
+<p>角点：两个特征值都大，且近似相等，自相关函数在所有方向都增大。</p>
+<h3 id="cv2-cornerHarris"><a href="#cv2-cornerHarris" class="headerlink" title="cv2.cornerHarris()"></a>cv2.cornerHarris()</h3><ul>
+<li>img： 数据类型为 ﬂoat32 的入图像</li>
+<li>blockSize： 角点检测中指定区域的大小</li>
+<li>ksize： Sobel求导中使用的窗口大小</li>
+<li>k： 取值参数为 [0,04,0.06]</li>
+</ul>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">dst = cv2.cornerHarris(gray, <span class="number">2</span>, <span class="number">3</span>, <span class="number">0.04</span>)</span><br><span class="line"><span class="built_in">print</span> (<span class="string">'dst.shape:'</span>,dst.shape)</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">img[dst&gt;<span class="number">0.01</span>*dst.<span class="built_in">max</span>()]=[<span class="number">0</span>,<span class="number">0</span>,<span class="number">255</span>] <span class="comment">#大于最大值的0.01倍，就认为是一个角点</span></span><br><span class="line">cv2.imshow(<span class="string">'dst'</span>,img) </span><br><span class="line">cv2.waitKey(<span class="number">0</span>) </span><br><span class="line">cv2.destroyAllWindows()</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Sift特征"><a href="#Sift特征" class="headerlink" title="Sift特征"></a>Sift特征</h2><p>Scale Invariant Feature Transform</p>
+<h3 id="图像尺度空间"><a href="#图像尺度空间" class="headerlink" title="图像尺度空间"></a>图像尺度空间</h3><p>在一定的范围内，无论物体是大还是小，人眼都可以分辨出来，然而计算机要有相同的能力却很难，所以要让机器能够对物体在不同尺度下有一个统一的认知，就需要考虑图像在不同的尺度下都存在的特点。</p>
+<p>尺度空间的获取通常使用高斯模糊来实现。</p>
+<p><img data-src="/images/opencv/sift_3.png" alt="sift_3"></p>
+<p><img data-src="/images/opencv/sift_2.png" alt="sift_2"></p>
+<p>不同σ的高斯函数决定了对图像的平滑程度，越大的σ值对应的图像越模糊。</p>
+<h3 id="多分辨率金字塔"><a href="#多分辨率金字塔" class="headerlink" title="多分辨率金字塔"></a>多分辨率金字塔</h3><p><img data-src="/images/opencv/sift_4.png" alt="sift_4"></p>
+<h3 id="高斯差分金字塔（DOG）"><a href="#高斯差分金字塔（DOG）" class="headerlink" title="高斯差分金字塔（DOG）"></a>高斯差分金字塔（DOG）</h3><p><img data-src="/images/opencv/sift_5.png" alt="sift_5"></p>
+<p><img data-src="/images/opencv/sift_6.png" alt="sift_6"></p>
+<h3 id="DoG空间极值检测"><a href="#DoG空间极值检测" class="headerlink" title="DoG空间极值检测"></a>DoG空间极值检测</h3><p>为了寻找尺度空间的极值点，每个像素点要和其图像域（同一尺度空间）和尺度域（相邻的尺度空间）的所有相邻点进行比较，当其大于（或者小于）所有相邻点时，该点就是极值点。如下图所示，中间的检测点要和其所在图像的3×3邻域8个像素点，以及其相邻的上下两层的3×3领域18个像素点，共26个像素点进行比较。</p>
+<p><img data-src="/images/opencv/sift_7.png" alt="sift_7"></p>
+<h3 id="关键点的精确定位"><a href="#关键点的精确定位" class="headerlink" title="关键点的精确定位"></a>关键点的精确定位</h3><p>这些候选关键点是DOG空间的局部极值点，而且这些极值点均为离散的点，精确定位极值点的一种方法是，对尺度空间DoG函数进行曲线拟合，计算其极值点，从而实现关键点的精确定位。</p>
+<p><img data-src="/images/opencv/sift_8.png" alt="sift_8"></p>
+<p><img data-src="/images/opencv/sift_9.png" alt="sift_9"></p>
+<h3 id="消除边界响应"><a href="#消除边界响应" class="headerlink" title="消除边界响应"></a>消除边界响应</h3><p><img data-src="/images/opencv/sift_10.png" alt="sift_10"></p>
+<h3 id="特征点的主方向"><a href="#特征点的主方向" class="headerlink" title="特征点的主方向"></a>特征点的主方向</h3><p><img data-src="/images/opencv/sift_11.png" alt="sift_11"></p>
+<p>每个特征点可以得到三个信息(x,y,σ,θ)，即位置、尺度和方向。具有多个方向的关键点可以被复制成多份，然后将方向值分别赋给复制后的特征点，一个特征点就产生了多个坐标、尺度相等，但是方向不同的特征点。</p>
+<h3 id="生成特征描述"><a href="#生成特征描述" class="headerlink" title="生成特征描述"></a>生成特征描述</h3><p>在完成关键点的梯度计算后，使用直方图统计邻域内像素的梯度和方向。</p>
+<p><img data-src="/images/opencv/sift_12.png" alt="sift_12"></p>
+<p>为了保证特征矢量的旋转不变性，要以特征点为中心，在附近邻域内将坐标轴旋转θ角度，即将坐标轴旋转为特征点的主方向。</p>
+<p><img data-src="/images/opencv/sift_14.png" alt="sift_14"></p>
+<p>旋转之后的主方向为中心取8x8的窗口，求每个像素的梯度幅值和方向，箭头方向代表梯度方向，长度代表梯度幅值，然后利用高斯窗口对其进行加权运算，最后在每个4x4的小块上绘制8个方向的梯度直方图，计算每个梯度方向的累加值，即可形成一个种子点，即每个特征的由4个种子点组成，每个种子点有8个方向的向量信息。</p>
+<p><img data-src="/images/opencv/sift_15.png" alt="sift_15"></p>
+<p>论文中建议对每个关键点使用4x4共16个种子点来描述，这样一个关键点就会产生128维的SIFT特征向量。</p>
+<p><img data-src="/images/opencv/sift_17.png" alt="sift_17"></p>
+<h3 id="OpenCV-SIFT函数"><a href="#OpenCV-SIFT函数" class="headerlink" title="OpenCV SIFT函数"></a>OpenCV SIFT函数</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">img = cv2.imread(<span class="string">'test_1.jpg'</span>)</span><br><span class="line">gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)</span><br><span class="line"></span><br><span class="line">sift = cv2.xfeatures2d.SIFT_create()</span><br><span class="line">kp = sift.detect(gray, <span class="literal">None</span>) <span class="comment"># kp：关键点</span></span><br><span class="line"></span><br><span class="line">img = cv2.drawKeypoints(gray, kp, img)</span><br><span class="line"></span><br><span class="line">cv2.imshow(<span class="string">'drawKeypoints'</span>, img)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">cv2.destroyAllWindows()</span><br></pre></td></tr></tbody></table></figure>
+<p>计算特征</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">kp, des = sift.compute(gray, kp)</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="built_in">print</span> (np.array(kp).shape)</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">des.shape</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">des[<span class="number">0</span>]</span><br></pre></td></tr></tbody></table></figure>
+<h1 id="背景建模"><a href="#背景建模" class="headerlink" title="背景建模"></a>背景建模</h1><h2 id="帧差法"><a href="#帧差法" class="headerlink" title="帧差法"></a><strong>帧差法</strong></h2><p>由于场景中的目标在运动，目标的影像在不同图像帧中的位置不同。该类算法对时间上连续的两帧图像进行差分运算，不同帧对应的像素点相减，判断灰度差的绝对值，当绝对值超过一定阈值时，即可判断为运动目标，从而实现目标的检测功能。</p>
+<p><img data-src="/images/opencv/bg_2.png" alt="bg_2"></p>
+<p>帧差法非常简单，但是会引入噪音和空洞问题。</p>
+<h2 id="混合高斯模型"><a href="#混合高斯模型" class="headerlink" title="混合高斯模型"></a>混合高斯模型</h2><p>（视频变化趋势应该是符合高斯分布的）</p>
+<p>在进行前景检测前，先对背景进行训练，对图像中每个背景采用一个混合高斯模型进行模拟，每个背景的混合高斯的个数可以自适应。然后在测试阶段，对新来的像素进行GMM匹配，如果该像素值能够匹配其中一个高斯，则认为是背景，否则认为是前景。由于整个过程GMM模型在不断更新学习中，所以对动态背景有一定的鲁棒性。最后通过对一个有树枝摇摆的动态背景进行前景检测，取得了较好的效果。</p>
+<p>在视频中对于像素点的变化情况应当是符合高斯分布。</p>
+<p><img data-src="/images/opencv/bg_3.png" alt="bg_3"></p>
+<p>背景的实际分布应当是多个高斯分布混合在一起，每个高斯模型也可以带有权重。</p>
+<p><img data-src="/images/opencv/bg_4.png" alt="bg_4"></p>
+<p><strong>混合高斯模型学习方法</strong></p>
+<ul>
+<li>1.首先初始化每个高斯模型矩阵参数。</li>
+<li>2.取视频中T帧数据图像用来训练高斯混合模型。来了第一个像素之后用它来当做第一个高斯分布。</li>
+<li>3.当后面来的像素值时，与前面已有的高斯的均值比较，如果该像素点的值与其模型均值差在3倍的方差内，则属于该分布，并对其进行参数更新。</li>
+<li>4.如果下一次来的像素不满足当前高斯分布，用它来创建一个新的高斯分布。</li>
+</ul>
+<p><strong>混合高斯模型测试方法</strong></p>
+<p>在测试阶段，对新来像素点的值与混合高斯模型中的每一个均值进行比较，如果其差值在2倍的方差之间的话，则认为是背景，否则认为是前景。将前景赋值为255，背景赋值为0。这样就形成了一副前景二值图。</p>
+<p><img data-src="/images/opencv/bg_5.png" alt="bg_5"></p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"></span><br><span class="line"><span class="comment">#经典的测试视频</span></span><br><span class="line">cap = cv2.VideoCapture(<span class="string">'test.avi'</span>)</span><br><span class="line"><span class="comment">#形态学操作需要使用</span></span><br><span class="line">kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE,(<span class="number">3</span>,<span class="number">3</span>))</span><br><span class="line"><span class="comment">#创建混合高斯模型用于背景建模</span></span><br><span class="line">fgbg = cv2.createBackgroundSubtractorMOG2()</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span>(<span class="literal">True</span>):</span><br><span class="line">    ret, frame = cap.read()</span><br><span class="line">    fgmask = fgbg.apply(frame)</span><br><span class="line">    <span class="comment">#形态学开运算去噪点</span></span><br><span class="line">    fgmask = cv2.morphologyEx(fgmask, cv2.MORPH_OPEN, kernel)</span><br><span class="line">    <span class="comment">#寻找视频中的轮廓</span></span><br><span class="line">    im, contours, hierarchy = cv2.findContours(fgmask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> c <span class="keyword">in</span> contours:</span><br><span class="line">        <span class="comment">#计算各轮廓的周长</span></span><br><span class="line">        perimeter = cv2.arcLength(c,<span class="literal">True</span>)</span><br><span class="line">        <span class="keyword">if</span> perimeter &gt; <span class="number">188</span>:</span><br><span class="line">            <span class="comment">#找到一个直矩形（不会旋转）</span></span><br><span class="line">            x,y,w,h = cv2.boundingRect(c)</span><br><span class="line">            <span class="comment">#画出这个矩形</span></span><br><span class="line">            cv2.rectangle(frame,(x,y),(x+w,y+h),(<span class="number">0</span>,<span class="number">255</span>,<span class="number">0</span>),<span class="number">2</span>)    </span><br><span class="line"></span><br><span class="line">    cv2.imshow(<span class="string">'frame'</span>,frame)</span><br><span class="line">    cv2.imshow(<span class="string">'fgmask'</span>, fgmask)</span><br><span class="line">    k = cv2.waitKey(<span class="number">150</span>) &amp; <span class="number">0xff</span></span><br><span class="line">    <span class="keyword">if</span> k == <span class="number">27</span>:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line">cap.release()</span><br><span class="line">cv2.destroyAllWindows()</span><br></pre></td></tr></tbody></table></figure>
+<h1 id="光流估计"><a href="#光流估计" class="headerlink" title="光流估计"></a>光流估计</h1><p>光流是空间运动物体在观测成像平面上的<strong>像素运动的“瞬时速度”，</strong>根据各个像素点的速度矢量特征，可以<strong>对图像进行动态分析，例如目标跟踪。</strong></p>
+<ul>
+<li>亮度恒定：同一点随着时间的变化，其亮度不会发生改变。</li>
+<li>小运动：随着时间的变化不会引起位置的剧烈变化，只有小运动情况下才能用前后帧之间单位位置变化引起的灰度变化去近似灰度对位置的偏导数。</li>
+<li>空间一致：一个场景上邻近的点投影到图像上也是邻近点，且邻近点速度一致。因为光流法基本方程约束只有一个，而要求x，y方向的速度，有两个未知变量。所以需要连立n多个方程求解。</li>
+</ul>
+<p><img data-src="/images/opencv/lk_2.png" alt="lk_2"></p>
+<p><img data-src="/images/opencv/lk_1.png" alt="lk_1"></p>
+<h2 id="Lucas-Kanade-算法"><a href="#Lucas-Kanade-算法" class="headerlink" title="Lucas-Kanade 算法"></a>Lucas-Kanade 算法</h2><p><img data-src="/images/opencv/lk_3.png" alt="lk_3"></p>
+<p>如何求解方程组呢？看起来一个像素点根本不够，在物体移动过程中还有哪些特性呢？</p>
+<p><img data-src="/images/opencv/lk_4.png" alt="lk_4"></p>
+<p><strong>cv2.calcOpticalFlowPyrLK():</strong></p>
+<p>参数：</p>
+<ul>
+<li>prevImage 前一帧图像</li>
+<li>nextImage 当前帧图像</li>
+<li>prevPts 待跟踪的特征点向量</li>
+<li>winSize 搜索窗口的大小</li>
+<li>maxLevel 最大的金字塔层数</li>
+</ul>
+<p>返回：</p>
+<ul>
+<li>nextPts 输出跟踪特征点向量</li>
+<li>status 特征点是否找到，找到的状态为1，未找到的状态为0</li>
+</ul>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"></span><br><span class="line">cap = cv2.VideoCapture(<span class="string">'test.avi'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 角点检测所需参数</span></span><br><span class="line">feature_params = <span class="built_in">dict</span>( maxCorners = <span class="number">100</span>,</span><br><span class="line">                       qualityLevel = <span class="number">0.3</span>,</span><br><span class="line">                       minDistance = <span class="number">7</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># lucas kanade参数</span></span><br><span class="line">lk_params = <span class="built_in">dict</span>( winSize  = (<span class="number">15</span>,<span class="number">15</span>),</span><br><span class="line">                  maxLevel = <span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 随机颜色条</span></span><br><span class="line">color = np.random.randint(<span class="number">0</span>,<span class="number">255</span>,(<span class="number">100</span>,<span class="number">3</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 拿到第一帧图像</span></span><br><span class="line">ret, old_frame = cap.read()</span><br><span class="line">old_gray = cv2.cvtColor(old_frame, cv2.COLOR_BGR2GRAY)</span><br><span class="line"><span class="comment"># 返回所有检测特征点，需要输入图像，角点最大数量（效率），品质因子（特征值越大的越好，来筛选）</span></span><br><span class="line"><span class="comment"># 距离相当于这区间有比这个角点强的，就不要这个弱的了</span></span><br><span class="line">p0 = cv2.goodFeaturesToTrack(old_gray, mask = <span class="literal">None</span>, **feature_params)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建一个mask</span></span><br><span class="line">mask = np.zeros_like(old_frame)</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span>(<span class="literal">True</span>):</span><br><span class="line">    ret,frame = cap.read()</span><br><span class="line">    frame_gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 需要传入前一帧和当前图像以及前一帧检测到的角点</span></span><br><span class="line">    p1, st, err = cv2.calcOpticalFlowPyrLK(old_gray, frame_gray, p0, <span class="literal">None</span>, **lk_params)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># st=1表示</span></span><br><span class="line">    good_new = p1[st==<span class="number">1</span>]</span><br><span class="line">    good_old = p0[st==<span class="number">1</span>]</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 绘制轨迹</span></span><br><span class="line">    <span class="keyword">for</span> i,(new,old) <span class="keyword">in</span> <span class="built_in">enumerate</span>(<span class="built_in">zip</span>(good_new,good_old)):</span><br><span class="line">        a,b = new.ravel()</span><br><span class="line">        c,d = old.ravel()</span><br><span class="line">        mask = cv2.line(mask, (a,b),(c,d), color[i].tolist(), <span class="number">2</span>)</span><br><span class="line">        frame = cv2.circle(frame,(a,b),<span class="number">5</span>,color[i].tolist(),-<span class="number">1</span>)</span><br><span class="line">    img = cv2.add(frame,mask)</span><br><span class="line"></span><br><span class="line">    cv2.imshow(<span class="string">'frame'</span>,img)</span><br><span class="line">    k = cv2.waitKey(<span class="number">150</span>) &amp; <span class="number">0xff</span></span><br><span class="line">    <span class="keyword">if</span> k == <span class="number">27</span>:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 更新</span></span><br><span class="line">    old_gray = frame_gray.copy()</span><br><span class="line">    p0 = good_new.reshape(-<span class="number">1</span>,<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line">cv2.destroyAllWindows()</span><br><span class="line">cap.release()</span><br></pre></td></tr></tbody></table></figure>
+<h1 id="DNN模块"><a href="#DNN模块" class="headerlink" title="DNN模块"></a>DNN模块</h1><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">blob_from_images.py</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 导入工具包</span></span><br><span class="line"><span class="keyword">import</span> utils_paths</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"></span><br><span class="line"><span class="comment"># 标签文件处理</span></span><br><span class="line">rows = <span class="built_in">open</span>(<span class="string">"synset_words.txt"</span>).read().strip().split(<span class="string">"\n"</span>)</span><br><span class="line">classes = [r[r.find(<span class="string">" "</span>) + <span class="number">1</span>:].split(<span class="string">","</span>)[<span class="number">0</span>] <span class="keyword">for</span> r <span class="keyword">in</span> rows]</span><br><span class="line"></span><br><span class="line"><span class="comment"># Caffe所需配置文件</span></span><br><span class="line">net = cv2.dnn.readNetFromCaffe(<span class="string">"bvlc_googlenet.prototxt"</span>,</span><br><span class="line">	<span class="string">"bvlc_googlenet.caffemodel"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 图像路径</span></span><br><span class="line">imagePaths = <span class="built_in">sorted</span>(<span class="built_in">list</span>(utils_paths.list_images(<span class="string">"images/"</span>)))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 图像数据预处理</span></span><br><span class="line">image = cv2.imread(imagePaths[<span class="number">0</span>])</span><br><span class="line">resized = cv2.resize(image, (<span class="number">224</span>, <span class="number">224</span>))</span><br><span class="line"><span class="comment"># image scalefactor size mean swapRB </span></span><br><span class="line">blob = cv2.dnn.blobFromImage(resized, <span class="number">1</span>, (<span class="number">224</span>, <span class="number">224</span>), (<span class="number">104</span>, <span class="number">117</span>, <span class="number">123</span>))</span><br><span class="line">print(<span class="string">"First Blob: {}"</span>.<span class="built_in">format</span>(blob.shape))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 得到预测结果</span></span><br><span class="line">net.setInput(blob)</span><br><span class="line">preds = net.forward()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 排序，取分类可能性最大的</span></span><br><span class="line">idx = np.argsort(preds[<span class="number">0</span>])[::-<span class="number">1</span>][<span class="number">0</span>]</span><br><span class="line">text = <span class="string">"Label: {}, {:.2f}%"</span>.<span class="built_in">format</span>(classes[idx],</span><br><span class="line">	preds[<span class="number">0</span>][idx] * <span class="number">100</span>)</span><br><span class="line">cv2.putText(image, text, (<span class="number">5</span>, <span class="number">25</span>),  cv2.FONT_HERSHEY_SIMPLEX,</span><br><span class="line">	<span class="number">0.7</span>, (<span class="number">0</span>, <span class="number">0</span>, <span class="number">255</span>), <span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示</span></span><br><span class="line">cv2.imshow(<span class="string">"Image"</span>, image)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Batch数据制作</span></span><br><span class="line">images = []</span><br><span class="line"></span><br><span class="line"><span class="comment"># 方法一样，数据是一个batch</span></span><br><span class="line"><span class="keyword">for</span> p <span class="keyword">in</span> imagePaths[<span class="number">1</span>:]:</span><br><span class="line">	image = cv2.imread(p)</span><br><span class="line">	image = cv2.resize(image, (<span class="number">224</span>, <span class="number">224</span>))</span><br><span class="line">	images.append(image)</span><br><span class="line"></span><br><span class="line"><span class="comment"># blobFromImages函数，注意有s</span></span><br><span class="line">blob = cv2.dnn.blobFromImages(images, <span class="number">1</span>, (<span class="number">224</span>, <span class="number">224</span>), (<span class="number">104</span>, <span class="number">117</span>, <span class="number">123</span>))</span><br><span class="line">print(<span class="string">"Second Blob: {}"</span>.<span class="built_in">format</span>(blob.shape))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取预测结果</span></span><br><span class="line">net.setInput(blob)</span><br><span class="line">preds = net.forward()</span><br><span class="line"><span class="keyword">for</span> (i, p) <span class="keyword">in</span> <span class="built_in">enumerate</span>(imagePaths[<span class="number">1</span>:]):</span><br><span class="line">	image = cv2.imread(p)</span><br><span class="line">	idx = np.argsort(preds[i])[::-<span class="number">1</span>][<span class="number">0</span>]</span><br><span class="line">	text = <span class="string">"Label: {}, {:.2f}%"</span>.<span class="built_in">format</span>(classes[idx],</span><br><span class="line">		preds[i][idx] * <span class="number">100</span>)</span><br><span class="line">	cv2.putText(image, text, (<span class="number">5</span>, <span class="number">25</span>),  cv2.FONT_HERSHEY_SIMPLEX,</span><br><span class="line">		<span class="number">0.7</span>, (<span class="number">0</span>, <span class="number">0</span>, <span class="number">255</span>), <span class="number">2</span>)</span><br><span class="line">	cv2.imshow(<span class="string">"Image"</span>, image)</span><br><span class="line">	cv2.waitKey(<span class="number">0</span>)</span><br></pre></td></tr></tbody></table></figure>
+<h1 id="图像基本操作"><a href="#图像基本操作" class="headerlink" title="图像基本操作"></a>图像基本操作</h1><h1 id="图像阈值"><a href="#图像阈值" class="headerlink" title="图像阈值"></a>图像阈值</h1><h2 id="简单阈值"><a href="#简单阈值" class="headerlink" title="简单阈值"></a>简单阈值</h2><h2 id="自适应阈值"><a href="#自适应阈值" class="headerlink" title="自适应阈值"></a>自适应阈值</h2><h2 id="Otsu‘s-二值化"><a href="#Otsu‘s-二值化" class="headerlink" title="Otsu‘s 二值化"></a>Otsu‘s 二值化</h2><h1 id="平滑处理"><a href="#平滑处理" class="headerlink" title="平滑处理"></a>平滑处理</h1><h2 id="平均"><a href="#平均" class="headerlink" title="平均"></a>平均</h2><h2 id="高斯模糊"><a href="#高斯模糊" class="headerlink" title="高斯模糊"></a>高斯模糊</h2><h2 id="中值模糊"><a href="#中值模糊" class="headerlink" title="中值模糊"></a>中值模糊</h2><h2 id="双边滤波"><a href="#双边滤波" class="headerlink" title="双边滤波"></a>双边滤波</h2><h1 id="形态学处理"><a href="#形态学处理" class="headerlink" title="形态学处理"></a>形态学处理</h1><h2 id="腐蚀"><a href="#腐蚀" class="headerlink" title="腐蚀"></a>腐蚀</h2><h2 id="膨胀"><a href="#膨胀" class="headerlink" title="膨胀"></a>膨胀</h2><h2 id="开运算"><a href="#开运算" class="headerlink" title="开运算"></a>开运算</h2><h2 id="闭运算"><a href="#闭运算" class="headerlink" title="闭运算"></a>闭运算</h2><h2 id="梯度"><a href="#梯度" class="headerlink" title="梯度"></a>梯度</h2><h2 id="礼帽"><a href="#礼帽" class="headerlink" title="礼帽"></a>礼帽</h2><h2 id="黑帽"><a href="#黑帽" class="headerlink" title="黑帽"></a>黑帽</h2><h1 id="梯度处理"><a href="#梯度处理" class="headerlink" title="梯度处理"></a>梯度处理</h1><p>边缘检测就是检测出图像上的边缘信息</p>
+<p><strong>1.导数</strong>，连续函数上某点斜率，导数越大表示变化率越大，变化率越大的地方就越是“边缘”，但是在计算机中不常用，因为在斜率90度的地方，导数无穷大，计算机很难表示这些无穷大的东西。</p>
+<p><strong>2.微分</strong>，连续函数上x变化了dx，导致y变化了dy，dy值越大表示变化的越大，那么计算整幅图像的微分，dy的大小就是边缘的强弱了。<br> 微分与导数的关系：dy = f ‘(x) dx</p>
+<h2 id="Sobel算子和Scharr算子"><a href="#Sobel算子和Scharr算子" class="headerlink" title="Sobel算子和Scharr算子"></a>Sobel算子和Scharr算子</h2><p>基于一阶微分</p>
+<p>中心点 f(x, y) 是重点考虑的，它的权重应该多一些，所以改进成下面这样的</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">-<span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span></span><br><span class="line">-<span class="number">2</span>, <span class="number">0</span>, <span class="number">2</span></span><br><span class="line">-<span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span></span><br></pre></td></tr></tbody></table></figure>
+<p>这就是 Sobel 边缘检测算子，偏 x 方向的。</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">-<span class="number">1</span>, -<span class="number">2</span>, -<span class="number">1</span></span><br><span class="line"> <span class="number">0</span>,  <span class="number">0</span>,  <span class="number">0</span></span><br><span class="line"> <span class="number">1</span>,  <span class="number">2</span>,  <span class="number">1</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="laplacian算子"><a href="#laplacian算子" class="headerlink" title="laplacian算子"></a>laplacian算子</h2><p>拉普拉斯是用二阶差分计算边缘的</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="number">0</span>,  <span class="number">1</span>, <span class="number">0</span></span><br><span class="line"><span class="number">1</span>, -<span class="number">4</span>, <span class="number">1</span></span><br><span class="line"><span class="number">0</span>,  <span class="number">1</span>, <span class="number">0</span></span><br></pre></td></tr></tbody></table></figure>
+<p>考虑两个斜对角的情况</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="number">1</span>,  <span class="number">1</span>, <span class="number">1</span></span><br><span class="line"><span class="number">1</span>, -<span class="number">8</span>, <span class="number">1</span></span><br><span class="line"><span class="number">1</span>,  <span class="number">1</span>, <span class="number">1</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Canny边缘检测"><a href="#Canny边缘检测" class="headerlink" title="Canny边缘检测"></a>Canny边缘检测</h2><p>Canny边缘检测的步骤：</p>
+<p>1.<strong>消除噪声</strong>：一般情况下，使用<strong>高斯平滑滤波器卷积降噪</strong>。</p>
+<p>2.<strong>计算梯度幅值和方向</strong>。此时，按照<strong>Sobel滤波器的步骤</strong>。<br>怎么表征这种灰度值的变化呢？这里想到的就是导数微分，导数就是表征变化率的，但是数字图像都是<strong>离散</strong>的，也就是<strong>导数肯定会用差分</strong>来替代。<strong>用相邻像素的差分来计算梯度的大小和方向。</strong></p>
+<p>然后我们可以计算图像中每个像素的梯度大小为$G=\sqrt{G_x^2+G_y^2}$，梯度方向为$\theta=arctan(G_x/G_y)$</p>
+<p>3.<strong>非极大值抑制</strong>。这一步排除非边缘像素，仅仅保留了一些细线条(候选边缘)。</p>
+<p>对规定方向以外的梯度方向进行最大抑制。</p>
+<p>理论上图像梯度幅值的元素值越大，说明图像中该点的梯度值越大，但这不能说明该点就是边缘。非极大值抑制是进行边缘检测的重要步骤，<strong>寻找像素点的局部最大值</strong>，沿着梯度方向，比较它前面和后面的梯度值，<strong>若梯度值局部最大则有可能为边缘像素，进行保留，否则就进行抑制(置为0)。</strong></p>
+<p><img data-src="../images/opencv/NMS.png" alt="NMS"></p>
+<p>4.<strong>滞后阈值</strong>：Canny使用了滞后阈值，滞后阈值需要两个阈值(高阈值和低阈值)：<strong>用双阈值算法检测和连接边缘。</strong>（保证了低错误率：与Sobel之间的区别）</p>
+<p>a.如果某一像素位置的幅值超过高阈值，该像素被保留为边缘像素。</p>
+<p>b.如果某一像素位置的幅值小于低阈值，该像素被排除。</p>
+<p>c.<strong>如果某一像素位置的幅值在两个阈值之间，该像素仅仅在连接到一个高于阈值的像素时被保留。</strong></p>
+<p>Canny推荐的高低阈值比在2:1到3:1之间。</p>
+<p><img data-src="../images/opencv/backNMS.png" alt="滞后阈值"></p>
+<h2 id="三个算子区别"><a href="#三个算子区别" class="headerlink" title="三个算子区别"></a>三个算子区别</h2><p>sobel 产生的边缘有强弱，抗噪性好<br>laplace 对边缘敏感，可能有些是噪声的边缘，也被算进来了<br>canny 产生的边缘很细，可能就一个像素那么细，没有强弱之分。</p>
+<h1 id="边缘检测"><a href="#边缘检测" class="headerlink" title="边缘检测"></a>边缘检测</h1><h1 id="Hough变换"><a href="#Hough变换" class="headerlink" title="Hough变换"></a>Hough变换</h1><h2 id="直线变换"><a href="#直线变换" class="headerlink" title="直线变换"></a>直线变换</h2><ul>
+<li>基本思想</li>
+</ul>
+<p>主要原理是对于边缘的每一个像素点（x0,y0），把可能经过它的所有直线，映射到仿射参数空间（即hough space），然后<strong>投票</strong>，每次有直线方程满足($\theta$，$r_\theta$)，此处</p>
+<p><img data-src="/images/opencv/houghtrans.png" alt="houghtrans"></p>
+<ul>
+<li>详细推导</li>
+</ul>
+<p><a href="https://zhuanlan.zhihu.com/p/47649796">参考链接</a></p>
+<p><a href="https://www.cnblogs.com/cheermyang/p/5348820.html">参考链接</a></p>
+<p>它追踪图像中每个点对应曲线间的交点. 如果交于一点的曲线的数量超过了阈值， 那么可以认为这个交点所代表的参数对($\theta$，$r_\theta$)在原图像中为一条直线。</p>
+<p>对图像做霍夫变换，也就是分别代入霍夫变换公式</p>
+<blockquote>
+<p>$r = xcos\theta + ysin\theta$</p>
+</blockquote>
+<p>在仿射参数空间的结果是这个样子的：</p>
+<p><img data-src="/images/opencv/hough_line.png" alt="hough_line"></p>
+<p>原图上红色紫色绿色蓝色的点对应的变换曲线相交在同一个点上，<strong>这个点对应的原点距和角方向就是原图中的四个点所在的直线的方向</strong>：</p>
+<p><img data-src="/images/opencv/line.png" alt="line"></p>
+<p>这意味着一般来说, 一条直线能够通过在平面($\theta$，$r_\theta$)上寻找交于一点的曲线数量来检测。 越多曲线交于一点也就意味着这个交点表示的直线由更多的点组成. 一般来说我们可以通过设置直线上点的 阈值 来定义多少条曲线交于一点我们才认为 检测 到了一条直线。</p>
+<ul>
+<li>代码参考</li>
+</ul>
+<p><a href="https://blog.csdn.net/jia20003/article/details/7724530">源代码参考链接</a></p>
+<ul>
+<li>OpenCV接口</li>
+</ul>
+<h2 id="圆形变换"><a href="#圆形变换" class="headerlink" title="圆形变换"></a>圆形变换</h2><p><a href="https://kevinnnm.github.io/2019/07/26/Day12/#%E5%9F%BA%E4%BA%8E%E9%9C%8D%E5%A4%AB%E5%8F%98%E6%8D%A2%E7%9A%84%E5%9C%86%E5%BD%A2%E6%A3%80%E6%B5%8B">参考链接</a></p>
+<ul>
+<li>基本思想</li>
+</ul>
+<p>跟霍夫直线检测一样，同样的原理，可以用于检测圆，只是对于圆的方程。</p>
+<blockquote>
+<p>$(x –a ) ^2 + (y-b) ^ 2 = r^2$</p>
+</blockquote>
+<p>其中(a,b)代表圆心，r是圆的半径<br>依旧是把图像空间转换成参数空间，这里是将X-Y平面转化成a-b-r参数空间，则在图像空间中的一个过(x,y)点的圆，对应参数空间中高度变化的三维锥面。</p>
+<p><img data-src="/images/opencv/houghcircle_1.png" alt="houghcircle"></p>
+<p>同理，过图像空间的任意一点的圆都对应于参数空间的一个三维锥面，因此，过图像空间上同一圆的点，对应的参数空间中的三维锥面，在r平面必然相交于一点(a,b,r)，这样通过这一点就可以得到一个圆的参数。</p>
+<p><img data-src="/images/opencv/houghcircle_1.png" alt="houghcircle_1"></p>
+<ul>
+<li>详细推导</li>
+</ul>
+<p>在极坐标系下，假设圆心为$(𝑥0,𝑦0)$,圆上的点可以表示为:</p>
+<blockquote>
+<p>$𝑥=𝑥0+𝑟𝑐𝑜𝑠𝜃,𝑦=𝑦0+𝑟𝑠𝑖𝑛𝜃$</p>
+</blockquote>
+<p>对于一个圆，假如中心像素点$(𝑥0,𝑦0)$，半径r已知，那么旋转360°，圆上的所有点就可以求得。同样，<strong>假如圆上的所有点，半径r已知，旋转360°，则会得到一个累加的极值点，那么这个点就是圆心了。</strong></p>
+<ul>
+<li>21HT的具体步骤:<br>第一阶段：检测圆心</li>
+</ul>
+<p>1.1、对输入图像边缘检测（Canny）；</p>
+<p>1.2、计算图形的梯度，并确定圆周线，其中圆周的梯度就是它的法线；</p>
+<p>1.3、在二维霍夫空间内，绘出所有图形的梯度直线，某坐标点上累加和的值越大，说明在该点上直线相交的次数越多，也就是越有可能是圆心；</p>
+<p>1.4、在霍夫空间的4邻域内进行非最大值抑制；</p>
+<p>1.5、设定一个阈值，<strong>霍夫空间内累加和大于该阈值的点</strong>就对应于圆心。</p>
+<p>第二阶段：检测圆半径</p>
+<p>2.1、计算某一个圆心到所有圆周线的距离，这些距离中就有该圆心所对应的圆的半径的值，这些半径值当然是相等的，并且这些圆半径的数量要远远大于其他距离值相等的数量；</p>
+<p>2.2、设定两个阈值，定义为最大半径和最小半径，保留距离在这两个半径之间的值，这意味着我们检测的圆不能太大，也不能太小；</p>
+<p>2.3、对保留下来的距离进行排序；</p>
+<p>2.4、找到距离相同的那些值，并计算相同值的数量；</p>
+<p>2.5、设定一个阈值，只有相同值的数量大于该阈值，才认为该值是该圆心对应的圆半径；</p>
+<p>2.6、对每一个圆心，完成上面的2.1～2.5步骤，得到所有的圆半径。</p>
+<ul>
+<li>OpenCV接口</li>
+</ul>
+<blockquote>
+<p>void HoughCircles(InputArray image,OutputArray circles, int method, double dp, double minDist, double param1=100, double param2=100, int minRadius=0,int maxRadius=0 )</p>
+</blockquote>
+<p>image为输入图像，要求是灰度图像<br>circles为输出圆向量，每个向量包括三个浮点型的元素——圆心横坐标，圆心纵坐标和圆半径<br>method为使用霍夫变换圆检测的算法，Opencv2.4.9只实现了2-1霍夫变换，它的参数是CV_HOUGH_GRADIENT<br>dp为第一阶段所使用的霍夫空间的分辨率，dp=1时表示霍夫空间与输入图像空间的大小一致，dp=2时霍夫空间是输入图像空间的一半，以此类推<br>minDist为圆心之间的最小距离，如果检测到的两个圆心之间距离小于该值，则认为它们是同一个圆心<br>param1为边缘检测时使用Canny算子的高阈值<br>param2为步骤1.5和步骤2.5中所共有的阈值<br>minRadius和maxRadius为所检测到的圆半径的最小值和最大值</p>
+]]></content>
+      <categories>
+        <category>CV</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+        <tag>OpenCV</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Python进阶</title>
     <url>/posts/23063/</url>
     <content><![CDATA[<h1 id="args-和-Kwargs"><a href="#args-和-Kwargs" class="headerlink" title="*args 和 **Kwargs"></a><strong>*args</strong> 和 **Kwargs</h1><ul>
@@ -1778,286 +2058,6 @@ cond(no)-&gt;op</textarea><textarea id="flowchart-0-options" style="display: non
       </categories>
       <tags>
         <tag>Python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>OpenCV-Base</title>
-    <url>/posts/16645/</url>
-    <content><![CDATA[<h1 id="OpenCV的安装"><a href="#OpenCV的安装" class="headerlink" title="OpenCV的安装"></a>OpenCV的安装</h1><p>国内一些pip的镜像源：</p>
-<p>阿里云 <a href="https://mirrors.aliyun.com/pypi/simple/">https://mirrors.aliyun.com/pypi/simple/</a><br>中国科技大学 <a href="https://pypi.mirrors.ustc.edu.cn/simple/">https://pypi.mirrors.ustc.edu.cn/simple/</a><br>豆瓣(douban) <a href="http://pypi.douban.com/simple/">http://pypi.douban.com/simple/</a><br>清华大学 <a href="https://pypi.tuna.tsinghua.edu.cn/simple/">https://pypi.tuna.tsinghua.edu.cn/simple/</a><br>中国科学技术大学 <a href="http://pypi.mirrors.ustc.edu.cn/simple/">http://pypi.mirrors.ustc.edu.cn/simple/</a></p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">(base)$ conda create -n py365 python=<span class="number">3.6</span><span class="number">.5</span>   <span class="comment"># anaconda中创建python版本为3.7.3的虚拟环境</span></span><br><span class="line">(base)$ conda activate py365                 <span class="comment"># 激活该环境</span></span><br><span class="line">pip install opencv-python==<span class="number">3.4</span><span class="number">.1</span><span class="number">.15</span> -i http://pypi.douban.com/simple --trusted-host pypi.douban.com                              <span class="comment"># 安装opencv-python 3.4.1.15，同时还会加载相应的依赖库</span></span><br></pre></td></tr></tbody></table></figure>
-<p>内容完善中……</p>
-<a id="more"></a>
-<h1 id="图像金字塔"><a href="#图像金字塔" class="headerlink" title="图像金字塔"></a>图像金字塔</h1><h2 id="高斯金字塔"><a href="#高斯金字塔" class="headerlink" title="高斯金字塔"></a>高斯金字塔</h2><p><img data-src="/images/opencv/Pyramid_1.png" alt="Pyramid_1"></p>
-<p><strong>高斯金字塔：向下采样法（缩小）</strong></p>
-<p><img data-src="/images/opencv/Pyramid_2.png" alt="Pyramid_2"></p>
-<p>实例：</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">img = cv2.imread(<span class="string">"A.png"</span>)</span><br><span class="line">down = cv2.pyrDown(img)</span><br><span class="line">cv2.imshow(<span class="string">"down"</span>,down)</span><br></pre></td></tr></tbody></table></figure>
-<p><strong>高斯金字塔：向上采样法（放大）</strong></p>
-<p><img data-src="/images/opencv/Pyramid_3.png" alt="Pyramid_3"></p>
-<p>实例：</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">img = cv2.imread(<span class="string">"A.png"</span>)</span><br><span class="line">up = cv2.pyrUp(img)</span><br><span class="line">cv2.imshow(<span class="string">"up"</span>,up)</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="拉普拉斯金字塔"><a href="#拉普拉斯金字塔" class="headerlink" title="拉普拉斯金字塔"></a>拉普拉斯金字塔</h2><p><img data-src="/images/opencv/Pyramid_4.png" alt="Pyramid_4"></p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">down=cv2.pyrDown(img)</span><br><span class="line">down_up=cv2.pyrUp(down)</span><br><span class="line">l_img=img-down_up</span><br><span class="line">cv2.imshow(l_img,<span class="string">'l_1'</span>)</span><br></pre></td></tr></tbody></table></figure>
-<h1 id="轮廓检测"><a href="#轮廓检测" class="headerlink" title="轮廓检测"></a>轮廓检测</h1><p><strong>cv2.findContours(img,mode,method)</strong></p>
-<p>mode:轮廓检索模式</p>
-<ul>
-<li>RETR_EXTERNAL ：只检索最外面的轮廓；</li>
-<li>RETR_LIST：检索所有的轮廓，并将其保存到一条链表当中；</li>
-<li>RETR_CCOMP：检索所有的轮廓，并将他们组织为两层：顶层是各部分的外部边界，第二层是空洞的边界;</li>
-<li>RETR_TREE：检索所有的轮廓，并重构嵌套轮廓的整个层次;</li>
-</ul>
-<p>method:轮廓逼近方法</p>
-<ul>
-<li>CHAIN_APPROX_NONE：以Freeman链码的方式输出轮廓，所有其他方法输出多边形（顶点的序列）。</li>
-<li>CHAIN_APPROX_SIMPLE:压缩水平的、垂直的和斜的部分，也就是，函数只保留他们的终点部分。</li>
-</ul>
-<p>为了得到更高的准确率，使用二值图像。</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">img = cv2.imread(<span class="string">'contours.png'</span>)</span><br><span class="line">gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)</span><br><span class="line">ret, thresh = cv2.threshold(gray, <span class="number">127</span>, <span class="number">255</span>, cv2.THRESH_BINARY)</span><br><span class="line">cv2.imshow(thresh,<span class="string">'thresh'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># binary 输出的二值图；contours 边缘；hierarchy 层次结构</span></span><br><span class="line">binary, contours, hierarchy = cv2.findContours(thresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_NONE)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 绘制轮廓：参数分别为，轮廓，轮廓索引（-1表示所有轮廓），颜色，线条厚度</span></span><br><span class="line">draw_img = img.copy()</span><br><span class="line">res = cv2.drawContours(draw_img, contours, -<span class="number">1</span>, (<span class="number">0</span>, <span class="number">0</span>, <span class="number">255</span>), <span class="number">2</span>)</span><br><span class="line">cv_show(res,<span class="string">'res'</span>)</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="轮廓特征"><a href="#轮廓特征" class="headerlink" title="轮廓特征"></a>轮廓特征</h2><h3 id="炬"><a href="#炬" class="headerlink" title="炬"></a>炬</h3><h3 id="面积"><a href="#面积" class="headerlink" title="面积"></a>面积</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">cnt = contours[<span class="number">0</span>]</span><br><span class="line"><span class="comment">#面积</span></span><br><span class="line">cv2.contourArea(cnt)</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="周长"><a href="#周长" class="headerlink" title="周长"></a>周长</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">cnt = contours[<span class="number">0</span>]</span><br><span class="line">cv2.arcLength(cnt,<span class="literal">True</span>) <span class="comment"># True表示闭合</span></span><br></pre></td></tr></tbody></table></figure>
-<h3 id="轮廓近似"><a href="#轮廓近似" class="headerlink" title="轮廓近似"></a>轮廓近似</h3><p><img data-src="/images/opencv/contours3.png" alt="contours3"></p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 找轮廓</span></span><br><span class="line">img = cv2.imread(<span class="string">'contours2.png'</span>)</span><br><span class="line"></span><br><span class="line">gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)</span><br><span class="line">ret, thresh = cv2.threshold(gray, <span class="number">127</span>, <span class="number">255</span>, cv2.THRESH_BINARY)</span><br><span class="line">binary, contours, hierarchy = cv2.findContours(thresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_NONE)</span><br><span class="line">cnt = contours[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">draw_img = img.copy()</span><br><span class="line">res = cv2.drawContours(draw_img, [cnt], -<span class="number">1</span>, (<span class="number">0</span>, <span class="number">0</span>, <span class="number">255</span>), <span class="number">2</span>)</span><br><span class="line">cv_show(res,<span class="string">'res'</span>)</span><br></pre></td></tr></tbody></table></figure>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">epsilon = <span class="number">0.15</span>*cv2.arcLength(cnt,<span class="literal">True</span>)  <span class="comment"># epsilon一般按照周长的百分比进行设置，越小，轮廓近似值越大</span></span><br><span class="line">approx = cv2.approxPolyDP(cnt,epsilon,<span class="literal">True</span>) </span><br><span class="line"></span><br><span class="line">draw_img = img.copy()</span><br><span class="line">res = cv2.drawContours(draw_img, [approx], -<span class="number">1</span>, (<span class="number">0</span>, <span class="number">0</span>, <span class="number">255</span>), <span class="number">2</span>)</span><br><span class="line">cv_show(res,<span class="string">'res'</span>)</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="边界矩形"><a href="#边界矩形" class="headerlink" title="边界矩形"></a>边界矩形</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">img = cv2.imread(<span class="string">'contours.png'</span>)</span><br><span class="line"></span><br><span class="line">gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)</span><br><span class="line">ret, thresh = cv2.threshold(gray, <span class="number">127</span>, <span class="number">255</span>, cv2.THRESH_BINARY)</span><br><span class="line">binary, contours, hierarchy = cv2.findContours(thresh, cv2.RETR_TREE, cv2.CHAIN_APPROX_NONE)</span><br><span class="line">cnt = contours[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">x,y,w,h = cv2.boundingRect(cnt)</span><br><span class="line">img = cv2.rectangle(img,(x,y),(x+w,y+h),(<span class="number">0</span>,<span class="number">255</span>,<span class="number">0</span>),<span class="number">2</span>)</span><br><span class="line">cv_show(img,<span class="string">'img'</span>)</span><br></pre></td></tr></tbody></table></figure>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">area = cv2.contourArea(cnt)</span><br><span class="line">x, y, w, h = cv2.boundingRect(cnt)</span><br><span class="line">rect_area = w * h</span><br><span class="line">extent = <span class="built_in">float</span>(area) / rect_area</span><br><span class="line"><span class="built_in">print</span> (<span class="string">'轮廓面积与边界矩形比'</span>,extent)</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="最小外接圆"><a href="#最小外接圆" class="headerlink" title="最小外接圆"></a>最小外接圆</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">(x,y),radius = cv2.minEnclosingCircle(cnt) </span><br><span class="line">center = (<span class="built_in">int</span>(x),<span class="built_in">int</span>(y)) </span><br><span class="line">radius = <span class="built_in">int</span>(radius) </span><br><span class="line">img = cv2.circle(img,center,radius,(<span class="number">0</span>,<span class="number">255</span>,<span class="number">0</span>),<span class="number">2</span>)</span><br><span class="line">cv_show(img,<span class="string">'img'</span>)</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="轮廓的性质"><a href="#轮廓的性质" class="headerlink" title="轮廓的性质"></a>轮廓的性质</h2><h3 id="Solidty"><a href="#Solidty" class="headerlink" title="Solidty"></a>Solidty</h3><h3 id="Equivalent-Diameter"><a href="#Equivalent-Diameter" class="headerlink" title="Equivalent Diameter"></a>Equivalent Diameter</h3><h3 id="方向"><a href="#方向" class="headerlink" title="方向"></a>方向</h3><h3 id="掩模和像素点"><a href="#掩模和像素点" class="headerlink" title="掩模和像素点"></a>掩模和像素点</h3><h3 id="平均颜色和平均灰度"><a href="#平均颜色和平均灰度" class="headerlink" title="平均颜色和平均灰度"></a>平均颜色和平均灰度</h3><h3 id="极点"><a href="#极点" class="headerlink" title="极点"></a>极点</h3><h1 id="模版匹配"><a href="#模版匹配" class="headerlink" title="模版匹配"></a>模版匹配</h1><p>模版匹配和卷积原理很像，模版在原图上从原点开始滑动，计算模版与（图像被模版覆盖的地方）的差别程度，这个差别程度的计算方法在opencv里有6种。然后将每次计算的结果放入一个矩阵里，作为结果输出。假如原图形是A✖️B大小，而模版是a✖️b的大小，则输出结果的矩阵是（A-a+1）✖️（B-b+1）的大小。</p>
-<ul>
-<li>TM_SQDIFF：计算平方差，计算出来的值越小，越相关</li>
-<li>TM_CCORR：计算相关性，计算出来的值越大，越相关</li>
-<li>TM_CCOEFF：计算相关系数，计算出来的值越大，越相关</li>
-<li>TM_SQDIFF_NORMED：计算归一化平方差，计算出来的值越接近0，越相关</li>
-<li><p>TM_CCORR_NORMED：计算归一化相关性，计算出来的值越接近1，越相关</p>
-</li>
-<li><p>TM_CCOEFF_NORMED：计算归一化相关系数，计算出来的值越接近1，越相关</p>
-</li>
-</ul>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">img = cv2.imread(<span class="string">"lena.jpg"</span>,<span class="number">0</span>)</span><br><span class="line">h,w = img.shape[:<span class="number">2</span>][::-<span class="number">1</span>]</span><br><span class="line">template = cv2.imread(<span class="string">"face"</span>,<span class="number">0</span>)</span><br><span class="line">methods = [<span class="string">'cv2.TM_CCOEFF'</span>,<span class="string">'cv2.TM_CCORR_NORME'</span>,<span class="string">'cv2.TM_CCORR'</span>,<span class="string">'cv2.TM_CCORR_NORMED'</span>,<span class="string">'cv2.TM_SQDIFF'</span>,<span class="string">'cv2.TM_SQDIFF_NORMED'</span>]</span><br><span class="line">res = cv2.matchTemplate(img,template,<span class="number">1</span>) <span class="comment"># 模版匹配</span></span><br><span class="line">min_val,max_val,min_loc,max_loc = cv2.minMacLoc(res) <span class="comment"># 返回最小最大值的坐标和位置</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> meth <span class="keyword">in</span> methods:</span><br><span class="line">  img2 = img.copy()</span><br><span class="line">  </span><br><span class="line">  <span class="comment"># 匹配方法的真值</span></span><br><span class="line">  method = <span class="built_in">eval</span>(meth)</span><br><span class="line">  res = cv2.matchTemplate(img,template,<span class="number">1</span>) <span class="comment"># 模版匹配</span></span><br><span class="line">  min_val,max_val,min_loc,max_loc = cv2.minMacLoc(res) <span class="comment"># 返回最小最大值的坐标和位置</span></span><br><span class="line">  </span><br><span class="line">  <span class="comment"># 如果是平方差匹配TM_SQDIFF或者归一化平方差匹配TM_SQDIFF_NORMED，取最小值</span></span><br><span class="line">  <span class="keyword">if</span> method <span class="keyword">in</span> [cv2.TM_SQDIFF,cv2.TM_SQDIFF_NORMED]:</span><br><span class="line">    top_left = min_loc</span><br><span class="line">  <span class="keyword">else</span>:</span><br><span class="line">    top_left = max_loc</span><br><span class="line">  bottom_right = (top_left[<span class="number">0</span>]+w,top_left[<span class="number">1</span>]+h)</span><br><span class="line">  </span><br><span class="line">  cv2.rectangle(img2,top_left,bottom_right,<span class="number">255</span>,<span class="number">2</span>)</span><br><span class="line">  </span><br><span class="line">  plt.subplot(<span class="number">121</span>),plt.imshow(res,cmap=<span class="string">'gray'</span>)</span><br><span class="line">  plt.sticks([]),plt.yticks([])</span><br><span class="line">  plt.subplot(<span class="number">122</span>),plt.imshow(img2,cmap=<span class="string">'gray'</span>)</span><br><span class="line">  plt.sticks([]),plt.yticks([])</span><br><span class="line">  plt.subtitle(meth)</span><br><span class="line">  plt.show()</span><br></pre></td></tr></tbody></table></figure>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 匹配多个对象</span></span><br><span class="line">img = cv2.imread(<span class="string">"lena.jpg"</span>,<span class="number">0</span>)</span><br><span class="line">h,w = img.shape[:<span class="number">2</span>][::-<span class="number">1</span>]</span><br><span class="line">template = cv2.imread(<span class="string">"face"</span>,<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">res = cv2.matchTemplate(img,template,cv2.TM_CCORR_NORME) <span class="comment"># 模版匹配</span></span><br><span class="line">threshold = <span class="number">0.8</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取匹配程度大于0.8的坐标</span></span><br><span class="line">loc = np.where(res &gt;= threshold)</span><br><span class="line"><span class="keyword">for</span> pt <span class="keyword">in</span> <span class="built_in">zip</span>(*loc[::-<span class="number">1</span>]): <span class="comment">#*号表示可选参数</span></span><br><span class="line">  bottom_right = (pt[<span class="number">0</span>] + w, pt[<span class="number">1</span>] + h)</span><br><span class="line">  cv2.rectangle(img,pt,bottom_right,(<span class="number">0</span>,<span class="number">0</span>,<span class="number">255</span>),<span class="number">2</span>)</span><br><span class="line">  </span><br><span class="line">cv2.imshow(<span class="string">"img"</span>,img)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br></pre></td></tr></tbody></table></figure>
-<h1 id="直方图"><a href="#直方图" class="headerlink" title="直方图"></a>直方图</h1><p>统计图中的像素点分布。</p>
-<h2 id="直方图的计算、绘制与分析"><a href="#直方图的计算、绘制与分析" class="headerlink" title="直方图的计算、绘制与分析"></a>直方图的计算、绘制与分析</h2><p>cv2.calcHist(images, channels,mask,histSize,range)</p>
-<ul>
-<li>images:原图像格式为uint8或float32，当传入函数时应用中括号，例如[img]</li>
-<li>channels:同样用中括号，如果图像时灰度图，它的值是[0]，如果是彩色图像，那传入的参数可以是【0】【1】【2】</li>
-<li>mask:掩模图像，统计整幅图像就将它设为None，但是如果只想统计一部分，就制作一个掩模。</li>
-<li>histSize:BIN的数目，也用中括号</li>
-<li>ranges:像素值范围，为[0,256]</li>
-</ul>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">img = cv2.imread(<span class="string">"cat.png"</span>,<span class="number">0</span>)</span><br><span class="line">hist = cv2.calcHist([img],[<span class="number">0</span>],<span class="literal">None</span>,[<span class="number">256</span>],[<span class="number">0</span>,<span class="number">256</span>])</span><br><span class="line">plt.hist(img.ravel(),<span class="number">256</span>))</span><br><span class="line">plt.show()</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="mask操作"><a href="#mask操作" class="headerlink" title="mask操作"></a>mask操作</h2><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 创建mask</span></span><br><span class="line">mask = np.zeros(img.shape[:<span class="number">2</span>],np.uint8)</span><br><span class="line">mask[<span class="number">100</span>:<span class="number">300</span>,<span class="number">100</span>:<span class="number">400</span>] = <span class="number">255</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 操作mask</span></span><br><span class="line">mask_img = cv2.bitwise_and(img,img,mask=mask) <span class="comment">#与操作</span></span><br><span class="line">cv2.imshow(<span class="string">"img"</span>,img)</span><br><span class="line"></span><br><span class="line">hist_full = cv2.calHist([img],[<span class="number">0</span>],<span class="literal">None</span>,[<span class="number">256</span>],[<span class="number">0</span>,<span class="number">256</span>])</span><br><span class="line">hist_mask = cv2.calHist([img],[<span class="number">0</span>],mask,[<span class="number">256</span>],[<span class="number">0</span>,<span class="number">256</span>])</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="直方图均衡化"><a href="#直方图均衡化" class="headerlink" title="直方图均衡化"></a>直方图均衡化</h2><p>均衡后，色彩和亮度能够稍微的提升。</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">equ = cv2.equalizeHist(img)</span><br><span class="line">plt.hist(equ,ravel(<span class="number">0</span>,<span class="number">256</span>))</span><br><span class="line">plt.show()</span><br></pre></td></tr></tbody></table></figure>
-<ul>
-<li>自适应直方图均衡化</li>
-</ul>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">clahe = cv2.createCLAHE(clipLimit=<span class="number">2.0</span>,tilerGridSize(<span class="number">8</span>,<span class="number">8</span>))</span><br><span class="line">res_clahe = clahe.apple(img)</span><br></pre></td></tr></tbody></table></figure>
-<h1 id="傅立叶变换"><a href="#傅立叶变换" class="headerlink" title="傅立叶变换"></a>傅立叶变换</h1><p>中心思想：<strong>任何函数都能通过傅立叶堆叠出来。</strong></p>
-<p>以时间为参照就是时域分析。</p>
-<p><strong>傅立叶变换的作用：</strong></p>
-<ul>
-<li>高频：变化剧烈的灰度分量，例如边界</li>
-<li>低频：变化缓慢的灰度分量，例如一片大海</li>
-</ul>
-<p>可以找到图像中的高频与低频部分。</p>
-<p><strong>滤波：</strong></p>
-<ul>
-<li>低通滤波器：只保留低频，会使图像模糊</li>
-<li>高通滤波器：只保留高频，会使图像细节增强</li>
-</ul>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="keyword">from</span> matplotlib <span class="keyword">import</span> pyplot <span class="keyword">as</span> plt</span><br><span class="line">img = cv2.imread(<span class="string">"lena.jpg"</span>,<span class="number">0</span>)</span><br><span class="line">img_float32 = np.float32(img)</span><br><span class="line"></span><br><span class="line">dft = cv2.dft(img_float32,flags = cv2.DFT_COMPLEX_OUTPUT)</span><br><span class="line">dft_shift = np.fft.fftshift(dft) <span class="comment">#将低频值转换到中间的位置</span></span><br><span class="line"><span class="comment"># 得到灰度图能够表示的形式</span></span><br><span class="line">magnitude_spectrum = <span class="number">20</span>*np.log(cv2.magnitude(dft_shift[:,:,<span class="number">0</span>],dft_shift[:,:,<span class="number">1</span>]))</span><br><span class="line"></span><br><span class="line">plt.subplot((<span class="number">121</span>),plt.imshow(img,cmap=<span class="string">'gray'</span>)</span><br><span class="line">plt.title(<span class="string">"Input image"</span>),plt.xticks([]),plt.yticks([])</span><br><span class="line">plt.subplot(<span class="number">122</span>),plt.imshow(magnitude_spectrum,cmap=<span class="string">'gray'</span>)</span><br><span class="line">plt.title(<span class="string">'magnitude_spectrum'</span>),plt.xticks([]),plt.yticks([])</span><br><span class="line">plt.show()</span><br></pre></td></tr></tbody></table></figure>
-<h1 id="图像特征"><a href="#图像特征" class="headerlink" title="图像特征"></a>图像特征</h1><h2 id="Harris角点检测"><a href="#Harris角点检测" class="headerlink" title="Harris角点检测"></a>Harris角点检测</h2><p>边界：一个特征值大，一个特征值小，自相关函数值在某一方向上大，在其他方向上小。</p>
-<p>平面：两个特征值都小，且近似相等，自相关函数数值在各个方向上都小。</p>
-<p>角点：两个特征值都大，且近似相等，自相关函数在所有方向都增大。</p>
-<h3 id="cv2-cornerHarris"><a href="#cv2-cornerHarris" class="headerlink" title="cv2.cornerHarris()"></a>cv2.cornerHarris()</h3><ul>
-<li>img： 数据类型为 ﬂoat32 的入图像</li>
-<li>blockSize： 角点检测中指定区域的大小</li>
-<li>ksize： Sobel求导中使用的窗口大小</li>
-<li>k： 取值参数为 [0,04,0.06]</li>
-</ul>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">dst = cv2.cornerHarris(gray, <span class="number">2</span>, <span class="number">3</span>, <span class="number">0.04</span>)</span><br><span class="line"><span class="built_in">print</span> (<span class="string">'dst.shape:'</span>,dst.shape)</span><br></pre></td></tr></tbody></table></figure>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">img[dst&gt;<span class="number">0.01</span>*dst.<span class="built_in">max</span>()]=[<span class="number">0</span>,<span class="number">0</span>,<span class="number">255</span>] <span class="comment">#大于最大值的0.01倍，就认为是一个角点</span></span><br><span class="line">cv2.imshow(<span class="string">'dst'</span>,img) </span><br><span class="line">cv2.waitKey(<span class="number">0</span>) </span><br><span class="line">cv2.destroyAllWindows()</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="Sift特征"><a href="#Sift特征" class="headerlink" title="Sift特征"></a>Sift特征</h2><p>Scale Invariant Feature Transform</p>
-<h3 id="图像尺度空间"><a href="#图像尺度空间" class="headerlink" title="图像尺度空间"></a>图像尺度空间</h3><p>在一定的范围内，无论物体是大还是小，人眼都可以分辨出来，然而计算机要有相同的能力却很难，所以要让机器能够对物体在不同尺度下有一个统一的认知，就需要考虑图像在不同的尺度下都存在的特点。</p>
-<p>尺度空间的获取通常使用高斯模糊来实现。</p>
-<p><img data-src="/images/opencv/sift_3.png" alt="sift_3"></p>
-<p><img data-src="/images/opencv/sift_2.png" alt="sift_2"></p>
-<p>不同σ的高斯函数决定了对图像的平滑程度，越大的σ值对应的图像越模糊。</p>
-<h3 id="多分辨率金字塔"><a href="#多分辨率金字塔" class="headerlink" title="多分辨率金字塔"></a>多分辨率金字塔</h3><p><img data-src="/images/opencv/sift_4.png" alt="sift_4"></p>
-<h3 id="高斯差分金字塔（DOG）"><a href="#高斯差分金字塔（DOG）" class="headerlink" title="高斯差分金字塔（DOG）"></a>高斯差分金字塔（DOG）</h3><p><img data-src="/images/opencv/sift_5.png" alt="sift_5"></p>
-<p><img data-src="/images/opencv/sift_6.png" alt="sift_6"></p>
-<h3 id="DoG空间极值检测"><a href="#DoG空间极值检测" class="headerlink" title="DoG空间极值检测"></a>DoG空间极值检测</h3><p>为了寻找尺度空间的极值点，每个像素点要和其图像域（同一尺度空间）和尺度域（相邻的尺度空间）的所有相邻点进行比较，当其大于（或者小于）所有相邻点时，该点就是极值点。如下图所示，中间的检测点要和其所在图像的3×3邻域8个像素点，以及其相邻的上下两层的3×3领域18个像素点，共26个像素点进行比较。</p>
-<p><img data-src="/images/opencv/sift_7.png" alt="sift_7"></p>
-<h3 id="关键点的精确定位"><a href="#关键点的精确定位" class="headerlink" title="关键点的精确定位"></a>关键点的精确定位</h3><p>这些候选关键点是DOG空间的局部极值点，而且这些极值点均为离散的点，精确定位极值点的一种方法是，对尺度空间DoG函数进行曲线拟合，计算其极值点，从而实现关键点的精确定位。</p>
-<p><img data-src="/images/opencv/sift_8.png" alt="sift_8"></p>
-<p><img data-src="/images/opencv/sift_9.png" alt="sift_9"></p>
-<h3 id="消除边界响应"><a href="#消除边界响应" class="headerlink" title="消除边界响应"></a>消除边界响应</h3><p><img data-src="/images/opencv/sift_10.png" alt="sift_10"></p>
-<h3 id="特征点的主方向"><a href="#特征点的主方向" class="headerlink" title="特征点的主方向"></a>特征点的主方向</h3><p><img data-src="/images/opencv/sift_11.png" alt="sift_11"></p>
-<p>每个特征点可以得到三个信息(x,y,σ,θ)，即位置、尺度和方向。具有多个方向的关键点可以被复制成多份，然后将方向值分别赋给复制后的特征点，一个特征点就产生了多个坐标、尺度相等，但是方向不同的特征点。</p>
-<h3 id="生成特征描述"><a href="#生成特征描述" class="headerlink" title="生成特征描述"></a>生成特征描述</h3><p>在完成关键点的梯度计算后，使用直方图统计邻域内像素的梯度和方向。</p>
-<p><img data-src="/images/opencv/sift_12.png" alt="sift_12"></p>
-<p>为了保证特征矢量的旋转不变性，要以特征点为中心，在附近邻域内将坐标轴旋转θ角度，即将坐标轴旋转为特征点的主方向。</p>
-<p><img data-src="/images/opencv/sift_14.png" alt="sift_14"></p>
-<p>旋转之后的主方向为中心取8x8的窗口，求每个像素的梯度幅值和方向，箭头方向代表梯度方向，长度代表梯度幅值，然后利用高斯窗口对其进行加权运算，最后在每个4x4的小块上绘制8个方向的梯度直方图，计算每个梯度方向的累加值，即可形成一个种子点，即每个特征的由4个种子点组成，每个种子点有8个方向的向量信息。</p>
-<p><img data-src="/images/opencv/sift_15.png" alt="sift_15"></p>
-<p>论文中建议对每个关键点使用4x4共16个种子点来描述，这样一个关键点就会产生128维的SIFT特征向量。</p>
-<p><img data-src="/images/opencv/sift_17.png" alt="sift_17"></p>
-<h3 id="OpenCV-SIFT函数"><a href="#OpenCV-SIFT函数" class="headerlink" title="OpenCV SIFT函数"></a>OpenCV SIFT函数</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">img = cv2.imread(<span class="string">'test_1.jpg'</span>)</span><br><span class="line">gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)</span><br><span class="line"></span><br><span class="line">sift = cv2.xfeatures2d.SIFT_create()</span><br><span class="line">kp = sift.detect(gray, <span class="literal">None</span>) <span class="comment"># kp：关键点</span></span><br><span class="line"></span><br><span class="line">img = cv2.drawKeypoints(gray, kp, img)</span><br><span class="line"></span><br><span class="line">cv2.imshow(<span class="string">'drawKeypoints'</span>, img)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br><span class="line">cv2.destroyAllWindows()</span><br></pre></td></tr></tbody></table></figure>
-<p>计算特征</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">kp, des = sift.compute(gray, kp)</span><br></pre></td></tr></tbody></table></figure>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="built_in">print</span> (np.array(kp).shape)</span><br></pre></td></tr></tbody></table></figure>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">des.shape</span><br></pre></td></tr></tbody></table></figure>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">des[<span class="number">0</span>]</span><br></pre></td></tr></tbody></table></figure>
-<h1 id="背景建模"><a href="#背景建模" class="headerlink" title="背景建模"></a>背景建模</h1><h2 id="帧差法"><a href="#帧差法" class="headerlink" title="帧差法"></a><strong>帧差法</strong></h2><p>由于场景中的目标在运动，目标的影像在不同图像帧中的位置不同。该类算法对时间上连续的两帧图像进行差分运算，不同帧对应的像素点相减，判断灰度差的绝对值，当绝对值超过一定阈值时，即可判断为运动目标，从而实现目标的检测功能。</p>
-<p><img data-src="/images/opencv/bg_2.png" alt="bg_2"></p>
-<p>帧差法非常简单，但是会引入噪音和空洞问题。</p>
-<h2 id="混合高斯模型"><a href="#混合高斯模型" class="headerlink" title="混合高斯模型"></a>混合高斯模型</h2><p>（视频变化趋势应该是符合高斯分布的）</p>
-<p>在进行前景检测前，先对背景进行训练，对图像中每个背景采用一个混合高斯模型进行模拟，每个背景的混合高斯的个数可以自适应。然后在测试阶段，对新来的像素进行GMM匹配，如果该像素值能够匹配其中一个高斯，则认为是背景，否则认为是前景。由于整个过程GMM模型在不断更新学习中，所以对动态背景有一定的鲁棒性。最后通过对一个有树枝摇摆的动态背景进行前景检测，取得了较好的效果。</p>
-<p>在视频中对于像素点的变化情况应当是符合高斯分布。</p>
-<p><img data-src="/images/opencv/bg_3.png" alt="bg_3"></p>
-<p>背景的实际分布应当是多个高斯分布混合在一起，每个高斯模型也可以带有权重。</p>
-<p><img data-src="/images/opencv/bg_4.png" alt="bg_4"></p>
-<p><strong>混合高斯模型学习方法</strong></p>
-<ul>
-<li>1.首先初始化每个高斯模型矩阵参数。</li>
-<li>2.取视频中T帧数据图像用来训练高斯混合模型。来了第一个像素之后用它来当做第一个高斯分布。</li>
-<li>3.当后面来的像素值时，与前面已有的高斯的均值比较，如果该像素点的值与其模型均值差在3倍的方差内，则属于该分布，并对其进行参数更新。</li>
-<li>4.如果下一次来的像素不满足当前高斯分布，用它来创建一个新的高斯分布。</li>
-</ul>
-<p><strong>混合高斯模型测试方法</strong></p>
-<p>在测试阶段，对新来像素点的值与混合高斯模型中的每一个均值进行比较，如果其差值在2倍的方差之间的话，则认为是背景，否则认为是前景。将前景赋值为255，背景赋值为0。这样就形成了一副前景二值图。</p>
-<p><img data-src="/images/opencv/bg_5.png" alt="bg_5"></p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"></span><br><span class="line"><span class="comment">#经典的测试视频</span></span><br><span class="line">cap = cv2.VideoCapture(<span class="string">'test.avi'</span>)</span><br><span class="line"><span class="comment">#形态学操作需要使用</span></span><br><span class="line">kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE,(<span class="number">3</span>,<span class="number">3</span>))</span><br><span class="line"><span class="comment">#创建混合高斯模型用于背景建模</span></span><br><span class="line">fgbg = cv2.createBackgroundSubtractorMOG2()</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span>(<span class="literal">True</span>):</span><br><span class="line">    ret, frame = cap.read()</span><br><span class="line">    fgmask = fgbg.apply(frame)</span><br><span class="line">    <span class="comment">#形态学开运算去噪点</span></span><br><span class="line">    fgmask = cv2.morphologyEx(fgmask, cv2.MORPH_OPEN, kernel)</span><br><span class="line">    <span class="comment">#寻找视频中的轮廓</span></span><br><span class="line">    im, contours, hierarchy = cv2.findContours(fgmask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> c <span class="keyword">in</span> contours:</span><br><span class="line">        <span class="comment">#计算各轮廓的周长</span></span><br><span class="line">        perimeter = cv2.arcLength(c,<span class="literal">True</span>)</span><br><span class="line">        <span class="keyword">if</span> perimeter &gt; <span class="number">188</span>:</span><br><span class="line">            <span class="comment">#找到一个直矩形（不会旋转）</span></span><br><span class="line">            x,y,w,h = cv2.boundingRect(c)</span><br><span class="line">            <span class="comment">#画出这个矩形</span></span><br><span class="line">            cv2.rectangle(frame,(x,y),(x+w,y+h),(<span class="number">0</span>,<span class="number">255</span>,<span class="number">0</span>),<span class="number">2</span>)    </span><br><span class="line"></span><br><span class="line">    cv2.imshow(<span class="string">'frame'</span>,frame)</span><br><span class="line">    cv2.imshow(<span class="string">'fgmask'</span>, fgmask)</span><br><span class="line">    k = cv2.waitKey(<span class="number">150</span>) &amp; <span class="number">0xff</span></span><br><span class="line">    <span class="keyword">if</span> k == <span class="number">27</span>:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line">cap.release()</span><br><span class="line">cv2.destroyAllWindows()</span><br></pre></td></tr></tbody></table></figure>
-<h1 id="光流估计"><a href="#光流估计" class="headerlink" title="光流估计"></a>光流估计</h1><p>光流是空间运动物体在观测成像平面上的<strong>像素运动的“瞬时速度”，</strong>根据各个像素点的速度矢量特征，可以<strong>对图像进行动态分析，例如目标跟踪。</strong></p>
-<ul>
-<li>亮度恒定：同一点随着时间的变化，其亮度不会发生改变。</li>
-<li>小运动：随着时间的变化不会引起位置的剧烈变化，只有小运动情况下才能用前后帧之间单位位置变化引起的灰度变化去近似灰度对位置的偏导数。</li>
-<li>空间一致：一个场景上邻近的点投影到图像上也是邻近点，且邻近点速度一致。因为光流法基本方程约束只有一个，而要求x，y方向的速度，有两个未知变量。所以需要连立n多个方程求解。</li>
-</ul>
-<p><img data-src="/images/opencv/lk_2.png" alt="lk_2"></p>
-<p><img data-src="/images/opencv/lk_1.png" alt="lk_1"></p>
-<h2 id="Lucas-Kanade-算法"><a href="#Lucas-Kanade-算法" class="headerlink" title="Lucas-Kanade 算法"></a>Lucas-Kanade 算法</h2><p><img data-src="/images/opencv/lk_3.png" alt="lk_3"></p>
-<p>如何求解方程组呢？看起来一个像素点根本不够，在物体移动过程中还有哪些特性呢？</p>
-<p><img data-src="/images/opencv/lk_4.png" alt="lk_4"></p>
-<p><strong>cv2.calcOpticalFlowPyrLK():</strong></p>
-<p>参数：</p>
-<ul>
-<li>prevImage 前一帧图像</li>
-<li>nextImage 当前帧图像</li>
-<li>prevPts 待跟踪的特征点向量</li>
-<li>winSize 搜索窗口的大小</li>
-<li>maxLevel 最大的金字塔层数</li>
-</ul>
-<p>返回：</p>
-<ul>
-<li>nextPts 输出跟踪特征点向量</li>
-<li>status 特征点是否找到，找到的状态为1，未找到的状态为0</li>
-</ul>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"></span><br><span class="line">cap = cv2.VideoCapture(<span class="string">'test.avi'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 角点检测所需参数</span></span><br><span class="line">feature_params = <span class="built_in">dict</span>( maxCorners = <span class="number">100</span>,</span><br><span class="line">                       qualityLevel = <span class="number">0.3</span>,</span><br><span class="line">                       minDistance = <span class="number">7</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># lucas kanade参数</span></span><br><span class="line">lk_params = <span class="built_in">dict</span>( winSize  = (<span class="number">15</span>,<span class="number">15</span>),</span><br><span class="line">                  maxLevel = <span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 随机颜色条</span></span><br><span class="line">color = np.random.randint(<span class="number">0</span>,<span class="number">255</span>,(<span class="number">100</span>,<span class="number">3</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 拿到第一帧图像</span></span><br><span class="line">ret, old_frame = cap.read()</span><br><span class="line">old_gray = cv2.cvtColor(old_frame, cv2.COLOR_BGR2GRAY)</span><br><span class="line"><span class="comment"># 返回所有检测特征点，需要输入图像，角点最大数量（效率），品质因子（特征值越大的越好，来筛选）</span></span><br><span class="line"><span class="comment"># 距离相当于这区间有比这个角点强的，就不要这个弱的了</span></span><br><span class="line">p0 = cv2.goodFeaturesToTrack(old_gray, mask = <span class="literal">None</span>, **feature_params)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建一个mask</span></span><br><span class="line">mask = np.zeros_like(old_frame)</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span>(<span class="literal">True</span>):</span><br><span class="line">    ret,frame = cap.read()</span><br><span class="line">    frame_gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 需要传入前一帧和当前图像以及前一帧检测到的角点</span></span><br><span class="line">    p1, st, err = cv2.calcOpticalFlowPyrLK(old_gray, frame_gray, p0, <span class="literal">None</span>, **lk_params)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># st=1表示</span></span><br><span class="line">    good_new = p1[st==<span class="number">1</span>]</span><br><span class="line">    good_old = p0[st==<span class="number">1</span>]</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 绘制轨迹</span></span><br><span class="line">    <span class="keyword">for</span> i,(new,old) <span class="keyword">in</span> <span class="built_in">enumerate</span>(<span class="built_in">zip</span>(good_new,good_old)):</span><br><span class="line">        a,b = new.ravel()</span><br><span class="line">        c,d = old.ravel()</span><br><span class="line">        mask = cv2.line(mask, (a,b),(c,d), color[i].tolist(), <span class="number">2</span>)</span><br><span class="line">        frame = cv2.circle(frame,(a,b),<span class="number">5</span>,color[i].tolist(),-<span class="number">1</span>)</span><br><span class="line">    img = cv2.add(frame,mask)</span><br><span class="line"></span><br><span class="line">    cv2.imshow(<span class="string">'frame'</span>,img)</span><br><span class="line">    k = cv2.waitKey(<span class="number">150</span>) &amp; <span class="number">0xff</span></span><br><span class="line">    <span class="keyword">if</span> k == <span class="number">27</span>:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 更新</span></span><br><span class="line">    old_gray = frame_gray.copy()</span><br><span class="line">    p0 = good_new.reshape(-<span class="number">1</span>,<span class="number">1</span>,<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line">cv2.destroyAllWindows()</span><br><span class="line">cap.release()</span><br></pre></td></tr></tbody></table></figure>
-<h1 id="DNN模块"><a href="#DNN模块" class="headerlink" title="DNN模块"></a>DNN模块</h1><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string">blob_from_images.py</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 导入工具包</span></span><br><span class="line"><span class="keyword">import</span> utils_paths</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"></span><br><span class="line"><span class="comment"># 标签文件处理</span></span><br><span class="line">rows = <span class="built_in">open</span>(<span class="string">"synset_words.txt"</span>).read().strip().split(<span class="string">"\n"</span>)</span><br><span class="line">classes = [r[r.find(<span class="string">" "</span>) + <span class="number">1</span>:].split(<span class="string">","</span>)[<span class="number">0</span>] <span class="keyword">for</span> r <span class="keyword">in</span> rows]</span><br><span class="line"></span><br><span class="line"><span class="comment"># Caffe所需配置文件</span></span><br><span class="line">net = cv2.dnn.readNetFromCaffe(<span class="string">"bvlc_googlenet.prototxt"</span>,</span><br><span class="line">	<span class="string">"bvlc_googlenet.caffemodel"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 图像路径</span></span><br><span class="line">imagePaths = <span class="built_in">sorted</span>(<span class="built_in">list</span>(utils_paths.list_images(<span class="string">"images/"</span>)))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 图像数据预处理</span></span><br><span class="line">image = cv2.imread(imagePaths[<span class="number">0</span>])</span><br><span class="line">resized = cv2.resize(image, (<span class="number">224</span>, <span class="number">224</span>))</span><br><span class="line"><span class="comment"># image scalefactor size mean swapRB </span></span><br><span class="line">blob = cv2.dnn.blobFromImage(resized, <span class="number">1</span>, (<span class="number">224</span>, <span class="number">224</span>), (<span class="number">104</span>, <span class="number">117</span>, <span class="number">123</span>))</span><br><span class="line">print(<span class="string">"First Blob: {}"</span>.<span class="built_in">format</span>(blob.shape))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 得到预测结果</span></span><br><span class="line">net.setInput(blob)</span><br><span class="line">preds = net.forward()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 排序，取分类可能性最大的</span></span><br><span class="line">idx = np.argsort(preds[<span class="number">0</span>])[::-<span class="number">1</span>][<span class="number">0</span>]</span><br><span class="line">text = <span class="string">"Label: {}, {:.2f}%"</span>.<span class="built_in">format</span>(classes[idx],</span><br><span class="line">	preds[<span class="number">0</span>][idx] * <span class="number">100</span>)</span><br><span class="line">cv2.putText(image, text, (<span class="number">5</span>, <span class="number">25</span>),  cv2.FONT_HERSHEY_SIMPLEX,</span><br><span class="line">	<span class="number">0.7</span>, (<span class="number">0</span>, <span class="number">0</span>, <span class="number">255</span>), <span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 显示</span></span><br><span class="line">cv2.imshow(<span class="string">"Image"</span>, image)</span><br><span class="line">cv2.waitKey(<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Batch数据制作</span></span><br><span class="line">images = []</span><br><span class="line"></span><br><span class="line"><span class="comment"># 方法一样，数据是一个batch</span></span><br><span class="line"><span class="keyword">for</span> p <span class="keyword">in</span> imagePaths[<span class="number">1</span>:]:</span><br><span class="line">	image = cv2.imread(p)</span><br><span class="line">	image = cv2.resize(image, (<span class="number">224</span>, <span class="number">224</span>))</span><br><span class="line">	images.append(image)</span><br><span class="line"></span><br><span class="line"><span class="comment"># blobFromImages函数，注意有s</span></span><br><span class="line">blob = cv2.dnn.blobFromImages(images, <span class="number">1</span>, (<span class="number">224</span>, <span class="number">224</span>), (<span class="number">104</span>, <span class="number">117</span>, <span class="number">123</span>))</span><br><span class="line">print(<span class="string">"Second Blob: {}"</span>.<span class="built_in">format</span>(blob.shape))</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取预测结果</span></span><br><span class="line">net.setInput(blob)</span><br><span class="line">preds = net.forward()</span><br><span class="line"><span class="keyword">for</span> (i, p) <span class="keyword">in</span> <span class="built_in">enumerate</span>(imagePaths[<span class="number">1</span>:]):</span><br><span class="line">	image = cv2.imread(p)</span><br><span class="line">	idx = np.argsort(preds[i])[::-<span class="number">1</span>][<span class="number">0</span>]</span><br><span class="line">	text = <span class="string">"Label: {}, {:.2f}%"</span>.<span class="built_in">format</span>(classes[idx],</span><br><span class="line">		preds[i][idx] * <span class="number">100</span>)</span><br><span class="line">	cv2.putText(image, text, (<span class="number">5</span>, <span class="number">25</span>),  cv2.FONT_HERSHEY_SIMPLEX,</span><br><span class="line">		<span class="number">0.7</span>, (<span class="number">0</span>, <span class="number">0</span>, <span class="number">255</span>), <span class="number">2</span>)</span><br><span class="line">	cv2.imshow(<span class="string">"Image"</span>, image)</span><br><span class="line">	cv2.waitKey(<span class="number">0</span>)</span><br></pre></td></tr></tbody></table></figure>
-<h1 id="图像基本操作"><a href="#图像基本操作" class="headerlink" title="图像基本操作"></a>图像基本操作</h1><h1 id="图像阈值"><a href="#图像阈值" class="headerlink" title="图像阈值"></a>图像阈值</h1><h2 id="简单阈值"><a href="#简单阈值" class="headerlink" title="简单阈值"></a>简单阈值</h2><h2 id="自适应阈值"><a href="#自适应阈值" class="headerlink" title="自适应阈值"></a>自适应阈值</h2><h2 id="Otsu‘s-二值化"><a href="#Otsu‘s-二值化" class="headerlink" title="Otsu‘s 二值化"></a>Otsu‘s 二值化</h2><h1 id="平滑处理"><a href="#平滑处理" class="headerlink" title="平滑处理"></a>平滑处理</h1><h2 id="平均"><a href="#平均" class="headerlink" title="平均"></a>平均</h2><h2 id="高斯模糊"><a href="#高斯模糊" class="headerlink" title="高斯模糊"></a>高斯模糊</h2><h2 id="中值模糊"><a href="#中值模糊" class="headerlink" title="中值模糊"></a>中值模糊</h2><h2 id="双边滤波"><a href="#双边滤波" class="headerlink" title="双边滤波"></a>双边滤波</h2><h1 id="形态学处理"><a href="#形态学处理" class="headerlink" title="形态学处理"></a>形态学处理</h1><h2 id="腐蚀"><a href="#腐蚀" class="headerlink" title="腐蚀"></a>腐蚀</h2><h2 id="膨胀"><a href="#膨胀" class="headerlink" title="膨胀"></a>膨胀</h2><h2 id="开运算"><a href="#开运算" class="headerlink" title="开运算"></a>开运算</h2><h2 id="闭运算"><a href="#闭运算" class="headerlink" title="闭运算"></a>闭运算</h2><h2 id="梯度"><a href="#梯度" class="headerlink" title="梯度"></a>梯度</h2><h2 id="礼帽"><a href="#礼帽" class="headerlink" title="礼帽"></a>礼帽</h2><h2 id="黑帽"><a href="#黑帽" class="headerlink" title="黑帽"></a>黑帽</h2><h1 id="梯度处理"><a href="#梯度处理" class="headerlink" title="梯度处理"></a>梯度处理</h1><p>边缘检测就是检测出图像上的边缘信息</p>
-<p><strong>1.导数</strong>，连续函数上某点斜率，导数越大表示变化率越大，变化率越大的地方就越是“边缘”，但是在计算机中不常用，因为在斜率90度的地方，导数无穷大，计算机很难表示这些无穷大的东西。</p>
-<p><strong>2.微分</strong>，连续函数上x变化了dx，导致y变化了dy，dy值越大表示变化的越大，那么计算整幅图像的微分，dy的大小就是边缘的强弱了。<br> 微分与导数的关系：dy = f ‘(x) dx</p>
-<h2 id="Sobel算子和Scharr算子"><a href="#Sobel算子和Scharr算子" class="headerlink" title="Sobel算子和Scharr算子"></a>Sobel算子和Scharr算子</h2><p>基于一阶微分</p>
-<p>中心点 f(x, y) 是重点考虑的，它的权重应该多一些，所以改进成下面这样的</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">-<span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span></span><br><span class="line">-<span class="number">2</span>, <span class="number">0</span>, <span class="number">2</span></span><br><span class="line">-<span class="number">1</span>, <span class="number">0</span>, <span class="number">1</span></span><br></pre></td></tr></tbody></table></figure>
-<p>这就是 Sobel 边缘检测算子，偏 x 方向的。</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">-<span class="number">1</span>, -<span class="number">2</span>, -<span class="number">1</span></span><br><span class="line"> <span class="number">0</span>,  <span class="number">0</span>,  <span class="number">0</span></span><br><span class="line"> <span class="number">1</span>,  <span class="number">2</span>,  <span class="number">1</span></span><br></pre></td></tr></tbody></table></figure>
-<h2 id="laplacian算子"><a href="#laplacian算子" class="headerlink" title="laplacian算子"></a>laplacian算子</h2><p>拉普拉斯是用二阶差分计算边缘的</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="number">0</span>,  <span class="number">1</span>, <span class="number">0</span></span><br><span class="line"><span class="number">1</span>, -<span class="number">4</span>, <span class="number">1</span></span><br><span class="line"><span class="number">0</span>,  <span class="number">1</span>, <span class="number">0</span></span><br></pre></td></tr></tbody></table></figure>
-<p>考虑两个斜对角的情况</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="number">1</span>,  <span class="number">1</span>, <span class="number">1</span></span><br><span class="line"><span class="number">1</span>, -<span class="number">8</span>, <span class="number">1</span></span><br><span class="line"><span class="number">1</span>,  <span class="number">1</span>, <span class="number">1</span></span><br></pre></td></tr></tbody></table></figure>
-<h2 id="Canny边缘检测"><a href="#Canny边缘检测" class="headerlink" title="Canny边缘检测"></a>Canny边缘检测</h2><p>Canny边缘检测的步骤：</p>
-<p>1.<strong>消除噪声</strong>：一般情况下，使用<strong>高斯平滑滤波器卷积降噪</strong>。</p>
-<p>2.<strong>计算梯度幅值和方向</strong>。此时，按照<strong>Sobel滤波器的步骤</strong>。<br>怎么表征这种灰度值的变化呢？这里想到的就是导数微分，导数就是表征变化率的，但是数字图像都是<strong>离散</strong>的，也就是<strong>导数肯定会用差分</strong>来替代。<strong>用相邻像素的差分来计算梯度的大小和方向。</strong></p>
-<p>然后我们可以计算图像中每个像素的梯度大小为$G=\sqrt{G_x^2+G_y^2}$，梯度方向为$\theta=arctan(G_x/G_y)$</p>
-<p>3.<strong>非极大值抑制</strong>。这一步排除非边缘像素，仅仅保留了一些细线条(候选边缘)。</p>
-<p>对规定方向以外的梯度方向进行最大抑制。</p>
-<p>理论上图像梯度幅值的元素值越大，说明图像中该点的梯度值越大，但这不能说明该点就是边缘。非极大值抑制是进行边缘检测的重要步骤，<strong>寻找像素点的局部最大值</strong>，沿着梯度方向，比较它前面和后面的梯度值，<strong>若梯度值局部最大则有可能为边缘像素，进行保留，否则就进行抑制(置为0)。</strong></p>
-<p><img data-src="../images/opencv/NMS.png" alt="NMS"></p>
-<p>4.<strong>滞后阈值</strong>：Canny使用了滞后阈值，滞后阈值需要两个阈值(高阈值和低阈值)：<strong>用双阈值算法检测和连接边缘。</strong>（保证了低错误率：与Sobel之间的区别）</p>
-<p>a.如果某一像素位置的幅值超过高阈值，该像素被保留为边缘像素。</p>
-<p>b.如果某一像素位置的幅值小于低阈值，该像素被排除。</p>
-<p>c.<strong>如果某一像素位置的幅值在两个阈值之间，该像素仅仅在连接到一个高于阈值的像素时被保留。</strong></p>
-<p>Canny推荐的高低阈值比在2:1到3:1之间。</p>
-<p><img data-src="../images/opencv/backNMS.png" alt="滞后阈值"></p>
-<h2 id="三个算子区别"><a href="#三个算子区别" class="headerlink" title="三个算子区别"></a>三个算子区别</h2><p>sobel 产生的边缘有强弱，抗噪性好<br>laplace 对边缘敏感，可能有些是噪声的边缘，也被算进来了<br>canny 产生的边缘很细，可能就一个像素那么细，没有强弱之分。</p>
-<h1 id="边缘检测"><a href="#边缘检测" class="headerlink" title="边缘检测"></a>边缘检测</h1><h1 id="Hough变换"><a href="#Hough变换" class="headerlink" title="Hough变换"></a>Hough变换</h1><h2 id="直线变换"><a href="#直线变换" class="headerlink" title="直线变换"></a>直线变换</h2><ul>
-<li>基本思想</li>
-</ul>
-<p>主要原理是对于边缘的每一个像素点（x0,y0），把可能经过它的所有直线，映射到仿射参数空间（即hough space），然后<strong>投票</strong>，每次有直线方程满足($\theta$，$r_\theta$)，此处</p>
-<p><img data-src="/images/opencv/houghtrans.png" alt="houghtrans"></p>
-<ul>
-<li>详细推导</li>
-</ul>
-<p><a href="https://zhuanlan.zhihu.com/p/47649796">参考链接</a></p>
-<p><a href="https://www.cnblogs.com/cheermyang/p/5348820.html">参考链接</a></p>
-<p>它追踪图像中每个点对应曲线间的交点. 如果交于一点的曲线的数量超过了阈值， 那么可以认为这个交点所代表的参数对($\theta$，$r_\theta$)在原图像中为一条直线。</p>
-<p>对图像做霍夫变换，也就是分别代入霍夫变换公式</p>
-<blockquote>
-<p>$r = xcos\theta + ysin\theta$</p>
-</blockquote>
-<p>在仿射参数空间的结果是这个样子的：</p>
-<p><img data-src="/images/opencv/hough_line.png" alt="hough_line"></p>
-<p>原图上红色紫色绿色蓝色的点对应的变换曲线相交在同一个点上，<strong>这个点对应的原点距和角方向就是原图中的四个点所在的直线的方向</strong>：</p>
-<p><img data-src="/images/opencv/line.png" alt="line"></p>
-<p>这意味着一般来说, 一条直线能够通过在平面($\theta$，$r_\theta$)上寻找交于一点的曲线数量来检测。 越多曲线交于一点也就意味着这个交点表示的直线由更多的点组成. 一般来说我们可以通过设置直线上点的 阈值 来定义多少条曲线交于一点我们才认为 检测 到了一条直线。</p>
-<ul>
-<li>代码参考</li>
-</ul>
-<p><a href="https://blog.csdn.net/jia20003/article/details/7724530">源代码参考链接</a></p>
-<ul>
-<li>OpenCV接口</li>
-</ul>
-<h2 id="圆形变换"><a href="#圆形变换" class="headerlink" title="圆形变换"></a>圆形变换</h2><p><a href="https://kevinnnm.github.io/2019/07/26/Day12/#%E5%9F%BA%E4%BA%8E%E9%9C%8D%E5%A4%AB%E5%8F%98%E6%8D%A2%E7%9A%84%E5%9C%86%E5%BD%A2%E6%A3%80%E6%B5%8B">参考链接</a></p>
-<ul>
-<li>基本思想</li>
-</ul>
-<p>跟霍夫直线检测一样，同样的原理，可以用于检测圆，只是对于圆的方程。</p>
-<blockquote>
-<p>$(x –a ) ^2 + (y-b) ^ 2 = r^2$</p>
-</blockquote>
-<p>其中(a,b)代表圆心，r是圆的半径<br>依旧是把图像空间转换成参数空间，这里是将X-Y平面转化成a-b-r参数空间，则在图像空间中的一个过(x,y)点的圆，对应参数空间中高度变化的三维锥面。</p>
-<p><img data-src="/images/opencv/houghcircle_1.png" alt="houghcircle"></p>
-<p>同理，过图像空间的任意一点的圆都对应于参数空间的一个三维锥面，因此，过图像空间上同一圆的点，对应的参数空间中的三维锥面，在r平面必然相交于一点(a,b,r)，这样通过这一点就可以得到一个圆的参数。</p>
-<p><img data-src="/images/opencv/houghcircle_1.png" alt="houghcircle_1"></p>
-<ul>
-<li>详细推导</li>
-</ul>
-<p>在极坐标系下，假设圆心为$(𝑥0,𝑦0)$,圆上的点可以表示为:</p>
-<blockquote>
-<p>$𝑥=𝑥0+𝑟𝑐𝑜𝑠𝜃,𝑦=𝑦0+𝑟𝑠𝑖𝑛𝜃$</p>
-</blockquote>
-<p>对于一个圆，假如中心像素点$(𝑥0,𝑦0)$，半径r已知，那么旋转360°，圆上的所有点就可以求得。同样，<strong>假如圆上的所有点，半径r已知，旋转360°，则会得到一个累加的极值点，那么这个点就是圆心了。</strong></p>
-<ul>
-<li>21HT的具体步骤:<br>第一阶段：检测圆心</li>
-</ul>
-<p>1.1、对输入图像边缘检测（Canny）；</p>
-<p>1.2、计算图形的梯度，并确定圆周线，其中圆周的梯度就是它的法线；</p>
-<p>1.3、在二维霍夫空间内，绘出所有图形的梯度直线，某坐标点上累加和的值越大，说明在该点上直线相交的次数越多，也就是越有可能是圆心；</p>
-<p>1.4、在霍夫空间的4邻域内进行非最大值抑制；</p>
-<p>1.5、设定一个阈值，<strong>霍夫空间内累加和大于该阈值的点</strong>就对应于圆心。</p>
-<p>第二阶段：检测圆半径</p>
-<p>2.1、计算某一个圆心到所有圆周线的距离，这些距离中就有该圆心所对应的圆的半径的值，这些半径值当然是相等的，并且这些圆半径的数量要远远大于其他距离值相等的数量；</p>
-<p>2.2、设定两个阈值，定义为最大半径和最小半径，保留距离在这两个半径之间的值，这意味着我们检测的圆不能太大，也不能太小；</p>
-<p>2.3、对保留下来的距离进行排序；</p>
-<p>2.4、找到距离相同的那些值，并计算相同值的数量；</p>
-<p>2.5、设定一个阈值，只有相同值的数量大于该阈值，才认为该值是该圆心对应的圆半径；</p>
-<p>2.6、对每一个圆心，完成上面的2.1～2.5步骤，得到所有的圆半径。</p>
-<ul>
-<li>OpenCV接口</li>
-</ul>
-<blockquote>
-<p>void HoughCircles(InputArray image,OutputArray circles, int method, double dp, double minDist, double param1=100, double param2=100, int minRadius=0,int maxRadius=0 )</p>
-</blockquote>
-<p>image为输入图像，要求是灰度图像<br>circles为输出圆向量，每个向量包括三个浮点型的元素——圆心横坐标，圆心纵坐标和圆半径<br>method为使用霍夫变换圆检测的算法，Opencv2.4.9只实现了2-1霍夫变换，它的参数是CV_HOUGH_GRADIENT<br>dp为第一阶段所使用的霍夫空间的分辨率，dp=1时表示霍夫空间与输入图像空间的大小一致，dp=2时霍夫空间是输入图像空间的一半，以此类推<br>minDist为圆心之间的最小距离，如果检测到的两个圆心之间距离小于该值，则认为它们是同一个圆心<br>param1为边缘检测时使用Canny算子的高阈值<br>param2为步骤1.5和步骤2.5中所共有的阈值<br>minRadius和maxRadius为所检测到的圆半径的最小值和最大值</p>
-]]></content>
-      <categories>
-        <category>CV</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-        <tag>OpenCV</tag>
       </tags>
   </entry>
   <entry>
