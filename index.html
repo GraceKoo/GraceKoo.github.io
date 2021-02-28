@@ -200,6 +200,185 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="Zh">
+    <link itemprop="mainEntityOfPage" href="https://unknown.yuzhouwan.com/posts/252123234598/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Grace Koo">
+      <meta itemprop="description" content="正在深入学习各种CV知识">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Grace Koo's Blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/posts/252123234598/" class="post-title-link" itemprop="url">Untitled</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-01-31 23:55:00" itemprop="dateCreated datePublished" datetime="2021-01-31T23:55:00Z">2021-01-31</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-02-28 11:25:35" itemprop="dateModified" datetime="2021-02-28T11:25:35Z">2021-02-28</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">Symbols count in article: </span>
+              <span>6k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">Reading time &asymp;</span>
+              <span>5 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="接口自动化测试开发技能"><a href="#接口自动化测试开发技能" class="headerlink" title="接口自动化测试开发技能"></a>接口自动化测试开发技能</h1><ul>
+<li><p>测试框架：TestNG、HttpClient</p>
+</li>
+<li><p>Mock技术</p>
+</li>
+<li>数据持久层框架：MyBatis</li>
+<li>持续集成工具：Jenkins</li>
+<li>接口协议相关基础知识：HTTP协议</li>
+</ul>
+<h1 id="接口测试的范围"><a href="#接口测试的范围" class="headerlink" title="接口测试的范围"></a>接口测试的范围</h1><h2 id="功能测试"><a href="#功能测试" class="headerlink" title="功能测试"></a>功能测试</h2><ul>
+<li>等价类划分法</li>
+<li>边界值分析法</li>
+<li>错误推断法</li>
+<li>因果图法</li>
+<li>判定表驱动法</li>
+<li>正交实验法</li>
+<li>功能图法</li>
+<li>场景法</li>
+</ul>
+<h1 id="TestNG"><a href="#TestNG" class="headerlink" title="TestNG"></a>TestNG</h1><h2 id="mvn依赖"><a href="#mvn依赖" class="headerlink" title="mvn依赖"></a>mvn依赖</h2><figure class="highlight xml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependencies</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.testng<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>testng<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">version</span>&gt;</span>7.3.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependencies</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">build</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">plugins</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.maven.plugins<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>maven-compiler-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.8.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">source</span>&gt;</span>11<span class="tag">&lt;/<span class="name">source</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">target</span>&gt;</span>11<span class="tag">&lt;/<span class="name">target</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">plugins</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">build</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="基本注解"><a href="#基本注解" class="headerlink" title="基本注解"></a>基本注解</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>注释</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>@Test</td>
+<td>一个测试方法或者测试类</td>
+</tr>
+<tr>
+<td>@BeforeMethod</td>
+<td>每个测试方法前需要执行的方法</td>
+</tr>
+<tr>
+<td>@AfterMethod</td>
+<td>每个测试方法后需要执行的方法</td>
+</tr>
+<tr>
+<td>@BeforeClass</td>
+<td>标注类运行前运行的方法</td>
+</tr>
+<tr>
+<td>@AfterClass</td>
+<td>标注类运行后运行的方法</td>
+</tr>
+<tr>
+<td>@BeforeSuite</td>
+<td>Suite可以包含多个class，类运行前运行</td>
+</tr>
+<tr>
+<td>@AfterSuite</td>
+<td>类运行后运行</td>
+</tr>
+<tr>
+<td>@Test(enabled = false)</td>
+<td>忽略执行</td>
+</tr>
+<tr>
+<td>@BeforeGroups(“server”)</td>
+<td>组测试前的测试方法</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="套件测试"><a href="#套件测试" class="headerlink" title="套件测试"></a>套件测试</h2><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// LoginTest.java</span></span><br><span class="line"><span class="keyword">package</span> com.course.testng.suite;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.testng.annotations.Test;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LoginTest</span> </span>{</span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">loginTaobao</span><span class="params">()</span></span>{</span><br><span class="line">        System.out.println(<span class="string">"淘宝登陆成功"</span>);</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//PayTest.java</span></span><br><span class="line"><span class="keyword">package</span> com.course.testng.suite;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.testng.annotations.Test;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PayTest</span> </span>{</span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">payAli</span><span class="params">()</span></span>{</span><br><span class="line">        System.out.println(<span class="string">"支付宝登陆成功"</span>);</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//SuiteConfig.java</span></span><br><span class="line"><span class="keyword">package</span> com.course.testng.suite;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.testng.annotations.AfterSuite;</span><br><span class="line"><span class="keyword">import</span> org.testng.annotations.BeforeSuite;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SuiteConfig</span> </span>{</span><br><span class="line">    <span class="meta">@BeforeSuite</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">beforeSuite</span><span class="params">()</span></span>{</span><br><span class="line">        System.out.println(<span class="string">"before suite start"</span>);</span><br><span class="line">    }</span><br><span class="line">    <span class="meta">@AfterSuite</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">afterSuite</span><span class="params">()</span></span>{</span><br><span class="line">        System.out.println(<span class="string">"after suite start"</span>);</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p>在对应的resource 文件夹下创建suite.xml文件，并指定套件和其中的执行顺序。执行这个xml，即可执行</p>
+<figure class="highlight xml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">suite</span> <span class="meta-keyword">SYSTEM</span> <span class="meta-string">"https://testng.org/testng-1.0.dtd"</span> &gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">suite</span> <span class="attr">name</span>=<span class="string">"test"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">test</span> <span class="attr">name</span>=<span class="string">"login"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">classes</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">class</span> <span class="attr">name</span>=<span class="string">"com.course.testng.suite.SuiteConfig"</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">class</span> <span class="attr">name</span>=<span class="string">"com.course.testng.suite.PayTest"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">classes</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">test</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">test</span> <span class="attr">name</span>=<span class="string">"pay"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">classes</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">class</span> <span class="attr">name</span>=<span class="string">"com.course.testng.suite.SuiteConfig"</span>/&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">class</span> <span class="attr">name</span>=<span class="string">"com.course.testng.suite.PayTest"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">classes</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">test</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">suite</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="组测试"><a href="#组测试" class="headerlink" title="组测试"></a>组测试</h2><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.course.testng.group;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.testng.annotations.AfterGroups;</span><br><span class="line"><span class="keyword">import</span> org.testng.annotations.BeforeGroups;</span><br><span class="line"><span class="keyword">import</span> org.testng.annotations.Test;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">GrouponMethod</span> </span>{</span><br><span class="line">    <span class="meta">@Test(groups = "server")</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test1</span><span class="params">()</span></span>{</span><br><span class="line">        System.out.println(<span class="string">"这是服务端组的测试方法1"</span>);</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test(groups = "server")</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test2</span><span class="params">()</span></span>{</span><br><span class="line">        System.out.println(<span class="string">"这是服务端组的测试方法2"</span>);</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test(groups = "client")</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test3</span><span class="params">()</span></span>{</span><br><span class="line">        System.out.println(<span class="string">"这是客户端组的测试方法1"</span>);</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test(groups = "client")</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test4</span><span class="params">()</span></span>{</span><br><span class="line">        System.out.println(<span class="string">"这是客户端组的测试方法2"</span>);</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="meta">@BeforeGroups("server")</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">beforeGroupOnServer</span><span class="params">()</span></span>{</span><br><span class="line">        System.out.println(<span class="string">"这服务端组运行前的测试方法"</span>);</span><br><span class="line">    }</span><br><span class="line">    <span class="meta">@AfterGroups("server")</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">afterGroupOnServer</span><span class="params">()</span></span>{</span><br><span class="line">        System.out.println(<span class="string">"这服务端组运行后的测试方法"</span>);</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="类分组测试"><a href="#类分组测试" class="headerlink" title="类分组测试"></a>类分组测试</h2><p>只运行@Test中name为stu的测试方法</p>
+<figure class="highlight xml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">test</span> <span class="attr">name</span>=<span class="string">"pay"</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">groups</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">run</span>&gt;</span></span><br><span class="line">             <span class="tag">&lt;<span class="name">include</span> <span class="attr">name</span> = <span class="string">"stu"</span>/&gt;</span></span><br><span class="line">         <span class="tag">&lt;/<span class="name">run</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;/<span class="name">groups</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">classes</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">class</span> <span class="attr">name</span>=<span class="string">"com.course.testng.suite.SuiteConfig"</span>/&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">class</span> <span class="attr">name</span>=<span class="string">"com.course.testng.suite.PayTest"</span>/&gt;</span></span><br><span class="line">     <span class="tag">&lt;/<span class="name">classes</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">test</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="异常测试"><a href="#异常测试" class="headerlink" title="异常测试"></a>异常测试</h2><p>在希望得到某个异常时使用</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.course.testng.suite;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.testng.annotations.Test;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ExceptedException</span> </span>{</span><br><span class="line">    <span class="comment">//这是一个会失败的异常测试</span></span><br><span class="line">    <span class="meta">@Test(expectedExceptions = RuntimeException.class)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">runtime</span><span class="params">()</span></span>{</span><br><span class="line">        System.out.println(<span class="string">"这是一个失败的异常测试"</span>);</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="comment">//这是一个会成功的异常测试</span></span><br><span class="line">    <span class="meta">@Test(expectedExceptions = RuntimeException.class)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">runtime1</span><span class="params">()</span></span>{</span><br><span class="line">        System.out.println(<span class="string">"这是一个会成功的异常测试"</span>);</span><br><span class="line">        <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException();</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="依赖测试"><a href="#依赖测试" class="headerlink" title="依赖测试"></a>依赖测试</h2><p>一个方法的执行需要依赖于另一个方法成功的执行</p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.course.testng;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.testng.annotations.Test;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DependTest</span> </span>{</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test1</span><span class="params">()</span></span>{</span><br><span class="line">        System.out.println(<span class="string">"test1 run"</span>);</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test(dependsOnMethods = {"test1"})</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test2</span><span class="params">()</span></span>{</span><br><span class="line">        System.out.println(<span class="string">"test2 run"</span>);</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="参数化测试"><a href="#参数化测试" class="headerlink" title="参数化测试"></a>参数化测试</h2><h3 id="xml方式"><a href="#xml方式" class="headerlink" title="xml方式"></a>xml方式</h3><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.course.testng.parameter;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.testng.annotations.Parameters;</span><br><span class="line"><span class="keyword">import</span> org.testng.annotations.Test;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ParameterTest</span> </span>{</span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="meta">@Parameters({"name","age"})</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">paramTest1</span><span class="params">(String name, <span class="keyword">int</span> age)</span></span>{</span><br><span class="line">        System.out.println(<span class="string">"name = "</span> + name + <span class="string">"age = "</span> + age );</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+<p>在resource文件下新建一个parameters.xml，并在xml中传入paramTest1所需参数，利用xml文档来运行测试</p>
+<figure class="highlight xml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8" ?&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">suite</span> <span class="meta-keyword">SYSTEM</span> <span class="meta-string">"https://testng.org/testng-1.0.dtd"</span> &gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">suite</span> <span class="attr">name</span>=<span class="string">"test_param"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">test</span> <span class="attr">name</span>=<span class="string">"param"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">classes</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">parameter</span> <span class="attr">name</span>=<span class="string">"name"</span> <span class="attr">value</span>=<span class="string">"zhangssan"</span> /&gt;</span></span><br><span class="line">             <span class="tag">&lt;<span class="name">parameter</span> <span class="attr">name</span>=<span class="string">"age"</span> <span class="attr">value</span>=<span class="string">"10"</span> /&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">class</span> <span class="attr">name</span>=<span class="string">"com.course.testng.parameter.ParameterTest"</span>/&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">classes</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">test</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">suite</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="DataProvidor方式"><a href="#DataProvidor方式" class="headerlink" title="@DataProvidor方式"></a>@DataProvidor方式</h3><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.course.testng;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.testng.annotations.DataProvider;</span><br><span class="line"><span class="keyword">import</span> org.testng.annotations.Test;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.lang.reflect.Method;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DataProvidor</span> </span>{</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test(dataProvider = "methodData")</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test1</span><span class="params">(String name, <span class="keyword">int</span> age)</span></span>{</span><br><span class="line">        System.out.println(<span class="string">"test1方法 name = "</span>+name+<span class="string">";age = "</span> + age);</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test(dataProvider = "methodData")</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">test2</span><span class="params">(String name, <span class="keyword">int</span> age)</span></span>{</span><br><span class="line">        System.out.println(<span class="string">"test2方法 name = "</span>+name+<span class="string">";age = "</span> + age);</span><br><span class="line">    }</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@DataProvider(name = "methodData")</span></span><br><span class="line">    <span class="keyword">public</span> Object[][] methodDataTest(Method method){</span><br><span class="line">        Object[][] result = <span class="keyword">null</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span>(method.getName().equals(<span class="string">"test1"</span>)){</span><br><span class="line">            result = <span class="keyword">new</span> Object[][]{</span><br><span class="line">                    {<span class="string">"zhangsan"</span>, <span class="number">20</span>},</span><br><span class="line">                    {<span class="string">"lisi"</span>,<span class="number">25</span>}</span><br><span class="line">            };</span><br><span class="line">        }<span class="keyword">else</span> <span class="keyword">if</span>(method.getName().equals(<span class="string">"test2"</span>)){</span><br><span class="line">            result = <span class="keyword">new</span> Object[][]{</span><br><span class="line">                    {<span class="string">"wangwu"</span>, <span class="number">50</span>},</span><br><span class="line">                    {<span class="string">"zhaoliu"</span>, <span class="number">60</span>}</span><br><span class="line">            };</span><br><span class="line">            </span><br><span class="line">        };</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    }</span><br><span class="line">    </span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="多线程测试"><a href="#多线程测试" class="headerlink" title="多线程测试"></a>多线程测试</h2><h3 id="注解实现"><a href="#注解实现" class="headerlink" title="注解实现"></a>注解实现</h3><p>@Test(invocationCount = 10, threadPoolSize = 3)</p>
+<h3 id="xml实现"><a href="#xml实现" class="headerlink" title="xml实现"></a>xml实现</h3><p>tests级别：不同的test tag下的用例可以在不同的线程下执行；相同的test tag下的用例只能在相同的线程下执行</p>
+<p>class级别：相同的class tag下的用例在同一个线程中去执行；不同的class tag下的用例可以在不同线程中去执行</p>
+<p>methods级别：所有用例都可以在不同的线程下去执行</p>
+<p>thread-count：代表了最大并发线程数</p>
+<p>xml文件配置这种方式不能指定线程池，只有方法上才可以指定线程池</p>
+<figure class="highlight xml"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">suite</span> <span class="attr">name</span>=<span class="string">"thread"</span> <span class="attr">parallel</span> = <span class="string">"tests"</span> <span class="attr">threads-count</span> = <span class="string">"2"</span> &gt;</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="超时测试"><a href="#超时测试" class="headerlink" title="超时测试"></a>超时测试</h2><figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.course.testng;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.testng.annotations.Test;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TimeoutTest</span> </span>{</span><br><span class="line">    <span class="meta">@Test(timeOut = 3000)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testSuccess</span> <span class="params">()</span></span>{</span><br><span class="line">        System.out.println(<span class="string">"超时测试"</span>);</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test(timeOut = 2000)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testFail</span><span class="params">()</span> <span class="keyword">throws</span> InterruptedException </span>{</span><br><span class="line">        Thread.sleep(<span class="number">3000</span>);</span><br><span class="line">        System.out.println(<span class="string">"超时测试"</span>);</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="Zh">
     <link itemprop="mainEntityOfPage" href="https://unknown.yuzhouwan.com/posts/55663/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -686,108 +865,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="Zh">
-    <link itemprop="mainEntityOfPage" href="https://unknown.yuzhouwan.com/posts/29871/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Grace Koo">
-      <meta itemprop="description" content="正在深入学习各种CV知识">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Grace Koo's Blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/posts/29871/" class="post-title-link" itemprop="url">TensorFlow2.0 In Action</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2020-02-01 00:06:06" itemprop="dateCreated datePublished" datetime="2020-02-01T00:06:06Z">2020-02-01</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-06-02 15:42:31" itemprop="dateModified" datetime="2020-06-02T15:42:31Z">2020-06-02</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Machine-Learning/" itemprop="url" rel="index"><span itemprop="name">Machine Learning</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="Symbols count in article">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">Symbols count in article: </span>
-              <span>4.6k</span>
-            </span>
-            <span class="post-meta-item" title="Reading time">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>4 mins.</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="TensorFlow2-0简化的模型开发流程"><a href="#TensorFlow2-0简化的模型开发流程" class="headerlink" title="TensorFlow2.0简化的模型开发流程"></a>TensorFlow2.0简化的模型开发流程</h1><ul>
-<li>使用tf.data加载数据</li>
-<li>使用tf.keras构建模型，也可以使用premade estimator来验证模型（使用tesorflow hub进行迁移学习）</li>
-<li>使用eager mode进行运行和调试</li>
-<li>使用分发策略来进行分布式训练</li>
-<li>导出到SavedModel</li>
-<li>使用TesorFlow Serve、TensorFlow Lite、TensorFlow.js部署模型</li>
-</ul>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/posts/29871/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -857,20 +934,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">26</span>
+          <span class="site-state-item-count">27</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-count">14</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">23</span>
+        <span class="site-state-item-count">25</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -924,12 +1001,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="Symbols count total">391k</span>
+    <span title="Symbols count total">397k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">5:55</span>
+    <span title="Reading time total">6:01</span>
 </div>
 
         
