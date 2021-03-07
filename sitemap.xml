@@ -2,13 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://unknown.yuzhouwan.com/posts/22398665/</loc>
-    
-    <lastmod>2021-02-28</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://unknown.yuzhouwan.com/posts/26313/</loc>
     
     <lastmod>2021-02-18</lastmod>
@@ -305,20 +298,6 @@
   </url>
   
   <url>
-    <loc>https://unknown.yuzhouwan.com/tags/Software-Test-Basic/</loc>
-    <lastmod>2021-03-07</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://unknown.yuzhouwan.com/tags/Automatic-Test/</loc>
-    <lastmod>2021-03-07</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://unknown.yuzhouwan.com/tags/Algorithm/</loc>
     <lastmod>2021-03-07</lastmod>
     <changefreq>daily</changefreq>
@@ -355,6 +334,13 @@
   
   <url>
     <loc>https://unknown.yuzhouwan.com/tags/Computer-Network/</loc>
+    <lastmod>2021-03-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://unknown.yuzhouwan.com/tags/Software-Test-Basic/</loc>
     <lastmod>2021-03-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -426,14 +412,14 @@
   </url>
   
   <url>
-    <loc>https://unknown.yuzhouwan.com/categories/Math/</loc>
+    <loc>https://unknown.yuzhouwan.com/categories/DataView/</loc>
     <lastmod>2021-03-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://unknown.yuzhouwan.com/categories/DataView/</loc>
+    <loc>https://unknown.yuzhouwan.com/categories/Math/</loc>
     <lastmod>2021-03-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -454,20 +440,6 @@
   </url>
   
   <url>
-    <loc>https://unknown.yuzhouwan.com/categories/Computer-Basic/Interview/</loc>
-    <lastmod>2021-03-07</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://unknown.yuzhouwan.com/categories/Computer-Basic/python/</loc>
-    <lastmod>2021-03-07</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://unknown.yuzhouwan.com/categories/Algorithm/</loc>
     <lastmod>2021-03-07</lastmod>
     <changefreq>daily</changefreq>
@@ -476,6 +448,13 @@
   
   <url>
     <loc>https://unknown.yuzhouwan.com/categories/Language/</loc>
+    <lastmod>2021-03-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://unknown.yuzhouwan.com/categories/Computer-Basic/Interview/</loc>
     <lastmod>2021-03-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
