@@ -235,13 +235,6 @@
 
   
   <url>
-    <loc>https://unknown.yuzhouwan.com/tags/ImageAlgorithm/</loc>
-    <lastmod>2021-03-07</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://unknown.yuzhouwan.com/tags/Git/</loc>
     <lastmod>2021-03-07</lastmod>
     <changefreq>daily</changefreq>
@@ -249,7 +242,7 @@
   </url>
   
   <url>
-    <loc>https://unknown.yuzhouwan.com/tags/BigData/</loc>
+    <loc>https://unknown.yuzhouwan.com/tags/ImageAlgorithm/</loc>
     <lastmod>2021-03-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -264,6 +257,13 @@
   
   <url>
     <loc>https://unknown.yuzhouwan.com/tags/Automatic-Test/</loc>
+    <lastmod>2021-03-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://unknown.yuzhouwan.com/tags/BigData/</loc>
     <lastmod>2021-03-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -291,14 +291,14 @@
   </url>
   
   <url>
-    <loc>https://unknown.yuzhouwan.com/tags/Regex/</loc>
+    <loc>https://unknown.yuzhouwan.com/tags/Software-Test-Basic/</loc>
     <lastmod>2021-03-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://unknown.yuzhouwan.com/tags/Neural-Network/</loc>
+    <loc>https://unknown.yuzhouwan.com/tags/Regex/</loc>
     <lastmod>2021-03-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -312,7 +312,7 @@
   </url>
   
   <url>
-    <loc>https://unknown.yuzhouwan.com/tags/Software-Test-Basic/</loc>
+    <loc>https://unknown.yuzhouwan.com/tags/Neural-Network/</loc>
     <lastmod>2021-03-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -412,13 +412,6 @@
 
   
   <url>
-    <loc>https://unknown.yuzhouwan.com/categories/CV/</loc>
-    <lastmod>2021-03-07</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://unknown.yuzhouwan.com/categories/Tools/</loc>
     <lastmod>2021-03-07</lastmod>
     <changefreq>daily</changefreq>
@@ -426,7 +419,7 @@
   </url>
   
   <url>
-    <loc>https://unknown.yuzhouwan.com/categories/BigData/</loc>
+    <loc>https://unknown.yuzhouwan.com/categories/CV/</loc>
     <lastmod>2021-03-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -434,6 +427,13 @@
   
   <url>
     <loc>https://unknown.yuzhouwan.com/categories/Java/</loc>
+    <lastmod>2021-03-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://unknown.yuzhouwan.com/categories/BigData/</loc>
     <lastmod>2021-03-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -461,14 +461,14 @@
   </url>
   
   <url>
-    <loc>https://unknown.yuzhouwan.com/categories/Java-FrameWork/</loc>
+    <loc>https://unknown.yuzhouwan.com/categories/Computer-Basic/</loc>
     <lastmod>2021-03-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://unknown.yuzhouwan.com/categories/Computer-Basic/</loc>
+    <loc>https://unknown.yuzhouwan.com/categories/Java-FrameWork/</loc>
     <lastmod>2021-03-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
