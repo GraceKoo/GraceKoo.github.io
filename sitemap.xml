@@ -2,13 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://unknown.yuzhouwan.com/posts/252123234598/</loc>
-    
-    <lastmod>2021-02-28</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://unknown.yuzhouwan.com/posts/22398665/</loc>
     
     <lastmod>2021-02-28</lastmod>
@@ -249,20 +242,6 @@
   </url>
   
   <url>
-    <loc>https://unknown.yuzhouwan.com/tags/Test-Automation/</loc>
-    <lastmod>2021-03-07</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://unknown.yuzhouwan.com/tags/Automatic-Test/</loc>
-    <lastmod>2021-03-07</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://unknown.yuzhouwan.com/tags/BigData/</loc>
     <lastmod>2021-03-07</lastmod>
     <changefreq>daily</changefreq>
@@ -291,13 +270,6 @@
   </url>
   
   <url>
-    <loc>https://unknown.yuzhouwan.com/tags/Software-Test-Basic/</loc>
-    <lastmod>2021-03-07</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://unknown.yuzhouwan.com/tags/Regex/</loc>
     <lastmod>2021-03-07</lastmod>
     <changefreq>daily</changefreq>
@@ -305,14 +277,14 @@
   </url>
   
   <url>
-    <loc>https://unknown.yuzhouwan.com/tags/markdown/</loc>
+    <loc>https://unknown.yuzhouwan.com/tags/Neural-Network/</loc>
     <lastmod>2021-03-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://unknown.yuzhouwan.com/tags/Neural-Network/</loc>
+    <loc>https://unknown.yuzhouwan.com/tags/markdown/</loc>
     <lastmod>2021-03-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -327,6 +299,20 @@
   
   <url>
     <loc>https://unknown.yuzhouwan.com/tags/DataStructure/</loc>
+    <lastmod>2021-03-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://unknown.yuzhouwan.com/tags/Software-Test-Basic/</loc>
+    <lastmod>2021-03-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://unknown.yuzhouwan.com/tags/Automatic-Test/</loc>
     <lastmod>2021-03-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -426,13 +412,6 @@
   </url>
   
   <url>
-    <loc>https://unknown.yuzhouwan.com/categories/Java/</loc>
-    <lastmod>2021-03-07</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://unknown.yuzhouwan.com/categories/BigData/</loc>
     <lastmod>2021-03-07</lastmod>
     <changefreq>daily</changefreq>
@@ -461,13 +440,6 @@
   </url>
   
   <url>
-    <loc>https://unknown.yuzhouwan.com/categories/Computer-Basic/</loc>
-    <lastmod>2021-03-07</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://unknown.yuzhouwan.com/categories/Java-FrameWork/</loc>
     <lastmod>2021-03-07</lastmod>
     <changefreq>daily</changefreq>
@@ -475,7 +447,7 @@
   </url>
   
   <url>
-    <loc>https://unknown.yuzhouwan.com/categories/Computer-Basic/python/</loc>
+    <loc>https://unknown.yuzhouwan.com/categories/Computer-Basic/</loc>
     <lastmod>2021-03-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -483,6 +455,13 @@
   
   <url>
     <loc>https://unknown.yuzhouwan.com/categories/Computer-Basic/Interview/</loc>
+    <lastmod>2021-03-07</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://unknown.yuzhouwan.com/categories/Computer-Basic/python/</loc>
     <lastmod>2021-03-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
