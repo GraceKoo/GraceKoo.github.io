@@ -4,7 +4,21 @@
   <url>
     <loc>https://unknown.yuzhouwan.com/posts/252123234598/</loc>
     
-    <lastmod>2021-03-22</lastmod>
+    <lastmod>2021-06-06</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://unknown.yuzhouwan.com/posts/252123234598/</loc>
+    
+    <lastmod>2021-06-06</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://unknown.yuzhouwan.com/posts/55663/</loc>
+    
+    <lastmod>2021-06-06</lastmod>
     
   </url>
   
@@ -73,13 +87,6 @@
   
   <url>
     <loc>https://unknown.yuzhouwan.com/posts/22488/</loc>
-    
-    <lastmod>2020-11-30</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://unknown.yuzhouwan.com/posts/55663/</loc>
     
     <lastmod>2020-11-30</lastmod>
     
@@ -243,6 +250,13 @@
   
   <url>
     <loc>https://unknown.yuzhouwan.com/tags/ImageAlgorithm/</loc>
+    <lastmod>2021-06-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://unknown.yuzhouwan.com/tags/Java/</loc>
     <lastmod>2021-06-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -426,6 +440,13 @@
   </url>
   
   <url>
+    <loc>https://unknown.yuzhouwan.com/categories/Language/</loc>
+    <lastmod>2021-06-06</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://unknown.yuzhouwan.com/categories/BigData/</loc>
     <lastmod>2021-06-06</lastmod>
     <changefreq>daily</changefreq>
@@ -440,14 +461,14 @@
   </url>
   
   <url>
-    <loc>https://unknown.yuzhouwan.com/categories/Math/</loc>
+    <loc>https://unknown.yuzhouwan.com/categories/Machine-Learning/</loc>
     <lastmod>2021-06-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://unknown.yuzhouwan.com/categories/Machine-Learning/</loc>
+    <loc>https://unknown.yuzhouwan.com/categories/Math/</loc>
     <lastmod>2021-06-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -490,13 +511,6 @@
   
   <url>
     <loc>https://unknown.yuzhouwan.com/categories/Algorithm/</loc>
-    <lastmod>2021-06-06</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://unknown.yuzhouwan.com/categories/Language/</loc>
     <lastmod>2021-06-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
