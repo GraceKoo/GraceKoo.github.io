@@ -142,9 +142,9 @@
     <category term="Java" scheme="https://unknown.yuzhouwan.com/categories/Java/"/>
     
     
-    <category term="Automatic Test" scheme="https://unknown.yuzhouwan.com/tags/Automatic-Test/"/>
-    
     <category term="Test Automation" scheme="https://unknown.yuzhouwan.com/tags/Test-Automation/"/>
+    
+    <category term="Automatic Test" scheme="https://unknown.yuzhouwan.com/tags/Automatic-Test/"/>
     
   </entry>
   
@@ -526,9 +526,9 @@
     <category term="python" scheme="https://unknown.yuzhouwan.com/categories/Computer-Basic/python/"/>
     
     
-    <category term="Software Test Basic" scheme="https://unknown.yuzhouwan.com/tags/Software-Test-Basic/"/>
-    
     <category term="Automatic Test" scheme="https://unknown.yuzhouwan.com/tags/Automatic-Test/"/>
+    
+    <category term="Software Test Basic" scheme="https://unknown.yuzhouwan.com/tags/Software-Test-Basic/"/>
     
   </entry>
   
