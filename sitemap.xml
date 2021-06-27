@@ -270,13 +270,6 @@
   </url>
   
   <url>
-    <loc>https://unknown.yuzhouwan.com/tags/BigData/</loc>
-    <lastmod>2021-06-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://unknown.yuzhouwan.com/tags/Machine-Learning/</loc>
     <lastmod>2021-06-27</lastmod>
     <changefreq>daily</changefreq>
@@ -292,6 +285,13 @@
   
   <url>
     <loc>https://unknown.yuzhouwan.com/tags/Numpy/</loc>
+    <lastmod>2021-06-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://unknown.yuzhouwan.com/tags/BigData/</loc>
     <lastmod>2021-06-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -389,13 +389,6 @@
   </url>
   
   <url>
-    <loc>https://unknown.yuzhouwan.com/tags/CNN/</loc>
-    <lastmod>2021-06-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://unknown.yuzhouwan.com/tags/iPython/</loc>
     <lastmod>2021-06-27</lastmod>
     <changefreq>daily</changefreq>
@@ -411,6 +404,13 @@
   
   <url>
     <loc>https://unknown.yuzhouwan.com/tags/Matplotlib/</loc>
+    <lastmod>2021-06-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://unknown.yuzhouwan.com/tags/CNN/</loc>
     <lastmod>2021-06-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -447,13 +447,6 @@
   </url>
   
   <url>
-    <loc>https://unknown.yuzhouwan.com/categories/BigData/</loc>
-    <lastmod>2021-06-27</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://unknown.yuzhouwan.com/categories/Machine-Learning/</loc>
     <lastmod>2021-06-27</lastmod>
     <changefreq>daily</changefreq>
@@ -469,6 +462,13 @@
   
   <url>
     <loc>https://unknown.yuzhouwan.com/categories/DataView/</loc>
+    <lastmod>2021-06-27</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://unknown.yuzhouwan.com/categories/BigData/</loc>
     <lastmod>2021-06-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
