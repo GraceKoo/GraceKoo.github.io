@@ -270,13 +270,6 @@
   </url>
   
   <url>
-    <loc>https://unknown.yuzhouwan.com/tags/BigData/</loc>
-    <lastmod>2021-06-28</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://unknown.yuzhouwan.com/tags/Machine-Learning/</loc>
     <lastmod>2021-06-28</lastmod>
     <changefreq>daily</changefreq>
@@ -285,6 +278,13 @@
   
   <url>
     <loc>https://unknown.yuzhouwan.com/tags/Python/</loc>
+    <lastmod>2021-06-28</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://unknown.yuzhouwan.com/tags/BigData/</loc>
     <lastmod>2021-06-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -447,13 +447,6 @@
   </url>
   
   <url>
-    <loc>https://unknown.yuzhouwan.com/categories/BigData/</loc>
-    <lastmod>2021-06-28</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://unknown.yuzhouwan.com/categories/Machine-Learning/</loc>
     <lastmod>2021-06-28</lastmod>
     <changefreq>daily</changefreq>
@@ -461,7 +454,7 @@
   </url>
   
   <url>
-    <loc>https://unknown.yuzhouwan.com/categories/Math/</loc>
+    <loc>https://unknown.yuzhouwan.com/categories/BigData/</loc>
     <lastmod>2021-06-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -469,6 +462,13 @@
   
   <url>
     <loc>https://unknown.yuzhouwan.com/categories/DataView/</loc>
+    <lastmod>2021-06-28</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://unknown.yuzhouwan.com/categories/Math/</loc>
     <lastmod>2021-06-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
