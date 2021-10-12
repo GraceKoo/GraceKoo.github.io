@@ -355,9 +355,52 @@
 <figure class="highlight xml"><table><tbody><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">suite</span> <span class="attr">name</span>=<span class="string">"thread"</span> <span class="attr">parallel</span> = <span class="string">"tests"</span> <span class="attr">threads-count</span> = <span class="string">"2"</span> &gt;</span></span><br></pre></td></tr></tbody></table></figure>
 <h2 id="超时测试"><a href="#超时测试" class="headerlink" title="超时测试"></a>超时测试</h2><figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.course.testng;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.testng.annotations.Test;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TimeoutTest</span> </span>{</span><br><span class="line">    <span class="meta">@Test(timeOut = 3000)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testSuccess</span> <span class="params">()</span></span>{</span><br><span class="line">        System.out.println(<span class="string">"超时测试"</span>);</span><br><span class="line">    }</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Test(timeOut = 2000)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">testFail</span><span class="params">()</span> <span class="keyword">throws</span> InterruptedException </span>{</span><br><span class="line">        Thread.sleep(<span class="number">3000</span>);</span><br><span class="line">        System.out.println(<span class="string">"超时测试"</span>);</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
 <h2 id="忽略测试"><a href="#忽略测试" class="headerlink" title="忽略测试"></a>忽略测试</h2><figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">IgnoreTest</span></span>{</span><br><span class="line">  <span class="meta">@Test(enabled = false)</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">ignore</span><span class="params">()</span></span>{</span><br><span class="line">    System.out.println(<span class="string">"忽略测试"</span>);</span><br><span class="line">  }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<h1 id="Mock框架"><a href="#Mock框架" class="headerlink" title="Mock框架"></a>Mock框架</h1><p>Mock框架是github上的一个开源项目，用于模拟各种HTTP请求。</p>
+<h1 id="Mock框架"><a href="#Mock框架" class="headerlink" title="Mock框架"></a>Mock框架</h1><p>Mock框架是github上的一个开源项目，用于模拟各种HTTP请求。下载</p>
+<p>moco-runner-0.11.0-standalone.jar</p>
 <figure class="highlight http"><table><tbody><tr><td class="code"><pre><span class="line"><span class="attribute">https://repo1.maven.org/maven2/com/github/dreamhead/moco-runner/0.11.0/</span></span><br></pre></td></tr></tbody></table></figure>
-<h2 id="Mock的启动"><a href="#Mock的启动" class="headerlink" title="Mock的启动"></a>Mock的启动</h2><h2 id="带参数的get方法实现"><a href="#带参数的get方法实现" class="headerlink" title="带参数的get方法实现"></a>带参数的get方法实现</h2><h2 id="在mock中配置post请求"><a href="#在mock中配置post请求" class="headerlink" title="在mock中配置post请求"></a>在mock中配置post请求</h2><h2 id="带参数的post方法实现"><a href="#带参数的post方法实现" class="headerlink" title="带参数的post方法实现"></a>带参数的post方法实现</h2><h2 id="带cookies信息的get请求"><a href="#带cookies信息的get请求" class="headerlink" title="带cookies信息的get请求"></a>带cookies信息的get请求</h2><h2 id="带cookies信息的post请求"><a href="#带cookies信息的post请求" class="headerlink" title="带cookies信息的post请求"></a>带cookies信息的post请求</h2><h2 id="带有header信息的mock请求"><a href="#带有header信息的mock请求" class="headerlink" title="带有header信息的mock请求"></a>带有header信息的mock请求</h2><h2 id="实现请求重定向"><a href="#实现请求重定向" class="headerlink" title="实现请求重定向"></a>实现请求重定向</h2>]]></content>
+<h2 id="Mock的启动"><a href="#Mock的启动" class="headerlink" title="Mock的启动"></a>Mock的启动</h2><p>例如如下命令来启动</p>
+ <figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line">java -jar ./moco-runner-<span class="number">0.11</span><span class="number">.0</span>-standalone.jar http -p <span class="number">8899</span> -c startup.json</span><br></pre></td></tr></tbody></table></figure>
+<p>startup.json如下</p>
+<figure class="highlight json"><table><tbody><tr><td class="code"><pre><span class="line">[</span><br><span class="line">  {</span><br><span class="line">    <span class="attr">"description"</span>: <span class="string">"first mock sample"</span>,</span><br><span class="line">    <span class="attr">"request"</span>: {</span><br><span class="line">      <span class="attr">"uri"</span>: <span class="string">"/demo"</span></span><br><span class="line">    },</span><br><span class="line">    <span class="attr">"response"</span>: {</span><br><span class="line">      <span class="attr">"text"</span>: <span class="string">"first mock demo"</span></span><br><span class="line">    }</span><br><span class="line">  }</span><br><span class="line">]</span><br></pre></td></tr></tbody></table></figure>
+<p>可在浏览器中打开如下网址</p>
+<figure class="highlight http"><table><tbody><tr><td class="code"><pre><span class="line"><span class="attribute">http://127.0.0.1:8899/demo</span></span><br></pre></td></tr></tbody></table></figure>
+<p><img data-src="/images/Java/AutomationTest/firstmockdemo.png" alt="mock demo"></p>
+<h2 id="在mock中配置get请求"><a href="#在mock中配置get请求" class="headerlink" title="在mock中配置get请求"></a>在mock中配置get请求</h2><p>startupget.json里面用于模拟一个get请求</p>
+<ul>
+<li>下面是一个不带参数的get请求</li>
+</ul>
+<figure class="highlight json"><table><tbody><tr><td class="code"><pre><span class="line">[</span><br><span class="line">  {</span><br><span class="line">    <span class="attr">"description"</span>: <span class="string">"mock a get request"</span>,</span><br><span class="line">    <span class="attr">"request"</span>: {</span><br><span class="line">      <span class="attr">"uri"</span>: <span class="string">"/getdemo"</span>,</span><br><span class="line">      <span class="attr">"method"</span>: <span class="string">"get"</span></span><br><span class="line">    },</span><br><span class="line">    <span class="attr">"response"</span>: {</span><br><span class="line">      <span class="attr">"text"</span>: <span class="string">"这是一个没有参数的get请求"</span></span><br><span class="line">    }</span><br><span class="line">  }</span><br><span class="line">]</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">java -jar ./moco-runner-0.11.0-standalone.jar http -p 8899 -c startupget.json</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight http"><table><tbody><tr><td class="code"><pre><span class="line"><span class="attribute">http://127.0.0.1:8899/getdemo</span></span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>下面是一个带参数的get请求</li>
+</ul>
+<figure class="highlight json"><table><tbody><tr><td class="code"><pre><span class="line">[</span><br><span class="line">  {</span><br><span class="line">    <span class="attr">"description"</span>: <span class="string">"mock a get request"</span>,</span><br><span class="line">    <span class="attr">"request"</span>: {</span><br><span class="line">      <span class="attr">"uri"</span>: <span class="string">"/getwithparam"</span>,</span><br><span class="line">      <span class="attr">"method"</span>: <span class="string">"get"</span>,</span><br><span class="line">      <span class="attr">"queries"</span>: {</span><br><span class="line">        <span class="attr">"name"</span>: <span class="string">"hi"</span>,</span><br><span class="line">        <span class="attr">"age"</span>: <span class="string">"18"</span></span><br><span class="line">      }</span><br><span class="line">    },</span><br><span class="line">    <span class="attr">"response"</span>: {</span><br><span class="line">      <span class="attr">"text"</span>: <span class="string">"这是一个带参数的get请求"</span></span><br><span class="line">    }</span><br><span class="line">  }</span><br><span class="line">]</span><br></pre></td></tr></tbody></table></figure>
+<p>请求</p>
+<figure class="highlight"><table><tbody><tr><td class="code"><pre><span class="line">http://127.0.0.1:8899/getwithparam?name=hi&amp;age=18</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="在mock中配置post请求"><a href="#在mock中配置post请求" class="headerlink" title="在mock中配置post请求"></a>在mock中配置post请求</h2><ul>
+<li>不带参数的post请求</li>
+</ul>
+<figure class="highlight json"><table><tbody><tr><td class="code"><pre><span class="line">[</span><br><span class="line">  {</span><br><span class="line">    <span class="attr">"description"</span>: <span class="string">"mock a post request"</span>,</span><br><span class="line">    <span class="attr">"request"</span>: {</span><br><span class="line">      <span class="attr">"uri"</span>: <span class="string">"/getdemo"</span>,</span><br><span class="line">      <span class="attr">"method"</span>: <span class="string">"post"</span></span><br><span class="line">    },</span><br><span class="line">    <span class="attr">"response"</span>: {</span><br><span class="line">      <span class="attr">"text"</span>: <span class="string">"这是一个没有参数的post请求"</span></span><br><span class="line">    }</span><br><span class="line">  }</span><br><span class="line">]</span><br></pre></td></tr></tbody></table></figure>
+<p>因为浏览器中只能输入get请求，所以我们用insomina或者postman来模拟post请求</p>
+<ol>
+<li>启动服务</li>
+</ol>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">java -jar ./moco-runner-0.11.0-standalone.jar http -p 8899 -c startuppost.json</span><br></pre></td></tr></tbody></table></figure>
+<ol>
+<li>insomina发出post请求</li>
+</ol>
+<p><img data-src="/images/Java/AutomationTest/mockpost.png" alt="insomina mock post"></p>
+<ul>
+<li>带参数的post请求</li>
+</ul>
+<figure class="highlight json"><table><tbody><tr><td class="code"><pre><span class="line">[</span><br><span class="line">  {</span><br><span class="line">    <span class="attr">"description"</span>: <span class="string">"mock a post request"</span>,</span><br><span class="line">    <span class="attr">"request"</span>: {</span><br><span class="line">      <span class="attr">"uri"</span>: <span class="string">"/getdemo"</span>,</span><br><span class="line">      <span class="attr">"method"</span>: <span class="string">"post"</span>,</span><br><span class="line">      <span class="attr">"forms"</span>: {</span><br><span class="line">        <span class="attr">"name"</span>: <span class="string">"hi"</span>,</span><br><span class="line">        <span class="attr">"age"</span>: <span class="string">"18"</span></span><br><span class="line">      }</span><br><span class="line">    },</span><br><span class="line">    <span class="attr">"response"</span>: {</span><br><span class="line">      <span class="attr">"text"</span>: <span class="string">"这是一个带参数的post请求"</span></span><br><span class="line">    }</span><br><span class="line">  }</span><br><span class="line">]</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="带cookies信息的get请求"><a href="#带cookies信息的get请求" class="headerlink" title="带cookies信息的get请求"></a>带cookies信息的get请求</h2><figure class="highlight json"><table><tbody><tr><td class="code"><pre><span class="line">[</span><br><span class="line">  {</span><br><span class="line">    <span class="attr">"description"</span>: <span class="string">"mock a get request with cookies"</span>,</span><br><span class="line">    <span class="attr">"request"</span>: {</span><br><span class="line">      <span class="attr">"uri"</span>: <span class="string">"/get/with/cookies"</span>,</span><br><span class="line">      <span class="attr">"method"</span>: <span class="string">"get"</span>,</span><br><span class="line">      <span class="attr">"cookies"</span>:{</span><br><span class="line">        <span class="attr">"login"</span>:<span class="string">"true"</span></span><br><span class="line">      }</span><br><span class="line">    },</span><br><span class="line">    <span class="attr">"response"</span>: {</span><br><span class="line">      <span class="attr">"text"</span>: <span class="string">"这是一个带cookies的get请求"</span></span><br><span class="line">    }</span><br><span class="line">  }</span><br><span class="line">]</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="带cookies、body信息的post请求"><a href="#带cookies、body信息的post请求" class="headerlink" title="带cookies、body信息的post请求"></a>带cookies、body信息的post请求</h2><p>其中json内的信息需要加到body里</p>
+<figure class="highlight json"><table><tbody><tr><td class="code"><pre><span class="line">[</span><br><span class="line">  {</span><br><span class="line">    <span class="attr">"description"</span>: <span class="string">"mock a post request with cookies"</span>,</span><br><span class="line">    <span class="attr">"request"</span>: {</span><br><span class="line">      <span class="attr">"uri"</span>: <span class="string">"/post/with/cookies"</span>,</span><br><span class="line">      <span class="attr">"method"</span>: <span class="string">"post"</span>,</span><br><span class="line">      <span class="attr">"cookies"</span>:{</span><br><span class="line">        <span class="attr">"login"</span>:<span class="string">"true"</span></span><br><span class="line">      },</span><br><span class="line">      <span class="attr">"json"</span>: {</span><br><span class="line">        <span class="attr">"name"</span>: <span class="string">"grace"</span>,</span><br><span class="line">        <span class="attr">"age"</span>: <span class="string">"18"</span></span><br><span class="line">      }</span><br><span class="line">    },</span><br><span class="line">    <span class="attr">"response"</span>: {</span><br><span class="line">      <span class="attr">"status"</span>: <span class="number">200</span>,</span><br><span class="line">      <span class="attr">"json"</span>: {</span><br><span class="line">      	<span class="attr">"isSuccess"</span>: <span class="string">"success"</span>,</span><br><span class="line">        <span class="attr">"status"</span>: <span class="number">1</span></span><br><span class="line">    	}</span><br><span class="line">    }</span><br><span class="line">  }</span><br><span class="line">]</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="带有headers信息的mock请求"><a href="#带有headers信息的mock请求" class="headerlink" title="带有headers信息的mock请求"></a>带有headers信息的mock请求</h2><figure class="highlight json"><table><tbody><tr><td class="code"><pre><span class="line">[</span><br><span class="line">  {</span><br><span class="line">    <span class="attr">"description"</span>: <span class="string">"mock a post request with headers"</span>,</span><br><span class="line">    <span class="attr">"request"</span>: {</span><br><span class="line">      <span class="attr">"uri"</span>: <span class="string">"/post/with/headers"</span>,</span><br><span class="line">      <span class="attr">"method"</span>: <span class="string">"post"</span>,</span><br><span class="line">      <span class="attr">"headers"</span>:{</span><br><span class="line">        <span class="attr">"content-type"</span>:<span class="string">"application/json"</span></span><br><span class="line">      },</span><br><span class="line">      <span class="attr">"json"</span>:{</span><br><span class="line">        <span class="attr">"name"</span>: <span class="string">"grace"</span>,</span><br><span class="line">        <span class="attr">"gender"</span>: <span class="string">"woman"</span></span><br><span class="line">      }</span><br><span class="line">    },</span><br><span class="line">    <span class="attr">"response"</span>: {</span><br><span class="line">      <span class="attr">"json"</span>: {</span><br><span class="line">        <span class="attr">"isSuccess"</span>: <span class="string">"success"</span>,</span><br><span class="line">        <span class="attr">"status"</span>: <span class="string">"1"</span></span><br><span class="line">      }</span><br><span class="line">    }</span><br><span class="line">  }</span><br><span class="line">]</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="实现请求重定向"><a href="#实现请求重定向" class="headerlink" title="实现请求重定向"></a>实现请求重定向</h2><figure class="highlight json"><table><tbody><tr><td class="code"><pre><span class="line">[</span><br><span class="line">  {</span><br><span class="line">    <span class="attr">"description"</span>: <span class="string">"mock a redirect request"</span>,</span><br><span class="line">    <span class="attr">"request"</span>: {</span><br><span class="line">      <span class="attr">"uri"</span>: <span class="string">"/redirect"</span>,</span><br><span class="line">      <span class="attr">"redirectTo"</span>: <span class="string">"http://www.baidu.com"</span></span><br><span class="line">    }</span><br><span class="line">  },</span><br><span class="line">  {</span><br><span class="line">    <span class="attr">"description"</span>: <span class="string">"重定向的请求"</span>,</span><br><span class="line">    <span class="attr">"request"</span>: {</span><br><span class="line">      <span class="attr">"uri"</span>: <span class="string">"/redirect/toPath"</span>,</span><br><span class="line">      <span class="attr">"redirectTo"</span>: <span class="string">"/redirect/new"</span></span><br><span class="line">    }</span><br><span class="line">  },</span><br><span class="line">   {</span><br><span class="line">    <span class="attr">"description"</span>: <span class="string">"被重定向的请求"</span>,</span><br><span class="line">    <span class="attr">"request"</span>: {</span><br><span class="line">      <span class="attr">"uri"</span>: <span class="string">"/redirect/new"</span>,</span><br><span class="line">    },</span><br><span class="line">    <span class="attr">"response"</span>:{</span><br><span class="line">      <span class="attr">"test"</span>: <span class="string">"重定向成功"</span></span><br><span class="line">    }</span><br><span class="line">  }</span><br><span class="line">]</span><br></pre></td></tr></tbody></table></figure>
+]]></content>
       <categories>
         <category>Java</category>
       </categories>
@@ -465,6 +508,90 @@
       </categories>
       <tags>
         <tag>BigData</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>AI中的数学知识</title>
+    <url>/posts/59545/</url>
+    <content><![CDATA[<h1 id="线性代数部分"><a href="#线性代数部分" class="headerlink" title="线性代数部分"></a>线性代数部分</h1><h2 id="矩阵及其运算合集"><a href="#矩阵及其运算合集" class="headerlink" title="矩阵及其运算合集"></a>矩阵及其运算合集</h2><a id="more"></a>
+<h2 id="矩阵的行列式"><a href="#矩阵的行列式" class="headerlink" title="矩阵的行列式"></a>矩阵的行列式</h2><h2 id="矩阵的逆"><a href="#矩阵的逆" class="headerlink" title="矩阵的逆"></a>矩阵的逆</h2><h2 id="矩阵的初等变换"><a href="#矩阵的初等变换" class="headerlink" title="矩阵的初等变换"></a>矩阵的初等变换</h2><h2 id="矩阵的秩"><a href="#矩阵的秩" class="headerlink" title="矩阵的秩"></a>矩阵的秩</h2><h2 id="矩阵的特征值和特征向量"><a href="#矩阵的特征值和特征向量" class="headerlink" title="矩阵的特征值和特征向量"></a>矩阵的特征值和特征向量</h2><h2 id="矩阵对角化二次型"><a href="#矩阵对角化二次型" class="headerlink" title="矩阵对角化二次型"></a>矩阵对角化二次型</h2><h2 id="SVD分解的证明"><a href="#SVD分解的证明" class="headerlink" title="SVD分解的证明"></a>SVD分解的证明</h2><h2 id="SVD的应用与多元线性回归"><a href="#SVD的应用与多元线性回归" class="headerlink" title="SVD的应用与多元线性回归"></a>SVD的应用与多元线性回归</h2><h1 id="微积分部分"><a href="#微积分部分" class="headerlink" title="微积分部分"></a>微积分部分</h1><h2 id="导数中的中值定理"><a href="#导数中的中值定理" class="headerlink" title="导数中的中值定理"></a>导数中的中值定理</h2><h2 id="泰勒公式函数极值定积分"><a href="#泰勒公式函数极值定积分" class="headerlink" title="泰勒公式函数极值定积分"></a>泰勒公式函数极值定积分</h2><h2 id="多元微积分"><a href="#多元微积分" class="headerlink" title="多元微积分"></a>多元微积分</h2><h1 id="概率论部分"><a href="#概率论部分" class="headerlink" title="概率论部分"></a>概率论部分</h1><h2 id="概率基础"><a href="#概率基础" class="headerlink" title="概率基础"></a>概率基础</h2><h2 id="随机变量与多维随机变量"><a href="#随机变量与多维随机变量" class="headerlink" title="随机变量与多维随机变量"></a>随机变量与多维随机变量</h2><h2 id="期望与方差"><a href="#期望与方差" class="headerlink" title="期望与方差"></a>期望与方差</h2><h2 id="参数的估计"><a href="#参数的估计" class="headerlink" title="参数的估计"></a>参数的估计</h2><h1 id="最优化理论"><a href="#最优化理论" class="headerlink" title="最优化理论"></a>最优化理论</h1><h2 id="无约束最优化"><a href="#无约束最优化" class="headerlink" title="无约束最优化"></a>无约束最优化</h2><h2 id="带约束的最优化"><a href="#带约束的最优化" class="headerlink" title="带约束的最优化"></a>带约束的最优化</h2><h2 id="对偶理论"><a href="#对偶理论" class="headerlink" title="对偶理论"></a>对偶理论</h2>]]></content>
+      <categories>
+        <category>Math</category>
+      </categories>
+      <tags>
+        <tag>Machine Learning</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Numpy基础</title>
+    <url>/posts/21763/</url>
+    <content><![CDATA[<p>Numpy是Python中用于科学计算的核心库。它提供了高性能的多维数组对象，以及相关工具</p>
+<h1 id="绘制雪花"><a href="#绘制雪花" class="headerlink" title="绘制雪花"></a>绘制雪花</h1><p>转自博客上看到的一位大牛的程序，利用Numpy + matplotlib 绘制雪花，效果如下：</p>
+<p><img data-src="/images/snow.jpg" alt="snow"></p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">plt.rcParams[<span class="string">'font.sans-serif'</span>] = [<span class="string">'FangSong'</span>]  <span class="comment"># 指定默认字体</span></span><br><span class="line">plt.rcParams[<span class="string">'axes.unicode_minus'</span>] = <span class="literal">False</span>  <span class="comment"># 解决中文显示为方块的问题</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">rotate</span>(<span class="params">p, d</span>):</span></span><br><span class="line">    <span class="string">"""返回点p绕原点逆时针旋转d度的坐标"""</span></span><br><span class="line"></span><br><span class="line">    a = np.radians(d)</span><br><span class="line">    m = np.array([[np.cos(a), np.sin(a)], [-np.sin(a), np.cos(a)]])</span><br><span class="line">    <span class="keyword">return</span> np.dot(p, m)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">koch_curve</span>(<span class="params">p, q</span>):</span></span><br><span class="line">    <span class="string">"""将线段pq生成科赫曲线，返回uvw三个点"""</span></span><br><span class="line"></span><br><span class="line">    p, q = np.array(p), np.array(q)</span><br><span class="line">    u = p + (q - p) / <span class="number">3</span>  <span class="comment"># 三等分点u的坐标</span></span><br><span class="line">    v = q - (q - p) / <span class="number">3</span>  <span class="comment"># 三等分点V的坐标</span></span><br><span class="line">    w = rotate(v - u, <span class="number">60</span>) + u  <span class="comment"># 线段uv绕u点逆时针旋转60°得到点w的坐标</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> u.tolist(), v.tolist(), w.tolist()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">snow</span>(<span class="params">triangle, k</span>):</span></span><br><span class="line">    <span class="string">"""给定三角形，生成封闭的科赫雪花"""</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(k):</span><br><span class="line">        result = <span class="built_in">list</span>()</span><br><span class="line">        t_len = <span class="built_in">len</span>(triangle)</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(t_len):</span><br><span class="line">            p = triangle[j]</span><br><span class="line">            q = triangle[(j + <span class="number">1</span>) % t_len]</span><br><span class="line">            u, v, w = koch_curve(p, q)</span><br><span class="line">            result.extend([p, u, w, v])</span><br><span class="line">        triangle = result.copy()</span><br><span class="line"></span><br><span class="line">    triangle.append(triangle[<span class="number">0</span>])</span><br><span class="line">    <span class="keyword">return</span> triangle</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">plot_snow</span>(<span class="params">snow_list</span>):</span></span><br><span class="line">    <span class="string">"""绘制雪花"""</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> triangle, k <span class="keyword">in</span> snow_list:</span><br><span class="line">        data = np.array(snow(triangle, k))</span><br><span class="line">        x, y = np.split(data, <span class="number">2</span>, axis=<span class="number">1</span>)</span><br><span class="line">        plt.plot(x, y)</span><br><span class="line"></span><br><span class="line">    plt.axis(<span class="string">'equal'</span>)</span><br><span class="line">    plt.show()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">snow_list = [</span><br><span class="line">    ([(<span class="number">0</span>, <span class="number">0</span>), (<span class="number">0.5</span>, <span class="number">0.8660254</span>), (<span class="number">1</span>, <span class="number">0</span>)], <span class="number">5</span>),</span><br><span class="line">    ([(<span class="number">1.1</span>, <span class="number">0.4</span>), (<span class="number">1.35</span>, <span class="number">0.8330127</span>), (<span class="number">1.6</span>, <span class="number">0.4</span>)], <span class="number">4</span>),</span><br><span class="line">    ([(<span class="number">1.1</span>, -<span class="number">0.1</span>), (<span class="number">1.25</span>, <span class="number">0.15980761</span>), (<span class="number">1.4</span>, -<span class="number">0.1</span>)], <span class="number">3</span>)</span><br><span class="line">]</span><br><span class="line">plot_snow(snow_list)</span><br></pre></td></tr></tbody></table></figure>
+<a id="more"></a>
+<h1 id="数组Arrays"><a href="#数组Arrays" class="headerlink" title="数组Arrays"></a>数组Arrays</h1><p>numpy数组是一个由不同数值组成的网格。网格中的数据都是<strong>同一种数据类型</strong>，可以通过非负整型数的元组来访问。</p>
+<p>我们可以从列表创建数组，然后利用方括号访问其中的元素。</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">a = np.array([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>])   <span class="comment">#创建一个一维数组</span></span><br><span class="line">print(<span class="built_in">type</span>(a))</span><br><span class="line">print(a[<span class="number">0</span>],a[<span class="number">1</span>],a[<span class="number">2</span>])</span><br><span class="line">a[<span class="number">0</span>] = <span class="number">5</span></span><br><span class="line">print(a)</span><br><span class="line"></span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> '<span class="title">numpy</span>.<span class="title">ndarray</span>'&gt;</span></span><br><span class="line"><span class="class">1 2 3</span></span><br><span class="line"><span class="class">[5 2 3]</span></span><br></pre></td></tr></tbody></table></figure>
+<h1 id="函数shape-用法"><a href="#函数shape-用法" class="headerlink" title="函数shape()用法"></a>函数shape()用法</h1><p>shape函数功能室查看矩阵或者数组的<strong>维度</strong>。</p>
+<p>例如：建立一个3✖3的单位矩阵e，e.shape()为（3，3），<strong>表示三行三列</strong>，第一维的长度是3，第二维的长度也是3。</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">e = np.eye(<span class="number">3</span>)</span><br><span class="line">print(e)</span><br><span class="line">print(e.shape)</span><br><span class="line">print(e[<span class="number">0</span>,<span class="number">0</span>],e[<span class="number">1</span>,<span class="number">1</span>])</span><br><span class="line"></span><br><span class="line">[[ <span class="number">1.</span>  <span class="number">0.</span>  <span class="number">0.</span>]</span><br><span class="line"> [ <span class="number">0.</span>  <span class="number">1.</span>  <span class="number">0.</span>]</span><br><span class="line"> [ <span class="number">0.</span>  <span class="number">0.</span>  <span class="number">1.</span>]]</span><br><span class="line">(<span class="number">3</span>, <span class="number">3</span>)</span><br><span class="line"><span class="number">1.0</span> <span class="number">1.0</span></span><br></pre></td></tr></tbody></table></figure>
+<p>建立一个一维矩阵b，b.shape为矩阵的长度。</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">b = np.array([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>])</span><br><span class="line">print(b.shape)</span><br><span class="line"></span><br><span class="line">(<span class="number">4</span>,)</span><br></pre></td></tr></tbody></table></figure>
+<p>建立一个4✖2的矩阵c，c.shape[1]为第一维的长度，c.shape[0]为第二维的长度，c.shape[1]为第一维的长度。</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">c = np.array([[<span class="number">1</span>,<span class="number">2</span>],[<span class="number">3</span>,<span class="number">5</span>],[<span class="number">9</span>,<span class="number">5</span>],[<span class="number">4</span>,<span class="number">0</span>]])</span><br><span class="line">print(c.shape[<span class="number">0</span>])</span><br><span class="line">print(c.shape[<span class="number">1</span>])</span><br><span class="line"></span><br><span class="line"><span class="number">4</span></span><br><span class="line"><span class="number">2</span></span><br></pre></td></tr></tbody></table></figure>
+<p>一个单独的数值，返回值为空。</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">np.shape(<span class="number">3</span>)</span><br><span class="line"></span><br><span class="line">()</span><br></pre></td></tr></tbody></table></figure>
+<h1 id="其他创建数组的方法"><a href="#其他创建数组的方法" class="headerlink" title="其他创建数组的方法"></a>其他创建数组的方法</h1><p>Numpy还提供了很多其他创建数组的方法：</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">a = np.zeros((<span class="number">2</span>,<span class="number">3</span>))        <span class="comment">#创建一个2✖️3全0数组</span></span><br><span class="line">print(a)</span><br><span class="line">print(<span class="string">"\n"</span>)</span><br><span class="line"></span><br><span class="line">b = np.ones((<span class="number">1</span>,<span class="number">2</span>))         <span class="comment">#创建一个1✖️2全1数组</span></span><br><span class="line">print(b)</span><br><span class="line">print(<span class="string">"\n"</span>)</span><br><span class="line"></span><br><span class="line">c = np.full((<span class="number">4</span>,<span class="number">2</span>),<span class="number">7</span>)       <span class="comment">#创建一个4✖️2的全7数组</span></span><br><span class="line">print(c)</span><br><span class="line">print(<span class="string">"\n"</span>)</span><br><span class="line"></span><br><span class="line">d = np.eye(<span class="number">2</span>)              <span class="comment">#创建一个二维单位矩阵</span></span><br><span class="line">print(d)</span><br><span class="line">print(<span class="string">"\n"</span>)</span><br><span class="line"></span><br><span class="line">e = np.random.random((<span class="number">2</span>,<span class="number">2</span>))<span class="comment">#创建一个2✖️2由随机数字组成的数组</span></span><br><span class="line">print(e)</span><br><span class="line"></span><br><span class="line">[[ <span class="number">0.</span>  <span class="number">0.</span>  <span class="number">0.</span>]</span><br><span class="line"> [ <span class="number">0.</span>  <span class="number">0.</span>  <span class="number">0.</span>]]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">[[ <span class="number">1.</span>  <span class="number">1.</span>]]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">[[<span class="number">7</span> <span class="number">7</span>]</span><br><span class="line"> [<span class="number">7</span> <span class="number">7</span>]</span><br><span class="line"> [<span class="number">7</span> <span class="number">7</span>]</span><br><span class="line"> [<span class="number">7</span> <span class="number">7</span>]]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">[[ <span class="number">1.</span>  <span class="number">0.</span>]</span><br><span class="line"> [ <span class="number">0.</span>  <span class="number">1.</span>]]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">[[ <span class="number">0.82662589</span>  <span class="number">0.93604335</span>]</span><br><span class="line"> [ <span class="number">0.20764393</span>  <span class="number">0.53211415</span>]]</span><br></pre></td></tr></tbody></table></figure>
+<h1 id="访问数组"><a href="#访问数组" class="headerlink" title="访问数组"></a>访问数组</h1><h2 id="切片"><a href="#切片" class="headerlink" title="切片"></a>切片</h2><p>切片：和Python列表类似，numpy数组可以使用切片语法。因为数组是多维的，所以必须为每个维度指定好切片。</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"><span class="comment">#创建一个3✖️4的数组</span></span><br><span class="line">a = np.array([[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>],[<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>],[<span class="number">9</span>,<span class="number">10</span>,<span class="number">11</span>,<span class="number">12</span>]])</span><br><span class="line">print(a)</span><br><span class="line">print(<span class="string">"\n"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#利用切片来截取前两行，第1到2列。注意这里“：2”是第0，1行，不包含第二行，与range()相同</span></span><br><span class="line">b = a[:<span class="number">2</span>,<span class="number">1</span>:<span class="number">3</span>]</span><br><span class="line">print(b)</span><br><span class="line">print(<span class="string">"\n"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#切片是原数组的一部分，所以改变切片，原数组也会改变</span></span><br><span class="line">print(a[<span class="number">0</span>,<span class="number">1</span>])</span><br><span class="line">b[<span class="number">0</span>,<span class="number">0</span>] = <span class="number">77</span></span><br><span class="line">print(a)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">[[ <span class="number">1</span>  <span class="number">2</span>  <span class="number">3</span>  <span class="number">4</span>]</span><br><span class="line"> [ <span class="number">5</span>  <span class="number">6</span>  <span class="number">7</span>  <span class="number">8</span>]</span><br><span class="line"> [ <span class="number">9</span> <span class="number">10</span> <span class="number">11</span> <span class="number">12</span>]]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">[[<span class="number">2</span> <span class="number">3</span>]</span><br><span class="line"> [<span class="number">6</span> <span class="number">7</span>]]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="number">2</span></span><br><span class="line">[[ <span class="number">1</span> <span class="number">77</span>  <span class="number">3</span>  <span class="number">4</span>]</span><br><span class="line"> [ <span class="number">5</span>  <span class="number">6</span>  <span class="number">7</span>  <span class="number">8</span>]</span><br><span class="line"> [ <span class="number">9</span> <span class="number">10</span> <span class="number">11</span> <span class="number">12</span>]]</span><br></pre></td></tr></tbody></table></figure>
+<p>你可以<strong>同时使用整型和切片语法来访问数组</strong>。但是，这样<strong>会产生一个比原数组低阶的新数组。</strong></p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"><span class="comment">#3✖️4</span></span><br><span class="line">a = np.array([[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>],[<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>],[<span class="number">9</span>,<span class="number">10</span>,<span class="number">11</span>,<span class="number">12</span>]])</span><br><span class="line">print(a)</span><br><span class="line">print(a.shape)</span><br><span class="line">print(<span class="string">"\n"</span>)</span><br><span class="line"></span><br><span class="line">row_r1 = a[<span class="number">1</span>,:]</span><br><span class="line">row_r2 = a[<span class="number">1</span>:<span class="number">2</span>,:]</span><br><span class="line"></span><br><span class="line">print(row_r1)</span><br><span class="line">print(row_r1.shape)</span><br><span class="line">print(<span class="string">"\n"</span>)</span><br><span class="line"></span><br><span class="line">print(row_r2)</span><br><span class="line">print(row_r2.shape)</span><br><span class="line">print(<span class="string">"\n"</span>)</span><br><span class="line"></span><br><span class="line">[[ <span class="number">1</span>  <span class="number">2</span>  <span class="number">3</span>  <span class="number">4</span>]</span><br><span class="line"> [ <span class="number">5</span>  <span class="number">6</span>  <span class="number">7</span>  <span class="number">8</span>]</span><br><span class="line"> [ <span class="number">9</span> <span class="number">10</span> <span class="number">11</span> <span class="number">12</span>]]</span><br><span class="line">(<span class="number">3</span>, <span class="number">4</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">[<span class="number">5</span> <span class="number">6</span> <span class="number">7</span> <span class="number">8</span>]</span><br><span class="line">(<span class="number">4</span>,)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">[[<span class="number">5</span> <span class="number">6</span> <span class="number">7</span> <span class="number">8</span>]]</span><br><span class="line">(<span class="number">1</span>, <span class="number">4</span>)</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="整型数组访问"><a href="#整型数组访问" class="headerlink" title="整型数组访问"></a>整型数组访问</h2><p> 当我们使用切片语法访问数组时，得到的总是原数组的一个子集。整型数组访问允许我们利用其他数组的数据构建一个新的数组。</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">a = np.array([[<span class="number">1</span>,<span class="number">2</span>],[<span class="number">3</span>,<span class="number">4</span>],[<span class="number">5</span>,<span class="number">6</span>]])</span><br><span class="line">print(a)</span><br><span class="line">print(<span class="string">"\n"</span>)</span><br><span class="line"></span><br><span class="line">print(a[[<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>],[<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>]])</span><br><span class="line"></span><br><span class="line"><span class="comment">#上面的print等价于</span></span><br><span class="line">print([a[<span class="number">0</span>,<span class="number">0</span>],a[<span class="number">1</span>,<span class="number">1</span>],a[<span class="number">2</span>,<span class="number">0</span>]])</span><br><span class="line"></span><br><span class="line">[[<span class="number">1</span> <span class="number">2</span>]</span><br><span class="line"> [<span class="number">3</span> <span class="number">4</span>]</span><br><span class="line"> [<span class="number">5</span> <span class="number">6</span>]]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">[[<span class="number">1</span> <span class="number">4</span> <span class="number">5</span>]]</span><br><span class="line">[<span class="number">1</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br></pre></td></tr></tbody></table></figure>
+<p>整型数组访问语法还有一个有用的技巧，可以用来选择或者更改矩阵中每行中的一个元素：</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">a = np.array([[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],[<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>],[<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>],[<span class="number">10</span>,<span class="number">11</span>,<span class="number">12</span>]])</span><br><span class="line">print(a)</span><br><span class="line">print(<span class="string">"\n"</span>)</span><br><span class="line"></span><br><span class="line">b = np.array([<span class="number">0</span>,<span class="number">2</span>,<span class="number">0</span>,<span class="number">1</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment">#利用b中的索引在a的每行选择一个元素</span></span><br><span class="line">print(a[np.arange(<span class="number">4</span>),b])</span><br><span class="line">print(<span class="string">"\n"</span>)</span><br><span class="line"></span><br><span class="line">a[np.arange(<span class="number">4</span>),b] += <span class="number">10</span></span><br><span class="line">print(a)</span><br><span class="line"></span><br><span class="line">[[ <span class="number">1</span>  <span class="number">2</span>  <span class="number">3</span>]</span><br><span class="line"> [ <span class="number">4</span>  <span class="number">5</span>  <span class="number">6</span>]</span><br><span class="line"> [ <span class="number">7</span>  <span class="number">8</span>  <span class="number">9</span>]</span><br><span class="line"> [<span class="number">10</span> <span class="number">11</span> <span class="number">12</span>]]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">[ <span class="number">1</span>  <span class="number">6</span>  <span class="number">7</span> <span class="number">11</span>]</span><br><span class="line"></span><br><span class="line">[[<span class="number">11</span>  <span class="number">2</span>  <span class="number">3</span>]</span><br><span class="line"> [ <span class="number">4</span>  <span class="number">5</span> <span class="number">16</span>]</span><br><span class="line"> [<span class="number">17</span>  <span class="number">8</span>  <span class="number">9</span>]</span><br><span class="line"> [<span class="number">10</span> <span class="number">21</span> <span class="number">12</span>]]</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="布尔型数组访问"><a href="#布尔型数组访问" class="headerlink" title="布尔型数组访问"></a>布尔型数组访问</h2><p>布尔数组访问可以让你选择数组中任意元素。通常，这种访问方式用于选取数组中满足某些条件的元素。</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">a = np.array([[<span class="number">1</span>,<span class="number">2</span>],[<span class="number">3</span>,<span class="number">4</span>],[<span class="number">5</span>,<span class="number">6</span>]])</span><br><span class="line"></span><br><span class="line"><span class="comment">#返回大于2的元素，这返回一个与原数组同型的布尔数组</span></span><br><span class="line">bool_idx = (a &gt; <span class="number">2</span>) </span><br><span class="line"></span><br><span class="line">print(bool_idx)</span><br><span class="line"></span><br><span class="line"><span class="comment">#利用生成的布尔数组构建一个大于2的一维数组</span></span><br><span class="line">print(a[bool_idx])</span><br><span class="line"></span><br><span class="line">print(a[a &gt; <span class="number">2</span>])</span><br><span class="line"></span><br><span class="line">[[<span class="literal">False</span> <span class="literal">False</span>]</span><br><span class="line"> [ <span class="literal">True</span>  <span class="literal">True</span>]</span><br><span class="line"> [ <span class="literal">True</span>  <span class="literal">True</span>]]</span><br><span class="line">[<span class="number">3</span> <span class="number">4</span> <span class="number">5</span> <span class="number">6</span>]</span><br><span class="line">[<span class="number">3</span> <span class="number">4</span> <span class="number">5</span> <span class="number">6</span>]</span><br></pre></td></tr></tbody></table></figure>
+<h1 id="数组计算"><a href="#数组计算" class="headerlink" title="数组计算"></a>数组计算</h1><p>既可利用操作符重载，也可以使用函数方式：</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">x = np.array([[<span class="number">1</span>,<span class="number">2</span>],[<span class="number">3</span>,<span class="number">4</span>]],dtype=np.float64)</span><br><span class="line">y = np.array([[<span class="number">5</span>,<span class="number">6</span>],[<span class="number">7</span>,<span class="number">8</span>]],dtype=np.float64)</span><br><span class="line"></span><br><span class="line"><span class="comment">#加</span></span><br><span class="line">print(x+y)</span><br><span class="line">print(np.add(x,y))</span><br><span class="line"></span><br><span class="line"><span class="comment">#减</span></span><br><span class="line">print(x-y)</span><br><span class="line">print(np.subtract(x,y))</span><br><span class="line"></span><br><span class="line"><span class="comment">#乘,对应元素乘法</span></span><br><span class="line">print(x*y)</span><br><span class="line">print(np.multiply(x,y))</span><br><span class="line"></span><br><span class="line"><span class="comment">#除，对应元素除法</span></span><br><span class="line">print(x/y)</span><br><span class="line">print(np.divide(x,y))</span><br><span class="line"></span><br><span class="line"><span class="comment">#开方</span></span><br><span class="line">print(np.sqrt(x))</span><br><span class="line"></span><br><span class="line"><span class="comment">#矩阵乘法</span></span><br><span class="line">a = np.array([[<span class="number">1</span>,<span class="number">2</span>],[<span class="number">3</span>,<span class="number">4</span>]])</span><br><span class="line">b = np.array([[<span class="number">5</span>,<span class="number">6</span>],[<span class="number">7</span>,<span class="number">8</span>]])</span><br><span class="line"></span><br><span class="line">v = np.array([<span class="number">9</span>,<span class="number">10</span>])</span><br><span class="line">w = np.array([<span class="number">11</span>,<span class="number">12</span>])</span><br><span class="line"></span><br><span class="line">print(v.dot(w))</span><br><span class="line">print(np.dot(v,w))</span><br><span class="line">print(a.dot(v))</span><br><span class="line">print(np.dot(a,v))</span><br></pre></td></tr></tbody></table></figure>
+<p>Numpy提供了很多计算数组的函数，其中最常用的一个是sum:</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">x = np.array([[<span class="number">1</span>,<span class="number">2</span>],[<span class="number">3</span>,<span class="number">4</span>]])</span><br><span class="line"></span><br><span class="line"><span class="comment">#Compute sum of all elements</span></span><br><span class="line">print(np.<span class="built_in">sum</span>(x))</span><br><span class="line"></span><br><span class="line"><span class="comment">#Compute sum of each column</span></span><br><span class="line">print(np.<span class="built_in">sum</span>(x,axis=<span class="number">0</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment">#Compute sum of each row</span></span><br><span class="line">print(np.<span class="built_in">sum</span>(x,axis=<span class="number">1</span>))</span><br></pre></td></tr></tbody></table></figure>
+<p>查看更多函数，查看<a href="https://docs.scipy.org/doc/numpy/reference/routines.math.html">SciPy.org</a></p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">x = np.array([[<span class="number">1</span>,<span class="number">2</span>],[<span class="number">3</span>,<span class="number">4</span>]])</span><br><span class="line"><span class="comment">#转置</span></span><br><span class="line">print(x.T)</span><br></pre></td></tr></tbody></table></figure>
+<p>查看<a href="https://docs.scipy.org/doc/numpy/reference/routines.array-manipulation.html">更多操作数组的方法</a></p>
+<h1 id="广播Broadcasting"><a href="#广播Broadcasting" class="headerlink" title="广播Broadcasting"></a>广播Broadcasting</h1><p>广播是一种强有力的机制，它让Numpy可以让不同大小的矩阵在一起进行数学计算。我们常会有一个小的矩阵和一个大的矩阵，然后需要用小的矩阵对大的矩阵做一些计算。</p>
+<p>例如，我们想要把一个向量加到矩阵的每一行，我们可以这样做：</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">x = np.array([[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],[<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>],[<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>],[<span class="number">10</span>,<span class="number">11</span>,<span class="number">12</span>]])</span><br><span class="line">v = np.array([<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>])</span><br><span class="line"><span class="comment">#Create an empty matrix with the same shape as x</span></span><br><span class="line">y = np.empty_like(x)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">4</span>):</span><br><span class="line">    y[i,:] = x[i,:] + v</span><br><span class="line">    </span><br><span class="line">print(y)</span><br></pre></td></tr></tbody></table></figure>
+<p>这样是行的通的，但是当x矩阵非常大，利用循环开计算就会变得很慢很慢。我们可以换一种思路。</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">x = np.array([[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],[<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>],[<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>],[<span class="number">10</span>,<span class="number">11</span>,<span class="number">12</span>]])</span><br><span class="line">v = np.array([<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment">#stack 4 copies of v on top of each other</span></span><br><span class="line">vv = np.tile(v,(<span class="number">4</span>,<span class="number">1</span>))</span><br><span class="line">print(vv)</span><br><span class="line"></span><br><span class="line">y = x + vv</span><br><span class="line">print(y)</span><br><span class="line"></span><br><span class="line">[[<span class="number">1</span> <span class="number">0</span> <span class="number">1</span>]</span><br><span class="line"> [<span class="number">1</span> <span class="number">0</span> <span class="number">1</span>]</span><br><span class="line"> [<span class="number">1</span> <span class="number">0</span> <span class="number">1</span>]</span><br><span class="line"> [<span class="number">1</span> <span class="number">0</span> <span class="number">1</span>]]</span><br><span class="line"></span><br><span class="line">[[ <span class="number">2</span>  <span class="number">2</span>  <span class="number">4</span>]</span><br><span class="line"> [ <span class="number">5</span>  <span class="number">5</span>  <span class="number">7</span>]</span><br><span class="line"> [ <span class="number">8</span>  <span class="number">8</span> <span class="number">10</span>]</span><br><span class="line"> [<span class="number">11</span> <span class="number">11</span> <span class="number">13</span>]]</span><br></pre></td></tr></tbody></table></figure>
+<p><strong>Numpy广播机制可以让我们不用创建vv，就能直接运算</strong>，看看下面的例子。</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">x = np.array([[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],[<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>],[<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>],[<span class="number">10</span>,<span class="number">11</span>,<span class="number">12</span>]])</span><br><span class="line">v = np.array([<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>])</span><br><span class="line"></span><br><span class="line">y = x + v</span><br><span class="line">print(y)</span><br><span class="line"></span><br><span class="line">[[ <span class="number">2</span>  <span class="number">2</span>  <span class="number">4</span>]</span><br><span class="line"> [ <span class="number">5</span>  <span class="number">5</span>  <span class="number">7</span>]</span><br><span class="line"> [ <span class="number">8</span>  <span class="number">8</span> <span class="number">10</span>]</span><br><span class="line"> [<span class="number">11</span> <span class="number">11</span> <span class="number">13</span>]]</span><br></pre></td></tr></tbody></table></figure>
+<p>对两个数组使用广播机制要遵守下列规则：</p>
+<p>1.如果数组的秩不同，使用1来将秩小的数组进行扩展，直到两个数组的尺寸长度都一样。</p>
+<p>2.如果两个数组在某个维度上的长度是一样的，或者其中一个数组在该维度上的长度为1，那么我们说这两个数组在该维度上是<strong>相容</strong>的。</p>
+<p>3.<strong>如果两个数组在所有维度上都是相容的，它们就能使用广播。</strong></p>
+<p>4.如果两个输入数组的尺寸不同，那么注意其中较大的那个尺寸。因为广播之后，两个数组的尺寸将和较大的尺寸一样。</p>
+<p>5.在任何一个维度上，如果一个数组的长度为1，另一个数组的长度大于1，那么在该维度上，就好像是对第一个数组进行了复制。</p>
+<p>参阅<a href="https://docs.scipy.org/doc/numpy/user/basics.broadcasting.html">文档</a>和<a href="http://scipy.github.io/old-wiki/pages/EricsBroadcastingDoc">注释</a>。支持广播机制的函数是全局函数。哪些是全局函数可以在<a href="https://docs.scipy.org/doc/numpy/reference/ufuncs.html#available-ufuncs">文档</a>中查找。</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"><span class="comment">#v is [1,2,3],w is [4,5]</span></span><br><span class="line">v = np.array([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>])</span><br><span class="line">w = np.array([<span class="number">4</span>,<span class="number">5</span>])</span><br><span class="line"></span><br><span class="line">print(np.reshape(v,(<span class="number">3</span>,<span class="number">1</span>)) * w)</span><br><span class="line"></span><br><span class="line"><span class="comment">#x is [[1,2,3]</span></span><br><span class="line"><span class="comment">#     [4,5,6]]</span></span><br><span class="line">x = np.array([[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],[<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]])</span><br><span class="line">print(x + v)</span><br><span class="line"></span><br><span class="line">print(x.T + w)</span><br><span class="line"></span><br><span class="line">print(x + np.reshape(w,(<span class="number">2</span>,<span class="number">1</span>)))</span><br><span class="line"></span><br><span class="line">print(x * <span class="number">2</span>)</span><br><span class="line"></span><br><span class="line">[[ <span class="number">4</span>  <span class="number">5</span>]</span><br><span class="line"> [ <span class="number">8</span> <span class="number">10</span>]</span><br><span class="line"> [<span class="number">12</span> <span class="number">15</span>]]</span><br><span class="line"></span><br><span class="line">[[<span class="number">2</span> <span class="number">4</span> <span class="number">6</span>]</span><br><span class="line"> [<span class="number">5</span> <span class="number">7</span> <span class="number">9</span>]]</span><br><span class="line"></span><br><span class="line">[[ <span class="number">5</span>  <span class="number">9</span>]</span><br><span class="line"> [ <span class="number">6</span> <span class="number">10</span>]</span><br><span class="line"> [ <span class="number">7</span> <span class="number">11</span>]]</span><br><span class="line"></span><br><span class="line">[[ <span class="number">5</span>  <span class="number">6</span>  <span class="number">7</span>]</span><br><span class="line"> [ <span class="number">9</span> <span class="number">10</span> <span class="number">11</span>]]</span><br><span class="line"></span><br><span class="line">[[ <span class="number">2</span>  <span class="number">4</span>  <span class="number">6</span>]</span><br><span class="line"> [ <span class="number">8</span> <span class="number">10</span> <span class="number">12</span>]]</span><br></pre></td></tr></tbody></table></figure>
+<h1 id="Numpy文档"><a href="#Numpy文档" class="headerlink" title="Numpy文档"></a>Numpy文档</h1><p>此文介绍了numpy中的一些重要内容，但是numpy远不止如此，可以查阅<a href="https://docs.scipy.org/doc/numpy/reference/">numpy</a>文献来学习更多。</p>
+<h1 id="SciPy"><a href="#SciPy" class="headerlink" title="SciPy"></a>SciPy</h1><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">$ pip3 install Pillow</span><br></pre></td></tr></tbody></table></figure>
+<p>Numpy提供了高性能的多维数组，以及计算和操作数组的基本工具。Scipy基于Numpy，提供了大量的计算和操作数组的函数，这些函数对于不同类型的科学和工程计算非常有用。</p>
+<p><a href="https://docs.scipy.org/doc/scipy/reference/index.html">SciPy文档</a>。</p>
+<h1 id="点之间的距离"><a href="#点之间的距离" class="headerlink" title="点之间的距离"></a>点之间的距离</h1><p>SciPy定义了一些有用的函数，可以计算集合中点之间的距离。</p>
+<p>函数scipy.spatial.distance.pdist能够计算集合中所有两点之间的距离。</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> scipy.spatial.distance <span class="keyword">import</span> pdist, squareform</span><br><span class="line"></span><br><span class="line">x = np.array([[<span class="number">0</span>,<span class="number">1</span>],[<span class="number">1</span>,<span class="number">0</span>],[<span class="number">2</span>,<span class="number">0</span>]])</span><br><span class="line">print(x)</span><br><span class="line"></span><br><span class="line">d = squareform(pdist(x,<span class="string">'euclidean'</span>))</span><br><span class="line">print(d)</span><br></pre></td></tr></tbody></table></figure>
+<p>具体细节请阅读<a href="http://link.zhihu.com/?target=http%3A//docs.scipy.org/doc/scipy/reference/generated/scipy.spatial.distance.pdist.html">文档</a>。</p>
+<p>函数<strong>scipy.spatial.distance.cdist</strong>可以计算不同集合中点的距离，具体请查看<a href="http://link.zhihu.com/?target=http%3A//docs.scipy.org/doc/scipy/reference/generated/scipy.spatial.distance.cdist.html">文档</a>。</p>
+]]></content>
+      <categories>
+        <category>DataView</category>
+      </categories>
+      <tags>
+        <tag>Numpy</tag>
+        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
@@ -588,202 +715,6 @@
       <tags>
         <tag>Machine Learning</tag>
         <tag>Python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Numpy基础</title>
-    <url>/posts/21763/</url>
-    <content><![CDATA[<p>Numpy是Python中用于科学计算的核心库。它提供了高性能的多维数组对象，以及相关工具</p>
-<h1 id="绘制雪花"><a href="#绘制雪花" class="headerlink" title="绘制雪花"></a>绘制雪花</h1><p>转自博客上看到的一位大牛的程序，利用Numpy + matplotlib 绘制雪花，效果如下：</p>
-<p><img data-src="/images/snow.jpg" alt="snow"></p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"></span><br><span class="line">plt.rcParams[<span class="string">'font.sans-serif'</span>] = [<span class="string">'FangSong'</span>]  <span class="comment"># 指定默认字体</span></span><br><span class="line">plt.rcParams[<span class="string">'axes.unicode_minus'</span>] = <span class="literal">False</span>  <span class="comment"># 解决中文显示为方块的问题</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">rotate</span>(<span class="params">p, d</span>):</span></span><br><span class="line">    <span class="string">"""返回点p绕原点逆时针旋转d度的坐标"""</span></span><br><span class="line"></span><br><span class="line">    a = np.radians(d)</span><br><span class="line">    m = np.array([[np.cos(a), np.sin(a)], [-np.sin(a), np.cos(a)]])</span><br><span class="line">    <span class="keyword">return</span> np.dot(p, m)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">koch_curve</span>(<span class="params">p, q</span>):</span></span><br><span class="line">    <span class="string">"""将线段pq生成科赫曲线，返回uvw三个点"""</span></span><br><span class="line"></span><br><span class="line">    p, q = np.array(p), np.array(q)</span><br><span class="line">    u = p + (q - p) / <span class="number">3</span>  <span class="comment"># 三等分点u的坐标</span></span><br><span class="line">    v = q - (q - p) / <span class="number">3</span>  <span class="comment"># 三等分点V的坐标</span></span><br><span class="line">    w = rotate(v - u, <span class="number">60</span>) + u  <span class="comment"># 线段uv绕u点逆时针旋转60°得到点w的坐标</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> u.tolist(), v.tolist(), w.tolist()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">snow</span>(<span class="params">triangle, k</span>):</span></span><br><span class="line">    <span class="string">"""给定三角形，生成封闭的科赫雪花"""</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(k):</span><br><span class="line">        result = <span class="built_in">list</span>()</span><br><span class="line">        t_len = <span class="built_in">len</span>(triangle)</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(t_len):</span><br><span class="line">            p = triangle[j]</span><br><span class="line">            q = triangle[(j + <span class="number">1</span>) % t_len]</span><br><span class="line">            u, v, w = koch_curve(p, q)</span><br><span class="line">            result.extend([p, u, w, v])</span><br><span class="line">        triangle = result.copy()</span><br><span class="line"></span><br><span class="line">    triangle.append(triangle[<span class="number">0</span>])</span><br><span class="line">    <span class="keyword">return</span> triangle</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">plot_snow</span>(<span class="params">snow_list</span>):</span></span><br><span class="line">    <span class="string">"""绘制雪花"""</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> triangle, k <span class="keyword">in</span> snow_list:</span><br><span class="line">        data = np.array(snow(triangle, k))</span><br><span class="line">        x, y = np.split(data, <span class="number">2</span>, axis=<span class="number">1</span>)</span><br><span class="line">        plt.plot(x, y)</span><br><span class="line"></span><br><span class="line">    plt.axis(<span class="string">'equal'</span>)</span><br><span class="line">    plt.show()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">snow_list = [</span><br><span class="line">    ([(<span class="number">0</span>, <span class="number">0</span>), (<span class="number">0.5</span>, <span class="number">0.8660254</span>), (<span class="number">1</span>, <span class="number">0</span>)], <span class="number">5</span>),</span><br><span class="line">    ([(<span class="number">1.1</span>, <span class="number">0.4</span>), (<span class="number">1.35</span>, <span class="number">0.8330127</span>), (<span class="number">1.6</span>, <span class="number">0.4</span>)], <span class="number">4</span>),</span><br><span class="line">    ([(<span class="number">1.1</span>, -<span class="number">0.1</span>), (<span class="number">1.25</span>, <span class="number">0.15980761</span>), (<span class="number">1.4</span>, -<span class="number">0.1</span>)], <span class="number">3</span>)</span><br><span class="line">]</span><br><span class="line">plot_snow(snow_list)</span><br></pre></td></tr></tbody></table></figure>
-<a id="more"></a>
-<h1 id="数组Arrays"><a href="#数组Arrays" class="headerlink" title="数组Arrays"></a>数组Arrays</h1><p>numpy数组是一个由不同数值组成的网格。网格中的数据都是<strong>同一种数据类型</strong>，可以通过非负整型数的元组来访问。</p>
-<p>我们可以从列表创建数组，然后利用方括号访问其中的元素。</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">a = np.array([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>])   <span class="comment">#创建一个一维数组</span></span><br><span class="line">print(<span class="built_in">type</span>(a))</span><br><span class="line">print(a[<span class="number">0</span>],a[<span class="number">1</span>],a[<span class="number">2</span>])</span><br><span class="line">a[<span class="number">0</span>] = <span class="number">5</span></span><br><span class="line">print(a)</span><br><span class="line"></span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> '<span class="title">numpy</span>.<span class="title">ndarray</span>'&gt;</span></span><br><span class="line"><span class="class">1 2 3</span></span><br><span class="line"><span class="class">[5 2 3]</span></span><br></pre></td></tr></tbody></table></figure>
-<h1 id="函数shape-用法"><a href="#函数shape-用法" class="headerlink" title="函数shape()用法"></a>函数shape()用法</h1><p>shape函数功能室查看矩阵或者数组的<strong>维度</strong>。</p>
-<p>例如：建立一个3✖3的单位矩阵e，e.shape()为（3，3），<strong>表示三行三列</strong>，第一维的长度是3，第二维的长度也是3。</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">e = np.eye(<span class="number">3</span>)</span><br><span class="line">print(e)</span><br><span class="line">print(e.shape)</span><br><span class="line">print(e[<span class="number">0</span>,<span class="number">0</span>],e[<span class="number">1</span>,<span class="number">1</span>])</span><br><span class="line"></span><br><span class="line">[[ <span class="number">1.</span>  <span class="number">0.</span>  <span class="number">0.</span>]</span><br><span class="line"> [ <span class="number">0.</span>  <span class="number">1.</span>  <span class="number">0.</span>]</span><br><span class="line"> [ <span class="number">0.</span>  <span class="number">0.</span>  <span class="number">1.</span>]]</span><br><span class="line">(<span class="number">3</span>, <span class="number">3</span>)</span><br><span class="line"><span class="number">1.0</span> <span class="number">1.0</span></span><br></pre></td></tr></tbody></table></figure>
-<p>建立一个一维矩阵b，b.shape为矩阵的长度。</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">b = np.array([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>])</span><br><span class="line">print(b.shape)</span><br><span class="line"></span><br><span class="line">(<span class="number">4</span>,)</span><br></pre></td></tr></tbody></table></figure>
-<p>建立一个4✖2的矩阵c，c.shape[1]为第一维的长度，c.shape[0]为第二维的长度，c.shape[1]为第一维的长度。</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">c = np.array([[<span class="number">1</span>,<span class="number">2</span>],[<span class="number">3</span>,<span class="number">5</span>],[<span class="number">9</span>,<span class="number">5</span>],[<span class="number">4</span>,<span class="number">0</span>]])</span><br><span class="line">print(c.shape[<span class="number">0</span>])</span><br><span class="line">print(c.shape[<span class="number">1</span>])</span><br><span class="line"></span><br><span class="line"><span class="number">4</span></span><br><span class="line"><span class="number">2</span></span><br></pre></td></tr></tbody></table></figure>
-<p>一个单独的数值，返回值为空。</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">np.shape(<span class="number">3</span>)</span><br><span class="line"></span><br><span class="line">()</span><br></pre></td></tr></tbody></table></figure>
-<h1 id="其他创建数组的方法"><a href="#其他创建数组的方法" class="headerlink" title="其他创建数组的方法"></a>其他创建数组的方法</h1><p>Numpy还提供了很多其他创建数组的方法：</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">a = np.zeros((<span class="number">2</span>,<span class="number">3</span>))        <span class="comment">#创建一个2✖️3全0数组</span></span><br><span class="line">print(a)</span><br><span class="line">print(<span class="string">"\n"</span>)</span><br><span class="line"></span><br><span class="line">b = np.ones((<span class="number">1</span>,<span class="number">2</span>))         <span class="comment">#创建一个1✖️2全1数组</span></span><br><span class="line">print(b)</span><br><span class="line">print(<span class="string">"\n"</span>)</span><br><span class="line"></span><br><span class="line">c = np.full((<span class="number">4</span>,<span class="number">2</span>),<span class="number">7</span>)       <span class="comment">#创建一个4✖️2的全7数组</span></span><br><span class="line">print(c)</span><br><span class="line">print(<span class="string">"\n"</span>)</span><br><span class="line"></span><br><span class="line">d = np.eye(<span class="number">2</span>)              <span class="comment">#创建一个二维单位矩阵</span></span><br><span class="line">print(d)</span><br><span class="line">print(<span class="string">"\n"</span>)</span><br><span class="line"></span><br><span class="line">e = np.random.random((<span class="number">2</span>,<span class="number">2</span>))<span class="comment">#创建一个2✖️2由随机数字组成的数组</span></span><br><span class="line">print(e)</span><br><span class="line"></span><br><span class="line">[[ <span class="number">0.</span>  <span class="number">0.</span>  <span class="number">0.</span>]</span><br><span class="line"> [ <span class="number">0.</span>  <span class="number">0.</span>  <span class="number">0.</span>]]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">[[ <span class="number">1.</span>  <span class="number">1.</span>]]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">[[<span class="number">7</span> <span class="number">7</span>]</span><br><span class="line"> [<span class="number">7</span> <span class="number">7</span>]</span><br><span class="line"> [<span class="number">7</span> <span class="number">7</span>]</span><br><span class="line"> [<span class="number">7</span> <span class="number">7</span>]]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">[[ <span class="number">1.</span>  <span class="number">0.</span>]</span><br><span class="line"> [ <span class="number">0.</span>  <span class="number">1.</span>]]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">[[ <span class="number">0.82662589</span>  <span class="number">0.93604335</span>]</span><br><span class="line"> [ <span class="number">0.20764393</span>  <span class="number">0.53211415</span>]]</span><br></pre></td></tr></tbody></table></figure>
-<h1 id="访问数组"><a href="#访问数组" class="headerlink" title="访问数组"></a>访问数组</h1><h2 id="切片"><a href="#切片" class="headerlink" title="切片"></a>切片</h2><p>切片：和Python列表类似，numpy数组可以使用切片语法。因为数组是多维的，所以必须为每个维度指定好切片。</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"><span class="comment">#创建一个3✖️4的数组</span></span><br><span class="line">a = np.array([[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>],[<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>],[<span class="number">9</span>,<span class="number">10</span>,<span class="number">11</span>,<span class="number">12</span>]])</span><br><span class="line">print(a)</span><br><span class="line">print(<span class="string">"\n"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#利用切片来截取前两行，第1到2列。注意这里“：2”是第0，1行，不包含第二行，与range()相同</span></span><br><span class="line">b = a[:<span class="number">2</span>,<span class="number">1</span>:<span class="number">3</span>]</span><br><span class="line">print(b)</span><br><span class="line">print(<span class="string">"\n"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#切片是原数组的一部分，所以改变切片，原数组也会改变</span></span><br><span class="line">print(a[<span class="number">0</span>,<span class="number">1</span>])</span><br><span class="line">b[<span class="number">0</span>,<span class="number">0</span>] = <span class="number">77</span></span><br><span class="line">print(a)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">[[ <span class="number">1</span>  <span class="number">2</span>  <span class="number">3</span>  <span class="number">4</span>]</span><br><span class="line"> [ <span class="number">5</span>  <span class="number">6</span>  <span class="number">7</span>  <span class="number">8</span>]</span><br><span class="line"> [ <span class="number">9</span> <span class="number">10</span> <span class="number">11</span> <span class="number">12</span>]]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">[[<span class="number">2</span> <span class="number">3</span>]</span><br><span class="line"> [<span class="number">6</span> <span class="number">7</span>]]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="number">2</span></span><br><span class="line">[[ <span class="number">1</span> <span class="number">77</span>  <span class="number">3</span>  <span class="number">4</span>]</span><br><span class="line"> [ <span class="number">5</span>  <span class="number">6</span>  <span class="number">7</span>  <span class="number">8</span>]</span><br><span class="line"> [ <span class="number">9</span> <span class="number">10</span> <span class="number">11</span> <span class="number">12</span>]]</span><br></pre></td></tr></tbody></table></figure>
-<p>你可以<strong>同时使用整型和切片语法来访问数组</strong>。但是，这样<strong>会产生一个比原数组低阶的新数组。</strong></p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"><span class="comment">#3✖️4</span></span><br><span class="line">a = np.array([[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>],[<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">8</span>],[<span class="number">9</span>,<span class="number">10</span>,<span class="number">11</span>,<span class="number">12</span>]])</span><br><span class="line">print(a)</span><br><span class="line">print(a.shape)</span><br><span class="line">print(<span class="string">"\n"</span>)</span><br><span class="line"></span><br><span class="line">row_r1 = a[<span class="number">1</span>,:]</span><br><span class="line">row_r2 = a[<span class="number">1</span>:<span class="number">2</span>,:]</span><br><span class="line"></span><br><span class="line">print(row_r1)</span><br><span class="line">print(row_r1.shape)</span><br><span class="line">print(<span class="string">"\n"</span>)</span><br><span class="line"></span><br><span class="line">print(row_r2)</span><br><span class="line">print(row_r2.shape)</span><br><span class="line">print(<span class="string">"\n"</span>)</span><br><span class="line"></span><br><span class="line">[[ <span class="number">1</span>  <span class="number">2</span>  <span class="number">3</span>  <span class="number">4</span>]</span><br><span class="line"> [ <span class="number">5</span>  <span class="number">6</span>  <span class="number">7</span>  <span class="number">8</span>]</span><br><span class="line"> [ <span class="number">9</span> <span class="number">10</span> <span class="number">11</span> <span class="number">12</span>]]</span><br><span class="line">(<span class="number">3</span>, <span class="number">4</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">[<span class="number">5</span> <span class="number">6</span> <span class="number">7</span> <span class="number">8</span>]</span><br><span class="line">(<span class="number">4</span>,)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">[[<span class="number">5</span> <span class="number">6</span> <span class="number">7</span> <span class="number">8</span>]]</span><br><span class="line">(<span class="number">1</span>, <span class="number">4</span>)</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="整型数组访问"><a href="#整型数组访问" class="headerlink" title="整型数组访问"></a>整型数组访问</h2><p> 当我们使用切片语法访问数组时，得到的总是原数组的一个子集。整型数组访问允许我们利用其他数组的数据构建一个新的数组。</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">a = np.array([[<span class="number">1</span>,<span class="number">2</span>],[<span class="number">3</span>,<span class="number">4</span>],[<span class="number">5</span>,<span class="number">6</span>]])</span><br><span class="line">print(a)</span><br><span class="line">print(<span class="string">"\n"</span>)</span><br><span class="line"></span><br><span class="line">print(a[[<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>],[<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>]])</span><br><span class="line"></span><br><span class="line"><span class="comment">#上面的print等价于</span></span><br><span class="line">print([a[<span class="number">0</span>,<span class="number">0</span>],a[<span class="number">1</span>,<span class="number">1</span>],a[<span class="number">2</span>,<span class="number">0</span>]])</span><br><span class="line"></span><br><span class="line">[[<span class="number">1</span> <span class="number">2</span>]</span><br><span class="line"> [<span class="number">3</span> <span class="number">4</span>]</span><br><span class="line"> [<span class="number">5</span> <span class="number">6</span>]]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">[[<span class="number">1</span> <span class="number">4</span> <span class="number">5</span>]]</span><br><span class="line">[<span class="number">1</span>, <span class="number">4</span>, <span class="number">5</span>]</span><br></pre></td></tr></tbody></table></figure>
-<p>整型数组访问语法还有一个有用的技巧，可以用来选择或者更改矩阵中每行中的一个元素：</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">a = np.array([[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],[<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>],[<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>],[<span class="number">10</span>,<span class="number">11</span>,<span class="number">12</span>]])</span><br><span class="line">print(a)</span><br><span class="line">print(<span class="string">"\n"</span>)</span><br><span class="line"></span><br><span class="line">b = np.array([<span class="number">0</span>,<span class="number">2</span>,<span class="number">0</span>,<span class="number">1</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment">#利用b中的索引在a的每行选择一个元素</span></span><br><span class="line">print(a[np.arange(<span class="number">4</span>),b])</span><br><span class="line">print(<span class="string">"\n"</span>)</span><br><span class="line"></span><br><span class="line">a[np.arange(<span class="number">4</span>),b] += <span class="number">10</span></span><br><span class="line">print(a)</span><br><span class="line"></span><br><span class="line">[[ <span class="number">1</span>  <span class="number">2</span>  <span class="number">3</span>]</span><br><span class="line"> [ <span class="number">4</span>  <span class="number">5</span>  <span class="number">6</span>]</span><br><span class="line"> [ <span class="number">7</span>  <span class="number">8</span>  <span class="number">9</span>]</span><br><span class="line"> [<span class="number">10</span> <span class="number">11</span> <span class="number">12</span>]]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">[ <span class="number">1</span>  <span class="number">6</span>  <span class="number">7</span> <span class="number">11</span>]</span><br><span class="line"></span><br><span class="line">[[<span class="number">11</span>  <span class="number">2</span>  <span class="number">3</span>]</span><br><span class="line"> [ <span class="number">4</span>  <span class="number">5</span> <span class="number">16</span>]</span><br><span class="line"> [<span class="number">17</span>  <span class="number">8</span>  <span class="number">9</span>]</span><br><span class="line"> [<span class="number">10</span> <span class="number">21</span> <span class="number">12</span>]]</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="布尔型数组访问"><a href="#布尔型数组访问" class="headerlink" title="布尔型数组访问"></a>布尔型数组访问</h2><p>布尔数组访问可以让你选择数组中任意元素。通常，这种访问方式用于选取数组中满足某些条件的元素。</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">a = np.array([[<span class="number">1</span>,<span class="number">2</span>],[<span class="number">3</span>,<span class="number">4</span>],[<span class="number">5</span>,<span class="number">6</span>]])</span><br><span class="line"></span><br><span class="line"><span class="comment">#返回大于2的元素，这返回一个与原数组同型的布尔数组</span></span><br><span class="line">bool_idx = (a &gt; <span class="number">2</span>) </span><br><span class="line"></span><br><span class="line">print(bool_idx)</span><br><span class="line"></span><br><span class="line"><span class="comment">#利用生成的布尔数组构建一个大于2的一维数组</span></span><br><span class="line">print(a[bool_idx])</span><br><span class="line"></span><br><span class="line">print(a[a &gt; <span class="number">2</span>])</span><br><span class="line"></span><br><span class="line">[[<span class="literal">False</span> <span class="literal">False</span>]</span><br><span class="line"> [ <span class="literal">True</span>  <span class="literal">True</span>]</span><br><span class="line"> [ <span class="literal">True</span>  <span class="literal">True</span>]]</span><br><span class="line">[<span class="number">3</span> <span class="number">4</span> <span class="number">5</span> <span class="number">6</span>]</span><br><span class="line">[<span class="number">3</span> <span class="number">4</span> <span class="number">5</span> <span class="number">6</span>]</span><br></pre></td></tr></tbody></table></figure>
-<h1 id="数组计算"><a href="#数组计算" class="headerlink" title="数组计算"></a>数组计算</h1><p>既可利用操作符重载，也可以使用函数方式：</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">x = np.array([[<span class="number">1</span>,<span class="number">2</span>],[<span class="number">3</span>,<span class="number">4</span>]],dtype=np.float64)</span><br><span class="line">y = np.array([[<span class="number">5</span>,<span class="number">6</span>],[<span class="number">7</span>,<span class="number">8</span>]],dtype=np.float64)</span><br><span class="line"></span><br><span class="line"><span class="comment">#加</span></span><br><span class="line">print(x+y)</span><br><span class="line">print(np.add(x,y))</span><br><span class="line"></span><br><span class="line"><span class="comment">#减</span></span><br><span class="line">print(x-y)</span><br><span class="line">print(np.subtract(x,y))</span><br><span class="line"></span><br><span class="line"><span class="comment">#乘,对应元素乘法</span></span><br><span class="line">print(x*y)</span><br><span class="line">print(np.multiply(x,y))</span><br><span class="line"></span><br><span class="line"><span class="comment">#除，对应元素除法</span></span><br><span class="line">print(x/y)</span><br><span class="line">print(np.divide(x,y))</span><br><span class="line"></span><br><span class="line"><span class="comment">#开方</span></span><br><span class="line">print(np.sqrt(x))</span><br><span class="line"></span><br><span class="line"><span class="comment">#矩阵乘法</span></span><br><span class="line">a = np.array([[<span class="number">1</span>,<span class="number">2</span>],[<span class="number">3</span>,<span class="number">4</span>]])</span><br><span class="line">b = np.array([[<span class="number">5</span>,<span class="number">6</span>],[<span class="number">7</span>,<span class="number">8</span>]])</span><br><span class="line"></span><br><span class="line">v = np.array([<span class="number">9</span>,<span class="number">10</span>])</span><br><span class="line">w = np.array([<span class="number">11</span>,<span class="number">12</span>])</span><br><span class="line"></span><br><span class="line">print(v.dot(w))</span><br><span class="line">print(np.dot(v,w))</span><br><span class="line">print(a.dot(v))</span><br><span class="line">print(np.dot(a,v))</span><br></pre></td></tr></tbody></table></figure>
-<p>Numpy提供了很多计算数组的函数，其中最常用的一个是sum:</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">x = np.array([[<span class="number">1</span>,<span class="number">2</span>],[<span class="number">3</span>,<span class="number">4</span>]])</span><br><span class="line"></span><br><span class="line"><span class="comment">#Compute sum of all elements</span></span><br><span class="line">print(np.<span class="built_in">sum</span>(x))</span><br><span class="line"></span><br><span class="line"><span class="comment">#Compute sum of each column</span></span><br><span class="line">print(np.<span class="built_in">sum</span>(x,axis=<span class="number">0</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment">#Compute sum of each row</span></span><br><span class="line">print(np.<span class="built_in">sum</span>(x,axis=<span class="number">1</span>))</span><br></pre></td></tr></tbody></table></figure>
-<p>查看更多函数，查看<a href="https://docs.scipy.org/doc/numpy/reference/routines.math.html">SciPy.org</a></p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">x = np.array([[<span class="number">1</span>,<span class="number">2</span>],[<span class="number">3</span>,<span class="number">4</span>]])</span><br><span class="line"><span class="comment">#转置</span></span><br><span class="line">print(x.T)</span><br></pre></td></tr></tbody></table></figure>
-<p>查看<a href="https://docs.scipy.org/doc/numpy/reference/routines.array-manipulation.html">更多操作数组的方法</a></p>
-<h1 id="广播Broadcasting"><a href="#广播Broadcasting" class="headerlink" title="广播Broadcasting"></a>广播Broadcasting</h1><p>广播是一种强有力的机制，它让Numpy可以让不同大小的矩阵在一起进行数学计算。我们常会有一个小的矩阵和一个大的矩阵，然后需要用小的矩阵对大的矩阵做一些计算。</p>
-<p>例如，我们想要把一个向量加到矩阵的每一行，我们可以这样做：</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">x = np.array([[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],[<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>],[<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>],[<span class="number">10</span>,<span class="number">11</span>,<span class="number">12</span>]])</span><br><span class="line">v = np.array([<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>])</span><br><span class="line"><span class="comment">#Create an empty matrix with the same shape as x</span></span><br><span class="line">y = np.empty_like(x)</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">4</span>):</span><br><span class="line">    y[i,:] = x[i,:] + v</span><br><span class="line">    </span><br><span class="line">print(y)</span><br></pre></td></tr></tbody></table></figure>
-<p>这样是行的通的，但是当x矩阵非常大，利用循环开计算就会变得很慢很慢。我们可以换一种思路。</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">x = np.array([[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],[<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>],[<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>],[<span class="number">10</span>,<span class="number">11</span>,<span class="number">12</span>]])</span><br><span class="line">v = np.array([<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment">#stack 4 copies of v on top of each other</span></span><br><span class="line">vv = np.tile(v,(<span class="number">4</span>,<span class="number">1</span>))</span><br><span class="line">print(vv)</span><br><span class="line"></span><br><span class="line">y = x + vv</span><br><span class="line">print(y)</span><br><span class="line"></span><br><span class="line">[[<span class="number">1</span> <span class="number">0</span> <span class="number">1</span>]</span><br><span class="line"> [<span class="number">1</span> <span class="number">0</span> <span class="number">1</span>]</span><br><span class="line"> [<span class="number">1</span> <span class="number">0</span> <span class="number">1</span>]</span><br><span class="line"> [<span class="number">1</span> <span class="number">0</span> <span class="number">1</span>]]</span><br><span class="line"></span><br><span class="line">[[ <span class="number">2</span>  <span class="number">2</span>  <span class="number">4</span>]</span><br><span class="line"> [ <span class="number">5</span>  <span class="number">5</span>  <span class="number">7</span>]</span><br><span class="line"> [ <span class="number">8</span>  <span class="number">8</span> <span class="number">10</span>]</span><br><span class="line"> [<span class="number">11</span> <span class="number">11</span> <span class="number">13</span>]]</span><br></pre></td></tr></tbody></table></figure>
-<p><strong>Numpy广播机制可以让我们不用创建vv，就能直接运算</strong>，看看下面的例子。</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line">x = np.array([[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],[<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>],[<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>],[<span class="number">10</span>,<span class="number">11</span>,<span class="number">12</span>]])</span><br><span class="line">v = np.array([<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>])</span><br><span class="line"></span><br><span class="line">y = x + v</span><br><span class="line">print(y)</span><br><span class="line"></span><br><span class="line">[[ <span class="number">2</span>  <span class="number">2</span>  <span class="number">4</span>]</span><br><span class="line"> [ <span class="number">5</span>  <span class="number">5</span>  <span class="number">7</span>]</span><br><span class="line"> [ <span class="number">8</span>  <span class="number">8</span> <span class="number">10</span>]</span><br><span class="line"> [<span class="number">11</span> <span class="number">11</span> <span class="number">13</span>]]</span><br></pre></td></tr></tbody></table></figure>
-<p>对两个数组使用广播机制要遵守下列规则：</p>
-<p>1.如果数组的秩不同，使用1来将秩小的数组进行扩展，直到两个数组的尺寸长度都一样。</p>
-<p>2.如果两个数组在某个维度上的长度是一样的，或者其中一个数组在该维度上的长度为1，那么我们说这两个数组在该维度上是<strong>相容</strong>的。</p>
-<p>3.<strong>如果两个数组在所有维度上都是相容的，它们就能使用广播。</strong></p>
-<p>4.如果两个输入数组的尺寸不同，那么注意其中较大的那个尺寸。因为广播之后，两个数组的尺寸将和较大的尺寸一样。</p>
-<p>5.在任何一个维度上，如果一个数组的长度为1，另一个数组的长度大于1，那么在该维度上，就好像是对第一个数组进行了复制。</p>
-<p>参阅<a href="https://docs.scipy.org/doc/numpy/user/basics.broadcasting.html">文档</a>和<a href="http://scipy.github.io/old-wiki/pages/EricsBroadcastingDoc">注释</a>。支持广播机制的函数是全局函数。哪些是全局函数可以在<a href="https://docs.scipy.org/doc/numpy/reference/ufuncs.html#available-ufuncs">文档</a>中查找。</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"></span><br><span class="line"><span class="comment">#v is [1,2,3],w is [4,5]</span></span><br><span class="line">v = np.array([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>])</span><br><span class="line">w = np.array([<span class="number">4</span>,<span class="number">5</span>])</span><br><span class="line"></span><br><span class="line">print(np.reshape(v,(<span class="number">3</span>,<span class="number">1</span>)) * w)</span><br><span class="line"></span><br><span class="line"><span class="comment">#x is [[1,2,3]</span></span><br><span class="line"><span class="comment">#     [4,5,6]]</span></span><br><span class="line">x = np.array([[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],[<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]])</span><br><span class="line">print(x + v)</span><br><span class="line"></span><br><span class="line">print(x.T + w)</span><br><span class="line"></span><br><span class="line">print(x + np.reshape(w,(<span class="number">2</span>,<span class="number">1</span>)))</span><br><span class="line"></span><br><span class="line">print(x * <span class="number">2</span>)</span><br><span class="line"></span><br><span class="line">[[ <span class="number">4</span>  <span class="number">5</span>]</span><br><span class="line"> [ <span class="number">8</span> <span class="number">10</span>]</span><br><span class="line"> [<span class="number">12</span> <span class="number">15</span>]]</span><br><span class="line"></span><br><span class="line">[[<span class="number">2</span> <span class="number">4</span> <span class="number">6</span>]</span><br><span class="line"> [<span class="number">5</span> <span class="number">7</span> <span class="number">9</span>]]</span><br><span class="line"></span><br><span class="line">[[ <span class="number">5</span>  <span class="number">9</span>]</span><br><span class="line"> [ <span class="number">6</span> <span class="number">10</span>]</span><br><span class="line"> [ <span class="number">7</span> <span class="number">11</span>]]</span><br><span class="line"></span><br><span class="line">[[ <span class="number">5</span>  <span class="number">6</span>  <span class="number">7</span>]</span><br><span class="line"> [ <span class="number">9</span> <span class="number">10</span> <span class="number">11</span>]]</span><br><span class="line"></span><br><span class="line">[[ <span class="number">2</span>  <span class="number">4</span>  <span class="number">6</span>]</span><br><span class="line"> [ <span class="number">8</span> <span class="number">10</span> <span class="number">12</span>]]</span><br></pre></td></tr></tbody></table></figure>
-<h1 id="Numpy文档"><a href="#Numpy文档" class="headerlink" title="Numpy文档"></a>Numpy文档</h1><p>此文介绍了numpy中的一些重要内容，但是numpy远不止如此，可以查阅<a href="https://docs.scipy.org/doc/numpy/reference/">numpy</a>文献来学习更多。</p>
-<h1 id="SciPy"><a href="#SciPy" class="headerlink" title="SciPy"></a>SciPy</h1><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">$ pip3 install Pillow</span><br></pre></td></tr></tbody></table></figure>
-<p>Numpy提供了高性能的多维数组，以及计算和操作数组的基本工具。Scipy基于Numpy，提供了大量的计算和操作数组的函数，这些函数对于不同类型的科学和工程计算非常有用。</p>
-<p><a href="https://docs.scipy.org/doc/scipy/reference/index.html">SciPy文档</a>。</p>
-<h1 id="点之间的距离"><a href="#点之间的距离" class="headerlink" title="点之间的距离"></a>点之间的距离</h1><p>SciPy定义了一些有用的函数，可以计算集合中点之间的距离。</p>
-<p>函数scipy.spatial.distance.pdist能够计算集合中所有两点之间的距离。</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> scipy.spatial.distance <span class="keyword">import</span> pdist, squareform</span><br><span class="line"></span><br><span class="line">x = np.array([[<span class="number">0</span>,<span class="number">1</span>],[<span class="number">1</span>,<span class="number">0</span>],[<span class="number">2</span>,<span class="number">0</span>]])</span><br><span class="line">print(x)</span><br><span class="line"></span><br><span class="line">d = squareform(pdist(x,<span class="string">'euclidean'</span>))</span><br><span class="line">print(d)</span><br></pre></td></tr></tbody></table></figure>
-<p>具体细节请阅读<a href="http://link.zhihu.com/?target=http%3A//docs.scipy.org/doc/scipy/reference/generated/scipy.spatial.distance.pdist.html">文档</a>。</p>
-<p>函数<strong>scipy.spatial.distance.cdist</strong>可以计算不同集合中点的距离，具体请查看<a href="http://link.zhihu.com/?target=http%3A//docs.scipy.org/doc/scipy/reference/generated/scipy.spatial.distance.cdist.html">文档</a>。</p>
-]]></content>
-      <categories>
-        <category>DataView</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
-        <tag>Numpy</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>AI中的数学知识</title>
-    <url>/posts/59545/</url>
-    <content><![CDATA[<h1 id="线性代数部分"><a href="#线性代数部分" class="headerlink" title="线性代数部分"></a>线性代数部分</h1><h2 id="矩阵及其运算合集"><a href="#矩阵及其运算合集" class="headerlink" title="矩阵及其运算合集"></a>矩阵及其运算合集</h2><a id="more"></a>
-<h2 id="矩阵的行列式"><a href="#矩阵的行列式" class="headerlink" title="矩阵的行列式"></a>矩阵的行列式</h2><h2 id="矩阵的逆"><a href="#矩阵的逆" class="headerlink" title="矩阵的逆"></a>矩阵的逆</h2><h2 id="矩阵的初等变换"><a href="#矩阵的初等变换" class="headerlink" title="矩阵的初等变换"></a>矩阵的初等变换</h2><h2 id="矩阵的秩"><a href="#矩阵的秩" class="headerlink" title="矩阵的秩"></a>矩阵的秩</h2><h2 id="矩阵的特征值和特征向量"><a href="#矩阵的特征值和特征向量" class="headerlink" title="矩阵的特征值和特征向量"></a>矩阵的特征值和特征向量</h2><h2 id="矩阵对角化二次型"><a href="#矩阵对角化二次型" class="headerlink" title="矩阵对角化二次型"></a>矩阵对角化二次型</h2><h2 id="SVD分解的证明"><a href="#SVD分解的证明" class="headerlink" title="SVD分解的证明"></a>SVD分解的证明</h2><h2 id="SVD的应用与多元线性回归"><a href="#SVD的应用与多元线性回归" class="headerlink" title="SVD的应用与多元线性回归"></a>SVD的应用与多元线性回归</h2><h1 id="微积分部分"><a href="#微积分部分" class="headerlink" title="微积分部分"></a>微积分部分</h1><h2 id="导数中的中值定理"><a href="#导数中的中值定理" class="headerlink" title="导数中的中值定理"></a>导数中的中值定理</h2><h2 id="泰勒公式函数极值定积分"><a href="#泰勒公式函数极值定积分" class="headerlink" title="泰勒公式函数极值定积分"></a>泰勒公式函数极值定积分</h2><h2 id="多元微积分"><a href="#多元微积分" class="headerlink" title="多元微积分"></a>多元微积分</h2><h1 id="概率论部分"><a href="#概率论部分" class="headerlink" title="概率论部分"></a>概率论部分</h1><h2 id="概率基础"><a href="#概率基础" class="headerlink" title="概率基础"></a>概率基础</h2><h2 id="随机变量与多维随机变量"><a href="#随机变量与多维随机变量" class="headerlink" title="随机变量与多维随机变量"></a>随机变量与多维随机变量</h2><h2 id="期望与方差"><a href="#期望与方差" class="headerlink" title="期望与方差"></a>期望与方差</h2><h2 id="参数的估计"><a href="#参数的估计" class="headerlink" title="参数的估计"></a>参数的估计</h2><h1 id="最优化理论"><a href="#最优化理论" class="headerlink" title="最优化理论"></a>最优化理论</h1><h2 id="无约束最优化"><a href="#无约束最优化" class="headerlink" title="无约束最优化"></a>无约束最优化</h2><h2 id="带约束的最优化"><a href="#带约束的最优化" class="headerlink" title="带约束的最优化"></a>带约束的最优化</h2><h2 id="对偶理论"><a href="#对偶理论" class="headerlink" title="对偶理论"></a>对偶理论</h2>]]></content>
-      <categories>
-        <category>Math</category>
-      </categories>
-      <tags>
-        <tag>Machine Learning</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Regex</title>
-    <url>/posts/25256/</url>
-    <content><![CDATA[<h1 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h1><h2 id="元字符"><a href="#元字符" class="headerlink" title="元字符"></a>元字符</h2><div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:center">元字符</th>
-<th style="text-align:center">说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">.</td>
-<td style="text-align:center">匹配除换行符以外的任意字符</td>
-</tr>
-<tr>
-<td style="text-align:center">\w</td>
-<td style="text-align:center">匹配字母、数字、下划线、汉字</td>
-</tr>
-<tr>
-<td style="text-align:center">\s</td>
-<td style="text-align:center">匹配任意的空白符</td>
-</tr>
-<tr>
-<td style="text-align:center">\d</td>
-<td style="text-align:center">匹配数字</td>
-</tr>
-<tr>
-<td style="text-align:center">\b</td>
-<td style="text-align:center">匹配单词的开始或结束</td>
-</tr>
-<tr>
-<td style="text-align:center">^</td>
-<td style="text-align:center">匹配字符串的开始</td>
-</tr>
-<tr>
-<td style="text-align:center">$</td>
-<td style="text-align:center">匹配字符串的结束</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>例：匹配有abc开头的字符串</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">\babc或^abc</span><br></pre></td></tr></tbody></table></figure>
-<a id="more"></a>
-<h2 id="重复限定符"><a href="#重复限定符" class="headerlink" title="重复限定符"></a>重复限定符</h2><div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:center">语法</th>
-<th style="text-align:center">说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">*</td>
-<td style="text-align:center">重复零次或更多次</td>
-</tr>
-<tr>
-<td style="text-align:center">+</td>
-<td style="text-align:center">重复一次或者更多次</td>
-</tr>
-<tr>
-<td style="text-align:center">？</td>
-<td style="text-align:center">重复零次或一次</td>
-</tr>
-<tr>
-<td style="text-align:center">{n}</td>
-<td style="text-align:center">重复n次</td>
-</tr>
-<tr>
-<td style="text-align:center">{n,}</td>
-<td style="text-align:center">重复n次或更多次</td>
-</tr>
-<tr>
-<td style="text-align:center">{n,m}</td>
-<td style="text-align:center">重复n次到m次</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>限定符作用于与它<strong>左边</strong>最近的一个字符。</p>
-<p>例：匹配以a开头，0个或者多个以b结尾的字符串</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">^ab*$</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="分组"><a href="#分组" class="headerlink" title="分组"></a>分组</h2><p>以”()“作为分组。</p>
-<p>例：匹配以ab开头，0个或者多个以b结尾的字符串</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">^(ab)*$</span><br></pre></td></tr></tbody></table></figure>
-<p>注：如需匹配小括号，只要加转义字符串即可。</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">^(\(ab\))*$</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="条件或"><a href="#条件或" class="headerlink" title="条件或"></a>条件或</h2><p>利用“｜”来表达条件或。</p>
-<p>例：匹配130/131/181/177等开头的11位手机号。</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">^(<span class="number">130</span>|<span class="number">131</span>|<span class="number">181</span>|<span class="number">177</span>)\d{<span class="number">8</span>}$</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="区间"><a href="#区间" class="headerlink" title="区间"></a>区间</h2><p>利用“[]”来表达区间条件。</p>
-<blockquote>
-<p>[0-9]：限定0到9</p>
-<p>[A-Z]：限定A到Z</p>
-<p>[165]：限定规定数字</p>
-</blockquote>
-<p>例：匹配130/131/132/156/158/159/145/177开头的11位数字</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">^((<span class="number">13</span>[<span class="number">0</span>-<span class="number">2</span>])|(<span class="number">15</span>[<span class="number">689</span>])|<span class="number">145</span>|<span class="number">177</span>)\d{<span class="number">8</span>}$</span><br></pre></td></tr></tbody></table></figure>
-<h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><ul>
-<li><a href="https://juejin.im/post/5b96a8e2e51d450e6a2de115">掘金博文</a></li>
-</ul>
-]]></content>
-      <categories>
-        <category>Tools</category>
-      </categories>
-      <tags>
-        <tag>Regex</tag>
       </tags>
   </entry>
   <entry>
@@ -1077,6 +1008,118 @@
       <tags>
         <tag>Automatic Test</tag>
         <tag>Software Test Basic</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Regex</title>
+    <url>/posts/25256/</url>
+    <content><![CDATA[<h1 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h1><h2 id="元字符"><a href="#元字符" class="headerlink" title="元字符"></a>元字符</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">元字符</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">.</td>
+<td style="text-align:center">匹配除换行符以外的任意字符</td>
+</tr>
+<tr>
+<td style="text-align:center">\w</td>
+<td style="text-align:center">匹配字母、数字、下划线、汉字</td>
+</tr>
+<tr>
+<td style="text-align:center">\s</td>
+<td style="text-align:center">匹配任意的空白符</td>
+</tr>
+<tr>
+<td style="text-align:center">\d</td>
+<td style="text-align:center">匹配数字</td>
+</tr>
+<tr>
+<td style="text-align:center">\b</td>
+<td style="text-align:center">匹配单词的开始或结束</td>
+</tr>
+<tr>
+<td style="text-align:center">^</td>
+<td style="text-align:center">匹配字符串的开始</td>
+</tr>
+<tr>
+<td style="text-align:center">$</td>
+<td style="text-align:center">匹配字符串的结束</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>例：匹配有abc开头的字符串</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">\babc或^abc</span><br></pre></td></tr></tbody></table></figure>
+<a id="more"></a>
+<h2 id="重复限定符"><a href="#重复限定符" class="headerlink" title="重复限定符"></a>重复限定符</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">语法</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">*</td>
+<td style="text-align:center">重复零次或更多次</td>
+</tr>
+<tr>
+<td style="text-align:center">+</td>
+<td style="text-align:center">重复一次或者更多次</td>
+</tr>
+<tr>
+<td style="text-align:center">？</td>
+<td style="text-align:center">重复零次或一次</td>
+</tr>
+<tr>
+<td style="text-align:center">{n}</td>
+<td style="text-align:center">重复n次</td>
+</tr>
+<tr>
+<td style="text-align:center">{n,}</td>
+<td style="text-align:center">重复n次或更多次</td>
+</tr>
+<tr>
+<td style="text-align:center">{n,m}</td>
+<td style="text-align:center">重复n次到m次</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>限定符作用于与它<strong>左边</strong>最近的一个字符。</p>
+<p>例：匹配以a开头，0个或者多个以b结尾的字符串</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">^ab*$</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="分组"><a href="#分组" class="headerlink" title="分组"></a>分组</h2><p>以”()“作为分组。</p>
+<p>例：匹配以ab开头，0个或者多个以b结尾的字符串</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">^(ab)*$</span><br></pre></td></tr></tbody></table></figure>
+<p>注：如需匹配小括号，只要加转义字符串即可。</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">^(\(ab\))*$</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="条件或"><a href="#条件或" class="headerlink" title="条件或"></a>条件或</h2><p>利用“｜”来表达条件或。</p>
+<p>例：匹配130/131/181/177等开头的11位手机号。</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">^(<span class="number">130</span>|<span class="number">131</span>|<span class="number">181</span>|<span class="number">177</span>)\d{<span class="number">8</span>}$</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="区间"><a href="#区间" class="headerlink" title="区间"></a>区间</h2><p>利用“[]”来表达区间条件。</p>
+<blockquote>
+<p>[0-9]：限定0到9</p>
+<p>[A-Z]：限定A到Z</p>
+<p>[165]：限定规定数字</p>
+</blockquote>
+<p>例：匹配130/131/132/156/158/159/145/177开头的11位数字</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">^((<span class="number">13</span>[<span class="number">0</span>-<span class="number">2</span>])|(<span class="number">15</span>[<span class="number">689</span>])|<span class="number">145</span>|<span class="number">177</span>)\d{<span class="number">8</span>}$</span><br></pre></td></tr></tbody></table></figure>
+<h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><ul>
+<li><a href="https://juejin.im/post/5b96a8e2e51d450e6a2de115">掘金博文</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Tools</category>
+      </categories>
+      <tags>
+        <tag>Regex</tag>
       </tags>
   </entry>
   <entry>
@@ -2708,281 +2751,6 @@ cond(no)-&gt;op</textarea><textarea id="flowchart-0-options" style="display: non
       </tags>
   </entry>
   <entry>
-    <title>数据库基础</title>
-    <url>/posts/22488/</url>
-    <content><![CDATA[<h1 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h1><p>数据库事务(Database Transaction) ，是指为访问并可能操作各个数据项的<strong>一个数据库操作序列，这些操作要么全部执行，要么全部不执行</strong>，是一个不可分割的工作单位。事务由事务开始与结束之间执行的全部数据库操作组成。</p>
-<p>如：我们去银行转账，操作可能分为以下两个环节：</p>
-<p>（1）从第一个账户划出款项</p>
-<p>（2）将款项存入第二个账户</p>
-<p>这两个环节是关联的，如果第二个环节没有完成，那么所有的环节都应该取消。</p>
-<p>性质：</p>
-<p>A：原子性（Atomicity）事务中的全部操作在数据库中是不可分割的，要么全部完成，要么全部不执行。</p>
-<p>C：一致性（Consistency）几个并行执行的事务，其执行结果必须与按某一顺序 串行执行的结果相一致。</p>
-<p>I：隔离性（Isolation）事务的执行不受其他事务的干扰，事务执行的中间结果对其他事务必须是透明的。</p>
-<p>D：持久性（Durability）对于任意已提交事务，系统必须保证该事务对数据库的改变不被丢失，即使数据库出现故障。</p>
-<p>彻底理解数据库事务: <a href="http://www.hollischuang.com/archives/898">http://www.hollischuang.com/archives/898</a></p>
-<a id="more"></a>
-<h1 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h1><h2 id="主键-超键-候选键-外键"><a href="#主键-超键-候选键-外键" class="headerlink" title="主键 超键 候选键 外键"></a>主键 超键 候选键 外键</h2><ul>
-<li><p><strong>主键</strong>：指的是<strong>一个列或多列的组合，其值能唯一地标识表中的每一行</strong>，通过它可强制表的实体完整性。主键主要是用与其他表的外键关联，以及本记录的修改与删除。</p>
-<p>身份证号也是一种业务场景，如果身份证号升位了，或者需要变更，作为主键，不得不修改的时候，就会对业务产生严重影响。 所以，选取主键的一个基本原则是：<strong>不使用任何业务相关的字段作为主键</strong>。 因此，身份证号、手机号、邮箱地址这些看上去可以唯一的字段，均不可用作主键。</p>
-</li>
-<li><p><strong>外键</strong>：关系模式R1中的某属性集不是R1的主键，而是另一个<strong>关系R2的主键</strong>则该属性集是关系模式<strong>R1的外键</strong>。</p>
-</li>
-<li><p><strong>超键</strong>：<strong>在关系中能唯一标识元组的属性集称为关系模式的超键</strong>。一个属性可以作为一个超键，多个属性组合在一起也可以作为一个超键。<strong>超键包含候选键和主键。</strong></p>
-</li>
-<li><p><strong>候选键</strong>：是最小超键，即没有冗余元素的超键。</p>
-</li>
-</ul>
-<p>例子：</p>
-<blockquote>
-<p>假设有如下两个表：</p>
-<p>学生（学号，姓名，性别，身份证号，教师编号）</p>
-<p>教师（教师编号，姓名，工资）</p>
-</blockquote>
-<p><strong>超键：</strong></p>
-<p>由超键的定义可知，学生表中含有学号或者身份证号的任意组合都为此表的超键。如：（学号）、（学号，姓名）、（身份证号，性别）等。</p>
-<p><strong>候选键：</strong></p>
-<p>候选键属于超键，它是最小的超键，就是说如果再去掉候选键中的任何一个属性它就不再是超键了。学生表中的候选键为：（学号）、（身份证号）。</p>
-<p><strong>主键：</strong></p>
-<p>主键就是候选键里面的一个，是人为规定的，例如学生表中，我们通常会让“学号”做主键，教师表中让“教师编号”做主键。</p>
-<p><strong>外键：</strong></p>
-<p>外键比较简单，学生表中的外键就是“教师编号”。外键主要是用来描述两个表的关系。</p>
-<h2 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h2><ul>
-<li>索引是关系数据库中对<strong>某一列或多个列的值进行预排序的数据结构</strong>。通过使用索引，可以让数据库系统不必扫描整个表，而是<strong>直接定位到符合条件的记录，这样就大大加快了查询速度。</strong></li>
-</ul>
-<p>索引的效率<strong>取决于索引列的值是否散列</strong>，即该<strong>列的值如果越不相同，那么索引效率越高</strong>。反过来，如果记录的列存在大量相同的值。例如gender列，那对该列创建索引就没有意义。</p>
-<p>例如：创建名称为idx_score，使用列score的索引。</p>
-<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> students</span><br><span class="line"><span class="keyword">ADD</span> <span class="keyword">INDEX</span> idx_score (score)</span><br></pre></td></tr></tbody></table></figure>
-<p>推荐:<a href="https://www.liaoxuefeng.com/wiki/1177760294764384/1218728442198976">https://www.liaoxuefeng.com/wiki/1177760294764384/1218728442198976</a></p>
-<p><a href="http://blog.codinglabs.org/articles/theory-of-mysql-index.html">MySQL索引背后的数据结构及算法原理</a></p>
-<p>聚集索引,非聚集索引, B-Tree（B树属于多叉树又名<strong>平衡多路查找树</strong>（查找路径不只两个））,B+Tree, 最左前缀原理</p>
-<ul>
-<li>数据库索引，<strong>是数据库管理系统中一个排序的数据结构，以协助快速查询</strong>，更新数据库表中数据。索引的实现通常使用<strong>B树($O(Log_2N)$)以其变种B+树</strong>。</li>
-</ul>
-<p>在数据之外，数据库系统还维护着<strong>满足特定查找算法的数据结构</strong>，这些数据结构以某种方式引用（指向）数据，这样就可以在这些数据结构上实现高级查找算法。<strong>这种数据结构，就是索引</strong>。</p>
-<p>为表设置索引要付出代价的：<strong>一是增加了数据库的存储空间，二是在插入和修改数据时要花费较多的时间（因为索引也要随之变动）</strong></p>
-<h2 id="视图"><a href="#视图" class="headerlink" title="视图"></a>视图</h2><ul>
-<li><strong>视图是虚拟的表，主要用于简化检索，保护数据，并不用于更新，而且大部分视图都不可以更新。</strong>隐藏具体的细节，保护数据; 视图创建后，可以使用与表相同的方式利用它们。</li>
-</ul>
-<p>视图不能被索引，也不能有关联的触发器或默认值，如果视图本身内有order by则对视图再次order by将被覆盖。</p>
-<blockquote>
-<p>创建视图： create view xxx as xxxxxx</p>
-</blockquote>
-<p>优点：</p>
-<ol>
-<li>使用视图，可以定制用户数据，聚焦特定的数据。</li>
-<li>使用视图，可以简化数据操作。</li>
-<li>使用视图，基表中的数据就有了一定的安全性</li>
-</ol>
-<p><a href="https://www.jianshu.com/p/6a2c7407be4c">https://www.jianshu.com/p/6a2c7407be4c</a></p>
-<h2 id="drop-truncate-delete的区别"><a href="#drop-truncate-delete的区别" class="headerlink" title="drop, truncate, delete的区别"></a>drop, truncate, delete的区别</h2><ul>
-<li><p>drop直接删掉表</p>
-</li>
-<li><p>truncate删除表中数据，<strong>再插入时自增长id又从1开始</strong></p>
-<p>truncate table则一次性地从表中删除所有的数据并不把单独的删除操作记录记入日志保存，<strong>删除行是不能恢复的</strong>。并且在删除的过程中不会激活与表有关的删除触发器，执行速度快；</p>
-</li>
-<li><p>delete删除表中数据，<strong>可以加where字句</strong></p>
-<p>delete 语句执行删除的过程是<strong>每次从表中删除一行</strong>，并且同时将该行的删除操作作为事务记录在日志中保存以便进行回滚操作。</p>
-</li>
-</ul>
-<ol>
-<li><p>表和索引所占空间：drop语句将表所占用的空间全释放掉；当表被truncate后，这个表和索引所占用的空间会恢复到初始大小，而delete操作不会减少表或索引所占用的空间。</p>
-</li>
-<li><p>一般而言，drop&gt;truncate&gt;delete</p>
-</li>
-<li><p>应用范围。truncate只能对table，delete可以是table和view</p>
-</li>
-<li><p>truncate和delete只删除数据，而drop则删除整个表<strong>（结构和数据)</strong></p>
-</li>
-<li><p>truncate与不带where的delete:只删除数据，<strong>而不删除表的结构（定义）</strong>drop语句将删除表的结构被依赖的<strong>约束(constrain),触发器（trigger)索引(index)</strong>;依赖于该表的存储过程/函数将被保留，但其状态会变为:invalid.</p>
-</li>
-</ol>
-<h2 id="连接的种类：内连接、外连接、交叉连接"><a href="#连接的种类：内连接、外连接、交叉连接" class="headerlink" title="连接的种类：内连接、外连接、交叉连接"></a>连接的种类：内连接、外连接、交叉连接</h2><p>join_type 指出连接类型。join_condition指连接条件。</p>
-<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line">FROM  join_table join_type join_table[ON (join_condition)]</span><br></pre></td></tr></tbody></table></figure>
-<ul>
-<li><p><strong>内连接（inner join）</strong>：使用比较运算符（包括=、&gt;、&lt;、&lt;&gt;、&gt;=、&lt;=、!&gt;和!&lt;）进行表间的比较操作，查询与连接条件相匹配的数据</p>
-<ul>
-<li>等值连接（=）</li>
-</ul>
-<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> T_student s, T_class c <span class="keyword">where</span> s.classID = c.classID</span><br><span class="line">等于</span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> T_student s <span class="keyword">inner</span> <span class="keyword">join</span> T_class <span class="keyword">on</span> s.classID = c.classID</span><br></pre></td></tr></tbody></table></figure>
-<ul>
-<li>自然连接：与等值相同，<strong>但是会删除表中的重复列</strong></li>
-</ul>
-<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> s.*,c.className <span class="keyword">from</span> T_student s <span class="keyword">inner</span> <span class="keyword">join</span> T_class c <span class="keyword">on</span> s.classId = c.classId</span><br></pre></td></tr></tbody></table></figure>
-<ul>
-<li>不等连接（&lt;, &gt;, &lt;&gt;, &gt;=, &lt;=, !&gt;, !&lt;）</li>
-</ul>
-<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> T_student s <span class="keyword">inner</span> <span class="keyword">join</span> T_class c <span class="keyword">on</span> s.classId &lt;&gt; c.classId</span><br></pre></td></tr></tbody></table></figure></li>
-<li><p><strong>外连接</strong>（left join、right join、full join）</p>
-<ul>
-<li><p><strong>左连接</strong>（LEFT JOIN）：返回左表中的所有行，如果左表中行在右表中没有匹配行，则结果中右表中的列返回空值。</p>
-<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span>  T_student s <span class="keyword">left</span> <span class="keyword">join</span> T_class c <span class="keyword">on</span> s.classId = c.classId</span><br></pre></td></tr></tbody></table></figure></li>
-<li><p>左外连接（LEFT OUTER JOIN）:</p>
-</li>
-<li><p><strong>右连接</strong>（RIGHT JOIN）: 与左连接相反</p>
-</li>
-<li><p>右外连接（RIGHT OUTER JOIN）</p>
-</li>
-<li><p><strong>全连接</strong>（FULL JOIN）: 返回左表和右表中的所有行。当某行在另一表中没有匹配行，则另一表中的列返回空值</p>
-</li>
-<li><p>全外连接（FULL OUTER JOIN）</p>
-</li>
-</ul>
-</li>
-<li><p><strong>交叉连接</strong>：笛卡尔积（cross join）</p>
-<p>不带WHERE条件子句，<strong>它将会返回被连接的两个表的笛卡尔积</strong>，返回结果的行数等于两个表行数的乘积（例如：T_student和T_class，返回4*4=16条记录）；如果带where，返回或显示的是匹配的行数。</p>
-<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> T_student s <span class="keyword">cross</span> <span class="keyword">join</span> T_class c <span class="keyword">where</span> s.classId = c.classId </span><br></pre></td></tr></tbody></table></figure>
-</li>
-</ul>
-<h2 id="存储过程与触发器的区别"><a href="#存储过程与触发器的区别" class="headerlink" title="存储过程与触发器的区别"></a>存储过程与触发器的区别</h2><ul>
-<li>存储过程：用户调用的时候才会执行</li>
-</ul>
-<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">PROCEDURE</span> 创建的存储过程名字(<span class="keyword">OUT</span>|<span class="keyword">IN</span>|INOUT 参数名 数据类型,...,...) 特征 过程体</span><br></pre></td></tr></tbody></table></figure>
-<ul>
-<li>触发器：对表进行诸如UPDATE、INSERT、DELETE等时，<strong>SqlServer自动执行触发器定义的SQL语句</strong>，通过事件触发</li>
-</ul>
-<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TRIGGER</span> 创建的触发器名字 BEFFOR|<span class="keyword">AFTER</span>  <span class="keyword">INSERT</span>|<span class="keyword">UPDATE</span>|<span class="keyword">DELETE</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">ON</span> 表名字 <span class="keyword">FOR</span>  触发器的执行间隔   触发器的<span class="keyword">SQL</span>语句</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="数据库优化的思路"><a href="#数据库优化的思路" class="headerlink" title="数据库优化的思路"></a>数据库优化的思路</h2><ol>
-<li><p>SQL语句优化</p>
-<ul>
-<li>应尽量避免在 where 子句中对字段进行 <strong>null 值</strong>判断，否则将导致<strong>引擎放弃使用索引而进行全表扫描</strong></li>
-<li>应尽量避免在 where 子句中使用<strong>!=或&lt;&gt;操作符</strong>，否则将<strong>引擎放弃使用索引而进行全表扫描</strong></li>
-</ul>
-</li>
-<li><p>索引优化</p>
-<ul>
-<li>创建索引：<strong>对经常需要搜索的列上</strong>，可以加快搜索的速度；<strong>在经常需要排序的列上创建索引</strong>，因为索引已经排序，这样查询可以利用索引的排序，加快排序查询时间；</li>
-<li>不应该创建索引：对于那些在查询中很少使用或者参考的列不应该创建索引；当修改性能远远大于检索性能时，不应该创建索引</li>
-</ul>
-</li>
-<li><p>数据库结构优化</p>
-<ul>
-<li>范式优化：消除冗余（节省空间）</li>
-<li>反范式优化：适当增加冗余（减少join）</li>
-</ul>
-</li>
-<li><p>服务器硬件优化</p>
-<p>花钱</p>
-</li>
-</ol>
-<p><a href="https://www.jishuchi.com/read/mysql-interview/2810">https://www.jishuchi.com/read/mysql-interview/2810</a></p>
-<h2 id="关系数据库范式"><a href="#关系数据库范式" class="headerlink" title="关系数据库范式"></a>关系数据库范式</h2><p>在进行数据库的设计时，所遵循的一些规范，只要按照设计规范进行设计，就能设计出没有数据冗余和数据维护异常的数据库结构。</p>
-<p>数据库的设计的规范有很多，通常来说我们在设是数据库时只要达到其中一些规范就可以了，这些规范又称之为数据库的三范式，一共有三条，也存在着其他范式，我们只要做到满足前三个范式的要求，就能设陈出符合我们的数据库了，我们也不能全部来按照范式的要求来做，还要考虑实际的业务使用情况，所以有时候也需要做一些违反范式的要求。</p>
-<ol>
-<li><p>数据库设计的第一范式(最基本)，基本上所有数据库的范式都是符合第一范式的，符合第一范式的表具有以下几个特点：</p>
-<p><strong>数据库表中的所有字段都只具有单一属性，是指数据库表的每一列(即每个属性)都是不可分割的基本数据项，同一列中不能有多个值</strong>（整型，浮点型，字符型等）</p>
-</li>
-<li><p>数据库设计的第二范式(是在第一范式的基础上设计的)，<strong>要求一个表中只具有一个业务主键</strong>，也就是说符合第二范式的表中<strong>不能存在非主键列对只对部分主键的依赖关系</strong></p>
-</li>
-<li><p>数据库设计的第三范式，<strong>第三范式就是属性不依赖于其它非主属性</strong>。</p>
-</li>
-</ol>
-<h2 id="MySQL引擎：InnoDB、MyIASM和MEMORY"><a href="#MySQL引擎：InnoDB、MyIASM和MEMORY" class="headerlink" title="MySQL引擎：InnoDB、MyIASM和MEMORY"></a>MySQL引擎：InnoDB、MyIASM和MEMORY</h2><p>MySQL支持三个引擎：InnoDB、MyIASM和MEMORY</p>
-<p><strong>InnoDB 和 MyISAM之间的区别：</strong></p>
-<ul>
-<li><p>两者索引<strong>都使用B+树</strong>，InnoDB是MySQL默认的存储引擎</p>
-</li>
-<li><p>InnoDB<strong>支持事务</strong>，而MyISAM不支持事务</p>
-</li>
-<li>InnoDB<strong>支持外键</strong>，而MyISAM不支持</li>
-<li>InnoDB<strong>支持MVCC,</strong> 而MyISAM不支持</li>
-<li>InnoDB<strong>不支持全文索引</strong>，而MyISAM支持</li>
-</ul>
-<p><strong>InnoDB</strong> ：如果要提供提交、回滚、崩溃恢复的事务安全能力，用InnoDB</p>
-<p><strong>MyISAM</strong>：如果数据表主要用来<strong>插入和查询</strong>记录，MyISAM能提供较高的处理速度</p>
-<p><strong>MEMORY：</strong>如果只是临时存放数据，数据量不大，不需要较高的安全性，可以选择将数据保存在内存中的MEMORY引擎</p>
-<p>mysql 数据库引擎: <a href="http://www.cnblogs.com/0201zcr/p/5296843.html">http://www.cnblogs.com/0201zcr/p/5296843.html</a><br>MySQL存储引擎－－MyISAM与InnoDB区别: <a href="https://segmentfault.com/a/1190000008227211">https://segmentfault.com/a/1190000008227211</a></p>
-<h2 id="？-MySQL的innodb引擎是如何实现MVCC的"><a href="#？-MySQL的innodb引擎是如何实现MVCC的" class="headerlink" title="？ MySQL的innodb引擎是如何实现MVCC的"></a>？ <a href="http://lib.csdn.net/base/mysql">MySQL</a>的innodb引擎是如何实现MVCC的</h2><blockquote>
-<p>​    全称是Multi-Version Concurrent Control，即多版本并发控制，在MVCC协议下，<strong>每个读操作会看到一个一致性的snapshot</strong>，并且可以实现非阻塞的读。MVCC允许数据具有多个版本，这个版本可以是时间戳或者是全局递增的事务ID，在同一个时间点，不同的事务看到的数据是不同的。</p>
-</blockquote>
-<p>innodb会为每一行添加两个字段，分别表示该行<strong>创建的版本</strong>和<strong>删除的版本</strong>，填入的是事务的版本号，这个版本号随着事务的创建不断递增。在repeated read的隔离级别（<a href="http://blog.csdn.net/chosen0ne/article/details/10036775">事务的隔离级别请看这篇文章</a>）下，具体各种数据库操作的实现：</p>
-<ul>
-<li>select：满足以下两个条件innodb会返回该行数据：<ul>
-<li>该行的创建版本号小于等于当前版本号，用于保证在select操作之前所有的操作已经执行落地。</li>
-<li>该行的删除版本号大于当前版本或者为空。删除版本号大于当前版本意味着有一个并发事务将该行删除了。</li>
-</ul>
-</li>
-<li>insert：将新插入的行的创建版本号设置为当前系统的版本号。</li>
-<li>delete：将要删除的行的删除版本号设置为当前系统的版本号。</li>
-<li>update：不执行原地update，而是转换成insert + delete。将旧行的删除版本号设置为当前版本号，并将新行insert同时设置创建版本号为当前版本号。</li>
-</ul>
-<p>其中，写操作（insert、delete和update）执行时，需要将系统版本号递增。</p>
-<p>​    由于旧数据并不真正的删除，所以必须对这些数据进行清理，innodb会开启一个后台线程执行清理工作，具体的规则是将删除版本号小于当前系统版本的行删除，这个过程叫做purge。</p>
-<p>通过MVCC很好的实现了事务的隔离性，可以达到repeated read级别，要实现serializable还必须加锁。</p>
-<h2 id="MySQL怎么限制IP访问？"><a href="#MySQL怎么限制IP访问？" class="headerlink" title="MySQL怎么限制IP访问？"></a>MySQL怎么限制IP访问？</h2><figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">grant</span> <span class="keyword">all</span> priviledge <span class="keyword">on</span> <span class="string">"*"</span> <span class="keyword">to</span> <span class="string">"用户名@ip地址"</span> <span class="keyword">identified</span> <span class="keyword">by</span> <span class="string">"数据库密码"</span></span><br></pre></td></tr></tbody></table></figure>
-<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 创建用户</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">user</span> <span class="string">'admin@192.168.0.1'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 修改密码</span></span><br><span class="line"><span class="keyword">set</span> <span class="keyword">password</span> <span class="keyword">for</span> <span class="string">'admin@192.168.0.1'</span> = <span class="keyword">password</span>(<span class="string">"admin"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 授权：只有来自192.168.0.1的用户才能通过admin访问服务器</span></span><br><span class="line"><span class="keyword">grant</span> <span class="keyword">all</span> priviledges <span class="keyword">on</span> <span class="string">"*"</span> <span class="keyword">to</span> <span class="string">"admin@192.168.0.1"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 刷新权限</span></span><br><span class="line"><span class="keyword">flush</span> priviledges</span><br></pre></td></tr></tbody></table></figure>
-<h1 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h1><h2 id="Redis是什么？"><a href="#Redis是什么？" class="headerlink" title="Redis是什么？"></a>Redis是什么？</h2><ol>
-<li>是一个完全开源免费的<strong>key-value内存数据库</strong> </li>
-<li>通常被认为是一个数据结构服务器，主要是因为其有着丰富的数据结构 strings、map、 list、sets、 sorted sets</li>
-</ol>
-<h2 id="Redis数据库"><a href="#Redis数据库" class="headerlink" title="Redis数据库"></a>Redis数据库</h2><blockquote>
-<p>​    通常局限点来说，Redis也以消息队列的形式存在，作为内嵌的List存在，满足实时的高并发需求。在使用缓存的时候，redis比memcached具有更多的优势，并且支持更多的数据类型，把redis当作一个中间存储系统，用<strong>来处理高并发的数据库操作</strong></p>
-</blockquote>
-<ul>
-<li>速度快：使用标准C写，<strong>所有数据都在内存中完成</strong>，读写速度分别达到10万/20万 </li>
-<li>持久化：对数据的更新采用Copy-on-write技术，可以异步地保存到磁盘上，主要有两种策略，一是根据时间，更新次数的快照（save 300 10 ）二是基于语句追加方式(Append-only file，aof) </li>
-<li>自动操作：对不同数据类型的操作都是自动的，很安全 </li>
-<li><strong>快速的主—从复制</strong>，官方提供了一个数据，Slave在21秒即完成了对Amazon网站10G key set的复制。 </li>
-<li>Sharding技术： 很容易将数据分布到多个Redis实例中，数据库的扩展是个永恒的话题，在关系型数据库中，主要是以添加硬件、以分区为主要技术形式的纵向扩展解决了很多的应用场景，但随着web2.0、移动互联网、云计算等应用的兴起，这种扩展模式已经不太适合了，所以近年来，像采用主从配置、数据库复制形式的，Sharding这种技术把负载分布到多个特理节点上去的横向扩展方式用处越来越多。</li>
-</ul>
-<h2 id="Redis缺点"><a href="#Redis缺点" class="headerlink" title="Redis缺点"></a>Redis缺点</h2><ul>
-<li><strong>是数据库容量受到物理内存的限制,</strong> 不能用作海量数据的高性能读写, 因此Redis适合的场景主要<strong>局限在较小数据量的高性能操作和运算上。</strong></li>
-<li>Redis较难支持在线扩容，在集群容量达到上限时在线扩容会变得很复杂。为避免这一问题，运维人员在系统上线时必须确保有足够的空间，这对资源造成了很大的浪费。</li>
-</ul>
-<h2 id="Redis宕机怎么解决"><a href="#Redis宕机怎么解决" class="headerlink" title="Redis宕机怎么解决"></a>Redis宕机怎么解决</h2><p>宕机:服务器停止服务</p>
-<p><strong>如果只有一台redis，肯定会造成数据丢失，无法挽救</strong></p>
-<p>多台redis或者是redis集群，宕机则需要分为在主从模式下区分来看：</p>
-<ul>
-<li><p>slave从redis宕机：配置主从复制的时候才配置从的redis，从的会从主的redis中读取主的redis的操作日志，在redis中从库重新启动后会自动加入到主从架构中，自动完成同步数据;</p>
-</li>
-<li><p>主redis宕机：如果从数据库实现了持久化，此时千万不要立马重启服务，否则可能会造成数据丢失，正确的操作如下：<strong>在slave</strong>数据上执行SLAVEOF ON ONE, <strong>来断开主从关系并把slave升级为主库</strong>，此时重新启动主数据库，执行SLAVEOF，<strong>把主库设置为从库</strong>，连接到主的redis上面做主从复制，自动备份数据。</p>
-</li>
-</ul>
-<p>以上过程很容易配置错误，可以使用redis提供的哨兵机制来简化上面的操作。简单的方法: <strong>redis的哨兵(sentinel)</strong>的功能</p>
-<h2 id="Redis和mecached的区别，以及使用场景"><a href="#Redis和mecached的区别，以及使用场景" class="headerlink" title="Redis和mecached的区别，以及使用场景"></a>Redis和mecached的区别，以及使用场景</h2><p>总结</p>
-<p>都是内存数据库</p>
-<p>redis挂掉后会备份，并实现了持久化，除了k/v，还支持多种类型的数据存储。</p>
-<p>memcache挂掉后，数据不可恢复，仅支持k/v。</p>
-<p>使用场景</p>
-<ol>
-<li><p>如果有<strong>持久方面的需求</strong>或对<strong>数据类型和处理有要求</strong>的应该选择redis</p>
-</li>
-<li><p>如果<strong>简单的key/value存储应该选择memcached</strong>.</p>
-</li>
-</ol>
-<p>区别</p>
-<p>1、redis和Memcache都是<strong>将数据存放在内存中，都是内存数据库</strong>。不过memcache还可以用于缓存其他东西，例如图片，视频等等</p>
-<p>2、Redis不仅仅支持简单的<strong>k/v类型的数据</strong>，同时还提供<strong>list,set,hash等数据结构的存储</strong></p>
-<p>3、虚拟内存-redis当物流内存用完时，可以将一些很久没用的value交换到磁盘</p>
-<p>4、过期策略-memcache在set时就指定，例如set key1 0 0 8，即永不过期。Redis可以通过例如expire设定，例如expire name 10</p>
-<p>5、分布式-设定memcache集群，利用magent做一主多从，redis可以做一主多从。都可以一主一从</p>
-<p>6、存储数据安全-<strong>memcache挂掉后，数据没了</strong>。<strong>redis可以定期保存到磁盘(持久化)</strong></p>
-<p>7、灾难恢复-<strong>memcache挂掉后，数据不可恢复</strong>。redis数据丢失后可以通过aof恢复</p>
-<p>8、Redis支持数据的备份，即master-slave模式的数据备份</p>
-<p>9、应用场景不一样，redis除了作为NoSQL数据库使用外，还能用做消息队列，数据堆栈和数据缓存等; Memcache适合于缓存SQL语句，数据集，用户临时性数据，延迟查询数据和session等</p>
-<h2 id="Redis集群方案该怎么做-都有哪些方案"><a href="#Redis集群方案该怎么做-都有哪些方案" class="headerlink" title="Redis集群方案该怎么做?都有哪些方案?"></a>Redis集群方案该怎么做?都有哪些方案?</h2><ol>
-<li><p>codis</p>
-<p>目前用的最多的集群方案，基本和twemproxy一致的效果，但它支持在节点数量改变情况下，旧节点数据客恢复到新hash节点</p>
-</li>
-<li><p>redis cluster3.0自带的集群，特点在于他的分布式算法不是一致性hash，而是hash槽的概念，以及自身支持节点设置从节点。具体看官方介绍</p>
-</li>
-<li><p>在业务代码层实现，起几个毫无关联的redis实例，在代码层，对key进行hash计算，然后去对应的redis实例操作数据。这种方式对hash层代码要求比较高，考虑部分包括，节点失效后的替代算法方案，数据震荡后的字典脚本恢复，实例的监控，等等</p>
-</li>
-</ol>
-<h2 id="Redis回收进程是如何工作的"><a href="#Redis回收进程是如何工作的" class="headerlink" title="Redis回收进程是如何工作的"></a>Redis回收进程是如何工作的</h2><p>一个客户端运行了新的命令，添加了新的数据。</p>
-<p>redis检查内存使用情况，如果大于maxmemory的限制，则根据<strong>设定好的策略</strong>进行回收。</p>
-<p>一个新的命令被执行等等，所以我们不断地穿越内存限制的边界，通过<strong>不断达到边界然后不断回收回到边界以下</strong>。</p>
-<p>如果一个命令的结果导致大量内存被使用(例如很大的集合的交集保存到一个新的键)，不用多久内存限制就会被这个内存使用量超越。</p>
-<h1 id="MongoDB"><a href="#MongoDB" class="headerlink" title="MongoDB"></a>MongoDB</h1><h2 id="211-MongoDB中对多条记录做更新操作命令是什么？"><a href="#211-MongoDB中对多条记录做更新操作命令是什么？" class="headerlink" title="211.MongoDB中对多条记录做更新操作命令是什么？"></a>211.MongoDB中对多条记录做更新操作命令是什么？</h2><h2 id="212-MongoDB如何才会拓展到多个shard里？"><a href="#212-MongoDB如何才会拓展到多个shard里？" class="headerlink" title="212.MongoDB如何才会拓展到多个shard里？"></a>212.MongoDB如何才会拓展到多个shard里？</h2>]]></content>
-      <categories>
-        <category>Computer Basic</category>
-        <category>Interview</category>
-      </categories>
-      <tags>
-        <tag>DataBase Basic</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>操作系统</title>
     <url>/posts/2246/</url>
     <content><![CDATA[<h1 id="同步，异步，阻塞，非阻塞？"><a href="#同步，异步，阻塞，非阻塞？" class="headerlink" title="同步，异步，阻塞，非阻塞？"></a>同步，异步，阻塞，非阻塞？</h1><p>同步： 多个任务之间有先后顺序执行，一个执行完下个才能执行。</p>
@@ -3281,6 +3049,281 @@ cond(no)-&gt;op</textarea><textarea id="flowchart-0-options" style="display: non
       </categories>
       <tags>
         <tag>Operating System</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>数据库基础</title>
+    <url>/posts/22488/</url>
+    <content><![CDATA[<h1 id="事务"><a href="#事务" class="headerlink" title="事务"></a>事务</h1><p>数据库事务(Database Transaction) ，是指为访问并可能操作各个数据项的<strong>一个数据库操作序列，这些操作要么全部执行，要么全部不执行</strong>，是一个不可分割的工作单位。事务由事务开始与结束之间执行的全部数据库操作组成。</p>
+<p>如：我们去银行转账，操作可能分为以下两个环节：</p>
+<p>（1）从第一个账户划出款项</p>
+<p>（2）将款项存入第二个账户</p>
+<p>这两个环节是关联的，如果第二个环节没有完成，那么所有的环节都应该取消。</p>
+<p>性质：</p>
+<p>A：原子性（Atomicity）事务中的全部操作在数据库中是不可分割的，要么全部完成，要么全部不执行。</p>
+<p>C：一致性（Consistency）几个并行执行的事务，其执行结果必须与按某一顺序 串行执行的结果相一致。</p>
+<p>I：隔离性（Isolation）事务的执行不受其他事务的干扰，事务执行的中间结果对其他事务必须是透明的。</p>
+<p>D：持久性（Durability）对于任意已提交事务，系统必须保证该事务对数据库的改变不被丢失，即使数据库出现故障。</p>
+<p>彻底理解数据库事务: <a href="http://www.hollischuang.com/archives/898">http://www.hollischuang.com/archives/898</a></p>
+<a id="more"></a>
+<h1 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h1><h2 id="主键-超键-候选键-外键"><a href="#主键-超键-候选键-外键" class="headerlink" title="主键 超键 候选键 外键"></a>主键 超键 候选键 外键</h2><ul>
+<li><p><strong>主键</strong>：指的是<strong>一个列或多列的组合，其值能唯一地标识表中的每一行</strong>，通过它可强制表的实体完整性。主键主要是用与其他表的外键关联，以及本记录的修改与删除。</p>
+<p>身份证号也是一种业务场景，如果身份证号升位了，或者需要变更，作为主键，不得不修改的时候，就会对业务产生严重影响。 所以，选取主键的一个基本原则是：<strong>不使用任何业务相关的字段作为主键</strong>。 因此，身份证号、手机号、邮箱地址这些看上去可以唯一的字段，均不可用作主键。</p>
+</li>
+<li><p><strong>外键</strong>：关系模式R1中的某属性集不是R1的主键，而是另一个<strong>关系R2的主键</strong>则该属性集是关系模式<strong>R1的外键</strong>。</p>
+</li>
+<li><p><strong>超键</strong>：<strong>在关系中能唯一标识元组的属性集称为关系模式的超键</strong>。一个属性可以作为一个超键，多个属性组合在一起也可以作为一个超键。<strong>超键包含候选键和主键。</strong></p>
+</li>
+<li><p><strong>候选键</strong>：是最小超键，即没有冗余元素的超键。</p>
+</li>
+</ul>
+<p>例子：</p>
+<blockquote>
+<p>假设有如下两个表：</p>
+<p>学生（学号，姓名，性别，身份证号，教师编号）</p>
+<p>教师（教师编号，姓名，工资）</p>
+</blockquote>
+<p><strong>超键：</strong></p>
+<p>由超键的定义可知，学生表中含有学号或者身份证号的任意组合都为此表的超键。如：（学号）、（学号，姓名）、（身份证号，性别）等。</p>
+<p><strong>候选键：</strong></p>
+<p>候选键属于超键，它是最小的超键，就是说如果再去掉候选键中的任何一个属性它就不再是超键了。学生表中的候选键为：（学号）、（身份证号）。</p>
+<p><strong>主键：</strong></p>
+<p>主键就是候选键里面的一个，是人为规定的，例如学生表中，我们通常会让“学号”做主键，教师表中让“教师编号”做主键。</p>
+<p><strong>外键：</strong></p>
+<p>外键比较简单，学生表中的外键就是“教师编号”。外键主要是用来描述两个表的关系。</p>
+<h2 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h2><ul>
+<li>索引是关系数据库中对<strong>某一列或多个列的值进行预排序的数据结构</strong>。通过使用索引，可以让数据库系统不必扫描整个表，而是<strong>直接定位到符合条件的记录，这样就大大加快了查询速度。</strong></li>
+</ul>
+<p>索引的效率<strong>取决于索引列的值是否散列</strong>，即该<strong>列的值如果越不相同，那么索引效率越高</strong>。反过来，如果记录的列存在大量相同的值。例如gender列，那对该列创建索引就没有意义。</p>
+<p>例如：创建名称为idx_score，使用列score的索引。</p>
+<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> students</span><br><span class="line"><span class="keyword">ADD</span> <span class="keyword">INDEX</span> idx_score (score)</span><br></pre></td></tr></tbody></table></figure>
+<p>推荐:<a href="https://www.liaoxuefeng.com/wiki/1177760294764384/1218728442198976">https://www.liaoxuefeng.com/wiki/1177760294764384/1218728442198976</a></p>
+<p><a href="http://blog.codinglabs.org/articles/theory-of-mysql-index.html">MySQL索引背后的数据结构及算法原理</a></p>
+<p>聚集索引,非聚集索引, B-Tree（B树属于多叉树又名<strong>平衡多路查找树</strong>（查找路径不只两个））,B+Tree, 最左前缀原理</p>
+<ul>
+<li>数据库索引，<strong>是数据库管理系统中一个排序的数据结构，以协助快速查询</strong>，更新数据库表中数据。索引的实现通常使用<strong>B树($O(Log_2N)$)以其变种B+树</strong>。</li>
+</ul>
+<p>在数据之外，数据库系统还维护着<strong>满足特定查找算法的数据结构</strong>，这些数据结构以某种方式引用（指向）数据，这样就可以在这些数据结构上实现高级查找算法。<strong>这种数据结构，就是索引</strong>。</p>
+<p>为表设置索引要付出代价的：<strong>一是增加了数据库的存储空间，二是在插入和修改数据时要花费较多的时间（因为索引也要随之变动）</strong></p>
+<h2 id="视图"><a href="#视图" class="headerlink" title="视图"></a>视图</h2><ul>
+<li><strong>视图是虚拟的表，主要用于简化检索，保护数据，并不用于更新，而且大部分视图都不可以更新。</strong>隐藏具体的细节，保护数据; 视图创建后，可以使用与表相同的方式利用它们。</li>
+</ul>
+<p>视图不能被索引，也不能有关联的触发器或默认值，如果视图本身内有order by则对视图再次order by将被覆盖。</p>
+<blockquote>
+<p>创建视图： create view xxx as xxxxxx</p>
+</blockquote>
+<p>优点：</p>
+<ol>
+<li>使用视图，可以定制用户数据，聚焦特定的数据。</li>
+<li>使用视图，可以简化数据操作。</li>
+<li>使用视图，基表中的数据就有了一定的安全性</li>
+</ol>
+<p><a href="https://www.jianshu.com/p/6a2c7407be4c">https://www.jianshu.com/p/6a2c7407be4c</a></p>
+<h2 id="drop-truncate-delete的区别"><a href="#drop-truncate-delete的区别" class="headerlink" title="drop, truncate, delete的区别"></a>drop, truncate, delete的区别</h2><ul>
+<li><p>drop直接删掉表</p>
+</li>
+<li><p>truncate删除表中数据，<strong>再插入时自增长id又从1开始</strong></p>
+<p>truncate table则一次性地从表中删除所有的数据并不把单独的删除操作记录记入日志保存，<strong>删除行是不能恢复的</strong>。并且在删除的过程中不会激活与表有关的删除触发器，执行速度快；</p>
+</li>
+<li><p>delete删除表中数据，<strong>可以加where字句</strong></p>
+<p>delete 语句执行删除的过程是<strong>每次从表中删除一行</strong>，并且同时将该行的删除操作作为事务记录在日志中保存以便进行回滚操作。</p>
+</li>
+</ul>
+<ol>
+<li><p>表和索引所占空间：drop语句将表所占用的空间全释放掉；当表被truncate后，这个表和索引所占用的空间会恢复到初始大小，而delete操作不会减少表或索引所占用的空间。</p>
+</li>
+<li><p>一般而言，drop&gt;truncate&gt;delete</p>
+</li>
+<li><p>应用范围。truncate只能对table，delete可以是table和view</p>
+</li>
+<li><p>truncate和delete只删除数据，而drop则删除整个表<strong>（结构和数据)</strong></p>
+</li>
+<li><p>truncate与不带where的delete:只删除数据，<strong>而不删除表的结构（定义）</strong>drop语句将删除表的结构被依赖的<strong>约束(constrain),触发器（trigger)索引(index)</strong>;依赖于该表的存储过程/函数将被保留，但其状态会变为:invalid.</p>
+</li>
+</ol>
+<h2 id="连接的种类：内连接、外连接、交叉连接"><a href="#连接的种类：内连接、外连接、交叉连接" class="headerlink" title="连接的种类：内连接、外连接、交叉连接"></a>连接的种类：内连接、外连接、交叉连接</h2><p>join_type 指出连接类型。join_condition指连接条件。</p>
+<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line">FROM  join_table join_type join_table[ON (join_condition)]</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li><p><strong>内连接（inner join）</strong>：使用比较运算符（包括=、&gt;、&lt;、&lt;&gt;、&gt;=、&lt;=、!&gt;和!&lt;）进行表间的比较操作，查询与连接条件相匹配的数据</p>
+<ul>
+<li>等值连接（=）</li>
+</ul>
+<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> T_student s, T_class c <span class="keyword">where</span> s.classID = c.classID</span><br><span class="line">等于</span><br><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> T_student s <span class="keyword">inner</span> <span class="keyword">join</span> T_class <span class="keyword">on</span> s.classID = c.classID</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>自然连接：与等值相同，<strong>但是会删除表中的重复列</strong></li>
+</ul>
+<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> s.*,c.className <span class="keyword">from</span> T_student s <span class="keyword">inner</span> <span class="keyword">join</span> T_class c <span class="keyword">on</span> s.classId = c.classId</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>不等连接（&lt;, &gt;, &lt;&gt;, &gt;=, &lt;=, !&gt;, !&lt;）</li>
+</ul>
+<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> T_student s <span class="keyword">inner</span> <span class="keyword">join</span> T_class c <span class="keyword">on</span> s.classId &lt;&gt; c.classId</span><br></pre></td></tr></tbody></table></figure></li>
+<li><p><strong>外连接</strong>（left join、right join、full join）</p>
+<ul>
+<li><p><strong>左连接</strong>（LEFT JOIN）：返回左表中的所有行，如果左表中行在右表中没有匹配行，则结果中右表中的列返回空值。</p>
+<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span>  T_student s <span class="keyword">left</span> <span class="keyword">join</span> T_class c <span class="keyword">on</span> s.classId = c.classId</span><br></pre></td></tr></tbody></table></figure></li>
+<li><p>左外连接（LEFT OUTER JOIN）:</p>
+</li>
+<li><p><strong>右连接</strong>（RIGHT JOIN）: 与左连接相反</p>
+</li>
+<li><p>右外连接（RIGHT OUTER JOIN）</p>
+</li>
+<li><p><strong>全连接</strong>（FULL JOIN）: 返回左表和右表中的所有行。当某行在另一表中没有匹配行，则另一表中的列返回空值</p>
+</li>
+<li><p>全外连接（FULL OUTER JOIN）</p>
+</li>
+</ul>
+</li>
+<li><p><strong>交叉连接</strong>：笛卡尔积（cross join）</p>
+<p>不带WHERE条件子句，<strong>它将会返回被连接的两个表的笛卡尔积</strong>，返回结果的行数等于两个表行数的乘积（例如：T_student和T_class，返回4*4=16条记录）；如果带where，返回或显示的是匹配的行数。</p>
+<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> T_student s <span class="keyword">cross</span> <span class="keyword">join</span> T_class c <span class="keyword">where</span> s.classId = c.classId </span><br></pre></td></tr></tbody></table></figure>
+</li>
+</ul>
+<h2 id="存储过程与触发器的区别"><a href="#存储过程与触发器的区别" class="headerlink" title="存储过程与触发器的区别"></a>存储过程与触发器的区别</h2><ul>
+<li>存储过程：用户调用的时候才会执行</li>
+</ul>
+<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">PROCEDURE</span> 创建的存储过程名字(<span class="keyword">OUT</span>|<span class="keyword">IN</span>|INOUT 参数名 数据类型,...,...) 特征 过程体</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>触发器：对表进行诸如UPDATE、INSERT、DELETE等时，<strong>SqlServer自动执行触发器定义的SQL语句</strong>，通过事件触发</li>
+</ul>
+<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TRIGGER</span> 创建的触发器名字 BEFFOR|<span class="keyword">AFTER</span>  <span class="keyword">INSERT</span>|<span class="keyword">UPDATE</span>|<span class="keyword">DELETE</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">ON</span> 表名字 <span class="keyword">FOR</span>  触发器的执行间隔   触发器的<span class="keyword">SQL</span>语句</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="数据库优化的思路"><a href="#数据库优化的思路" class="headerlink" title="数据库优化的思路"></a>数据库优化的思路</h2><ol>
+<li><p>SQL语句优化</p>
+<ul>
+<li>应尽量避免在 where 子句中对字段进行 <strong>null 值</strong>判断，否则将导致<strong>引擎放弃使用索引而进行全表扫描</strong></li>
+<li>应尽量避免在 where 子句中使用<strong>!=或&lt;&gt;操作符</strong>，否则将<strong>引擎放弃使用索引而进行全表扫描</strong></li>
+</ul>
+</li>
+<li><p>索引优化</p>
+<ul>
+<li>创建索引：<strong>对经常需要搜索的列上</strong>，可以加快搜索的速度；<strong>在经常需要排序的列上创建索引</strong>，因为索引已经排序，这样查询可以利用索引的排序，加快排序查询时间；</li>
+<li>不应该创建索引：对于那些在查询中很少使用或者参考的列不应该创建索引；当修改性能远远大于检索性能时，不应该创建索引</li>
+</ul>
+</li>
+<li><p>数据库结构优化</p>
+<ul>
+<li>范式优化：消除冗余（节省空间）</li>
+<li>反范式优化：适当增加冗余（减少join）</li>
+</ul>
+</li>
+<li><p>服务器硬件优化</p>
+<p>花钱</p>
+</li>
+</ol>
+<p><a href="https://www.jishuchi.com/read/mysql-interview/2810">https://www.jishuchi.com/read/mysql-interview/2810</a></p>
+<h2 id="关系数据库范式"><a href="#关系数据库范式" class="headerlink" title="关系数据库范式"></a>关系数据库范式</h2><p>在进行数据库的设计时，所遵循的一些规范，只要按照设计规范进行设计，就能设计出没有数据冗余和数据维护异常的数据库结构。</p>
+<p>数据库的设计的规范有很多，通常来说我们在设是数据库时只要达到其中一些规范就可以了，这些规范又称之为数据库的三范式，一共有三条，也存在着其他范式，我们只要做到满足前三个范式的要求，就能设陈出符合我们的数据库了，我们也不能全部来按照范式的要求来做，还要考虑实际的业务使用情况，所以有时候也需要做一些违反范式的要求。</p>
+<ol>
+<li><p>数据库设计的第一范式(最基本)，基本上所有数据库的范式都是符合第一范式的，符合第一范式的表具有以下几个特点：</p>
+<p><strong>数据库表中的所有字段都只具有单一属性，是指数据库表的每一列(即每个属性)都是不可分割的基本数据项，同一列中不能有多个值</strong>（整型，浮点型，字符型等）</p>
+</li>
+<li><p>数据库设计的第二范式(是在第一范式的基础上设计的)，<strong>要求一个表中只具有一个业务主键</strong>，也就是说符合第二范式的表中<strong>不能存在非主键列对只对部分主键的依赖关系</strong></p>
+</li>
+<li><p>数据库设计的第三范式，<strong>第三范式就是属性不依赖于其它非主属性</strong>。</p>
+</li>
+</ol>
+<h2 id="MySQL引擎：InnoDB、MyIASM和MEMORY"><a href="#MySQL引擎：InnoDB、MyIASM和MEMORY" class="headerlink" title="MySQL引擎：InnoDB、MyIASM和MEMORY"></a>MySQL引擎：InnoDB、MyIASM和MEMORY</h2><p>MySQL支持三个引擎：InnoDB、MyIASM和MEMORY</p>
+<p><strong>InnoDB 和 MyISAM之间的区别：</strong></p>
+<ul>
+<li><p>两者索引<strong>都使用B+树</strong>，InnoDB是MySQL默认的存储引擎</p>
+</li>
+<li><p>InnoDB<strong>支持事务</strong>，而MyISAM不支持事务</p>
+</li>
+<li>InnoDB<strong>支持外键</strong>，而MyISAM不支持</li>
+<li>InnoDB<strong>支持MVCC,</strong> 而MyISAM不支持</li>
+<li>InnoDB<strong>不支持全文索引</strong>，而MyISAM支持</li>
+</ul>
+<p><strong>InnoDB</strong> ：如果要提供提交、回滚、崩溃恢复的事务安全能力，用InnoDB</p>
+<p><strong>MyISAM</strong>：如果数据表主要用来<strong>插入和查询</strong>记录，MyISAM能提供较高的处理速度</p>
+<p><strong>MEMORY：</strong>如果只是临时存放数据，数据量不大，不需要较高的安全性，可以选择将数据保存在内存中的MEMORY引擎</p>
+<p>mysql 数据库引擎: <a href="http://www.cnblogs.com/0201zcr/p/5296843.html">http://www.cnblogs.com/0201zcr/p/5296843.html</a><br>MySQL存储引擎－－MyISAM与InnoDB区别: <a href="https://segmentfault.com/a/1190000008227211">https://segmentfault.com/a/1190000008227211</a></p>
+<h2 id="？-MySQL的innodb引擎是如何实现MVCC的"><a href="#？-MySQL的innodb引擎是如何实现MVCC的" class="headerlink" title="？ MySQL的innodb引擎是如何实现MVCC的"></a>？ <a href="http://lib.csdn.net/base/mysql">MySQL</a>的innodb引擎是如何实现MVCC的</h2><blockquote>
+<p>​    全称是Multi-Version Concurrent Control，即多版本并发控制，在MVCC协议下，<strong>每个读操作会看到一个一致性的snapshot</strong>，并且可以实现非阻塞的读。MVCC允许数据具有多个版本，这个版本可以是时间戳或者是全局递增的事务ID，在同一个时间点，不同的事务看到的数据是不同的。</p>
+</blockquote>
+<p>innodb会为每一行添加两个字段，分别表示该行<strong>创建的版本</strong>和<strong>删除的版本</strong>，填入的是事务的版本号，这个版本号随着事务的创建不断递增。在repeated read的隔离级别（<a href="http://blog.csdn.net/chosen0ne/article/details/10036775">事务的隔离级别请看这篇文章</a>）下，具体各种数据库操作的实现：</p>
+<ul>
+<li>select：满足以下两个条件innodb会返回该行数据：<ul>
+<li>该行的创建版本号小于等于当前版本号，用于保证在select操作之前所有的操作已经执行落地。</li>
+<li>该行的删除版本号大于当前版本或者为空。删除版本号大于当前版本意味着有一个并发事务将该行删除了。</li>
+</ul>
+</li>
+<li>insert：将新插入的行的创建版本号设置为当前系统的版本号。</li>
+<li>delete：将要删除的行的删除版本号设置为当前系统的版本号。</li>
+<li>update：不执行原地update，而是转换成insert + delete。将旧行的删除版本号设置为当前版本号，并将新行insert同时设置创建版本号为当前版本号。</li>
+</ul>
+<p>其中，写操作（insert、delete和update）执行时，需要将系统版本号递增。</p>
+<p>​    由于旧数据并不真正的删除，所以必须对这些数据进行清理，innodb会开启一个后台线程执行清理工作，具体的规则是将删除版本号小于当前系统版本的行删除，这个过程叫做purge。</p>
+<p>通过MVCC很好的实现了事务的隔离性，可以达到repeated read级别，要实现serializable还必须加锁。</p>
+<h2 id="MySQL怎么限制IP访问？"><a href="#MySQL怎么限制IP访问？" class="headerlink" title="MySQL怎么限制IP访问？"></a>MySQL怎么限制IP访问？</h2><figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">grant</span> <span class="keyword">all</span> priviledge <span class="keyword">on</span> <span class="string">"*"</span> <span class="keyword">to</span> <span class="string">"用户名@ip地址"</span> <span class="keyword">identified</span> <span class="keyword">by</span> <span class="string">"数据库密码"</span></span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight sql"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 创建用户</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">user</span> <span class="string">'admin@192.168.0.1'</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 修改密码</span></span><br><span class="line"><span class="keyword">set</span> <span class="keyword">password</span> <span class="keyword">for</span> <span class="string">'admin@192.168.0.1'</span> = <span class="keyword">password</span>(<span class="string">"admin"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 授权：只有来自192.168.0.1的用户才能通过admin访问服务器</span></span><br><span class="line"><span class="keyword">grant</span> <span class="keyword">all</span> priviledges <span class="keyword">on</span> <span class="string">"*"</span> <span class="keyword">to</span> <span class="string">"admin@192.168.0.1"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 刷新权限</span></span><br><span class="line"><span class="keyword">flush</span> priviledges</span><br></pre></td></tr></tbody></table></figure>
+<h1 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h1><h2 id="Redis是什么？"><a href="#Redis是什么？" class="headerlink" title="Redis是什么？"></a>Redis是什么？</h2><ol>
+<li>是一个完全开源免费的<strong>key-value内存数据库</strong> </li>
+<li>通常被认为是一个数据结构服务器，主要是因为其有着丰富的数据结构 strings、map、 list、sets、 sorted sets</li>
+</ol>
+<h2 id="Redis数据库"><a href="#Redis数据库" class="headerlink" title="Redis数据库"></a>Redis数据库</h2><blockquote>
+<p>​    通常局限点来说，Redis也以消息队列的形式存在，作为内嵌的List存在，满足实时的高并发需求。在使用缓存的时候，redis比memcached具有更多的优势，并且支持更多的数据类型，把redis当作一个中间存储系统，用<strong>来处理高并发的数据库操作</strong></p>
+</blockquote>
+<ul>
+<li>速度快：使用标准C写，<strong>所有数据都在内存中完成</strong>，读写速度分别达到10万/20万 </li>
+<li>持久化：对数据的更新采用Copy-on-write技术，可以异步地保存到磁盘上，主要有两种策略，一是根据时间，更新次数的快照（save 300 10 ）二是基于语句追加方式(Append-only file，aof) </li>
+<li>自动操作：对不同数据类型的操作都是自动的，很安全 </li>
+<li><strong>快速的主—从复制</strong>，官方提供了一个数据，Slave在21秒即完成了对Amazon网站10G key set的复制。 </li>
+<li>Sharding技术： 很容易将数据分布到多个Redis实例中，数据库的扩展是个永恒的话题，在关系型数据库中，主要是以添加硬件、以分区为主要技术形式的纵向扩展解决了很多的应用场景，但随着web2.0、移动互联网、云计算等应用的兴起，这种扩展模式已经不太适合了，所以近年来，像采用主从配置、数据库复制形式的，Sharding这种技术把负载分布到多个特理节点上去的横向扩展方式用处越来越多。</li>
+</ul>
+<h2 id="Redis缺点"><a href="#Redis缺点" class="headerlink" title="Redis缺点"></a>Redis缺点</h2><ul>
+<li><strong>是数据库容量受到物理内存的限制,</strong> 不能用作海量数据的高性能读写, 因此Redis适合的场景主要<strong>局限在较小数据量的高性能操作和运算上。</strong></li>
+<li>Redis较难支持在线扩容，在集群容量达到上限时在线扩容会变得很复杂。为避免这一问题，运维人员在系统上线时必须确保有足够的空间，这对资源造成了很大的浪费。</li>
+</ul>
+<h2 id="Redis宕机怎么解决"><a href="#Redis宕机怎么解决" class="headerlink" title="Redis宕机怎么解决"></a>Redis宕机怎么解决</h2><p>宕机:服务器停止服务</p>
+<p><strong>如果只有一台redis，肯定会造成数据丢失，无法挽救</strong></p>
+<p>多台redis或者是redis集群，宕机则需要分为在主从模式下区分来看：</p>
+<ul>
+<li><p>slave从redis宕机：配置主从复制的时候才配置从的redis，从的会从主的redis中读取主的redis的操作日志，在redis中从库重新启动后会自动加入到主从架构中，自动完成同步数据;</p>
+</li>
+<li><p>主redis宕机：如果从数据库实现了持久化，此时千万不要立马重启服务，否则可能会造成数据丢失，正确的操作如下：<strong>在slave</strong>数据上执行SLAVEOF ON ONE, <strong>来断开主从关系并把slave升级为主库</strong>，此时重新启动主数据库，执行SLAVEOF，<strong>把主库设置为从库</strong>，连接到主的redis上面做主从复制，自动备份数据。</p>
+</li>
+</ul>
+<p>以上过程很容易配置错误，可以使用redis提供的哨兵机制来简化上面的操作。简单的方法: <strong>redis的哨兵(sentinel)</strong>的功能</p>
+<h2 id="Redis和mecached的区别，以及使用场景"><a href="#Redis和mecached的区别，以及使用场景" class="headerlink" title="Redis和mecached的区别，以及使用场景"></a>Redis和mecached的区别，以及使用场景</h2><p>总结</p>
+<p>都是内存数据库</p>
+<p>redis挂掉后会备份，并实现了持久化，除了k/v，还支持多种类型的数据存储。</p>
+<p>memcache挂掉后，数据不可恢复，仅支持k/v。</p>
+<p>使用场景</p>
+<ol>
+<li><p>如果有<strong>持久方面的需求</strong>或对<strong>数据类型和处理有要求</strong>的应该选择redis</p>
+</li>
+<li><p>如果<strong>简单的key/value存储应该选择memcached</strong>.</p>
+</li>
+</ol>
+<p>区别</p>
+<p>1、redis和Memcache都是<strong>将数据存放在内存中，都是内存数据库</strong>。不过memcache还可以用于缓存其他东西，例如图片，视频等等</p>
+<p>2、Redis不仅仅支持简单的<strong>k/v类型的数据</strong>，同时还提供<strong>list,set,hash等数据结构的存储</strong></p>
+<p>3、虚拟内存-redis当物流内存用完时，可以将一些很久没用的value交换到磁盘</p>
+<p>4、过期策略-memcache在set时就指定，例如set key1 0 0 8，即永不过期。Redis可以通过例如expire设定，例如expire name 10</p>
+<p>5、分布式-设定memcache集群，利用magent做一主多从，redis可以做一主多从。都可以一主一从</p>
+<p>6、存储数据安全-<strong>memcache挂掉后，数据没了</strong>。<strong>redis可以定期保存到磁盘(持久化)</strong></p>
+<p>7、灾难恢复-<strong>memcache挂掉后，数据不可恢复</strong>。redis数据丢失后可以通过aof恢复</p>
+<p>8、Redis支持数据的备份，即master-slave模式的数据备份</p>
+<p>9、应用场景不一样，redis除了作为NoSQL数据库使用外，还能用做消息队列，数据堆栈和数据缓存等; Memcache适合于缓存SQL语句，数据集，用户临时性数据，延迟查询数据和session等</p>
+<h2 id="Redis集群方案该怎么做-都有哪些方案"><a href="#Redis集群方案该怎么做-都有哪些方案" class="headerlink" title="Redis集群方案该怎么做?都有哪些方案?"></a>Redis集群方案该怎么做?都有哪些方案?</h2><ol>
+<li><p>codis</p>
+<p>目前用的最多的集群方案，基本和twemproxy一致的效果，但它支持在节点数量改变情况下，旧节点数据客恢复到新hash节点</p>
+</li>
+<li><p>redis cluster3.0自带的集群，特点在于他的分布式算法不是一致性hash，而是hash槽的概念，以及自身支持节点设置从节点。具体看官方介绍</p>
+</li>
+<li><p>在业务代码层实现，起几个毫无关联的redis实例，在代码层，对key进行hash计算，然后去对应的redis实例操作数据。这种方式对hash层代码要求比较高，考虑部分包括，节点失效后的替代算法方案，数据震荡后的字典脚本恢复，实例的监控，等等</p>
+</li>
+</ol>
+<h2 id="Redis回收进程是如何工作的"><a href="#Redis回收进程是如何工作的" class="headerlink" title="Redis回收进程是如何工作的"></a>Redis回收进程是如何工作的</h2><p>一个客户端运行了新的命令，添加了新的数据。</p>
+<p>redis检查内存使用情况，如果大于maxmemory的限制，则根据<strong>设定好的策略</strong>进行回收。</p>
+<p>一个新的命令被执行等等，所以我们不断地穿越内存限制的边界，通过<strong>不断达到边界然后不断回收回到边界以下</strong>。</p>
+<p>如果一个命令的结果导致大量内存被使用(例如很大的集合的交集保存到一个新的键)，不用多久内存限制就会被这个内存使用量超越。</p>
+<h1 id="MongoDB"><a href="#MongoDB" class="headerlink" title="MongoDB"></a>MongoDB</h1><h2 id="211-MongoDB中对多条记录做更新操作命令是什么？"><a href="#211-MongoDB中对多条记录做更新操作命令是什么？" class="headerlink" title="211.MongoDB中对多条记录做更新操作命令是什么？"></a>211.MongoDB中对多条记录做更新操作命令是什么？</h2><h2 id="212-MongoDB如何才会拓展到多个shard里？"><a href="#212-MongoDB如何才会拓展到多个shard里？" class="headerlink" title="212.MongoDB如何才会拓展到多个shard里？"></a>212.MongoDB如何才会拓展到多个shard里？</h2>]]></content>
+      <categories>
+        <category>Computer Basic</category>
+        <category>Interview</category>
+      </categories>
+      <tags>
+        <tag>DataBase Basic</tag>
       </tags>
   </entry>
   <entry>
