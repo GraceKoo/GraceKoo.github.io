@@ -291,13 +291,6 @@
   </url>
   
   <url>
-    <loc>https://unknown.yuzhouwan.com/tags/Python-Automation-Test/</loc>
-    <lastmod>2023-03-21</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://unknown.yuzhouwan.com/tags/Regex/</loc>
     <lastmod>2023-03-21</lastmod>
     <changefreq>daily</changefreq>
@@ -305,7 +298,7 @@
   </url>
   
   <url>
-    <loc>https://unknown.yuzhouwan.com/tags/markdown/</loc>
+    <loc>https://unknown.yuzhouwan.com/tags/Python-Automation-Test/</loc>
     <lastmod>2023-03-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -313,6 +306,13 @@
   
   <url>
     <loc>https://unknown.yuzhouwan.com/tags/Neural-Network/</loc>
+    <lastmod>2023-03-21</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://unknown.yuzhouwan.com/tags/markdown/</loc>
     <lastmod>2023-03-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
