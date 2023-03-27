@@ -534,129 +534,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Machine Learning基础</title>
-    <url>/posts/59544/</url>
-    <content><![CDATA[<p><img data-src="/images/MachineLearning/MLMindNode.png" alt="MLMindNode"></p>
-<a id="more"></a>
-<h1 id="Introduction-of-Machine-Learning"><a href="#Introduction-of-Machine-Learning" class="headerlink" title="Introduction of Machine Learning"></a>Introduction of Machine Learning</h1><p>机器学习可以揭示数据背后的真实含义。</p>
-<p><strong>监督学习</strong>需要用户知道目标值，简单的说就是知道数据在找什么。而<strong>无监督学习</strong>则无需用户知道搜寻的目标，只需要从算法程序中得到这些数据的共同特征。</p>
-<p>保证算法应用的正确性：</p>
-<ol>
-<li>确保算法应用可以正确处理简单的数据。</li>
-<li>将现实世界中得到的数据格式化为算法可以处理的格式。</li>
-<li>将步骤2得到的数据输入到步骤1的算法中，检验算法的运行结果。</li>
-</ol>
-<p>千万不要忽略前两个步骤而直接跳到步骤3来检验算法处理真实数据的效果。任何复杂系统都是由基础工程构成的，尤其是算法出现问题时，增量地搭建系统可以确保我们及时找到问题出现的位置和原因。</p>
-<p>后续根据监督学习和无监督学习进行分类讨论。</p>
-<p>在监督学习中，我们只需要给定输入样本，机器就可以从中推演出指定目标变量的可能结果。监督学习相对比较简单，机器只需从输入数据中预测合适的模型，并从中计算出目标变量的结果。</p>
-<p>监督学习一般使用两种类型的目标变量：标称型和数值型。<strong>标称型</strong>目标变量的结果只在有限目标集中取值，如真与假，动物分类集合；<strong>数值型</strong>目标变量则可以从无限的数值集合中取值，一般用于回归分析。</p>
-<h2 id="Key-Terminology"><a href="#Key-Terminology" class="headerlink" title="Key Terminology"></a>Key Terminology</h2><p>我们使用机器学习的某个算法进行分类结果，首先要做的是<strong>算法训练</strong>，即学习如何<strong>分类</strong>。通常我们为算法输入大量的已分类数据作为算法的<strong>训练集</strong>。训练集是用于训练机器学习算法的数据样本集合。<strong>目标变量</strong>是机器学习算法的预测结果。</p>
-<p>在分类算法中目标变量的类型通常是标称型的，而在回归算法中通常是连续型的。</p>
-<p>训练样本集必须确定知道目标变量的值，以便机器学习算法可以发现特征和目标变量之间的关系。</p>
-<p>当机器学习程序开始运行时，使用训练样本集作为算法的输入，<strong>训练完成</strong>后输入<strong>测试样本</strong>，由程序决定样本属于哪个类别。</p>
-<h2 id="Primary-Mission"><a href="#Primary-Mission" class="headerlink" title="Primary Mission"></a>Primary Mission</h2><p>监督学习中的任务：</p>
-<p>1.将实例数据划分到合适的<strong>分类</strong>中。</p>
-<p>2.<strong>回归</strong>，主要用于预测数值型数据。</p>
-<p>无监督学习中的任务：</p>
-<p>数据没有类别信息，也不会给定目标值。</p>
-<p>1.在无监督学习中，将数据集合分成由类似的对象组成的多个类的过程被称为<strong>聚类</strong>。</p>
-<p>2.将寻找描述数据统计值的过程称之为<strong>密度估计</strong>。</p>
-<h2 id="Overview-of-Algorithm"><a href="#Overview-of-Algorithm" class="headerlink" title="Overview of Algorithm"></a>Overview of Algorithm</h2><div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:center">监督学习的用途</th>
-<th style="text-align:center"></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">K-近邻算法</td>
-<td style="text-align:center">线性回归</td>
-</tr>
-<tr>
-<td style="text-align:center">朴素贝叶斯算法</td>
-<td style="text-align:center">局部加权线性回归</td>
-</tr>
-<tr>
-<td style="text-align:center">支持向量机</td>
-<td style="text-align:center">Ridge回归</td>
-</tr>
-<tr>
-<td style="text-align:center">决策树</td>
-<td style="text-align:center">Lasso最小回归系数估计</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:center">无监督学习的用途</th>
-<th style="text-align:center"></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">K-均值</td>
-<td style="text-align:center">最大期望算法</td>
-</tr>
-<tr>
-<td style="text-align:center">DBSCAN</td>
-<td style="text-align:center">Parzen窗设计</td>
-</tr>
-</tbody>
-</table>
-</div>
-<h2 id="How-to-choose"><a href="#How-to-choose" class="headerlink" title="How to choose"></a>How to choose</h2><p>首先考虑使用机器学习算法的目的。如果想要预测目标变量的值，则可以选择监督学习算法，否则选择无监督学习算法。</p>
-<p>如果确定选择监督学习算法后，需要进一步确定目标变量类型。</p>
-<ul>
-<li>如果目标变量是离散型，如是／否，1/2/3，红／黄／黑等，则可以选择<strong>分类算法</strong>。</li>
-<li>如果目标变量是连续型的数值，则需要选择<strong>回归算法</strong>。</li>
-</ul>
-<p>如果不想预测目标变量的值，则可以选择无监督学习算法。</p>
-<ul>
-<li>需要将数据划分为离散的组。如果这是唯一的需求，则使用<strong>聚类算法</strong>。</li>
-<li>需要估计数据与每个分组的相似程度，需要使用<strong>密度估计算法。</strong></li>
-</ul>
-<h2 id="Steps-in-Machine-Learning"><a href="#Steps-in-Machine-Learning" class="headerlink" title="Steps in Machine Learning"></a>Steps in Machine Learning</h2><ol>
-<li>收集数据</li>
-<li>准备输入数据</li>
-<li>分析输入数据。确保数据集中没有垃圾数据。</li>
-<li><strong>训练算法</strong>（监督学习）</li>
-<li>测试算法。</li>
-<li>使用算法。将机器学习算法转化为应用程序，执行实际任务。</li>
-</ol>
-<h1 id="优化算法"><a href="#优化算法" class="headerlink" title="优化算法"></a>优化算法</h1><h2 id="损失函数-目标函数"><a href="#损失函数-目标函数" class="headerlink" title="损失函数(目标函数)"></a>损失函数(目标函数)</h2><h3 id="分类问题"><a href="#分类问题" class="headerlink" title="分类问题"></a>分类问题</h3><ol>
-<li>平方差损失函数</li>
-</ol>
-<script type="math/tex; mode=display">\frac{1}{n}\sum\frac{1}{2}(y - Model(x))^2</script><ol>
-<li>交叉熵损失</li>
-</ol>
-<p>多用于多分类</p>
-<script type="math/tex; mode=display">\frac{1}{n}\sum yln(Model(x))</script><h3 id="回归问题"><a href="#回归问题" class="headerlink" title="回归问题"></a>回归问题</h3><ol>
-<li>平方差损失函数</li>
-</ol>
-<script type="math/tex; mode=display">\frac{1}{n}\sum\frac{1}{2}(y - Model(x))^2</script><ol>
-<li>绝对值损失</li>
-</ol>
-<script type="math/tex; mode=display">\frac{1}{n}\sum|y - Model(x)|</script><h2 id="正则化"><a href="#正则化" class="headerlink" title="正则化"></a>正则化</h2><h2 id="EM算法"><a href="#EM算法" class="headerlink" title="EM算法"></a>EM算法</h2><h2 id="梯度下降"><a href="#梯度下降" class="headerlink" title="梯度下降"></a>梯度下降</h2><h2 id="随机梯度下降"><a href="#随机梯度下降" class="headerlink" title="随机梯度下降"></a>随机梯度下降</h2><h2 id="反向传播"><a href="#反向传播" class="headerlink" title="反向传播"></a>反向传播</h2><h2 id="梯度验证"><a href="#梯度验证" class="headerlink" title="梯度验证"></a>梯度验证</h2><h2 id="Momentum"><a href="#Momentum" class="headerlink" title="Momentum"></a>Momentum</h2><h2 id="AdaGrad"><a href="#AdaGrad" class="headerlink" title="AdaGrad"></a>AdaGrad</h2><h2 id="Adam"><a href="#Adam" class="headerlink" title="Adam"></a>Adam</h2><h1 id="模型评估"><a href="#模型评估" class="headerlink" title="模型评估"></a>模型评估</h1><h2 id="评价指标"><a href="#评价指标" class="headerlink" title="评价指标"></a>评价指标</h2><h2 id="A-B测试"><a href="#A-B测试" class="headerlink" title="A/B测试"></a>A/B测试</h2><h2 id="过拟合于欠拟合"><a href="#过拟合于欠拟合" class="headerlink" title="过拟合于欠拟合"></a>过拟合于欠拟合</h2><h2 id="超参数选择"><a href="#超参数选择" class="headerlink" title="超参数选择"></a>超参数选择</h2><h1 id="DeepLearning-Model"><a href="#DeepLearning-Model" class="headerlink" title="DeepLearning Model"></a>DeepLearning Model</h1><h2 id="CNN"><a href="#CNN" class="headerlink" title="CNN"></a>CNN</h2><p>移步☞博文：<a href="https://unknown.yuzhouwan.com/posts/16452/">CNN</a></p>
-<h2 id="RNN"><a href="#RNN" class="headerlink" title="RNN"></a>RNN</h2><h2 id="GAN"><a href="#GAN" class="headerlink" title="GAN"></a>GAN</h2><h2 id="AutoML"><a href="#AutoML" class="headerlink" title="AutoML"></a>AutoML</h2><h2 id="深度学习优化技巧"><a href="#深度学习优化技巧" class="headerlink" title="深度学习优化技巧"></a>深度学习优化技巧</h2><h3 id="批量归一化BN"><a href="#批量归一化BN" class="headerlink" title="批量归一化BN"></a>批量归一化BN</h3><h3 id="Dropout"><a href="#Dropout" class="headerlink" title="Dropout"></a>Dropout</h3><h3 id="激活函数"><a href="#激活函数" class="headerlink" title="激活函数"></a>激活函数</h3><h4 id="Sigmoid"><a href="#Sigmoid" class="headerlink" title="Sigmoid"></a>Sigmoid</h4><p>二分类逻辑回归模型</p>
-<script type="math/tex; mode=display">f(x)=\frac{1}{1+e^{-W^TX}}</script><p><img data-src="/images/Python-base/DataView_Sigmoid.png" alt="DataView_Sigmoid"></p>
-<h4 id="Softmax"><a href="#Softmax" class="headerlink" title="Softmax"></a>Softmax</h4><p>多分类逻辑回归模型</p>
-<p><script type="math/tex">P(Y=k|x)=\frac{e^{-W^T_kx}}{1+\sum_{1}^{k-1}e^{-W^T_kX}}</script>, k=1,2,…..,K-1</p>
-<p><script type="math/tex">P(Y=k|x)=\frac{1}{1+\sum_{1}^{k-1}e^{-W^T_kX}}</script>, k=K</p>
-<h4 id="Tanh"><a href="#Tanh" class="headerlink" title="Tanh"></a>Tanh</h4><h4 id="ReLU"><a href="#ReLU" class="headerlink" title="ReLU"></a>ReLU</h4>]]></content>
-      <categories>
-        <category>Machine Learning</category>
-      </categories>
-      <tags>
-        <tag>Machine Learning</tag>
-        <tag>Python</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>AI中的数学知识</title>
     <url>/posts/59545/</url>
     <content><![CDATA[<h1 id="线性代数部分"><a href="#线性代数部分" class="headerlink" title="线性代数部分"></a>线性代数部分</h1><h2 id="矩阵及其运算合集"><a href="#矩阵及其运算合集" class="headerlink" title="矩阵及其运算合集"></a>矩阵及其运算合集</h2><a id="more"></a>
@@ -736,120 +613,8 @@
         <category>DataView</category>
       </categories>
       <tags>
-        <tag>Python</tag>
         <tag>Numpy</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Regex</title>
-    <url>/posts/25256/</url>
-    <content><![CDATA[<h1 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h1><h2 id="元字符"><a href="#元字符" class="headerlink" title="元字符"></a>元字符</h2><div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:center">元字符</th>
-<th style="text-align:center">说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">.</td>
-<td style="text-align:center">匹配除换行符以外的任意字符</td>
-</tr>
-<tr>
-<td style="text-align:center">\w</td>
-<td style="text-align:center">匹配字母、数字、下划线、汉字</td>
-</tr>
-<tr>
-<td style="text-align:center">\s</td>
-<td style="text-align:center">匹配任意的空白符</td>
-</tr>
-<tr>
-<td style="text-align:center">\d</td>
-<td style="text-align:center">匹配数字</td>
-</tr>
-<tr>
-<td style="text-align:center">\b</td>
-<td style="text-align:center">匹配单词的开始或结束</td>
-</tr>
-<tr>
-<td style="text-align:center">^</td>
-<td style="text-align:center">匹配字符串的开始</td>
-</tr>
-<tr>
-<td style="text-align:center">$</td>
-<td style="text-align:center">匹配字符串的结束</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>例：匹配有abc开头的字符串</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">\babc或^abc</span><br></pre></td></tr></tbody></table></figure>
-<a id="more"></a>
-<h2 id="重复限定符"><a href="#重复限定符" class="headerlink" title="重复限定符"></a>重复限定符</h2><div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:center">语法</th>
-<th style="text-align:center">说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">*</td>
-<td style="text-align:center">重复零次或更多次</td>
-</tr>
-<tr>
-<td style="text-align:center">+</td>
-<td style="text-align:center">重复一次或者更多次</td>
-</tr>
-<tr>
-<td style="text-align:center">？</td>
-<td style="text-align:center">重复零次或一次</td>
-</tr>
-<tr>
-<td style="text-align:center">{n}</td>
-<td style="text-align:center">重复n次</td>
-</tr>
-<tr>
-<td style="text-align:center">{n,}</td>
-<td style="text-align:center">重复n次或更多次</td>
-</tr>
-<tr>
-<td style="text-align:center">{n,m}</td>
-<td style="text-align:center">重复n次到m次</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p>限定符作用于与它<strong>左边</strong>最近的一个字符。</p>
-<p>例：匹配以a开头，0个或者多个以b结尾的字符串</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">^ab*$</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="分组"><a href="#分组" class="headerlink" title="分组"></a>分组</h2><p>以”()“作为分组。</p>
-<p>例：匹配以ab开头，0个或者多个以b结尾的字符串</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">^(ab)*$</span><br></pre></td></tr></tbody></table></figure>
-<p>注：如需匹配小括号，只要加转义字符串即可。</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">^(\(ab\))*$</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="条件或"><a href="#条件或" class="headerlink" title="条件或"></a>条件或</h2><p>利用“｜”来表达条件或。</p>
-<p>例：匹配130/131/181/177等开头的11位手机号。</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">^(<span class="number">130</span>|<span class="number">131</span>|<span class="number">181</span>|<span class="number">177</span>)\d{<span class="number">8</span>}$</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="区间"><a href="#区间" class="headerlink" title="区间"></a>区间</h2><p>利用“[]”来表达区间条件。</p>
-<blockquote>
-<p>[0-9]：限定0到9</p>
-<p>[A-Z]：限定A到Z</p>
-<p>[165]：限定规定数字</p>
-</blockquote>
-<p>例：匹配130/131/132/156/158/159/145/177开头的11位数字</p>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">^((<span class="number">13</span>[<span class="number">0</span>-<span class="number">2</span>])|(<span class="number">15</span>[<span class="number">689</span>])|<span class="number">145</span>|<span class="number">177</span>)\d{<span class="number">8</span>}$</span><br></pre></td></tr></tbody></table></figure>
-<h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><ul>
-<li><a href="https://juejin.im/post/5b96a8e2e51d450e6a2de115">掘金博文</a></li>
-</ul>
-]]></content>
-      <categories>
-        <category>Tools</category>
-      </categories>
-      <tags>
-        <tag>Regex</tag>
+        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
@@ -1144,6 +909,141 @@
       </tags>
   </entry>
   <entry>
+    <title>Regex</title>
+    <url>/posts/25256/</url>
+    <content><![CDATA[<h1 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h1><h2 id="元字符"><a href="#元字符" class="headerlink" title="元字符"></a>元字符</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">元字符</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">.</td>
+<td style="text-align:center">匹配除换行符以外的任意字符</td>
+</tr>
+<tr>
+<td style="text-align:center">\w</td>
+<td style="text-align:center">匹配字母、数字、下划线、汉字</td>
+</tr>
+<tr>
+<td style="text-align:center">\s</td>
+<td style="text-align:center">匹配任意的空白符</td>
+</tr>
+<tr>
+<td style="text-align:center">\d</td>
+<td style="text-align:center">匹配数字</td>
+</tr>
+<tr>
+<td style="text-align:center">\b</td>
+<td style="text-align:center">匹配单词的开始或结束</td>
+</tr>
+<tr>
+<td style="text-align:center">^</td>
+<td style="text-align:center">匹配字符串的开始</td>
+</tr>
+<tr>
+<td style="text-align:center">$</td>
+<td style="text-align:center">匹配字符串的结束</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>例：匹配有abc开头的字符串</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">\babc或^abc</span><br></pre></td></tr></tbody></table></figure>
+<a id="more"></a>
+<h2 id="重复限定符"><a href="#重复限定符" class="headerlink" title="重复限定符"></a>重复限定符</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">语法</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">*</td>
+<td style="text-align:center">重复零次或更多次</td>
+</tr>
+<tr>
+<td style="text-align:center">+</td>
+<td style="text-align:center">重复一次或者更多次</td>
+</tr>
+<tr>
+<td style="text-align:center">？</td>
+<td style="text-align:center">重复零次或一次</td>
+</tr>
+<tr>
+<td style="text-align:center">{n}</td>
+<td style="text-align:center">重复n次</td>
+</tr>
+<tr>
+<td style="text-align:center">{n,}</td>
+<td style="text-align:center">重复n次或更多次</td>
+</tr>
+<tr>
+<td style="text-align:center">{n,m}</td>
+<td style="text-align:center">重复n次到m次</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>限定符作用于与它<strong>左边</strong>最近的一个字符。</p>
+<p>例：匹配以a开头，0个或者多个以b结尾的字符串</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">^ab*$</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="分组"><a href="#分组" class="headerlink" title="分组"></a>分组</h2><p>以”()“作为分组。</p>
+<p>例：匹配以ab开头，0个或者多个以b结尾的字符串</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">^(ab)*$</span><br></pre></td></tr></tbody></table></figure>
+<p>注：如需匹配小括号，只要加转义字符串即可。</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">^(\(ab\))*$</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="条件或"><a href="#条件或" class="headerlink" title="条件或"></a>条件或</h2><p>利用“｜”来表达条件或。</p>
+<p>例：匹配130/131/181/177等开头的11位手机号。</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">^(<span class="number">130</span>|<span class="number">131</span>|<span class="number">181</span>|<span class="number">177</span>)\d{<span class="number">8</span>}$</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="区间"><a href="#区间" class="headerlink" title="区间"></a>区间</h2><p>利用“[]”来表达区间条件。</p>
+<blockquote>
+<p>[0-9]：限定0到9</p>
+<p>[A-Z]：限定A到Z</p>
+<p>[165]：限定规定数字</p>
+</blockquote>
+<p>例：匹配130/131/132/156/158/159/145/177开头的11位数字</p>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">^((<span class="number">13</span>[<span class="number">0</span>-<span class="number">2</span>])|(<span class="number">15</span>[<span class="number">689</span>])|<span class="number">145</span>|<span class="number">177</span>)\d{<span class="number">8</span>}$</span><br></pre></td></tr></tbody></table></figure>
+<h1 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h1><ul>
+<li><a href="https://juejin.im/post/5b96a8e2e51d450e6a2de115">掘金博文</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>Tools</category>
+      </categories>
+      <tags>
+        <tag>Regex</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Spring</title>
+    <url>/posts/25249120/</url>
+    <content><![CDATA[<h1 id="Spring概况"><a href="#Spring概况" class="headerlink" title="Spring概况"></a>Spring概况</h1><ul>
+<li><p>Spring是一个开源框架，为了解决企业级应用开发的复杂性而创建的，但现在已经不止应用于企业应用</p>
+</li>
+<li><p>Spring是一个轻量级的控制反转(IOC)和面向切面(AOP)的容器框架</p>
+<ul>
+<li>从大小与开销方面而言Spring是轻量的</li>
+<li>通过控制反转(IOC)的技术达到松耦合的目的</li>
+<li>提供了面向切面编程的丰富支持，允许通过分离应用的业务逻辑与系统级服务进行内聚性的开发</li>
+<li>包含并管理应用对象的配置和生命周期，这个意义上是一种容器</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Language</category>
+      </categories>
+      <tags>
+        <tag>BigData</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>TensorFlow2.0 In Action</title>
     <url>/posts/29871/</url>
     <content><![CDATA[<h1 id="TensorFlow2-0简化的模型开发流程"><a href="#TensorFlow2-0简化的模型开发流程" class="headerlink" title="TensorFlow2.0简化的模型开发流程"></a>TensorFlow2.0简化的模型开发流程</h1><ul>
@@ -1189,29 +1089,6 @@
       </categories>
       <tags>
         <tag>Neural Network</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Spring</title>
-    <url>/posts/25249120/</url>
-    <content><![CDATA[<h1 id="Spring概况"><a href="#Spring概况" class="headerlink" title="Spring概况"></a>Spring概况</h1><ul>
-<li><p>Spring是一个开源框架，为了解决企业级应用开发的复杂性而创建的，但现在已经不止应用于企业应用</p>
-</li>
-<li><p>Spring是一个轻量级的控制反转(IOC)和面向切面(AOP)的容器框架</p>
-<ul>
-<li>从大小与开销方面而言Spring是轻量的</li>
-<li>通过控制反转(IOC)的技术达到松耦合的目的</li>
-<li>提供了面向切面编程的丰富支持，允许通过分离应用的业务逻辑与系统级服务进行内聚性的开发</li>
-<li>包含并管理应用对象的配置和生命周期，这个意义上是一种容器</li>
-</ul>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Language</category>
-      </categories>
-      <tags>
-        <tag>BigData</tag>
       </tags>
   </entry>
   <entry>
@@ -1511,6 +1388,129 @@ cond(no)-&gt;op</textarea><textarea id="flowchart-0-options" style="display: non
       </tags>
   </entry>
   <entry>
+    <title>Machine Learning基础</title>
+    <url>/posts/59544/</url>
+    <content><![CDATA[<p><img data-src="/images/MachineLearning/MLMindNode.png" alt="MLMindNode"></p>
+<a id="more"></a>
+<h1 id="Introduction-of-Machine-Learning"><a href="#Introduction-of-Machine-Learning" class="headerlink" title="Introduction of Machine Learning"></a>Introduction of Machine Learning</h1><p>机器学习可以揭示数据背后的真实含义。</p>
+<p><strong>监督学习</strong>需要用户知道目标值，简单的说就是知道数据在找什么。而<strong>无监督学习</strong>则无需用户知道搜寻的目标，只需要从算法程序中得到这些数据的共同特征。</p>
+<p>保证算法应用的正确性：</p>
+<ol>
+<li>确保算法应用可以正确处理简单的数据。</li>
+<li>将现实世界中得到的数据格式化为算法可以处理的格式。</li>
+<li>将步骤2得到的数据输入到步骤1的算法中，检验算法的运行结果。</li>
+</ol>
+<p>千万不要忽略前两个步骤而直接跳到步骤3来检验算法处理真实数据的效果。任何复杂系统都是由基础工程构成的，尤其是算法出现问题时，增量地搭建系统可以确保我们及时找到问题出现的位置和原因。</p>
+<p>后续根据监督学习和无监督学习进行分类讨论。</p>
+<p>在监督学习中，我们只需要给定输入样本，机器就可以从中推演出指定目标变量的可能结果。监督学习相对比较简单，机器只需从输入数据中预测合适的模型，并从中计算出目标变量的结果。</p>
+<p>监督学习一般使用两种类型的目标变量：标称型和数值型。<strong>标称型</strong>目标变量的结果只在有限目标集中取值，如真与假，动物分类集合；<strong>数值型</strong>目标变量则可以从无限的数值集合中取值，一般用于回归分析。</p>
+<h2 id="Key-Terminology"><a href="#Key-Terminology" class="headerlink" title="Key Terminology"></a>Key Terminology</h2><p>我们使用机器学习的某个算法进行分类结果，首先要做的是<strong>算法训练</strong>，即学习如何<strong>分类</strong>。通常我们为算法输入大量的已分类数据作为算法的<strong>训练集</strong>。训练集是用于训练机器学习算法的数据样本集合。<strong>目标变量</strong>是机器学习算法的预测结果。</p>
+<p>在分类算法中目标变量的类型通常是标称型的，而在回归算法中通常是连续型的。</p>
+<p>训练样本集必须确定知道目标变量的值，以便机器学习算法可以发现特征和目标变量之间的关系。</p>
+<p>当机器学习程序开始运行时，使用训练样本集作为算法的输入，<strong>训练完成</strong>后输入<strong>测试样本</strong>，由程序决定样本属于哪个类别。</p>
+<h2 id="Primary-Mission"><a href="#Primary-Mission" class="headerlink" title="Primary Mission"></a>Primary Mission</h2><p>监督学习中的任务：</p>
+<p>1.将实例数据划分到合适的<strong>分类</strong>中。</p>
+<p>2.<strong>回归</strong>，主要用于预测数值型数据。</p>
+<p>无监督学习中的任务：</p>
+<p>数据没有类别信息，也不会给定目标值。</p>
+<p>1.在无监督学习中，将数据集合分成由类似的对象组成的多个类的过程被称为<strong>聚类</strong>。</p>
+<p>2.将寻找描述数据统计值的过程称之为<strong>密度估计</strong>。</p>
+<h2 id="Overview-of-Algorithm"><a href="#Overview-of-Algorithm" class="headerlink" title="Overview of Algorithm"></a>Overview of Algorithm</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">监督学习的用途</th>
+<th style="text-align:center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">K-近邻算法</td>
+<td style="text-align:center">线性回归</td>
+</tr>
+<tr>
+<td style="text-align:center">朴素贝叶斯算法</td>
+<td style="text-align:center">局部加权线性回归</td>
+</tr>
+<tr>
+<td style="text-align:center">支持向量机</td>
+<td style="text-align:center">Ridge回归</td>
+</tr>
+<tr>
+<td style="text-align:center">决策树</td>
+<td style="text-align:center">Lasso最小回归系数估计</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">无监督学习的用途</th>
+<th style="text-align:center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">K-均值</td>
+<td style="text-align:center">最大期望算法</td>
+</tr>
+<tr>
+<td style="text-align:center">DBSCAN</td>
+<td style="text-align:center">Parzen窗设计</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="How-to-choose"><a href="#How-to-choose" class="headerlink" title="How to choose"></a>How to choose</h2><p>首先考虑使用机器学习算法的目的。如果想要预测目标变量的值，则可以选择监督学习算法，否则选择无监督学习算法。</p>
+<p>如果确定选择监督学习算法后，需要进一步确定目标变量类型。</p>
+<ul>
+<li>如果目标变量是离散型，如是／否，1/2/3，红／黄／黑等，则可以选择<strong>分类算法</strong>。</li>
+<li>如果目标变量是连续型的数值，则需要选择<strong>回归算法</strong>。</li>
+</ul>
+<p>如果不想预测目标变量的值，则可以选择无监督学习算法。</p>
+<ul>
+<li>需要将数据划分为离散的组。如果这是唯一的需求，则使用<strong>聚类算法</strong>。</li>
+<li>需要估计数据与每个分组的相似程度，需要使用<strong>密度估计算法。</strong></li>
+</ul>
+<h2 id="Steps-in-Machine-Learning"><a href="#Steps-in-Machine-Learning" class="headerlink" title="Steps in Machine Learning"></a>Steps in Machine Learning</h2><ol>
+<li>收集数据</li>
+<li>准备输入数据</li>
+<li>分析输入数据。确保数据集中没有垃圾数据。</li>
+<li><strong>训练算法</strong>（监督学习）</li>
+<li>测试算法。</li>
+<li>使用算法。将机器学习算法转化为应用程序，执行实际任务。</li>
+</ol>
+<h1 id="优化算法"><a href="#优化算法" class="headerlink" title="优化算法"></a>优化算法</h1><h2 id="损失函数-目标函数"><a href="#损失函数-目标函数" class="headerlink" title="损失函数(目标函数)"></a>损失函数(目标函数)</h2><h3 id="分类问题"><a href="#分类问题" class="headerlink" title="分类问题"></a>分类问题</h3><ol>
+<li>平方差损失函数</li>
+</ol>
+<script type="math/tex; mode=display">\frac{1}{n}\sum\frac{1}{2}(y - Model(x))^2</script><ol>
+<li>交叉熵损失</li>
+</ol>
+<p>多用于多分类</p>
+<script type="math/tex; mode=display">\frac{1}{n}\sum yln(Model(x))</script><h3 id="回归问题"><a href="#回归问题" class="headerlink" title="回归问题"></a>回归问题</h3><ol>
+<li>平方差损失函数</li>
+</ol>
+<script type="math/tex; mode=display">\frac{1}{n}\sum\frac{1}{2}(y - Model(x))^2</script><ol>
+<li>绝对值损失</li>
+</ol>
+<script type="math/tex; mode=display">\frac{1}{n}\sum|y - Model(x)|</script><h2 id="正则化"><a href="#正则化" class="headerlink" title="正则化"></a>正则化</h2><h2 id="EM算法"><a href="#EM算法" class="headerlink" title="EM算法"></a>EM算法</h2><h2 id="梯度下降"><a href="#梯度下降" class="headerlink" title="梯度下降"></a>梯度下降</h2><h2 id="随机梯度下降"><a href="#随机梯度下降" class="headerlink" title="随机梯度下降"></a>随机梯度下降</h2><h2 id="反向传播"><a href="#反向传播" class="headerlink" title="反向传播"></a>反向传播</h2><h2 id="梯度验证"><a href="#梯度验证" class="headerlink" title="梯度验证"></a>梯度验证</h2><h2 id="Momentum"><a href="#Momentum" class="headerlink" title="Momentum"></a>Momentum</h2><h2 id="AdaGrad"><a href="#AdaGrad" class="headerlink" title="AdaGrad"></a>AdaGrad</h2><h2 id="Adam"><a href="#Adam" class="headerlink" title="Adam"></a>Adam</h2><h1 id="模型评估"><a href="#模型评估" class="headerlink" title="模型评估"></a>模型评估</h1><h2 id="评价指标"><a href="#评价指标" class="headerlink" title="评价指标"></a>评价指标</h2><h2 id="A-B测试"><a href="#A-B测试" class="headerlink" title="A/B测试"></a>A/B测试</h2><h2 id="过拟合于欠拟合"><a href="#过拟合于欠拟合" class="headerlink" title="过拟合于欠拟合"></a>过拟合于欠拟合</h2><h2 id="超参数选择"><a href="#超参数选择" class="headerlink" title="超参数选择"></a>超参数选择</h2><h1 id="DeepLearning-Model"><a href="#DeepLearning-Model" class="headerlink" title="DeepLearning Model"></a>DeepLearning Model</h1><h2 id="CNN"><a href="#CNN" class="headerlink" title="CNN"></a>CNN</h2><p>移步☞博文：<a href="https://unknown.yuzhouwan.com/posts/16452/">CNN</a></p>
+<h2 id="RNN"><a href="#RNN" class="headerlink" title="RNN"></a>RNN</h2><h2 id="GAN"><a href="#GAN" class="headerlink" title="GAN"></a>GAN</h2><h2 id="AutoML"><a href="#AutoML" class="headerlink" title="AutoML"></a>AutoML</h2><h2 id="深度学习优化技巧"><a href="#深度学习优化技巧" class="headerlink" title="深度学习优化技巧"></a>深度学习优化技巧</h2><h3 id="批量归一化BN"><a href="#批量归一化BN" class="headerlink" title="批量归一化BN"></a>批量归一化BN</h3><h3 id="Dropout"><a href="#Dropout" class="headerlink" title="Dropout"></a>Dropout</h3><h3 id="激活函数"><a href="#激活函数" class="headerlink" title="激活函数"></a>激活函数</h3><h4 id="Sigmoid"><a href="#Sigmoid" class="headerlink" title="Sigmoid"></a>Sigmoid</h4><p>二分类逻辑回归模型</p>
+<script type="math/tex; mode=display">f(x)=\frac{1}{1+e^{-W^TX}}</script><p><img data-src="/images/Python-base/DataView_Sigmoid.png" alt="DataView_Sigmoid"></p>
+<h4 id="Softmax"><a href="#Softmax" class="headerlink" title="Softmax"></a>Softmax</h4><p>多分类逻辑回归模型</p>
+<p><script type="math/tex">P(Y=k|x)=\frac{e^{-W^T_kx}}{1+\sum_{1}^{k-1}e^{-W^T_kX}}</script>, k=1,2,…..,K-1</p>
+<p><script type="math/tex">P(Y=k|x)=\frac{1}{1+\sum_{1}^{k-1}e^{-W^T_kX}}</script>, k=K</p>
+<h4 id="Tanh"><a href="#Tanh" class="headerlink" title="Tanh"></a>Tanh</h4><h4 id="ReLU"><a href="#ReLU" class="headerlink" title="ReLU"></a>ReLU</h4>]]></content>
+      <categories>
+        <category>Machine Learning</category>
+      </categories>
+      <tags>
+        <tag>Machine Learning</tag>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>DataStructure &amp; Algorithm</title>
     <url>/posts/57792/</url>
     <content><![CDATA[<h1 id="栈"><a href="#栈" class="headerlink" title="栈"></a>栈</h1><p><img data-src="/images/algorithm/栈.png" alt="栈"></p>
@@ -1596,356 +1596,6 @@ cond(no)-&gt;op</textarea><textarea id="flowchart-0-options" style="display: non
       <tags>
         <tag>Python</tag>
         <tag>Algorithm</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Java基础</title>
-    <url>/posts/252123234598/</url>
-    <content><![CDATA[<h1 id="变量和常量"><a href="#变量和常量" class="headerlink" title="变量和常量"></a>变量和常量</h1><h2 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h2><p><img data-src="/images/Java/keyword.png" alt="keyword"></p>
-<a id="more"></a>
-<h2 id="标识符"><a href="#标识符" class="headerlink" title="标识符"></a>标识符</h2><p>标识符就是用于给 Java 程序中变量、类、方法等命名的符号。</p>
-<ol>
-<li><p>标识符<strong>可以</strong>由<strong>字母、数字、下划线（_）、美元符（$）</strong>组成，但不能包含 @、%、空格等其它特殊字符<strong>，不能以数字开头</strong>。譬如：123name 就是不合法滴</p>
-</li>
-<li><p>标识符<strong>不能是 Java 关键字和保留字</strong>（ Java 预留的关键字，以后的升级版本中有可能作为关键字），但可以包含关键字和保留字。如：不可以使用 void 作为标识符，但是 Myvoid 可以</p>
-</li>
-<li><p>标识符是<strong>严格区分大小写</strong>的。 所以涅，一定要分清楚 imooc 和 IMooc 是两个不同的标识符哦！</p>
-</li>
-<li><p>标识符的命名最好能反映出其作用，做到<strong>见名知意</strong>。</p>
-</li>
-</ol>
-<p><img data-src="/images/Java/biaoshifu.png" alt="biaoshifu"></p>
-<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><ol>
-<li><p>变量名由多单词组成时，<strong>第一个单词的首字母小写</strong>，<strong>其后单词的首字母大写</strong>，俗称骆驼式命名法（也称驼峰命名法），如 myAge</p>
-</li>
-<li><p>变量命名时，尽量简短且能清楚的表达变量的作用，做到<strong>见名知意</strong>。如：定义变量名 stuName 保存“学生姓名”信息</p>
-</li>
-</ol>
-<p>PS： Java 变量名的<strong>长度没有限制</strong>，但 Java 语言<strong>是区分大小写</strong>的，所以 price 和 Price 是两个完全不同的变量哦！</p>
-<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><p><img data-src="/images/Java/varchar.png" alt="varchar"></p>
-<p>在 Java 的领域里<strong>，基本数据类型变量</strong>存的是<strong>数据本身</strong>，而<strong>引用类型变量</strong>存的是保存<strong>数据的空间地址</strong>。</p>
-<ul>
-<li>常用的基本数据类型</li>
-</ul>
-<p><img data-src="/images/Java/normal_basic_varchar.png" alt="normal_basic_varchar"></p>
-<p>float: 单精度类型,精度是8位有效数字，取值范围是10的-38次方到10的38次方，float占用4个字节的存储空间double:双精度类型，精度是17位有效数字，取值范围是10的-308次方到10的308次方。</p>
-<p>double占用8个字节的存储空间若不声明的，默认小数都用double来表示，所以如果要用float的话，则应该在其后加上f例如：float a=1.63;//会显示错误，正确的写法为float a=1.63f;</p>
-<ul>
-<li>引用数据类型</li>
-</ul>
-<p><strong>String</strong> 是一种常见的<strong>引用数据类型</strong>，用来表示字符串。在程序开发中，很多操作都要使用字符串来完成，例如系统中的用户名、密码、电子邮箱等。</p>
-<h2 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h2><ul>
-<li>自动类型转换</li>
-</ul>
-<p>满足条件：</p>
-<ol>
-<li>目标类型能与源类型兼容，如 double 型兼容 int 型，但是 char 型不能兼容 int 型</li>
-<li>目标类型<strong>大于</strong>源类型，如 double 类型长度为 8 字节， int 类型为 4 字节，因此 double 类型的变量里直接可以存放 int 类型的数据，但反过来就不可以了</li>
-</ol>
-<ul>
-<li>强制类型转换</li>
-</ul>
-<p>例如：当程序中需要将 double 型变量的值赋给一个 int 型变量，该如何实现呢？</p>
-<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">double</span> avg1 = <span class="number">75.8</span>;</span><br><span class="line"><span class="keyword">int</span> avg2 = (<span class="keyword">int</span>)avg1;</span><br><span class="line">System.out.println(avg2);</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h2><p>所谓常量，我们可以理解为是一种特殊的变量，它的值被设定后，在<strong>程序运行过程中不允许改变</strong>。常量名一般用大写。</p>
-<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">final</span> String LOVE = “sh”;</span><br><span class="line">System.out.println(LOVE);</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><p>一般来说，对于一份规范的程序源代码而言，注释应该占到源代码的 1/3 以上。因此，注释是程序源代码的重要组成部分，一定要加以重视哦！</p>
-<p>注释标记：</p>
-<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta">@author</span> 标明开发该类模块的作者</span><br><span class="line"><span class="meta">@version</span> 标明该类模块的版本</span><br><span class="line"><span class="meta">@see</span> 参考转向，也就是相关主题</span><br><span class="line"><span class="meta">@param</span> 对方法中某参数的说明</span><br><span class="line"><span class="meta">@return</span> 对方法返回值的说明</span><br><span class="line"><span class="meta">@exception</span> 对方法可能抛出的异常进行说明</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2><ul>
-<li>算术运算符</li>
-</ul>
-<p><img data-src="/images/Java/compute_operator.png" alt="compute_operator"></p>
-<ul>
-<li>赋值运算符</li>
-</ul>
-<p><img data-src="/images/Java/fuzhi_operator.png" alt="fuzhi_operator"></p>
-<ul>
-<li>比较运算符</li>
-</ul>
-<p><img data-src="/images/Java/compare_operator.png" alt="compare_operator"></p>
-<ul>
-<li>逻辑运算符</li>
-</ul>
-<p><img data-src="/images/Java/logic_operator.png" alt="logic_operator"></p>
-<ul>
-<li>条件运算符：三元运算符</li>
-</ul>
-<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line">语法形式：布尔表达式 ？ 表达式<span class="number">1</span> ：表达式<span class="number">2</span></span><br></pre></td></tr></tbody></table></figure>
-<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line">String str = (<span class="number">8</span>&gt;<span class="number">5</span>) ? <span class="string">"8大于5"</span>:<span class="string">"8不大于5"</span>;</span><br></pre></td></tr></tbody></table></figure>
-<ul>
-<li>优先级</li>
-</ul>
-<p><img data-src="/images/Java/advance.png" alt="advance"></p>
-<h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><ul>
-<li>声明与赋值</li>
-</ul>
-<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">// 声明方法1：int[] score; 需要指定长度</span></span><br><span class="line"><span class="keyword">int</span>[] score = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">5</span>];</span><br><span class="line"><span class="keyword">int</span>[] score = {<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>};</span><br><span class="line"></span><br><span class="line"><span class="comment">// 声明方法2: int score[]; 需指定长度</span></span><br><span class="line"><span class="keyword">int</span> score = <span class="keyword">new</span> <span class="keyword">int</span>[]{<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>}; <span class="comment">//声明一个大小为5的int型数组，并赋值</span></span><br></pre></td></tr></tbody></table></figure>
-<h3 id="多维数组"><a href="#多维数组" class="headerlink" title="多维数组"></a>多维数组</h3><h1 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h1><ul>
-<li>创建</li>
-</ul>
-<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line">String s1 = <span class="string">"s1"</span>;</span><br><span class="line">String s2 = <span class="keyword">new</span> String();</span><br><span class="line">String s2 = <span class="keyword">new</span> String(<span class="string">"s3"</span>);</span><br></pre></td></tr></tbody></table></figure>
-<ul>
-<li>不变性</li>
-</ul>
-<p>String 对象创建后则不能被修改，是不可变的，所谓的修改其实是创建了新的对象，所指向的内存空间不同。</p>
-<ol>
-<li>通过 String s1=”string”; 声明了一个字符串对象， s1 存放了到字符串对象的引用</li>
-<li>一旦一个字符串在内存中创建，则这个字符串将不可改变。如果需要一个可以改变的字符串，我们可以使用StringBuffer或者StringBuilder</li>
-<li>每次 new 一个字符串就是产生一个新的对象，即便两个字符串的内容相同，使用 ”==” 比较时也为 ”false” ，如果只需比较内容是否相同，应使用 ”equals()” 方法</li>
-</ol>
-<ul>
-<li>String中的常用方法</li>
-</ul>
-<p><img data-src="/images/Java/methodsinJava.png" alt="methodsinJava"></p>
-<ul>
-<li>StringBuilder类</li>
-</ul>
-<p>在Java中，除了可以使用String来存储字符串，还可以使用StringBuilder类或StringBuffer类存储字符串。</p>
-<p>String类有不变性，StringBuffer是线程安全的，而StringBuilder则没有实现线程安全功能，所以性能略高。因此一般情况下，<strong>如果需要创建一个内容可变的字符串对象，应优先考虑使用StringBuilder类。</strong></p>
-<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line">StringBuilder str1 = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">StringBuilder str2 = <span class="keyword">new</span> StringBuilder(<span class="string">"imo"</span>);</span><br></pre></td></tr></tbody></table></figure>
-<p><img data-src="/images/Java/StringBuilder.png" alt="StringBuilder"></p>
-<h1 id="面向对象特征"><a href="#面向对象特征" class="headerlink" title="面向对象特征"></a>面向对象特征</h1><ul>
-<li>类是抽象的概念，是对象的模版</li>
-<li>对象是具体的事物，是类的具体实例</li>
-</ul>
-<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">//类</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> class <span class="title">Dog</span><span class="params">()</span></span>{</span><br><span class="line">  <span class="comment">//content</span></span><br><span class="line">  String name;</span><br><span class="line">  </span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>{</span><br><span class="line">    <span class="comment">//对象</span></span><br><span class="line">    Dog duoduo = <span class="keyword">new</span> Dog();</span><br><span class="line">    duoduo.name = <span class="string">"多多"</span>;</span><br><span class="line">    System.out.println(<span class="string">"Hello"</span> + duoduo.name);</span><br><span class="line">  }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<ul>
-<li>类：首字母大写</li>
-<li>对象：首字母小写</li>
-</ul>
-<h2 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h2><ul>
-<li>封装即隐藏功能的实现细节</li>
-<li>利用对象与方法是实现封装的直接途径</li>
-<li>良好的封装让代码更容易阅读和维护</li>
-</ul>
-<h3 id="包"><a href="#包" class="headerlink" title="包"></a>包</h3><ul>
-<li>同一个package下的类无需import</li>
-</ul>
-<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.imooc.objectproject.sample2;</span><br><span class="line"><span class="keyword">import</span> com.imooc.objectproject.sample.Sample01; <span class="comment">//引用到类</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> class <span class="title">Sample02</span><span class="params">()</span></span>{</span><br><span class="line">  Sample01 s01 = <span class="keyword">new</span> Sample01();</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="修饰符"><a href="#修饰符" class="headerlink" title="修饰符"></a>修饰符</h3><ul>
-<li>访问修饰符用于<strong>控制类、成员变量、方法</strong>的访问范围</li>
-</ul>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th>访问修饰符</th>
-<th>名称</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>public</td>
-<td>公共</td>
-<td>在任何地方都可以访问</td>
-</tr>
-<tr>
-<td>(default)</td>
-<td>默认</td>
-<td>相同包和其他类可以访问</td>
-</tr>
-<tr>
-<td>protected</td>
-<td>继承</td>
-<td>只有继承的子类可以访问</td>
-</tr>
-<tr>
-<td>private</td>
-<td>私有</td>
-<td>只能在类的内部访问</td>
-</tr>
-</tbody>
-</table>
-</div>
-<h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><ul>
-<li>父类中声明为public的方法，在子类中也必须为public</li>
-<li>父类中声明为default的方法，在子类中可以声明成private</li>
-<li>父类中声明为protected的方法，在子类中可以声明成protected、public，不能声明成private</li>
-<li>父类中声明为private的方法，不能被继承</li>
-</ul>
-<h2 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h2><ul>
-<li>多态是同一个行为具有多个不同表现形态或形态的能力</li>
-<li>实现多态的关键是接口<ul>
-<li>接口是一个抽象的类型，只提供方法的定义</li>
-<li>实现类是一个接口的具体表现，要实现每一个接口方法的功能</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">// 定义接口</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Language</span></span>{</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">voice</span><span class="params">()</span></span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">//实现接口</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Chinese</span> <span class="keyword">implements</span> <span class="title">Language</span></span>{</span><br><span class="line">  <span class="meta">@Override</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">voice</span><span class="params">()</span></span>{</span><br><span class="line">    System.out.println(<span class="string">"你好"</span>);</span><br><span class="line">  }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment">//实现接口</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">English</span> <span class="keyword">implements</span> <span class="title">Language</span></span>{</span><br><span class="line">  <span class="meta">@Override</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">voice</span><span class="params">()</span></span>{</span><br><span class="line">    System.out.println(<span class="string">"Hello"</span>);</span><br><span class="line">  }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">//使用接口</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CustomerService</span>()</span>{</span><br><span class="line">  <span class="function"><span class="keyword">public</span> Language <span class="title">contant</span><span class="params">(<span class="keyword">int</span> areaCode)</span></span>{</span><br><span class="line">    <span class="keyword">if</span>(areaCode == <span class="number">86</span>){</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">new</span> Chinese();</span><br><span class="line">    }<span class="keyword">else</span> <span class="keyword">if</span>(areaCode == <span class="number">33</span>){</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">new</span> English();</span><br><span class="line">    }</span><br><span class="line">  }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment">//多态</span></span><br><span class="line">CustomerService cs = <span class="keyword">new</span> CustomerService();</span><br><span class="line">Language language = cs.contant(<span class="number">86</span>);</span><br><span class="line">language.voice();</span><br></pre></td></tr></tbody></table></figure>
-<h1 id="异常与异常处理"><a href="#异常与异常处理" class="headerlink" title="异常与异常处理"></a>异常与异常处理</h1><p>Java中所有的异常都继承自Throwable类</p>
-<ul>
-<li>Error错误表示：虚拟机错位、线程死锁</li>
-<li>Exception异常表示：编码、环境、用户操作异常<ul>
-<li>非检查异常：空指针异常、数组下标越界异常、类型转换异常、算术异常</li>
-<li>检查异常：文件异常、SQL异常</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">// 调用者可以处理异常</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span>{</span><br><span class="line">  <span class="comment">// 一些会抛出异常的方法</span></span><br><span class="line">}<span class="keyword">catch</span>(ArithmeticException e){</span><br><span class="line">  </span><br><span class="line">}<span class="keyword">catch</span>(Exception e){</span><br><span class="line">  </span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<p>自定义异常</p>
-<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DrunkException</span> <span class="keyword">extends</span> <span class="title">Exception</span></span>{</span><br><span class="line">  <span class="comment">// 构造器</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="title">DrunkException</span><span class="params">(String message)</span></span>{</span><br><span class="line">    <span class="keyword">super</span>(message);</span><br><span class="line">  }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">// 调用者不能处理异常</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">compute</span><span class="params">()</span> <span class="keyword">throws</span> DrunkException</span>{</span><br><span class="line">  divide(<span class="number">5</span>, <span class="number">0</span>);</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<h1 id="Java中的常用类"><a href="#Java中的常用类" class="headerlink" title="Java中的常用类"></a>Java中的常用类</h1><h2 id="包装类"><a href="#包装类" class="headerlink" title="包装类"></a>包装类</h2><p>基本数据类型是不具备对象的特性的，比如基本类型不能调用方法、功能简单。为了让基本数据类型也具备对象的特性， Java 为每个基本数据类型都提供了一个包装类，这样我们就可以像操作对象那样来操作基本数据类型。包装类主要提供了两大类方法：</p>
-<ol>
-<li>将本类型和其他基本类型进行转换的方法</li>
-<li>将字符串和本类型及包装类互相转换的方法</li>
-</ol>
-<ul>
-<li>基本类型和包装类之间的对应关系</li>
-</ul>
-<p><img data-src="/images/Java/relationship.png" alt="relationship"></p>
-<ul>
-<li>包装类的常用方法</li>
-</ul>
-<p><img data-src="/images/Java/method.png" alt="method"></p>
-<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{</span><br><span class="line">        </span><br><span class="line">		<span class="comment">// 定义int类型变量，值为86</span></span><br><span class="line">		<span class="keyword">int</span> score1 = <span class="number">86</span>; </span><br><span class="line">        </span><br><span class="line">		<span class="comment">// 创建Integer包装类对象，表示变量score1的值</span></span><br><span class="line">		Integer score2=<span class="keyword">new</span> Integer(score1);</span><br><span class="line">        </span><br><span class="line">		<span class="comment">// 将Integer包装类转换为double类型</span></span><br><span class="line">		<span class="keyword">double</span> score3=score2.doubleValue();</span><br><span class="line">        </span><br><span class="line">		<span class="comment">// 将Integer包装类转换为float类型</span></span><br><span class="line">		<span class="keyword">float</span> score4=score2.floatValue();</span><br><span class="line">        </span><br><span class="line">		<span class="comment">// 将Integer包装类转换为int类型</span></span><br><span class="line">		<span class="keyword">int</span> score5 =score2.intValue();</span><br><span class="line"></span><br><span class="line">		System.out.println(<span class="string">"Integer包装类："</span> + score2);</span><br><span class="line">		System.out.println(<span class="string">"double类型："</span> + score3);</span><br><span class="line">		System.out.println(<span class="string">"float类型："</span> + score4);</span><br><span class="line">		System.out.println(<span class="string">"int类型："</span> + score5);</span><br><span class="line">	}</span><br></pre></td></tr></tbody></table></figure>
-<ul>
-<li>Java 中基本类型和包装类之间的转换</li>
-</ul>
-<p>在 JDK1.5 引入自动装箱和拆箱的机制后，包装类和基本类型之间的转换就更加轻松便利了。</p>
-<p><strong>装箱：</strong>把基本类型转换成包装类，使其具有对象的性质，又可分为手动装箱和自动装箱</p>
-<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> i = <span class="number">10</span>; <span class="comment">// 定义一个int基本类型值</span></span><br><span class="line">Integer x = <span class="keyword">new</span> Integer(i); <span class="comment">// 手动装箱</span></span><br><span class="line">Integer y = i; <span class="comment">// 自动装箱</span></span><br></pre></td></tr></tbody></table></figure>
-<p><strong>拆箱：</strong>和装箱相反，把包装类对象转换成基本类型的值，又可分为手动拆箱和自动拆箱</p>
-<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line">Integer j = <span class="keyword">new</span> Integer(<span class="number">8</span>); <span class="comment">// 定义一个Integer包装类对象，值为8</span></span><br><span class="line"><span class="keyword">int</span> m = j.intValue(); <span class="comment">// 手动装箱为int类型</span></span><br><span class="line"><span class="keyword">int</span> n = j; <span class="comment">// 自动拆箱为int类型</span></span><br></pre></td></tr></tbody></table></figure>
-<h2 id="基本类型和字符串的转换"><a href="#基本类型和字符串的转换" class="headerlink" title="基本类型和字符串的转换"></a>基本类型和字符串的转换</h2><ul>
-<li>基本类型转换为字符串<ul>
-<li>使用包装类的 toString() 方法</li>
-<li>使用String类的 valueOf() 方法</li>
-<li>用一个空字符串加上基本类型，得到的就是基本类型数据对应的字符串</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> c = <span class="number">10</span>;</span><br><span class="line">String str1 = Integer.toString(c);</span><br><span class="line">String str2 = String.valueOf(c);</span><br><span class="line">String str3 = c + <span class="string">""</span>;</span><br></pre></td></tr></tbody></table></figure>
-<ul>
-<li>将字符串转换成基本类型<ul>
-<li>调用包装类的 parseXxx 静态方法</li>
-<li>调用包装类的 valueOf() 方法转换为基本类型的包装类，会自动拆箱</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line">String str = <span class="string">"8"</span>;</span><br><span class="line"><span class="keyword">int</span> d = Integer.parseInt(str);</span><br><span class="line"><span class="keyword">int</span> e = Integer.valueOf(str);</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="Date和SimpleDateFormate"><a href="#Date和SimpleDateFormate" class="headerlink" title="Date和SimpleDateFormate"></a>Date和SimpleDateFormate</h2><figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line">Date d = <span class="keyword">new</span> Date();</span><br><span class="line">System.out.println(d);</span><br></pre></td></tr></tbody></table></figure>
-<p>使用 SimpleDateFormat 来对日期时间进行格式化，如可以将日期转换为指定格式的文本，也可将文本转换为日期。</p>
-<ol>
-<li>使用 format() 方法将日期转换为指定格式的文本</li>
-</ol>
-<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line">Date d = <span class="keyword">new</span> Date();</span><br><span class="line">SimpleDateFormat sdf = <span class="keyword">new</span> SimpleDateFormat(<span class="string">"yyyy-MM-dd HH:mm:ss"</span>);</span><br><span class="line"></span><br><span class="line">String today = sdf.format(d);</span><br></pre></td></tr></tbody></table></figure>
-<ol>
-<li>使用 parse() 方法将文本转换为日期</li>
-</ol>
-<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line">String day = <span class="string">"2021年6月22日 15:30:26"</span>;</span><br><span class="line">SimpleDateFormat df = <span class="keyword">new</span> SimpleDateFormat(<span class="string">"yyyy年MM月dd日 HH:mm:ss"</span>);</span><br><span class="line"></span><br><span class="line">Date date = df.parse(day);</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="Calendar"><a href="#Calendar" class="headerlink" title="Calendar"></a>Calendar</h2><p>Date 类最主要的作用就是获得当前时间，同时这个类里面也具有设置时间以及一些其他的功能，但是由于本身设计的问题，这些方法却遭到众多批评，不建议使用，更推荐使用 Calendar 类进行时间和日期的处理。</p>
-<p>java.util.Calendar 类是一个抽象类，可以通过调用 getInstance() 静态方法获取一个 Calendar 对象，此对象已由当前日期时间初始化，即默认代表当前时间，如 Calendar c = Calendar.getInstance();</p>
-<p>那么如何使用 Calendar 获取年、月、日、时间等信息呢？我们来看下面的代码：</p>
-<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line">Calendar c = Calendar.getInstance();</span><br><span class="line"><span class="keyword">int</span> year = c.get(Calendar.YEAR);</span><br></pre></td></tr></tbody></table></figure>
-<p>Calendar 类提供了 getTime() 方法，用来获取 Date 对象，完成 Calendar 和 Date 的转换，还可通过 getTimeInMillis() 方法，获取此 Calendar 的时间值，以毫秒为单位。</p>
-<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line">Date date = c.getTime();</span><br><span class="line">Long time = c.getTimeInMillis();</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="Math"><a href="#Math" class="headerlink" title="Math"></a>Math</h2><p>Math 类位于 java.lang 包中，包含用于执行基本数学运算的方法， Math 类的所有方法都是静态方法，所以使用该类中的方法时，可以直接使用类名.方法名，如： Math.round();</p>
-<p><img data-src="/images/Java/Math.png" alt="Math"></p>
-<h1 id="集合框架"><a href="#集合框架" class="headerlink" title="集合框架"></a>集合框架</h1><ul>
-<li>数组的长度固定，集合长度可变</li>
-<li>数据只能通过下标访问元素，类型固定，而有的集合可以通过任意类型查找所映射的具体对象</li>
-<li>Java中的集合框架主要由Collection和Map组成</li>
-<li><strong>Collection：List-&gt;ArrayList、Queue-&gt;LinkedList 、Set-&gt;HashSet</strong></li>
-<li><strong>Map: HashMap</strong></li>
-</ul>
-<h2 id="Collection接口"><a href="#Collection接口" class="headerlink" title="Collection接口"></a>Collection接口</h2><h3 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h3><figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ArrayListSample</span></span>{</span><br><span class="line">  List&lt;String&gt; bookList;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>{</span><br><span class="line">    <span class="comment">// 泛型</span></span><br><span class="line">    <span class="keyword">this</span>.bookList  = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">    bookList.add(<span class="string">"hongloumeng"</span>); <span class="comment">// 末尾添加</span></span><br><span class="line">    bookList.add(<span class="number">0</span>，<span class="string">"shuihuzhan"</span>);<span class="comment">// 指定位置添加</span></span><br><span class="line">    </span><br><span class="line">    String bookname = bookList.get(<span class="number">1</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 遍历</span></span><br><span class="line">    <span class="keyword">for</span>(String book : bookList){</span><br><span class="line">      System.out.println(<span class="string">"《"</span> + book + <span class="string">"》"</span>);</span><br><span class="line">    }</span><br><span class="line">  }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<ol>
-<li><p>集合中的元素，可以是任意类型的对象（对象的引用）</p>
-<p>如果把某个对象放入集合，则会忽略他的类型，而把它当作Object处理</p>
-</li>
-<li><p>泛型则是规定了某个集合只可以存放特定类型的对象</p>
-<p>会在编译期间进行类型的检查</p>
-</li>
-<li><p>泛型集合中的限定类型不能使用基本数据类型</p>
-</li>
-<li><p>可以通过使用<strong>包装类</strong>限定允许存入的基本数据类型</p>
-</li>
-</ol>
-<h3 id="HashSet"><a href="#HashSet" class="headerlink" title="HashSet"></a>HashSet</h3><p>Set是元素无序并且不可以重复的集合，被称为集</p>
-<p>HashSet — 哈希集，是Set的一个重要实现类</p>
-<p>Set中，添加某个对象，无论添加多少次，最终只会保留一个该对象（的引用），并且，保留的是第一次添加的那一个。</p>
-<h2 id="Map-amp-HashMap接口"><a href="#Map-amp-HashMap接口" class="headerlink" title="Map &amp; HashMap接口"></a>Map &amp; HashMap接口</h2><ul>
-<li>Map提供了一种映射关系，其中的元素是以键值对（Key-Value）的形式存储的，能够实现根据Key快速查找Value</li>
-<li>Map中的键值对以Entry类型的对象实例形式存在</li>
-<li>键（Key）不可重复，Value可以</li>
-<li>Map支持泛型，形式如Map<k，v></k，v></li>
-</ul>
-<h2 id="Comparable-amp-Comparator接口"><a href="#Comparable-amp-Comparator接口" class="headerlink" title="Comparable &amp; Comparator接口"></a>Comparable &amp; Comparator接口</h2><ul>
-<li><p>相同点</p>
-<ul>
-<li>Comparable和Comparator都是用来实现对象的比较、排序</li>
-<li>要想对象比较、排序，都需要实现Comparable或Comparator接口</li>
-<li>Comparable和Comparator都是Java的接口</li>
-</ul>
-</li>
-<li><p>不同点</p>
-<ul>
-<li>Comparator位于java.util包下，而Comparable位于java.lang包下</li>
-<li>Comparable接口的实现是在类的内部（如 String、Integer已经实现了Comparable接口，自己就可以完成比较大小操作），Comparator接口的实现是在类的外部（可以理解为一个是自已完成比较，一个是外部程序实现比较）</li>
-</ul>
-</li>
-<li><p>实现</p>
-<ul>
-<li>实现Comparable接口要重写compareTo方法, 在compareTo方法里面实现比较</li>
-</ul>
-<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Student</span> <span class="keyword">implements</span> <span class="title">Comparable</span> </span>{</span><br><span class="line">     String name;</span><br><span class="line">     <span class="keyword">int</span> age;</span><br><span class="line">  </span><br><span class="line">     <span class="meta">@Override</span></span><br><span class="line">     <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compareTo</span><span class="params">(Student another)</span> </span>{</span><br><span class="line">          <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">          i = name.compareTo(another.name); </span><br><span class="line">          <span class="keyword">if</span>(i == <span class="number">0</span>) { </span><br><span class="line">               <span class="keyword">return</span> age - another.age;</span><br><span class="line">          } <span class="keyword">else</span> {</span><br><span class="line">               <span class="keyword">return</span> i; </span><br><span class="line">          }</span><br><span class="line">     }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment">//可以直接用 Collections.sort( StudentList ) 对其排序了.(**只需传入要排序的列表**）</span></span><br></pre></td></tr></tbody></table></figure>
-<ul>
-<li>实现Comparator需要重写 compare 方法</li>
-</ul>
-<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Student</span></span>{</span><br><span class="line">     String name;</span><br><span class="line">     <span class="keyword">int</span> age</span><br><span class="line">}</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">StudentComparator</span> <span class="keyword">implements</span> <span class="title">Comparator</span> </span>{ </span><br><span class="line">     <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span><span class="params">(Student one, Student another)</span> </span>{</span><br><span class="line">          <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">          i = one.name.compareTo(another.name); </span><br><span class="line">          <span class="keyword">if</span>(i == <span class="number">0</span>) { </span><br><span class="line">               <span class="keyword">return</span> one.age - another.age;</span><br><span class="line">          } <span class="keyword">else</span> {</span><br><span class="line">               <span class="keyword">return</span> i;          }</span><br><span class="line">     }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment">// Collections.sort( StudentList , new StudentComparator()) 可以对其排序（**不仅要传入待排序的列表，还要传入实现了Comparator的类的对象**）</span></span><br></pre></td></tr></tbody></table></figure></li>
-<li><p>总结</p>
-<ul>
-<li><p>如果比较的方法只要用在一个类中，用该类实现Comparable接口就可以。</p>
-</li>
-<li><p>如果比较的方法在很多类中需要用到，就自己写个类实现Comparator接口，这样当要比较的时候把实现了Comparator接口的类传过去就可以，省得重复造轮子。这也是为什么Comparator会在java.util包下的原因。<br> 使用Comparator的优点是：1.与实体类分离 2.方便应对多变的排序规则</p>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="java-util-Collections工具类"><a href="#java-util-Collections工具类" class="headerlink" title="java.util.Collections工具类"></a>java.util.Collections工具类</h2><ul>
-<li>是Java集合框架中，用来操作集合对象的工具类</li>
-<li>sort()方法实现排序</li>
-</ul>
-<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sortCollections</span><span class="params">()</span></span>{</span><br><span class="line">  List&lt;Integer&gt; integers = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</span><br><span class="line">  Random random = <span class="keyword">new</span> Random();</span><br><span class="line">  Integer k;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; <span class="number">10</span>; i++){</span><br><span class="line">    <span class="keyword">do</span>{</span><br><span class="line">      k = random.nextInt(<span class="number">100</span>); <span class="comment">// 生成一个100以内的随机整数</span></span><br><span class="line">    }<span class="keyword">while</span>(integers.contains(k));</span><br><span class="line">    integers.add(k);</span><br><span class="line">    System.out.println(<span class="string">"成功添加整数"</span>+k);</span><br><span class="line">  }</span><br><span class="line">  System.out.println(<span class="string">"排序前"</span>);</span><br><span class="line">  <span class="keyword">for</span>(Integer integer:integers){</span><br><span class="line">    System.out.println(<span class="string">"元素"</span>+integer);</span><br><span class="line">  }</span><br><span class="line">  Collections.sort(integers); <span class="comment">// 对integers排序</span></span><br><span class="line">  </span><br><span class="line">  System.out.println(<span class="string">"排序后"</span>);</span><br><span class="line">  <span class="keyword">for</span>(Integer integer:integers){</span><br><span class="line">    System.out.println(<span class="string">"元素"</span>+integer);</span><br><span class="line">  }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
-<h1 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h1><div class="table-container">
-<table>
-<thead>
-<tr>
-<th>快捷键</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>psvm + Enter</td>
-<td>main</td>
-</tr>
-<tr>
-<td>Command + N</td>
-<td>get，set方法</td>
-</tr>
-<tr>
-<td>sout</td>
-<td>System.out.println()</td>
-</tr>
-<tr>
-<td>Option + command + L</td>
-<td>格式化代码</td>
-</tr>
-</tbody>
-</table>
-</div>
-]]></content>
-      <categories>
-        <category>Language</category>
-      </categories>
-      <tags>
-        <tag>Java</tag>
       </tags>
   </entry>
   <entry>
@@ -2767,6 +2417,356 @@ cond(no)-&gt;op</textarea><textarea id="flowchart-0-options" style="display: non
       </categories>
       <tags>
         <tag>WEB FrameWork</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Java基础</title>
+    <url>/posts/252123234598/</url>
+    <content><![CDATA[<h1 id="变量和常量"><a href="#变量和常量" class="headerlink" title="变量和常量"></a>变量和常量</h1><h2 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h2><p><img data-src="/images/Java/keyword.png" alt="keyword"></p>
+<a id="more"></a>
+<h2 id="标识符"><a href="#标识符" class="headerlink" title="标识符"></a>标识符</h2><p>标识符就是用于给 Java 程序中变量、类、方法等命名的符号。</p>
+<ol>
+<li><p>标识符<strong>可以</strong>由<strong>字母、数字、下划线（_）、美元符（$）</strong>组成，但不能包含 @、%、空格等其它特殊字符<strong>，不能以数字开头</strong>。譬如：123name 就是不合法滴</p>
+</li>
+<li><p>标识符<strong>不能是 Java 关键字和保留字</strong>（ Java 预留的关键字，以后的升级版本中有可能作为关键字），但可以包含关键字和保留字。如：不可以使用 void 作为标识符，但是 Myvoid 可以</p>
+</li>
+<li><p>标识符是<strong>严格区分大小写</strong>的。 所以涅，一定要分清楚 imooc 和 IMooc 是两个不同的标识符哦！</p>
+</li>
+<li><p>标识符的命名最好能反映出其作用，做到<strong>见名知意</strong>。</p>
+</li>
+</ol>
+<p><img data-src="/images/Java/biaoshifu.png" alt="biaoshifu"></p>
+<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><ol>
+<li><p>变量名由多单词组成时，<strong>第一个单词的首字母小写</strong>，<strong>其后单词的首字母大写</strong>，俗称骆驼式命名法（也称驼峰命名法），如 myAge</p>
+</li>
+<li><p>变量命名时，尽量简短且能清楚的表达变量的作用，做到<strong>见名知意</strong>。如：定义变量名 stuName 保存“学生姓名”信息</p>
+</li>
+</ol>
+<p>PS： Java 变量名的<strong>长度没有限制</strong>，但 Java 语言<strong>是区分大小写</strong>的，所以 price 和 Price 是两个完全不同的变量哦！</p>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><p><img data-src="/images/Java/varchar.png" alt="varchar"></p>
+<p>在 Java 的领域里<strong>，基本数据类型变量</strong>存的是<strong>数据本身</strong>，而<strong>引用类型变量</strong>存的是保存<strong>数据的空间地址</strong>。</p>
+<ul>
+<li>常用的基本数据类型</li>
+</ul>
+<p><img data-src="/images/Java/normal_basic_varchar.png" alt="normal_basic_varchar"></p>
+<p>float: 单精度类型,精度是8位有效数字，取值范围是10的-38次方到10的38次方，float占用4个字节的存储空间double:双精度类型，精度是17位有效数字，取值范围是10的-308次方到10的308次方。</p>
+<p>double占用8个字节的存储空间若不声明的，默认小数都用double来表示，所以如果要用float的话，则应该在其后加上f例如：float a=1.63;//会显示错误，正确的写法为float a=1.63f;</p>
+<ul>
+<li>引用数据类型</li>
+</ul>
+<p><strong>String</strong> 是一种常见的<strong>引用数据类型</strong>，用来表示字符串。在程序开发中，很多操作都要使用字符串来完成，例如系统中的用户名、密码、电子邮箱等。</p>
+<h2 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h2><ul>
+<li>自动类型转换</li>
+</ul>
+<p>满足条件：</p>
+<ol>
+<li>目标类型能与源类型兼容，如 double 型兼容 int 型，但是 char 型不能兼容 int 型</li>
+<li>目标类型<strong>大于</strong>源类型，如 double 类型长度为 8 字节， int 类型为 4 字节，因此 double 类型的变量里直接可以存放 int 类型的数据，但反过来就不可以了</li>
+</ol>
+<ul>
+<li>强制类型转换</li>
+</ul>
+<p>例如：当程序中需要将 double 型变量的值赋给一个 int 型变量，该如何实现呢？</p>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">double</span> avg1 = <span class="number">75.8</span>;</span><br><span class="line"><span class="keyword">int</span> avg2 = (<span class="keyword">int</span>)avg1;</span><br><span class="line">System.out.println(avg2);</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h2><p>所谓常量，我们可以理解为是一种特殊的变量，它的值被设定后，在<strong>程序运行过程中不允许改变</strong>。常量名一般用大写。</p>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">final</span> String LOVE = “sh”;</span><br><span class="line">System.out.println(LOVE);</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><p>一般来说，对于一份规范的程序源代码而言，注释应该占到源代码的 1/3 以上。因此，注释是程序源代码的重要组成部分，一定要加以重视哦！</p>
+<p>注释标记：</p>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="meta">@author</span> 标明开发该类模块的作者</span><br><span class="line"><span class="meta">@version</span> 标明该类模块的版本</span><br><span class="line"><span class="meta">@see</span> 参考转向，也就是相关主题</span><br><span class="line"><span class="meta">@param</span> 对方法中某参数的说明</span><br><span class="line"><span class="meta">@return</span> 对方法返回值的说明</span><br><span class="line"><span class="meta">@exception</span> 对方法可能抛出的异常进行说明</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h2><ul>
+<li>算术运算符</li>
+</ul>
+<p><img data-src="/images/Java/compute_operator.png" alt="compute_operator"></p>
+<ul>
+<li>赋值运算符</li>
+</ul>
+<p><img data-src="/images/Java/fuzhi_operator.png" alt="fuzhi_operator"></p>
+<ul>
+<li>比较运算符</li>
+</ul>
+<p><img data-src="/images/Java/compare_operator.png" alt="compare_operator"></p>
+<ul>
+<li>逻辑运算符</li>
+</ul>
+<p><img data-src="/images/Java/logic_operator.png" alt="logic_operator"></p>
+<ul>
+<li>条件运算符：三元运算符</li>
+</ul>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line">语法形式：布尔表达式 ？ 表达式<span class="number">1</span> ：表达式<span class="number">2</span></span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line">String str = (<span class="number">8</span>&gt;<span class="number">5</span>) ? <span class="string">"8大于5"</span>:<span class="string">"8不大于5"</span>;</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>优先级</li>
+</ul>
+<p><img data-src="/images/Java/advance.png" alt="advance"></p>
+<h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><ul>
+<li>声明与赋值</li>
+</ul>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">// 声明方法1：int[] score; 需要指定长度</span></span><br><span class="line"><span class="keyword">int</span>[] score = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">5</span>];</span><br><span class="line"><span class="keyword">int</span>[] score = {<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>};</span><br><span class="line"></span><br><span class="line"><span class="comment">// 声明方法2: int score[]; 需指定长度</span></span><br><span class="line"><span class="keyword">int</span> score = <span class="keyword">new</span> <span class="keyword">int</span>[]{<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>}; <span class="comment">//声明一个大小为5的int型数组，并赋值</span></span><br></pre></td></tr></tbody></table></figure>
+<h3 id="多维数组"><a href="#多维数组" class="headerlink" title="多维数组"></a>多维数组</h3><h1 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h1><ul>
+<li>创建</li>
+</ul>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line">String s1 = <span class="string">"s1"</span>;</span><br><span class="line">String s2 = <span class="keyword">new</span> String();</span><br><span class="line">String s2 = <span class="keyword">new</span> String(<span class="string">"s3"</span>);</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>不变性</li>
+</ul>
+<p>String 对象创建后则不能被修改，是不可变的，所谓的修改其实是创建了新的对象，所指向的内存空间不同。</p>
+<ol>
+<li>通过 String s1=”string”; 声明了一个字符串对象， s1 存放了到字符串对象的引用</li>
+<li>一旦一个字符串在内存中创建，则这个字符串将不可改变。如果需要一个可以改变的字符串，我们可以使用StringBuffer或者StringBuilder</li>
+<li>每次 new 一个字符串就是产生一个新的对象，即便两个字符串的内容相同，使用 ”==” 比较时也为 ”false” ，如果只需比较内容是否相同，应使用 ”equals()” 方法</li>
+</ol>
+<ul>
+<li>String中的常用方法</li>
+</ul>
+<p><img data-src="/images/Java/methodsinJava.png" alt="methodsinJava"></p>
+<ul>
+<li>StringBuilder类</li>
+</ul>
+<p>在Java中，除了可以使用String来存储字符串，还可以使用StringBuilder类或StringBuffer类存储字符串。</p>
+<p>String类有不变性，StringBuffer是线程安全的，而StringBuilder则没有实现线程安全功能，所以性能略高。因此一般情况下，<strong>如果需要创建一个内容可变的字符串对象，应优先考虑使用StringBuilder类。</strong></p>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line">StringBuilder str1 = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">StringBuilder str2 = <span class="keyword">new</span> StringBuilder(<span class="string">"imo"</span>);</span><br></pre></td></tr></tbody></table></figure>
+<p><img data-src="/images/Java/StringBuilder.png" alt="StringBuilder"></p>
+<h1 id="面向对象特征"><a href="#面向对象特征" class="headerlink" title="面向对象特征"></a>面向对象特征</h1><ul>
+<li>类是抽象的概念，是对象的模版</li>
+<li>对象是具体的事物，是类的具体实例</li>
+</ul>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">//类</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> class <span class="title">Dog</span><span class="params">()</span></span>{</span><br><span class="line">  <span class="comment">//content</span></span><br><span class="line">  String name;</span><br><span class="line">  </span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>{</span><br><span class="line">    <span class="comment">//对象</span></span><br><span class="line">    Dog duoduo = <span class="keyword">new</span> Dog();</span><br><span class="line">    duoduo.name = <span class="string">"多多"</span>;</span><br><span class="line">    System.out.println(<span class="string">"Hello"</span> + duoduo.name);</span><br><span class="line">  }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>类：首字母大写</li>
+<li>对象：首字母小写</li>
+</ul>
+<h2 id="封装"><a href="#封装" class="headerlink" title="封装"></a>封装</h2><ul>
+<li>封装即隐藏功能的实现细节</li>
+<li>利用对象与方法是实现封装的直接途径</li>
+<li>良好的封装让代码更容易阅读和维护</li>
+</ul>
+<h3 id="包"><a href="#包" class="headerlink" title="包"></a>包</h3><ul>
+<li>同一个package下的类无需import</li>
+</ul>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">package</span> com.imooc.objectproject.sample2;</span><br><span class="line"><span class="keyword">import</span> com.imooc.objectproject.sample.Sample01; <span class="comment">//引用到类</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> class <span class="title">Sample02</span><span class="params">()</span></span>{</span><br><span class="line">  Sample01 s01 = <span class="keyword">new</span> Sample01();</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="修饰符"><a href="#修饰符" class="headerlink" title="修饰符"></a>修饰符</h3><ul>
+<li>访问修饰符用于<strong>控制类、成员变量、方法</strong>的访问范围</li>
+</ul>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>访问修饰符</th>
+<th>名称</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>public</td>
+<td>公共</td>
+<td>在任何地方都可以访问</td>
+</tr>
+<tr>
+<td>(default)</td>
+<td>默认</td>
+<td>相同包和其他类可以访问</td>
+</tr>
+<tr>
+<td>protected</td>
+<td>继承</td>
+<td>只有继承的子类可以访问</td>
+</tr>
+<tr>
+<td>private</td>
+<td>私有</td>
+<td>只能在类的内部访问</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><ul>
+<li>父类中声明为public的方法，在子类中也必须为public</li>
+<li>父类中声明为default的方法，在子类中可以声明成private</li>
+<li>父类中声明为protected的方法，在子类中可以声明成protected、public，不能声明成private</li>
+<li>父类中声明为private的方法，不能被继承</li>
+</ul>
+<h2 id="多态"><a href="#多态" class="headerlink" title="多态"></a>多态</h2><ul>
+<li>多态是同一个行为具有多个不同表现形态或形态的能力</li>
+<li>实现多态的关键是接口<ul>
+<li>接口是一个抽象的类型，只提供方法的定义</li>
+<li>实现类是一个接口的具体表现，要实现每一个接口方法的功能</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">// 定义接口</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Language</span></span>{</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">voice</span><span class="params">()</span></span>;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">//实现接口</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Chinese</span> <span class="keyword">implements</span> <span class="title">Language</span></span>{</span><br><span class="line">  <span class="meta">@Override</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">voice</span><span class="params">()</span></span>{</span><br><span class="line">    System.out.println(<span class="string">"你好"</span>);</span><br><span class="line">  }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment">//实现接口</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">English</span> <span class="keyword">implements</span> <span class="title">Language</span></span>{</span><br><span class="line">  <span class="meta">@Override</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">voice</span><span class="params">()</span></span>{</span><br><span class="line">    System.out.println(<span class="string">"Hello"</span>);</span><br><span class="line">  }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">//使用接口</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CustomerService</span>()</span>{</span><br><span class="line">  <span class="function"><span class="keyword">public</span> Language <span class="title">contant</span><span class="params">(<span class="keyword">int</span> areaCode)</span></span>{</span><br><span class="line">    <span class="keyword">if</span>(areaCode == <span class="number">86</span>){</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">new</span> Chinese();</span><br><span class="line">    }<span class="keyword">else</span> <span class="keyword">if</span>(areaCode == <span class="number">33</span>){</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">new</span> English();</span><br><span class="line">    }</span><br><span class="line">  }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment">//多态</span></span><br><span class="line">CustomerService cs = <span class="keyword">new</span> CustomerService();</span><br><span class="line">Language language = cs.contant(<span class="number">86</span>);</span><br><span class="line">language.voice();</span><br></pre></td></tr></tbody></table></figure>
+<h1 id="异常与异常处理"><a href="#异常与异常处理" class="headerlink" title="异常与异常处理"></a>异常与异常处理</h1><p>Java中所有的异常都继承自Throwable类</p>
+<ul>
+<li>Error错误表示：虚拟机错位、线程死锁</li>
+<li>Exception异常表示：编码、环境、用户操作异常<ul>
+<li>非检查异常：空指针异常、数组下标越界异常、类型转换异常、算术异常</li>
+<li>检查异常：文件异常、SQL异常</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">// 调用者可以处理异常</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span>{</span><br><span class="line">  <span class="comment">// 一些会抛出异常的方法</span></span><br><span class="line">}<span class="keyword">catch</span>(ArithmeticException e){</span><br><span class="line">  </span><br><span class="line">}<span class="keyword">catch</span>(Exception e){</span><br><span class="line">  </span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<p>自定义异常</p>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DrunkException</span> <span class="keyword">extends</span> <span class="title">Exception</span></span>{</span><br><span class="line">  <span class="comment">// 构造器</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="title">DrunkException</span><span class="params">(String message)</span></span>{</span><br><span class="line">    <span class="keyword">super</span>(message);</span><br><span class="line">  }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment">// 调用者不能处理异常</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">compute</span><span class="params">()</span> <span class="keyword">throws</span> DrunkException</span>{</span><br><span class="line">  divide(<span class="number">5</span>, <span class="number">0</span>);</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h1 id="Java中的常用类"><a href="#Java中的常用类" class="headerlink" title="Java中的常用类"></a>Java中的常用类</h1><h2 id="包装类"><a href="#包装类" class="headerlink" title="包装类"></a>包装类</h2><p>基本数据类型是不具备对象的特性的，比如基本类型不能调用方法、功能简单。为了让基本数据类型也具备对象的特性， Java 为每个基本数据类型都提供了一个包装类，这样我们就可以像操作对象那样来操作基本数据类型。包装类主要提供了两大类方法：</p>
+<ol>
+<li>将本类型和其他基本类型进行转换的方法</li>
+<li>将字符串和本类型及包装类互相转换的方法</li>
+</ol>
+<ul>
+<li>基本类型和包装类之间的对应关系</li>
+</ul>
+<p><img data-src="/images/Java/relationship.png" alt="relationship"></p>
+<ul>
+<li>包装类的常用方法</li>
+</ul>
+<p><img data-src="/images/Java/method.png" alt="method"></p>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{</span><br><span class="line">        </span><br><span class="line">		<span class="comment">// 定义int类型变量，值为86</span></span><br><span class="line">		<span class="keyword">int</span> score1 = <span class="number">86</span>; </span><br><span class="line">        </span><br><span class="line">		<span class="comment">// 创建Integer包装类对象，表示变量score1的值</span></span><br><span class="line">		Integer score2=<span class="keyword">new</span> Integer(score1);</span><br><span class="line">        </span><br><span class="line">		<span class="comment">// 将Integer包装类转换为double类型</span></span><br><span class="line">		<span class="keyword">double</span> score3=score2.doubleValue();</span><br><span class="line">        </span><br><span class="line">		<span class="comment">// 将Integer包装类转换为float类型</span></span><br><span class="line">		<span class="keyword">float</span> score4=score2.floatValue();</span><br><span class="line">        </span><br><span class="line">		<span class="comment">// 将Integer包装类转换为int类型</span></span><br><span class="line">		<span class="keyword">int</span> score5 =score2.intValue();</span><br><span class="line"></span><br><span class="line">		System.out.println(<span class="string">"Integer包装类："</span> + score2);</span><br><span class="line">		System.out.println(<span class="string">"double类型："</span> + score3);</span><br><span class="line">		System.out.println(<span class="string">"float类型："</span> + score4);</span><br><span class="line">		System.out.println(<span class="string">"int类型："</span> + score5);</span><br><span class="line">	}</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>Java 中基本类型和包装类之间的转换</li>
+</ul>
+<p>在 JDK1.5 引入自动装箱和拆箱的机制后，包装类和基本类型之间的转换就更加轻松便利了。</p>
+<p><strong>装箱：</strong>把基本类型转换成包装类，使其具有对象的性质，又可分为手动装箱和自动装箱</p>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> i = <span class="number">10</span>; <span class="comment">// 定义一个int基本类型值</span></span><br><span class="line">Integer x = <span class="keyword">new</span> Integer(i); <span class="comment">// 手动装箱</span></span><br><span class="line">Integer y = i; <span class="comment">// 自动装箱</span></span><br></pre></td></tr></tbody></table></figure>
+<p><strong>拆箱：</strong>和装箱相反，把包装类对象转换成基本类型的值，又可分为手动拆箱和自动拆箱</p>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line">Integer j = <span class="keyword">new</span> Integer(<span class="number">8</span>); <span class="comment">// 定义一个Integer包装类对象，值为8</span></span><br><span class="line"><span class="keyword">int</span> m = j.intValue(); <span class="comment">// 手动装箱为int类型</span></span><br><span class="line"><span class="keyword">int</span> n = j; <span class="comment">// 自动拆箱为int类型</span></span><br></pre></td></tr></tbody></table></figure>
+<h2 id="基本类型和字符串的转换"><a href="#基本类型和字符串的转换" class="headerlink" title="基本类型和字符串的转换"></a>基本类型和字符串的转换</h2><ul>
+<li>基本类型转换为字符串<ul>
+<li>使用包装类的 toString() 方法</li>
+<li>使用String类的 valueOf() 方法</li>
+<li>用一个空字符串加上基本类型，得到的就是基本类型数据对应的字符串</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> c = <span class="number">10</span>;</span><br><span class="line">String str1 = Integer.toString(c);</span><br><span class="line">String str2 = String.valueOf(c);</span><br><span class="line">String str3 = c + <span class="string">""</span>;</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>将字符串转换成基本类型<ul>
+<li>调用包装类的 parseXxx 静态方法</li>
+<li>调用包装类的 valueOf() 方法转换为基本类型的包装类，会自动拆箱</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line">String str = <span class="string">"8"</span>;</span><br><span class="line"><span class="keyword">int</span> d = Integer.parseInt(str);</span><br><span class="line"><span class="keyword">int</span> e = Integer.valueOf(str);</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Date和SimpleDateFormate"><a href="#Date和SimpleDateFormate" class="headerlink" title="Date和SimpleDateFormate"></a>Date和SimpleDateFormate</h2><figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line">Date d = <span class="keyword">new</span> Date();</span><br><span class="line">System.out.println(d);</span><br></pre></td></tr></tbody></table></figure>
+<p>使用 SimpleDateFormat 来对日期时间进行格式化，如可以将日期转换为指定格式的文本，也可将文本转换为日期。</p>
+<ol>
+<li>使用 format() 方法将日期转换为指定格式的文本</li>
+</ol>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line">Date d = <span class="keyword">new</span> Date();</span><br><span class="line">SimpleDateFormat sdf = <span class="keyword">new</span> SimpleDateFormat(<span class="string">"yyyy-MM-dd HH:mm:ss"</span>);</span><br><span class="line"></span><br><span class="line">String today = sdf.format(d);</span><br></pre></td></tr></tbody></table></figure>
+<ol>
+<li>使用 parse() 方法将文本转换为日期</li>
+</ol>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line">String day = <span class="string">"2021年6月22日 15:30:26"</span>;</span><br><span class="line">SimpleDateFormat df = <span class="keyword">new</span> SimpleDateFormat(<span class="string">"yyyy年MM月dd日 HH:mm:ss"</span>);</span><br><span class="line"></span><br><span class="line">Date date = df.parse(day);</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Calendar"><a href="#Calendar" class="headerlink" title="Calendar"></a>Calendar</h2><p>Date 类最主要的作用就是获得当前时间，同时这个类里面也具有设置时间以及一些其他的功能，但是由于本身设计的问题，这些方法却遭到众多批评，不建议使用，更推荐使用 Calendar 类进行时间和日期的处理。</p>
+<p>java.util.Calendar 类是一个抽象类，可以通过调用 getInstance() 静态方法获取一个 Calendar 对象，此对象已由当前日期时间初始化，即默认代表当前时间，如 Calendar c = Calendar.getInstance();</p>
+<p>那么如何使用 Calendar 获取年、月、日、时间等信息呢？我们来看下面的代码：</p>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line">Calendar c = Calendar.getInstance();</span><br><span class="line"><span class="keyword">int</span> year = c.get(Calendar.YEAR);</span><br></pre></td></tr></tbody></table></figure>
+<p>Calendar 类提供了 getTime() 方法，用来获取 Date 对象，完成 Calendar 和 Date 的转换，还可通过 getTimeInMillis() 方法，获取此 Calendar 的时间值，以毫秒为单位。</p>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line">Date date = c.getTime();</span><br><span class="line">Long time = c.getTimeInMillis();</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="Math"><a href="#Math" class="headerlink" title="Math"></a>Math</h2><p>Math 类位于 java.lang 包中，包含用于执行基本数学运算的方法， Math 类的所有方法都是静态方法，所以使用该类中的方法时，可以直接使用类名.方法名，如： Math.round();</p>
+<p><img data-src="/images/Java/Math.png" alt="Math"></p>
+<h1 id="集合框架"><a href="#集合框架" class="headerlink" title="集合框架"></a>集合框架</h1><ul>
+<li>数组的长度固定，集合长度可变</li>
+<li>数据只能通过下标访问元素，类型固定，而有的集合可以通过任意类型查找所映射的具体对象</li>
+<li>Java中的集合框架主要由Collection和Map组成</li>
+<li><strong>Collection：List-&gt;ArrayList、Queue-&gt;LinkedList 、Set-&gt;HashSet</strong></li>
+<li><strong>Map: HashMap</strong></li>
+</ul>
+<h2 id="Collection接口"><a href="#Collection接口" class="headerlink" title="Collection接口"></a>Collection接口</h2><h3 id="ArrayList"><a href="#ArrayList" class="headerlink" title="ArrayList"></a>ArrayList</h3><figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ArrayListSample</span></span>{</span><br><span class="line">  List&lt;String&gt; bookList;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>{</span><br><span class="line">    <span class="comment">// 泛型</span></span><br><span class="line">    <span class="keyword">this</span>.bookList  = <span class="keyword">new</span> ArrayList&lt;String&gt;();</span><br><span class="line">    bookList.add(<span class="string">"hongloumeng"</span>); <span class="comment">// 末尾添加</span></span><br><span class="line">    bookList.add(<span class="number">0</span>，<span class="string">"shuihuzhan"</span>);<span class="comment">// 指定位置添加</span></span><br><span class="line">    </span><br><span class="line">    String bookname = bookList.get(<span class="number">1</span>);</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 遍历</span></span><br><span class="line">    <span class="keyword">for</span>(String book : bookList){</span><br><span class="line">      System.out.println(<span class="string">"《"</span> + book + <span class="string">"》"</span>);</span><br><span class="line">    }</span><br><span class="line">  }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<ol>
+<li><p>集合中的元素，可以是任意类型的对象（对象的引用）</p>
+<p>如果把某个对象放入集合，则会忽略他的类型，而把它当作Object处理</p>
+</li>
+<li><p>泛型则是规定了某个集合只可以存放特定类型的对象</p>
+<p>会在编译期间进行类型的检查</p>
+</li>
+<li><p>泛型集合中的限定类型不能使用基本数据类型</p>
+</li>
+<li><p>可以通过使用<strong>包装类</strong>限定允许存入的基本数据类型</p>
+</li>
+</ol>
+<h3 id="HashSet"><a href="#HashSet" class="headerlink" title="HashSet"></a>HashSet</h3><p>Set是元素无序并且不可以重复的集合，被称为集</p>
+<p>HashSet — 哈希集，是Set的一个重要实现类</p>
+<p>Set中，添加某个对象，无论添加多少次，最终只会保留一个该对象（的引用），并且，保留的是第一次添加的那一个。</p>
+<h2 id="Map-amp-HashMap接口"><a href="#Map-amp-HashMap接口" class="headerlink" title="Map &amp; HashMap接口"></a>Map &amp; HashMap接口</h2><ul>
+<li>Map提供了一种映射关系，其中的元素是以键值对（Key-Value）的形式存储的，能够实现根据Key快速查找Value</li>
+<li>Map中的键值对以Entry类型的对象实例形式存在</li>
+<li>键（Key）不可重复，Value可以</li>
+<li>Map支持泛型，形式如Map<k，v></k，v></li>
+</ul>
+<h2 id="Comparable-amp-Comparator接口"><a href="#Comparable-amp-Comparator接口" class="headerlink" title="Comparable &amp; Comparator接口"></a>Comparable &amp; Comparator接口</h2><ul>
+<li><p>相同点</p>
+<ul>
+<li>Comparable和Comparator都是用来实现对象的比较、排序</li>
+<li>要想对象比较、排序，都需要实现Comparable或Comparator接口</li>
+<li>Comparable和Comparator都是Java的接口</li>
+</ul>
+</li>
+<li><p>不同点</p>
+<ul>
+<li>Comparator位于java.util包下，而Comparable位于java.lang包下</li>
+<li>Comparable接口的实现是在类的内部（如 String、Integer已经实现了Comparable接口，自己就可以完成比较大小操作），Comparator接口的实现是在类的外部（可以理解为一个是自已完成比较，一个是外部程序实现比较）</li>
+</ul>
+</li>
+<li><p>实现</p>
+<ul>
+<li>实现Comparable接口要重写compareTo方法, 在compareTo方法里面实现比较</li>
+</ul>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Student</span> <span class="keyword">implements</span> <span class="title">Comparable</span> </span>{</span><br><span class="line">     String name;</span><br><span class="line">     <span class="keyword">int</span> age;</span><br><span class="line">  </span><br><span class="line">     <span class="meta">@Override</span></span><br><span class="line">     <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compareTo</span><span class="params">(Student another)</span> </span>{</span><br><span class="line">          <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">          i = name.compareTo(another.name); </span><br><span class="line">          <span class="keyword">if</span>(i == <span class="number">0</span>) { </span><br><span class="line">               <span class="keyword">return</span> age - another.age;</span><br><span class="line">          } <span class="keyword">else</span> {</span><br><span class="line">               <span class="keyword">return</span> i; </span><br><span class="line">          }</span><br><span class="line">     }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment">//可以直接用 Collections.sort( StudentList ) 对其排序了.(**只需传入要排序的列表**）</span></span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>实现Comparator需要重写 compare 方法</li>
+</ul>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Student</span></span>{</span><br><span class="line">     String name;</span><br><span class="line">     <span class="keyword">int</span> age</span><br><span class="line">}</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">StudentComparator</span> <span class="keyword">implements</span> <span class="title">Comparator</span> </span>{ </span><br><span class="line">     <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">compare</span><span class="params">(Student one, Student another)</span> </span>{</span><br><span class="line">          <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">          i = one.name.compareTo(another.name); </span><br><span class="line">          <span class="keyword">if</span>(i == <span class="number">0</span>) { </span><br><span class="line">               <span class="keyword">return</span> one.age - another.age;</span><br><span class="line">          } <span class="keyword">else</span> {</span><br><span class="line">               <span class="keyword">return</span> i;          }</span><br><span class="line">     }</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line"><span class="comment">// Collections.sort( StudentList , new StudentComparator()) 可以对其排序（**不仅要传入待排序的列表，还要传入实现了Comparator的类的对象**）</span></span><br></pre></td></tr></tbody></table></figure></li>
+<li><p>总结</p>
+<ul>
+<li><p>如果比较的方法只要用在一个类中，用该类实现Comparable接口就可以。</p>
+</li>
+<li><p>如果比较的方法在很多类中需要用到，就自己写个类实现Comparator接口，这样当要比较的时候把实现了Comparator接口的类传过去就可以，省得重复造轮子。这也是为什么Comparator会在java.util包下的原因。<br> 使用Comparator的优点是：1.与实体类分离 2.方便应对多变的排序规则</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="java-util-Collections工具类"><a href="#java-util-Collections工具类" class="headerlink" title="java.util.Collections工具类"></a>java.util.Collections工具类</h2><ul>
+<li>是Java集合框架中，用来操作集合对象的工具类</li>
+<li>sort()方法实现排序</li>
+</ul>
+<figure class="highlight java"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sortCollections</span><span class="params">()</span></span>{</span><br><span class="line">  List&lt;Integer&gt; integers = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</span><br><span class="line">  Random random = <span class="keyword">new</span> Random();</span><br><span class="line">  Integer k;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; <span class="number">10</span>; i++){</span><br><span class="line">    <span class="keyword">do</span>{</span><br><span class="line">      k = random.nextInt(<span class="number">100</span>); <span class="comment">// 生成一个100以内的随机整数</span></span><br><span class="line">    }<span class="keyword">while</span>(integers.contains(k));</span><br><span class="line">    integers.add(k);</span><br><span class="line">    System.out.println(<span class="string">"成功添加整数"</span>+k);</span><br><span class="line">  }</span><br><span class="line">  System.out.println(<span class="string">"排序前"</span>);</span><br><span class="line">  <span class="keyword">for</span>(Integer integer:integers){</span><br><span class="line">    System.out.println(<span class="string">"元素"</span>+integer);</span><br><span class="line">  }</span><br><span class="line">  Collections.sort(integers); <span class="comment">// 对integers排序</span></span><br><span class="line">  </span><br><span class="line">  System.out.println(<span class="string">"排序后"</span>);</span><br><span class="line">  <span class="keyword">for</span>(Integer integer:integers){</span><br><span class="line">    System.out.println(<span class="string">"元素"</span>+integer);</span><br><span class="line">  }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+<h1 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h1><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>psvm + Enter</td>
+<td>main</td>
+</tr>
+<tr>
+<td>Command + N</td>
+<td>get，set方法</td>
+</tr>
+<tr>
+<td>sout</td>
+<td>System.out.println()</td>
+</tr>
+<tr>
+<td>Option + command + L</td>
+<td>格式化代码</td>
+</tr>
+</tbody>
+</table>
+</div>
+]]></content>
+      <categories>
+        <category>Language</category>
+      </categories>
+      <tags>
+        <tag>Java</tag>
       </tags>
   </entry>
   <entry>
