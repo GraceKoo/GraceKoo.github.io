@@ -256,6 +256,13 @@
 
   
   <url>
+    <loc>http://gracekoo.com/tags/ImageAlgorithm/</loc>
+    <lastmod>2023-09-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://gracekoo.com/tags/Git/</loc>
     <lastmod>2023-09-02</lastmod>
     <changefreq>daily</changefreq>
@@ -270,7 +277,7 @@
   </url>
   
   <url>
-    <loc>http://gracekoo.com/tags/ImageAlgorithm/</loc>
+    <loc>http://gracekoo.com/tags/Java-Automation-Test/</loc>
     <lastmod>2023-09-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -278,13 +285,6 @@
   
   <url>
     <loc>http://gracekoo.com/tags/BigData/</loc>
-    <lastmod>2023-09-02</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://gracekoo.com/tags/Java-Automation-Test/</loc>
     <lastmod>2023-09-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -312,13 +312,6 @@
   </url>
   
   <url>
-    <loc>http://gracekoo.com/tags/Python-Automation-Test/</loc>
-    <lastmod>2023-09-02</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://gracekoo.com/tags/Regex/</loc>
     <lastmod>2023-09-02</lastmod>
     <changefreq>daily</changefreq>
@@ -334,6 +327,13 @@
   
   <url>
     <loc>http://gracekoo.com/tags/markdown/</loc>
+    <lastmod>2023-09-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://gracekoo.com/tags/Python-Automation-Test/</loc>
     <lastmod>2023-09-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -382,6 +382,13 @@
   </url>
   
   <url>
+    <loc>http://gracekoo.com/tags/Operating-System/</loc>
+    <lastmod>2023-09-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://gracekoo.com/tags/DataBase-Basic/</loc>
     <lastmod>2023-09-02</lastmod>
     <changefreq>daily</changefreq>
@@ -390,13 +397,6 @@
   
   <url>
     <loc>http://gracekoo.com/tags/Computer-Network/</loc>
-    <lastmod>2023-09-02</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://gracekoo.com/tags/Operating-System/</loc>
     <lastmod>2023-09-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -454,13 +454,6 @@
 
   
   <url>
-    <loc>http://gracekoo.com/categories/Tools/</loc>
-    <lastmod>2023-09-02</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://gracekoo.com/categories/CV/</loc>
     <lastmod>2023-09-02</lastmod>
     <changefreq>daily</changefreq>
@@ -468,7 +461,7 @@
   </url>
   
   <url>
-    <loc>http://gracekoo.com/categories/BigData/</loc>
+    <loc>http://gracekoo.com/categories/Tools/</loc>
     <lastmod>2023-09-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -476,6 +469,13 @@
   
   <url>
     <loc>http://gracekoo.com/categories/Language/</loc>
+    <lastmod>2023-09-02</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://gracekoo.com/categories/BigData/</loc>
     <lastmod>2023-09-02</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
