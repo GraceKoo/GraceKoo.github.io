@@ -3,11 +3,11 @@
   <title>Grace Koo&#39;s Blog</title>
   
   <subtitle>LaLaLa~~~</subtitle>
-  <link href="http://gracekoo.com/atom.xml" rel="self"/>
+  <link href="https://gracekoo.com/atom.xml" rel="self"/>
   
-  <link href="http://gracekoo.com/"/>
+  <link href="https://gracekoo.com/"/>
   <updated>2023-09-02T11:51:38.601Z</updated>
-  <id>http://gracekoo.com/</id>
+  <id>https://gracekoo.com/</id>
   
   <author>
     <name>Grace Koo</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Hexo</title>
-    <link href="http://gracekoo.com/posts/25248/"/>
-    <id>http://gracekoo.com/posts/25248/</id>
+    <link href="https://gracekoo.com/posts/25248/"/>
+    <id>https://gracekoo.com/posts/25248/</id>
     <published>2023-09-02T18:55:00.000Z</published>
     <updated>2023-09-02T11:51:38.601Z</updated>
     
@@ -33,17 +33,17 @@
     
     
     
-    <category term="Tools" scheme="http://gracekoo.com/categories/Tools/"/>
+    <category term="Tools" scheme="https://gracekoo.com/categories/Tools/"/>
     
     
-    <category term="hexo" scheme="http://gracekoo.com/tags/hexo/"/>
+    <category term="hexo" scheme="https://gracekoo.com/tags/hexo/"/>
     
   </entry>
   
   <entry>
     <title>LeetCode_&amp;_Algorithm</title>
-    <link href="http://gracekoo.com/posts/55663/"/>
-    <id>http://gracekoo.com/posts/55663/</id>
+    <link href="https://gracekoo.com/posts/55663/"/>
+    <id>https://gracekoo.com/posts/55663/</id>
     <published>2021-02-06T12:00:00.000Z</published>
     <updated>2021-06-06T14:28:26.504Z</updated>
     
@@ -113,19 +113,19 @@
     
     
     
-    <category term="Algorithm" scheme="http://gracekoo.com/categories/Algorithm/"/>
+    <category term="Algorithm" scheme="https://gracekoo.com/categories/Algorithm/"/>
     
     
-    <category term="Algorithm" scheme="http://gracekoo.com/tags/Algorithm/"/>
+    <category term="Algorithm" scheme="https://gracekoo.com/tags/Algorithm/"/>
     
-    <category term="LeetCode" scheme="http://gracekoo.com/tags/LeetCode/"/>
+    <category term="LeetCode" scheme="https://gracekoo.com/tags/LeetCode/"/>
     
   </entry>
   
   <entry>
     <title>Java基础</title>
-    <link href="http://gracekoo.com/posts/252123234598/"/>
-    <id>http://gracekoo.com/posts/252123234598/</id>
+    <link href="https://gracekoo.com/posts/252123234598/"/>
+    <id>https://gracekoo.com/posts/252123234598/</id>
     <published>2021-02-05T23:55:00.000Z</published>
     <updated>2022-01-09T14:45:26.727Z</updated>
     
@@ -136,17 +136,17 @@
     
     
     
-    <category term="Language" scheme="http://gracekoo.com/categories/Language/"/>
+    <category term="Language" scheme="https://gracekoo.com/categories/Language/"/>
     
     
-    <category term="Java" scheme="http://gracekoo.com/tags/Java/"/>
+    <category term="Java" scheme="https://gracekoo.com/tags/Java/"/>
     
   </entry>
   
   <entry>
     <title>Java接口自动化测试</title>
-    <link href="http://gracekoo.com/posts/252123234598/"/>
-    <id>http://gracekoo.com/posts/252123234598/</id>
+    <link href="https://gracekoo.com/posts/252123234598/"/>
+    <id>https://gracekoo.com/posts/252123234598/</id>
     <published>2021-01-31T23:55:00.000Z</published>
     <updated>2022-01-09T14:54:30.496Z</updated>
     
@@ -163,17 +163,17 @@
     
     
     
-    <category term="Language" scheme="http://gracekoo.com/categories/Language/"/>
+    <category term="Language" scheme="https://gracekoo.com/categories/Language/"/>
     
     
-    <category term="Java Automation Test" scheme="http://gracekoo.com/tags/Java-Automation-Test/"/>
+    <category term="Java Automation Test" scheme="https://gracekoo.com/tags/Java-Automation-Test/"/>
     
   </entry>
   
   <entry>
     <title>Regex</title>
-    <link href="http://gracekoo.com/posts/25256/"/>
-    <id>http://gracekoo.com/posts/25256/</id>
+    <link href="https://gracekoo.com/posts/25256/"/>
+    <id>https://gracekoo.com/posts/25256/</id>
     <published>2020-02-04T23:55:00.000Z</published>
     <updated>2020-03-01T13:14:13.690Z</updated>
     
@@ -225,17 +225,17 @@
     
     
     
-    <category term="Tools" scheme="http://gracekoo.com/categories/Tools/"/>
+    <category term="Tools" scheme="https://gracekoo.com/categories/Tools/"/>
     
     
-    <category term="Regex" scheme="http://gracekoo.com/tags/Regex/"/>
+    <category term="Regex" scheme="https://gracekoo.com/tags/Regex/"/>
     
   </entry>
   
   <entry>
     <title>Image-Algorithm-Summarize</title>
-    <link href="http://gracekoo.com/posts/58748/"/>
-    <id>http://gracekoo.com/posts/58748/</id>
+    <link href="https://gracekoo.com/posts/58748/"/>
+    <id>https://gracekoo.com/posts/58748/</id>
     <published>2020-02-01T12:06:00.000Z</published>
     <updated>2020-11-03T07:58:07.100Z</updated>
     
@@ -256,17 +256,17 @@
     
     
     
-    <category term="CV" scheme="http://gracekoo.com/categories/CV/"/>
+    <category term="CV" scheme="https://gracekoo.com/categories/CV/"/>
     
     
-    <category term="ImageAlgorithm" scheme="http://gracekoo.com/tags/ImageAlgorithm/"/>
+    <category term="ImageAlgorithm" scheme="https://gracekoo.com/tags/ImageAlgorithm/"/>
     
   </entry>
   
   <entry>
     <title>AI中的数学知识</title>
-    <link href="http://gracekoo.com/posts/59545/"/>
-    <id>http://gracekoo.com/posts/59545/</id>
+    <link href="https://gracekoo.com/posts/59545/"/>
+    <id>https://gracekoo.com/posts/59545/</id>
     <published>2020-02-01T11:08:26.000Z</published>
     <updated>2020-05-07T15:41:47.096Z</updated>
     
@@ -277,17 +277,17 @@
     
     
     
-    <category term="Math" scheme="http://gracekoo.com/categories/Math/"/>
+    <category term="Math" scheme="https://gracekoo.com/categories/Math/"/>
     
     
-    <category term="Machine Learning" scheme="http://gracekoo.com/tags/Machine-Learning/"/>
+    <category term="Machine Learning" scheme="https://gracekoo.com/tags/Machine-Learning/"/>
     
   </entry>
   
   <entry>
     <title>TensorFlow2.0 In Action</title>
-    <link href="http://gracekoo.com/posts/29871/"/>
-    <id>http://gracekoo.com/posts/29871/</id>
+    <link href="https://gracekoo.com/posts/29871/"/>
+    <id>https://gracekoo.com/posts/29871/</id>
     <published>2020-02-01T00:06:06.000Z</published>
     <updated>2020-06-02T15:42:31.579Z</updated>
     
@@ -305,17 +305,17 @@
     
     
     
-    <category term="Machine Learning" scheme="http://gracekoo.com/categories/Machine-Learning/"/>
+    <category term="Machine Learning" scheme="https://gracekoo.com/categories/Machine-Learning/"/>
     
     
-    <category term="Neural Network" scheme="http://gracekoo.com/tags/Neural-Network/"/>
+    <category term="Neural Network" scheme="https://gracekoo.com/tags/Neural-Network/"/>
     
   </entry>
   
   <entry>
     <title>操作系统</title>
-    <link href="http://gracekoo.com/posts/2246/"/>
-    <id>http://gracekoo.com/posts/2246/</id>
+    <link href="https://gracekoo.com/posts/2246/"/>
+    <id>https://gracekoo.com/posts/2246/</id>
     <published>2020-01-31T23:55:00.000Z</published>
     <updated>2022-01-09T15:04:42.745Z</updated>
     
@@ -330,17 +330,17 @@
     
     
     
-    <category term="Interview" scheme="http://gracekoo.com/categories/Interview/"/>
+    <category term="Interview" scheme="https://gracekoo.com/categories/Interview/"/>
     
     
-    <category term="Operating System" scheme="http://gracekoo.com/tags/Operating-System/"/>
+    <category term="Operating System" scheme="https://gracekoo.com/tags/Operating-System/"/>
     
   </entry>
   
   <entry>
     <title>Python进阶</title>
-    <link href="http://gracekoo.com/posts/23063/"/>
-    <id>http://gracekoo.com/posts/23063/</id>
+    <link href="https://gracekoo.com/posts/23063/"/>
+    <id>https://gracekoo.com/posts/23063/</id>
     <published>2020-01-31T23:00:01.000Z</published>
     <updated>2020-10-19T12:39:03.581Z</updated>
     
@@ -357,17 +357,17 @@
     
     
     
-    <category term="Language" scheme="http://gracekoo.com/categories/Language/"/>
+    <category term="Language" scheme="https://gracekoo.com/categories/Language/"/>
     
     
-    <category term="Python" scheme="http://gracekoo.com/tags/Python/"/>
+    <category term="Python" scheme="https://gracekoo.com/tags/Python/"/>
     
   </entry>
   
   <entry>
     <title>计算机网络</title>
-    <link href="http://gracekoo.com/posts/6678/"/>
-    <id>http://gracekoo.com/posts/6678/</id>
+    <link href="https://gracekoo.com/posts/6678/"/>
+    <id>https://gracekoo.com/posts/6678/</id>
     <published>2020-01-30T23:55:00.000Z</published>
     <updated>2022-01-09T15:02:46.088Z</updated>
     
@@ -388,17 +388,17 @@
     
     
     
-    <category term="Interview" scheme="http://gracekoo.com/categories/Interview/"/>
+    <category term="Interview" scheme="https://gracekoo.com/categories/Interview/"/>
     
     
-    <category term="Computer Network" scheme="http://gracekoo.com/tags/Computer-Network/"/>
+    <category term="Computer Network" scheme="https://gracekoo.com/tags/Computer-Network/"/>
     
   </entry>
   
   <entry>
     <title>数据库基础</title>
-    <link href="http://gracekoo.com/posts/22488/"/>
-    <id>http://gracekoo.com/posts/22488/</id>
+    <link href="https://gracekoo.com/posts/22488/"/>
+    <id>https://gracekoo.com/posts/22488/</id>
     <published>2020-01-29T23:55:00.000Z</published>
     <updated>2022-01-09T15:03:48.826Z</updated>
     
@@ -419,17 +419,17 @@
     
     
     
-    <category term="Interview" scheme="http://gracekoo.com/categories/Interview/"/>
+    <category term="Interview" scheme="https://gracekoo.com/categories/Interview/"/>
     
     
-    <category term="DataBase Basic" scheme="http://gracekoo.com/tags/DataBase-Basic/"/>
+    <category term="DataBase Basic" scheme="https://gracekoo.com/tags/DataBase-Basic/"/>
     
   </entry>
   
   <entry>
     <title>软件测试基础</title>
-    <link href="http://gracekoo.com/posts/22398/"/>
-    <id>http://gracekoo.com/posts/22398/</id>
+    <link href="https://gracekoo.com/posts/22398/"/>
+    <id>https://gracekoo.com/posts/22398/</id>
     <published>2020-01-28T23:55:00.000Z</published>
     <updated>2022-01-09T15:05:17.846Z</updated>
     
@@ -447,17 +447,17 @@
     
     
     
-    <category term="Interview" scheme="http://gracekoo.com/categories/Interview/"/>
+    <category term="Interview" scheme="https://gracekoo.com/categories/Interview/"/>
     
     
-    <category term="Software Test Basic" scheme="http://gracekoo.com/tags/Software-Test-Basic/"/>
+    <category term="Software Test Basic" scheme="https://gracekoo.com/tags/Software-Test-Basic/"/>
     
   </entry>
   
   <entry>
     <title>数据结构</title>
-    <link href="http://gracekoo.com/posts/2248809/"/>
-    <id>http://gracekoo.com/posts/2248809/</id>
+    <link href="https://gracekoo.com/posts/2248809/"/>
+    <id>https://gracekoo.com/posts/2248809/</id>
     <published>2020-01-27T23:55:00.000Z</published>
     <updated>2022-01-09T15:05:32.368Z</updated>
     
@@ -472,17 +472,17 @@
     
     
     
-    <category term="Interview" scheme="http://gracekoo.com/categories/Interview/"/>
+    <category term="Interview" scheme="https://gracekoo.com/categories/Interview/"/>
     
     
-    <category term="DataStructure" scheme="http://gracekoo.com/tags/DataStructure/"/>
+    <category term="DataStructure" scheme="https://gracekoo.com/tags/DataStructure/"/>
     
   </entry>
   
   <entry>
     <title>Python面试题</title>
-    <link href="http://gracekoo.com/posts/22488/"/>
-    <id>http://gracekoo.com/posts/22488/</id>
+    <link href="https://gracekoo.com/posts/22488/"/>
+    <id>https://gracekoo.com/posts/22488/</id>
     <published>2020-01-27T23:55:00.000Z</published>
     <updated>2022-01-09T15:06:31.747Z</updated>
     
@@ -496,17 +496,17 @@
     
     
     
-    <category term="Interview" scheme="http://gracekoo.com/categories/Interview/"/>
+    <category term="Interview" scheme="https://gracekoo.com/categories/Interview/"/>
     
     
-    <category term="Python Interview" scheme="http://gracekoo.com/tags/Python-Interview/"/>
+    <category term="Python Interview" scheme="https://gracekoo.com/tags/Python-Interview/"/>
     
   </entry>
   
   <entry>
     <title>Python自动化测试框架</title>
-    <link href="http://gracekoo.com/posts/22398665/"/>
-    <id>http://gracekoo.com/posts/22398665/</id>
+    <link href="https://gracekoo.com/posts/22398665/"/>
+    <id>https://gracekoo.com/posts/22398665/</id>
     <published>2020-01-26T23:55:00.000Z</published>
     <updated>2022-01-09T14:55:15.582Z</updated>
     
@@ -531,17 +531,17 @@
     
     
     
-    <category term="Language" scheme="http://gracekoo.com/categories/Language/"/>
+    <category term="Language" scheme="https://gracekoo.com/categories/Language/"/>
     
     
-    <category term="Python Automation Test" scheme="http://gracekoo.com/tags/Python-Automation-Test/"/>
+    <category term="Python Automation Test" scheme="https://gracekoo.com/tags/Python-Automation-Test/"/>
     
   </entry>
   
   <entry>
     <title>Web框架</title>
-    <link href="http://gracekoo.com/posts/2248001/"/>
-    <id>http://gracekoo.com/posts/2248001/</id>
+    <link href="https://gracekoo.com/posts/2248001/"/>
+    <id>https://gracekoo.com/posts/2248001/</id>
     <published>2020-01-25T23:55:00.000Z</published>
     <updated>2022-01-09T15:07:22.770Z</updated>
     
@@ -555,17 +555,17 @@
     
     
     
-    <category term="Interview" scheme="http://gracekoo.com/categories/Interview/"/>
+    <category term="Interview" scheme="https://gracekoo.com/categories/Interview/"/>
     
     
-    <category term="WEB FrameWork" scheme="http://gracekoo.com/tags/WEB-FrameWork/"/>
+    <category term="WEB FrameWork" scheme="https://gracekoo.com/tags/WEB-FrameWork/"/>
     
   </entry>
   
   <entry>
     <title>Spring</title>
-    <link href="http://gracekoo.com/posts/25249120/"/>
-    <id>http://gracekoo.com/posts/25249120/</id>
+    <link href="https://gracekoo.com/posts/25249120/"/>
+    <id>https://gracekoo.com/posts/25249120/</id>
     <published>2020-01-18T23:55:00.000Z</published>
     <updated>2022-01-09T15:06:56.839Z</updated>
     
@@ -580,17 +580,17 @@
     
     
     
-    <category term="Language" scheme="http://gracekoo.com/categories/Language/"/>
+    <category term="Language" scheme="https://gracekoo.com/categories/Language/"/>
     
     
-    <category term="BigData" scheme="http://gracekoo.com/tags/BigData/"/>
+    <category term="BigData" scheme="https://gracekoo.com/tags/BigData/"/>
     
   </entry>
   
   <entry>
     <title>Kafka初探</title>
-    <link href="http://gracekoo.com/posts/252123/"/>
-    <id>http://gracekoo.com/posts/252123/</id>
+    <link href="https://gracekoo.com/posts/252123/"/>
+    <id>https://gracekoo.com/posts/252123/</id>
     <published>2020-01-17T23:55:00.000Z</published>
     <updated>2021-01-17T14:59:35.672Z</updated>
     
@@ -604,17 +604,17 @@
     
     
     
-    <category term="BigData" scheme="http://gracekoo.com/categories/BigData/"/>
+    <category term="BigData" scheme="https://gracekoo.com/categories/BigData/"/>
     
     
-    <category term="BigData" scheme="http://gracekoo.com/tags/BigData/"/>
+    <category term="BigData" scheme="https://gracekoo.com/tags/BigData/"/>
     
   </entry>
   
   <entry>
     <title>DataStructure &amp; Algorithm</title>
-    <link href="http://gracekoo.com/posts/57792/"/>
-    <id>http://gracekoo.com/posts/57792/</id>
+    <link href="https://gracekoo.com/posts/57792/"/>
+    <id>https://gracekoo.com/posts/57792/</id>
     <published>2020-01-12T23:05:00.000Z</published>
     <updated>2020-02-08T15:08:59.259Z</updated>
     
@@ -629,12 +629,12 @@
     
     
     
-    <category term="Algorithm" scheme="http://gracekoo.com/categories/Algorithm/"/>
+    <category term="Algorithm" scheme="https://gracekoo.com/categories/Algorithm/"/>
     
     
-    <category term="Python" scheme="http://gracekoo.com/tags/Python/"/>
+    <category term="Python" scheme="https://gracekoo.com/tags/Python/"/>
     
-    <category term="Algorithm" scheme="http://gracekoo.com/tags/Algorithm/"/>
+    <category term="Algorithm" scheme="https://gracekoo.com/tags/Algorithm/"/>
     
   </entry>
   

@@ -24,108 +24,108 @@
   <meta name="description" content="Convolutional Neural NetworksEdge Detection卷积运算是卷积神经网络最基本的组成成分，使用边缘检测作为入门样例。下面介绍卷积计算是如何实现的。 使用一个3✖️3的过滤器(核)与原始矩阵进行元素相乘，再相加，最后和的结果为卷积运算后的第一个元素值，然后依次计算，下面例子中，做一次卷积运算后结果为一个4✖️4的矩阵。 这种卷积运算可以理解成为，垂直边缘检测器。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CNN">
-<meta property="og:url" content="http://gracekoo.com/posts/16452/index.html">
+<meta property="og:url" content="https://gracekoo.com/posts/16452/index.html">
 <meta property="og:site_name" content="Grace Koo&#39;s Blog">
 <meta property="og:description" content="Convolutional Neural NetworksEdge Detection卷积运算是卷积神经网络最基本的组成成分，使用边缘检测作为入门样例。下面介绍卷积计算是如何实现的。 使用一个3✖️3的过滤器(核)与原始矩阵进行元素相乘，再相加，最后和的结果为卷积运算后的第一个元素值，然后依次计算，下面例子中，做一次卷积运算后结果为一个4✖️4的矩阵。 这种卷积运算可以理解成为，垂直边缘检测器。">
 <meta property="og:locale">
-<meta property="og:image" content="http://gracekoo.com/images/picturesof-4/CNN_1.png">
-<meta property="og:image" content="http://gracekoo.com/images/picturesof-4/CNN_2.png">
-<meta property="og:image" content="http://gracekoo.com/images/picturesof-4/CNN_3.png">
-<meta property="og:image" content="http://gracekoo.com/images/picturesof-4/CNN_4.png">
-<meta property="og:image" content="http://gracekoo.com/images/picturesof-4/CNN_5.png">
-<meta property="og:image" content="http://gracekoo.com/images/picturesof-4/CNN_6.png">
-<meta property="og:image" content="http://gracekoo.com/images/picturesof-4/CNN_7.png">
-<meta property="og:image" content="http://gracekoo.com/images/picturesof-4/CNN_8.png">
-<meta property="og:image" content="http://gracekoo.com/images/picturesof-4/CNN_9.png">
-<meta property="og:image" content="http://gracekoo.com/images/picturesof-4/CNN_10.png">
-<meta property="og:image" content="http://gracekoo.com/images/picturesof-4/CNN_11.png">
-<meta property="og:image" content="http://gracekoo.com/images/picturesof-4/CNN_12.png">
-<meta property="og:image" content="http://gracekoo.com/images/picturesof-4/CNN_13.png">
-<meta property="og:image" content="http://gracekoo.com/images/picturesof-4/CNN_14.png">
-<meta property="og:image" content="http://gracekoo.com/images/picturesof-4/CNN_15.png">
-<meta property="og:image" content="http://gracekoo.com/images/picturesof-4/CNN_16.png">
-<meta property="og:image" content="http://gracekoo.com/images/picturesof-4/CNN_17.png">
-<meta property="og:image" content="http://gracekoo.com/images/picturesof-4/CNN_18.png">
-<meta property="og:image" content="http://gracekoo.com/images/picturesof-4/CNN_19.png">
-<meta property="og:image" content="http://gracekoo.com/images/picturesof-4/CNN_20.png">
-<meta property="og:image" content="http://gracekoo.com/images/picturesof-4/CNN_21.png">
-<meta property="og:image" content="http://gracekoo.com/images/picturesof-4/CNN_22.png">
-<meta property="og:image" content="http://gracekoo.com/images/picturesof-4/CNN_23.png">
-<meta property="og:image" content="http://gracekoo.com/images/picturesof-4/CNN_24.png">
-<meta property="og:image" content="http://gracekoo.com/images/picturesof-4/CNN_25.png">
-<meta property="og:image" content="http://gracekoo.com/images/picturesof-4/CNN_26.png">
-<meta property="og:image" content="http://gracekoo.com/images/picturesof-4/CNN_27.png">
-<meta property="og:image" content="http://gracekoo.com/images/picturesof-4/CNN_28.png">
-<meta property="og:image" content="http://gracekoo.com/images/picturesof-4/CNN_29.png">
-<meta property="og:image" content="http://gracekoo.com/images/picturesof-4/CNN_30.png">
-<meta property="og:image" content="http://gracekoo.com/images/picturesof-4/CNN_31.png">
-<meta property="og:image" content="http://gracekoo.com/images/picturesof-4/CNN_32.png">
-<meta property="og:image" content="http://gracekoo.com/images/picturesof-4/CNN_33.png">
-<meta property="og:image" content="http://gracekoo.com/images/picturesof-4/CNN_34.png">
-<meta property="og:image" content="http://gracekoo.com/images/picturesof-4/CNN_35.png">
-<meta property="og:image" content="http://gracekoo.com/images/picturesof-4/CNN_36.png">
-<meta property="og:image" content="http://gracekoo.com/images/picturesof-4/CNN_37.png">
-<meta property="og:image" content="http://gracekoo.com/images/picturesof-4/CNN_38.png">
-<meta property="og:image" content="http://gracekoo.com/images/picturesof-4/CNN_39.png">
-<meta property="og:image" content="http://gracekoo.com/images/picturesof-4/CNN_40.png">
-<meta property="og:image" content="http://gracekoo.com/images/picturesof-4/CNN_41.png">
-<meta property="og:image" content="http://gracekoo.com/images/picturesof-4/CNN_42.png">
-<meta property="og:image" content="http://gracekoo.com/images/picturesof-4/CNN_43.png">
-<meta property="og:image" content="http://gracekoo.com/images/picturesof-4/CNN_44.png">
-<meta property="og:image" content="http://gracekoo.com/images/picturesof-4/CNN_45.png">
-<meta property="og:image" content="http://gracekoo.com/images/picturesof-4/CNN_46.png">
-<meta property="og:image" content="http://gracekoo.com/images/picturesof-4/CNN_47.png">
-<meta property="og:image" content="http://gracekoo.com/images/picturesof-4/CNN_48.png">
-<meta property="og:image" content="http://gracekoo.com/images/picturesof-4/CNN_49.png">
-<meta property="og:image" content="http://gracekoo.com/images/picturesof-4/CNN_50.png">
-<meta property="og:image" content="http://gracekoo.com/images/picturesof-4/CNN_51.png">
-<meta property="og:image" content="http://gracekoo.com/images/picturesof-4/CNN_52.png">
-<meta property="og:image" content="http://gracekoo.com/images/picturesof-4/CNN_53.png">
-<meta property="og:image" content="http://gracekoo.com/images/picturesof-4/CNN_54.png">
-<meta property="og:image" content="http://gracekoo.com/images/picturesof-4/CNN_55.png">
-<meta property="og:image" content="http://gracekoo.com/images/picturesof-4/CNN_56.png">
-<meta property="og:image" content="http://gracekoo.com/images/picturesof-4/CNN_57.png">
-<meta property="og:image" content="http://gracekoo.com/images/picturesof-4/CNN_58.png">
-<meta property="og:image" content="http://gracekoo.com/images/picturesof-4/CNN_59.png">
-<meta property="og:image" content="http://gracekoo.com/images/picturesof-4/CNN_60.png">
-<meta property="og:image" content="http://gracekoo.com/images/picturesof-4/CNN_61.png">
-<meta property="og:image" content="http://gracekoo.com/images/picturesof-4/CNN_62.png">
-<meta property="og:image" content="http://gracekoo.com/images/picturesof-4/CNN_63.png">
-<meta property="og:image" content="http://gracekoo.com/images/picturesof-4/CNN_64.png">
-<meta property="og:image" content="http://gracekoo.com/images/picturesof-4/CNN_65.png">
-<meta property="og:image" content="http://gracekoo.com/images/picturesof-4/CNN_66.png">
-<meta property="og:image" content="http://gracekoo.com/images/picturesof-4/CNN_67.png">
-<meta property="og:image" content="http://gracekoo.com/images/picturesof-4/CNN_68.png">
-<meta property="og:image" content="http://gracekoo.com/images/picturesof-4/CNN_69.png">
-<meta property="og:image" content="http://gracekoo.com/images/picturesof-4/CNN_70.png">
-<meta property="og:image" content="http://gracekoo.com/images/picturesof-4/CNN_71.png">
-<meta property="og:image" content="http://gracekoo.com/images/picturesof-4/CNN_72.png">
-<meta property="og:image" content="http://gracekoo.com/images/picturesof-4/CNN_73.png">
-<meta property="og:image" content="http://gracekoo.com/images/picturesof-4/CNN_74.png">
-<meta property="og:image" content="http://gracekoo.com/images/picturesof-4/CNN_75.png">
-<meta property="og:image" content="http://gracekoo.com/images/picturesof-4/CNN_76.png">
-<meta property="og:image" content="http://gracekoo.com/images/picturesof-4/CNN_77.png">
-<meta property="og:image" content="http://gracekoo.com/images/picturesof-4/CNN_78.png">
-<meta property="og:image" content="http://gracekoo.com/images/picturesof-4/CNN_79.png">
-<meta property="og:image" content="http://gracekoo.com/images/picturesof-4/CNN_80.png">
-<meta property="og:image" content="http://gracekoo.com/images/picturesof-4/CNN_81.png">
-<meta property="og:image" content="http://gracekoo.com/images/picturesof-4/CNN_82.png">
-<meta property="og:image" content="http://gracekoo.com/images/picturesof-4/CNN_83.png">
-<meta property="og:image" content="http://gracekoo.com/images/picturesof-4/CNN_84.png">
-<meta property="og:image" content="http://gracekoo.com/images/picturesof-4/CNN_85.png">
-<meta property="og:image" content="http://gracekoo.com/images/picturesof-4/CNN_86.png">
-<meta property="og:image" content="http://gracekoo.com/images/picturesof-4/CNN_87.png">
-<meta property="og:image" content="http://gracekoo.com/images/picturesof-4/CNN_88.png">
-<meta property="og:image" content="http://gracekoo.com/images/picturesof-4/CNN_89.png">
-<meta property="og:image" content="http://gracekoo.com/images/picturesof-4/CNN_90.png">
+<meta property="og:image" content="https://gracekoo.com/images/picturesof-4/CNN_1.png">
+<meta property="og:image" content="https://gracekoo.com/images/picturesof-4/CNN_2.png">
+<meta property="og:image" content="https://gracekoo.com/images/picturesof-4/CNN_3.png">
+<meta property="og:image" content="https://gracekoo.com/images/picturesof-4/CNN_4.png">
+<meta property="og:image" content="https://gracekoo.com/images/picturesof-4/CNN_5.png">
+<meta property="og:image" content="https://gracekoo.com/images/picturesof-4/CNN_6.png">
+<meta property="og:image" content="https://gracekoo.com/images/picturesof-4/CNN_7.png">
+<meta property="og:image" content="https://gracekoo.com/images/picturesof-4/CNN_8.png">
+<meta property="og:image" content="https://gracekoo.com/images/picturesof-4/CNN_9.png">
+<meta property="og:image" content="https://gracekoo.com/images/picturesof-4/CNN_10.png">
+<meta property="og:image" content="https://gracekoo.com/images/picturesof-4/CNN_11.png">
+<meta property="og:image" content="https://gracekoo.com/images/picturesof-4/CNN_12.png">
+<meta property="og:image" content="https://gracekoo.com/images/picturesof-4/CNN_13.png">
+<meta property="og:image" content="https://gracekoo.com/images/picturesof-4/CNN_14.png">
+<meta property="og:image" content="https://gracekoo.com/images/picturesof-4/CNN_15.png">
+<meta property="og:image" content="https://gracekoo.com/images/picturesof-4/CNN_16.png">
+<meta property="og:image" content="https://gracekoo.com/images/picturesof-4/CNN_17.png">
+<meta property="og:image" content="https://gracekoo.com/images/picturesof-4/CNN_18.png">
+<meta property="og:image" content="https://gracekoo.com/images/picturesof-4/CNN_19.png">
+<meta property="og:image" content="https://gracekoo.com/images/picturesof-4/CNN_20.png">
+<meta property="og:image" content="https://gracekoo.com/images/picturesof-4/CNN_21.png">
+<meta property="og:image" content="https://gracekoo.com/images/picturesof-4/CNN_22.png">
+<meta property="og:image" content="https://gracekoo.com/images/picturesof-4/CNN_23.png">
+<meta property="og:image" content="https://gracekoo.com/images/picturesof-4/CNN_24.png">
+<meta property="og:image" content="https://gracekoo.com/images/picturesof-4/CNN_25.png">
+<meta property="og:image" content="https://gracekoo.com/images/picturesof-4/CNN_26.png">
+<meta property="og:image" content="https://gracekoo.com/images/picturesof-4/CNN_27.png">
+<meta property="og:image" content="https://gracekoo.com/images/picturesof-4/CNN_28.png">
+<meta property="og:image" content="https://gracekoo.com/images/picturesof-4/CNN_29.png">
+<meta property="og:image" content="https://gracekoo.com/images/picturesof-4/CNN_30.png">
+<meta property="og:image" content="https://gracekoo.com/images/picturesof-4/CNN_31.png">
+<meta property="og:image" content="https://gracekoo.com/images/picturesof-4/CNN_32.png">
+<meta property="og:image" content="https://gracekoo.com/images/picturesof-4/CNN_33.png">
+<meta property="og:image" content="https://gracekoo.com/images/picturesof-4/CNN_34.png">
+<meta property="og:image" content="https://gracekoo.com/images/picturesof-4/CNN_35.png">
+<meta property="og:image" content="https://gracekoo.com/images/picturesof-4/CNN_36.png">
+<meta property="og:image" content="https://gracekoo.com/images/picturesof-4/CNN_37.png">
+<meta property="og:image" content="https://gracekoo.com/images/picturesof-4/CNN_38.png">
+<meta property="og:image" content="https://gracekoo.com/images/picturesof-4/CNN_39.png">
+<meta property="og:image" content="https://gracekoo.com/images/picturesof-4/CNN_40.png">
+<meta property="og:image" content="https://gracekoo.com/images/picturesof-4/CNN_41.png">
+<meta property="og:image" content="https://gracekoo.com/images/picturesof-4/CNN_42.png">
+<meta property="og:image" content="https://gracekoo.com/images/picturesof-4/CNN_43.png">
+<meta property="og:image" content="https://gracekoo.com/images/picturesof-4/CNN_44.png">
+<meta property="og:image" content="https://gracekoo.com/images/picturesof-4/CNN_45.png">
+<meta property="og:image" content="https://gracekoo.com/images/picturesof-4/CNN_46.png">
+<meta property="og:image" content="https://gracekoo.com/images/picturesof-4/CNN_47.png">
+<meta property="og:image" content="https://gracekoo.com/images/picturesof-4/CNN_48.png">
+<meta property="og:image" content="https://gracekoo.com/images/picturesof-4/CNN_49.png">
+<meta property="og:image" content="https://gracekoo.com/images/picturesof-4/CNN_50.png">
+<meta property="og:image" content="https://gracekoo.com/images/picturesof-4/CNN_51.png">
+<meta property="og:image" content="https://gracekoo.com/images/picturesof-4/CNN_52.png">
+<meta property="og:image" content="https://gracekoo.com/images/picturesof-4/CNN_53.png">
+<meta property="og:image" content="https://gracekoo.com/images/picturesof-4/CNN_54.png">
+<meta property="og:image" content="https://gracekoo.com/images/picturesof-4/CNN_55.png">
+<meta property="og:image" content="https://gracekoo.com/images/picturesof-4/CNN_56.png">
+<meta property="og:image" content="https://gracekoo.com/images/picturesof-4/CNN_57.png">
+<meta property="og:image" content="https://gracekoo.com/images/picturesof-4/CNN_58.png">
+<meta property="og:image" content="https://gracekoo.com/images/picturesof-4/CNN_59.png">
+<meta property="og:image" content="https://gracekoo.com/images/picturesof-4/CNN_60.png">
+<meta property="og:image" content="https://gracekoo.com/images/picturesof-4/CNN_61.png">
+<meta property="og:image" content="https://gracekoo.com/images/picturesof-4/CNN_62.png">
+<meta property="og:image" content="https://gracekoo.com/images/picturesof-4/CNN_63.png">
+<meta property="og:image" content="https://gracekoo.com/images/picturesof-4/CNN_64.png">
+<meta property="og:image" content="https://gracekoo.com/images/picturesof-4/CNN_65.png">
+<meta property="og:image" content="https://gracekoo.com/images/picturesof-4/CNN_66.png">
+<meta property="og:image" content="https://gracekoo.com/images/picturesof-4/CNN_67.png">
+<meta property="og:image" content="https://gracekoo.com/images/picturesof-4/CNN_68.png">
+<meta property="og:image" content="https://gracekoo.com/images/picturesof-4/CNN_69.png">
+<meta property="og:image" content="https://gracekoo.com/images/picturesof-4/CNN_70.png">
+<meta property="og:image" content="https://gracekoo.com/images/picturesof-4/CNN_71.png">
+<meta property="og:image" content="https://gracekoo.com/images/picturesof-4/CNN_72.png">
+<meta property="og:image" content="https://gracekoo.com/images/picturesof-4/CNN_73.png">
+<meta property="og:image" content="https://gracekoo.com/images/picturesof-4/CNN_74.png">
+<meta property="og:image" content="https://gracekoo.com/images/picturesof-4/CNN_75.png">
+<meta property="og:image" content="https://gracekoo.com/images/picturesof-4/CNN_76.png">
+<meta property="og:image" content="https://gracekoo.com/images/picturesof-4/CNN_77.png">
+<meta property="og:image" content="https://gracekoo.com/images/picturesof-4/CNN_78.png">
+<meta property="og:image" content="https://gracekoo.com/images/picturesof-4/CNN_79.png">
+<meta property="og:image" content="https://gracekoo.com/images/picturesof-4/CNN_80.png">
+<meta property="og:image" content="https://gracekoo.com/images/picturesof-4/CNN_81.png">
+<meta property="og:image" content="https://gracekoo.com/images/picturesof-4/CNN_82.png">
+<meta property="og:image" content="https://gracekoo.com/images/picturesof-4/CNN_83.png">
+<meta property="og:image" content="https://gracekoo.com/images/picturesof-4/CNN_84.png">
+<meta property="og:image" content="https://gracekoo.com/images/picturesof-4/CNN_85.png">
+<meta property="og:image" content="https://gracekoo.com/images/picturesof-4/CNN_86.png">
+<meta property="og:image" content="https://gracekoo.com/images/picturesof-4/CNN_87.png">
+<meta property="og:image" content="https://gracekoo.com/images/picturesof-4/CNN_88.png">
+<meta property="og:image" content="https://gracekoo.com/images/picturesof-4/CNN_89.png">
+<meta property="og:image" content="https://gracekoo.com/images/picturesof-4/CNN_90.png">
 <meta property="article:published_time" content="2018-03-18T20:50:00.000Z">
 <meta property="article:modified_time" content="2020-04-25T15:05:15.535Z">
 <meta property="article:author" content="Grace Koo">
 <meta property="article:tag" content="CNN">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://gracekoo.com/images/picturesof-4/CNN_1.png">
+<meta name="twitter:image" content="https://gracekoo.com/images/picturesof-4/CNN_1.png">
 
-<link rel="canonical" href="http://gracekoo.com/posts/16452/">
+<link rel="canonical" href="https://gracekoo.com/posts/16452/">
 
 
 <script id="page-configurations">
@@ -295,7 +295,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="Zh">
-    <link itemprop="mainEntityOfPage" href="http://gracekoo.com/posts/16452/">
+    <link itemprop="mainEntityOfPage" href="https://gracekoo.com/posts/16452/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -569,7 +569,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>Post link: </strong>
-    <a href="http://gracekoo.com/posts/16452/" title="CNN">http://gracekoo.com/posts/16452/</a>
+    <a href="https://gracekoo.com/posts/16452/" title="CNN">https://gracekoo.com/posts/16452/</a>
   </li>
   <li class="post-copyright-license">
     <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.zh" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-ND</a> unless stating additionally.
