@@ -396,6 +396,13 @@
   </url>
   
   <url>
+    <loc>http://gracekoo.com/tags/DataBase-Basic/</loc>
+    <lastmod>2023-09-03</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://gracekoo.com/tags/Computer-Network/</loc>
     <lastmod>2023-09-03</lastmod>
     <changefreq>daily</changefreq>
@@ -404,13 +411,6 @@
   
   <url>
     <loc>http://gracekoo.com/tags/Software-Test-Basic/</loc>
-    <lastmod>2023-09-03</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://gracekoo.com/tags/DataBase-Basic/</loc>
     <lastmod>2023-09-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
