@@ -9,6 +9,13 @@
   </url>
   
   <url>
+    <loc>http://gracekoo.com/sweet/index.html</loc>
+    
+    <lastmod>2023-09-03</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://gracekoo.com/about/index.html</loc>
     
     <lastmod>2023-09-03</lastmod>
@@ -26,13 +33,6 @@
     <loc>http://gracekoo.com/CNAME.json</loc>
     
     <lastmod>2023-09-02</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://gracekoo.com/sweet/index.html</loc>
-    
-    <lastmod>2023-03-21</lastmod>
     
   </url>
   
@@ -389,13 +389,6 @@
   </url>
   
   <url>
-    <loc>http://gracekoo.com/tags/DataBase-Basic/</loc>
-    <lastmod>2023-09-03</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://gracekoo.com/tags/Operating-System/</loc>
     <lastmod>2023-09-03</lastmod>
     <changefreq>daily</changefreq>
@@ -411,6 +404,13 @@
   
   <url>
     <loc>http://gracekoo.com/tags/Software-Test-Basic/</loc>
+    <lastmod>2023-09-03</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://gracekoo.com/tags/DataBase-Basic/</loc>
     <lastmod>2023-09-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
