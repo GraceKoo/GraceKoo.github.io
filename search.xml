@@ -214,6 +214,7 @@
 <figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">https://gracekoo.com</span><br></pre></td></tr></tbody></table></figure>
 <h3 id="2-Modify-the-CNAME"><a href="#2-Modify-the-CNAME" class="headerlink" title="2. Modify the CNAME"></a>2. Modify the CNAME</h3><p>打开<code>hexo/source</code>目录下的<code>CNAME</code>文件（如果没有请新建，无后缀）</p>
 <p>在其中写入你的域名地址即可</p>
+<a id="more"></a>
 <h3 id="3-Config-ur-GitHub-project"><a href="#3-Config-ur-GitHub-project" class="headerlink" title="3. Config ur GitHub project"></a>3. Config ur GitHub project</h3><p><img data-src="/images/hexo/githubio.jpeg" alt="githubio_config"></p>
 <h2 id="Deploy-ur-project"><a href="#Deploy-ur-project" class="headerlink" title="Deploy ur project"></a>Deploy ur project</h2><figure class="highlight"><table><tbody><tr><td class="code"><pre><span class="line">&gt;&gt; hexo clean</span><br><span class="line">&gt;&gt; hexo g</span><br><span class="line">&gt;&gt; hexo depoly</span><br></pre></td></tr></tbody></table></figure>
 <h2 id="4-Others"><a href="#4-Others" class="headerlink" title="4. Others"></a>4. Others</h2><p>如果你的网站不能正常显示，请检查对应github里的仓库设置，google<br>“github pages 404怎么解决”</p>
@@ -556,6 +557,18 @@
       </tags>
   </entry>
   <entry>
+    <title>AI中的数学知识</title>
+    <url>/posts/59545/</url>
+    <content><![CDATA[<h1 id="线性代数部分"><a href="#线性代数部分" class="headerlink" title="线性代数部分"></a>线性代数部分</h1><h2 id="矩阵及其运算合集"><a href="#矩阵及其运算合集" class="headerlink" title="矩阵及其运算合集"></a>矩阵及其运算合集</h2><a id="more"></a>
+<h2 id="矩阵的行列式"><a href="#矩阵的行列式" class="headerlink" title="矩阵的行列式"></a>矩阵的行列式</h2><h2 id="矩阵的逆"><a href="#矩阵的逆" class="headerlink" title="矩阵的逆"></a>矩阵的逆</h2><h2 id="矩阵的初等变换"><a href="#矩阵的初等变换" class="headerlink" title="矩阵的初等变换"></a>矩阵的初等变换</h2><h2 id="矩阵的秩"><a href="#矩阵的秩" class="headerlink" title="矩阵的秩"></a>矩阵的秩</h2><h2 id="矩阵的特征值和特征向量"><a href="#矩阵的特征值和特征向量" class="headerlink" title="矩阵的特征值和特征向量"></a>矩阵的特征值和特征向量</h2><h2 id="矩阵对角化二次型"><a href="#矩阵对角化二次型" class="headerlink" title="矩阵对角化二次型"></a>矩阵对角化二次型</h2><h2 id="SVD分解的证明"><a href="#SVD分解的证明" class="headerlink" title="SVD分解的证明"></a>SVD分解的证明</h2><h2 id="SVD的应用与多元线性回归"><a href="#SVD的应用与多元线性回归" class="headerlink" title="SVD的应用与多元线性回归"></a>SVD的应用与多元线性回归</h2><h1 id="微积分部分"><a href="#微积分部分" class="headerlink" title="微积分部分"></a>微积分部分</h1><h2 id="导数中的中值定理"><a href="#导数中的中值定理" class="headerlink" title="导数中的中值定理"></a>导数中的中值定理</h2><h2 id="泰勒公式函数极值定积分"><a href="#泰勒公式函数极值定积分" class="headerlink" title="泰勒公式函数极值定积分"></a>泰勒公式函数极值定积分</h2><h2 id="多元微积分"><a href="#多元微积分" class="headerlink" title="多元微积分"></a>多元微积分</h2><h1 id="概率论部分"><a href="#概率论部分" class="headerlink" title="概率论部分"></a>概率论部分</h1><h2 id="概率基础"><a href="#概率基础" class="headerlink" title="概率基础"></a>概率基础</h2><h2 id="随机变量与多维随机变量"><a href="#随机变量与多维随机变量" class="headerlink" title="随机变量与多维随机变量"></a>随机变量与多维随机变量</h2><h2 id="期望与方差"><a href="#期望与方差" class="headerlink" title="期望与方差"></a>期望与方差</h2><h2 id="参数的估计"><a href="#参数的估计" class="headerlink" title="参数的估计"></a>参数的估计</h2><h1 id="最优化理论"><a href="#最优化理论" class="headerlink" title="最优化理论"></a>最优化理论</h1><h2 id="无约束最优化"><a href="#无约束最优化" class="headerlink" title="无约束最优化"></a>无约束最优化</h2><h2 id="带约束的最优化"><a href="#带约束的最优化" class="headerlink" title="带约束的最优化"></a>带约束的最优化</h2><h2 id="对偶理论"><a href="#对偶理论" class="headerlink" title="对偶理论"></a>对偶理论</h2>]]></content>
+      <categories>
+        <category>Math</category>
+      </categories>
+      <tags>
+        <tag>Machine Learning</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Machine Learning基础</title>
     <url>/posts/59544/</url>
     <content><![CDATA[<p><img data-src="/images/MachineLearning/MLMindNode.png" alt="MLMindNode"></p>
@@ -748,18 +761,6 @@
       <tags>
         <tag>Python</tag>
         <tag>Numpy</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>AI中的数学知识</title>
-    <url>/posts/59545/</url>
-    <content><![CDATA[<h1 id="线性代数部分"><a href="#线性代数部分" class="headerlink" title="线性代数部分"></a>线性代数部分</h1><h2 id="矩阵及其运算合集"><a href="#矩阵及其运算合集" class="headerlink" title="矩阵及其运算合集"></a>矩阵及其运算合集</h2><a id="more"></a>
-<h2 id="矩阵的行列式"><a href="#矩阵的行列式" class="headerlink" title="矩阵的行列式"></a>矩阵的行列式</h2><h2 id="矩阵的逆"><a href="#矩阵的逆" class="headerlink" title="矩阵的逆"></a>矩阵的逆</h2><h2 id="矩阵的初等变换"><a href="#矩阵的初等变换" class="headerlink" title="矩阵的初等变换"></a>矩阵的初等变换</h2><h2 id="矩阵的秩"><a href="#矩阵的秩" class="headerlink" title="矩阵的秩"></a>矩阵的秩</h2><h2 id="矩阵的特征值和特征向量"><a href="#矩阵的特征值和特征向量" class="headerlink" title="矩阵的特征值和特征向量"></a>矩阵的特征值和特征向量</h2><h2 id="矩阵对角化二次型"><a href="#矩阵对角化二次型" class="headerlink" title="矩阵对角化二次型"></a>矩阵对角化二次型</h2><h2 id="SVD分解的证明"><a href="#SVD分解的证明" class="headerlink" title="SVD分解的证明"></a>SVD分解的证明</h2><h2 id="SVD的应用与多元线性回归"><a href="#SVD的应用与多元线性回归" class="headerlink" title="SVD的应用与多元线性回归"></a>SVD的应用与多元线性回归</h2><h1 id="微积分部分"><a href="#微积分部分" class="headerlink" title="微积分部分"></a>微积分部分</h1><h2 id="导数中的中值定理"><a href="#导数中的中值定理" class="headerlink" title="导数中的中值定理"></a>导数中的中值定理</h2><h2 id="泰勒公式函数极值定积分"><a href="#泰勒公式函数极值定积分" class="headerlink" title="泰勒公式函数极值定积分"></a>泰勒公式函数极值定积分</h2><h2 id="多元微积分"><a href="#多元微积分" class="headerlink" title="多元微积分"></a>多元微积分</h2><h1 id="概率论部分"><a href="#概率论部分" class="headerlink" title="概率论部分"></a>概率论部分</h1><h2 id="概率基础"><a href="#概率基础" class="headerlink" title="概率基础"></a>概率基础</h2><h2 id="随机变量与多维随机变量"><a href="#随机变量与多维随机变量" class="headerlink" title="随机变量与多维随机变量"></a>随机变量与多维随机变量</h2><h2 id="期望与方差"><a href="#期望与方差" class="headerlink" title="期望与方差"></a>期望与方差</h2><h2 id="参数的估计"><a href="#参数的估计" class="headerlink" title="参数的估计"></a>参数的估计</h2><h1 id="最优化理论"><a href="#最优化理论" class="headerlink" title="最优化理论"></a>最优化理论</h1><h2 id="无约束最优化"><a href="#无约束最优化" class="headerlink" title="无约束最优化"></a>无约束最优化</h2><h2 id="带约束的最优化"><a href="#带约束的最优化" class="headerlink" title="带约束的最优化"></a>带约束的最优化</h2><h2 id="对偶理论"><a href="#对偶理论" class="headerlink" title="对偶理论"></a>对偶理论</h2>]]></content>
-      <categories>
-        <category>Math</category>
-      </categories>
-      <tags>
-        <tag>Machine Learning</tag>
       </tags>
   </entry>
   <entry>
@@ -5835,52 +5836,52 @@ search()函数会在整个字符串内查找模式匹配,只到找到第一个�
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#Hash">Hash</a></td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#twoSum">twoSum</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#Hash">Hash</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#twoSum">twoSum</a></td>
 </tr>
 <tr>
 <td style="text-align:left"></td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#valid-sudoku">valid-sudoku</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#valid-sudoku">valid-sudoku</a></td>
 </tr>
 <tr>
 <td style="text-align:left"></td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#first-missing-positive">first-missing-positive</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#first-missing-positive">first-missing-positive</a></td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#LinkNode">LinkNode</a></td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#add-two-numbers">add-two-numbers</a></td>
-</tr>
-<tr>
-<td style="text-align:left"></td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#merge-two-sorted-lists">merge-two-sorted-lists</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#LinkNode">LinkNode</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#add-two-numbers">add-two-numbers</a></td>
 </tr>
 <tr>
 <td style="text-align:left"></td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#swap-nodes-in-pairs">swap-nodes-in-pairs</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#merge-two-sorted-lists">merge-two-sorted-lists</a></td>
 </tr>
 <tr>
 <td style="text-align:left"></td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#reverse-nodes-in-k-group">reverse-nodes-in-k-group</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#swap-nodes-in-pairs">swap-nodes-in-pairs</a></td>
 </tr>
 <tr>
 <td style="text-align:left"></td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#rotate-list">rotate-list</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#reverse-nodes-in-k-group">reverse-nodes-in-k-group</a></td>
 </tr>
 <tr>
 <td style="text-align:left"></td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#remove-duplicates-from-sorted-list-ii">remove-duplicates-from-sorted-list-ii</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#rotate-list">rotate-list</a></td>
 </tr>
 <tr>
 <td style="text-align:left"></td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#remove-duplicates-from-sorted-list">remove-duplicates-from-sorted-list</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#remove-duplicates-from-sorted-list-ii">remove-duplicates-from-sorted-list-ii</a></td>
 </tr>
 <tr>
 <td style="text-align:left"></td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#partition-list">partition-list</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#remove-duplicates-from-sorted-list">remove-duplicates-from-sorted-list</a></td>
 </tr>
 <tr>
 <td style="text-align:left"></td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#reverse-linked-list-ii">reverse-linked-list-ii</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#partition-list">partition-list</a></td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#reverse-linked-list-ii">reverse-linked-list-ii</a></td>
 </tr>
 </tbody>
 </table>
@@ -5896,84 +5897,84 @@ search()函数会在整个字符串内查找模式匹配,只到找到第一个�
 </thead>
 <tbody>
 <tr>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#Hash">Hash</a></td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#twoSum">twoSum</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#Hash">Hash</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#twoSum">twoSum</a></td>
 </tr>
 <tr>
 <td style="text-align:left"></td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#valid-sudoku">valid-sudoku</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#valid-sudoku">valid-sudoku</a></td>
 </tr>
 <tr>
 <td style="text-align:left"></td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#first-missing-positive">first-missing-positive</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#first-missing-positive">first-missing-positive</a></td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#LinkNode">LinkNode</a></td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#add-two-numbers">add-two-numbers</a></td>
-</tr>
-<tr>
-<td style="text-align:left"></td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#merge-two-sorted-lists">merge-two-sorted-lists</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#LinkNode">LinkNode</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#add-two-numbers">add-two-numbers</a></td>
 </tr>
 <tr>
 <td style="text-align:left"></td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#swap-nodes-in-pairs">swap-nodes-in-pairs</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#merge-two-sorted-lists">merge-two-sorted-lists</a></td>
 </tr>
 <tr>
 <td style="text-align:left"></td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#reverse-nodes-in-k-group">reverse-nodes-in-k-group</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#swap-nodes-in-pairs">swap-nodes-in-pairs</a></td>
 </tr>
 <tr>
 <td style="text-align:left"></td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#rotate-list">rotate-list</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#reverse-nodes-in-k-group">reverse-nodes-in-k-group</a></td>
 </tr>
 <tr>
 <td style="text-align:left"></td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#remove-duplicates-from-sorted-list-ii">remove-duplicates-from-sorted-list-ii</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#rotate-list">rotate-list</a></td>
 </tr>
 <tr>
 <td style="text-align:left"></td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#remove-duplicates-from-sorted-list">remove-duplicates-from-sorted-list</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#remove-duplicates-from-sorted-list-ii">remove-duplicates-from-sorted-list-ii</a></td>
 </tr>
 <tr>
 <td style="text-align:left"></td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#partition-list">partition-list</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#remove-duplicates-from-sorted-list">remove-duplicates-from-sorted-list</a></td>
 </tr>
 <tr>
 <td style="text-align:left"></td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#reverse-linked-list-ii">reverse-linked-list-ii</a></td>
-</tr>
-<tr>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#BackTrack">BackTrack</a></td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#find-median-sorted-array">find-median-sorted-array</a> — Recursion</td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#partition-list">partition-list</a></td>
 </tr>
 <tr>
 <td style="text-align:left"></td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#sudoku-solver">sudoku-solver</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#reverse-linked-list-ii">reverse-linked-list-ii</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#BackTrack">BackTrack</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#find-median-sorted-array">find-median-sorted-array</a> — Recursion</td>
 </tr>
 <tr>
 <td style="text-align:left"></td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#combination-sum">combination-sum</a> — Recursion</td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#sudoku-solver">sudoku-solver</a></td>
 </tr>
 <tr>
 <td style="text-align:left"></td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#permutations">permutations</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#combination-sum">combination-sum</a> — Recursion</td>
 </tr>
 <tr>
 <td style="text-align:left"></td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#permutations-ii">permutations-ii</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#permutations">permutations</a></td>
 </tr>
 <tr>
 <td style="text-align:left"></td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#powx-n">powx-n</a> — Recursion</td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#permutations-ii">permutations-ii</a></td>
 </tr>
 <tr>
 <td style="text-align:left"></td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#n-queens">n-queens</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#powx-n">powx-n</a> — Recursion</td>
 </tr>
 <tr>
 <td style="text-align:left"></td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#n-queens-ii">n-queens-ii</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#n-queens">n-queens</a></td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#n-queens-ii">n-queens-ii</a></td>
 </tr>
 <tr>
 <td style="text-align:left"></td>
@@ -5981,259 +5982,259 @@ search()函数会在整个字符串内查找模式匹配,只到找到第一个�
 </tr>
 <tr>
 <td style="text-align:left"></td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#subsets">subsets</a>— Recursion</td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#subsets">subsets</a>— Recursion</td>
 </tr>
 <tr>
 <td style="text-align:left"></td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#subsets-ii">subsets-ii</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#subsets-ii">subsets-ii</a></td>
 </tr>
 <tr>
 <td style="text-align:left"></td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#word-search">word-search</a>— Recursion</td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#word-search">word-search</a>— Recursion</td>
 </tr>
 <tr>
 <td style="text-align:left"></td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#gray-code">gray-code</a>— Recursion</td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#gray-code">gray-code</a>— Recursion</td>
 </tr>
 <tr>
 <td style="text-align:left"></td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#restore-ip-addresses">restore-ip-addresses</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#restore-ip-addresses">restore-ip-addresses</a></td>
 </tr>
 <tr>
 <td style="text-align:left"></td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#scramble-string">scramble-string</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#scramble-string">scramble-string</a></td>
 </tr>
 <tr>
 <td style="text-align:left"></td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#different-ways-to-add-parentheses">different-ways-to-add-parentheses</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#different-ways-to-add-parentheses">different-ways-to-add-parentheses</a></td>
 </tr>
 <tr>
 <td style="text-align:left"></td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#letter-case-permutation">letter-case-permutation</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#letter-case-permutation">letter-case-permutation</a></td>
 </tr>
 <tr>
 <td style="text-align:left"></td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#palindrome-partitioning">palindrome-partitioning</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#palindrome-partitioning">palindrome-partitioning</a></td>
 </tr>
 <tr>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#2DMatric">2DMatric</a></td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#longest-palindrome">longest-palindrome</a></td>
-</tr>
-<tr>
-<td style="text-align:left"></td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#rotate-image">rotate-image</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#2DMatric">2DMatric</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#longest-palindrome">longest-palindrome</a></td>
 </tr>
 <tr>
 <td style="text-align:left"></td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#spiral-matrix">spiral-matrix</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#rotate-image">rotate-image</a></td>
 </tr>
 <tr>
 <td style="text-align:left"></td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#spiral-matrix-ii">spiral-matrix-ii</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#spiral-matrix">spiral-matrix</a></td>
 </tr>
 <tr>
 <td style="text-align:left"></td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#set-matrix-zeroes">set-matrix-zeroes</a></td>
-</tr>
-<tr>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#Regular Expression">Regular Expression</a></td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#string-to-integer-atoi">string-to-integer-atoi</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#spiral-matrix-ii">spiral-matrix-ii</a></td>
 </tr>
 <tr>
 <td style="text-align:left"></td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#regular-expression-matchin">regular-expression-matchin</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#set-matrix-zeroes">set-matrix-zeroes</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#Regular Expression">Regular Expression</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#string-to-integer-atoi">string-to-integer-atoi</a></td>
 </tr>
 <tr>
 <td style="text-align:left"></td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#valid-number">valid-number</a></td>
-</tr>
-<tr>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#Stack">Stack</a></td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#valid-parentheses">valid-parentheses</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#regular-expression-matchin">regular-expression-matchin</a></td>
 </tr>
 <tr>
 <td style="text-align:left"></td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#largest-rectangle-in-histogram">largest-rectangle-in-histogram</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#valid-number">valid-number</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#Stack">Stack</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#valid-parentheses">valid-parentheses</a></td>
 </tr>
 <tr>
 <td style="text-align:left"></td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#maximal-rectangle">maximal-rectangle</a></td>
-</tr>
-<tr>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#BinaryTree">BinaryTree</a></td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#generate-parentheses">generate-parentheses</a></td>
-</tr>
-<tr>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#Queue">Queue</a></td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#merge-k-sorted-lists">merge-k-sorted-lists</a></td>
-</tr>
-<tr>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#Bit Operation">Bit Operation</a></td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#divide-two-integers">divide-two-integers</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#largest-rectangle-in-histogram">largest-rectangle-in-histogram</a></td>
 </tr>
 <tr>
 <td style="text-align:left"></td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#gray-code">gray-code</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#maximal-rectangle">maximal-rectangle</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#BinaryTree">BinaryTree</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#generate-parentheses">generate-parentheses</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#Queue">Queue</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#merge-k-sorted-lists">merge-k-sorted-lists</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#Bit Operation">Bit Operation</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#divide-two-integers">divide-two-integers</a></td>
 </tr>
 <tr>
 <td style="text-align:left"></td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#convert-a-number-to-hexadecimal">convert-a-number-to-hexadecimal</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#gray-code">gray-code</a></td>
 </tr>
 <tr>
 <td style="text-align:left"></td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#binary-watch">binary-watch</a></td>
-</tr>
-<tr>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#Binary Search">Binary Search</a></td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#find-first-and-last-position-of-element-in-sorted-array">find-first-and-last-position-of-element-in-sorted-array</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#convert-a-number-to-hexadecimal">convert-a-number-to-hexadecimal</a></td>
 </tr>
 <tr>
 <td style="text-align:left"></td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#sqrtx">sqrtx</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#binary-watch">binary-watch</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#Binary Search">Binary Search</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#find-first-and-last-position-of-element-in-sorted-array">find-first-and-last-position-of-element-in-sorted-array</a></td>
 </tr>
 <tr>
 <td style="text-align:left"></td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#search-a-2d-matrix">search-a-2d-matrix</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#sqrtx">sqrtx</a></td>
 </tr>
 <tr>
 <td style="text-align:left"></td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#search-in-rotated-sorted-array-ii">search-in-rotated-sorted-array</a></td>
-</tr>
-<tr>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#Double Pointer">Double Pointer</a></td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#trapping-rain-water">trapping-rain-water</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#search-a-2d-matrix">search-a-2d-matrix</a></td>
 </tr>
 <tr>
 <td style="text-align:left"></td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#sort-colors">sort-colors</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#search-in-rotated-sorted-array-ii">search-in-rotated-sorted-array</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#Double Pointer">Double Pointer</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#trapping-rain-water">trapping-rain-water</a></td>
 </tr>
 <tr>
 <td style="text-align:left"></td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#minimum-window-substring">minimum-window-substring</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#sort-colors">sort-colors</a></td>
 </tr>
 <tr>
 <td style="text-align:left"></td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#remove-duplicates-from-sorted-array-ii">remove-duplicates-from-sorted-array-ii</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#minimum-window-substring">minimum-window-substring</a></td>
 </tr>
 <tr>
 <td style="text-align:left"></td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#merge-sorted-array">merge-sorted-array</a></td>
-</tr>
-<tr>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#Dynamic Programming">Dynamic Programming</a></td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#wildcard-matching">wildcard-matching</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#remove-duplicates-from-sorted-array-ii">remove-duplicates-from-sorted-array-ii</a></td>
 </tr>
 <tr>
 <td style="text-align:left"></td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#maximum-subarray">maximum-subarray</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#merge-sorted-array">merge-sorted-array</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#Dynamic Programming">Dynamic Programming</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#wildcard-matching">wildcard-matching</a></td>
 </tr>
 <tr>
 <td style="text-align:left"></td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#jump-game">jump-game</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#maximum-subarray">maximum-subarray</a></td>
 </tr>
 <tr>
 <td style="text-align:left"></td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#unique-paths">unique-paths</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#jump-game">jump-game</a></td>
 </tr>
 <tr>
 <td style="text-align:left"></td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#unique-paths-ii">unique-paths-ii</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#unique-paths">unique-paths</a></td>
 </tr>
 <tr>
 <td style="text-align:left"></td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#minimum-path-sum">minimum-path-sum</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#unique-paths-ii">unique-paths-ii</a></td>
 </tr>
 <tr>
 <td style="text-align:left"></td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#climbing-stairs">climbing-stairs</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#minimum-path-sum">minimum-path-sum</a></td>
 </tr>
 <tr>
 <td style="text-align:left"></td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#edit-distance">edit-distance</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#climbing-stairs">climbing-stairs</a></td>
 </tr>
 <tr>
 <td style="text-align:left"></td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#decode-ways">decode-ways</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#edit-distance">edit-distance</a></td>
 </tr>
 <tr>
 <td style="text-align:left"></td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interleaving-string">interleaving-string</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#decode-ways">decode-ways</a></td>
 </tr>
 <tr>
 <td style="text-align:left"></td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#split-array-with-equal-sum">split-array-with-equal-sum</a></td>
-</tr>
-<tr>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#Greedy Algorithm">Greedy Algorithm</a></td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#jump-game-ii">jump-game-ii</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#interleaving-string">interleaving-string</a></td>
 </tr>
 <tr>
 <td style="text-align:left"></td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#maximum-subarray">maximum-subarray</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#split-array-with-equal-sum">split-array-with-equal-sum</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#Greedy Algorithm">Greedy Algorithm</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#jump-game-ii">jump-game-ii</a></td>
 </tr>
 <tr>
 <td style="text-align:left"></td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#merge-intervals">merge-intervals</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#maximum-subarray">maximum-subarray</a></td>
 </tr>
 <tr>
 <td style="text-align:left"></td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#insert-interval">insert-interval</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#merge-intervals">merge-intervals</a></td>
 </tr>
 <tr>
 <td style="text-align:left"></td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#queue-reconstruction-by-height">queue-reconstruction-by-height</a></td>
-</tr>
-<tr>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#String">String</a></td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#valid-number">valid-number</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#insert-interval">insert-interval</a></td>
 </tr>
 <tr>
 <td style="text-align:left"></td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#text-justification">text-justification</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#queue-reconstruction-by-height">queue-reconstruction-by-height</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#String">String</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#valid-number">valid-number</a></td>
 </tr>
 <tr>
 <td style="text-align:left"></td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#simplify-path">simplify-path</a></td>
-</tr>
-<tr>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#Tree">Tree</a></td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#binary-tree-inorder-traversal">binary-tree-inorder-traversal</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#text-justification">text-justification</a></td>
 </tr>
 <tr>
 <td style="text-align:left"></td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#unique-binary-search-trees-ii">unique-binary-search-trees-ii</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#simplify-path">simplify-path</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#Tree">Tree</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#binary-tree-inorder-traversal">binary-tree-inorder-traversal</a></td>
 </tr>
 <tr>
 <td style="text-align:left"></td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#unique-binary-search-trees">unique-binary-search-trees</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#unique-binary-search-trees-ii">unique-binary-search-trees-ii</a></td>
 </tr>
 <tr>
 <td style="text-align:left"></td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#validate-binary-search-tree">validate-binary-search-tree</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#unique-binary-search-trees">unique-binary-search-trees</a></td>
 </tr>
 <tr>
 <td style="text-align:left"></td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#recover-binary-search-tree">recover-binary-search-tree</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#validate-binary-search-tree">validate-binary-search-tree</a></td>
 </tr>
 <tr>
 <td style="text-align:left"></td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#same-tree">same-tree</a></td>
-</tr>
-<tr>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#sort">sort</a></td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#largest-number">largest-number</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#recover-binary-search-tree">recover-binary-search-tree</a></td>
 </tr>
 <tr>
 <td style="text-align:left"></td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#kth-largest-element-in-an-array">kth-largest-element-in-an-array</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#same-tree">same-tree</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#sort">sort</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#largest-number">largest-number</a></td>
 </tr>
 <tr>
 <td style="text-align:left"></td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#sort-an-array">sort-an-array</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#kth-largest-element-in-an-array">kth-largest-element-in-an-array</a></td>
 </tr>
 <tr>
 <td style="text-align:left"></td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#contains-duplicate-iii">contains-duplicate-iii</a> — bucket</td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#sort-an-array">sort-an-array</a></td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#contains-duplicate-iii">contains-duplicate-iii</a> — bucket</td>
 </tr>
 </tbody>
 </table>
@@ -6251,337 +6252,337 @@ search()函数会在整个字符串内查找模式匹配,只到找到第一个�
 <tbody>
 <tr>
 <td>1</td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_1">二维数组中的查找</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#interview_1">二维数组中的查找</a></td>
 <td>数组、查找</td>
 </tr>
 <tr>
 <td>7</td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_7">斐波那契数列</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#interview_7">斐波那契数列</a></td>
 <td>数组</td>
 </tr>
 <tr>
 <td>13</td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_13">调整数组顺序使奇数位于偶数前面</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#interview_13">调整数组顺序使奇数位于偶数前面</a></td>
 <td>数组</td>
 </tr>
 <tr>
 <td>19</td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_19">顺时针打印矩阵</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#interview_19">顺时针打印矩阵</a></td>
 <td>数组</td>
 </tr>
 <tr>
 <td>29</td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_29">最小的K个数</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#interview_29">最小的K个数</a></td>
 <td>数组、高级算法</td>
 </tr>
 <tr>
 <td>32</td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_32">把数组排成最小的数</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#interview_32">把数组排成最小的数</a></td>
 <td>数组</td>
 </tr>
 <tr>
 <td>35</td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_35">数组中的逆序对</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#interview_35">数组中的逆序对</a></td>
 <td>数组</td>
 </tr>
 <tr>
 <td>37</td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_37">数字在排序数组中出现的次数</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#interview_37">数字在排序数组中出现的次数</a></td>
 <td>数组、二分</td>
 </tr>
 <tr>
 <td>42</td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_42">和为S的两个数字</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#interview_42">和为S的两个数字</a></td>
 <td>数组、双指针</td>
 </tr>
 <tr>
 <td>49</td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_49">把字符串转换成整数</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#interview_49">把字符串转换成整数</a></td>
 <td>数组</td>
 </tr>
 <tr>
 <td>50</td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_50">数组中重复的数字</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#interview_50">数组中重复的数字</a></td>
 <td>数组</td>
 </tr>
 <tr>
 <td>51</td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_51">构建乘积数组</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#interview_51">构建乘积数组</a></td>
 <td>数组</td>
 </tr>
 <tr>
 <td>66</td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_66">机器人的运动范围</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#interview_66">机器人的运动范围</a></td>
 <td>数组</td>
 </tr>
 <tr>
 <td>67</td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_67">剪绳子</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#interview_67">剪绳子</a></td>
 <td>数组、贪心、高级算法</td>
 </tr>
 <tr>
 <td>2</td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_2">替换空格</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#interview_2">替换空格</a></td>
 <td>字符串</td>
 </tr>
 <tr>
 <td>27</td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_27">字符串的排列</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#interview_27">字符串的排列</a></td>
 <td>字符串、动态规划</td>
 </tr>
 <tr>
 <td>34</td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_34">第一个只出现一次的字符位置</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#interview_34">第一个只出现一次的字符位置</a></td>
 <td>字符串</td>
 </tr>
 <tr>
 <td>43</td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_43">左旋转字符串</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#interview_43">左旋转字符串</a></td>
 <td>字符串</td>
 </tr>
 <tr>
 <td>44</td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_44">翻转单词顺序列</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#interview_44">翻转单词顺序列</a></td>
 <td>字符串</td>
 </tr>
 <tr>
 <td>45</td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_45">扑克牌顺子</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#interview_45">扑克牌顺子</a></td>
 <td>字符串</td>
 </tr>
 <tr>
 <td>48</td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_48">不用加减乘除做加法</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#interview_48">不用加减乘除做加法</a></td>
 <td>字符串、数学</td>
 </tr>
 <tr>
 <td>52</td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_52">正则表达式匹配</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#interview_52">正则表达式匹配</a></td>
 <td>字符串</td>
 </tr>
 <tr>
 <td>53</td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_53">表示数值的字符串</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#interview_53">表示数值的字符串</a></td>
 <td>字符串</td>
 </tr>
 <tr>
 <td>54</td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_54">字符流中第一个不重复的字符</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#interview_54">字符流中第一个不重复的字符</a></td>
 <td>字符串</td>
 </tr>
 <tr>
 <td>3</td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_3">从尾到头打印链表</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#interview_3">从尾到头打印链表</a></td>
 <td>链表</td>
 </tr>
 <tr>
 <td>14</td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_14">链表中倒数第K个结点</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#interview_14">链表中倒数第K个结点</a></td>
 <td>链表、双指针</td>
 </tr>
 <tr>
 <td>15</td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_15">反转链表</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#interview_15">反转链表</a></td>
 <td>链表</td>
 </tr>
 <tr>
 <td>25</td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_25">复杂链表的复制</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#interview_25">复杂链表的复制</a></td>
 <td>链表</td>
 </tr>
 <tr>
 <td>36</td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_36">两个链表的第一个公共结点</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#interview_36">两个链表的第一个公共结点</a></td>
 <td>链表</td>
 </tr>
 <tr>
 <td>46</td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_46">圆圈中最后剩下的元素</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#interview_46">圆圈中最后剩下的元素</a></td>
 <td>链表</td>
 </tr>
 <tr>
 <td>55</td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_55">链表中环的入口结点</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#interview_55">链表中环的入口结点</a></td>
 <td>链表</td>
 </tr>
 <tr>
 <td>56</td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_56">删除链表中重复的结点</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#interview_56">删除链表中重复的结点</a></td>
 <td>链表</td>
 </tr>
 <tr>
 <td>4</td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_4">重建二叉树</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#interview_4">重建二叉树</a></td>
 <td>树、dfs、数组</td>
 </tr>
 <tr>
 <td>17</td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_17">树的子结构</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#interview_17">树的子结构</a></td>
 <td>树</td>
 </tr>
 <tr>
 <td>18</td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_18">二叉树的镜像</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#interview_18">二叉树的镜像</a></td>
 <td>树</td>
 </tr>
 <tr>
 <td>22</td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_22">从上往下打印二叉树</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#interview_22">从上往下打印二叉树</a></td>
 <td>树、队列</td>
 </tr>
 <tr>
 <td>23</td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_23">二叉搜索树的后序遍历序列</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#interview_23">二叉搜索树的后序遍历序列</a></td>
 <td>树、栈</td>
 </tr>
 <tr>
 <td>24</td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_24">二叉树中和为某一值的路径</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#interview_24">二叉树中和为某一值的路径</a></td>
 <td>树</td>
 </tr>
 <tr>
 <td>38</td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_38">二叉树的深度</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#interview_38">二叉树的深度</a></td>
 <td>树</td>
 </tr>
 <tr>
 <td>39</td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_39">平衡二叉树</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#interview_39">平衡二叉树</a></td>
 <td>树、dfs</td>
 </tr>
 <tr>
 <td>57</td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_57">二叉树的下一个结点</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#interview_57">二叉树的下一个结点</a></td>
 <td>树</td>
 </tr>
 <tr>
 <td>58</td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_58">对称的二叉树</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#interview_58">对称的二叉树</a></td>
 <td>树</td>
 </tr>
 <tr>
 <td>59</td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_59">按之字形顺序打印二叉树</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#interview_59">按之字形顺序打印二叉树</a></td>
 <td>树、栈</td>
 </tr>
 <tr>
 <td>60</td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_60">把二叉树打印成多行</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#interview_60">把二叉树打印成多行</a></td>
 <td>树、bfs</td>
 </tr>
 <tr>
 <td>61</td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_61">序列化二叉树</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#interview_61">序列化二叉树</a></td>
 <td>树、队列</td>
 </tr>
 <tr>
 <td>62</td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_62">二叉搜索树的第K个结点</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#interview_62">二叉搜索树的第K个结点</a></td>
 <td>树</td>
 </tr>
 <tr>
 <td>5</td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_5">用两个栈实现队列</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#interview_5">用两个栈实现队列</a></td>
 <td>栈</td>
 </tr>
 <tr>
 <td>20</td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_20">包含min函数的栈</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#interview_20">包含min函数的栈</a></td>
 <td>栈</td>
 </tr>
 <tr>
 <td>21</td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_21">栈的压入、弹出序列</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#interview_21">栈的压入、弹出序列</a></td>
 <td>栈</td>
 </tr>
 <tr>
 <td>6</td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_6">旋转数组的最小数字</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#interview_6">旋转数组的最小数字</a></td>
 <td>二分</td>
 </tr>
 <tr>
 <td>8</td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_8">跳台阶</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#interview_8">跳台阶</a></td>
 <td>递归</td>
 </tr>
 <tr>
 <td>10</td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_10">矩形覆盖</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#interview_10">矩形覆盖</a></td>
 <td>递归</td>
 </tr>
 <tr>
 <td>9</td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_9">变态跳台阶</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#interview_9">变态跳台阶</a></td>
 <td>贪心</td>
 </tr>
 <tr>
 <td>11</td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_11">二进制中1的个数</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#interview_11">二进制中1的个数</a></td>
 <td>数学</td>
 </tr>
 <tr>
 <td>12</td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_12">数值的整数次方</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#interview_12">数值的整数次方</a></td>
 <td>数学</td>
 </tr>
 <tr>
 <td>33</td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_33">丑数</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#interview_33">丑数</a></td>
 <td>数学、动态规划</td>
 </tr>
 <tr>
 <td>47</td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_47">求1+2+….+n</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#interview_47">求1+2+….+n</a></td>
 <td>数学</td>
 </tr>
 <tr>
 <td>16</td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_16">合并两个排序的链表</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#interview_16">合并两个排序的链表</a></td>
 <td>分治</td>
 </tr>
 <tr>
 <td>26</td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_26">二叉搜索树与双向链表</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#interview_26">二叉搜索树与双向链表</a></td>
 <td>分治</td>
 </tr>
 <tr>
 <td>28</td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_28">数组中出现次数超过一半的数字</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#interview_28">数组中出现次数超过一半的数字</a></td>
 <td>分治、位运算</td>
 </tr>
 <tr>
 <td>30</td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_30">连续子数组的最大和</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#interview_30">连续子数组的最大和</a></td>
 <td>分治、动态规划</td>
 </tr>
 <tr>
 <td>31</td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_31">整数中1出现的次数（从1到n）</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#interview_31">整数中1出现的次数（从1到n）</a></td>
 <td>查找</td>
 </tr>
 <tr>
 <td>40</td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_40">数组中只出现一次的数字</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#interview_40">数组中只出现一次的数字</a></td>
 <td>位运算、哈希</td>
 </tr>
 <tr>
 <td>41</td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_41">和为S的连续正数序列</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#interview_41">和为S的连续正数序列</a></td>
 <td>穷举、滑动窗口</td>
 </tr>
 <tr>
 <td>63</td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_63">数据流中的中位数</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#interview_63">数据流中的中位数</a></td>
 <td>堆、排序</td>
 </tr>
 <tr>
 <td>64</td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_64">滑动窗口的最大值</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#interview_64">滑动窗口的最大值</a></td>
 <td>堆、双指针</td>
 </tr>
 <tr>
 <td>65</td>
-<td style="text-align:left"><a href="https://unknown.yuzhouwan.com/posts/55663/#interview_65">矩阵中的路径</a></td>
+<td style="text-align:left"><a href="https://gracekoo.com/posts/55663/#interview_65">矩阵中的路径</a></td>
 <td>dfs、回溯</td>
 </tr>
 </tbody>
@@ -6785,9 +6786,9 @@ id7((6)) --&gt; id2((1))</pre>
 <h2 id="combinations"><a href="#combinations" class="headerlink" title="combinations"></a>combinations</h2><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="comment"># @Time: 2020/3/22 22:32</span></span><br><span class="line"><span class="comment"># @Author: GraceKoo</span></span><br><span class="line"><span class="comment"># @File: 77_combinations.py</span></span><br><span class="line"><span class="comment"># @Desc:https://leetcode-cn.com/problems/combinations/</span></span><br><span class="line"><span class="keyword">from</span> typing <span class="keyword">import</span> List</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">combine</span>(<span class="params">self, n: <span class="built_in">int</span>, k: <span class="built_in">int</span></span>) -&gt; List[List[int]]:</span></span><br><span class="line">        <span class="keyword">if</span> n &lt;= <span class="number">0</span> <span class="keyword">or</span> k &lt;= <span class="number">0</span> <span class="keyword">or</span> n &lt; k:</span><br><span class="line">            <span class="keyword">return</span> []</span><br><span class="line">        result = []</span><br><span class="line">        self.__dfs(<span class="number">1</span>, k, n, [], result)</span><br><span class="line">        <span class="keyword">return</span> result</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__dfs</span>(<span class="params">self, index, k, n, pre, result</span>):</span></span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(pre) == k:</span><br><span class="line">            result.append(pre[:])</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(index, n + <span class="number">1</span>):</span><br><span class="line">            pre.append(i)</span><br><span class="line">            self.__dfs(i + <span class="number">1</span>, k, n, pre, result)</span><br><span class="line">            pre.pop()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">so = Solution()</span><br><span class="line">print(so.combine(<span class="number">4</span>, <span class="number">2</span>))</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
 <h2 id="subsets"><a href="#subsets" class="headerlink" title="subsets"></a>subsets</h2><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="comment"># @Time: 2020/3/24 11:57</span></span><br><span class="line"><span class="comment"># @Author: GraceKoo</span></span><br><span class="line"><span class="comment"># @File: 78_subsets.py</span></span><br><span class="line"><span class="comment"># @Desc:https://leetcode-cn.com/problems/subsets/</span></span><br><span class="line"><span class="keyword">from</span> typing <span class="keyword">import</span> List</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">subsets</span>(<span class="params">self, nums: List[<span class="built_in">int</span>]</span>) -&gt; List[List[int]]:</span></span><br><span class="line">        result = []</span><br><span class="line">        n = <span class="built_in">len</span>(nums)</span><br><span class="line">        <span class="keyword">if</span> n &lt;= <span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> result</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">backtrack</span>(<span class="params">start, result_tmp</span>):</span></span><br><span class="line">            result.append(result_tmp)</span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(start, n):</span><br><span class="line">                backtrack(i + <span class="number">1</span>, result_tmp + [nums[i]])</span><br><span class="line"></span><br><span class="line">        backtrack(<span class="number">0</span>, [])</span><br><span class="line">        <span class="keyword">return</span> result</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">so = Solution()</span><br><span class="line">print(so.subsets([<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]))</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
 <h2 id="subsets-ii"><a href="#subsets-ii" class="headerlink" title="subsets-ii"></a>subsets-ii</h2><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="comment"># @Time: 2020/4/4 22:57</span></span><br><span class="line"><span class="comment"># @Author: GraceKoo</span></span><br><span class="line"><span class="comment"># @File: 90_subsets-ii.py</span></span><br><span class="line"><span class="comment"># @Desc: https://leetcode-cn.com/problems/subsets-ii/</span></span><br><span class="line"><span class="keyword">from</span> typing <span class="keyword">import</span> List</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">subsetsWithDup</span>(<span class="params">self, nums: List[<span class="built_in">int</span>]</span>) -&gt; List[List[int]]:</span></span><br><span class="line">        n = <span class="built_in">len</span>(nums)</span><br><span class="line">        nums.sort()</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">track_back</span>(<span class="params">i, tmp</span>):</span></span><br><span class="line">            res.append(tmp)</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(i, n):</span><br><span class="line">                <span class="keyword">if</span> j &gt; i <span class="keyword">and</span> nums[j] == nums[j - <span class="number">1</span>]:</span><br><span class="line">                    <span class="keyword">continue</span></span><br><span class="line">                track_back(j + <span class="number">1</span>, tmp + [nums[j]])</span><br><span class="line"></span><br><span class="line">        res = []</span><br><span class="line">        track_back(<span class="number">0</span>, [])</span><br><span class="line">        <span class="keyword">return</span> res</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">so = Solution()</span><br><span class="line">print(so.subsetsWithDup([<span class="number">0</span>]))</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
-<h2 id="word-search"><a href="#word-search" class="headerlink" title="word-search"></a>word-search</h2><p>可以参考<a href="https://unknown.yuzhouwan.com/posts/55663/#interview_65">interview_65</a>写法更清楚明了。</p>
+<h2 id="word-search"><a href="#word-search" class="headerlink" title="word-search"></a>word-search</h2><p>可以参考<a href="https://gracekoo.com/posts/55663/#interview_65">interview_65</a>写法更清楚明了。</p>
 <figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="comment"># @Time: 2020/3/24 21:06 </span></span><br><span class="line"><span class="comment"># @Author: GraceKoo</span></span><br><span class="line"><span class="comment"># @File: 79_word-search.py</span></span><br><span class="line"><span class="comment"># @Desc:https://leetcode-cn.com/problems/word-search/</span></span><br><span class="line"><span class="keyword">from</span> typing <span class="keyword">import</span> List</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    derections = [(<span class="number">0</span>, -<span class="number">1</span>), (-<span class="number">1</span>, <span class="number">0</span>), (<span class="number">0</span>, <span class="number">1</span>), (<span class="number">1</span>, <span class="number">0</span>)]</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">exist</span>(<span class="params">self, board: List[List[<span class="built_in">str</span>]], word: <span class="built_in">str</span></span>) -&gt; bool:</span></span><br><span class="line">        rows = <span class="built_in">len</span>(board)</span><br><span class="line">        cols = <span class="built_in">len</span>(board[<span class="number">0</span>])</span><br><span class="line">        marked = [[<span class="literal">False</span> <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(cols)] <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(rows)]</span><br><span class="line">        <span class="keyword">for</span> row <span class="keyword">in</span> <span class="built_in">range</span>(rows):</span><br><span class="line">            <span class="keyword">for</span> col <span class="keyword">in</span> <span class="built_in">range</span>(cols):</span><br><span class="line">                <span class="keyword">if</span> self.__search_word(board, word, <span class="number">0</span>, row, col, marked, rows, cols):</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__search_word</span>(<span class="params">self, board, word, index_word, row, col, marked, rows, cols</span>):</span></span><br><span class="line">        <span class="comment"># 递归终止条件</span></span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(word) - <span class="number">1</span> == index_word:</span><br><span class="line">            <span class="keyword">return</span> board[row][col] == word[index_word]</span><br><span class="line">        <span class="keyword">if</span> board[row][col] == word[index_word]:</span><br><span class="line">            marked[row][col] = <span class="literal">True</span></span><br><span class="line">            <span class="keyword">for</span> derection <span class="keyword">in</span> self.derections:</span><br><span class="line">                next_x, next_y = row + derection[<span class="number">0</span>], col + derection[<span class="number">1</span>]</span><br><span class="line">                <span class="keyword">if</span> <span class="number">0</span> &lt;= next_x &lt; rows <span class="keyword">and</span> <span class="number">0</span> &lt;= next_y &lt; cols <span class="keyword">and</span> <span class="keyword">not</span> marked[next_x][next_y] \</span><br><span class="line">                    <span class="keyword">and</span> self.__search_word(board, word,</span><br><span class="line">                                           index_word + <span class="number">1</span>,</span><br><span class="line">                                           next_x, next_y,</span><br><span class="line">                                           marked, rows, cols):</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">            marked[row][col] = <span class="literal">False</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">so = Solution()</span><br><span class="line">print(so.exist([</span><br><span class="line">    [<span class="string">'A'</span>, <span class="string">'B'</span>, <span class="string">'C'</span>, <span class="string">'E'</span>],</span><br><span class="line">    [<span class="string">'S'</span>, <span class="string">'F'</span>, <span class="string">'C'</span>, <span class="string">'S'</span>],</span><br><span class="line">    [<span class="string">'A'</span>, <span class="string">'D'</span>, <span class="string">'E'</span>, <span class="string">'E'</span>]</span><br><span class="line">], <span class="string">"ABCCED"</span>))</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
-<h2 id="interview-65"><a href="#interview-65" class="headerlink" title="interview_65"></a>interview_65</h2><p>此题同<a href="https://unknown.yuzhouwan.com/posts/55663/#word-search">word_search</a></p>
+<h2 id="interview-65"><a href="#interview-65" class="headerlink" title="interview_65"></a>interview_65</h2><p>此题同<a href="https://gracekoo.com/posts/55663/#word-search">word_search</a></p>
 <p>对比<a href="https://leetcode-cn.com/problems/ju-zhen-zhong-de-lu-jing-lcof/solution/mian-shi-ti-12-ju-zhen-zhong-de-lu-jing-shen-du-yo/">参考链接</a>，其方法更加简洁。</p>
 <figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="comment"># @Time: 2020/10/10 11:58</span></span><br><span class="line"><span class="comment"># @Author: GraceKoo</span></span><br><span class="line"><span class="comment"># @File: interview_65.py</span></span><br><span class="line"><span class="comment"># @Desc: https://leetcode-cn.com/problems/ju-zhen-zhong-de-lu-jing-lcof/</span></span><br><span class="line"><span class="keyword">from</span> typing <span class="keyword">import</span> List</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">exist</span>(<span class="params">self, board: List[List[<span class="built_in">str</span>]], word: <span class="built_in">str</span></span>) -&gt; bool:</span></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">dfs</span>(<span class="params">i, j, k</span>):</span></span><br><span class="line">            <span class="comment"># 递归异常退出的条件：索引超出范围或者与当前字母不匹配</span></span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> <span class="number">0</span> &lt;= i &lt; <span class="built_in">len</span>(board) <span class="keyword">or</span> <span class="keyword">not</span> <span class="number">0</span> &lt;= j &lt; <span class="built_in">len</span>(board[<span class="number">0</span>]) <span class="keyword">or</span> word[k] != board[i][j] <span class="keyword">or</span> board[i][j] == <span class="string">"*"</span>:</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">            <span class="comment"># 递归成功退出的条件</span></span><br><span class="line">            <span class="keyword">if</span> k == <span class="built_in">len</span>(word)-<span class="number">1</span>:</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line"></span><br><span class="line">            <span class="comment"># 继续向上下左右进行遍历</span></span><br><span class="line">            tmp = board[i][j]</span><br><span class="line">            board[i][j] = <span class="string">"*"</span>  <span class="comment"># *表示已经遍历过</span></span><br><span class="line"></span><br><span class="line">            result = dfs(i-<span class="number">1</span>, j, k+<span class="number">1</span>) <span class="keyword">or</span> dfs(i+<span class="number">1</span>, j, k+<span class="number">1</span>) <span class="keyword">or</span> dfs(i, j-<span class="number">1</span>, k+<span class="number">1</span>) <span class="keyword">or</span> dfs(i, j+<span class="number">1</span>, k+<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">            board[i][j] = tmp  <span class="comment"># 不管遍历结果如何，都需要恢复相应字符</span></span><br><span class="line">            <span class="keyword">return</span> result</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 从不同的起点出发, k代表当前遍历到的单词字母的索引</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(board)):</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(board[<span class="number">0</span>])):</span><br><span class="line">                <span class="keyword">if</span> dfs(i, j, <span class="number">0</span>):</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
 <p>牛客网上的要求略有不同。</p>
@@ -6893,7 +6894,7 @@ id7((6)) --&gt; id2((1))</pre>
 <figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="comment"># @Time: 2019/12/21 7:46 下午</span></span><br><span class="line"><span class="comment"># @Author: GraceKoo</span></span><br><span class="line"><span class="comment"># @File: 10_regular-expression-matchin.py</span></span><br><span class="line"><span class="comment"># @Desc:https://leetcode-cn.com/problems/regular-expression-matching/</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>(<span class="params"><span class="built_in">object</span></span>):</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">isMatch</span>(<span class="params">self, s: <span class="built_in">str</span>, p: <span class="built_in">str</span></span>) -&gt; bool:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> p:</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">not</span> s  <span class="comment"># 结束条件</span></span><br><span class="line"></span><br><span class="line">        first_match = s <span class="keyword">and</span> (s[<span class="number">0</span>] == p[<span class="number">0</span>] <span class="keyword">or</span> p[<span class="number">0</span>] == <span class="string">"."</span>)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(p) &gt;= <span class="number">2</span> <span class="keyword">and</span> p[<span class="number">1</span>] == <span class="string">'*'</span>:</span><br><span class="line">          <span class="keyword">return</span> self.isMatch(s, p[<span class="number">2</span>:]) <span class="keyword">or</span> \</span><br><span class="line">          (first_match <span class="keyword">and</span> self.isMatch(s[<span class="number">1</span>:], p))</span><br><span class="line"></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">        	<span class="keyword">return</span> first_match <span class="keyword">and</span> self.isMatch(s[<span class="number">1</span>:], p[<span class="number">1</span>:])</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">so = Solution()</span><br><span class="line"><span class="keyword">assert</span> so.isMatch(<span class="string">"mississippi"</span>, <span class="string">"mis*is*ip*."</span>)</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
 <p>方法三：动态规划</p>
 <p><a href="https://leetcode-cn.com/problems/zheng-ze-biao-da-shi-pi-pei-lcof/solution/hui-su-dong-tai-gui-hua-by-ml-zimingmeng/">参考链接</a></p>
-<h2 id="interview-52"><a href="#interview-52" class="headerlink" title="interview_52"></a>interview_52</h2><p>同<a href="https://unknown.yuzhouwan.com/posts/55663/#regular-expression-matchi">regular-expression-matchin</a></p>
+<h2 id="interview-52"><a href="#interview-52" class="headerlink" title="interview_52"></a>interview_52</h2><p>同<a href="https://gracekoo.com/posts/55663/#regular-expression-matchi">regular-expression-matchin</a></p>
 <h2 id="valid-number"><a href="#valid-number" class="headerlink" title="valid-number"></a>valid-number</h2><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="comment"># @Time: 2020/3/8 00:41</span></span><br><span class="line"><span class="comment"># @Author: GraceKoo</span></span><br><span class="line"><span class="comment"># @File: 65_valid-number.py</span></span><br><span class="line"><span class="comment"># @Desc:https://leetcode-cn.com/problems/valid-number/</span></span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">isNumber</span>(<span class="params">self, s: <span class="built_in">str</span></span>) -&gt; bool:</span></span><br><span class="line">        <span class="comment"># return bool(re.match(r' *[+-]?([0-9]+(\.[0-9]*)?|\.[0-9]+)(e[+-]?[0-9]+)? *$', s))</span></span><br><span class="line">        s = s.strip()</span><br><span class="line">        <span class="comment"># 去除s两边的空白符</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> s:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="comment"># 去除"+"、"-"</span></span><br><span class="line">        <span class="keyword">if</span> s[<span class="number">0</span>] <span class="keyword">in</span> [<span class="string">"+"</span>, <span class="string">"-"</span>]:</span><br><span class="line">            s = s[<span class="number">1</span>:]</span><br><span class="line">        <span class="comment"># 判断是否含有e</span></span><br><span class="line">        <span class="keyword">if</span> <span class="string">"e"</span> <span class="keyword">in</span> s:</span><br><span class="line">            s_list = s.split(<span class="string">"e"</span>)</span><br><span class="line">            <span class="comment"># 说明有两个e</span></span><br><span class="line">            <span class="keyword">if</span> <span class="built_in">len</span>(s_list) &gt; <span class="number">2</span>:</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">            <span class="comment"># 去掉e前面的"."</span></span><br><span class="line">            s_list[<span class="number">0</span>] = s_list[<span class="number">0</span>].replace(<span class="string">"."</span>, <span class="string">""</span>, <span class="number">1</span>)</span><br><span class="line">            <span class="comment"># 去掉e后面的"+、"-"</span></span><br><span class="line">            <span class="keyword">if</span> <span class="built_in">len</span>(s_list[<span class="number">1</span>]) &gt; <span class="number">0</span> <span class="keyword">and</span> s_list[<span class="number">1</span>][<span class="number">0</span>] <span class="keyword">in</span> [<span class="string">"+"</span>, <span class="string">"-"</span>]:</span><br><span class="line">                s_list[<span class="number">1</span>] = s_list[<span class="number">1</span>].replace(s_list[<span class="number">1</span>][<span class="number">0</span>], <span class="string">""</span>, <span class="number">1</span>)</span><br><span class="line">            <span class="comment"># 判断是否为数字</span></span><br><span class="line">            <span class="keyword">if</span> s_list[<span class="number">0</span>].isnumeric() <span class="keyword">and</span> s_list[<span class="number">1</span>].isnumeric():</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            s = s.replace(<span class="string">"."</span>, <span class="string">""</span>, <span class="number">1</span>)</span><br><span class="line">            <span class="keyword">if</span> s.isnumeric():</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">so = Solution()</span><br><span class="line">print(so.isNumber(<span class="string">"53.5e93"</span>))</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
 <h2 id="interview-53"><a href="#interview-53" class="headerlink" title="interview_53"></a>interview_53</h2><p>解法一：暴力法（面试慎用）</p>
 <figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="comment"># @Time: 2020/9/28 16:16 </span></span><br><span class="line"><span class="comment"># @Author: GraceKoo</span></span><br><span class="line"><span class="comment"># @File: interview_53.py</span></span><br><span class="line"><span class="comment"># @Desc: https://leetcode-cn.com/problems/biao-shi-shu-zhi-de-zi-fu-chuan-lcof/</span></span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">isNumber</span>(<span class="params">self, s: <span class="built_in">str</span></span>) -&gt; bool:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> s:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">try</span>:</span><br><span class="line">            <span class="built_in">float</span>(s)</span><br><span class="line">        <span class="keyword">except</span> ValueError:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
@@ -7012,7 +7013,7 @@ id7((6)) --&gt; id2((1))</pre>
 <figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="comment"># @Time: 2020/6/8 19:19 </span></span><br><span class="line"><span class="comment"># @Author: GraceKoo</span></span><br><span class="line"><span class="comment"># @File: interview_32_i.py</span></span><br><span class="line"><span class="comment"># @Desc: https://leetcode-cn.com/problems/cong-shang-dao-xia-da-yin-er-cha-shu-lcof/</span></span><br><span class="line"><span class="keyword">from</span> typing <span class="keyword">import</span> List</span><br><span class="line"><span class="keyword">import</span> collections</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Definition for a binary tree node.</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TreeNode</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, x</span>):</span></span><br><span class="line">        self.val = x</span><br><span class="line">        self.left = <span class="literal">None</span></span><br><span class="line">        self.right = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">levelOrder</span>(<span class="params">self, root: TreeNode</span>) -&gt; List[int]:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">            <span class="keyword">return</span> []</span><br><span class="line">        res, deque = [], collections.deque()</span><br><span class="line">        deque.append(root)</span><br><span class="line">        <span class="keyword">while</span> deque:</span><br><span class="line">            node = deque.popleft()</span><br><span class="line">            res.append(node.val)</span><br><span class="line">            <span class="keyword">if</span> node.left:</span><br><span class="line">                deque.append(node.left)</span><br><span class="line">            <span class="keyword">if</span> node.right:</span><br><span class="line">                deque.append(node.right)</span><br><span class="line">        <span class="keyword">return</span> res</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
 <h2 id="interview-22-ii"><a href="#interview-22-ii" class="headerlink" title="interview_22_ii"></a>interview_22_ii</h2><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="comment"># @Time: 2020/6/8 19:28 </span></span><br><span class="line"><span class="comment"># @Author: GraceKoo</span></span><br><span class="line"><span class="comment"># @File: interview_32_ii.py</span></span><br><span class="line"><span class="comment"># @Desc: https://leetcode-cn.com/problems/cong-shang-dao-xia-da-yin-er-cha-shu-ii-lcof/</span></span><br><span class="line"><span class="keyword">from</span> typing <span class="keyword">import</span> List</span><br><span class="line"><span class="keyword">import</span> collections</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Definition for a binary tree node.</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TreeNode</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, x</span>):</span></span><br><span class="line">        self.val = x</span><br><span class="line">        self.left = <span class="literal">None</span></span><br><span class="line">        self.right = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">levelOrder</span>(<span class="params">self, root: TreeNode</span>) -&gt; List[List[int]]:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">            <span class="keyword">return</span> []</span><br><span class="line">        res, deque = [], collections.deque()</span><br><span class="line">        deque.append(root)</span><br><span class="line">        <span class="keyword">while</span> deque:</span><br><span class="line">            tem = []</span><br><span class="line">            <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(deque)):</span><br><span class="line">                node = deque.popleft()</span><br><span class="line">                tem.append(node.val)</span><br><span class="line">                <span class="keyword">if</span> node.left:</span><br><span class="line">                    deque.append(node.left)</span><br><span class="line">                <span class="keyword">if</span> node.right:</span><br><span class="line">                    deque.append(node.right)</span><br><span class="line">            res.append(tem)</span><br><span class="line">        <span class="keyword">return</span> res</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
 <h2 id="interview-22-iii"><a href="#interview-22-iii" class="headerlink" title="interview_22_iii"></a>interview_22_iii</h2><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="comment"># @Time: 2020/6/8 19:48 </span></span><br><span class="line"><span class="comment"># @Author: GraceKoo</span></span><br><span class="line"><span class="comment"># @File: interview_32_iii.py</span></span><br><span class="line"><span class="comment"># @Desc: https://leetcode-cn.com/problems/cong-shang-dao-xia-da-yin-er-cha-shu-iii-lcof/</span></span><br><span class="line"><span class="keyword">from</span> typing <span class="keyword">import</span> List</span><br><span class="line"><span class="keyword">import</span> collections</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Definition for a binary tree node.</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TreeNode</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, x</span>):</span></span><br><span class="line">        self.val = x</span><br><span class="line">        self.left = <span class="literal">None</span></span><br><span class="line">        self.right = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">levelOrder</span>(<span class="params">self, root: TreeNode</span>) -&gt; List[List[int]]:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">            <span class="keyword">return</span> []</span><br><span class="line">        res, deque = [], collections.deque()</span><br><span class="line">        deque.append(root)</span><br><span class="line">        <span class="keyword">while</span> deque:</span><br><span class="line">            tem = []</span><br><span class="line">            <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(deque)):</span><br><span class="line">                node = deque.popleft()</span><br><span class="line">                tem.append(node.val)</span><br><span class="line">                <span class="keyword">if</span> node.left:</span><br><span class="line">                    deque.append(node.left)</span><br><span class="line">                <span class="keyword">if</span> node.right:</span><br><span class="line">                    deque.append(node.right)</span><br><span class="line">            res.append(tem[::-<span class="number">1</span>] <span class="keyword">if</span> <span class="built_in">len</span>(res) % <span class="number">2</span> <span class="keyword">else</span> tem)</span><br><span class="line">        <span class="keyword">return</span> res</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
-<h2 id="interview-59"><a href="#interview-59" class="headerlink" title="interview_59"></a>interview_59</h2><p>此题同<a href="https://unknown.yuzhouwan.com/posts/55663/#interview_22_iii">interview_22_iii</a></p>
+<h2 id="interview-59"><a href="#interview-59" class="headerlink" title="interview_59"></a>interview_59</h2><p>此题同<a href="https://gracekoo.com/posts/55663/#interview_22_iii">interview_22_iii</a></p>
 <h2 id="interview-23"><a href="#interview-23" class="headerlink" title="interview_23"></a>interview_23</h2><p><a href="https://leetcode-cn.com/problems/er-cha-sou-suo-shu-de-hou-xu-bian-li-xu-lie-lcof/solution/mian-shi-ti-33-er-cha-sou-suo-shu-de-hou-xu-bian-6/">解题思路</a></p>
 <p><img data-src="/images/algorithm/interview_23.png" alt="interview_23"></p>
 <figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="comment"># @Time: 2020/6/15 22:18</span></span><br><span class="line"><span class="comment"># @Author: GraceKoo</span></span><br><span class="line"><span class="comment"># @File: interview_23.py</span></span><br><span class="line"><span class="comment"># @Desc: https://leetcode-cn.com/problems/er-cha-sou-suo-shu-de-hou-xu-bian-li-xu-lie-lcof/</span></span><br><span class="line"><span class="keyword">from</span> typing <span class="keyword">import</span> List</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">verifyPostorder</span>(<span class="params">self, postorder: List[<span class="built_in">int</span>]</span>) -&gt; bool:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> postorder:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># 待分析的区间</span></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">recur</span>(<span class="params">i, j</span>):</span></span><br><span class="line">            <span class="comment">#  已经对比完毕，返回True</span></span><br><span class="line">            <span class="keyword">if</span> i &gt;= j:</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line">            <span class="comment"># 根结点在最右边，左子树应该都比它小</span></span><br><span class="line">            p = i</span><br><span class="line">            <span class="keyword">while</span> postorder[p] &lt; postorder[j]:</span><br><span class="line">                p += <span class="number">1</span></span><br><span class="line">            left_end = p</span><br><span class="line">            <span class="comment"># 右子树应该都比它小</span></span><br><span class="line">            <span class="keyword">while</span> postorder[p] &gt; postorder[j]:</span><br><span class="line">                p += <span class="number">1</span></span><br><span class="line">            <span class="comment"># 若是后序遍历序列，那p应该已经和j相等了; 并且遍历左右子树序列也应该是后序遍历序列</span></span><br><span class="line">            <span class="keyword">return</span> p == j <span class="keyword">and</span> recur(i, left_end - <span class="number">1</span>) <span class="keyword">and</span> recur(left_end, j - <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> recur(<span class="number">0</span>, <span class="built_in">len</span>(postorder) - <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">so = Solution()</span><br><span class="line">print(so.verifyPostorder([<span class="number">1</span>, <span class="number">3</span>, <span class="number">2</span>, <span class="number">6</span>, <span class="number">5</span>]))</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
@@ -7052,7 +7053,7 @@ id7((6)) --&gt; id2((1))</pre>
 <figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="comment"># @Time: 2020/6/22 22:33</span></span><br><span class="line"><span class="comment"># @Author: GraceKoo</span></span><br><span class="line"><span class="comment"># @File: interview_26.py</span></span><br><span class="line"><span class="comment"># @Desc: https://leetcode-cn.com/problems/er-cha-sou-suo-shu-yu-shuang-xiang-lian-biao-lcof/</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"><span class="string"># Definition for a Node.</span></span><br><span class="line"><span class="string">class Node:</span></span><br><span class="line"><span class="string">    def __init__(self, val, left=None, right=None):</span></span><br><span class="line"><span class="string">        self.val = val</span></span><br><span class="line"><span class="string">        self.left = left</span></span><br><span class="line"><span class="string">        self.right = right</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init</span>(<span class="params">self</span>):</span></span><br><span class="line">        self.pre = <span class="literal">None</span></span><br><span class="line">        self.head = <span class="literal">None</span></span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">Convert</span>(<span class="params">self, pRootOfTree</span>):</span></span><br><span class="line">        <span class="comment"># write code here</span></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">dfs</span>(<span class="params">current_node</span>):</span></span><br><span class="line">            <span class="comment"># 递归出口：代表到达尾结点</span></span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> current_node:</span><br><span class="line">                <span class="keyword">return</span></span><br><span class="line">            dfs(current_node.left)</span><br><span class="line"></span><br><span class="line">            <span class="comment"># 如果pre是空，证明当前访问的是第一个结点</span></span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> self.pre:</span><br><span class="line">                self.head = current_node</span><br><span class="line">            <span class="comment"># 如果不是空，则证明当前结点不是头结点，可进行修改</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                self.pre.right, current_node.left = current_node, self.pre</span><br><span class="line">            <span class="comment"># 保存当前结点为pre</span></span><br><span class="line">            self.pre = current_node</span><br><span class="line"></span><br><span class="line">            <span class="comment"># 再去递归右子树</span></span><br><span class="line">            dfs(current_node.right)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> pRootOfTree:</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        dfs(pRootOfTree)</span><br><span class="line">        <span class="comment"># 最后将头结点和尾结点进行连接</span></span><br><span class="line">        self.pre.right, self.head.left = self.head, self.pre</span><br><span class="line">        <span class="keyword">return</span> self.head</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
 <h2 id="interview-18"><a href="#interview-18" class="headerlink" title="interview_18"></a>interview_18</h2><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="comment"># @Time: 2020/7/16 16:43 </span></span><br><span class="line"><span class="comment"># @Author: GraceKoo</span></span><br><span class="line"><span class="comment"># @File: interview_18.py</span></span><br><span class="line"><span class="comment"># @Desc: https://www.nowcoder.com/practice/564f4c26aa584921bc75623e48ca3011?tpId=13&amp;rp=1&amp;ru=%2Fta%2Fcoding-interviews&amp;qr</span></span><br><span class="line"><span class="comment"># u=%2Fta%2Fcoding-interviews%2Fquestion-ranking</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TreeNode</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, x</span>):</span></span><br><span class="line">        self.val = x</span><br><span class="line">        self.left = <span class="literal">None</span></span><br><span class="line">        self.right = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="comment"># 递归</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">mirrorTree</span>(<span class="params">self, root: TreeNode</span>) -&gt; TreeNode:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">        root.left, root.right = root.right, root.left</span><br><span class="line">        self.mirrorTree(root.left)</span><br><span class="line">        self.mirrorTree(root.right)</span><br><span class="line">        <span class="keyword">return</span> root</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 迭代</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">mirrorTree_diedai</span>(<span class="params">self, root: TreeNode</span>) -&gt; TreeNode:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line">        <span class="comment"># 广度优先，将节点依次插入</span></span><br><span class="line">        queue = [root]</span><br><span class="line">        <span class="keyword">while</span> queue:</span><br><span class="line">            node = queue.pop(<span class="number">0</span>)</span><br><span class="line">            <span class="comment"># 先交换</span></span><br><span class="line">            node.left, node.right = node.right, node.left</span><br><span class="line">            <span class="keyword">if</span> node.left:</span><br><span class="line">                queue.append(node.left)</span><br><span class="line">            <span class="keyword">if</span> node.right:</span><br><span class="line">                queue.append(node.right)</span><br><span class="line">        <span class="keyword">return</span> root</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
 <h2 id="interview-22"><a href="#interview-22" class="headerlink" title="interview_22"></a>interview_22</h2><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="comment"># @Time: 2020/6/8 19:19</span></span><br><span class="line"><span class="comment"># @Author: GraceKoo</span></span><br><span class="line"><span class="comment"># @File: interview_22.py</span></span><br><span class="line"><span class="comment"># @Desc: https://leetcode-cn.com/problems/cong-shang-dao-xia-da-yin-er-cha-shu-lcof/</span></span><br><span class="line"><span class="keyword">from</span> typing <span class="keyword">import</span> List</span><br><span class="line"><span class="keyword">import</span> collections</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Definition for a binary tree node.</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TreeNode</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span>(<span class="params">self, x</span>):</span></span><br><span class="line">        self.val = x</span><br><span class="line">        self.left = <span class="literal">None</span></span><br><span class="line">        self.right = <span class="literal">None</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">levelOrder</span>(<span class="params">self, root: TreeNode</span>) -&gt; List[int]:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> root:</span><br><span class="line">            <span class="keyword">return</span> []</span><br><span class="line">        res, deque = [], collections.deque()</span><br><span class="line">        deque.append(root)</span><br><span class="line">        <span class="keyword">while</span> deque:</span><br><span class="line">            node = deque.popleft()</span><br><span class="line">            res.append(node.val)</span><br><span class="line">            <span class="keyword">if</span> node.left:</span><br><span class="line">                deque.append(node.left)</span><br><span class="line">            <span class="keyword">if</span> node.right:</span><br><span class="line">                deque.append(node.right)</span><br><span class="line">        <span class="keyword">return</span> res</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
-<h2 id="maximum-depth-of-binary-tree"><a href="#maximum-depth-of-binary-tree" class="headerlink" title="maximum-depth-of-binary-tree"></a>maximum-depth-of-binary-tree</h2><h2 id="interview-38"><a href="#interview-38" class="headerlink" title="interview_38"></a>interview_38</h2><p>此题同<a href="https://unknown.yuzhouwan.com/posts/55663/#maximum-depth-of-binary-tree">maximum-depth-of-binary-tree</a></p>
+<h2 id="maximum-depth-of-binary-tree"><a href="#maximum-depth-of-binary-tree" class="headerlink" title="maximum-depth-of-binary-tree"></a>maximum-depth-of-binary-tree</h2><h2 id="interview-38"><a href="#interview-38" class="headerlink" title="interview_38"></a>interview_38</h2><p>此题同<a href="https://gracekoo.com/posts/55663/#maximum-depth-of-binary-tree">maximum-depth-of-binary-tree</a></p>
 <ol>
 <li>深度优先遍历DFS</li>
 </ol>
@@ -7297,7 +7298,7 @@ id7((6)) --&gt; id2((1))</pre>
 <blockquote>
 <p>如何在每次窗口滑动后，将 “获取窗口内最大值” 的时间复杂度从 O(k) 降低至 O(1) 。</p>
 </blockquote>
-<p>此题与interview_20（<a href="https://unknown.yuzhouwan.com/posts/55663/#interview_20">包含min函数的栈</a>）一起食用最佳。即：</p>
+<p>此题与interview_20（<a href="https://gracekoo.com/posts/55663/#interview_20">包含min函数的栈</a>）一起食用最佳。即：</p>
 <blockquote>
 <p>维护一个队列。保持队列是单调递减，即加入时把前面比其小的数pop掉。</p>
 </blockquote>
@@ -7578,7 +7579,7 @@ id7((6)) --&gt; id2((1))</pre>
 <li>解法2:动态规划</li>
 </ul>
 <figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">maxSubArray_DP</span>(<span class="params">self, nums: List[<span class="built_in">int</span>]</span>) -&gt; int:</span></span><br><span class="line">    len_nums = <span class="built_in">len</span>(nums)</span><br><span class="line">    max_sum = nums[<span class="number">0</span>]</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, len_nums):</span><br><span class="line">        <span class="keyword">if</span> nums[i-<span class="number">1</span>] &gt; <span class="number">0</span>:</span><br><span class="line">            nums[i] += nums[i-<span class="number">1</span>]</span><br><span class="line">        max_sum = <span class="built_in">max</span>(max_sum, nums[i])</span><br><span class="line">    <span class="keyword">return</span> max_sum</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="interview-30"><a href="#interview-30" class="headerlink" title="interview_30"></a>interview_30</h2><p>此题同<a href="https://unknown.yuzhouwan.com/posts/55663/#maximum_subarray">maximum_subarray</a></p>
+<h2 id="interview-30"><a href="#interview-30" class="headerlink" title="interview_30"></a>interview_30</h2><p>此题同<a href="https://gracekoo.com/posts/55663/#maximum_subarray">maximum_subarray</a></p>
 <p><img data-src="/images/algorithm/interview_30.png" alt="interview_30"></p>
 <figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="comment"># @Time: 2020/6/30 14:52 </span></span><br><span class="line"><span class="comment"># @Author: GraceKoo</span></span><br><span class="line"><span class="comment"># @File: interview_30.py</span></span><br><span class="line"><span class="comment"># @Desc: https://www.nowcoder.com/practice/6a296eb82cf844ca8539b57c23e6e9bf?tpId=13&amp;rp=1&amp;ru=%2Fta%2Fcoding-interviews&amp;</span></span><br><span class="line"><span class="comment"># qru=%2Fta%2Fcoding-interviews%2Fquestion-ranking</span></span><br><span class="line"><span class="keyword">from</span> typing <span class="keyword">import</span> List</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">maxSubArray</span>(<span class="params">self, nums: List[<span class="built_in">int</span>]</span>) -&gt; int:</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> nums:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        max_number = nums[<span class="number">0</span>]</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="built_in">len</span>(nums)):</span><br><span class="line">            nums[i] += <span class="built_in">max</span>(nums[i-<span class="number">1</span>], <span class="number">0</span>)</span><br><span class="line">            max_number = <span class="built_in">max</span>(max_number, nums[i])</span><br><span class="line">        <span class="keyword">return</span> max_number</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">so = Solution()</span><br><span class="line">print(so.maxSubArray([-<span class="number">2</span>, <span class="number">1</span>, -<span class="number">3</span>, <span class="number">4</span>, -<span class="number">1</span>, <span class="number">2</span>, <span class="number">1</span>, -<span class="number">5</span>, <span class="number">4</span>]))</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
 <h2 id="merge-intervals"><a href="#merge-intervals" class="headerlink" title="merge-intervals"></a>merge-intervals</h2><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="comment"># @Time: 2020/2/28 11:49</span></span><br><span class="line"><span class="comment"># @Author: GraceKoo</span></span><br><span class="line"><span class="comment"># @File: 56_merge-intervals.py</span></span><br><span class="line"><span class="comment"># @Desc:https://leetcode-cn.com/problems/merge-intervals/</span></span><br><span class="line"><span class="keyword">from</span> typing <span class="keyword">import</span> List</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">merge</span>(<span class="params">self, intervals: List[List[<span class="built_in">int</span>]]</span>) -&gt; List[List[int]]:</span></span><br><span class="line">        seq = <span class="built_in">sorted</span>(intervals)  <span class="comment"># 先按照seq[0]排序，若seq[0]一样，则按照seq[1]排序</span></span><br><span class="line">        i = <span class="number">1</span></span><br><span class="line">        <span class="keyword">while</span> i &lt; <span class="built_in">len</span>(seq):</span><br><span class="line">            <span class="keyword">if</span> seq[i-<span class="number">1</span>][<span class="number">0</span>] &lt;= seq[i][<span class="number">0</span>] &lt;= seq[i-<span class="number">1</span>][<span class="number">1</span>]:</span><br><span class="line">                <span class="keyword">if</span> seq[i][<span class="number">1</span>] &gt; seq[i-<span class="number">1</span>][<span class="number">1</span>]:</span><br><span class="line">                    seq[i-<span class="number">1</span>][<span class="number">1</span>] = seq[i][<span class="number">1</span>]</span><br><span class="line">                seq.remove(seq[i])</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                i += <span class="number">1</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> seq</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">so = Solution()</span><br><span class="line">print(so.merge([[<span class="number">1</span>, <span class="number">3</span>], [<span class="number">1</span>, <span class="number">6</span>], [<span class="number">1</span>, <span class="number">80</span>], [<span class="number">15</span>, <span class="number">7</span>]]))</span><br><span class="line"></span><br></pre></td></tr></tbody></table></figure>
