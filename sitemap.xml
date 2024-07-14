@@ -263,14 +263,14 @@
 
   
   <url>
-    <loc>http://gracekoo.com/tags/Git/</loc>
+    <loc>http://gracekoo.com/tags/hexo/</loc>
     <lastmod>2024-07-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://gracekoo.com/tags/hexo/</loc>
+    <loc>http://gracekoo.com/tags/Git/</loc>
     <lastmod>2024-07-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -319,6 +319,13 @@
   </url>
   
   <url>
+    <loc>http://gracekoo.com/tags/Neural-Network/</loc>
+    <lastmod>2024-07-14</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://gracekoo.com/tags/Python-Automation-Test/</loc>
     <lastmod>2024-07-14</lastmod>
     <changefreq>daily</changefreq>
@@ -327,13 +334,6 @@
   
   <url>
     <loc>http://gracekoo.com/tags/Regex/</loc>
-    <lastmod>2024-07-14</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://gracekoo.com/tags/Neural-Network/</loc>
     <lastmod>2024-07-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
