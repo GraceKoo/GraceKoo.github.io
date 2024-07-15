@@ -1,29 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Hexo</title>
-    <url>/posts/25248/</url>
-    <content><![CDATA[<h1 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h1><h1 id="How-to-change-the-blog-domain-adr"><a href="#How-to-change-the-blog-domain-adr" class="headerlink" title="How to change the blog domain adr"></a>How to change the blog domain adr</h1><h2 id="1-Buy-new-domain-name"><a href="#1-Buy-new-domain-name" class="headerlink" title="1. Buy new domain name"></a>1. Buy new domain name</h2><p>在阿里云买个新域名<br><img data-src="/images/hexo/aliyundns.png" alt="aliyundns_config"></p>
-<p>点击解析，然后添加如下两条纪录，其中记录值是你的用户名.github.io。然后就解析完成了</p>
-<p><img data-src="/images/hexo/aliyundns1.png" alt="aliyundns_config"></p>
-<h2 id="2-config-the-domain-in-ur-hexo-project"><a href="#2-config-the-domain-in-ur-hexo-project" class="headerlink" title="2. config the domain in ur hexo project"></a>2. config the domain in ur hexo project</h2><h3 id="1-Modify-the-config-yml"><a href="#1-Modify-the-config-yml" class="headerlink" title="1. Modify the _config.yml"></a>1. Modify the _config.yml</h3><p>打开<code>hexo目录</code>下的<code>_config.yml</code>文件，找到URL，将其指向域名地址，我的是：</p>
-<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">https://gracekoo.com</span><br></pre></td></tr></tbody></table></figure>
-<h3 id="2-Modify-the-CNAME"><a href="#2-Modify-the-CNAME" class="headerlink" title="2. Modify the CNAME"></a>2. Modify the CNAME</h3><p>打开<code>hexo/source</code>目录下的<code>CNAME</code>文件（如果没有请新建，无后缀）</p>
-<p>在其中写入你的域名地址即可</p>
-<a id="more"></a>
-<h3 id="3-Config-ur-GitHub-project"><a href="#3-Config-ur-GitHub-project" class="headerlink" title="3. Config ur GitHub project"></a>3. Config ur GitHub project</h3><p><img data-src="/images/hexo/githubio.jpeg" alt="githubio_config"></p>
-<h2 id="Deploy-ur-project"><a href="#Deploy-ur-project" class="headerlink" title="Deploy ur project"></a>Deploy ur project</h2><figure class="highlight"><table><tbody><tr><td class="code"><pre><span class="line">&gt;&gt; hexo clean</span><br><span class="line">&gt;&gt; hexo g</span><br><span class="line">&gt;&gt; hexo depoly</span><br></pre></td></tr></tbody></table></figure>
-<h2 id="4-Others"><a href="#4-Others" class="headerlink" title="4. Others"></a>4. Others</h2><p>如果你的网站不能正常显示，请检查对应github里的仓库设置，google<br>“github pages 404怎么解决”</p>
-<p>如果本地重试username.github.io都是好的。最重要的，清除缓存后再重试下</p>
-]]></content>
-      <categories>
-        <category>Tools</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Git</title>
     <url>/posts/25246/</url>
     <content><![CDATA[<h1 id="Git配置"><a href="#Git配置" class="headerlink" title="Git配置"></a>Git配置</h1><h2 id="config文件"><a href="#config文件" class="headerlink" title="config文件"></a>config文件</h2><ul>
@@ -228,6 +205,29 @@
       </tags>
   </entry>
   <entry>
+    <title>Hexo</title>
+    <url>/posts/25248/</url>
+    <content><![CDATA[<h1 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h1><h1 id="How-to-change-the-blog-domain-adr"><a href="#How-to-change-the-blog-domain-adr" class="headerlink" title="How to change the blog domain adr"></a>How to change the blog domain adr</h1><h2 id="1-Buy-new-domain-name"><a href="#1-Buy-new-domain-name" class="headerlink" title="1. Buy new domain name"></a>1. Buy new domain name</h2><p>在阿里云买个新域名<br><img data-src="/images/hexo/aliyundns.png" alt="aliyundns_config"></p>
+<p>点击解析，然后添加如下两条纪录，其中记录值是你的用户名.github.io。然后就解析完成了</p>
+<p><img data-src="/images/hexo/aliyundns1.png" alt="aliyundns_config"></p>
+<h2 id="2-config-the-domain-in-ur-hexo-project"><a href="#2-config-the-domain-in-ur-hexo-project" class="headerlink" title="2. config the domain in ur hexo project"></a>2. config the domain in ur hexo project</h2><h3 id="1-Modify-the-config-yml"><a href="#1-Modify-the-config-yml" class="headerlink" title="1. Modify the _config.yml"></a>1. Modify the _config.yml</h3><p>打开<code>hexo目录</code>下的<code>_config.yml</code>文件，找到URL，将其指向域名地址，我的是：</p>
+<figure class="highlight plain"><table><tbody><tr><td class="code"><pre><span class="line">https://gracekoo.com</span><br></pre></td></tr></tbody></table></figure>
+<h3 id="2-Modify-the-CNAME"><a href="#2-Modify-the-CNAME" class="headerlink" title="2. Modify the CNAME"></a>2. Modify the CNAME</h3><p>打开<code>hexo/source</code>目录下的<code>CNAME</code>文件（如果没有请新建，无后缀）</p>
+<p>在其中写入你的域名地址即可</p>
+<a id="more"></a>
+<h3 id="3-Config-ur-GitHub-project"><a href="#3-Config-ur-GitHub-project" class="headerlink" title="3. Config ur GitHub project"></a>3. Config ur GitHub project</h3><p><img data-src="/images/hexo/githubio.jpeg" alt="githubio_config"></p>
+<h2 id="Deploy-ur-project"><a href="#Deploy-ur-project" class="headerlink" title="Deploy ur project"></a>Deploy ur project</h2><figure class="highlight"><table><tbody><tr><td class="code"><pre><span class="line">&gt;&gt; hexo clean</span><br><span class="line">&gt;&gt; hexo g</span><br><span class="line">&gt;&gt; hexo depoly</span><br></pre></td></tr></tbody></table></figure>
+<h2 id="4-Others"><a href="#4-Others" class="headerlink" title="4. Others"></a>4. Others</h2><p>如果你的网站不能正常显示，请检查对应github里的仓库设置，google<br>“github pages 404怎么解决”</p>
+<p>如果本地重试username.github.io都是好的。最重要的，清除缓存后再重试下</p>
+]]></content>
+      <categories>
+        <category>Tools</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Image-Algorithm-Summarize</title>
     <url>/posts/58748/</url>
     <content><![CDATA[<h1 id="YUV、RGB、HSV"><a href="#YUV、RGB、HSV" class="headerlink" title="YUV、RGB、HSV"></a>YUV、RGB、HSV</h1><p>YUV：亮度信息 即灰度值。UV：色彩信息 定义了颜色的两个方面-色调与饱和度，分别用Cr和CB来表示。其中，Cr反映了RGB输入信号红色部分与RGB信号亮度值之间的差异。而CB反映的是RGB输入信号蓝色部分与RGB信号亮度值之同的差异。通过运算，YUV三分量可以还原出R（红），G（绿），B（蓝）。</p>
@@ -281,6 +281,230 @@
       </categories>
       <tags>
         <tag>ImageAlgorithm</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Machine Learning基础</title>
+    <url>/posts/59544/</url>
+    <content><![CDATA[<p><img data-src="/images/MachineLearning/MLMindNode.png" alt="MLMindNode"></p>
+<a id="more"></a>
+<h1 id="Introduction-of-Machine-Learning"><a href="#Introduction-of-Machine-Learning" class="headerlink" title="Introduction of Machine Learning"></a>Introduction of Machine Learning</h1><p>机器学习可以揭示数据背后的真实含义。</p>
+<p><strong>监督学习</strong>需要用户知道目标值，简单的说就是知道数据在找什么。而<strong>无监督学习</strong>则无需用户知道搜寻的目标，只需要从算法程序中得到这些数据的共同特征。</p>
+<p>保证算法应用的正确性：</p>
+<ol>
+<li>确保算法应用可以正确处理简单的数据。</li>
+<li>将现实世界中得到的数据格式化为算法可以处理的格式。</li>
+<li>将步骤2得到的数据输入到步骤1的算法中，检验算法的运行结果。</li>
+</ol>
+<p>千万不要忽略前两个步骤而直接跳到步骤3来检验算法处理真实数据的效果。任何复杂系统都是由基础工程构成的，尤其是算法出现问题时，增量地搭建系统可以确保我们及时找到问题出现的位置和原因。</p>
+<p>后续根据监督学习和无监督学习进行分类讨论。</p>
+<p>在监督学习中，我们只需要给定输入样本，机器就可以从中推演出指定目标变量的可能结果。监督学习相对比较简单，机器只需从输入数据中预测合适的模型，并从中计算出目标变量的结果。</p>
+<p>监督学习一般使用两种类型的目标变量：标称型和数值型。<strong>标称型</strong>目标变量的结果只在有限目标集中取值，如真与假，动物分类集合；<strong>数值型</strong>目标变量则可以从无限的数值集合中取值，一般用于回归分析。</p>
+<h2 id="Key-Terminology"><a href="#Key-Terminology" class="headerlink" title="Key Terminology"></a>Key Terminology</h2><p>我们使用机器学习的某个算法进行分类结果，首先要做的是<strong>算法训练</strong>，即学习如何<strong>分类</strong>。通常我们为算法输入大量的已分类数据作为算法的<strong>训练集</strong>。训练集是用于训练机器学习算法的数据样本集合。<strong>目标变量</strong>是机器学习算法的预测结果。</p>
+<p>在分类算法中目标变量的类型通常是标称型的，而在回归算法中通常是连续型的。</p>
+<p>训练样本集必须确定知道目标变量的值，以便机器学习算法可以发现特征和目标变量之间的关系。</p>
+<p>当机器学习程序开始运行时，使用训练样本集作为算法的输入，<strong>训练完成</strong>后输入<strong>测试样本</strong>，由程序决定样本属于哪个类别。</p>
+<h2 id="Primary-Mission"><a href="#Primary-Mission" class="headerlink" title="Primary Mission"></a>Primary Mission</h2><p>监督学习中的任务：</p>
+<p>1.将实例数据划分到合适的<strong>分类</strong>中。</p>
+<p>2.<strong>回归</strong>，主要用于预测数值型数据。</p>
+<p>无监督学习中的任务：</p>
+<p>数据没有类别信息，也不会给定目标值。</p>
+<p>1.在无监督学习中，将数据集合分成由类似的对象组成的多个类的过程被称为<strong>聚类</strong>。</p>
+<p>2.将寻找描述数据统计值的过程称之为<strong>密度估计</strong>。</p>
+<h2 id="Overview-of-Algorithm"><a href="#Overview-of-Algorithm" class="headerlink" title="Overview of Algorithm"></a>Overview of Algorithm</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">监督学习的用途</th>
+<th style="text-align:center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">K-近邻算法</td>
+<td style="text-align:center">线性回归</td>
+</tr>
+<tr>
+<td style="text-align:center">朴素贝叶斯算法</td>
+<td style="text-align:center">局部加权线性回归</td>
+</tr>
+<tr>
+<td style="text-align:center">支持向量机</td>
+<td style="text-align:center">Ridge回归</td>
+</tr>
+<tr>
+<td style="text-align:center">决策树</td>
+<td style="text-align:center">Lasso最小回归系数估计</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">无监督学习的用途</th>
+<th style="text-align:center"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">K-均值</td>
+<td style="text-align:center">最大期望算法</td>
+</tr>
+<tr>
+<td style="text-align:center">DBSCAN</td>
+<td style="text-align:center">Parzen窗设计</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h2 id="How-to-choose"><a href="#How-to-choose" class="headerlink" title="How to choose"></a>How to choose</h2><p>首先考虑使用机器学习算法的目的。如果想要预测目标变量的值，则可以选择监督学习算法，否则选择无监督学习算法。</p>
+<p>如果确定选择监督学习算法后，需要进一步确定目标变量类型。</p>
+<ul>
+<li>如果目标变量是离散型，如是／否，1/2/3，红／黄／黑等，则可以选择<strong>分类算法</strong>。</li>
+<li>如果目标变量是连续型的数值，则需要选择<strong>回归算法</strong>。</li>
+</ul>
+<p>如果不想预测目标变量的值，则可以选择无监督学习算法。</p>
+<ul>
+<li>需要将数据划分为离散的组。如果这是唯一的需求，则使用<strong>聚类算法</strong>。</li>
+<li>需要估计数据与每个分组的相似程度，需要使用<strong>密度估计算法。</strong></li>
+</ul>
+<h2 id="Steps-in-Machine-Learning"><a href="#Steps-in-Machine-Learning" class="headerlink" title="Steps in Machine Learning"></a>Steps in Machine Learning</h2><ol>
+<li>收集数据</li>
+<li>准备输入数据</li>
+<li>分析输入数据。确保数据集中没有垃圾数据。</li>
+<li><strong>训练算法</strong>（监督学习）</li>
+<li>测试算法。</li>
+<li>使用算法。将机器学习算法转化为应用程序，执行实际任务。</li>
+</ol>
+<h1 id="优化算法"><a href="#优化算法" class="headerlink" title="优化算法"></a>优化算法</h1><h2 id="损失函数-目标函数"><a href="#损失函数-目标函数" class="headerlink" title="损失函数(目标函数)"></a>损失函数(目标函数)</h2><h3 id="分类问题"><a href="#分类问题" class="headerlink" title="分类问题"></a>分类问题</h3><ol>
+<li>平方差损失函数</li>
+</ol>
+<script type="math/tex; mode=display">\frac{1}{n}\sum\frac{1}{2}(y - Model(x))^2</script><ol>
+<li>交叉熵损失</li>
+</ol>
+<p>多用于多分类</p>
+<script type="math/tex; mode=display">\frac{1}{n}\sum yln(Model(x))</script><h3 id="回归问题"><a href="#回归问题" class="headerlink" title="回归问题"></a>回归问题</h3><ol>
+<li>平方差损失函数</li>
+</ol>
+<script type="math/tex; mode=display">\frac{1}{n}\sum\frac{1}{2}(y - Model(x))^2</script><ol>
+<li>绝对值损失</li>
+</ol>
+<script type="math/tex; mode=display">\frac{1}{n}\sum|y - Model(x)|</script><h2 id="正则化"><a href="#正则化" class="headerlink" title="正则化"></a>正则化</h2><h2 id="EM算法"><a href="#EM算法" class="headerlink" title="EM算法"></a>EM算法</h2><h2 id="梯度下降"><a href="#梯度下降" class="headerlink" title="梯度下降"></a>梯度下降</h2><h2 id="随机梯度下降"><a href="#随机梯度下降" class="headerlink" title="随机梯度下降"></a>随机梯度下降</h2><h2 id="反向传播"><a href="#反向传播" class="headerlink" title="反向传播"></a>反向传播</h2><h2 id="梯度验证"><a href="#梯度验证" class="headerlink" title="梯度验证"></a>梯度验证</h2><h2 id="Momentum"><a href="#Momentum" class="headerlink" title="Momentum"></a>Momentum</h2><h2 id="AdaGrad"><a href="#AdaGrad" class="headerlink" title="AdaGrad"></a>AdaGrad</h2><h2 id="Adam"><a href="#Adam" class="headerlink" title="Adam"></a>Adam</h2><h1 id="模型评估"><a href="#模型评估" class="headerlink" title="模型评估"></a>模型评估</h1><h2 id="评价指标"><a href="#评价指标" class="headerlink" title="评价指标"></a>评价指标</h2><h2 id="A-B测试"><a href="#A-B测试" class="headerlink" title="A/B测试"></a>A/B测试</h2><h2 id="过拟合于欠拟合"><a href="#过拟合于欠拟合" class="headerlink" title="过拟合于欠拟合"></a>过拟合于欠拟合</h2><h2 id="超参数选择"><a href="#超参数选择" class="headerlink" title="超参数选择"></a>超参数选择</h2><h1 id="DeepLearning-Model"><a href="#DeepLearning-Model" class="headerlink" title="DeepLearning Model"></a>DeepLearning Model</h1><h2 id="CNN"><a href="#CNN" class="headerlink" title="CNN"></a>CNN</h2><p>移步☞博文：<a href="https://unknown.yuzhouwan.com/posts/16452/">CNN</a></p>
+<h2 id="RNN"><a href="#RNN" class="headerlink" title="RNN"></a>RNN</h2><h2 id="GAN"><a href="#GAN" class="headerlink" title="GAN"></a>GAN</h2><h2 id="AutoML"><a href="#AutoML" class="headerlink" title="AutoML"></a>AutoML</h2><h2 id="深度学习优化技巧"><a href="#深度学习优化技巧" class="headerlink" title="深度学习优化技巧"></a>深度学习优化技巧</h2><h3 id="批量归一化BN"><a href="#批量归一化BN" class="headerlink" title="批量归一化BN"></a>批量归一化BN</h3><h3 id="Dropout"><a href="#Dropout" class="headerlink" title="Dropout"></a>Dropout</h3><h3 id="激活函数"><a href="#激活函数" class="headerlink" title="激活函数"></a>激活函数</h3><h4 id="Sigmoid"><a href="#Sigmoid" class="headerlink" title="Sigmoid"></a>Sigmoid</h4><p>二分类逻辑回归模型</p>
+<script type="math/tex; mode=display">f(x)=\frac{1}{1+e^{-W^TX}}</script><p><img data-src="/images/Python-base/DataView_Sigmoid.png" alt="DataView_Sigmoid"></p>
+<h4 id="Softmax"><a href="#Softmax" class="headerlink" title="Softmax"></a>Softmax</h4><p>多分类逻辑回归模型</p>
+<p><script type="math/tex">P(Y=k|x)=\frac{e^{-W^T_kx}}{1+\sum_{1}^{k-1}e^{-W^T_kX}}</script>, k=1,2,…..,K-1</p>
+<p><script type="math/tex">P(Y=k|x)=\frac{1}{1+\sum_{1}^{k-1}e^{-W^T_kX}}</script>, k=K</p>
+<h4 id="Tanh"><a href="#Tanh" class="headerlink" title="Tanh"></a>Tanh</h4><h4 id="ReLU"><a href="#ReLU" class="headerlink" title="ReLU"></a>ReLU</h4>]]></content>
+      <categories>
+        <category>Machine Learning</category>
+      </categories>
+      <tags>
+        <tag>Machine Learning</tag>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Kafka初探</title>
+    <url>/posts/252123/</url>
+    <content><![CDATA[<h1 id="Kafka的设计和结构"><a href="#Kafka的设计和结构" class="headerlink" title="Kafka的设计和结构"></a>Kafka的设计和结构</h1><h2 id="Kafka基本概念"><a href="#Kafka基本概念" class="headerlink" title="Kafka基本概念"></a>Kafka基本概念</h2><ul>
+<li><p>Producer：消息和数据的生产者，向Kafka的一个Topic发布消息的进程/代码/服务</p>
+</li>
+<li><p>Consumer：消息和数据的消费者，订阅数据(Topic)并且处理其发布的消息的进程/代码/服务</p>
+</li>
+<li><p>Consumer Group：逻辑概念，对于同一个Topic，会广播给不同的group，一个group中，只有一个Consumer可以消费该消息</p>
+</li>
+<li><p>Broker：物理概念，Kafka集群中的每个Kafka节点</p>
+</li>
+<li><p>Topic：逻辑概念，Kafka消息的类别，对数据进行分区、隔离</p>
+</li>
+<li><p>Partition：物理概念，Kafka下数据存储的基本单元，一个Topic数据，会被分散存储到多个Partition，每一个Partition是有序的</p>
+</li>
+<li><p>Replication：同一个Partition可能会有多个Replica，多个Replica之间数据是一样的</p>
+</li>
+<li><p>Replication Leader：一个Partition的多个Replica上，需要一个Leader负责该Partition上与Producer和Consumer交互</p>
+</li>
+<li><p>Replica Manager：负责管理当前Broker所有分区和副本的信息，处理Kafka Controller发起的一些请求，副本状态的切换、添加/读取消息等</p>
+</li>
+</ul>
+<h2 id="Kafka基本结构"><a href="#Kafka基本结构" class="headerlink" title="Kafka基本结构"></a>Kafka基本结构</h2><ul>
+<li>Produer Api</li>
+<li>Consumer Api</li>
+<li>Streams Api</li>
+<li>Connectors Api</li>
+</ul>
+<p><img data-src="/images/kafka/KafkaBaseStruct.png" alt="KafkaBaseStruct"></p>
+<p>Kafka消费架构</p>
+<p><img data-src="/images/kafka/KafkaConsumeStruct.png" alt="KafkaConsumeStruct"></p>
+<p>Kafka消息结构</p>
+<p><img data-src="/images/kafka/MessageStruct.png" alt="MessageStruct"></p>
+<h1 id="Kafka应用场景"><a href="#Kafka应用场景" class="headerlink" title="Kafka应用场景"></a>Kafka应用场景</h1><ul>
+<li>消息队列</li>
+<li>行为跟踪</li>
+<li>元信息监控</li>
+<li>日志收集</li>
+<li>流处理</li>
+<li>事件源</li>
+<li>持久性日志</li>
+</ul>
+<h2 id="下载与安装"><a href="#下载与安装" class="headerlink" title="下载与安装"></a>下载与安装</h2><ul>
+<li><p>ZooKeeper下载：</p>
+<p><a href="http://zookeeper.apache.org/releases.html#download">http://zookeeper.apache.org/releases.html#download</a></p>
+</li>
+<li><p>Kafka下载：</p>
+<p><a href="http://kafka.apache.org/downloads">http://kafka.apache.org/downloads</a></p>
+</li>
+<li><p>安装：解压，配置环境变量</p>
+</li>
+<li><p>Mac便捷安装：</p>
+<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">brew install kafka</span><br></pre></td></tr></tbody></table></figure>
+<h1 id="Kafka高级特性"><a href="#Kafka高级特性" class="headerlink" title="Kafka高级特性"></a>Kafka高级特性</h1></li>
+</ul>
+<h2 id="消息事务"><a href="#消息事务" class="headerlink" title="消息事务"></a>消息事务</h2><h3 id="为什么要支持事务"><a href="#为什么要支持事务" class="headerlink" title="为什么要支持事务"></a>为什么要支持事务</h3><ul>
+<li>满足“读取-处理-写入”模式</li>
+<li>流处理需求的不断增强</li>
+<li>不准确的数据处理的容忍度</li>
+</ul>
+<h3 id="数据传输的事务定义"><a href="#数据传输的事务定义" class="headerlink" title="数据传输的事务定义"></a>数据传输的事务定义</h3><ul>
+<li>最多一次：消息不会被重复发送，最多被传输一次，但也有可能一次不传输</li>
+<li>最少一次：消息不会被漏发送，最少被传输一次，但也有可能被重复传输</li>
+<li>精确的一次：不会漏传输也不会重复传输，每个消息都传输一次且仅仅被传输一次，这是大家希望的</li>
+</ul>
+<h3 id="Kafka消息事务"><a href="#Kafka消息事务" class="headerlink" title="Kafka消息事务"></a>Kafka消息事务</h3><ul>
+<li>事务保证<ul>
+<li>内部重试问题：Procedure幂等处理</li>
+<li>多分区原子写入</li>
+</ul>
+</li>
+<li>事务保证 — 避免僵尸实例<ul>
+<li>每个事务Producer分配一个transactional.id，在进程重新启动时能够识别相同的Producer实例</li>
+<li>Kafka增加了一个与transactional.id相关的epoch，存储每个transaction.id内部元数据</li>
+<li>一旦epoch被触发，任何具有相同的transactional.id和更旧的epoch的Producer被视为僵尸，Kafka会拒绝来自这些Producer的后续事务性写入</li>
+</ul>
+</li>
+</ul>
+<h2 id="零拷贝"><a href="#零拷贝" class="headerlink" title="零拷贝"></a>零拷贝</h2><h3 id="零拷贝简介"><a href="#零拷贝简介" class="headerlink" title="零拷贝简介"></a>零拷贝简介</h3><p>文件传输网络的公共数据路径</p>
+<ul>
+<li>操作系统将数据从<strong>磁盘</strong>读入到<strong>内核空间的页缓存</strong></li>
+<li>应用程序将数据从<strong>内核空间</strong>读入到<strong>用户空间缓存</strong>中</li>
+<li>应用程序将数据写回到<strong>内核空间到socket缓存</strong>中</li>
+<li>操作系统将数据从socket缓存区复制到<strong>网卡缓冲区</strong>，以便将数据经网络发出</li>
+</ul>
+<p>零拷贝过程</p>
+<ul>
+<li>操作系统将数据从<strong>磁盘</strong>读入到<strong>内核空间的页缓存</strong></li>
+<li>将数据的位置和长度的信息描述符增加至<strong>内核空间</strong>（socket缓冲区）</li>
+<li>操作系统直接将数据从内核空间拷贝到<strong>网卡缓冲区</strong>，以便将数据经网络发出</li>
+</ul>
+<p><img data-src="/images/kafka/0Copy.png" alt="0Copy"></p>
+]]></content>
+      <categories>
+        <category>BigData</category>
+      </categories>
+      <tags>
+        <tag>BigData</tag>
       </tags>
   </entry>
   <entry>
@@ -456,230 +680,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Kafka初探</title>
-    <url>/posts/252123/</url>
-    <content><![CDATA[<h1 id="Kafka的设计和结构"><a href="#Kafka的设计和结构" class="headerlink" title="Kafka的设计和结构"></a>Kafka的设计和结构</h1><h2 id="Kafka基本概念"><a href="#Kafka基本概念" class="headerlink" title="Kafka基本概念"></a>Kafka基本概念</h2><ul>
-<li><p>Producer：消息和数据的生产者，向Kafka的一个Topic发布消息的进程/代码/服务</p>
-</li>
-<li><p>Consumer：消息和数据的消费者，订阅数据(Topic)并且处理其发布的消息的进程/代码/服务</p>
-</li>
-<li><p>Consumer Group：逻辑概念，对于同一个Topic，会广播给不同的group，一个group中，只有一个Consumer可以消费该消息</p>
-</li>
-<li><p>Broker：物理概念，Kafka集群中的每个Kafka节点</p>
-</li>
-<li><p>Topic：逻辑概念，Kafka消息的类别，对数据进行分区、隔离</p>
-</li>
-<li><p>Partition：物理概念，Kafka下数据存储的基本单元，一个Topic数据，会被分散存储到多个Partition，每一个Partition是有序的</p>
-</li>
-<li><p>Replication：同一个Partition可能会有多个Replica，多个Replica之间数据是一样的</p>
-</li>
-<li><p>Replication Leader：一个Partition的多个Replica上，需要一个Leader负责该Partition上与Producer和Consumer交互</p>
-</li>
-<li><p>Replica Manager：负责管理当前Broker所有分区和副本的信息，处理Kafka Controller发起的一些请求，副本状态的切换、添加/读取消息等</p>
-</li>
-</ul>
-<h2 id="Kafka基本结构"><a href="#Kafka基本结构" class="headerlink" title="Kafka基本结构"></a>Kafka基本结构</h2><ul>
-<li>Produer Api</li>
-<li>Consumer Api</li>
-<li>Streams Api</li>
-<li>Connectors Api</li>
-</ul>
-<p><img data-src="/images/kafka/KafkaBaseStruct.png" alt="KafkaBaseStruct"></p>
-<p>Kafka消费架构</p>
-<p><img data-src="/images/kafka/KafkaConsumeStruct.png" alt="KafkaConsumeStruct"></p>
-<p>Kafka消息结构</p>
-<p><img data-src="/images/kafka/MessageStruct.png" alt="MessageStruct"></p>
-<h1 id="Kafka应用场景"><a href="#Kafka应用场景" class="headerlink" title="Kafka应用场景"></a>Kafka应用场景</h1><ul>
-<li>消息队列</li>
-<li>行为跟踪</li>
-<li>元信息监控</li>
-<li>日志收集</li>
-<li>流处理</li>
-<li>事件源</li>
-<li>持久性日志</li>
-</ul>
-<h2 id="下载与安装"><a href="#下载与安装" class="headerlink" title="下载与安装"></a>下载与安装</h2><ul>
-<li><p>ZooKeeper下载：</p>
-<p><a href="http://zookeeper.apache.org/releases.html#download">http://zookeeper.apache.org/releases.html#download</a></p>
-</li>
-<li><p>Kafka下载：</p>
-<p><a href="http://kafka.apache.org/downloads">http://kafka.apache.org/downloads</a></p>
-</li>
-<li><p>安装：解压，配置环境变量</p>
-</li>
-<li><p>Mac便捷安装：</p>
-<figure class="highlight shell"><table><tbody><tr><td class="code"><pre><span class="line">brew install kafka</span><br></pre></td></tr></tbody></table></figure>
-<h1 id="Kafka高级特性"><a href="#Kafka高级特性" class="headerlink" title="Kafka高级特性"></a>Kafka高级特性</h1></li>
-</ul>
-<h2 id="消息事务"><a href="#消息事务" class="headerlink" title="消息事务"></a>消息事务</h2><h3 id="为什么要支持事务"><a href="#为什么要支持事务" class="headerlink" title="为什么要支持事务"></a>为什么要支持事务</h3><ul>
-<li>满足“读取-处理-写入”模式</li>
-<li>流处理需求的不断增强</li>
-<li>不准确的数据处理的容忍度</li>
-</ul>
-<h3 id="数据传输的事务定义"><a href="#数据传输的事务定义" class="headerlink" title="数据传输的事务定义"></a>数据传输的事务定义</h3><ul>
-<li>最多一次：消息不会被重复发送，最多被传输一次，但也有可能一次不传输</li>
-<li>最少一次：消息不会被漏发送，最少被传输一次，但也有可能被重复传输</li>
-<li>精确的一次：不会漏传输也不会重复传输，每个消息都传输一次且仅仅被传输一次，这是大家希望的</li>
-</ul>
-<h3 id="Kafka消息事务"><a href="#Kafka消息事务" class="headerlink" title="Kafka消息事务"></a>Kafka消息事务</h3><ul>
-<li>事务保证<ul>
-<li>内部重试问题：Procedure幂等处理</li>
-<li>多分区原子写入</li>
-</ul>
-</li>
-<li>事务保证 — 避免僵尸实例<ul>
-<li>每个事务Producer分配一个transactional.id，在进程重新启动时能够识别相同的Producer实例</li>
-<li>Kafka增加了一个与transactional.id相关的epoch，存储每个transaction.id内部元数据</li>
-<li>一旦epoch被触发，任何具有相同的transactional.id和更旧的epoch的Producer被视为僵尸，Kafka会拒绝来自这些Producer的后续事务性写入</li>
-</ul>
-</li>
-</ul>
-<h2 id="零拷贝"><a href="#零拷贝" class="headerlink" title="零拷贝"></a>零拷贝</h2><h3 id="零拷贝简介"><a href="#零拷贝简介" class="headerlink" title="零拷贝简介"></a>零拷贝简介</h3><p>文件传输网络的公共数据路径</p>
-<ul>
-<li>操作系统将数据从<strong>磁盘</strong>读入到<strong>内核空间的页缓存</strong></li>
-<li>应用程序将数据从<strong>内核空间</strong>读入到<strong>用户空间缓存</strong>中</li>
-<li>应用程序将数据写回到<strong>内核空间到socket缓存</strong>中</li>
-<li>操作系统将数据从socket缓存区复制到<strong>网卡缓冲区</strong>，以便将数据经网络发出</li>
-</ul>
-<p>零拷贝过程</p>
-<ul>
-<li>操作系统将数据从<strong>磁盘</strong>读入到<strong>内核空间的页缓存</strong></li>
-<li>将数据的位置和长度的信息描述符增加至<strong>内核空间</strong>（socket缓冲区）</li>
-<li>操作系统直接将数据从内核空间拷贝到<strong>网卡缓冲区</strong>，以便将数据经网络发出</li>
-</ul>
-<p><img data-src="/images/kafka/0Copy.png" alt="0Copy"></p>
-]]></content>
-      <categories>
-        <category>BigData</category>
-      </categories>
-      <tags>
-        <tag>BigData</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Machine Learning基础</title>
-    <url>/posts/59544/</url>
-    <content><![CDATA[<p><img data-src="/images/MachineLearning/MLMindNode.png" alt="MLMindNode"></p>
-<a id="more"></a>
-<h1 id="Introduction-of-Machine-Learning"><a href="#Introduction-of-Machine-Learning" class="headerlink" title="Introduction of Machine Learning"></a>Introduction of Machine Learning</h1><p>机器学习可以揭示数据背后的真实含义。</p>
-<p><strong>监督学习</strong>需要用户知道目标值，简单的说就是知道数据在找什么。而<strong>无监督学习</strong>则无需用户知道搜寻的目标，只需要从算法程序中得到这些数据的共同特征。</p>
-<p>保证算法应用的正确性：</p>
-<ol>
-<li>确保算法应用可以正确处理简单的数据。</li>
-<li>将现实世界中得到的数据格式化为算法可以处理的格式。</li>
-<li>将步骤2得到的数据输入到步骤1的算法中，检验算法的运行结果。</li>
-</ol>
-<p>千万不要忽略前两个步骤而直接跳到步骤3来检验算法处理真实数据的效果。任何复杂系统都是由基础工程构成的，尤其是算法出现问题时，增量地搭建系统可以确保我们及时找到问题出现的位置和原因。</p>
-<p>后续根据监督学习和无监督学习进行分类讨论。</p>
-<p>在监督学习中，我们只需要给定输入样本，机器就可以从中推演出指定目标变量的可能结果。监督学习相对比较简单，机器只需从输入数据中预测合适的模型，并从中计算出目标变量的结果。</p>
-<p>监督学习一般使用两种类型的目标变量：标称型和数值型。<strong>标称型</strong>目标变量的结果只在有限目标集中取值，如真与假，动物分类集合；<strong>数值型</strong>目标变量则可以从无限的数值集合中取值，一般用于回归分析。</p>
-<h2 id="Key-Terminology"><a href="#Key-Terminology" class="headerlink" title="Key Terminology"></a>Key Terminology</h2><p>我们使用机器学习的某个算法进行分类结果，首先要做的是<strong>算法训练</strong>，即学习如何<strong>分类</strong>。通常我们为算法输入大量的已分类数据作为算法的<strong>训练集</strong>。训练集是用于训练机器学习算法的数据样本集合。<strong>目标变量</strong>是机器学习算法的预测结果。</p>
-<p>在分类算法中目标变量的类型通常是标称型的，而在回归算法中通常是连续型的。</p>
-<p>训练样本集必须确定知道目标变量的值，以便机器学习算法可以发现特征和目标变量之间的关系。</p>
-<p>当机器学习程序开始运行时，使用训练样本集作为算法的输入，<strong>训练完成</strong>后输入<strong>测试样本</strong>，由程序决定样本属于哪个类别。</p>
-<h2 id="Primary-Mission"><a href="#Primary-Mission" class="headerlink" title="Primary Mission"></a>Primary Mission</h2><p>监督学习中的任务：</p>
-<p>1.将实例数据划分到合适的<strong>分类</strong>中。</p>
-<p>2.<strong>回归</strong>，主要用于预测数值型数据。</p>
-<p>无监督学习中的任务：</p>
-<p>数据没有类别信息，也不会给定目标值。</p>
-<p>1.在无监督学习中，将数据集合分成由类似的对象组成的多个类的过程被称为<strong>聚类</strong>。</p>
-<p>2.将寻找描述数据统计值的过程称之为<strong>密度估计</strong>。</p>
-<h2 id="Overview-of-Algorithm"><a href="#Overview-of-Algorithm" class="headerlink" title="Overview of Algorithm"></a>Overview of Algorithm</h2><div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:center">监督学习的用途</th>
-<th style="text-align:center"></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">K-近邻算法</td>
-<td style="text-align:center">线性回归</td>
-</tr>
-<tr>
-<td style="text-align:center">朴素贝叶斯算法</td>
-<td style="text-align:center">局部加权线性回归</td>
-</tr>
-<tr>
-<td style="text-align:center">支持向量机</td>
-<td style="text-align:center">Ridge回归</td>
-</tr>
-<tr>
-<td style="text-align:center">决策树</td>
-<td style="text-align:center">Lasso最小回归系数估计</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="table-container">
-<table>
-<thead>
-<tr>
-<th style="text-align:center">无监督学习的用途</th>
-<th style="text-align:center"></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">K-均值</td>
-<td style="text-align:center">最大期望算法</td>
-</tr>
-<tr>
-<td style="text-align:center">DBSCAN</td>
-<td style="text-align:center">Parzen窗设计</td>
-</tr>
-</tbody>
-</table>
-</div>
-<h2 id="How-to-choose"><a href="#How-to-choose" class="headerlink" title="How to choose"></a>How to choose</h2><p>首先考虑使用机器学习算法的目的。如果想要预测目标变量的值，则可以选择监督学习算法，否则选择无监督学习算法。</p>
-<p>如果确定选择监督学习算法后，需要进一步确定目标变量类型。</p>
-<ul>
-<li>如果目标变量是离散型，如是／否，1/2/3，红／黄／黑等，则可以选择<strong>分类算法</strong>。</li>
-<li>如果目标变量是连续型的数值，则需要选择<strong>回归算法</strong>。</li>
-</ul>
-<p>如果不想预测目标变量的值，则可以选择无监督学习算法。</p>
-<ul>
-<li>需要将数据划分为离散的组。如果这是唯一的需求，则使用<strong>聚类算法</strong>。</li>
-<li>需要估计数据与每个分组的相似程度，需要使用<strong>密度估计算法。</strong></li>
-</ul>
-<h2 id="Steps-in-Machine-Learning"><a href="#Steps-in-Machine-Learning" class="headerlink" title="Steps in Machine Learning"></a>Steps in Machine Learning</h2><ol>
-<li>收集数据</li>
-<li>准备输入数据</li>
-<li>分析输入数据。确保数据集中没有垃圾数据。</li>
-<li><strong>训练算法</strong>（监督学习）</li>
-<li>测试算法。</li>
-<li>使用算法。将机器学习算法转化为应用程序，执行实际任务。</li>
-</ol>
-<h1 id="优化算法"><a href="#优化算法" class="headerlink" title="优化算法"></a>优化算法</h1><h2 id="损失函数-目标函数"><a href="#损失函数-目标函数" class="headerlink" title="损失函数(目标函数)"></a>损失函数(目标函数)</h2><h3 id="分类问题"><a href="#分类问题" class="headerlink" title="分类问题"></a>分类问题</h3><ol>
-<li>平方差损失函数</li>
-</ol>
-<script type="math/tex; mode=display">\frac{1}{n}\sum\frac{1}{2}(y - Model(x))^2</script><ol>
-<li>交叉熵损失</li>
-</ol>
-<p>多用于多分类</p>
-<script type="math/tex; mode=display">\frac{1}{n}\sum yln(Model(x))</script><h3 id="回归问题"><a href="#回归问题" class="headerlink" title="回归问题"></a>回归问题</h3><ol>
-<li>平方差损失函数</li>
-</ol>
-<script type="math/tex; mode=display">\frac{1}{n}\sum\frac{1}{2}(y - Model(x))^2</script><ol>
-<li>绝对值损失</li>
-</ol>
-<script type="math/tex; mode=display">\frac{1}{n}\sum|y - Model(x)|</script><h2 id="正则化"><a href="#正则化" class="headerlink" title="正则化"></a>正则化</h2><h2 id="EM算法"><a href="#EM算法" class="headerlink" title="EM算法"></a>EM算法</h2><h2 id="梯度下降"><a href="#梯度下降" class="headerlink" title="梯度下降"></a>梯度下降</h2><h2 id="随机梯度下降"><a href="#随机梯度下降" class="headerlink" title="随机梯度下降"></a>随机梯度下降</h2><h2 id="反向传播"><a href="#反向传播" class="headerlink" title="反向传播"></a>反向传播</h2><h2 id="梯度验证"><a href="#梯度验证" class="headerlink" title="梯度验证"></a>梯度验证</h2><h2 id="Momentum"><a href="#Momentum" class="headerlink" title="Momentum"></a>Momentum</h2><h2 id="AdaGrad"><a href="#AdaGrad" class="headerlink" title="AdaGrad"></a>AdaGrad</h2><h2 id="Adam"><a href="#Adam" class="headerlink" title="Adam"></a>Adam</h2><h1 id="模型评估"><a href="#模型评估" class="headerlink" title="模型评估"></a>模型评估</h1><h2 id="评价指标"><a href="#评价指标" class="headerlink" title="评价指标"></a>评价指标</h2><h2 id="A-B测试"><a href="#A-B测试" class="headerlink" title="A/B测试"></a>A/B测试</h2><h2 id="过拟合于欠拟合"><a href="#过拟合于欠拟合" class="headerlink" title="过拟合于欠拟合"></a>过拟合于欠拟合</h2><h2 id="超参数选择"><a href="#超参数选择" class="headerlink" title="超参数选择"></a>超参数选择</h2><h1 id="DeepLearning-Model"><a href="#DeepLearning-Model" class="headerlink" title="DeepLearning Model"></a>DeepLearning Model</h1><h2 id="CNN"><a href="#CNN" class="headerlink" title="CNN"></a>CNN</h2><p>移步☞博文：<a href="https://unknown.yuzhouwan.com/posts/16452/">CNN</a></p>
-<h2 id="RNN"><a href="#RNN" class="headerlink" title="RNN"></a>RNN</h2><h2 id="GAN"><a href="#GAN" class="headerlink" title="GAN"></a>GAN</h2><h2 id="AutoML"><a href="#AutoML" class="headerlink" title="AutoML"></a>AutoML</h2><h2 id="深度学习优化技巧"><a href="#深度学习优化技巧" class="headerlink" title="深度学习优化技巧"></a>深度学习优化技巧</h2><h3 id="批量归一化BN"><a href="#批量归一化BN" class="headerlink" title="批量归一化BN"></a>批量归一化BN</h3><h3 id="Dropout"><a href="#Dropout" class="headerlink" title="Dropout"></a>Dropout</h3><h3 id="激活函数"><a href="#激活函数" class="headerlink" title="激活函数"></a>激活函数</h3><h4 id="Sigmoid"><a href="#Sigmoid" class="headerlink" title="Sigmoid"></a>Sigmoid</h4><p>二分类逻辑回归模型</p>
-<script type="math/tex; mode=display">f(x)=\frac{1}{1+e^{-W^TX}}</script><p><img data-src="/images/Python-base/DataView_Sigmoid.png" alt="DataView_Sigmoid"></p>
-<h4 id="Softmax"><a href="#Softmax" class="headerlink" title="Softmax"></a>Softmax</h4><p>多分类逻辑回归模型</p>
-<p><script type="math/tex">P(Y=k|x)=\frac{e^{-W^T_kx}}{1+\sum_{1}^{k-1}e^{-W^T_kX}}</script>, k=1,2,…..,K-1</p>
-<p><script type="math/tex">P(Y=k|x)=\frac{1}{1+\sum_{1}^{k-1}e^{-W^T_kX}}</script>, k=K</p>
-<h4 id="Tanh"><a href="#Tanh" class="headerlink" title="Tanh"></a>Tanh</h4><h4 id="ReLU"><a href="#ReLU" class="headerlink" title="ReLU"></a>ReLU</h4>]]></content>
-      <categories>
-        <category>Machine Learning</category>
-      </categories>
-      <tags>
-        <tag>Machine Learning</tag>
-        <tag>Python</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>AI中的数学知识</title>
     <url>/posts/59545/</url>
     <content><![CDATA[<h1 id="线性代数部分"><a href="#线性代数部分" class="headerlink" title="线性代数部分"></a>线性代数部分</h1><h2 id="矩阵及其运算合集"><a href="#矩阵及其运算合集" class="headerlink" title="矩阵及其运算合集"></a>矩阵及其运算合集</h2><a id="more"></a>
@@ -761,77 +761,6 @@
       <tags>
         <tag>Python</tag>
         <tag>Numpy</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Spring</title>
-    <url>/posts/25249120/</url>
-    <content><![CDATA[<h1 id="Spring概况"><a href="#Spring概况" class="headerlink" title="Spring概况"></a>Spring概况</h1><ul>
-<li><p>Spring是一个开源框架，为了解决企业级应用开发的复杂性而创建的，但现在已经不止应用于企业应用</p>
-</li>
-<li><p>Spring是一个轻量级的控制反转(IOC)和面向切面(AOP)的容器框架</p>
-<ul>
-<li>从大小与开销方面而言Spring是轻量的</li>
-<li>通过控制反转(IOC)的技术达到松耦合的目的</li>
-<li>提供了面向切面编程的丰富支持，允许通过分离应用的业务逻辑与系统级服务进行内聚性的开发</li>
-<li>包含并管理应用对象的配置和生命周期，这个意义上是一种容器</li>
-</ul>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Language</category>
-      </categories>
-      <tags>
-        <tag>BigData</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>TensorFlow2.0 In Action</title>
-    <url>/posts/29871/</url>
-    <content><![CDATA[<h1 id="TensorFlow2-0简化的模型开发流程"><a href="#TensorFlow2-0简化的模型开发流程" class="headerlink" title="TensorFlow2.0简化的模型开发流程"></a>TensorFlow2.0简化的模型开发流程</h1><ul>
-<li>使用tf.data加载数据</li>
-<li>使用tf.keras构建模型，也可以使用premade estimator来验证模型（使用tesorflow hub进行迁移学习）</li>
-<li>使用eager mode进行运行和调试</li>
-<li>使用分发策略来进行分布式训练</li>
-<li>导出到SavedModel</li>
-<li>使用TesorFlow Serve、TensorFlow Lite、TensorFlow.js部署模型</li>
-</ul>
-<a id="more"></a>
-<h1 id="TensorFlow-Keras"><a href="#TensorFlow-Keras" class="headerlink" title="TensorFlow-Keras"></a>TensorFlow-Keras</h1><h2 id="tf-keras和keras的区别"><a href="#tf-keras和keras的区别" class="headerlink" title="tf.keras和keras的区别"></a>tf.keras和keras的区别</h2><ul>
-<li>tf.keras全面支持eager mode</li>
-<li>tf.keras支持基于tf.data的模型训练</li>
-<li>tf.keras支持TPU训练</li>
-<li>tf.keras支持tf.distribution中的分布式策略</li>
-<li>tf.keras可以与TensorFlow中的estimator集成</li>
-<li>tf.keras可以保存为SavedModel</li>
-</ul>
-<h2 id="搭建分类模型"><a href="#搭建分类模型" class="headerlink" title="搭建分类模型"></a>搭建分类模型</h2><h3 id="数据读取与展示"><a href="#数据读取与展示" class="headerlink" title="数据读取与展示"></a>数据读取与展示</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"><span class="keyword">from</span> tensorflow <span class="keyword">import</span> keras</span><br><span class="line"></span><br><span class="line">fashion_mnist = keras.datasets.fashion_mnist</span><br><span class="line">(x_train_all, y_train_all), (x_test, y_test) = fashion_mnist.load_data()</span><br><span class="line">x_valid, x_train = x_train_all[:<span class="number">5000</span>], x_train_all[<span class="number">5000</span>:] <span class="comment">#将数据集的前5000张作为训练集，后面的作为验证集</span></span><br><span class="line">y_valid, y_train = y_train_all[:<span class="number">5000</span>], y_train_all[<span class="number">5000</span>:]</span><br><span class="line"></span><br><span class="line">print(x_valid.shape, y_valid.shape)</span><br><span class="line">print(x_train.shape, y_train.shape)</span><br><span class="line">print(x_test.shape, y_test.shape)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">(<span class="number">5000</span>, <span class="number">28</span>, <span class="number">28</span>) (<span class="number">5000</span>,)</span><br><span class="line">(<span class="number">55000</span>, <span class="number">28</span>, <span class="number">28</span>) (<span class="number">55000</span>,)</span><br><span class="line">(<span class="number">10000</span>, <span class="number">28</span>, <span class="number">28</span>) (<span class="number">10000</span>,)</span><br></pre></td></tr></tbody></table></figure>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 展示一张图片</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">show_single_image</span>(<span class="params">img_arr</span>):</span></span><br><span class="line">    plt.imshow(img_arr, cmap=<span class="string">"binary"</span>)</span><br><span class="line">    plt.show()</span><br><span class="line">show_single_image(x_train_all[<span class="number">0</span>]) <span class="comment"># 查看训练集中的第一张图片</span></span><br></pre></td></tr></tbody></table></figure>
-<p><img data-src="/images/tensorflow/show_image.png" alt="show_image"><br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 展示多张图片</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">show_imgs</span>(<span class="params">n_rows, n_cols, x_data, y_data, class_names</span>):</span></span><br><span class="line">    <span class="keyword">assert</span> <span class="built_in">len</span>(x_data) == <span class="built_in">len</span>(y_data)</span><br><span class="line">    <span class="keyword">assert</span> n_rows * n_cols &lt; <span class="built_in">len</span>(x_data) <span class="comment"># 查看图片的数量不能大于原本的样本数</span></span><br><span class="line">    plt.figure(figsize = (n_cols * <span class="number">1.4</span>, n_rows * <span class="number">1.6</span>))</span><br><span class="line">    <span class="keyword">for</span> row <span class="keyword">in</span> <span class="built_in">range</span>(n_rows):</span><br><span class="line">        <span class="keyword">for</span> col <span class="keyword">in</span> <span class="built_in">range</span>(n_cols):</span><br><span class="line">            index = n_cols * row + col</span><br><span class="line">            plt.subplot(n_rows, n_cols, index+<span class="number">1</span>)</span><br><span class="line">            plt.imshow(x_data[index], cmap=<span class="string">"binary"</span>,</span><br><span class="line">                      interpolation = <span class="string">'nearest'</span>)</span><br><span class="line">            plt.axis(<span class="string">'off'</span>)</span><br><span class="line">            plt.title(class_names[y_data[index]])</span><br><span class="line">    plt.show()</span><br><span class="line">    </span><br><span class="line">class_names = [<span class="string">'T-shirt'</span>, <span class="string">'Trouser'</span>, <span class="string">'Pullover'</span>, <span class="string">'Dress'</span>,</span><br><span class="line">              <span class="string">'Coat'</span>, <span class="string">'Sandal'</span>, <span class="string">'Shirt'</span>,<span class="string">'Sneaker'</span>,</span><br><span class="line">              <span class="string">'Bag'</span>, <span class="string">'Ankle boot'</span>]</span><br><span class="line">show_imgs(<span class="number">3</span>, <span class="number">5</span>, x_train, y_train, class_names)</span><br></pre></td></tr></tbody></table></figure><br><img data-src="/images/tensorflow/show_images.png" alt="show_images"><p></p>
-<h3 id="模型构建"><a href="#模型构建" class="headerlink" title="模型构建"></a>模型构建</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">model = keras.models.Sequential()</span><br><span class="line">model.add(keras.layers.Flatten(input_shape=[<span class="number">28</span>, <span class="number">28</span>]))</span><br><span class="line">model.add(keras.layers.Dense(<span class="number">300</span>, activation=<span class="string">"relu"</span>))</span><br><span class="line">model.add(keras.layers.Dense(<span class="number">100</span>, activation=<span class="string">"relu"</span>))</span><br><span class="line">model.add(keras.layers.Dense(<span class="number">10</span>, activation=<span class="string">"softmax"</span>))</span><br><span class="line"></span><br><span class="line">model.<span class="built_in">compile</span>(loss=<span class="string">"sparse_categorical_crossentropy"</span>,</span><br><span class="line">             optimizer=<span class="string">"sgd"</span>,</span><br><span class="line">             metrics=[<span class="string">"accuracy"</span>])</span><br><span class="line">model.layers</span><br></pre></td></tr></tbody></table></figure>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">[&lt;tensorflow.python.keras.layers.core.Flatten at <span class="number">0x12e0e8a58</span>&gt;,</span><br><span class="line"> &lt;tensorflow.python.keras.layers.core.Dense at <span class="number">0x12e1777b8</span>&gt;,</span><br><span class="line"> &lt;tensorflow.python.keras.layers.core.Dense at <span class="number">0x12dfdb3c8</span>&gt;,</span><br><span class="line"> &lt;tensorflow.python.keras.layers.core.Dense at <span class="number">0x12dfdbdd8</span>&gt;]</span><br></pre></td></tr></tbody></table></figure>
-<ul>
-<li>查看模型层次</li>
-</ul>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">model.summary()</span><br></pre></td></tr></tbody></table></figure>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">Model: <span class="string">"sequential_4"</span></span><br><span class="line">_________________________________________________________________</span><br><span class="line">Layer (<span class="built_in">type</span>)                 Output Shape              Param <span class="comment">#   </span></span><br><span class="line">=================================================================</span><br><span class="line">flatten_4 (Flatten)          (<span class="literal">None</span>, <span class="number">784</span>)               <span class="number">0</span>         </span><br><span class="line">_________________________________________________________________</span><br><span class="line">dense_12 (Dense)             (<span class="literal">None</span>, <span class="number">300</span>)               <span class="number">235500</span>    </span><br><span class="line">_________________________________________________________________</span><br><span class="line">dense_13 (Dense)             (<span class="literal">None</span>, <span class="number">100</span>)               <span class="number">30100</span>     </span><br><span class="line">_________________________________________________________________</span><br><span class="line">dense_14 (Dense)             (<span class="literal">None</span>, <span class="number">10</span>)                <span class="number">1010</span>      </span><br><span class="line">=================================================================</span><br><span class="line">Total params: <span class="number">266</span>,<span class="number">610</span></span><br><span class="line">Trainable params: <span class="number">266</span>,<span class="number">610</span></span><br><span class="line">Non-trainable params: <span class="number">0</span></span><br></pre></td></tr></tbody></table></figure>
-<ul>
-<li>开始训练</li>
-</ul>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">history = model.fit(x_train, y_train, epochs=<span class="number">10</span>,</span><br><span class="line">                   validation_data=(x_valid, y_valid))</span><br></pre></td></tr></tbody></table></figure>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">Train on <span class="number">55000</span> samples, validate on <span class="number">5000</span> samples</span><br><span class="line">Epoch <span class="number">1</span>/<span class="number">10</span></span><br><span class="line"><span class="number">55000</span>/<span class="number">55000</span> [==============================] - 4s 80us/sample - loss: <span class="number">42355302163052.2422</span> - accuracy: <span class="number">0.0995</span> - val_loss: <span class="number">2.3028</span> - val_accuracy: <span class="number">0.0914</span></span><br><span class="line">Epoch <span class="number">2</span>/<span class="number">10</span></span><br><span class="line"><span class="number">55000</span>/<span class="number">55000</span> [==============================] - 4s 73us/sample - loss: <span class="number">2.3027</span> - accuracy: <span class="number">0.0994</span> - val_loss: <span class="number">2.3026</span> - val_accuracy: <span class="number">0.1012</span></span><br><span class="line">Epoch <span class="number">3</span>/<span class="number">10</span></span><br><span class="line"><span class="number">55000</span>/<span class="number">55000</span> [==============================] - 4s 71us/sample - loss: <span class="number">2.3027</span> - accuracy: <span class="number">0.0986</span> - val_loss: <span class="number">2.3027</span> - val_accuracy: <span class="number">0.1002</span></span><br><span class="line">Epoch <span class="number">4</span>/<span class="number">10</span></span><br><span class="line"><span class="number">55000</span>/<span class="number">55000</span> [==============================] - 4s 70us/sample - loss: <span class="number">2.3027</span> - accuracy: <span class="number">0.0977</span> - val_loss: <span class="number">2.3027</span> - val_accuracy: <span class="number">0.0986</span></span><br><span class="line">Epoch <span class="number">5</span>/<span class="number">10</span></span><br><span class="line"><span class="number">55000</span>/<span class="number">55000</span> [==============================] - 4s 72us/sample - loss: <span class="number">2.3027</span> - accuracy: <span class="number">0.0971</span> - val_loss: <span class="number">2.3029</span> - val_accuracy: <span class="number">0.0914</span></span><br><span class="line">Epoch <span class="number">6</span>/<span class="number">10</span></span><br><span class="line"><span class="number">55000</span>/<span class="number">55000</span> [==============================] - 4s 75us/sample - loss: <span class="number">2.3027</span> - accuracy: <span class="number">0.0973</span> - val_loss: <span class="number">2.3028</span> - val_accuracy: <span class="number">0.0914</span></span><br><span class="line">Epoch <span class="number">7</span>/<span class="number">10</span></span><br><span class="line"><span class="number">55000</span>/<span class="number">55000</span> [==============================] - 4s 72us/sample - loss: <span class="number">2.3027</span> - accuracy: <span class="number">0.0981</span> - val_loss: <span class="number">2.3027</span> - val_accuracy: <span class="number">0.0986</span></span><br><span class="line">Epoch <span class="number">8</span>/<span class="number">10</span></span><br><span class="line"><span class="number">55000</span>/<span class="number">55000</span> [==============================] - 4s 72us/sample - loss: <span class="number">2.3027</span> - accuracy: <span class="number">0.0968</span> - val_loss: <span class="number">2.3028</span> - val_accuracy: <span class="number">0.0914</span></span><br><span class="line">Epoch <span class="number">9</span>/<span class="number">10</span></span><br><span class="line"><span class="number">55000</span>/<span class="number">55000</span> [==============================] - 4s 73us/sample - loss: <span class="number">2.3027</span> - accuracy: <span class="number">0.0982</span> - val_loss: <span class="number">2.3029</span> - val_accuracy: <span class="number">0.0914</span></span><br><span class="line">Epoch <span class="number">10</span>/<span class="number">10</span></span><br><span class="line"><span class="number">55000</span>/<span class="number">55000</span> [==============================] - 4s 73us/sample - loss: <span class="number">2.3027</span> - accuracy: <span class="number">0.0969</span> - val_loss: <span class="number">2.3028</span> - val_accuracy: <span class="number">0.0914</span></span><br></pre></td></tr></tbody></table></figure>
-<ul>
-<li>画图</li>
-</ul>
-<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">plot_learning_curves</span>(<span class="params">history</span>):</span></span><br><span class="line">    pd.DataFrame(history.history).plot(figsize=(<span class="number">8</span>, <span class="number">5</span>))</span><br><span class="line">    plt.grid(<span class="literal">True</span>)</span><br><span class="line">    plt.gca().set_ylim(<span class="number">0</span>,<span class="number">1</span>)</span><br><span class="line">    plt.show()</span><br><span class="line">plot_learning_curves(history)</span><br></pre></td></tr></tbody></table></figure>
-<p><img data-src="/images/tensorflow/loss_model.png" alt="loss_model"></p>
-<h2 id="Keras回调函数"><a href="#Keras回调函数" class="headerlink" title="Keras回调函数"></a>Keras回调函数</h2><h2 id="搭建回归模型"><a href="#搭建回归模型" class="headerlink" title="搭建回归模型"></a>搭建回归模型</h2><h2 id="搭建深度神经网络"><a href="#搭建深度神经网络" class="headerlink" title="搭建深度神经网络"></a>搭建深度神经网络</h2><h2 id="实现wide-amp-deep模型"><a href="#实现wide-amp-deep模型" class="headerlink" title="实现wide&amp;deep模型"></a>实现wide&amp;deep模型</h2><h2 id="Keras与scikit-learn实现超参数搜索"><a href="#Keras与scikit-learn实现超参数搜索" class="headerlink" title="Keras与scikit-learn实现超参数搜索"></a>Keras与scikit-learn实现超参数搜索</h2><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1>]]></content>
-      <categories>
-        <category>Machine Learning</category>
-      </categories>
-      <tags>
-        <tag>Neural Network</tag>
       </tags>
   </entry>
   <entry>
@@ -1235,6 +1164,77 @@
       </categories>
       <tags>
         <tag>Regex</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Spring</title>
+    <url>/posts/25249120/</url>
+    <content><![CDATA[<h1 id="Spring概况"><a href="#Spring概况" class="headerlink" title="Spring概况"></a>Spring概况</h1><ul>
+<li><p>Spring是一个开源框架，为了解决企业级应用开发的复杂性而创建的，但现在已经不止应用于企业应用</p>
+</li>
+<li><p>Spring是一个轻量级的控制反转(IOC)和面向切面(AOP)的容器框架</p>
+<ul>
+<li>从大小与开销方面而言Spring是轻量的</li>
+<li>通过控制反转(IOC)的技术达到松耦合的目的</li>
+<li>提供了面向切面编程的丰富支持，允许通过分离应用的业务逻辑与系统级服务进行内聚性的开发</li>
+<li>包含并管理应用对象的配置和生命周期，这个意义上是一种容器</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Language</category>
+      </categories>
+      <tags>
+        <tag>BigData</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>TensorFlow2.0 In Action</title>
+    <url>/posts/29871/</url>
+    <content><![CDATA[<h1 id="TensorFlow2-0简化的模型开发流程"><a href="#TensorFlow2-0简化的模型开发流程" class="headerlink" title="TensorFlow2.0简化的模型开发流程"></a>TensorFlow2.0简化的模型开发流程</h1><ul>
+<li>使用tf.data加载数据</li>
+<li>使用tf.keras构建模型，也可以使用premade estimator来验证模型（使用tesorflow hub进行迁移学习）</li>
+<li>使用eager mode进行运行和调试</li>
+<li>使用分发策略来进行分布式训练</li>
+<li>导出到SavedModel</li>
+<li>使用TesorFlow Serve、TensorFlow Lite、TensorFlow.js部署模型</li>
+</ul>
+<a id="more"></a>
+<h1 id="TensorFlow-Keras"><a href="#TensorFlow-Keras" class="headerlink" title="TensorFlow-Keras"></a>TensorFlow-Keras</h1><h2 id="tf-keras和keras的区别"><a href="#tf-keras和keras的区别" class="headerlink" title="tf.keras和keras的区别"></a>tf.keras和keras的区别</h2><ul>
+<li>tf.keras全面支持eager mode</li>
+<li>tf.keras支持基于tf.data的模型训练</li>
+<li>tf.keras支持TPU训练</li>
+<li>tf.keras支持tf.distribution中的分布式策略</li>
+<li>tf.keras可以与TensorFlow中的estimator集成</li>
+<li>tf.keras可以保存为SavedModel</li>
+</ul>
+<h2 id="搭建分类模型"><a href="#搭建分类模型" class="headerlink" title="搭建分类模型"></a>搭建分类模型</h2><h3 id="数据读取与展示"><a href="#数据读取与展示" class="headerlink" title="数据读取与展示"></a>数据读取与展示</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"><span class="keyword">from</span> tensorflow <span class="keyword">import</span> keras</span><br><span class="line"></span><br><span class="line">fashion_mnist = keras.datasets.fashion_mnist</span><br><span class="line">(x_train_all, y_train_all), (x_test, y_test) = fashion_mnist.load_data()</span><br><span class="line">x_valid, x_train = x_train_all[:<span class="number">5000</span>], x_train_all[<span class="number">5000</span>:] <span class="comment">#将数据集的前5000张作为训练集，后面的作为验证集</span></span><br><span class="line">y_valid, y_train = y_train_all[:<span class="number">5000</span>], y_train_all[<span class="number">5000</span>:]</span><br><span class="line"></span><br><span class="line">print(x_valid.shape, y_valid.shape)</span><br><span class="line">print(x_train.shape, y_train.shape)</span><br><span class="line">print(x_test.shape, y_test.shape)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">(<span class="number">5000</span>, <span class="number">28</span>, <span class="number">28</span>) (<span class="number">5000</span>,)</span><br><span class="line">(<span class="number">55000</span>, <span class="number">28</span>, <span class="number">28</span>) (<span class="number">55000</span>,)</span><br><span class="line">(<span class="number">10000</span>, <span class="number">28</span>, <span class="number">28</span>) (<span class="number">10000</span>,)</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 展示一张图片</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">show_single_image</span>(<span class="params">img_arr</span>):</span></span><br><span class="line">    plt.imshow(img_arr, cmap=<span class="string">"binary"</span>)</span><br><span class="line">    plt.show()</span><br><span class="line">show_single_image(x_train_all[<span class="number">0</span>]) <span class="comment"># 查看训练集中的第一张图片</span></span><br></pre></td></tr></tbody></table></figure>
+<p><img data-src="/images/tensorflow/show_image.png" alt="show_image"><br></p><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="comment"># 展示多张图片</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">show_imgs</span>(<span class="params">n_rows, n_cols, x_data, y_data, class_names</span>):</span></span><br><span class="line">    <span class="keyword">assert</span> <span class="built_in">len</span>(x_data) == <span class="built_in">len</span>(y_data)</span><br><span class="line">    <span class="keyword">assert</span> n_rows * n_cols &lt; <span class="built_in">len</span>(x_data) <span class="comment"># 查看图片的数量不能大于原本的样本数</span></span><br><span class="line">    plt.figure(figsize = (n_cols * <span class="number">1.4</span>, n_rows * <span class="number">1.6</span>))</span><br><span class="line">    <span class="keyword">for</span> row <span class="keyword">in</span> <span class="built_in">range</span>(n_rows):</span><br><span class="line">        <span class="keyword">for</span> col <span class="keyword">in</span> <span class="built_in">range</span>(n_cols):</span><br><span class="line">            index = n_cols * row + col</span><br><span class="line">            plt.subplot(n_rows, n_cols, index+<span class="number">1</span>)</span><br><span class="line">            plt.imshow(x_data[index], cmap=<span class="string">"binary"</span>,</span><br><span class="line">                      interpolation = <span class="string">'nearest'</span>)</span><br><span class="line">            plt.axis(<span class="string">'off'</span>)</span><br><span class="line">            plt.title(class_names[y_data[index]])</span><br><span class="line">    plt.show()</span><br><span class="line">    </span><br><span class="line">class_names = [<span class="string">'T-shirt'</span>, <span class="string">'Trouser'</span>, <span class="string">'Pullover'</span>, <span class="string">'Dress'</span>,</span><br><span class="line">              <span class="string">'Coat'</span>, <span class="string">'Sandal'</span>, <span class="string">'Shirt'</span>,<span class="string">'Sneaker'</span>,</span><br><span class="line">              <span class="string">'Bag'</span>, <span class="string">'Ankle boot'</span>]</span><br><span class="line">show_imgs(<span class="number">3</span>, <span class="number">5</span>, x_train, y_train, class_names)</span><br></pre></td></tr></tbody></table></figure><br><img data-src="/images/tensorflow/show_images.png" alt="show_images"><p></p>
+<h3 id="模型构建"><a href="#模型构建" class="headerlink" title="模型构建"></a>模型构建</h3><figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">model = keras.models.Sequential()</span><br><span class="line">model.add(keras.layers.Flatten(input_shape=[<span class="number">28</span>, <span class="number">28</span>]))</span><br><span class="line">model.add(keras.layers.Dense(<span class="number">300</span>, activation=<span class="string">"relu"</span>))</span><br><span class="line">model.add(keras.layers.Dense(<span class="number">100</span>, activation=<span class="string">"relu"</span>))</span><br><span class="line">model.add(keras.layers.Dense(<span class="number">10</span>, activation=<span class="string">"softmax"</span>))</span><br><span class="line"></span><br><span class="line">model.<span class="built_in">compile</span>(loss=<span class="string">"sparse_categorical_crossentropy"</span>,</span><br><span class="line">             optimizer=<span class="string">"sgd"</span>,</span><br><span class="line">             metrics=[<span class="string">"accuracy"</span>])</span><br><span class="line">model.layers</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">[&lt;tensorflow.python.keras.layers.core.Flatten at <span class="number">0x12e0e8a58</span>&gt;,</span><br><span class="line"> &lt;tensorflow.python.keras.layers.core.Dense at <span class="number">0x12e1777b8</span>&gt;,</span><br><span class="line"> &lt;tensorflow.python.keras.layers.core.Dense at <span class="number">0x12dfdb3c8</span>&gt;,</span><br><span class="line"> &lt;tensorflow.python.keras.layers.core.Dense at <span class="number">0x12dfdbdd8</span>&gt;]</span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>查看模型层次</li>
+</ul>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">model.summary()</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">Model: <span class="string">"sequential_4"</span></span><br><span class="line">_________________________________________________________________</span><br><span class="line">Layer (<span class="built_in">type</span>)                 Output Shape              Param <span class="comment">#   </span></span><br><span class="line">=================================================================</span><br><span class="line">flatten_4 (Flatten)          (<span class="literal">None</span>, <span class="number">784</span>)               <span class="number">0</span>         </span><br><span class="line">_________________________________________________________________</span><br><span class="line">dense_12 (Dense)             (<span class="literal">None</span>, <span class="number">300</span>)               <span class="number">235500</span>    </span><br><span class="line">_________________________________________________________________</span><br><span class="line">dense_13 (Dense)             (<span class="literal">None</span>, <span class="number">100</span>)               <span class="number">30100</span>     </span><br><span class="line">_________________________________________________________________</span><br><span class="line">dense_14 (Dense)             (<span class="literal">None</span>, <span class="number">10</span>)                <span class="number">1010</span>      </span><br><span class="line">=================================================================</span><br><span class="line">Total params: <span class="number">266</span>,<span class="number">610</span></span><br><span class="line">Trainable params: <span class="number">266</span>,<span class="number">610</span></span><br><span class="line">Non-trainable params: <span class="number">0</span></span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>开始训练</li>
+</ul>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">history = model.fit(x_train, y_train, epochs=<span class="number">10</span>,</span><br><span class="line">                   validation_data=(x_valid, y_valid))</span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line">Train on <span class="number">55000</span> samples, validate on <span class="number">5000</span> samples</span><br><span class="line">Epoch <span class="number">1</span>/<span class="number">10</span></span><br><span class="line"><span class="number">55000</span>/<span class="number">55000</span> [==============================] - 4s 80us/sample - loss: <span class="number">42355302163052.2422</span> - accuracy: <span class="number">0.0995</span> - val_loss: <span class="number">2.3028</span> - val_accuracy: <span class="number">0.0914</span></span><br><span class="line">Epoch <span class="number">2</span>/<span class="number">10</span></span><br><span class="line"><span class="number">55000</span>/<span class="number">55000</span> [==============================] - 4s 73us/sample - loss: <span class="number">2.3027</span> - accuracy: <span class="number">0.0994</span> - val_loss: <span class="number">2.3026</span> - val_accuracy: <span class="number">0.1012</span></span><br><span class="line">Epoch <span class="number">3</span>/<span class="number">10</span></span><br><span class="line"><span class="number">55000</span>/<span class="number">55000</span> [==============================] - 4s 71us/sample - loss: <span class="number">2.3027</span> - accuracy: <span class="number">0.0986</span> - val_loss: <span class="number">2.3027</span> - val_accuracy: <span class="number">0.1002</span></span><br><span class="line">Epoch <span class="number">4</span>/<span class="number">10</span></span><br><span class="line"><span class="number">55000</span>/<span class="number">55000</span> [==============================] - 4s 70us/sample - loss: <span class="number">2.3027</span> - accuracy: <span class="number">0.0977</span> - val_loss: <span class="number">2.3027</span> - val_accuracy: <span class="number">0.0986</span></span><br><span class="line">Epoch <span class="number">5</span>/<span class="number">10</span></span><br><span class="line"><span class="number">55000</span>/<span class="number">55000</span> [==============================] - 4s 72us/sample - loss: <span class="number">2.3027</span> - accuracy: <span class="number">0.0971</span> - val_loss: <span class="number">2.3029</span> - val_accuracy: <span class="number">0.0914</span></span><br><span class="line">Epoch <span class="number">6</span>/<span class="number">10</span></span><br><span class="line"><span class="number">55000</span>/<span class="number">55000</span> [==============================] - 4s 75us/sample - loss: <span class="number">2.3027</span> - accuracy: <span class="number">0.0973</span> - val_loss: <span class="number">2.3028</span> - val_accuracy: <span class="number">0.0914</span></span><br><span class="line">Epoch <span class="number">7</span>/<span class="number">10</span></span><br><span class="line"><span class="number">55000</span>/<span class="number">55000</span> [==============================] - 4s 72us/sample - loss: <span class="number">2.3027</span> - accuracy: <span class="number">0.0981</span> - val_loss: <span class="number">2.3027</span> - val_accuracy: <span class="number">0.0986</span></span><br><span class="line">Epoch <span class="number">8</span>/<span class="number">10</span></span><br><span class="line"><span class="number">55000</span>/<span class="number">55000</span> [==============================] - 4s 72us/sample - loss: <span class="number">2.3027</span> - accuracy: <span class="number">0.0968</span> - val_loss: <span class="number">2.3028</span> - val_accuracy: <span class="number">0.0914</span></span><br><span class="line">Epoch <span class="number">9</span>/<span class="number">10</span></span><br><span class="line"><span class="number">55000</span>/<span class="number">55000</span> [==============================] - 4s 73us/sample - loss: <span class="number">2.3027</span> - accuracy: <span class="number">0.0982</span> - val_loss: <span class="number">2.3029</span> - val_accuracy: <span class="number">0.0914</span></span><br><span class="line">Epoch <span class="number">10</span>/<span class="number">10</span></span><br><span class="line"><span class="number">55000</span>/<span class="number">55000</span> [==============================] - 4s 73us/sample - loss: <span class="number">2.3027</span> - accuracy: <span class="number">0.0969</span> - val_loss: <span class="number">2.3028</span> - val_accuracy: <span class="number">0.0914</span></span><br></pre></td></tr></tbody></table></figure>
+<ul>
+<li>画图</li>
+</ul>
+<figure class="highlight python"><table><tbody><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">plot_learning_curves</span>(<span class="params">history</span>):</span></span><br><span class="line">    pd.DataFrame(history.history).plot(figsize=(<span class="number">8</span>, <span class="number">5</span>))</span><br><span class="line">    plt.grid(<span class="literal">True</span>)</span><br><span class="line">    plt.gca().set_ylim(<span class="number">0</span>,<span class="number">1</span>)</span><br><span class="line">    plt.show()</span><br><span class="line">plot_learning_curves(history)</span><br></pre></td></tr></tbody></table></figure>
+<p><img data-src="/images/tensorflow/loss_model.png" alt="loss_model"></p>
+<h2 id="Keras回调函数"><a href="#Keras回调函数" class="headerlink" title="Keras回调函数"></a>Keras回调函数</h2><h2 id="搭建回归模型"><a href="#搭建回归模型" class="headerlink" title="搭建回归模型"></a>搭建回归模型</h2><h2 id="搭建深度神经网络"><a href="#搭建深度神经网络" class="headerlink" title="搭建深度神经网络"></a>搭建深度神经网络</h2><h2 id="实现wide-amp-deep模型"><a href="#实现wide-amp-deep模型" class="headerlink" title="实现wide&amp;deep模型"></a>实现wide&amp;deep模型</h2><h2 id="Keras与scikit-learn实现超参数搜索"><a href="#Keras与scikit-learn实现超参数搜索" class="headerlink" title="Keras与scikit-learn实现超参数搜索"></a>Keras与scikit-learn实现超参数搜索</h2><h1 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h1>]]></content>
+      <categories>
+        <category>Machine Learning</category>
+      </categories>
+      <tags>
+        <tag>Neural Network</tag>
       </tags>
   </entry>
   <entry>
