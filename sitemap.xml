@@ -277,13 +277,6 @@
   </url>
   
   <url>
-    <loc>http://gracekoo.com/tags/ImageAlgorithm/</loc>
-    <lastmod>2025-06-09</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://gracekoo.com/tags/Java-Automation-Test/</loc>
     <lastmod>2025-06-09</lastmod>
     <changefreq>daily</changefreq>
@@ -305,7 +298,7 @@
   </url>
   
   <url>
-    <loc>http://gracekoo.com/tags/Python/</loc>
+    <loc>http://gracekoo.com/tags/ImageAlgorithm/</loc>
     <lastmod>2025-06-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -313,6 +306,13 @@
   
   <url>
     <loc>http://gracekoo.com/tags/Numpy/</loc>
+    <lastmod>2025-06-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://gracekoo.com/tags/Python/</loc>
     <lastmod>2025-06-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -333,13 +333,6 @@
   </url>
   
   <url>
-    <loc>http://gracekoo.com/tags/Neural-Network/</loc>
-    <lastmod>2025-06-09</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://gracekoo.com/tags/markdown/</loc>
     <lastmod>2025-06-09</lastmod>
     <changefreq>daily</changefreq>
@@ -347,7 +340,7 @@
   </url>
   
   <url>
-    <loc>http://gracekoo.com/tags/Shortcut-Key/</loc>
+    <loc>http://gracekoo.com/tags/Neural-Network/</loc>
     <lastmod>2025-06-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -355,6 +348,13 @@
   
   <url>
     <loc>http://gracekoo.com/tags/DataStructure/</loc>
+    <lastmod>2025-06-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://gracekoo.com/tags/Shortcut-Key/</loc>
     <lastmod>2025-06-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -403,14 +403,14 @@
   </url>
   
   <url>
-    <loc>http://gracekoo.com/tags/Computer-Network/</loc>
+    <loc>http://gracekoo.com/tags/Software-Test-Basic/</loc>
     <lastmod>2025-06-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://gracekoo.com/tags/Software-Test-Basic/</loc>
+    <loc>http://gracekoo.com/tags/Computer-Network/</loc>
     <lastmod>2025-06-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -468,13 +468,6 @@
   </url>
   
   <url>
-    <loc>http://gracekoo.com/categories/CV/</loc>
-    <lastmod>2025-06-09</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://gracekoo.com/categories/Language/</loc>
     <lastmod>2025-06-09</lastmod>
     <changefreq>daily</changefreq>
@@ -489,13 +482,6 @@
   </url>
   
   <url>
-    <loc>http://gracekoo.com/categories/Machine-Learning/</loc>
-    <lastmod>2025-06-09</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://gracekoo.com/categories/Math/</loc>
     <lastmod>2025-06-09</lastmod>
     <changefreq>daily</changefreq>
@@ -503,7 +489,21 @@
   </url>
   
   <url>
+    <loc>http://gracekoo.com/categories/CV/</loc>
+    <lastmod>2025-06-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://gracekoo.com/categories/DataView/</loc>
+    <lastmod>2025-06-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://gracekoo.com/categories/Machine-Learning/</loc>
     <lastmod>2025-06-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
