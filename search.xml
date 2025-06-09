@@ -1055,6 +1055,29 @@
       </tags>
   </entry>
   <entry>
+    <title>Spring</title>
+    <url>/posts/25249120/</url>
+    <content><![CDATA[<h1 id="Spring概况"><a href="#Spring概况" class="headerlink" title="Spring概况"></a>Spring概况</h1><ul>
+<li><p>Spring是一个开源框架，为了解决企业级应用开发的复杂性而创建的，但现在已经不止应用于企业应用</p>
+</li>
+<li><p>Spring是一个轻量级的控制反转(IOC)和面向切面(AOP)的容器框架</p>
+<ul>
+<li>从大小与开销方面而言Spring是轻量的</li>
+<li>通过控制反转(IOC)的技术达到松耦合的目的</li>
+<li>提供了面向切面编程的丰富支持，允许通过分离应用的业务逻辑与系统级服务进行内聚性的开发</li>
+<li>包含并管理应用对象的配置和生命周期，这个意义上是一种容器</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Language</category>
+      </categories>
+      <tags>
+        <tag>BigData</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Regex</title>
     <url>/posts/25256/</url>
     <content><![CDATA[<h1 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h1><h2 id="元字符"><a href="#元字符" class="headerlink" title="元字符"></a>元字符</h2><div class="table-container">
@@ -1164,29 +1187,6 @@
       </categories>
       <tags>
         <tag>Regex</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Spring</title>
-    <url>/posts/25249120/</url>
-    <content><![CDATA[<h1 id="Spring概况"><a href="#Spring概况" class="headerlink" title="Spring概况"></a>Spring概况</h1><ul>
-<li><p>Spring是一个开源框架，为了解决企业级应用开发的复杂性而创建的，但现在已经不止应用于企业应用</p>
-</li>
-<li><p>Spring是一个轻量级的控制反转(IOC)和面向切面(AOP)的容器框架</p>
-<ul>
-<li>从大小与开销方面而言Spring是轻量的</li>
-<li>通过控制反转(IOC)的技术达到松耦合的目的</li>
-<li>提供了面向切面编程的丰富支持，允许通过分离应用的业务逻辑与系统级服务进行内聚性的开发</li>
-<li>包含并管理应用对象的配置和生命周期，这个意义上是一种容器</li>
-</ul>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Language</category>
-      </categories>
-      <tags>
-        <tag>BigData</tag>
       </tags>
   </entry>
   <entry>
